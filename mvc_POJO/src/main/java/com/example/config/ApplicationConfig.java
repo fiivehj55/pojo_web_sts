@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @PropertySource("classpath:/config/dbconfig.properties")
-@ComponentScan("com.example.dao")
+@ComponentScan({"com.example.dao","com.example.service"})
 @EnableTransactionManagement
 public class ApplicationConfig {
 

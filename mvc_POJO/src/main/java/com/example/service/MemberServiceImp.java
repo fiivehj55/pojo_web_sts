@@ -32,7 +32,11 @@ public class MemberServiceImp implements MemberService{
 	@Override
 	public Member login(String id, String password) {
 		Member user = null;
-		return user;
+		user = dao.selectByIdMember(template, id);
+		if(user.getMemPassword().equals(password))
+			return user;
+		else
+			return null;
 	}
 	@Override
 	public int delete(String id, String password) {

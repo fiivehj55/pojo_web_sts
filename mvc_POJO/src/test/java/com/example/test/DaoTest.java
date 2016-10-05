@@ -63,9 +63,8 @@ public class DaoTest {
 	
 	@Test
 	public void testSelectByIdMember() {
-				Member member = mdao.selectByIdMember(template, "hong");
-			logger.trace("List: {}", member);
-		
+		Member member = mdao.selectByIdMember(template, "admin");
+		logger.trace("List: {}", member);
 	}
 
 	@Test
