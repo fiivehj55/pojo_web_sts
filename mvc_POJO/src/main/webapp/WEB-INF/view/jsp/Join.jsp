@@ -11,7 +11,7 @@
 	<div id="main">
 		<div id="content" class="auto_center">
 		<h1>회원가입</h1>
-		<sform:form method="post" action="join" modelAttribute="new_user">
+		<sform:form method="post" action="join" modelAttribute="new_user" enctype="multipart/form-data">
 			<sform:label path="memId">아이디:</sform:label> 
 			<sform:input type="text" path="memId" placeholder="영문+숫자 조합 8 이상"/>
 			<input type="button" value="중복확인">
@@ -33,13 +33,12 @@
 			<sform:radiobutton path="memGender" value="female" label="여"/>
 			<p>
 			
-	<%-- 		<sform:label path="memPhone">전화번호:</sform:label>
-			<sform:label path="memPhone">전화번호:</sform:label>
-			<sform:select path="memPhone">
+			<sform:label path="memNa">전화번호:</sform:label>
+			<sform:select path="memNa">
 				<sform:option value="SKT" label="SKT"/>
 				<sform:option value="KT" label="KT"/>
 				<sform:option value="U+" label="U+"/>
-			</sform:select> --%> 
+			</sform:select> 
 			<sform:input type="text" path="memPhone" placeholder="-빼고 숫자만 입력"/>
 
 			<p>
@@ -48,10 +47,10 @@
 			<sform:input type="email" path="memEmail" placeholder="pojo@google.com"/>
 			<p>
 		
-			<sform:label path="memImg">프로필 사진:</sform:label> 
+			<label for="memImg">프로필 사진:</label> 
 			<input type="file" name="memImg">
 			<p>
-			<sform:label path="memIntro">자기소개:</sform:label>
+			<label for="memIntro">자기소개:</label>
 
 			<textarea cols="45" rows="10" name="memIntro"></textarea>
 			<p>
