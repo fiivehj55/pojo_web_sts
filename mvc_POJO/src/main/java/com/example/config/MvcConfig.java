@@ -11,10 +11,9 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 //SpringMvc에 대한 설정
 @Configuration
-@ComponentScan("com.example.controller")
+@ComponentScan(basePackages={"com.example.controller"})
 @EnableWebMvc //<mvc:annotation-driven />
 public class MvcConfig extends WebMvcConfigurerAdapter{
-
 	
 	@Bean
 	public ViewResolver internalResourceViewResolver(){

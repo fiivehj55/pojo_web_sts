@@ -2,23 +2,22 @@ package com.example.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.dto.Member;
-import com.example.service.MemberService;
+import com.example.service.HouseService;
 
 @Controller
 public class HouseController {
 	
 	private static Logger logger = LoggerFactory.getLogger(HouseController.class);
 
+	@Autowired
+	HouseService mservice;
+	
 	@RequestMapping(value = "/search",method=RequestMethod.GET)
 	public String search(Model model){
 		
