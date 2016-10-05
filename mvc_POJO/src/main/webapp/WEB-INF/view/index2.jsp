@@ -164,7 +164,6 @@ input, input[placeholder] {
 			</section>
 		</div>
 	</div>
-	<a href="logout">로그아웃</a>
 	<jsp:include page="jsp/Footer.jsp"></jsp:include>
 </body>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>

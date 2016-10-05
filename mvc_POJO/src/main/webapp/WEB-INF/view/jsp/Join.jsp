@@ -10,7 +10,7 @@
 	<div id="main">
 		<div id="content" class="auto_center">
 		<h1>회원가입</h1>
-		<form method="post" action="join"  enctype="multipart/form-data">
+		<form method="post" action="join" enctype="multipart/form-data">
 			<label for="memId">아이디:</label> 
 			<input type="text" name="memId" placeholder="영문+숫자 조합 8 이상"/>
 			<input type="button" value="중복확인">

@@ -1,50 +1,39 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"%>
-<%@ taglib prefix="sform" uri="http://www.springframework.org/tags/form" %>
+<%@ page language="java" contentType="text/html;charset=UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <title>Linear by TEMPLATED</title>
-
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<meta name="description" content="" />
-<meta name="keywords" content="" />
-<link
-	href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900'
-	rel='stylesheet' type='/text/css'>
-<script
-	src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="js/skel.min.js"></script>
-<script src="js/skel-panels.min.js"></script>
-<script src="js/init.js"></script>
-<link rel="stylesheet" href="css/skel-noscript.css" />
-<link rel="stylesheet" href="css/style.css" />
-<link rel="stylesheet" href="css/style-desktop.css" />
-
 </head>
 <body class="homepage">
 <jsp:include page="./Header.jsp"></jsp:include>
 	<!-- Main -->
 	<div id="main">
 		<div id="content" class="auto_center">
-		<h1>하우스 등록</h1>
+		<h1>하우스 등록 TEST</h1>
 		<h1>정보를 제공해주세요.</h1>
-		<form>
+		<form method="post" action="insertHouse1" enctype="multipart/form-data">
 			<fieldset>
 				<legend>호스팅 2단계</legend>
-				<label for="rname">숙소 이름</label><br/>
-				<input type="text" id="rname" name="rname"/> <br/> 
+				<label for="houseNo">하우스 번호 : </label>
+				<input type="number" name="houseNo" placeholder="하우스 번호"/> <br/> 
 				
-				<label for="infor">숙소 안내말</label> <br/>
-				<textarea rows="5" cols="20" name="infor"></textarea> <br/>
+				<label for="houseName">하우스 이름 : </label>
+				<input type="text" name="houseName" placeholder="하우스 이름"/> <br/>
 				
-				<label for="photo">사진</label> <br/>
-				<input type="file" name="photo"/> <br/>
+				<label for="houseAddress">하우스 주소 : </label>
+				<input type="text" name="houseAddress" placeholder="하우스 주소"/> <br/>
 				
-				<label for="addr">주소</label><br/>
-				<textarea rows="5" cols="20" name="addr"></textarea> <br/>
+				<label for="housePrice">하우스 가격 : </label>
+				<input type="number" name="housePrice" placeholder="하우스 가격"/> <br/>
+				
+				<label for="houseScore">하우스 점수 : </label>
+				<input type="number" name="houseScore" placeholder="하우스 점수"/> <br/>
+				
+				<label for="houseInfo">하우스 소개 : </label>
+				<input type="text" name="houseInfo" placeholder="하우스 소개"/> <br/>
 			</fieldset>
-			<!-- <input type="submit" id="next" name="next" value="다음 단계"/> <br/> -->
-			<a href="insertHouse2"><input type="button" value="다음 단계"/></a>
+			<input type="submit" value="다음 단계"/> <br/>
+			<!-- <a href="insertHouse2"><input type="button" value="다음 단계"/></a> -->
 		</form>
 		</div>
 	</div>

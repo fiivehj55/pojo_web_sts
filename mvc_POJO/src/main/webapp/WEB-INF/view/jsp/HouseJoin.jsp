@@ -27,7 +27,7 @@
 	<div id="main">
 		<div id="content" class="auto_center">
 		<h1>하우스 등록</h1>
-		<form>
+		<form method="post" action="insertHouse">
 			<fieldset>
 				<legend>호스팅 1단계</legend>
 				<label for="room">방의 개수 : </label>
@@ -82,8 +82,41 @@
 				<input type="checkbox" id="washing" name="market" value="washing">
 				<label for="washing">세탁기</label>
 			</fieldset>
-			<!-- <input type="submit" id="next" name="next" value="다음 단계"/> <br/> -->
-			<a href="insertHouse1"><input type="button" value="다음 단계"/></a>
+			<br/>
+			<fieldset>
+				<legend>호스팅 2단계</legend>
+				<label for="rname">숙소 이름</label><br/>
+				<input type="text" id="rname" name="rname"/> <br/> 
+				
+				<label for="infor">숙소 안내말</label> <br/>
+				<textarea rows="5" cols="20" name="infor"></textarea> <br/>
+				
+				<label for="photo">사진</label> <br/>
+				<input type="file" name="photo"/> <br/>
+				
+				<label for="addr">주소</label><br/>
+				<textarea rows="5" cols="20" name="addr"></textarea> <br/>
+			</fieldset>
+			<br/>
+			<fieldset>
+				<legend>호스팅 3단계</legend>
+				
+				<img src="/img/mage_tp.jpg"/>
+				
+				<label for="day"></label>
+				<input type="radio" id="rone" name="day" value="1개">
+				<label for="dd">일</label>
+				
+				<input type="radio" id="rtwo" name="day" value="2개">
+				<label for="ww">주</label>
+				
+				<input type="radio" id="rthree" name="day" value="3개">
+				<label for="mm">월</label>
+				<br/>
+				
+			</fieldset>
+			<input type="submit" id="next" name="next" value="다음 단계"/> <br/>
+			<!-- <a href="search"><input type="button" value="다음 단계"/></a> -->
 		</form>
 		</div>
 	</div>

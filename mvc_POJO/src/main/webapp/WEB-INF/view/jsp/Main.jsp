@@ -23,7 +23,9 @@
 			<td>사진</td>
 		</tr>
 	</table>
+	<h1>${result}</h1>
 	<a href="insertHouse"> <input type="button" value="하우스 등록"/></a>
+	<a href="insertHouse1"> <input type="button" value="하우스 등록 TEST"/></a>
 	<jsp:include page="./Footer.jsp"></jsp:include>
 </body>
 <script></script>
