@@ -3,6 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="sform" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
 <title></title>
@@ -29,9 +30,12 @@ input, input[placeholder] {
 <script src="js/skel.min.js"></script>
 <script src="js/skel-panels.min.js"></script>
 <script src="js/init.js"></script>
-<link rel="stylesheet" href="css/style.css"/>
-<link rel="stylesheet" href="css/style.css" />
-<link rel="stylesheet" href="css/style-desktop.css" />
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/style.css" />
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/style.css" />
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/style-desktop.css" />
 
 </head>
 
@@ -45,31 +49,33 @@ input, input[placeholder] {
 		<%
 			if (user == null) {
 		%>
-		<form action="<%=request.getContextPath()%>/login" method="post">
+		<sform:form action="login" method="post">
 			<p>
 				<label>ID: </label> <input type="text" id="id" name="id">
 			</p>
-			<label>PASS: </label> <input type="password" id="password"
-				name="password">
-
 			<p>
-				<a href="<%=request.getContextPath()%>/jsp/FindId.jsp">
-				<input type="button" value="아이디 찾기"></a> 
-				<a href="<%=request.getContextPath()%>/jsp/FindPass.jsp"> 
-				<input type="button" value="비밀번호 찾기"></a>
+				<label>PASS: </label> <input type="password" id="password"
+					name="password">
+			</p>
 			<p>
-				<input type="submit" value="로그인"> 
-				<a href="<%=request.getContextPath()%>/jsp/Join.jsp">
-				<input type="button" value="회원가입"></a>
+				<a href="<%=request.getContextPath()%>/jsp/FindId.jsp"> <input
+					type="button" value="아이디 찾기"></a>
+					 <a href="<%=request.getContextPath()%>/jsp/FindPass.jsp"> <input
+					type="button" value="비밀번호 찾기"></a>
+			</p>
+			<p>
+				<input type="submit" value="로그인"> <a
+					href="<%=request.getContextPath()%>/jsp/Join.jsp"> <input
+					type="button" value="회원가입"></a>
 			</p>
 
 			<jsp:include page="./Footer.jsp"></jsp:include>
-		</form>
+		</sform:form>
 		<%
 			} else {
 		%>
 		<%=user.getMemName()%>
-<%-- 		<img
+		<%-- 		<img
 			src="<%=request.getContextPath()%>../css/userimage/<%=user.getMemImg()%>">  --%>
 		<%
 			}
@@ -77,6 +83,6 @@ input, input[placeholder] {
 
 	</div>
 
-	
+
 </body>
 </html>
