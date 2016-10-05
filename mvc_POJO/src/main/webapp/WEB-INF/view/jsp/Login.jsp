@@ -37,7 +37,7 @@ input, input[placeholder] {
 </head>
 
 <body class="auto_center">
-	<jsp:include page="./Header.jsp"></jsp:include>
+	<jsp:include page="<%=request.getContextPath()%>/jsp/Header.jsp"></jsp:include>
 	<div class="auto_center">
 
 		<%
@@ -63,7 +63,8 @@ input, input[placeholder] {
 				<a href="<%=request.getContextPath()%>/jsp/Join.jsp">
 				<input type="button" value="회원가입"></a>
 			</p>
-			<jsp:include page="./Footer.jsp"></jsp:include>
+
+			<jsp:include page="<%=request.getContextPath()%>/jsp/Footer.jsp"></jsp:include>
 		</form>
 		<%
 			} else {

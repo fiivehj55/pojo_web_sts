@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:include page="./Header.jsp"></jsp:include>
+<jsp:include page="<%=request.getContextPath()%>/jsp/Header.jsp"></jsp:include>
 <h1>게시판</h1>
 <table border="1">
 	<tr>
@@ -28,7 +28,7 @@
 </table>
 
 
-	<jsp:include page="./Footer.jsp"></jsp:include>
+	<jsp:include page="<%=request.getContextPath()%>/jsp/Footer.jsp"></jsp:include>
 </body>
 <script></script>
 </html>
