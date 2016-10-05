@@ -18,9 +18,9 @@
 <script src="../js/skel.min.js"></script>
 <script src="../js/skel-panels.min.js"></script>
 <script src="../js/init.js"></script>
-<link rel="stylesheet" href="../css/skel-noscript.css" />
-<link rel="stylesheet" href="../css/style.css" />
-<link rel="stylesheet" href="../css/style-desktop.css" />
+<link rel="stylesheet" href="../jsp/css/skel-noscript.css" />
+<link rel="stylesheet" href="../jsp/css/style.css" />
+<link rel="stylesheet" href="../jsp/css/style-desktop.css" />
 
 </head>
 <body>
@@ -30,7 +30,7 @@
 			<!-- Nav -->
 			<nav id="nav">
 				<ul class="menu1">
-					<li class="active"><a href="<%=request.getContextPath()%>/index2.jsp">호스팅하기</a>
+					<li class="active"><a href="index">호스팅하기</a>
 						<ul class="sub">
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
@@ -42,20 +42,20 @@
 						</ul></li>
 					<li><a href="<%=request.getContextPath()%>/right-sidebar.html">고객센터</a>
 						<ul class="sub">
-							<li class="active"><a href="<%=request.getContextPath()%>/jsp/FAQ.jsp">FAQ</a></li>
+							<li class="active"><a href="faq">FAQ</a></li>
 							<li class="active"><a href="#">신고 게시판</a></li>
 						</ul></li>
-					<li><a href="<%=request.getContextPath()%>/jsp/Login.jsp">로그인</a>
+					<li><a href="login">로그인</a>
 						<ul class="sub">
-							<li class="active"><a href="<%=request.getContextPath()%>/jsp/Join.jsp">회원가입</a></li>
-							<li class="active"><a href="<%=request.getContextPath()%>/jsp/FindId.jsp">ID/PASS 찾기</a></li>
+							<li class="active"><a href="join">회원가입</a></li>
+							<li class="active"><a href="findId">ID/PASS 찾기</a></li>
 						</ul></li>
-					<li><a href="<%=request.getContextPath()%>/jsp/Main.jsp">검색된 페이지</a>
+					<li><a href="search">검색된 페이지</a>
 						<ul class="sub">
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li>
-					<li><a href="<%=request.getContextPath()%>/jsp/Table.jsp">게시판</a>
+					<li><a href="bbs">게시판</a>
 						<ul class="sub">
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>

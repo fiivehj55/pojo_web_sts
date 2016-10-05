@@ -1,5 +1,5 @@
 <!-- 로그인 페이지 -->
-<%@page import="pojo.web.dto.Member"%>
+<%@page import="com.example.dto.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -37,7 +37,7 @@ input, input[placeholder] {
 </head>
 
 <body class="auto_center">
-	<jsp:include page="/jsp/Header.jsp"></jsp:include>
+	<jsp:include page="./Header.jsp"></jsp:include>
 	<div class="auto_center">
 
 		<%
@@ -63,7 +63,7 @@ input, input[placeholder] {
 				<a href="<%=request.getContextPath()%>/jsp/Join.jsp">
 				<input type="button" value="회원가입"></a>
 			</p>
-			<jsp:include page="/jsp/Footer.jsp"></jsp:include>
+			<jsp:include page="./Footer.jsp"></jsp:include>
 		</form>
 		<%
 			} else {

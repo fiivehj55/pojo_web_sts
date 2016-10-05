@@ -1,5 +1,5 @@
 <!-- 로그인 페이지 -->
-<%@page import="pojo.web.dto.Member"%>
+<%@page import="com.example.dto.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -24,7 +24,7 @@
 </style>
 </head>
 <body>
-<jsp:include page="/jsp/Header.jsp"></jsp:include>
+<jsp:include page="./Header.jsp"></jsp:include>
 <div class=auto_center>
 	호스팅하기
 	메세지
@@ -54,6 +54,6 @@
 		
 </div>
 
-	<jsp:include page="/jsp/Footer.jsp"></jsp:include>
+	<jsp:include page="./Footer.jsp"></jsp:include>
 </body>
 </html>
