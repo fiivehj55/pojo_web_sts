@@ -44,6 +44,7 @@ input, input[placeholder] {
 
 <body class="auto_center">
 	<jsp:include page="./Header.jsp"></jsp:include>
+
 	<div class="auto_center">
 
 		<%
@@ -52,7 +53,7 @@ input, input[placeholder] {
 		<%
 			if (user == null) {
 		%>
-		<sform:form action="loginSuccess" method="post">
+		<sform:form  action="loginSuccess" method="post" >
 			<p>
 				<label>ID: </label> <input type="text" id="id" name="id">
 			</p>
@@ -68,7 +69,6 @@ input, input[placeholder] {
 				<input type="submit" value="로그인"> 
 				<a href="join"> <input type="button" value="회원가입"></a>
 			</p>
-
 			<jsp:include page="./Footer.jsp"></jsp:include>
 		</sform:form>
 		<%
