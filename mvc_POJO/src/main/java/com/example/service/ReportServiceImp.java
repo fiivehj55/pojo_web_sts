@@ -11,57 +11,58 @@ import org.springframework.stereotype.Component;
 import com.example.dao.ReportDao;
 import com.example.dto.Report;
 
-
-
-
 @Component
 public class ReportServiceImp implements ReportService {
-	
-	static Logger logger = LoggerFactory.getLogger(ReportServiceImp.class);
 
+	static Logger logger = LoggerFactory.getLogger(ReportServiceImp.class);
 
 	@Autowired
 	ReportDao dao;
 	@Autowired
 	SqlSessionTemplate template;
-	
+
 	@Override
 	public List<Report> selectAllReport() {
 		List<Report> report = null;
-	
+		report = dao.selectAllReport(template);
+
 		return report;
 	}
 
 	@Override
 	public Report selectByReportNo(int reportNo) {
-	//	try (SqlSession template = DBUtil.getInstance().getSession()) {
-		
+
 		Report report = dao.selectByReport(template, reportNo);
+
 		return report;
-	/*		if(report != null){
-				return report;
-			}else{
-				throw new NumberFormatException();
-			}
-		}*/
+		/*
+		 * if(report != null){ return report; }else{ throw new
+		 * NumberFormatException(); } }
+		 */
 	}
 
 	@Override
 	public int insertReport(Report report) {
 		int result = 0;
-	return result;
+		result = dao.insertReport(template, report);
+
+		return result;
 	}
 
 	@Override
 	public int updateReport(Report report) {
 		int result = 0;
-	return result;
+		result = dao.updateReport(template, report);
+
+		return result;
 	}
 
 	@Override
 	public int deleteReport(int reportNo) {
 		int result = 0;
-	return result;
+		result = dao.deleteReport(template, reportNo);
+
+		return result;
 	}
-	
+
 }

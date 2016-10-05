@@ -24,18 +24,24 @@ public class QuestionServiceImp implements QuestionService {
 	@Override
 	public List<Question> selectById(int questNo) {
 		List<Question> question = null;
+		question = dao.selectAllQuestion(template);
+		
 		return question;
 	}
 
 	@Override
 	public int add(Question question) {
 		int result = 0;
+		result = dao.insertQuestion(template, question);
+		
 		return result;
 	}
 
 	@Override
 	public int delete(int questNo) {
 		int result = 0;
+		result = dao.deleteQuestion(template, questNo);
+		
 		return result;
 	}
 	

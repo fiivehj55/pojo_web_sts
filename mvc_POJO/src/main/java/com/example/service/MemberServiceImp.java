@@ -27,6 +27,7 @@ public class MemberServiceImp implements MemberService{
 	@Override
 	public List<Member> allMember() {
 		List<Member> list = null;
+		list = dao.selectAllMember(template);
 		return list;
 	}
 	@Override
@@ -41,21 +42,29 @@ public class MemberServiceImp implements MemberService{
 	@Override
 	public int delete(String id, String password) {
 		int result = 0;
+		result = dao.deleteMember(template, id, password);
+		
 		return result;
 	}
 	@Override
 	public int join(Member member) {	
 		int result = 0;
+		result = dao.insertMember(template, member);
+		
 		return result;
 	}
 	@Override
 	public int update(Member member) {
 		int result = 0;
+		result = dao.updateMember(template, member);
+		
 		return result;
 	}
 	@Override
 	public String find(String name,String email) {
 		String member = null;
+		member =  dao.selectId(template, name, email);
+		
 		return member;
 	}
 }
