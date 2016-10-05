@@ -78,5 +78,5 @@ public class MemberController {
 		//view의 이름을 리턴.
 		return "jsp/FindPass";
 	}
-	
+
 }

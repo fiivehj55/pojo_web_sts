@@ -33,7 +33,7 @@
 	    <appender-ref ref="STDOUT" /> 
 	</logger> 
 	<!-- root 로거 기본 설정 -->
-	<!-- <root level="trace">
+<!-- 	<root level="trace">
 		<appender-ref ref="STDOUT" />
 		<appender-ref ref="dailyout" />
 	</root> -->
