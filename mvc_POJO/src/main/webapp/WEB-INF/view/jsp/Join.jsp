@@ -20,8 +20,8 @@
 			<sform:label path="memPassword">비밀번호:</sform:label> 
 			<sform:input type="password" path="memPassword"  placeholder="영문+숫자 조합 8 이상"/>
 			<p>		
-			<sform:label path="memPassword">비밀번호 확인:</sform:label> 
-			<sform:input type="password" path="memPassword" placeholder="영문+숫자 조합 8 이상"/>
+			<label for="passok">비밀번호 확인:</label> 
+			<input type="password" name="passok" placeholder="영문+숫자 조합 8 이상"/>
 			<p>
 			
 			<sform:label path="memName">이름:</sform:label> 
@@ -33,13 +33,15 @@
 			<sform:radiobutton path="memGender" value="female" label="여"/>
 			<p>
 			
+	<%-- 		<sform:label path="memPhone">전화번호:</sform:label>
 			<sform:label path="memPhone">전화번호:</sform:label>
 			<sform:select path="memPhone">
 				<sform:option value="SKT" label="SKT"/>
 				<sform:option value="KT" label="KT"/>
 				<sform:option value="U+" label="U+"/>
-			</sform:select> 
-			<sform:input type="tel" path="memPhone" placeholder="-빼고 숫자만 입력"/>
+			</sform:select> --%> 
+			<sform:input type="text" path="memPhone" placeholder="-빼고 숫자만 입력"/>
+
 			<p>
 			
 			<sform:label path="memEmail">이메일:</sform:label> 
@@ -47,11 +49,11 @@
 			<p>
 		
 			<sform:label path="memImg">프로필 사진:</sform:label> 
-			<input type="file" name="pic" id="pic">
-			<input type="button" value="첨부하기">
+			<input type="file" name="memImg">
 			<p>
 			<sform:label path="memIntro">자기소개:</sform:label>
-			<textarea cols="45" rows="10"></textarea>
+
+			<textarea cols="45" rows="10" name="memIntro"></textarea>
 			<p>
 		<sform:button>가입</sform:button>
 		</sform:form>
