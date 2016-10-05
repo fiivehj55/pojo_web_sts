@@ -18,6 +18,9 @@ input, input[placeholder] {
 	font-weight: bold;
 	text-align: center;
 }
+.auto_center{
+	background-color: white;
+}
 </style>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="description" content="" />

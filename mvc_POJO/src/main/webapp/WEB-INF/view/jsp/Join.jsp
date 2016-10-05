@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="sform" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,53 +9,52 @@
 <jsp:include page="./Header.jsp"></jsp:include>
 	<!-- Main -->
 	<div id="main">
-
 		<div id="content" class="auto_center">
-
 		<h1>회원가입</h1>
+		<sform:form method="post" action="join" modelAttribute="new_user">
+			<sform:label path="memId">아이디:</sform:label> 
+			<sform:input type="text" path="memId" placeholder="영문+숫자 조합 8 이상"/>
+			<input type="button" value="중복확인">
+			<p><br/>
+			
+			<sform:label path="memPassword">비밀번호:</sform:label> 
+			<sform:input type="password" path="memPassword"  placeholder="영문+숫자 조합 8 이상"/>
+			<p>		
+			<sform:label path="passok">비밀번호 확인:</sform:label> 
+			<sform:input type="password" path="password" placeholder="영문+숫자 조합 8 이상"/>
+			<p>
+			
+			<sform:label path="memName">이름:</sform:label> 
+			<sform:input type="text" path="memName" />
+			<p>
+			
+			<sform:label path="gender">성별:</sform:label> 
+			<sform:radiobutton path="gender" value="male" label="남"/> 
+			<sform:radiobutton path="gender" value="female" label="여"/>
+			<p>
+			
+			<sform:label path="memPhone">전화번호:</sform:label>
+			<sform:select path="phone">
+				<sform:option value="SKT" label="SKT"/>
+				<sform:option value="KT" label="KT"/>
+				<sform:option value="U+" label="U+"/>
+			</sform:select> 
+			<sform:input type="tel" path="phone" placeholder="-빼고 숫자만 입력"/>
+			<p>
+			
+			<sform:label path="memEmail">이메일:</sform:label> 
+			<sform:input type="email" path="memEmail" placeholder="pojo@google.com"/>
+			<p>
 		
-	<form>
-		<p>
-			<label for="id">아이디:</label> <input type="text" name="id" id="id"
-				placeholder="영문+숫자 조합 8 이상"> <input type="button"
-				value="중복확인">
-		</p>
-
-		<p>
-			<label for="pass">비밀번호:</label> <input type="password"
-				name="password" id="pass" placeholder="영문+숫자 조합 8 이상">
-		<p>
-			<label for="passok"></label> <input type="password" name="password"
-				placeholder="영문+숫자 조합 8 이상">
-		<p>
-			<label for="name">이름:</label> <input type="text" name="name"
-				id="name">
-		</p>
-		<p>
-			<label for="gender">성별:</label> <input type="radio" name="gender"
-				value="men" id="men">남 <input type="radio" name="gender"
-				value="women" id="women">여
-		<p>
-			전화번호:<select name="phone" id="phone">
-				<option value=SKT>SKT</option>
-				<option value=KT>KT</option>
-				<option value=U+>U+</option>
-			</select> <input type="tel" name="number" placeholder="-빼고 숫자만 입력">
-		</p>
-		<p>
-			<label for="email">이메일:</label> <input type="email" name="email"
-				placeholder="pojo@google.com">
-		</p>
-		<p>
-			<label for="pic">프로필 사진:</label> <input type="text" name="pic"
-				id="pic">
-			<button>첨부하기</button>
-		<p>
-			<label for="intro">자기소개:<textarea cols="45" rows="10"></textarea></label>
-		<p>
-			<input type="submit" value="가입">
-	</form>
-
+			<sform:label path="pic">프로필 사진:</sform:label> 
+			<input type="file" name="pic" id="pic">
+			<input type="button" value="첨부하기">
+			<p>
+			<sform:label path="intro">자기소개:</sform:label>
+			<textarea cols="45" rows="10"></textarea>
+			<p>
+		<sform:button>가입</sform:button>
+		</sform:form>
 		</div>
 	</div>
 <jsp:include page="./Footer.jsp"></jsp:include>

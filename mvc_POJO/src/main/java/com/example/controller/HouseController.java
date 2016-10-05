@@ -2,17 +2,13 @@ package com.example.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.dto.Member;
-import com.example.service.MemberService;
+import com.example.service.HouseService;
 
 @Controller
 public class HouseController {
@@ -20,17 +16,9 @@ public class HouseController {
 	private static Logger logger = LoggerFactory.getLogger(HouseController.class);
 
 	@Autowired
-	MemberService mservice;
+	HouseService mservice;
 	
-	@RequestMapping(value = "/hello",method=RequestMethod.GET)
-	public String sayHello(Model model){
-		model.addAttribute("message", "good morning");
-		logger.trace("message");
-		//view의 이름을 리턴.
-		return "showMessage";
-	}
-	
-	@RequestMapping(value = "/index",method=RequestMethod.GET)
+	/*@RequestMapping(value = "/index",method=RequestMethod.GET)
 	public String index(Model model){
 		
 		//view의 이름을 리턴.
@@ -73,7 +61,7 @@ public class HouseController {
 		
 		//view의 이름을 리턴.
 		return "jsp/FindId";
-	}
+	}*/
 	
 	@RequestMapping(value = "/search",method=RequestMethod.GET)
 	public String search(Model model){
@@ -82,7 +70,7 @@ public class HouseController {
 		return "jsp/Main";
 	}
 	
-	@RequestMapping(value = "/bbs",method=RequestMethod.GET)
+	/*@RequestMapping(value = "/bbs",method=RequestMethod.GET)
 	public String table(Model model){
 		
 		//view의 이름을 리턴.
@@ -94,5 +82,5 @@ public class HouseController {
 		
 		//view의 이름을 리턴.
 		return "jsp/FAQ";
-	}
+	}*/
 }
