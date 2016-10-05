@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pojo.web.dao.ReplyMapper">
+	
+	<select id="selectAllReply" resultMap="replyBase">
+		select * from REPLY
+	</select>
+	
+	<select id="selectByReplyNo" parameterType="int" resultMap="replyBase">
+		select * from REPLY where REPLY_NO = #{replyNo}
+	</select>
+	
+	<insert id="insertReply" parameterType="reply" >
+		insert into REPLY
+		values (#{replyNo}, #{replyContent}, #{replyDate}, #{memberId}, #{detailId})
+	</insert>
+	
+	<update id="updateReply" parameterType="reply">
+		update REPLY set
+		REPLY_CONTENT=#{replyContent}, REPLY_DATE=sysdate
+		where REPLY_NO = #{replyNo}
+	</update>
+	
+	<delete id="deleteReply" parameterType="int">
+		delete REPLY where REPLY_NO = #{replyNo}
+	</delete>
+
+	<resultMap type="reply" id="replyBase">
+		<id column="REPLY_NO" property="replyNo" />
+		<result column="REPLY_CONTENT" property="replyContent" />
+		<result column="REPLY_DATE" property="replyDate" />
+		<result column="MEMBER_ID" property="memberId" />
+		<result column="DETAIL_ID" property="detailId" />
+	</resultMap>
+</mapper>

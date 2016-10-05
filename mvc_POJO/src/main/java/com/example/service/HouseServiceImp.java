@@ -1,0 +1,53 @@
+package com.example.service;
+
+import java.util.List;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.example.dao.HouseDao;
+import com.example.dao.HouseDaoImpl;
+import com.example.dto.House;
+
+import ch.qos.logback.core.db.dialect.DBUtil;
+
+
+@Component
+public class HouseServiceImp implements HouseService{
+	@Autowired
+	HouseDao hdao;
+	
+	@Autowired
+	SqlSessionTemplate template;
+	
+	@Override
+	public List<House> selectById(String id) {
+		List<House> list =  null;
+		list = hdao.selectAllHouse(template);
+		return list;
+	}
+	@Override
+	public House selectByNoHouse(int houseNo) {
+		House house	=  null;
+		house = hdao.selectByNoHouse(template, houseNo);
+		return house;
+	}
+	@Override
+	public int insertHouse(House house) {
+		int result = 0;
+		result = hdao.insertHouse(template, house);
+		return result;
+	}
+	@Override
+	public int updateHouse(House house) {
+		int result = 0;
+		result = hdao.updateHouse(template, house);
+		return result;
+	}
+	@Override
+	public int deleteHouse(int houseNo) {
+		int result = 0;
+		return result;
+	}
+}

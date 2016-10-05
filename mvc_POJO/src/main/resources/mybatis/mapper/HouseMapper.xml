@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pojo.web.dao.houseMapper">
+
+	<select id="selectAllHouse" resultMap="houseBase">
+		select * from HOUSE
+	</select>
+	<select id="selectByIdHouse" parameterType="String" resultMap="houseBase">
+		select * from HOUSE where member_id = #{id}
+	</select>
+	
+	<select id="selectByNoHouse" parameterType="int" resultMap="houseBase">
+		select * from HOUSE where HOUSE_NO = #{houseNo}
+	</select>
+
+	<insert id="insertHouse" parameterType="house">
+		insert into HOUSE 
+		values(#{houseNo}, #{houseName}, #{houseAddress}, #{housePrice}, #{houseScore}, #{houseInfo}, #{memberId}, #{detailId})
+	</insert>
+	
+	<update id="updateHouse" parameterType="house">
+		update HOUSE set
+		HOUSE_NAME=#{houseName}, HOUSE_ADDRESS=#{houseAddress}, HOUSE_PRICE=#{housePrice}
+		where house_no=#{houseNo}
+	</update>
+	
+	<delete id="deleteHouse" parameterType="int">
+		delete HOUSE where HOUSE_NO = #{houseNo}
+	</delete>
+
+	<resultMap type="house" id="houseBase">
+		<id column="HOSUE_NO" property="houseNo" />
+		<result column="HOUSE_NAME" property="houseName" />
+		<result column="HOUSE_ADDRESS" property="houseAddress" />
+		<result column="HOUSE_PRICE" property="housePrice" />
+		<result column="HOUSE_SCORE" property="houseScore" />
+		<result column="HOUSE_INFO" property="houseInfo" />
+		<result column="MEM_ID" property="memberId" />
+		<result column="DETAIL_ID" property="detailId" />
+	</resultMap>
+</mapper>

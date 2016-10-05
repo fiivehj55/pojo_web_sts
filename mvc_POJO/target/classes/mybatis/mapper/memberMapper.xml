@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pojo.web.dao.memberMapper">
+    <select id="selectAllMember" resultMap="memBase">
+        select MEM_ID, MEM_NAME, MEM_PASSWORD, MEM_PHONE, MEM_EMAIL, MEM_GENDER, MEM_IMG, MEM_INTRO
+        from MEMBER
+    </select>
+    
+    <select id="selectByIdMember" parameterType="string" resultMap="memBase">
+        select MEM_ID, MEM_NAME, MEM_PASSWORD, MEM_PHONE, MEM_EMAIL, MEM_GENDER, MEM_IMG, MEM_INTRO
+        from MEMBER
+        where MEM_ID = #{memId}
+    </select>
+    
+    <insert id="insertMember" parameterType="member">
+        insert into MEMBER
+        values (#{memId}, #{memName}, #{memPassword}, #{memPhone}, #{memEmail}, #{memGender}, #{memImg}, #{memIntro}, #{detailId}, #{detailGrade})
+    </insert>
+    
+    <update id="updateMember" parameterType="member">
+        update MEMBER set
+        MEM_PASSWORD=#{memPassword}, MEM_PHONE=#{memPhone}, MEM_EMAIL=#{memEmail}, MEM_IMG=#{memImg}, MEM_INTRO=#{memIntro}
+        where MEM_ID = #{memId}
+    </update>
+    
+    <delete id="deleteMember" parameterType="map">
+        delete MEMBER where MEM_ID = #{memId} and MEM_PASSWORD = #{memPassword}
+    </delete>
+     <select id="findId" parameterType="map" resultType="string">
+        select MEM_ID
+        from MEMBER
+        where MEM_NAME = #{name} and
+        MEM_EMAIL = #{email}
+    </select>
+    <resultMap type="member" id="memBase">
+		<id column="MEM_ID" property="memId" />
+		<result column="MEM_NAME" property="memName" />
+		<result column="MEM_PASSWORD" property="memPassword" />
+		<result column="MEM_PHONE" property="memPhone" />
+		<result column="MEM_EMAIL" property="memEmail" />
+		<result column="MEM_GENDER" property="memGender" />
+		<result column="MEM_IMG" property="memImg" />
+		<result column="MEM_INTRO" property="memIntro" />
+	</resultMap>
+</mapper>

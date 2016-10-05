@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pojo.web.dao.RegistHouseMapper">
+    <select id="selectAllRh" resultMap="regHouseBase">
+        select * from REGIST_HOUSE
+    </select>
+    
+    <select id="selectByIdRh" parameterType="int" resultMap="regHouseBase">
+        select * from REGIST_HOUSE
+        where RH_ID = #{rhId}
+    </select>
+    
+    <insert id="insertRegistHouse" parameterType="registHouse">
+        insert into REGIST_HOUSE
+        values (#{rhId}, #{checkIn}, #{checkOut}, #{houseNo}, #{memberId})
+    </insert>
+    
+    <update id="updateRegistHouse" parameterType="registHouse">
+        update REGIST_HOUSE set
+        CHECK_IN=#{checkIn}, CHECK_OUT=#{checkOut}
+        where RH_ID = #{rhId}
+    </update>
+    
+    <delete id="deleteRegistHouse" parameterType="int">
+        delete REGIST_HOUSE where RH_ID = #{rhId}
+    </delete>
+    
+    <resultMap type="registHouse" id="regHouseBase">
+        <id column="RH_ID" property="rhId" />
+        <result column="CHECK_IN" property="checkIn" />
+        <result column="CHECK_OUT" property="checkOut" />
+        <result column="HOUSE_NO" property="houseNo" />
+        <result column="MEMBER_ID" property="memberId" />
+    </resultMap>
+</mapper>
