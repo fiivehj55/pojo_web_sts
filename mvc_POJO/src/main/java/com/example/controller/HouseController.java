@@ -15,9 +15,9 @@ import com.example.dto.Member;
 import com.example.service.MemberService;
 
 @Controller
-public class BasicController {
+public class HouseController {
 	
-	private static Logger logger = LoggerFactory.getLogger(BasicController.class);
+	private static Logger logger = LoggerFactory.getLogger(HouseController.class);
 
 	@Autowired
 	MemberService mservice;
