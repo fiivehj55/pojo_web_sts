@@ -21,21 +21,6 @@ public class MemberController {
 
 	@Autowired
 	MemberService mservice;
-	
-	@RequestMapping(value = "/hello",method=RequestMethod.GET)
-	public String sayHello(Model model){
-		model.addAttribute("message", "good morning");
-		logger.trace("message");
-		//view의 이름을 리턴.
-		return "showMessage";
-	}
-	
-	@RequestMapping(value = "/index",method=RequestMethod.GET)
-	public String index(Model model){
-		
-		//view의 이름을 리턴.
-		return "index2";
-	}
 	@RequestMapping(value = "/login",method=RequestMethod.GET)
 	public String loginGet(Model model){
 			return "jsp/Login";
@@ -80,19 +65,5 @@ public class MemberController {
 		
 		//view의 이름을 리턴.
 		return "jsp/Main";
-	}
-	
-	@RequestMapping(value = "/bbs",method=RequestMethod.GET)
-	public String table(Model model){
-		
-		//view의 이름을 리턴.
-		return "jsp/Table";
-	}
-	
-	@RequestMapping(value = "/faq",method=RequestMethod.GET)
-	public String faq(Model model){
-		
-		//view의 이름을 리턴.
-		return "jsp/FAQ";
 	}
 }
