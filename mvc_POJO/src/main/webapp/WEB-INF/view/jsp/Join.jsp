@@ -34,12 +34,14 @@
 			<p>
 			
 	<%-- 		<sform:label path="memPhone">전화번호:</sform:label>
+			<sform:label path="memPhone">전화번호:</sform:label>
 			<sform:select path="memPhone">
 				<sform:option value="SKT" label="SKT"/>
 				<sform:option value="KT" label="KT"/>
 				<sform:option value="U+" label="U+"/>
 			</sform:select> --%> 
 			<sform:input type="text" path="memPhone" placeholder="-빼고 숫자만 입력"/>
+
 			<p>
 			
 			<sform:label path="memEmail">이메일:</sform:label> 
@@ -50,6 +52,7 @@
 			<input type="file" name="memImg">
 			<p>
 			<sform:label path="memIntro">자기소개:</sform:label>
+
 			<textarea cols="45" rows="10" name="memIntro"></textarea>
 			<p>
 		<sform:button>가입</sform:button>
