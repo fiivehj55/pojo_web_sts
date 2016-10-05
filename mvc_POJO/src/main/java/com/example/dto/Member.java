@@ -23,6 +23,7 @@ public class Member implements Serializable {
 	private String memPassword;
 	
 	/** MEM_NA */
+	//통신사
 	private String memNa;
 
 	/** MEM_PHONE. */

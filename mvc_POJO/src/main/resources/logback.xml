@@ -28,7 +28,7 @@
 	</appender>
 
 	<!-- 특정 로거 설정 --> 
-	<logger name="org.springframework" level="TRACE"> 
+	<logger name="org.springframework" level="trace"> 
 	    <appender-ref ref="dailyout" /> 
 	    <appender-ref ref="STDOUT" /> 
 	</logger> 
