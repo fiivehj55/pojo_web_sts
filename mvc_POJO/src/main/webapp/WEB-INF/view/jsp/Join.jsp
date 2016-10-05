@@ -3,7 +3,6 @@
 <html>
 <head>
 <title>Linear by TEMPLATED</title>
-
 </head>
 <body class="homepage">
 <jsp:include page="./Header.jsp"></jsp:include>

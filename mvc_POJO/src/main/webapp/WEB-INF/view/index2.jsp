@@ -38,9 +38,11 @@ input, input[placeholder] {
 						<ul class="sub">
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
+							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li>
 					<li><a href="left-sidebar.html">메시지</a>
 						<ul class="sub">
+							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li>
@@ -48,19 +50,23 @@ input, input[placeholder] {
 						<ul class="sub">
 							<li class="active"><a href="faq">FAQ</a></li>
 							<li class="active"><a href="#">신고 게시판</a></li>
+							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li>
 					<li><a href="login">로그인</a>
 						<ul class="sub">
 							<li class="active"><a href="join">회원가입</a></li>
 							<li class="active"><a href="findId">ID/PASS 찾기</a></li>
+							<li class="active"><a href="mypage">마이페이지</a></li>
 						</ul></li>
 					<li><a href="search">검색된 페이지</a>
 						<ul class="sub">
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
+							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li>
 					<li><a href="bbs">게시판</a>
 						<ul class="sub">
+							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li>
@@ -83,9 +89,8 @@ input, input[placeholder] {
 	<div id="featured">
 		<div class="container">
 			<header>
-				<input id="text_box" type="text" size="100"
-					placeholder="두정동 또는 건물이름을 입력하세요"> <input type="button"
-					value="확인">
+				<input id="text_box" type="text" size="100"	placeholder="두정동 또는 건물이름을 입력하세요"> 
+				<input type="button" value="확인">
 			</header>
 			<p>
 				지금 <a href="http://templated.co"> 인기있는 </a>숙소를 만나보세요!
@@ -99,19 +104,20 @@ input, input[placeholder] {
 
 			<div class="row">
 				<section class="6u">
-					<a href="#" class="image full"><img src="css/images/image1.jpg"
-						width=500 height=500 alt=""></a>
+					<a href="#" class="image full">
+						<img src="css/images/image1.jpg" width=500 height=500 alt="">
+					</a>
 				</section>
 				<section class="6u">
-					<a href="#" class="image full"><img src="css/images/image2.jpg"
-						width=500 height=500 alt=""></a>
+					<a href="#" class="image full">
+					<img src="css/images/image2.jpg"	width=500 height=500 alt=""></a>
 				</section>
 			</div>
 
 			<div class="row">
 				<section class="6u">
-					<a href="#" class="image full"><img src="css/images/image3.jpg"
-						width=500 height=500 alt=""></a>
+					<a href="#" class="image full">
+					<img src="css/images/image3.jpg" width=500 height=500 alt=""></a>
 					<header>
 						<!-- <h2>Mauris vulputate dolor</h2> -->
 					</header>
@@ -142,7 +148,6 @@ input, input[placeholder] {
 	</div>
 
 	<jsp:include page="jsp/Footer.jsp"></jsp:include>
-
 </body>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 <script>
