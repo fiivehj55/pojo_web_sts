@@ -10,13 +10,14 @@ drop table REPLY;
    (	"MEM_ID" VARCHAR2(20 BYTE) NOT NULL ENABLE, 
 	"MEM_NAME" VARCHAR2(20 BYTE), 
 	"MEM_PASSWORD" VARCHAR2(30 BYTE), 
+  	"MEM_NA" VARCHAR2(20 BYTE), 
 	"MEM_PHONE" VARCHAR2(40 BYTE), 
 	"MEM_EMAIL" VARCHAR2(40 BYTE), 
 	"MEM_GENDER" VARCHAR2(10 BYTE), 
 	"MEM_IMG" VARCHAR2(200 BYTE), 
 	"MEM_INTRO" VARCHAR2(400 BYTE), 
 	"DETAIL_ID" NUMBER(20,0), 
-	"DETAIL_GRADE" VARCHAR2(30 BYTE), 
+	"DETAIL_GRADE" VARCHAR2(30 BYTE) NOT NULL ENABLE, 
 	 CONSTRAINT "MEMBER_PK" PRIMARY KEY ("MEM_ID")
   USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
@@ -142,9 +143,9 @@ drop table REPLY;
   TABLESPACE "USERS" ;
 
 
-insert into MEMBER values ('hong', '홍길동', '1234', '01012345678', 'abc@naver.com', 'male', null, 'hello', 2, '회원');
-insert into MEMBER values ('jang', '장길산', '5678', '01012345678', 'abc@naver.com', 'male', null, 'hello', 2, '회원');
-insert into MEMBER values ('admin', '관리자', 'admin', '01012345678', 'abc@naver.com', 'male', null, 'hello', 1, '최고관지자');
+insert into MEMBER values ('hong', '홍길동', '1234', 'SKT', '01012345678', 'abc@naver.com', 'male', null, 'hello', 2, '회원');
+insert into MEMBER values ('jang', '장길산', '5678', 'KT', '01012345678', 'abc@naver.com', 'male', null, 'hello', 2, '회원');
+insert into MEMBER values ('admin', '관리자', 'admin', 'U+', '01012345678', 'abc@naver.com', 'male', null, 'hello', 1, '최고관리자');
 insert into MEMBER_DETAIL values (1, '최고관리자');
 insert into MEMBER_DETAIL values (2, '회원');
 insert into HOUSE values (1, '공주빌라', '천안시 서북구 두정동', 350000, 8.5, 'hello', 'hong', 2);

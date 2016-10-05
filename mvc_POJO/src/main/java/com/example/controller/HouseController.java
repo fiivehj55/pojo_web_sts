@@ -18,69 +18,10 @@ public class HouseController {
 	@Autowired
 	HouseService mservice;
 	
-	/*@RequestMapping(value = "/index",method=RequestMethod.GET)
-	public String index(Model model){
-		
-		//view의 이름을 리턴.
-		return "index2";
-	}
-	@RequestMapping(value = "/login",method=RequestMethod.GET)
-	public String loginGet(Model model){
-			return "jsp/Login";
-	}
-	@RequestMapping(value = "/login",method=RequestMethod.POST)
-	public String login(Model model,
-			@RequestParam String id,
-			@RequestParam String password){
-		Member member =  mservice.login(id, password);
-		System.out.println("test id:"+id+" pass:"+password);
-		System.out.println("member :"+member);
-		
-		if(member == null)
-			return "jsp/Login";
-		else
-			return "index2";
-	}
-	
-	@RequestMapping(value = "/join",method=RequestMethod.GET)
-	public String join(Model model, @RequestParam Member member){
-		
-		//view의 이름을 리턴.
-		return "jsp/Join";
-	}
-	
-	@RequestMapping(value = "/mypage",method=RequestMethod.GET)
-	public String mypage(Model model){
-		
-		//view의 이름을 리턴.
-		return "jsp/MyPage";
-	}
-	
-	@RequestMapping(value = "/findId",method=RequestMethod.GET)
-	public String findId(Model model){
-		
-		//view의 이름을 리턴.
-		return "jsp/FindId";
-	}*/
-	
 	@RequestMapping(value = "/search",method=RequestMethod.GET)
 	public String search(Model model){
 		
 		//view의 이름을 리턴.
 		return "jsp/Main";
 	}
-	
-	/*@RequestMapping(value = "/bbs",method=RequestMethod.GET)
-	public String table(Model model){
-		
-		//view의 이름을 리턴.
-		return "jsp/Table";
-	}
-	
-	@RequestMapping(value = "/faq",method=RequestMethod.GET)
-	public String faq(Model model){
-		
-		//view의 이름을 리턴.
-		return "jsp/FAQ";
-	}*/
 }
