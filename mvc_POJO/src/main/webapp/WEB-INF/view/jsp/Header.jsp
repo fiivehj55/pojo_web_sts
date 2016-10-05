@@ -34,9 +34,11 @@
 						<ul class="sub">
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
+							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li>
 					<li><a href="<%=request.getContextPath()%>/left-sidebar.html">메시지</a>
 						<ul class="sub">
+							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li>
@@ -44,19 +46,23 @@
 						<ul class="sub">
 							<li class="active"><a href="faq">FAQ</a></li>
 							<li class="active"><a href="#">신고 게시판</a></li>
+							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li>
 					<li><a href="login">로그인</a>
 						<ul class="sub">
 							<li class="active"><a href="join">회원가입</a></li>
 							<li class="active"><a href="findId">ID/PASS 찾기</a></li>
+							<li class="active"><a href="mypage">마이페이지</a></li>
 						</ul></li>
 					<li><a href="search">검색된 페이지</a>
 						<ul class="sub">
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
+							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li>
 					<li><a href="bbs">게시판</a>
 						<ul class="sub">
+							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li>
