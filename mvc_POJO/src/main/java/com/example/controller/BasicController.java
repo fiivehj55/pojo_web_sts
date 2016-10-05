@@ -37,6 +37,13 @@ public class BasicController {
 		return "jsp/Join";
 	}
 	
+	@RequestMapping(value = "/mypage",method=RequestMethod.GET)
+	public String mypage(Model model){
+		
+		//view의 이름을 리턴.
+		return "jsp/MyPage";
+	}
+	
 	@RequestMapping(value = "/findId",method=RequestMethod.GET)
 	public String findId(Model model){
 		
