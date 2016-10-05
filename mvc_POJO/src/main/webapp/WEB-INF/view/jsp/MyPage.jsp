@@ -22,7 +22,7 @@ label {
 
 </head>
 <body class="auto_center">
-
+<jsp:include page="./Header.jsp"></jsp:include>
 
 	<h1>마이페이지</h1>
 	<h2>저희 사랑방 손님을 이용해 주셔서 감사합니다.</h2>
