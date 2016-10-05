@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.dao.MemberDao;
 import com.example.dao.MemberDetailDao;
@@ -25,12 +26,16 @@ public class MemberServiceImp implements MemberService{
 
 	@Autowired
 	SqlSessionTemplate template;
+	
+	@Transactional
 	@Override
 	public List<Member> allMember() {
 		List<Member> list = null;
 		list = dao.selectAllMember(template);
 		return list;
 	}
+	
+	@Transactional
 	@Override
 	public Member login(String id, String password) {
 		Member user = null;
@@ -40,12 +45,16 @@ public class MemberServiceImp implements MemberService{
 		else
 			return null;
 	}
+	
+	@Transactional
 	@Override
 	public int delete(String id, String password) {
 		int result = 0;
 		result = dao.deleteMember(template, id, password);
 		return result;
 	}
+	
+	@Transactional
 	@Override
 	public int join(Member member) {	
 		int result = 0;
@@ -53,12 +62,16 @@ public class MemberServiceImp implements MemberService{
 		logger.trace("객체 로그인: {}", member);
 		return result;
 	}
+	
+	@Transactional
 	@Override
 	public int update(Member member) {
 		int result = 0;
 		result = dao.updateMember(template, member);
 		return result;
 	}
+	
+	@Transactional
 	@Override
 	public String find(String name,String email) {
 		String member = null;

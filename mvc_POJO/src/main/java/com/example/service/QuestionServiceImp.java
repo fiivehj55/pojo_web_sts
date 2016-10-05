@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.dao.QuestionDao;
 import com.example.dto.Question;
@@ -21,6 +22,8 @@ public class QuestionServiceImp implements QuestionService {
 	QuestionDao dao;
 	@Autowired
 	SqlSessionTemplate template;
+	
+	@Transactional
 	@Override
 	public List<Question> selectById(int questNo) {
 		List<Question> question = null;
@@ -29,6 +32,7 @@ public class QuestionServiceImp implements QuestionService {
 		return question;
 	}
 
+	@Transactional
 	@Override
 	public int add(Question question) {
 		int result = 0;
@@ -37,6 +41,7 @@ public class QuestionServiceImp implements QuestionService {
 		return result;
 	}
 
+	@Transactional
 	@Override
 	public int delete(int questNo) {
 		int result = 0;

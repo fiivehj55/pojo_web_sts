@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
-<%@ taglib prefix="sform" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,39 +10,39 @@
 	<div id="main">
 		<div id="content" class="auto_center">
 		<h1>회원가입</h1>
-		<sform:form method="post" action="join" modelAttribute="new_user" enctype="multipart/form-data">
-			<sform:label path="memId">아이디:</sform:label> 
-			<sform:input type="text" path="memId" placeholder="영문+숫자 조합 8 이상"/>
+		<form method="post" action="join"  enctype="multipart/form-data">
+			<label for="memId">아이디:</label> 
+			<input type="text" name="memId" placeholder="영문+숫자 조합 8 이상"/>
 			<input type="button" value="중복확인">
 			<p><br/>
 			
-			<sform:label path="memPassword">비밀번호:</sform:label> 
-			<sform:input type="password" path="memPassword"  placeholder="영문+숫자 조합 8 이상"/>
+			<label for="memPassword">비밀번호:</label> 
+			<input type="password" name="memPassword"  placeholder="영문+숫자 조합 8 이상"/>
 			<p>		
 			<label for="passok">비밀번호 확인:</label> 
 			<input type="password" name="passok" placeholder="영문+숫자 조합 8 이상"/>
 			<p>
 			
-			<sform:label path="memName">이름:</sform:label> 
-			<sform:input type="text" path="memName" />
+			<label for="memName">이름:</label> 
+			<input type="text" name="memName" />
 			<p>
 			
-			<sform:label path="memGender">성별:</sform:label> 
-			<sform:radiobutton path="memGender" value="male" label="남"/> 
-			<sform:radiobutton path="memGender" value="female" label="여"/>
+			<label for="memGender">성별:</label> 
+			<input type="radio" name="memGender" value="male"/> 남
+			<input type="radio" name="memGender" value="female"/>여
 			<p>
 			
-			<sform:label path="memNa">전화번호:</sform:label>
-			<sform:select path="memNa">
-				<sform:option value="SKT" label="SKT"/>
-				<sform:option value="KT" label="KT"/>
-				<sform:option value="U+" label="U+"/>
-			</sform:select> 
-			<sform:input type="text" path="memPhone" placeholder="-빼고 숫자만 입력"/>
+			<label for="memNa">전화번호:</label>
+			<select name="memNa">
+				<option value="SKT">SKT</option>
+				<option value="KT">KT</option>
+				<option value="U+">U+</option>
+			</select> 
+			<input type="text" name="memPhone" placeholder="-빼고 숫자만 입력"/>
 			<p>
 
-			<sform:label path="memEmail">이메일:</sform:label> 
-			<sform:input type="email" path="memEmail" placeholder="pojo@google.com"/>
+			<label for="memEmail">이메일:</label> 
+			<input type="email" name="memEmail" placeholder="pojo@google.com"/>
 			<p>
 		
 			<label for="memImg">프로필 사진:</label> 
@@ -53,8 +52,8 @@
 
 			<textarea cols="45" rows="10" name="memIntro"></textarea>
 			<p>
-		<sform:button>가입</sform:button>
-		</sform:form>
+		<input type="submit" value="가입"> 
+		</form>
 		</div>
 	</div>
 <jsp:include page="./Footer.jsp"></jsp:include>

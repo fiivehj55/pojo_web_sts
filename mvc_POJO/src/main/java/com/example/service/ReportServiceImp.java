@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.dao.ReportDao;
 import com.example.dto.Report;
@@ -21,6 +22,7 @@ public class ReportServiceImp implements ReportService {
 	@Autowired
 	SqlSessionTemplate template;
 
+	@Transactional
 	@Override
 	public List<Report> selectAllReport() {
 		List<Report> report = null;
@@ -29,18 +31,16 @@ public class ReportServiceImp implements ReportService {
 		return report;
 	}
 
+	@Transactional
 	@Override
 	public Report selectByReportNo(int reportNo) {
 
 		Report report = dao.selectByReport(template, reportNo);
 
 		return report;
-		/*
-		 * if(report != null){ return report; }else{ throw new
-		 * NumberFormatException(); } }
-		 */
 	}
 
+	@Transactional
 	@Override
 	public int insertReport(Report report) {
 		int result = 0;
@@ -49,6 +49,7 @@ public class ReportServiceImp implements ReportService {
 		return result;
 	}
 
+	@Transactional
 	@Override
 	public int updateReport(Report report) {
 		int result = 0;
@@ -57,6 +58,7 @@ public class ReportServiceImp implements ReportService {
 		return result;
 	}
 
+	@Transactional
 	@Override
 	public int deleteReport(int reportNo) {
 		int result = 0;

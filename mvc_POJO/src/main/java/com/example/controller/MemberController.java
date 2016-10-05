@@ -75,8 +75,6 @@ public class MemberController {
 	@RequestMapping(value = "/join",method=RequestMethod.GET)
 	public String joinGet(Model model){ 
 		//view의 이름을 리턴.
-		Member new_user = new Member();
-		model.addAttribute("new_user", new_user);
 		return "jsp/Join";
 	}
 	private static final String uploadDir = "c:Temp/upload/";
@@ -99,7 +97,7 @@ public class MemberController {
 		//String imgName = memImg.getOriginalFilename();
 		Member member = new Member(memId, memName, memPassword, 
 				memNa, memPhone, memEmail, memGender,
-				null, memIntro, 2, "회원");
+				"/index.jsp/img", memIntro, 2, "회원");
 		int result = mservice.join(member);
 		if(result!=1)
 			return "jsp/Login";
