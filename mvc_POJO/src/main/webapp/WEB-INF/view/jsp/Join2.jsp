@@ -106,16 +106,16 @@ ul.menu:after {
 			<nav id="nav">
 				<div id="container">
 					<ul class="menu">
-						<li class="active"><a href="/index2.jsp">호스팅하기</a></li>
+						<li class="active"><a href="index">호스팅하기</a></li>
 						<li><a href="/left-sidebar.html">메시지</a></li>
 						<li><a href="/right-sidebar.html">고객센터</a>
 							<ul class="sub">
-								<li><a href="#">FAQ</a></li>
+								<li><a href="faq">FAQ</a></li>
 								<li><a href="#">신고 게시판</a></li>
 							</ul></li>
-						<li><a href="/jsp/Login.jsp">로그인</a></li>
-						<li><a href="/jsp/Main.jsp">검색된 페이지</a></li>
-						<li><a href="/jsp/Table.jsp">게시판</a></li>
+						<li><a href="login">로그인</a></li>
+						<li><a href="search">검색된 페이지</a></li>
+						<li><a href="bbs">게시판</a></li>
 					</ul>
 				</div>
 			</nav>

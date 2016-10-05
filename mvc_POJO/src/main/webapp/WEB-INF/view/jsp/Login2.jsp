@@ -24,7 +24,7 @@
 </style>
 </head>
 <body>
-<jsp:include page="<%=request.getContextPath()%>/jsp/Header.jsp"></jsp:include>
+<jsp:include page="./Header.jsp"></jsp:include>
 <div class=auto_center>
 	호스팅하기
 	메세지
