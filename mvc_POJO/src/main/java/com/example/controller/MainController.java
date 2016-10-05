@@ -32,14 +32,14 @@ public class MainController {
 	
 	@RequestMapping(value = "/index",method=RequestMethod.GET)
 	public String index(Model model){
-		
-		//view의 이름을 리턴.
 		return "index2";
 	}
+	
 	@RequestMapping(value = "/login",method=RequestMethod.GET)
 	public String loginGet(Model model){
 			return "jsp/Login";
 	}
+	
 	@RequestMapping(value = "/login",method=RequestMethod.POST)
 	public String login(Model model,
 			@RequestParam String id,
