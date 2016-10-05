@@ -52,7 +52,7 @@ input, input[placeholder] {
 		<%
 			if (user == null) {
 		%>
-		<sform:form action="login" method="post">
+		<sform:form action="loginSuccess" method="post">
 			<p>
 				<label>ID: </label> <input type="text" id="id" name="id">
 			</p>

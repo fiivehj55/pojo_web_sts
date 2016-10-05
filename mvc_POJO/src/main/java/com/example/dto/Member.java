@@ -21,6 +21,9 @@ public class Member implements Serializable {
 
 	/** MEM_PASSWORD. */
 	private String memPassword;
+	
+	/** MEM_NA */
+	private String memNa;
 
 	/** MEM_PHONE. */
 	private String memPhone;
@@ -64,12 +67,13 @@ public class Member implements Serializable {
 		this.memIntro = memIntro;
 	}
 	
-	public Member(String memId, String memName, String memPassword, String memPhone, String memEmail, String memGender,
+	public Member(String memId, String memName, String memPassword, String memNa, String memPhone, String memEmail, String memGender,
 			String memImg, String memIntro, Integer detailId, String detailGrade) {
 		super();
 		this.memId = memId;
 		this.memName = memName;
 		this.memPassword = memPassword;
+		this.memNa = memNa;
 		this.memPhone = memPhone;
 		this.memEmail = memEmail;
 		this.memGender = memGender;
@@ -134,6 +138,14 @@ public class Member implements Serializable {
 	 */
 	public String getMemPassword() {
 		return this.memPassword;
+	}
+	
+	public String getMemNa() {
+		return memNa;
+	}
+
+	public void setMemNa(String memNa) {
+		this.memNa = memNa;
 	}
 
 	/**

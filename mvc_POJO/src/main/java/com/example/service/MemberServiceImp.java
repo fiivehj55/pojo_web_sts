@@ -3,20 +3,21 @@ package com.example.service;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.example.dao.MemberDao;
-import com.example.dao.MemberDaoImpl;
 import com.example.dao.MemberDetailDao;
-import com.example.dao.MemberDetailDaoImpl;
 import com.example.dto.Member;
-
-import ch.qos.logback.core.db.dialect.DBUtil;
 
 
 @Component
 public class MemberServiceImp implements MemberService{
+	
+	private static Logger logger = LoggerFactory.getLogger(MemberServiceImp.class);
+	
 	@Autowired
 	MemberDao dao;
 	@Autowired
@@ -43,28 +44,25 @@ public class MemberServiceImp implements MemberService{
 	public int delete(String id, String password) {
 		int result = 0;
 		result = dao.deleteMember(template, id, password);
-		
 		return result;
 	}
 	@Override
 	public int join(Member member) {	
 		int result = 0;
 		result = dao.insertMember(template, member);
-		
+		logger.trace("객체 로그인: {}", member);
 		return result;
 	}
 	@Override
 	public int update(Member member) {
 		int result = 0;
 		result = dao.updateMember(template, member);
-		
 		return result;
 	}
 	@Override
 	public String find(String name,String email) {
 		String member = null;
 		member =  dao.selectId(template, name, email);
-		
 		return member;
 	}
 }

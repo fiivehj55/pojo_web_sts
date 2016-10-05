@@ -15,9 +15,9 @@
 	rel='stylesheet' type='text/css'>
 <script
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="js/skel.min.js"></script>
-<script src="js/skel-panels.min.js"></script>
-<script src="js/init.js"></script>
+<script src="<%=request.getContextPath()%>/js/skel.min.js"></script>
+<script src="<%=request.getContextPath()%>/js/skel-panels.min.js"></script>
+<script src="<%=request.getContextPath()%>/js/init.js"></script>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/skel-noscript.css" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style-desktop.css" />
@@ -48,12 +48,28 @@
 							<li class="active"><a href="#">신고 게시판</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li>
-					<li><a href="login">로그인</a>
-						<ul class="sub">
-							<li class="active"><a href="join">회원가입</a></li>
-							<li class="active"><a href="findId">ID/PASS 찾기</a></li>
-							<li class="active"><a href="mypage">마이페이지</a></li>
-						</ul></li>
+					
+					<c:choose>	
+					<c:when test="${ empty user }">
+						<li><a href="login">로그인</a>
+							<ul class="sub">
+								<li class="active"><a href="join">회원가입</a></li>
+								<li class="active"><a href=findId>ID/PASS 찾기</a></li>
+								<li class="active"><a href="#">&nbsp</a></li>
+							</ul>
+						</li>
+					</c:when>
+					<c:otherwise>
+						<li><a href="mypage">마이페이지</a>
+							<ul class="sub">
+								<li class="active"><a href="logout">로그아웃</a></li>
+								<li class="active"><a href="#">&nbsp</a></li>
+								<li class="active"><a href="#">&nbsp</a></li>
+							</ul>
+						</li>
+					</c:otherwise>	
+					</c:choose>
+
 					<li><a href="search">검색된 페이지</a>
 						<ul class="sub">
 							<li class="active"><a href="#">&nbsp</a></li>

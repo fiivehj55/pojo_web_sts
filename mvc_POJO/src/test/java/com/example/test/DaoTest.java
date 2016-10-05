@@ -67,14 +67,14 @@ public class DaoTest {
 
    @Test
    public void testInsertMember() {
-      Member member = new Member("yang", "양희준", "1423", "01029051216", "yang@naver.com", "male", "/index.jsp/img", "안녕하세요", 2, "회원");
+      Member member = new Member("yang", "양희준", "1423", "SKT", "01029051216", "yang@naver.com", "male", "/index.jsp/img", "안녕하세요", 2, "회원");
       int result = mdao.insertMember(template, member);
       logger.trace("List: {}", member);
    }
 
    @Test
    public void testUpdateMember() {
-      Member member = new Member("yang", "양희준", "1425", "01029051217", "yang1@naver.com", "male", "/index.jsp/img", "안녕하세요!!", 2, "회원");
+      Member member = new Member("yang", "양희준", "1425", "U+", "01029051217", "yang1@naver.com", "male", "/index.jsp/img", "안녕하세요!!", 2, "회원");
       int result = mdao.insertMember(template, member);
       logger.trace("List: {}", member);
    }
