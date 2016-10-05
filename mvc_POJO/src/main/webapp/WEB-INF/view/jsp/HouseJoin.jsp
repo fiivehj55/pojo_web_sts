@@ -27,7 +27,7 @@
 
 		<div id="content" class="auto_center">
 
-		<h1>회원가입</h1>
+		<h1>하우스 등록</h1>
 		
 	<form>
 		<p>
