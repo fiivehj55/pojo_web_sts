@@ -40,10 +40,8 @@
 				<sform:option value="KT" label="KT"/>
 				<sform:option value="U+" label="U+"/>
 			</sform:select> --%> 
-			<sform:input type="text" path="memPhone" placeholder="-빼고 숫자만 입력"/>
-
-			<p>
-			
+			전화번호: <sform:input type="text" path="memPhone" placeholder="-빼고 숫자만 입력"/></p>
+			<p>		
 			<sform:label path="memEmail">이메일:</sform:label> 
 			<sform:input type="email" path="memEmail" placeholder="pojo@google.com"/>
 			<p>

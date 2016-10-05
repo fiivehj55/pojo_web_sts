@@ -36,7 +36,7 @@ label {
 </style>
 
 </head>
-<body class="auto_center">
+<body class="">
 <jsp:include page="./Header.jsp"></jsp:include>
 	<form action="<%=request.getContextPath()%>/FindId" method="post">
 		<h1>아이디 찾기</h1>
