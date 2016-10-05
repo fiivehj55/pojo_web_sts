@@ -37,7 +37,7 @@ input, input[placeholder] {
 </head>
 
 <body class="auto_center">
-	<jsp:include page="<%=request.getContextPath()%>/jsp/Header.jsp"></jsp:include>
+	<jsp:include page="<%=request.getContextPath()%>/jsp/Header.jsp" flush="false"></jsp:include>
 	<div class="auto_center">
 
 		<%
