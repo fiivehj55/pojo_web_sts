@@ -51,8 +51,11 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value = "/join",method=RequestMethod.GET)
-	public String join(Model model){
+	public String joinGet(Model model){ 
 		//view의 이름을 리턴.
+		
+		Member new_user = new Member();
+		model.addAttribute("new_user", new_user);
 		return "jsp/Join";
 	}
 	

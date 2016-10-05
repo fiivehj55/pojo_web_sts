@@ -17,11 +17,10 @@ public class MainController {
 	
 	@RequestMapping(value = "/index",method=RequestMethod.GET)
 	public String index(Model model){
+
 		logger.trace("message");
-		//view의 이름을 리턴.
 		return "index2";
 	}
-	
 	
 	@RequestMapping(value = "/bbs",method=RequestMethod.GET)
 	public String table(Model model){
