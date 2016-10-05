@@ -914,17 +914,21 @@
 	{
 		position: relative;
 		text-align: center;
+		background: url(../css/images/image6.jpg) no-repeat bottom center;
+		
 	}
 	
 	#footer header h2
 	{
-		color: #FFF !important;
+		/* color: #FFF !important; */
+		background: url(../css/images/image6.jpg) no-repeat bottom center;
 	}
 	
-	#footer header .byline
+/* 	#footer header .byline
 	{
 		color: rgba(255,255,255,.2);
-	}
+		background: url(../css/images/image5.JPG) no-repeat bottom center;
+	} */
 
 /*********************************************************************************/
 /* Copyright                                                                     */
@@ -932,6 +936,7 @@
 	
 	#copyright
 	{
+	background: url(../css/images/image7.jpg) no-repeat bottom center;
 		position: relative;
 		text-align: center;
 		color: #774535;
@@ -939,6 +944,7 @@
 	
 	#copyright .container
 	{
+		background: url(../css/images/image7.jpg) no-repeat bottom center;
 		padding: 3em 0em;
 		border-top: 1px solid;
 		border-color: rgba(255,255,255,.05);
@@ -947,6 +953,7 @@
 	
 	#copyright a
 	{
+	
 		text-decoration: none;
 		color:  rgba(255,255,255,.2);
 	}

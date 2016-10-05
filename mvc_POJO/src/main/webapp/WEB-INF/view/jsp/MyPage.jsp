@@ -70,7 +70,7 @@
 
 
 
-	<jsp:include page="../jsp/Footer.jsp"></jsp:include>
+	<jsp:include page="/jsp/Footer.jsp"></jsp:include>
 
 </body>
 <script></script>

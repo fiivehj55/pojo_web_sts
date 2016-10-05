@@ -15,7 +15,7 @@
 <h3>6.계정과 프로필</h3>
 <h5>-프로필 수정(탈퇴),프로필 사진 수정은 어떻게 하나요?</h5>
  
-	<jsp:include page="../jsp/Footer.jsp"></jsp:include>
+	<jsp:include page="/jsp/Footer.jsp"></jsp:include>
 </body>
 <script></script>
 </html>
