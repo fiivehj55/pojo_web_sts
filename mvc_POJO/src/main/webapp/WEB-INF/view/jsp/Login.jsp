@@ -30,14 +30,14 @@ input, input[placeholder] {
 <script src="../js/skel-panels.min.js"></script>
 <script src="../js/init.js"></script>
 
-<link rel="stylesheet" href="../css/style.css"/>
-<link rel="stylesheet" href="../css/style.css" />
-<link rel="stylesheet" href="../css/style-desktop.css" />
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css"/>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css" />
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style-desktop.css" />
 
 </head>
 
 <body class="auto_center">
-	<jsp:include page="<%=request.getContextPath()%>/jsp/Header.jsp" flush="false"></jsp:include>
+	<jsp:include page="./Header.jsp"></jsp:include>
 	<div class="auto_center">
 
 		<%
@@ -64,7 +64,7 @@ input, input[placeholder] {
 				<input type="button" value="회원가입"></a>
 			</p>
 
-			<jsp:include page="<%=request.getContextPath()%>/jsp/Footer.jsp"></jsp:include>
+			<jsp:include page="./Footer.jsp"></jsp:include>
 		</form>
 		<%
 			} else {

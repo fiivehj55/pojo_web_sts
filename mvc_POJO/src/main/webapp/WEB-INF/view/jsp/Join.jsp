@@ -93,9 +93,9 @@ ul.menu:after {
 <script src="../js/skel.min.js"></script>
 <script src="../js/skel-panels.min.js"></script>
 <script src="../js/init.js"></script>
-<link rel="stylesheet" href="../css/skel-noscript.css" />
-<link rel="stylesheet" href="../css/style.css" />
-<link rel="stylesheet" href="../css/style-desktop.css" />
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/skel-noscript.css" />
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css" />
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style-desktop.css" />
 
 </head>
 <body class="homepage">
@@ -106,16 +106,16 @@ ul.menu:after {
 			<nav id="nav">
 				<div id="container">
 					<ul class="menu">
-						<li class="active"><a href="/index2.jsp">호스팅하기</a></li>
+						<li class="active"><a href="index">호스팅하기</a></li>
 						<li><a href="/left-sidebar.html">메시지</a></li>
 						<li><a href="/right-sidebar.html">고객센터</a>
 							<ul class="sub">
-								<li><a href="#">FAQ</a></li>
+								<li><a href="faq">FAQ</a></li>
 								<li><a href="#">신고 게시판</a></li>
 							</ul></li>
-						<li><a href="/jsp/Login.jsp">로그인</a></li>
-						<li><a href="/jsp/Main.jsp">검색된 페이지</a></li>
-						<li><a href="/jsp/Table.jsp">게시판</a></li>
+						<li><a href="login">로그인</a></li>
+						<li><a href="search">검색된 페이지</a></li>
+						<li><a href="bbs">게시판</a></li>
 					</ul>
 				</div>
 			</nav>

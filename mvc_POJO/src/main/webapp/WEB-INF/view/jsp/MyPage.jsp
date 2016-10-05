@@ -69,10 +69,10 @@ label {
 			<button>탈퇴하기</button>
 		<p>
 			<input type="submit" value="수정하기"> 
-			<a href="index">
+			<a href="<%=request.getContextPath()%>/index2.jsp">
 			<input type="button" value="나가기"></a>
 	</form>
-	<jsp:include page="<%=request.getContextPath()%>/jsp/Footer.jsp"></jsp:include>
+	<jsp:include page="./Footer.jsp"></jsp:include>
 </body>
 <script></script>
 </html>

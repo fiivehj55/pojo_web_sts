@@ -23,7 +23,7 @@ label {
 
 </head>
 <body class="auto_center">
-<jsp:include page="<%=request.getContextPath()%>/jsp/Header.jsp"></jsp:include>
+<jsp:include page="./Header.jsp"></jsp:include>
 	<form action="<%=request.getContextPath()%>/FindId" method="post">
 		<h1>아이디 찾기</h1>
 		<p>
@@ -37,7 +37,7 @@ label {
 	</form>
 	<a href="<%=request.getContextPath()%>/jsp/Login.jsp"><button>뒤로가기</button></a>
 
-<jsp:include page="<%=request.getContextPath()%>/jsp/Footer.jsp"></jsp:include>
+<jsp:include page="./Footer.jsp"></jsp:include>
 </body>
 <script></script>
 </html>
