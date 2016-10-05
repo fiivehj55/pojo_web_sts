@@ -54,7 +54,6 @@ public class MemberController {
 	@RequestMapping(value = "/join",method=RequestMethod.GET)
 	public String joinGet(Model model){ 
 		//view의 이름을 리턴.
-		
 		Member new_user = new Member();
 		model.addAttribute("new_user", new_user);
 		return "jsp/Join";
@@ -82,4 +81,12 @@ public class MemberController {
 		//view의 이름을 리턴.
 		return "jsp/FindId";
 	}
+	
+	@RequestMapping(value = "/findPass",method=RequestMethod.GET)
+	public String findPass(Model model){
+		
+		//view의 이름을 리턴.
+		return "jsp/FindPass";
+	}
+
 }

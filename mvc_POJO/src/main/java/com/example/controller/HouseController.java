@@ -25,7 +25,7 @@ public class HouseController {
 		return "jsp/Main";
 	}
 	
-	@RequestMapping(value = "/insertHouse",method=RequestMethod.GET)
+	@RequestMapping(value = "/insertHouse",method=RequestMethod.POST)
 	public String insertHouse(Model model){
 		
 		//view의 이름을 리턴.
