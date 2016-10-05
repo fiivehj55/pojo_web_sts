@@ -23,7 +23,9 @@
 			<td>사진</td>
 		</tr>
 	</table>
-	
+	<form method="get" action="insertHouse">
+		<input type="submit" id="insertHouse" name="insertHouse" value="하우스 등록"/>
+	</form>
 	<jsp:include page="./Footer.jsp"></jsp:include>
 </body>
 <script></script>

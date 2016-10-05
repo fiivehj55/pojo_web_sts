@@ -22,6 +22,7 @@ public class MemberController {
 
 	@Autowired
 	MemberService mservice;
+	
 	@RequestMapping(value = "/login",method=RequestMethod.GET)
 	public String loginGet(Model model){
 		return "jsp/Login";
@@ -71,5 +72,4 @@ public class MemberController {
 		//view의 이름을 리턴.
 		return "jsp/FindId";
 	}
-
 }
