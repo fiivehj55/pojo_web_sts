@@ -21,19 +21,18 @@
 <link rel="stylesheet" href="css/style.css" />
 <link rel="stylesheet" href="css/style-desktop.css" />
 
-<style >
-	label{
-		width: 100px;
-		display: inline-block;
-	}
-	
-	.auto_center{
-	width:400px;
-	height:400px;
-	padding:20px;
-	margin:200px auto;
-	
-	}
+<style>
+label {
+	width: 100px;
+	display: inline-block;
+}
+
+.auto_center {
+	width: 400px;
+	height: 400px;
+	padding: 20px;
+	margin: 200px auto;
+}
 </style>
 </head>
 <jsp:include page = "./Header.jsp"></jsp:include>
@@ -46,7 +45,7 @@
 	<p><label>이메일</label>
 	<input type="email" id="email"name="email">
 	<button>OK</button>
-	
 </body>
+	<jsp:include page="./Footer.jsp"></jsp:include>
 <script></script>
 </html>
