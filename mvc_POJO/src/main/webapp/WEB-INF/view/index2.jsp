@@ -48,7 +48,7 @@ input, input[placeholder] {
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li>
-					<li><a href="right-sidebar.html">고객센터</a>
+					<li><a href="faq">고객센터</a>
 						<ul class="sub">
 							<li class="active"><a href="faq">FAQ</a></li>
 							<li class="active"><a href="#">신고 게시판</a></li>

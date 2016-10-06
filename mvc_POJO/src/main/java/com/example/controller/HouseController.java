@@ -81,6 +81,7 @@ public class HouseController {
 									houseScore, houseInfo, "hong", 2);
 		int result = hservice.insertHouse(new_house);
 		logger.trace("result: {}",result);
+
 		/*model.addAttribute("new_house", new_house);*/
 		//view의 이름을 리턴.
 		if(result != 1){
