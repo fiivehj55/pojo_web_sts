@@ -26,7 +26,9 @@
 <body class="auto_center">
 <h1>비밀번호를 입력해 주세요.</h1>
 	<p><label></label>
-	<input type="text" id = "pass" name= "pass"><button>OK</button>
+	<input type="text" id = "pass" name= "pass">
+	<!--<button>OK</button> -->
+	<a href="mypage"><input type="button" value="OK"/></a>
 
 
 </body>

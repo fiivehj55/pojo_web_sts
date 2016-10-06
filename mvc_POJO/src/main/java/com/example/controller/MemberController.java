@@ -93,9 +93,15 @@ public class MemberController {
 		else
 			return "jsp/Join";
 	}
+	
 	@RequestMapping(value = "/mypage",method=RequestMethod.GET)
 	public String mypage(Model model){
 		return "jsp/MyPage";
+	}
+	
+	@RequestMapping(value = "/inputPass",method=RequestMethod.GET)
+	public String inputPass(Model model){
+		return "jsp/InputPass";
 	}
 	
 	@RequestMapping(value = "/findId",method=RequestMethod.GET)
