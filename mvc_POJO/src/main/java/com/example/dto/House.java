@@ -36,7 +36,37 @@ public class House implements Serializable {
 
 	/** DETAIL_ID. */
 	private Integer detailId;
-
+	
+	/** HOSUE_ROOM */
+	private String houseRoom;
+	
+	/** HOUSE_BATH */
+	private String houseBath;
+	
+	/** HOUSE_HOSTING */
+	private String houseHosting;
+	
+	/** HOUSE_TV */
+	private String houseTv;
+	
+	/** HOUSE_AIRCON */
+	private String houseAircon;
+	
+	/** HOUSE_WIFI */
+	private String houseWifi;
+	
+	/** HOUSE_ELEBE */
+	private String houseElebe;
+	
+	/** HOUSE_WASHING */
+	private String houseWashing;
+	
+	/** HOUSE_IMG */
+	private String houseImg;
+	
+	/** HOUSE_DAY */
+	private String houseDay;
+	
 	/**
 	 * 생성자.
 	 */
@@ -65,6 +95,31 @@ public class House implements Serializable {
 		this.houseInfo = houseInfo;
 		this.memberId = memberId;
 		this.detailId = detailId;
+	}
+	
+	public House(Integer houseNo, String houseName, String houseAddress, Integer housePrice, Integer houseScore,
+			String houseInfo, String memberId, Integer detailId, String houseRoom, String houseBath,
+			String houseHosting, String houseTv, String houseAircon, String houseWifi, String houseElebe,
+			String houseWashing, String houseImg, String houseDay) {
+		super();
+		this.houseNo = houseNo;
+		this.houseName = houseName;
+		this.houseAddress = houseAddress;
+		this.housePrice = housePrice;
+		this.houseScore = houseScore;
+		this.houseInfo = houseInfo;
+		this.memberId = memberId;
+		this.detailId = detailId;
+		this.houseRoom = houseRoom;
+		this.houseBath = houseBath;
+		this.houseHosting = houseHosting;
+		this.houseTv = houseTv;
+		this.houseAircon = houseAircon;
+		this.houseWifi = houseWifi;
+		this.houseElebe = houseElebe;
+		this.houseWashing = houseWashing;
+		this.houseImg = houseImg;
+		this.houseDay = houseDay;
 	}
 
 	/**
@@ -218,6 +273,86 @@ public class House implements Serializable {
 	public Integer getDetailId() {
 		return this.detailId;
 	}
+	
+	public String getHouseRoom() {
+		return houseRoom;
+	}
+
+	public void setHouseRoom(String houseRoom) {
+		this.houseRoom = houseRoom;
+	}
+
+	public String getHouseBath() {
+		return houseBath;
+	}
+
+	public void setHouseBath(String houseBath) {
+		this.houseBath = houseBath;
+	}
+
+	public String getHouseHosting() {
+		return houseHosting;
+	}
+
+	public void setHouseHosting(String houseHosting) {
+		this.houseHosting = houseHosting;
+	}
+	
+	public String getHouseTv() {
+		return houseTv;
+	}
+
+	public void setHouseTv(String houseTv) {
+		this.houseTv = houseTv;
+	}
+
+	public String getHouseAircon() {
+		return houseAircon;
+	}
+
+	public void setHouseAircon(String houseAircon) {
+		this.houseAircon = houseAircon;
+	}
+
+	public String getHouseWifi() {
+		return houseWifi;
+	}
+
+	public void setHouseWifi(String houseWifi) {
+		this.houseWifi = houseWifi;
+	}
+
+	public String getHouseElebe() {
+		return houseElebe;
+	}
+
+	public void setHouseElebe(String houseElebe) {
+		this.houseElebe = houseElebe;
+	}
+
+	public String getHouseWashing() {
+		return houseWashing;
+	}
+
+	public void setHouseWashing(String houseWashing) {
+		this.houseWashing = houseWashing;
+	}
+
+	public String getHouseImg() {
+		return houseImg;
+	}
+
+	public void setHouseImg(String houseImg) {
+		this.houseImg = houseImg;
+	}
+
+	public String getHouseDay() {
+		return houseDay;
+	}
+
+	public void setHouseDay(String houseDay) {
+		this.houseDay = houseDay;
+	}
 
 	/**
 	 * {@inheritDoc}
@@ -259,7 +394,10 @@ public class House implements Serializable {
 	public String toString() {
 		return "House [houseNo=" + houseNo + ", houseName=" + houseName + ", houseAddress=" + houseAddress
 				+ ", housePrice=" + housePrice + ", houseScore=" + houseScore + ", houseInfo=" + houseInfo
-				+ ", memberId=" + memberId + ", detailId=" + detailId + "]";
+				+ ", memberId=" + memberId + ", detailId=" + detailId + ", houseRoom=" + houseRoom + ", houseBath="
+				+ houseBath + ", houseHosting=" + houseHosting + ", houseTv=" + houseTv + ", houseAircon=" + houseAircon
+				+ ", houseWifi=" + houseWifi + ", houseElebe=" + houseElebe + ", houseWashing=" + houseWashing
+				+ ", houseImg=" + houseImg + ", houseDay=" + houseDay + "]";
 	}
 
 }

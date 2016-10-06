@@ -117,7 +117,7 @@ public class DaoTest {
 
    @Test
    public void testInsertHouse() {
-      House house = new House(2, "대전빌라", "대전시 유성구 장대동", 400000, 7, "hello", "hong", 2);
+      House house = new House(2, "대전빌라", "천안시 서북구 두정동", 350000, 8, "hello", "hong", 2, "2개", "1개", "3명", "tv", "aircon", "wifi", "elebe", "washing", "/index.jsp/img.jpg", "일");
       int result = hdao.insertHouse(template, house);
       logger.trace("List: {}", house);
 

@@ -70,8 +70,18 @@ public class HouseController {
 		house.setHouseInfo(infor);
 		house.setMemberId("hong");
 		house.setDetailId(2);
+		house.setHouseRoom(room);
+		house.setHouseBath(bath);
+		house.setHouseHosting(hosting);
+		house.setHouseTv(tv);
+		house.setHouseAircon(aircon);
+		house.setHouseWifi(wifi);
+		house.setHouseElebe(elebe);
+		house.setHouseWashing(washing);
+		house.setHouseImg(photo);
+		house.setHouseDay(day);
 		session.setAttribute("house", house);
-		
+		result = hservice.insertHouse(house);
 		if(result != 1){
 			return "jsp/HouseJoin";
 		}else{
