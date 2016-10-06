@@ -143,7 +143,7 @@ public class HouseController {
 		return "jsp/HouseJoin2";
 	}
 	
-	@RequestMapping(value = "/searchByHouseNo",method=RequestMethod.GET)
+	/*@RequestMapping(value = "/searchByHouseNo",method=RequestMethod.GET)
 	public String selectByHouseNo(Model model, @RequestParam Integer houseNo, HttpSession session){
 		House house = hservice.selectByNoHouse(houseNo);
 		if(house != null){
@@ -152,7 +152,7 @@ public class HouseController {
 			return "jsp/searchHouse";
 		}
 		return "jps/index2";
-	}
+	}*/
 	
 	@RequestMapping(value = "/selectByHouse",method=RequestMethod.GET)
 	public String updateHouse(Model model,
