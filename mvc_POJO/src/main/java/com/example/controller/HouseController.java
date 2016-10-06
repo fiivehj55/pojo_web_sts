@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -51,11 +50,31 @@ public class HouseController {
 	}
 	
 	@RequestMapping(value = "/insertHouse",method=RequestMethod.POST)
-	public String insertHousePost(Model model, 
-			@RequestAttribute("new_house") House house, HttpSession session){
+	public String insertHousePost(Model model,
+			@RequestParam String room,
+			@RequestParam String bath,
+			@RequestParam String hosting,
+			@RequestParam String market,
+			@RequestParam String rname,
+			@RequestParam String infor,
+			@RequestParam String photo,
+			@RequestParam String addr,
+			@RequestParam String day,
+			@RequestParam Integer price,
+			HttpSession session){
 		//view의 이름을 리턴.
-		int result = hservice.insertHouse(house);
-		model.addAttribute("result", result);
+		int result = 0;
+		House house = new House();
+		house.setHouseNo(99);
+		house.setHouseName(rname);
+		house.setHouseAddress(addr);
+		house.setHousePrice(price);
+		house.setHouseScore(9);
+		house.setHouseInfo(infor);
+		house.setMemberId("hong");
+		house.setDetailId(2);
+		session.setAttribute("house", house);
+		
 		if(result != 1){
 			return "jsp/HouseJoin";
 		}else{

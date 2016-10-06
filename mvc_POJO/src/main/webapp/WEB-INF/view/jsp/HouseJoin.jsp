@@ -54,16 +54,16 @@
 				
 				<label for="hosting">숙박 인원 : </label>
 				<input type="radio" id="hone" name="hosting" value="1개">
-				<label for="hone">1개</label>
+				<label for="hone">1명</label>
 				
 				<input type="radio" id="htwo" name="hosting" value="2개">
-				<label for="htwo">2개</label>
+				<label for="htwo">2명</label>
 				
 				<input type="radio" id="hthree" name="hosting" value="3개">
-				<label for="hthree">3개</label>
+				<label for="hthree">3명</label>
 				
 				<input type="radio" id="hfour" name="hosting" value="4개">
-				<label for="hfour">4개</label>
+				<label for="hfour">4명</label>
 				<br/>
 				
 				<label for="market">편의 시설 : </label>
@@ -112,6 +112,9 @@
 				
 				<input type="radio" id="rthree" name="day" value="3개">
 				<label for="mm">월</label>
+				
+				<input type="number" id="price" name="price"/>
+				<label for="price">가격</label>
 				<br/>
 				
 			</fieldset>
