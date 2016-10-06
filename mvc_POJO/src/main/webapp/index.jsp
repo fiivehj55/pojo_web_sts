@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,9 +40,11 @@ input, input[placeholder] {
 						<ul class="sub">
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
+							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li>
 					<li><a href="left-sidebar.html">메시지</a>
 						<ul class="sub">
+							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li>
@@ -48,19 +52,39 @@ input, input[placeholder] {
 						<ul class="sub">
 							<li class="active"><a href="faq">FAQ</a></li>
 							<li class="active"><a href="#">신고 게시판</a></li>
+							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li>
-					<li><a href="login">로그인</a>
-						<ul class="sub">
-							<li class="active"><a href="join">회원가입</a></li>
-							<li class="active"><a href="findId">ID/PASS 찾기</a></li>
-						</ul></li>
+					
+					<c:choose>	
+					<c:when test="${ empty user }">
+						<li><a href="login">로그인</a>
+							<ul class="sub">
+								<li class="active"><a href="join">회원가입</a></li>
+								<li class="active"><a href=findId>ID/PASS 찾기</a></li>
+								<li class="active"><a href="#">&nbsp</a></li>
+							</ul>
+						</li>
+					</c:when>
+					<c:otherwise>
+						<li><a href="inputPass">마이페이지</a>
+							<ul class="sub">
+								<li class="active"><a href="logout">로그아웃</a></li>
+								<li class="active"><a href="#">&nbsp</a></li>
+								<li class="active"><a href="#">&nbsp</a></li>
+							</ul>
+						</li>
+					</c:otherwise>	
+					</c:choose>
+
 					<li><a href="search">검색된 페이지</a>
 						<ul class="sub">
+							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li>
 					<li><a href="bbs">게시판</a>
 						<ul class="sub">
+							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li>

@@ -63,6 +63,20 @@ public class HouseController {
 		}
 	}
 	
+	// 예비용 InsertHouse
+	/*@RequestMapping(value = "/insertHouse",method=RequestMethod.POST)
+	public String insertHousePost(Model model, 
+			@RequestAttribute("new_house") House house, HttpSession session){
+		//view의 이름을 리턴.
+		int result = hservice.insertHouse(house);
+		model.addAttribute("result", result);
+		if(result != 1){
+			return "jsp/HouseJoin";
+		}else{
+			return "jsp/Main";
+		}
+	}*/
+	
 	@RequestMapping(value = "/insertHouse1",method=RequestMethod.GET)
 	public String insertHouse1Get(Model model) {
 		//view의 이름을 리턴.
