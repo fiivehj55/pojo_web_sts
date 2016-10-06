@@ -5,15 +5,34 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+
+<style>
+label {
+	width: 100px;
+	display: inline-block;
+}
+
+
+</style>
+
 </head>
-<body>
+<body class="">
 	<jsp:include page="./Header.jsp"></jsp:include>
 	
-	<h1>사랑방손님</h1>
-	<input id="text_box" type="text" placeholder="두정동 또는 건물이름을 검색하세요">
-
-<h3>지금 인기있는 숙소를 만나보세요!</h3>
-<table border="1">
+	<div id="main">
+		<div id="content" class="auto_center">
+		<div id="featured">
+		<div class="container">
+			<header>
+				<input id="text_box" type="text" size="100"
+					placeholder="두정동 또는 건물이름을 입력하세요"> <input type="button"
+					value="확인">
+			</header>
+			<p>
+				지금 <a href="http://templated.co"> 인기있는 </a>숙소를 만나보세요!
+		</div>
+	</div>
+			<table border=1>
 		<tr>
 			<td><img src=""/></td>
 			<td>Guest house sejong</td>
@@ -45,14 +64,20 @@
 			<td>후기</td>
 			<td>예약고객 프로필</td>
 		</tr>
-		
-	
-	
-	</table>
-	<h1>${result}</h1>
-	<a href="insertHouse"> <input type="button" value="하우스 등록"/></a>
-	<a href="insertHouse1"> <input type="button" value="하우스 등록 TEST"/></a>
+			</table>
+			<h1>${result}</h1>
+			<a href="insertHouse"> <input type="button" value="하우스 등록" /></a> <a
+				href="insertHouse1"> <input type="button" value="하우스 등록 TEST" /></a>
+
+
+
+
+
+		</div>
+	</div>
+
 	<jsp:include page="./Footer.jsp"></jsp:include>
-</body>
+</head>
+
 <script></script>
 </html>

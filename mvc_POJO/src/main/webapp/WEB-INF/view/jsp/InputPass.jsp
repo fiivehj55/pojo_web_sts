@@ -29,8 +29,6 @@
 	<input type="text" id = "pass" name= "pass">
 	<!--<button>OK</button> -->
 	<a href="mypage"><input type="button" value="OK"/></a>
-
-
 </body>
 <script></script>
 </html>
