@@ -1,10 +1,7 @@
 package com.example.controller;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -146,15 +143,27 @@ public class HouseController {
 		return "jsp/HouseJoin2";
 	}
 	
-	@RequestMapping(value = "/selectByHouse",method=RequestMethod.GET)
-	public String updateHouse(Model model, @RequestParam Integer houseNo, HttpSession session){
+	@RequestMapping(value = "/searchByHouseNo",method=RequestMethod.GET)
+	public String selectByHouseNo(Model model, @RequestParam Integer houseNo, HttpSession session){
 		House house = hservice.selectByNoHouse(houseNo);
 		if(house != null){
 			model.addAttribute("house", house);
-			return "jsp/HousePage";
+			//view의 이름을 리턴.
+			return "jsp/searchHouse";
 		}
+		return "jps/index2";
+	}
+	
+	@RequestMapping(value = "/selectByHouse",method=RequestMethod.GET)
+	public String updateHouse(Model model,
+			HttpSession session){
+		/*House house = hservice.selectByNoHouse(houseNo);
+		if(house != null){
+			model.addAttribute("house", house);			
+			return "jsp/HousePage";
+		}*/
 		//view의 이름을 리턴.
-		return "jsp/index2";
+		return "jsp/searchHouse";
 	}
 	
 	@ModelAttribute
