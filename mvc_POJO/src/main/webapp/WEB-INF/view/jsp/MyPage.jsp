@@ -38,8 +38,8 @@ label {
 		</p>
 		<p>
 			<sform:label path="memGender">성별:</sform:label> 
-			<sform:radiobutton path="memGender" value="men" label="남"/> 
-			<sform:radiobutton path="memGender" value="women" label="여"/>
+			<sform:radiobutton path="memGender" value="male" label="남"/> 
+			<sform:radiobutton path="memGender" value="female" label="여"/>
 		<p>
 			<sform:label path="memNa">전화번호:</sform:label>
 			<sform:select path="memNa">
@@ -55,7 +55,11 @@ label {
 		</p>
 		<p>
 			<label for="memImg">프로필 사진:</label> 
-			<input type="file" name="memImg">
+			<sform:hidden path="memImg"/>
+			<input type="file" name="setImg">
+			<div>
+			<img src="<%=request.getContextPath()%>/upload/${userinfo.getMemId()}/intro/${userinfo.getMemImg()}">
+			</div>
 		<p>
 			<sform:label path="memIntro">자기소개:</sform:label>
 			<sform:textarea  path="memIntro" cols="45" rows="10"></sform:textarea>

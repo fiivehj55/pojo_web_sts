@@ -117,7 +117,8 @@ public class MemberController {
 			@RequestParam String memNa,
 			@RequestParam String memPhone,
 			@RequestParam String memEmail,
-			@RequestParam MultipartFile memImg,
+			@RequestParam MultipartFile setImg,
+			@RequestParam String memImg,
 			@RequestParam String memIntro,
 			HttpSession session)throws IOException{
 		Member member = (Member) session.getAttribute("user");
@@ -125,12 +126,20 @@ public class MemberController {
 		member.setMemName(memName);
 		member.setMemPhone(memPhone);
 		member.setMemEmail(memEmail);
-	//	File intro = new File(uploadDir+"/"+memId+"/intro");
-	//	File[] introfile = intro.listFiles();
-		
-//		File file = new File(uploadDir+memId+"/intro/"+ memImg.getOriginalFilename());
-//		memImg.transferTo(file);
-		String imgName = memImg.getOriginalFilename();
+		String imgName = "";
+		if(!memImg.equals(setImg.getOriginalFilename())){
+			File intro = new File(uploadDir+"/"+memId+"/intro");
+			File[] introfile = intro.listFiles();
+			for(File fle:introfile){
+				fle.delete();
+			}
+			File file = new File(uploadDir+memId+"/intro/"+ setImg.getOriginalFilename());
+			setImg.transferTo(file);
+			 imgName = setImg.getOriginalFilename();
+				
+		}else{
+			imgName = memImg;
+		}
 		
 		member.setMemImg(imgName);
 		member.setMemIntro(memIntro);
