@@ -25,10 +25,12 @@
 </head>
 <body class="auto_center">
 <h1>비밀번호를 입력해 주세요.</h1>
-	<p><label></label>
+<form action="inputPass" method="post">
+	<p>
 	<input type="text" id = "pass" name= "pass">
-	<!--<button>OK</button> -->
-	<a href="mypage"><input type="button" value="OK"/></a>
+	<input type="submit" value="OK"/>
+	</p>
+	</form>
 </body>
 <script></script>
 </html>
