@@ -5,9 +5,26 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+
+<style>
+label {
+	width: 100px;
+	display: inline-block;
+}
+
+.auto_center {
+	width: 400px;
+	height: 400px;
+	padding: 20px;
+	margin: 200px auto;
+}
+</style>
+
 </head>
-<body>
-<jsp:include page="./Header.jsp"></jsp:include>
+<body class="">
+	<jsp:include page="./Header.jsp"></jsp:include>
+	<div id="main">
+		<div id="content" class="auto_center">
 <h1>게시판</h1>
 <table border="1">
 	<tr>
@@ -28,7 +45,15 @@
 </table>
 
 
+		</div>
+	</div>
+
 	<jsp:include page="./Footer.jsp"></jsp:include>
+
+
+</head>
+<body>
+
 </body>
 <script></script>
 </html>
