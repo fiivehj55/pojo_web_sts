@@ -5,12 +5,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+label {
+	width: 100px;
+	display: inline-block;
+}
+</style>
 <title>Insert title here</title>
 </head>
 <body class="homepage">
 <jsp:include page="./Header.jsp"></jsp:include>
 	<div id="main">
-		<div id="content" class="auto_center">
+		<div id="content" class="">
 		<h1>마이페이지</h1>
 	<h2>저희 사랑방 손님을 이용해 주셔서 감사합니다.</h2>
 	<sform:form method="post" action="" modelAttribute="userinfo">
