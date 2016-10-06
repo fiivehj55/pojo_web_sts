@@ -50,7 +50,7 @@ label {
 			<sform:radiobutton path="gender" value="women" label="여"/>
 		<p>
 			<sform:label path="memNa">전화번호:</sform:label>
-			<sform:select path="memNa" >
+			<sform:select path="memNa">
 				<sform:option value=SKT label="SKT"/>
 				<sform:option value=KT label="KT"/>
 				<sform:option value=U+ label="U+"/>
