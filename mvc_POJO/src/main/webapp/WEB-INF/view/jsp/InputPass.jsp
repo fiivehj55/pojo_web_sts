@@ -27,7 +27,7 @@
 <h1>비밀번호를 입력해 주세요.</h1>
 <form action="inputPass" method="post">
 	<p>
-	<input type="text" id = "pass" name= "pass">
+	<input type="password" id = "pass" name= "pass">
 	<input type="submit" value="OK"/>
 	</p>
 	</form>

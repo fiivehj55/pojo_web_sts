@@ -94,7 +94,6 @@ public class MemberController {
 		else
 			return "jsp/Join";
 	}
-	
 	@RequestMapping(value = "/mypage",method=RequestMethod.POST)
 	public String mypagePost(Model model,Member user){
 		
@@ -114,8 +113,10 @@ public class MemberController {
 		String id = member.getMemId();
 		
 		member = mservice.login(id, pass);
-		if(member!=null)
+		if(member!=null){
+		model.addAttribute("userinfo", member);
 			return "jsp/MyPage";
+		}
 		else
 			return "jsp/InputPass";
 	}
