@@ -125,8 +125,18 @@ public class MemberController {
 		return "jsp/DeletePass";
 	}
 	@RequestMapping(value = "/deletePass",method=RequestMethod.POST)
-	public String deletePassPost(Model model){
-		return "jsp/DeletePass";
+	public String deletePassPost(Model model,
+			@RequestParam String pass,
+			HttpSession session){
+		Member member = (Member) session.getAttribute("user");
+		String id = member.getMemId();
+		int result =  mservice.delete(id, pass);
+		if(result == 1){
+			session.removeAttribute("user");
+			return "index2";
+		}
+		else
+			return "jsp/DeletePass";
 	}
 	@RequestMapping(value = "/inputPass",method=RequestMethod.POST)
 	public String inputPassPost(Model model,
