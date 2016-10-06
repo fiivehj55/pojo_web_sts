@@ -24,7 +24,7 @@
 			<sform:label path="memPassword">비밀번호:</sform:label> 
 			<sform:input path="memPassword"  placeholder="영문+숫자 조합 8 이상"/>
 		<p>
-			<label for="passok"></label> 
+			<label for="passok">비밀번호 확인</label> 
 			<input type="password" name="password"	placeholder="영문+숫자 조합 8 이상">
 		<p>
 			<sform:label path="memName">이름:</sform:label> 
@@ -37,9 +37,9 @@
 		<p>
 			<sform:label path="memNa">전화번호:</sform:label>
 			<sform:select path="memNa">
-				<%-- <sform:option value=SKT label="SKT"/>
-				<sform:option value=KT label="KT"/>
-				<sform:option value=U+ label="U+"/> --%>
+				<sform:option value="SKT" label="SKT"/>
+				<sform:option value="KT" label="KT"/>
+				<sform:option value="U+" label="U+"/> 
 			</sform:select> 
 			<sform:input type="tel" path="memPhone" placeholder="-빼고 숫자만 입력"/>
 		</p>
@@ -55,7 +55,7 @@
 			<sform:label path="memIntro">자기소개:</sform:label>
 			<sform:textarea  path="memIntro" cols="45" rows="10"></sform:textarea>
 		<p>
-			<button>탈퇴하기</button>
+			<a href="deletePass"><input type="button" value="탈퇴하기"></a>
 		<p>
 			<input type="submit" value="수정하기"> 
 			<a href="<%=request.getContextPath()%>/index2.jsp">
