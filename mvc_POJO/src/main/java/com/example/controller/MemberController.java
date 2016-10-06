@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -93,15 +94,31 @@ public class MemberController {
 		else
 			return "jsp/Join";
 	}
-	
-	@RequestMapping(value = "/mypage",method=RequestMethod.GET)
-	public String mypage(Model model){
+	@RequestMapping(value = "/mypage",method=RequestMethod.POST)
+	public String mypagePost(Model model,Member user){
+		
 		return "jsp/MyPage";
 	}
 	
 	@RequestMapping(value = "/inputPass",method=RequestMethod.GET)
 	public String inputPass(Model model){
 		return "jsp/InputPass";
+	}
+	@RequestMapping(value = "/inputPass",method=RequestMethod.POST)
+	public String inputPassPost(Model model,
+			HttpSession session,
+			@RequestParam String pass
+			){
+		Member member = (Member) session.getAttribute("user");
+		String id = member.getMemId();
+		
+		member = mservice.login(id, pass);
+		if(member!=null){
+		model.addAttribute("userinfo", member);
+			return "jsp/MyPage";
+		}
+		else
+			return "jsp/InputPass";
 	}
 	
 	@RequestMapping(value = "/findId",method=RequestMethod.GET)

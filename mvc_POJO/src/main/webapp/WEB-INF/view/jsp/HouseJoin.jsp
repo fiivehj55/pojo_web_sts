@@ -54,32 +54,28 @@
 				
 				<label for="hosting">숙박 인원 : </label>
 				<input type="radio" id="hone" name="hosting" value="1개">
-				<label for="hone">1개</label>
+				<label for="hone">1명</label>
 				
 				<input type="radio" id="htwo" name="hosting" value="2개">
-				<label for="htwo">2개</label>
+				<label for="htwo">2명</label>
 				
 				<input type="radio" id="hthree" name="hosting" value="3개">
-				<label for="hthree">3개</label>
+				<label for="hthree">3명</label>
 				
 				<input type="radio" id="hfour" name="hosting" value="4개">
-				<label for="hfour">4개</label>
+				<label for="hfour">4명</label>
 				<br/>
 				
 				<label for="market">편의 시설 : </label>
-				<input type="checkbox" id="tv" name="market" value="tv">
+				<input type="checkbox" id="tv" name="tv" value="tv">
 				<label for="tv">TV</label>
-				<input type="checkbox" id="aircon" name="market" value="aircon">
+				<input type="checkbox" id="aircon" name="aircon" value="aircon">
 				<label for="aircon">에어컨</label> 
-				<input type="checkbox" id="wifi" name="market" value="wifi">
-				<label for="wifi">무선 인터넷</label> <br/>
-				<input type="checkbox" id="desk" name="market" value="desk">
-				<label for="desk">책상</label> 
-				<input type="checkbox" id="dishes" name="market" value="dishes">
-				<label for="dishes">식기</label>
-				<input type="checkbox" id="elebe" name="market" value="elebe">
+				<input type="checkbox" id="wifi" name="wifi" value="wifi">
+				<label for="wifi">Wi-Fi</label> <br/>
+				<input type="checkbox" id="elebe" name="elebe" value="elebe">
 				<label for="elebe">엘리베이터</label>
-				<input type="checkbox" id="washing" name="market" value="washing">
+				<input type="checkbox" id="washing" name="washing" value="washing">
 				<label for="washing">세탁기</label>
 			</fieldset>
 			<br/>
@@ -112,6 +108,9 @@
 				
 				<input type="radio" id="rthree" name="day" value="3개">
 				<label for="mm">월</label>
+				
+				<input type="number" id="price" name="price"/>
+				<label for="price">가격</label>
 				<br/>
 				
 			</fieldset>
