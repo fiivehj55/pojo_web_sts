@@ -100,17 +100,17 @@
 				<img src="/img/mage_tp.jpg"/>
 				
 				<label for="day"></label>
-				<input type="radio" id="rone" name="day" value="1개">
+				<input type="radio" id="rone" name="day" value="일">
 				<label for="dd">일</label>
 				
-				<input type="radio" id="rtwo" name="day" value="2개">
+				<input type="radio" id="rtwo" name="day" value="주">
 				<label for="ww">주</label>
 				
-				<input type="radio" id="rthree" name="day" value="3개">
-				<label for="mm">월</label>
+				<input type="radio" id="rthree" name="day" value="월">
+				<label for="mm">월</label> <br/>
 				
+				<label for="price">가격 : </label>
 				<input type="number" id="price" name="price"/>
-				<label for="price">가격</label>
 				<br/>
 				
 			</fieldset>

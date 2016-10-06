@@ -1,11 +1,8 @@
 package com.example.controller;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.forwardedUrl;
-
 import java.io.File;
 import java.io.IOException;
 
-import javax.persistence.metamodel.IdentifiableType;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -14,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -177,7 +173,7 @@ public class MemberController {
 		
 		member = mservice.login(id, pass);
 		if(member!=null){
-		model.addAttribute("userinfo", member);
+			model.addAttribute("userinfo", member);
 			return "jsp/MyPage";
 		}
 		else

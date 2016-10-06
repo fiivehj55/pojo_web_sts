@@ -66,9 +66,8 @@ label {
 		</tr>
 			</table>
 			<h1>${result}</h1>
-			<a href="insertHouse"> <input type="button" value="하우스 등록" /></a> <a
-				href="insertHouse1"> <input type="button" value="하우스 등록 TEST" /></a>
-
+			<a href="insertHouse"> <input type="button" value="하우스 등록" /></a> 
+			<a href="insertHouse1"> <input type="button" value="하우스 등록 TEST" /></a>
 		</div>
 	</div>
 

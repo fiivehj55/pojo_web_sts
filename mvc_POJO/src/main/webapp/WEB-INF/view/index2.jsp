@@ -122,7 +122,7 @@ input, input[placeholder] {
 
 			<div class="row">
 				<section class="6u">
-					<a href="#" class="image full">
+					<a href="selectByHouse?houseNo=1" class="image full">
 						<img src="css/images/image1.jpg" width=500 height=500 alt="">
 					</a>
 				</section>

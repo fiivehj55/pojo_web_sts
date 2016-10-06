@@ -1,7 +1,10 @@
 package com.example.controller;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -10,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -141,4 +145,32 @@ public class HouseController {
 		//view의 이름을 리턴.
 		return "jsp/HouseJoin2";
 	}
+	
+	@RequestMapping(value = "/selectByHouse",method=RequestMethod.GET)
+	public String updateHouse(Model model, @RequestParam Integer houseNo, HttpSession session){
+		House house = hservice.selectByNoHouse(houseNo);
+		if(house != null){
+			model.addAttribute("house", house);
+			return "jsp/HousePage";
+		}
+		//view의 이름을 리턴.
+		return "jsp/index2";
+	}
+	
+	@ModelAttribute
+	private void setListData(Model model) {
+		// RADIO_BUTTONS
+		model.addAttribute("rooms", new String[] { "1개", "2개", "3개" });
+		model.addAttribute("baths", new String[] { "1개", "2개", "3개" });
+		model.addAttribute("hosting", new String[] { "1명", "2명", "3명", "4명" });
+		
+		model.addAttribute("tv", new String[] { "TV" });
+		model.addAttribute("aircon", new String[] { "에어컨" });
+		model.addAttribute("wifi", new String[] { "WI-FI" });
+		model.addAttribute("elebe", new String[] { "엘리베이터" });
+		model.addAttribute("washing", new String[] { "세탁기" });
+		
+		model.addAttribute("day", new String[] { "일", "주", "월" });
+	}
+	
 }
