@@ -1,4 +1,4 @@
-<!-- 검색된 페이지 -->
+<!-- 게시판 페이지 -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -25,29 +25,35 @@ label {
 	<jsp:include page="./Header.jsp"></jsp:include>
 	<div id="main">
 		<div id="content" class="auto_center">
-			<h1>사랑방손님</h1>
-			<input id="text_box" type="text" placeholder="두정동 또는 건물이름을 검색하세요">
+<h1>게시판</h1>
+<table border="1">
+	<tr>
+		<th>글번호</th>
+		<th>제목</th>
+		<th>등록 날짜</th>
+		<th>작성자</th>
+	</tr>
+	
+	<tr>
+		<td>1</td>
+		<td>문의합니다</td>
+		<td>16.09.15</td>
+		<td>황민정</td>
+	</tr>
 
-			<h3>지금 인기있는 숙소를 만나보세요!</h3>
-			<table border=1>
-				<tr>
-					<td width=250>사진</td>
-					<td width=250>사진</td>
-				</tr>
-				<tr>
-					<td>사진</td>
-					<td>사진</td>
-				</tr>
-			</table>
-			<h1>${result}</h1>
-			<a href="insertHouse"> <input type="button" value="하우스 등록" /></a> <a
-				href="insertHouse1"> <input type="button" value="하우스 등록 TEST" /></a>
+
+</table>
+
 
 		</div>
 	</div>
 
 	<jsp:include page="./Footer.jsp"></jsp:include>
-</head>
 
+
+</head>
+<body>
+
+</body>
 <script></script>
 </html>
