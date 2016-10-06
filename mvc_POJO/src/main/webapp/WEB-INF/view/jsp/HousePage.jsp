@@ -43,11 +43,11 @@
 				<br/>
 				
 				<label for="market">편의 시설 : </label>
-				<sform:checkboxes path="houseTv" items="${tv}"/>
-				<sform:checkboxes path="houseAircon" items="${aircon}"/>
-				<sform:checkboxes path="houseWifi" items="${wifi}"/> <br/>
-				<sform:checkboxes path="houseElebe" items="${elebe}"/>
-				<sform:checkboxes path="houseWashing" items="${washing}"/>
+				<sform:checkbox path="houseTv"  label="TV" value="tv"/>
+				<sform:checkbox path="houseAircon"  label="에어컨" value="aircon"/>
+				<sform:checkbox path="houseWifi"  label="WiFi" value="wifi"/> <br/>
+				<sform:checkbox path="houseElebe"  label="엘리베이터" value="elebe"/>
+				<sform:checkbox path="houseWashing"  label="세탁기" value="washing"/>
 			</fieldset>
 			<br/>
 			
