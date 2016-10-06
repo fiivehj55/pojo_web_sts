@@ -6,26 +6,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-
-<style>
-label {
-	width: 100px;
-	display: inline-block;
-}
-
-.auto_center {
-	width: 400px;
-	height: 400px;
-	padding: 20px;
-	margin: 30px auto;
-}
-</style>
-
 </head>
-<body class="auto_center">
+<body class="homepage">
 <jsp:include page="./Header.jsp"></jsp:include>
-
-	<h1>마이페이지</h1>
+	<div id="main">
+		<div id="content" class="auto_center">
+		<h1>마이페이지</h1>
 	<h2>저희 사랑방 손님을 이용해 주셔서 감사합니다.</h2>
 	<sform:form method="post" action="" modelAttribute="userinfo">
 		<p>
@@ -74,8 +60,9 @@ label {
 			<input type="submit" value="수정하기"> 
 			<a href="<%=request.getContextPath()%>/index2.jsp">
 			<input type="button" value="나가기"></a>
-	</sform:form>
-	<jsp:include page="./Footer.jsp"></jsp:include>
-</body>
+		</sform:form>
+		</div>
+	</div>
+<jsp:include page="./Footer.jsp"></jsp:include>
 <script></script>
 </html>

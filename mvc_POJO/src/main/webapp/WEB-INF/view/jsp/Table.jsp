@@ -107,33 +107,33 @@
 		<tbody>
 			<tr>
 				<td>5</td>
-				<td>판다의 이상한 게시판 with CSS, DIV</td>
-				<td>판다(panda)</td>
-				<td>2012-10-19</td>
+				<td><a></a></td>
+				<td><a></a></td>
+				<td><a></a></td>
 			</tr>
 			<tr>
 				<td>4</td>
-				<td>판다의 이상한 게시판 with CSS, DIV</td>
-				<td>판다(panda)</td>
-				<td>2012-10-19</td>
+				<td><a></a></td>
+				<td><a></a></td>
+				<td><a></a></td>
 			</tr>
 			<tr>
 				<td>3</td>
-				<td>판다의 이상한 게시판 with CSS, DIV</td>
-				<td>판다(panda)</td>
-				<td>2012-10-19</td>
+				<td><a></a></td>
+				<td><a></a></td>
+				<td><a></a></td>
 			</tr>
 			<tr>
 				<td>2</td>
-				<td>판다의 이상한 게시판 with CSS, DIV</td>
-				<td>판다(panda)</td>
-				<td>2012-10-19</td>
+				<td><a></a></td>
+				<td><a></a></td>
+				<td><a></a></td>
 			</tr>
 			<tr>
 				<td>1</td>
-				<td>판다의 이상한 게시판 with CSS, DIV</td>
-				<td>판다(panda)</td>
-				<td>2012-10-19</td>
+				<td>문의글남깁니다</td>
+				<td>POJO</td>
+				<td>2016-10-06</td>
 			</tr>
 		</tbody>
 	</table>
