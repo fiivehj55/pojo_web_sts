@@ -19,7 +19,7 @@ label {
 		<div id="content" class="">
 		<h1>마이페이지</h1>
 	<h2>저희 사랑방 손님을 이용해 주셔서 감사합니다.</h2>
-	<sform:form method="post" action="" modelAttribute="userinfo">
+	<sform:form method="post" action="mypage" modelAttribute="userinfo" enctype="multipart/form-data">
 		<p>
 			<sform:label path="memId">아이디:</sform:label> 
 			<sform:input type="text"  path = "memId"  placeholder="영문+숫자 조합 8 이상"/> 
@@ -54,9 +54,8 @@ label {
 			<sform:input type="email" path="memEmail" placeholder="pojo@google.com"/>
 		</p>
 		<p>
-			<label for="pic">프로필 사진:</label> 
-			<input type="text" name="pic" id="pic">
-			<button>첨부하기</button>
+			<label for="memImg">프로필 사진:</label> 
+			<input type="file" name="memImg">
 		<p>
 			<sform:label path="memIntro">자기소개:</sform:label>
 			<sform:textarea  path="memIntro" cols="45" rows="10"></sform:textarea>

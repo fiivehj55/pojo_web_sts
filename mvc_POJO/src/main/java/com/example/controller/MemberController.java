@@ -1,5 +1,7 @@
 package com.example.controller;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.forwardedUrl;
+
 import java.io.File;
 import java.io.IOException;
 
@@ -111,9 +113,36 @@ public class MemberController {
 		}
 	}
 	@RequestMapping(value = "/mypage",method=RequestMethod.POST)
-	public String mypagePost(Model model,Member user){
+	public String mypagePost(Model model,
+			@RequestParam String memId,
+			@RequestParam String memPassword,
+			@RequestParam String memName,
+			@RequestParam String memGender,
+			@RequestParam String memNa,
+			@RequestParam String memPhone,
+			@RequestParam String memEmail,
+			@RequestParam MultipartFile memImg,
+			@RequestParam String memIntro,
+			HttpSession session)throws IOException{
+		Member member = (Member) session.getAttribute("user");
+		member.setMemPassword(memPassword);
+		member.setMemName(memName);
+		member.setMemPhone(memPhone);
+		member.setMemEmail(memEmail);
+	//	File intro = new File(uploadDir+"/"+memId+"/intro");
+	//	File[] introfile = intro.listFiles();
 		
-		return "jsp/MyPage";
+//		File file = new File(uploadDir+memId+"/intro/"+ memImg.getOriginalFilename());
+//		memImg.transferTo(file);
+		String imgName = memImg.getOriginalFilename();
+		
+		member.setMemImg(imgName);
+		member.setMemIntro(memIntro);
+		int result = mservice.update(member);
+		if(result ==1)
+			return "index2";
+		else
+			return "jsp/MyPage";
 	}
 	
 	@RequestMapping(value = "/inputPass",method=RequestMethod.GET)
