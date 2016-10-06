@@ -51,16 +51,13 @@ public class HouseController {
 	
 	@RequestMapping(value = "/insertHouse",method=RequestMethod.POST)
 	public String insertHousePost(Model model,
-			@RequestParam String room,
-			@RequestParam String bath,
-			@RequestParam String hosting,
-			@RequestParam String market,
-			@RequestParam String rname,
-			@RequestParam String infor,
-			@RequestParam String photo,
-			@RequestParam String addr,
-			@RequestParam String day,
-			@RequestParam Integer price,
+			@RequestParam String room, @RequestParam String bath,
+			@RequestParam String hosting, @RequestParam String tv,
+			@RequestParam String aircon, @RequestParam String wifi,
+			@RequestParam String elebe, @RequestParam String washing,
+			@RequestParam String rname, @RequestParam String infor,
+			@RequestParam String photo, @RequestParam String addr,
+			@RequestParam String day, @RequestParam Integer price,
 			HttpSession session){
 		//view의 이름을 리턴.
 		int result = 0;

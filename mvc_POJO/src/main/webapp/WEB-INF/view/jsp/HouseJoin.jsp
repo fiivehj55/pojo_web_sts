@@ -67,19 +67,15 @@
 				<br/>
 				
 				<label for="market">편의 시설 : </label>
-				<input type="checkbox" id="tv" name="market" value="tv">
+				<input type="checkbox" id="tv" name="tv" value="tv">
 				<label for="tv">TV</label>
-				<input type="checkbox" id="aircon" name="market" value="aircon">
+				<input type="checkbox" id="aircon" name="aircon" value="aircon">
 				<label for="aircon">에어컨</label> 
-				<input type="checkbox" id="wifi" name="market" value="wifi">
-				<label for="wifi">무선 인터넷</label> <br/>
-				<input type="checkbox" id="desk" name="market" value="desk">
-				<label for="desk">책상</label> 
-				<input type="checkbox" id="dishes" name="market" value="dishes">
-				<label for="dishes">식기</label>
-				<input type="checkbox" id="elebe" name="market" value="elebe">
+				<input type="checkbox" id="wifi" name="wifi" value="wifi">
+				<label for="wifi">Wi-Fi</label> <br/>
+				<input type="checkbox" id="elebe" name="elebe" value="elebe">
 				<label for="elebe">엘리베이터</label>
-				<input type="checkbox" id="washing" name="market" value="washing">
+				<input type="checkbox" id="washing" name="washing" value="washing">
 				<label for="washing">세탁기</label>
 			</fieldset>
 			<br/>
