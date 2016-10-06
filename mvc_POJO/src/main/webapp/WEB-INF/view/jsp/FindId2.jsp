@@ -1,4 +1,4 @@
-<!-- 회원 비밀번호 찾기 페이지 -->
+<!-- 회원 아이디 찾기 페이지 -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -21,8 +21,6 @@
 <link rel="stylesheet" href="css/style.css" />
 <link rel="stylesheet" href="css/style-desktop.css" />
 
-
-
 <style>
 label {
 	width: 100px;
@@ -36,28 +34,24 @@ label {
 	margin: 200px auto;
 }
 </style>
+
 </head>
 <body class="">
-	<jsp:include page="./Header.jsp"></jsp:include>
-	<div id="main">
-		<div id="content" class="auto_center">
-			<form action="<%=request.getContextPath()%>/FindId" method="post">
-				<h1>비밀번호 찾기</h1>
-				<p>
-					<label>아이디: </label> <input type="text" id="id" name="id">
-				</p>
-				<p>
-					<label>이름: </label> <input type="text" id="id" name="id">
-				</p>
-				<p>
-					<label>이메일</label> <input type="email" id="email" name="email">
-					<button>OK</button>
-			</form>
-			<a href="login"><button>뒤로가기</button></a>
-			</div>
-			</div>
-			
+<jsp:include page="./Header.jsp"></jsp:include>
+	<form action="<%=request.getContextPath()%>/FindId" method="post">
+		<h1>아이디 찾기</h1>
+		<p>
+			<label>이름: </label> 
+			<input type="text" id="name" name="name">
+		</p>
+		<p>
+			<label>이메일</label> 
+			<input type="email" id="email" name="email">
+			<input type="submit" value="확인">
+	</form>
+	<a href="login"><button>뒤로가기</button></a>
+
+<jsp:include page="./Footer.jsp"></jsp:include>
 </body>
-	<jsp:include page="./Footer.jsp"></jsp:include>
 <script></script>
 </html>
