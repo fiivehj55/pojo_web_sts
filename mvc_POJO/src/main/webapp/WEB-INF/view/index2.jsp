@@ -53,7 +53,7 @@ input, input[placeholder] {
 							<li class="active"><a href="faq">FAQ</a></li>
 							<li class="active"><a href="#">신고 게시판</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
-						</ul></li>
+						</ul></li> 
 					
 					<c:choose>	
 					<c:when test="${ empty user }">
@@ -66,7 +66,7 @@ input, input[placeholder] {
 						</li>
 					</c:when>
 					<c:otherwise>
-						<li><a href="mypage">마이페이지</a>
+						<li><a href="inputPass">마이페이지</a>
 							<ul class="sub">
 								<li class="active"><a href="logout">로그아웃</a></li>
 								<li class="active"><a href="#">&nbsp</a></li>

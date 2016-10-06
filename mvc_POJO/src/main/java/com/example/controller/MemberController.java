@@ -96,12 +96,12 @@ public class MemberController {
 	
 	@RequestMapping(value = "/mypage",method=RequestMethod.GET)
 	public String mypage(Model model){
-		return "jsp/InputPass";
+		return "jsp/MyPage";
 	}
 	
 	@RequestMapping(value = "/inputPass",method=RequestMethod.GET)
 	public String inputPass(Model model){
-		return "jsp/MyPage";
+		return "jsp/InputPass";
 	}
 	
 	@RequestMapping(value = "/findId",method=RequestMethod.GET)
