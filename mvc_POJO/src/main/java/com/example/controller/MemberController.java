@@ -94,11 +94,6 @@ public class MemberController {
 		else
 			return "jsp/Join";
 	}
-	
-	@RequestMapping(value = "/mypage",method=RequestMethod.GET)
-	public String mypageGet(Model model,HttpSession session){
-		return "jsp/MyPage";
-	}
 	@RequestMapping(value = "/mypage",method=RequestMethod.POST)
 	public String mypagePost(Model model,Member user){
 		
@@ -108,6 +103,22 @@ public class MemberController {
 	@RequestMapping(value = "/inputPass",method=RequestMethod.GET)
 	public String inputPass(Model model){
 		return "jsp/InputPass";
+	}
+	@RequestMapping(value = "/inputPass",method=RequestMethod.POST)
+	public String inputPassPost(Model model,
+			HttpSession session,
+			@RequestParam String pass
+			){
+		Member member = (Member) session.getAttribute("user");
+		String id = member.getMemId();
+		
+		member = mservice.login(id, pass);
+		if(member!=null){
+		model.addAttribute("userinfo", member);
+			return "jsp/MyPage";
+		}
+		else
+			return "jsp/InputPass";
 	}
 	
 	@RequestMapping(value = "/findId",method=RequestMethod.GET)

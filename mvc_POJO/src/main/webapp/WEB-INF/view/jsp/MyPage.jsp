@@ -27,7 +27,7 @@ label {
 
 	<h1>마이페이지</h1>
 	<h2>저희 사랑방 손님을 이용해 주셔서 감사합니다.</h2>
-	<sform:form method="post" action="" modelAttribute="user">
+	<sform:form method="post" action="" modelAttribute="userinfo">
 		<p>
 			<sform:label path="memId">아이디:</sform:label> 
 			<sform:input type="text"  path = "memId"  placeholder="영문+숫자 조합 8 이상"/> 
@@ -45,15 +45,15 @@ label {
 			<sform:input type="text" path="memName"/>
 		</p>
 		<p>
-			<sform:label path="gender">성별:</sform:label> 
-			<sform:radiobutton path="gender" value="men" label="남"/> 
-			<sform:radiobutton path="gender" value="women" label="여"/>
+			<sform:label path="memGender">성별:</sform:label> 
+			<sform:radiobutton path="memGender" value="men" label="남"/> 
+			<sform:radiobutton path="memGender" value="women" label="여"/>
 		<p>
 			<sform:label path="memNa">전화번호:</sform:label>
 			<sform:select path="memNa">
-				<sform:option value=SKT label="SKT"/>
+				<%-- <sform:option value=SKT label="SKT"/>
 				<sform:option value=KT label="KT"/>
-				<sform:option value=U+ label="U+"/>
+				<sform:option value=U+ label="U+"/> --%>
 			</sform:select> 
 			<sform:input type="tel" path="memPhone" placeholder="-빼고 숫자만 입력"/>
 		</p>
