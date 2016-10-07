@@ -40,16 +40,18 @@ label {
 	<jsp:include page="./Header.jsp"></jsp:include>
 	<div id="main">
 		<div id="content" class="auto_center">
-			<form action="<%=request.getContextPath()%>/FindId" method="post">
-				<h1>아이디 찾기</h1>
+			<h1>아이디 찾기</h1>
+			<form action="<%=request.getContextPath()%>/findId" method="post">
+				
 				<p>
-					<label>이름: </label> <input type="text" id="name" name="name">
+					<label for="name">이름: </label> <input type="text" id="name" name="name">
 				</p>
 				<p>
-					<label>이메일</label> <input type="email" id="email" name="email">
+					<label for="email">이메일</label> <input type="email" id="email" name="email">
+				</p>
 					<input type="submit" value="확인">
-			</form>
 			<a href="login"><button>뒤로가기</button></a>
+			</form>
 
 
 

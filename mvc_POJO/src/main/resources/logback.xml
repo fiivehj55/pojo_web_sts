@@ -27,16 +27,16 @@
 		</encoder>
 	</appender>
 
-	<!-- 특정 로거 설정 --> 
-	<logger name="org.springframework" level="trace"> 
-	    <appender-ref ref="dailyout" /> 
-	    <appender-ref ref="STDOUT" /> 
-	</logger> 
+	<!-- 특정 로거 설정 
+	<logger name="org.springframework" level="TRACE"> <appender-ref 
+		ref="dailyout" /> <appender-ref ref="STDOUT" /> </logger>
+ -->
 	<!-- root 로거 기본 설정 -->
-<!-- 	<root level="trace">
+	<logger name="org.springframework" level="warn"></logger>
+	<root level="trace">
 		<appender-ref ref="STDOUT" />
-		<appender-ref ref="dailyout" />
-	</root> -->
+		<!-- <appender-ref ref="dailyout" /> -->
+	</root>
 </configuration> 
 
 
