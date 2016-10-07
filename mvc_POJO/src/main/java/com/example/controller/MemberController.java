@@ -195,7 +195,7 @@ public class MemberController {
 			model.addAttribute("userinfo", member);
 			return "jsp/MyPage";
 		}
-		else
+		else	
 			return "jsp/InputPass";
 	}
 	@RequestMapping(value = "/findId",method=RequestMethod.GET)
