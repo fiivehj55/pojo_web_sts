@@ -32,7 +32,7 @@ label {
 			<h3>5.예약 사기를 당했어요! 어떻게 하죠?</h3>
 			<h3>6.계정과 프로필</h3>
 			<h5>-프로필 수정(탈퇴),프로필 사진 수정은 어떻게 하나요?</h5>
-			<a href="login"><button>뒤로가기</button></a>
+			<a href="index"><button>뒤로가기</button></a>
 
 
 

@@ -7,6 +7,7 @@ import com.example.dto.Member;
 
 public interface MemberService {
 	public Member login(String id,String password);
+	public Member findmember(String id,String name,String email);
 	public int join(Member member);
 	public int update(Member member);
 	public int delete(String id,String password);

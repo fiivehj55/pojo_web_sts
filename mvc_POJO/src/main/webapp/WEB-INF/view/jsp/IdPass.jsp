@@ -29,14 +29,8 @@ label {
 	<jsp:include page="./Header.jsp"></jsp:include>
 	<div id="main">
 		<div id="content" class="auto_center">
-		
-		
 			<a href="findId"><input type="button" value="아이디찾기"></a> 
 			<a href="findPass"><input type="button" value="비밀번호찾기" /></a>
-
-
-
-
 		</div>
 	</div>
 

@@ -226,6 +226,33 @@ public class MemberController {
 		//view의 이름을 리턴.
 		return "jsp/FindPass";
 	}
+	@RequestMapping(value = "/findPass",method=RequestMethod.POST)
+	public String findPassPost(Model model,
+			@RequestParam String id,
+			@RequestParam String name,
+			@RequestParam String email,
+			HttpSession session){
+	
+		Member user = mservice.findmember(id, name, email);
+		if(user!=null){
+			session.setAttribute("userSet", user);
+			//비밀번호 설정페이지
+			return "jsp/PassSet";
+		}else
+			return "jsp/FindPass";
+	}
+	@RequestMapping(value = "/PassSet",method=RequestMethod.POST)
+	public String PassSet(Model model,
+			@RequestParam String new_Pass,
+			HttpSession session){
+		Member user = (Member) session.getAttribute("userSet");
+		user.setMemPassword(new_Pass);
+		int result = mservice.update(user);
+		if(result ==1)
+			return "index2";
+		else
+			return "jsp/FindPass";
+	}
 	
 	//to받는 사람
 	//content 내용
@@ -280,6 +307,5 @@ public class MemberController {
 	@RequestMapping(value = "/idAndPass",method=RequestMethod.GET)
 	public String idAndPass(Model model){
 		return "jsp/IdPass";
-		
 	}
 }

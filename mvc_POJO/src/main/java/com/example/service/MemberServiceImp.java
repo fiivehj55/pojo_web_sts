@@ -78,4 +78,18 @@ public class MemberServiceImp implements MemberService{
 		member =  dao.selectId(template, name, email);
 		return member;
 	}
+	@Override
+	public Member findmember(String id, String name, String email) {
+
+		Member user = null;
+		user = dao.selectByIdMember(template, id);
+		if(user.getMemName().equals(name)){
+			if(user.getMemEmail().equals(email))
+				return user;
+			else
+				return null;
+		}
+		else
+			return null;
+	}
 }

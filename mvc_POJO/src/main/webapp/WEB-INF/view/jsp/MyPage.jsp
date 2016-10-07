@@ -27,8 +27,8 @@ label {
 		</p>
 
 		<p>
-			<sform:label path="memPassword">비밀번호:</sform:label> 
-			<sform:input path="memPassword"  placeholder="영문+숫자 조합 8 이상"/>
+			<label for="memPassword">비밀번호:</label> 
+			<input type="password" name="memPassword"  placeholder="영문+숫자 조합 8 이상"/>
 		<p>
 			<label for="passok">비밀번호 확인</label> 
 			<input type="password" name="password"	placeholder="영문+숫자 조합 8 이상">

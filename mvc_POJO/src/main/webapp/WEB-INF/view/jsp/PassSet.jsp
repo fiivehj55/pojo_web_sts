@@ -40,17 +40,14 @@ label {
 	<jsp:include page="./Header.jsp"></jsp:include>
 	<div id="main">
 		<div id="content" class="auto_center">
-<h1>비밀번호 찾기</h1>
-<form method="post" action="findPass">
-	<p><label>아이디: </label>
-	<input type="text" id = "id" name= "id"></p>
-	<p><label>이름: </label>
-	<input type="text" id = "name" name= "name"></p>
-	<p><label>이메일</label>
-	<input type="email" id="email"name="email"></p>
+<h1>비밀번호 설정</h1>
+<form method="post" action="PassSet">
+	<p><label>새로운 비밀번호: </label>
+	<input type="password" id = "new_Pass" name= "new_Pass"></p>
+	<p><label>새로운 비밀번호 확인: </label>
+	<input type="password" id = "PassOk" name= "PassOk"></p>
 	<input type="submit" value="확인">
 	</form>
-
 		</div>
 	</div>
 
