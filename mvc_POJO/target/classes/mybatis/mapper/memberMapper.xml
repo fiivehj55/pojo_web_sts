@@ -29,8 +29,8 @@
      <select id="findId" parameterType="map" resultType="string">
         select MEM_ID
         from MEMBER
-        where MEM_NAME = #{name} and
-        MEM_EMAIL = #{email}
+        where mem_name = #{name} and
+        mem_email = #{email}
     </select>
     <resultMap type="member" id="memBase">
 		<id column="MEM_ID" property="memId" />

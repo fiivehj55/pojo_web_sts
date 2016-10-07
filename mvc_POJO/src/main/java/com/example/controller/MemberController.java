@@ -2,7 +2,16 @@ package com.example.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Properties;
 
+import javax.mail.Authenticator;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeUtility;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -19,6 +28,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import com.example.dto.Member;
 import com.example.service.MemberService;
+import com.example.util.SendMail;
 
 @Controller
 public class MemberController {
@@ -188,12 +198,27 @@ public class MemberController {
 		else
 			return "jsp/InputPass";
 	}
-	
 	@RequestMapping(value = "/findId",method=RequestMethod.GET)
 	public String findId(Model model){
-		
-		//view의 이름을 리턴.
 		return "jsp/FindId";
+		
+	}
+	@RequestMapping(value = "/findId",method=RequestMethod.POST)
+	public String findIdPost(Model model,
+			@RequestParam String name,
+			@RequestParam String email
+			){
+
+		System.out.println("찾은 name: "+name);
+		System.out.println("찾은 email: "+email);
+		String findId = mservice.find(name, email);
+		System.out.println("찾은 아이디: "+findId);
+		String content = "요청하신 아이디는 "+ findId+" 입니다.";
+		//받는사람
+		String to = "fivehj55@naver.com";
+		sendMail(content,to);
+		//view의 이름을 리턴.
+		return "jsp/Login";
 	}
 	
 	@RequestMapping(value = "/findPass",method=RequestMethod.GET)
@@ -202,5 +227,54 @@ public class MemberController {
 		return "jsp/FindPass";
 	}
 	
+	//to받는 사람
+	//content 내용
+	public void sendMail(String content,String to){
+		String host = "smtp.naver.com";
+	    String subject = "네이버를 이용한 메일발송";
+	    String from = "fivehj55@naver.com"; //보내는 메일
+	   String fromName = "Test";
+	   
 
+	   try{
+	     //프로퍼티 값 인스턴스 생성과 기본세션(SMTP 서버 호스트 지정)
+	     Properties props = new Properties();
+	     //네이버 SMTP 사용시
+	    props.put("mail.smtp.starttls.enable","true");
+	     props.put("mail.transport.protocol","smtp");
+	     props.put("mail.smtp.host", host);
+	     
+	     props.put("mail.smtp.port","465");  // 보내는 메일 포트 설정
+	    props.put("mail.smtp.user", from);
+	     props.put("mail.smtp.auth","true");
+	     props.put("mail.smtp.debug", "true");
+	     props.put("mail.smtp.socketFactory.port", "465");
+	     props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+	     props.put("mail.smtp.socketFactory.fallback", "false");
+
+
+	     Authenticator auth = new SendMail();
+	     Session mailSession = Session.getDefaultInstance(props,auth);
+	   
+	     Message msg = new MimeMessage(mailSession);
+	     msg.setFrom(new InternetAddress(from, MimeUtility.encodeText(fromName,"UTF-8","B"))); //보내는 사람 설정
+	    InternetAddress[] address = {new InternetAddress(to)};
+	    
+	     msg.setRecipients(Message.RecipientType.TO, address); //받는 사람설정
+	   
+	     msg.setSubject(subject); //제목설정
+	    msg.setSentDate(new java.util.Date()); //보내는 날짜 설정
+	    msg.setContent(content,"text/html; charset=utf-8"); //내용 설정(MIME 지정-HTML 형식)
+	    
+	     Transport.send(msg); //메일 보내기
+
+	    System.out.println("메일 발송을 완료하였습니다.");
+	     }catch(MessagingException ex){
+	      System.out.println("mail send error : "+ex.getMessage());
+	       ex.printStackTrace();
+	     }catch(Exception e){
+	      System.out.println("error : "+e.getMessage());
+	       e.printStackTrace();
+	     } 
+	}
 }

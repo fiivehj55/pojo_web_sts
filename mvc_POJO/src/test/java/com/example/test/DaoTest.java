@@ -88,7 +88,7 @@ public class DaoTest {
 
    @Test
    public void testFindIdMember() {
-      String result = mdao.selectId(template, "홍길동", "abc@naver.com");
+      String result = mdao.selectId(template, "hh", "abc@naver.com");
       logger.trace("id: {}", result);
 
    }
