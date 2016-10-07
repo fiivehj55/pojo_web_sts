@@ -20,6 +20,12 @@
 <link rel="stylesheet" href="css/style.css" />
 <link rel="stylesheet" href="css/style-desktop.css" />
 
+<style>
+	.h1{
+		font-size: 28pt;	
+	}
+</style>
+
 </head>
 <body class="homepage">
 <jsp:include page="./Header.jsp"></jsp:include>
@@ -28,7 +34,7 @@
 		<div id="content" class="auto_center">
 			<h1>하우스 정보</h1>
 			<img src="${houseImg }" width="50" height="50"/>
-			<h1>${houseName}</h1>
+			<h1 class="h1">${houseName}</h1>
 		</div>
 	</div>
 <jsp:include page="./Footer.jsp"></jsp:include>
