@@ -235,7 +235,6 @@ public class MemberController {
 	    String from = "fivehj55@naver.com"; //보내는 메일
 	   String fromName = "Test";
 	   
-
 	   try{
 	     //프로퍼티 값 인스턴스 생성과 기본세션(SMTP 서버 호스트 지정)
 	     Properties props = new Properties();
