@@ -158,6 +158,14 @@ public class HouseController {
 			model.addAttribute("houseName", house.getHouseName());
 			model.addAttribute("houseScore", house.getHouseScore());
 			model.addAttribute("houseInfo", house.getHouseInfo());
+			model.addAttribute("houseRoom",house.getHouseRoom());
+			model.addAttribute("houseBath",house.getHouseBath());
+			model.addAttribute("houseHosting", house.getHouseHosting());
+			model.addAttribute("houseTv", house.getHouseTv());
+			model.addAttribute("houseAircon", house.getHouseAircon());
+			model.addAttribute("houseWifi", house.getHouseWifi());
+			model.addAttribute("houseElebe", house.getHouseElebe());
+			model.addAttribute("houseWashing", house.getHouseWashing());
 			//view의 이름을 리턴.
 			return "jsp/searchHouse";
 		}
