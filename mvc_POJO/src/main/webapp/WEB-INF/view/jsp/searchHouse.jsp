@@ -47,6 +47,7 @@
 				<h1>상세설명 : ${houseInfo }</h1>
 			</div>	
 			<div>
+				<!-- 예약버튼 클릭시 :: 달력 출력 -->
 				<a href="#"><button>예약하기</button></a>
 			</div>
 		</div>
