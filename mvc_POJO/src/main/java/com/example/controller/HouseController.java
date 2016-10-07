@@ -44,7 +44,7 @@ public class HouseController {
 	
 	@RequestMapping(value = "/insertHouse",method=RequestMethod.GET)
 	public String insertHouseGet(Model model, HttpSession session){
-		/*House new_house = new House();*/
+		/*House new_house = new House();*/ 
 		/*model.addAttribute("new_house", new_house);*/
 		//view의 이름을 리턴.
 		return "jsp/HouseJoin";
