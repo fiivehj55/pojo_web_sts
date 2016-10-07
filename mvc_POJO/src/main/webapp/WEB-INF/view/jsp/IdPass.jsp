@@ -26,12 +26,8 @@
 
 </head>
 <body class="auto_center">
-<h1>비밀번호를 입력해 주세요.</h1>
-<form action="deletePass" method="post">
-	<p>
-	<input type="button" value= "아이디찾기">
-	<input type="button" value="비밀번호찾기"/>
-	</p>
-	</form>
+<h1>아이디/패스워트 찾기 페이지입니다.</h1>
+	<a href="findId"><input type="button" value= "아이디찾기"></a>
+	<a href="findPass"><input type="button" value="비밀번호찾기"/></a>
 </body>
 </html>

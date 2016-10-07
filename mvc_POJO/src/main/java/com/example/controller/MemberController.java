@@ -277,4 +277,10 @@ public class MemberController {
 	       e.printStackTrace();
 	     } 
 	}
+	
+	@RequestMapping(value = "/idAndPass",method=RequestMethod.GET)
+	public String idAndPass(Model model){
+		return "jsp/IdPass";
+		
+	}
 }
