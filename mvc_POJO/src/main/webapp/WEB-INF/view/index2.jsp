@@ -60,7 +60,7 @@ input, input[placeholder] {
 						<li><a href="login">로그인</a>
 							<ul class="sub">
 								<li class="active"><a href="join">회원가입</a></li>
-								<li class="active"><a href=findId>ID/PASS 찾기</a></li>
+								<li class="active"><a href="idAndPass">ID/PASS 찾기</a></li>
 								<li class="active"><a href="#">&nbsp</a></li>
 							</ul>
 						</li>
@@ -122,7 +122,7 @@ input, input[placeholder] {
 
 			<div class="row">
 				<section class="6u">
-					<a href="#" class="image full">
+					<a href="searchByHouseNo?houseNo=1" class="image full">
 						<img src="css/images/image1.jpg" width=500 height=500 alt="">
 					</a>
 				</section>

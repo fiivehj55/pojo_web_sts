@@ -34,9 +34,12 @@ label {
 	margin: 200px auto;
 }
 </style>
+
 </head>
-<jsp:include page = "./Header.jsp"></jsp:include>
-<body class="auto_center">
+<body class="">
+	<jsp:include page="./Header.jsp"></jsp:include>
+	<div id="main">
+		<div id="content" class="auto_center">
 <h1>비밀번호 찾기</h1>
 	<p><label>아이디: </label>
 	<input type="text" id = "id" name= "id"></p>
@@ -45,7 +48,14 @@ label {
 	<p><label>이메일</label>
 	<input type="email" id="email"name="email">
 	<button>OK</button>
-</body>
+	
+
+
+
+		</div>
+	</div>
+
+
 	<jsp:include page="./Footer.jsp"></jsp:include>
 <script></script>
 </html>
