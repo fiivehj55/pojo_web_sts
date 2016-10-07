@@ -152,6 +152,8 @@ public class HouseController {
 	public String selectByHouseNo(Model model, @RequestParam Integer houseNo,
 			HttpSession session){
 		House house = hservice.selectByNoHouse(houseNo);
+		String elebe =	house.getHouseElebe();
+	
 		if(house != null){
 			model.addAttribute("houseImg", house.getHouseImg());
 			model.addAttribute("memberName", house.getMemberId());
@@ -164,7 +166,9 @@ public class HouseController {
 			model.addAttribute("houseTv", house.getHouseTv());
 			model.addAttribute("houseAircon", house.getHouseAircon());
 			model.addAttribute("houseWifi", house.getHouseWifi());
-			model.addAttribute("houseElebe", house.getHouseElebe());
+			if(elebe!=null){
+				model.addAttribute("houseElebe","엘리베이터");
+			}
 			model.addAttribute("houseWashing", house.getHouseWashing());
 			//view의 이름을 리턴.
 			return "jsp/searchHouse";
