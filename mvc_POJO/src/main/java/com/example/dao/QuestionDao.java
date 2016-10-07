@@ -9,6 +9,7 @@ public interface QuestionDao {
 	List<Question> selectAllQuestion(SqlSessionTemplate template);
 
 	List<Question> selectByMemId(SqlSessionTemplate template, String memberId);
+	
 	Question selectByQuestNo(SqlSessionTemplate template, int questNo);
 	
 	int insertQuestion(SqlSessionTemplate template, Question question);

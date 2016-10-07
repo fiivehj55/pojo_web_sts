@@ -53,7 +53,7 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td><h1>${reportNo}</h1></td>
+							<td><h1>5</h1></td>
 							<td><a>제목</a></td>
 							<td><a>이름</a></td>
 							<td><a>등록일자</a></td>
@@ -110,7 +110,7 @@
 
 		</div>
 	</div>
-
+	${Question}
 	<jsp:include page="./Footer.jsp"></jsp:include>
 </head>
 <body>

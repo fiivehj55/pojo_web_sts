@@ -14,12 +14,10 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import com.example.dto.Member;
 import com.example.dto.Question;
-import com.example.dto.Report;
 import com.example.service.QuestionService;
-import com.example.service.ReportService;
 
 @Controller
-public class ReportController {
+public class QuestiontController {
 
 	@Autowired
 	QuestionService qservice;
@@ -32,8 +30,7 @@ public class ReportController {
 	}
 
 	@RequestMapping(value = "/bbs", method = RequestMethod.GET)
-	public String table(Model model,
-			HttpSession session) {
+	public String table(Model model, HttpSession session) {
 		Member user = (Member) session.getAttribute("user");
 		List<Question> list = qservice.selectById(user.getMemId());
 		session.setAttribute("Question", list);
