@@ -246,7 +246,7 @@ public class DaoTest {
    public void testInsertReply() {
       Calendar cd = Calendar.getInstance();
       Date dd = cd.getTime();
-      Reply reply = new Reply(2, "정말 깨끗하고 좋았어요.", dd, "hong", 2);
+      Reply reply = new Reply(2, "정말 깨끗하고 좋았어요.", dd, 1, "hong", 2);
       int result = rdao.insertReply(template, reply);
       logger.trace("List: {}", reply);
 

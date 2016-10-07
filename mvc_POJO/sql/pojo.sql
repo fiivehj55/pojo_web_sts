@@ -135,13 +135,14 @@ drop table REPLY;
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS" ;
 
-  
   CREATE TABLE "POJO"."REPLY" 
    (	"REPLY_NO" NUMBER(30,0) NOT NULL ENABLE, 
 	"REPLY_CONTENT" VARCHAR2(400 BYTE), 
 	"REPLY_DATE" DATE, 
+  "HOUSE_NO" NUMBER(30,0), 
 	"MEMBER_ID" VARCHAR2(30 BYTE), 
 	"DETAIL_ID" NUMBER(20,0), 
+	
 	 CONSTRAINT "REPLY_PK" PRIMARY KEY ("REPLY_NO")
   USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
@@ -153,7 +154,6 @@ drop table REPLY;
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS" ;
 
-
 insert into MEMBER values ('hong', '홍길동', '1234', 'SKT', '01012345678', 'abc@naver.com', 'male', null, 'hello', 2, '회원');
 insert into MEMBER values ('jang', '장길산', '5678', 'KT', '01012345678', 'abc@naver.com', 'male', null, 'hello', 2, '회원');
 insert into MEMBER values ('admin', '관리자', 'admin', 'U+', '01012345678', 'abc@naver.com', 'male', null, 'hello', 1, '최고관리자');
@@ -163,6 +163,6 @@ insert into HOUSE values (1, '공주빌라', '천안시 서북구 두정동', 35
 insert into REGIST_HOUSE values (1, '2016/09/25', '2016/10/7', 1, 'hong');
 insert into QUESTION values (1, '사기당했어요.', '하우스 등록자가 계속 전화를 받지 않습니다.', sysdate, 'jang', 2, null);
 insert into REPORT values (1, '피해사례', '이 사람 신고합니다.', '예약자가 입금을 하지 않습니다.', sysdate, 'jang', 2, 1);
-insert into REPLY values (1, '집을 이용했는데 정말 좋았어요', sysdate, 'hong', 2);
+insert into REPLY values (1, '집을 이용했는데 정말 좋았어요', sysdate, 1, 'hong', 2);
 
 commit;

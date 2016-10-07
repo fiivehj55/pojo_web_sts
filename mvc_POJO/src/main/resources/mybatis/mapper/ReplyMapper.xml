@@ -12,7 +12,7 @@
 	
 	<insert id="insertReply" parameterType="reply" >
 		insert into REPLY
-		values (#{replyNo}, #{replyContent}, #{replyDate}, #{memberId}, #{detailId})
+		values (#{replyNo}, #{replyContent}, #{replyDate}, #{houseNo}, #{memberId}, #{detailId})
 	</insert>
 	
 	<update id="updateReply" parameterType="reply">
@@ -29,6 +29,7 @@
 		<id column="REPLY_NO" property="replyNo" />
 		<result column="REPLY_CONTENT" property="replyContent" />
 		<result column="REPLY_DATE" property="replyDate" />
+		<result column="HOUSE_NO" property="houseNo" />
 		<result column="MEMBER_ID" property="memberId" />
 		<result column="DETAIL_ID" property="detailId" />
 	</resultMap>

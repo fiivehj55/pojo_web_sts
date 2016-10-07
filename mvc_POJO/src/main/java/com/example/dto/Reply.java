@@ -22,6 +22,9 @@ public class Reply implements Serializable {
 
 	/** REPLY_DATE. */
 	private Date replyDate;
+	
+	/** HOUSE_NO */
+	private Integer houseNo;
 
 	/** MEMBER_ID. */
 	private String memberId;
@@ -40,6 +43,17 @@ public class Reply implements Serializable {
 		this.replyNo = replyNo;
 		this.replyContent = replyContent;
 		this.replyDate = replyDate;
+		this.memberId = memberId;
+		this.detailId = detailId;
+	}
+	
+	public Reply(Integer replyNo, String replyContent, Date replyDate, Integer houseNo, String memberId,
+			Integer detailId) {
+		super();
+		this.replyNo = replyNo;
+		this.replyContent = replyContent;
+		this.replyDate = replyDate;
+		this.houseNo = houseNo;
 		this.memberId = memberId;
 		this.detailId = detailId;
 	}
@@ -99,6 +113,14 @@ public class Reply implements Serializable {
 	 */
 	public Date getReplyDate() {
 		return this.replyDate;
+	}
+	
+	public Integer getHouseNo() {
+		return houseNo;
+	}
+
+	public void setHouseNo(Integer houseNo) {
+		this.houseNo = houseNo;
 	}
 
 	/**
@@ -178,7 +200,7 @@ public class Reply implements Serializable {
 	@Override
 	public String toString() {
 		return "Reply [replyNo=" + replyNo + ", replyContent=" + replyContent + ", replyDate=" + replyDate
-				+ ", memberId=" + memberId + ", detailId=" + detailId + "]";
+				+ ", houseNo=" + houseNo + ", memberId=" + memberId + ", detailId=" + detailId + "]";
 	}
 
 }

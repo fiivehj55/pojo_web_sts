@@ -152,7 +152,11 @@ public class HouseController {
 	public String selectByHouseNo(Model model, @RequestParam Integer houseNo,
 			HttpSession session){
 		House house = hservice.selectByNoHouse(houseNo);
-		String elebe =	house.getHouseElebe();
+		String houseTv = house.getHouseTv();
+		String houseAircon = house.getHouseAircon();
+		String houseWifi = house.getHouseWifi();
+		String houseElebe =	house.getHouseElebe();
+		String houseWashing = house.getHouseWashing();
 	
 		if(house != null){
 			model.addAttribute("houseImg", house.getHouseImg());
@@ -163,13 +167,21 @@ public class HouseController {
 			model.addAttribute("houseRoom",house.getHouseRoom());
 			model.addAttribute("houseBath",house.getHouseBath());
 			model.addAttribute("houseHosting", house.getHouseHosting());
-			model.addAttribute("houseTv", house.getHouseTv());
-			model.addAttribute("houseAircon", house.getHouseAircon());
-			model.addAttribute("houseWifi", house.getHouseWifi());
-			if(elebe!=null){
+			if(houseTv!=null){
+				model.addAttribute("houseTv", "TV");
+			}
+			if(houseAircon!=null){
+				model.addAttribute("houseAircon", "에어컨");
+			}
+			if(houseWifi!=null){
+				model.addAttribute("houseWifi", "WI-FI");
+			}
+			if(houseElebe!=null){
 				model.addAttribute("houseElebe","엘리베이터");
 			}
-			model.addAttribute("houseWashing", house.getHouseWashing());
+			if(houseWashing!=null){
+				model.addAttribute("houseWashing", "세탁기");
+			}
 			//view의 이름을 리턴.
 			return "jsp/searchHouse";
 		}

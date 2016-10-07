@@ -28,13 +28,6 @@ public class MainController {
 		return "index2";
 	}
 	
-	@RequestMapping(value = "/bbs",method=RequestMethod.GET)
-	public String table(Model model){
-		
-		//view의 이름을 리턴.
-		return "jsp/Table";
-	}
-	
 	@RequestMapping(value = "/faq",method=RequestMethod.GET)
 	public String faq(Model model){
 		
