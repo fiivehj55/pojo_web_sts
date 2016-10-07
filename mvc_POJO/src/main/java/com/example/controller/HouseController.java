@@ -17,7 +17,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import com.example.dto.House;
+import com.example.dto.Member;
 import com.example.service.HouseService;
+import com.example.service.MemberService;
 
 @Controller
 public class HouseController {
@@ -26,6 +28,9 @@ public class HouseController {
 
 	@Autowired
 	HouseService hservice;
+	
+	@Autowired
+	MemberService mservice;
 	
 	@Bean
 	public CommonsMultipartResolver multipartResolver(){
@@ -144,11 +149,15 @@ public class HouseController {
 	}
 	
 	@RequestMapping(value = "/searchByHouseNo",method=RequestMethod.GET)
-	public String selectByHouseNo(Model model, @RequestParam Integer houseNo, HttpSession session){
+	public String selectByHouseNo(Model model, @RequestParam Integer houseNo,
+			HttpSession session){
 		House house = hservice.selectByNoHouse(houseNo);
 		if(house != null){
 			model.addAttribute("houseImg", house.getHouseImg());
+			model.addAttribute("memberName", house.getMemberId());
 			model.addAttribute("houseName", house.getHouseName());
+			model.addAttribute("houseScore", house.getHouseScore());
+			model.addAttribute("houseInfo", house.getHouseInfo());
 			//view의 이름을 리턴.
 			return "jsp/searchHouse";
 		}

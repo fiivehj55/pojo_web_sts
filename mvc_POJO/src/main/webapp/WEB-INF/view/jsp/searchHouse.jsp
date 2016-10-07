@@ -33,8 +33,22 @@
 	<div id="main">
 		<div id="content" class="auto_center">
 			<h1>하우스 정보</h1>
-			<img src="${houseImg }" width="50" height="50"/>
-			<h1 class="h1">${houseName}</h1>
+			<div>
+				<img src="${houseImg }" width="50" height="50"/>
+				<h1 class="h1">${memberName}의 ${houseName}!!</h1> <br/>
+			</div>
+			<div>
+				아주 휼룡한 ${houseScore }점!! <br/>
+				지하철역 도보 3분이라 아주 좋아요!! <br/>
+				욕실이 아주 깨끗해요. <br/>
+				호스트가 친절하세요!! <br/>
+			</div>
+			<div>
+				<h1>상세설명 : ${houseInfo }</h1>
+			</div>	
+			<div>
+				<a href="#"><button>예약하기</button></a>
+			</div>
 		</div>
 	</div>
 <jsp:include page="./Footer.jsp"></jsp:include>
