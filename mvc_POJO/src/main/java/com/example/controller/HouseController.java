@@ -143,25 +143,25 @@ public class HouseController {
 		return "jsp/HouseJoin2";
 	}
 	
-	/*@RequestMapping(value = "/searchByHouseNo",method=RequestMethod.GET)
+	@RequestMapping(value = "/searchByHouseNo",method=RequestMethod.GET)
 	public String selectByHouseNo(Model model, @RequestParam Integer houseNo, HttpSession session){
 		House house = hservice.selectByNoHouse(houseNo);
 		if(house != null){
-			model.addAttribute("house", house);
+			model.addAttribute("houseImg", house.getHouseImg());
+			model.addAttribute("houseName", house.getHouseName());
 			//view의 이름을 리턴.
 			return "jsp/searchHouse";
 		}
 		return "jps/index2";
-	}*/
+	}
 	
 	@RequestMapping(value = "/selectByHouse",method=RequestMethod.GET)
-	public String updateHouse(Model model,
-			HttpSession session){
-		/*House house = hservice.selectByNoHouse(houseNo);
+	public String updateHouse(Model model, @RequestParam Integer houseNo, HttpSession session){
+		House house = hservice.selectByNoHouse(houseNo);
 		if(house != null){
 			model.addAttribute("house", house);			
 			return "jsp/HousePage";
-		}*/
+		}
 		//view의 이름을 리턴.
 		return "jsp/searchHouse";
 	}

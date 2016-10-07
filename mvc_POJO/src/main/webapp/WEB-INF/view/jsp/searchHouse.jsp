@@ -27,7 +27,8 @@
 	<div id="main">
 		<div id="content" class="auto_center">
 			<h1>하우스 정보</h1>
-			<h1>${house}</h1>
+			<img src="${houseImg }" width="50" height="50"/>
+			<h1>${houseName}</h1>
 		</div>
 	</div>
 <jsp:include page="./Footer.jsp"></jsp:include>
