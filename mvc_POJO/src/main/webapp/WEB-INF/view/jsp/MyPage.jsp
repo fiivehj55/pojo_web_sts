@@ -22,8 +22,7 @@ label {
 	<sform:form method="post" action="mypage" modelAttribute="userinfo" enctype="multipart/form-data">
 		<p>
 			<sform:label path="memId">아이디:</sform:label> 
-			<sform:input type="text"  path = "memId"  placeholder="영문+숫자 조합 8 이상"/> 
-			<input type="button" value="중복확인">
+			<sform:input type="text"  path = "memId"  placeholder="영문+숫자 조합 8 이상" disabled="true"/> 
 		</p>
 
 		<p>
@@ -38,8 +37,8 @@ label {
 		</p>
 		<p>
 			<sform:label path="memGender">성별:</sform:label> 
-			<sform:radiobutton path="memGender" value="male" label="남"/> 
-			<sform:radiobutton path="memGender" value="female" label="여"/>
+			<sform:radiobutton path="memGender" value="male" label="남" disabled="true"/> 
+			<sform:radiobutton path="memGender" value="female" label="여" disabled="true"/>
 		<p>
 			<sform:label path="memNa">전화번호:</sform:label>
 			<sform:select path="memNa">

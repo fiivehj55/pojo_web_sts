@@ -25,10 +25,9 @@ public class QuestionServiceImp implements QuestionService {
 	
 	@Transactional
 	@Override
-	public List<Question> selectById(int questNo) {
+	public List<Question> selectById(String memberId) {
 		List<Question> question = null;
-		question = dao.selectAllQuestion(template);
-		
+		question = dao.selectByMemId(template, memberId);
 		return question;
 	}
 

@@ -29,7 +29,11 @@ public class QuestionDaoImpl implements QuestionDao {
 		String stmt = QUESTION_MAP + "selectByQuestNo";
 		return template.selectOne(stmt, questNo);
 	}
-
+	@Override
+	public List<Question> selectByMemId(SqlSessionTemplate template, String memId) {
+		String stmt = QUESTION_MAP + "selectByMemId";
+		return template.selectList(stmt, memId);
+	}
 	@Override
 	public int insertQuestion(SqlSessionTemplate template, Question question) {
 		String stmt = QUESTION_MAP + "insertQuestion";

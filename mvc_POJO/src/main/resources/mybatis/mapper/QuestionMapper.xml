@@ -8,7 +8,9 @@
 	<select id="selectByQuestNo" parameterType="int" resultMap="questBase">
 	    select * from QUESTION where QUEST_NO = #{questNo}
 	</select>
-	
+	<select id="selectByMemId" parameterType="string" resultMap="questBase">
+	    select * from QUESTION where Member_Id = #{MemberId}
+	</select>
 	<insert id="insertQuestion" parameterType="question">
 	    insert into QUESTION
 	    values (#{questNo}, #{questTitle}, #{questContent}, #{questDate}, #{memberId}, #{detailId}, #{questReplyNo})
