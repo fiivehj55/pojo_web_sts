@@ -162,6 +162,9 @@ insert into MEMBER_DETAIL values (2, '회원');
 insert into HOUSE values (1, '공주빌라', '천안시 서북구 두정동', 350000, 8.5, 'hello', 'hong', 2, '1개', '2개', '3명', 'tv', 'aircon', 'wifi', 'elebe', 'washing', null, '일');
 insert into REGIST_HOUSE values (1, '2016/09/25', '2016/10/7', 1, 'hong');
 insert into QUESTION values (1, '사기당했어요.', '하우스 등록자가 계속 전화를 받지 않습니다.', sysdate, 'jang', 2, null);
+insert into QUESTION values (2, '사기당했어요.', '하우스 등록자가 계속 전화를 받지 않습니다.', sysdate, 'jang', 2, null);
+insert into QUESTION values (3, '사기당했어요2.', '하우스 등록자가 계속 전화를 받지 않습니다2.', sysdate, 'hong', 2, null);
+insert into QUESTION values (4, '사기당했어요2.', '하우스 등록자가 계속 전화를 받지 않습니다2.', sysdate, 'hong', 2, null);
 insert into REPORT values (1, '피해사례', '이 사람 신고합니다.', '예약자가 입금을 하지 않습니다.', sysdate, 'jang', 2, 1);
 insert into REPLY values (1, '집을 이용했는데 정말 좋았어요', sysdate, 1, 'hong', 2);
 
