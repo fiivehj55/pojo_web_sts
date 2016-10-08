@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+ 	<form id="myform">
+ 	<input type="text" id = "name" name = "name">
+ 	<input type="text" id = "email" name = "email">
+ 	<input type="submit">
+ 	</form>
+</body>
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="../validate/dist/jquery.validate.min.js"></script>
+<script>
+$("#myform").validate({
+	 rules: {
+	     // no quoting necessary
+	     name: "required", //name에서 이거만 체크
+	     // quoting necessary!
+	     email:{
+	    	 required:true, // 여러개 체크
+	    	 email:true
+	     }
+	   },
+	messages: {
+    name: "Please specify your name", // 해당 부분 오류시 나오는 메세지
+    email: {//상황에따라 값이 없으면 위메시지 형식이아니면 아래
+      required: "We need your email address to contact you", 
+      email: "Your email address must be in the format of name@domain.com"
+    }
+  }
+});
+</script>
+</html>

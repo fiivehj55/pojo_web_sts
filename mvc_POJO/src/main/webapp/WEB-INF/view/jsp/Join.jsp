@@ -52,7 +52,7 @@
 
 			<textarea cols="45" rows="10" name="memIntro"></textarea>
 			<p>
-		<input type="submit" value="가입"> 
+		<input type="submit" value="가입" id = "set"> 
 		<a href="index"><input type="button" value="취소"></a> 
 		</form>
 		</div>
