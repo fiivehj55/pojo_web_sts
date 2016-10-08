@@ -48,9 +48,10 @@ public class QuestiontController {
 		return "jsp/Table";
 	}
 
-	@RequestMapping(value = "/bbsSelect", method = RequestMethod.POST)
-	public String bbsSelect(Model model) {
-		return "";
+	@RequestMapping(value = "/bbsInsert", method = RequestMethod.GET)
+	public String bbsInsert(Model model) {
+		// view의 이름을 리턴.
+		return "/jsp/insertTable";
 	}
 
 }
