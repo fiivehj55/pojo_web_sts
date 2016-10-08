@@ -1,5 +1,8 @@
 <!-- 게시판 페이지 -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<% %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,12 +55,23 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td><h1>${questNo}</h1></td>
-							<td><a>제목</a></td>
-							<td><a>이름</a></td>
-							<td><a>등록일자</a></td>
-						</tr>
+						<c:choose>
+							<c:when test="${fn:length(list) > 0}">
+								<c:forEach items="${list }" var="row">
+									<tr>
+										<td><a>${row.questNo }</a></td>
+										<td><a>${row.questTitle }</a></td>
+										<td><a>${row.memberId }</a></td>
+										<td><a>${row.questDate }</a></td>
+									</tr>
+								</c:forEach>
+							</c:when>
+							<c:otherwise>
+								<tr>
+									<td colspan="4"> 조회된 결과가 없습니다. </td>
+								</tr>
+							</c:otherwise>
+						</c:choose>
 					</tbody>
 				</table>
 			</div>

@@ -215,7 +215,7 @@ public class Question implements Serializable {
 	public String toString() {
 		return "Question [questNo=" + questNo + ", questTitle=" + questTitle + ", questContent=" + questContent
 				+ ", questDate=" + questDate + ", memberId=" + memberId + ", detailId=" + detailId + ", questReplyNo="
-				+ questReplyNo + "]";
+				+ questReplyNo + "]" + "\n";
 	}
 
 }

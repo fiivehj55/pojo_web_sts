@@ -1,6 +1,7 @@
 package com.example.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -11,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.example.dto.Member;
 import com.example.dto.Question;
@@ -21,6 +23,7 @@ public class QuestiontController {
 
 	@Autowired
 	QuestionService qservice;
+	
 	@Bean
 	public CommonsMultipartResolver multipartResolver() {
 		CommonsMultipartResolver resolver = new CommonsMultipartResolver();
@@ -33,6 +36,7 @@ public class QuestiontController {
 	public String table(Model model, HttpSession session) {
 		Member user = (Member) session.getAttribute("user");
 		List<Question> list = qservice.selectById(user.getMemId());
+		
 		session.setAttribute("Question", list);
 		// view의 이름을 리턴.
 		return "jsp/Table";
