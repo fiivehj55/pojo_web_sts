@@ -10,7 +10,7 @@
 	<div id="main">
 		<div id="content" class="auto_center">
 		<h1>회원가입</h1>
-		<form method="post" action="join" enctype="multipart/form-data">
+		<form method="post" action="join" enctype="multipart/form-data" id="myForm" >
 			<label for="memId">아이디:</label> 
 			<input type="text" name="memId" placeholder="영문+숫자 조합 8 이상"/>
 			<input type="button" value="중복확인">
@@ -60,7 +60,25 @@
 <jsp:include page="./Footer.jsp"></jsp:include>
 </body>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
-<script></script>
+<script src = "<%=request.getContextPath()%>/js/validate/dist/jquery.validate.min.js"></script>
 <script>
+$(document).ready(function() {
+	$("#myForm").validate({
+		rules:{
+			memId:"required",
+			memPassword:"required",
+			memName:"required",
+			memPhone:"required",
+			memEmail:"required"
+		},
+		messages:{
+			memId:"Please specify your Id",
+				memPassword:"Please specify your Password",
+				memName:"Please specify your name",
+				memPhone:"Please specify your Phone",
+				memEmail:"Please specify your Email"
+		}
+	});
+});
 </script>
 </html>

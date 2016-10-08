@@ -198,7 +198,12 @@ public class DaoTest {
       logger.trace("List: {}", question);
 
    }
+   @Test
+   public void testSelectByQuesId() {
+      List<Question> question = qdao.selectByMemId(template, "jang");
+      logger.trace("List: {}", question);
 
+   }
    @Test
    public void testInsertQuestion() {
       Calendar cd = Calendar.getInstance();
