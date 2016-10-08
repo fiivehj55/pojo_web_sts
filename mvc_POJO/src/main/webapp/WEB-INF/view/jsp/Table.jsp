@@ -29,7 +29,7 @@
 			<!-- 등록버튼 시작 -->
 			<div id="boardcss_list_add_button_table">
 				<div class="boardcss_list_add_button">
-					<p class="add_button">등록</p>
+					<a href="bbsInsert"><button class="add_button">등록</button></a>
 					<ul></ul>
 				</div>
 			</div>
@@ -59,10 +59,10 @@
 							<c:when test="${fn:length(Question) > 0}">
 								<c:forEach items="${Question }" var="row">
 									<tr>
-										<td><a>${row.questNo }</a></td>
+										<td>${row.questNo }</td>
 										<td><a>${row.questTitle }</a></td>
 										<td><a>${row.memberId }</a></td>
-										<td><a>${row.questDate }</a></td>
+										<td>${row.questDate }</td>
 									</tr>
 								</c:forEach>
 							</c:when>
@@ -124,7 +124,6 @@
 
 		</div>
 	</div>
-	${Question}
 	<jsp:include page="./Footer.jsp"></jsp:include>
 </head>
 <body>
