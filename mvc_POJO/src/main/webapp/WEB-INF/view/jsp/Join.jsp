@@ -60,6 +60,7 @@
 <jsp:include page="./Footer.jsp"></jsp:include>
 </body>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+<script></script>
 <script>
 </script>
 </html>
