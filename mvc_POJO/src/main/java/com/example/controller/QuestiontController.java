@@ -49,7 +49,15 @@ public class QuestiontController {
 	}
 
 	@RequestMapping(value = "/bbsInsert", method = RequestMethod.GET)
-	public String bbsInsert(Model model) {
+	public String bbsInsertGet(Model model, HttpSession session) {
+		Member user = (Member) session.getAttribute("user");
+		// view의 이름을 리턴.
+		return "/jsp/insertTable";
+	}
+	
+	@RequestMapping(value = "/bbsInsert", method = RequestMethod.POST)
+	public String bbsInsertPost(Model model, HttpSession session) {
+		Member user = (Member) session.getAttribute("user");
 		// view의 이름을 리턴.
 		return "/jsp/insertTable";
 	}
