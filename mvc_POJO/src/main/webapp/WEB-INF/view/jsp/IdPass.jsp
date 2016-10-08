@@ -1,5 +1,4 @@
 <!-- 아이디찾기/비밀번호찾기 선택 -->
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>

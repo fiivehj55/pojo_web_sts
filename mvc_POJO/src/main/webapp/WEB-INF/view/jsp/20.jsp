@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>후기 댓글</title>
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/CSS/ALL.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/ALL.css">
 </head>
 <body>
 	<h1>후기 댓글</h1>
