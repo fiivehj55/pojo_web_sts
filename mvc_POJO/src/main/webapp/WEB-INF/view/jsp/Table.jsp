@@ -56,8 +56,8 @@
 					</thead>
 					<tbody>
 						<c:choose>
-							<c:when test="${fn:length(list) > 0}">
-								<c:forEach items="${list }" var="row">
+							<c:when test="${fn:length(Question) > 0}">
+								<c:forEach items="${Question }" var="row">
 									<tr>
 										<td><a>${row.questNo }</a></td>
 										<td><a>${row.questTitle }</a></td>
