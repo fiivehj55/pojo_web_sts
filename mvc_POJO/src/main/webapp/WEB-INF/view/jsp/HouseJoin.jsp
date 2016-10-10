@@ -25,7 +25,9 @@
 		<div id="content" class="auto_center">
 		<h1>하우스 등록</h1>
 		<form method="post" action="insertHouse">
+			<div id="one" style="display: block;">
 			<fieldset>
+			
 				<legend>호스팅 1단계</legend>
 				<label for="room">방의 개수 : </label>
 				<input type="radio" id="rone" name="room" value="1개">
@@ -74,8 +76,11 @@
 				<label for="elebe">엘리베이터</label>
 				<input type="checkbox" id="washing" name="washing" value="washing">
 				<label for="washing">세탁기</label>
+				<input type="button" id="nextTwo" value="다음단계">
 			</fieldset>
+			</div>
 			<br/>
+			<div id ="two" style="display: none;">
 			<fieldset>
 				<legend>호스팅 2단계</legend>
 				<label for="rname">숙소 이름</label><br/>
@@ -89,8 +94,11 @@
 				
 				<label for="addr">주소</label><br/>
 				<textarea rows="5" cols="20" name="addr"></textarea> <br/>
-			</fieldset>
+			</fieldset>	
+				<input type="button" id="nextThree" value="다음단계">
+			</div>
 			<br/>
+			<div id="three" style="display: none;">
 			<fieldset>
 				<legend>호스팅 3단계</legend>
 				
@@ -112,7 +120,7 @@
 				
 			</fieldset>
 			<input type="submit" id="next" name="next" value="다음 단계"/> <br/>
-			<!-- <a href="search"><input type="button" value="다음 단계"/></a> -->
+			</div>
 		</form>
 		</div>
 	</div>
@@ -120,5 +128,15 @@
 </body>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 <script>
+$(document).ready(function() {
+	$("#nextTwo").on("click",function(){
+		$("#one").css("display","none");
+		$("#two").css("display","block");
+	})
+	$("#nextThree").on("click",function(){
+		$("#two").css("display","none");
+		$("#three").css("display","block");
+	})
+});
 </script>
 </html>
