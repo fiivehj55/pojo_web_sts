@@ -31,7 +31,7 @@ input, input[placeholder] {
 </head>
 <body class="homepage">
 	<!-- Header -->
-	<div id="header">
+	<div id="header" class="bxslider">
 		<div id="nav-wrapper">
 			<!-- Nav -->
 			<nav id="nav">
@@ -103,7 +103,6 @@ input, input[placeholder] {
 		</div>
 	</div>
 <script src="http://code.jquery.com/jquery.js"></script>
-
 <script>
 $(document).ready(function() {
 	var interval1 = window.setInterval(function() {
@@ -115,10 +114,6 @@ $(document).ready(function() {
 	var interval3 = window.setInterval(function() {
 		$("#lightning3").fadeIn(250).fadeOut(250);
 	}, 7000);
-
-
-
-
 </script>	
 
 	<!-- Featured -->
