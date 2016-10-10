@@ -31,7 +31,7 @@ input, input[placeholder] {
 </head>
 <body class="homepage">
 	<!-- Header -->
-	<div id="header">
+	<div id="header" class="bxslider">
 		<div id="nav-wrapper">
 			<!-- Nav -->
 			<nav id="nav">
@@ -103,17 +103,27 @@ input, input[placeholder] {
 		</div>
 	</div>
 <script src="http://code.jquery.com/jquery.js"></script>
-
 <script>
+<<<<<<< HEAD
+=======
+$(document).ready(function() {
+	var interval1 = window.setInterval(function() {
+		$("#lightning1").fadeIn(250).fadeOut(250);
+	}, 4000);
+	var interval2 = window.setInterval(function() {
+		$("#lightning2").fadeIn(250).fadeOut(250);
+	}, 5000);
+	var interval3 = window.setInterval(function() {
+		$("#lightning3").fadeIn(250).fadeOut(250);
+	}, 7000);
+>>>>>>> branch 'master' of https://github.com/fiivehj55/pojo_web_sts.git
 </script>	
 
 	<!-- Featured -->
 	<div id="featured">
 		<div class="container">
 			<header>
-				<input id="text_box" type="text" size="100"
-					placeholder="두정동 또는 건물이름을 입력하세요"> <input type="button"
-					value="확인">
+				<input id="text_box" type="text" size="100" placeholder="두정동 또는 건물이름을 입력하세요"> <input type="button" value="확인">
 			</header>
 			<p>
 				지금 <a href="http://templated.co"> 인기있는 </a>숙소를 만나보세요!
@@ -127,27 +137,28 @@ input, input[placeholder] {
 
 			<div class="row">
 				<section class="6u">
+<<<<<<< HEAD
 					<a href="searchByHouseNo?houseNo=99" class="image full"><img src="css/images/image1.jpg"
 						width=500 height=500 alt="" id="test"></a>
+=======
+					<a href="searchByHouseNo?houseNo=99" class="image full"><img src="css/images/image1.jpg" width=500 height=500 alt=""></a>
+>>>>>>> branch 'master' of https://github.com/fiivehj55/pojo_web_sts.git
 				</section>
 				<section class="6u">
-					<a href="#" class="image full"><img src="css/images/image2.jpg"
-						width=500 height=500 alt=""></a>
+					<a href="#" class="image full"><img src="css/images/image2.jpg" width=500 height=500 alt=""></a>
 				</section>
 			</div>
 
 			<div class="row">
 				<section class="6u">
-					<a href="#" class="image full"><img src="css/images/image3.jpg"
-						width=500 height=500 alt=""></a>
+					<a href="#" class="image full"><img src="css/images/image3.jpg" width=500 height=500 alt=""></a>
 					<header>
 						<!-- <h2>Mauris vulputate dolor</h2> -->
 					</header>
 					<!-- <p>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p> -->
 				</section>
 				<section class="6u">
-					<a href="#" class="image full"><img src="css/images/image4.jpg"
-						width=500 height=500 alt=""></a>
+					<a href="#" class="image full"><img src="css/images/image4.jpg" width=500 height=500 alt=""></a>
 					<header>
 						<!-- <h2>Mauris vulputate dolor</h2> -->
 					</header>
@@ -199,6 +210,7 @@ var myImg = document.getElementById("test");
 		
 		window.setInterval(function(){
 			pos = pos+up
+
 	myImg.setAttribute("src",img[pos]);
 	$("#header").prop("background",img2[pos]);
 	console.log("rand = "+img[pos]);
@@ -207,7 +219,6 @@ var myImg = document.getElementById("test");
 			document.getElementById('header').style.backgroundImage=img2[pos];
 			up= up*(-1);
 			},1000);
-		
-	});
+		}); 
 </script>
 </html>
