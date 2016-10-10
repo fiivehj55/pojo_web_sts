@@ -33,7 +33,7 @@ label {
 			<input type="password" name="password"	placeholder="영문+숫자 조합 8 이상">
 		<p>
 			<sform:label path="memName">이름:</sform:label> 
-			<sform:input type="text" path="memName"/>
+			<sform:input type="text" path="memName" disabled="true"/>
 		</p>
 		<p>
 			<sform:label path="memGender">성별:</sform:label> 

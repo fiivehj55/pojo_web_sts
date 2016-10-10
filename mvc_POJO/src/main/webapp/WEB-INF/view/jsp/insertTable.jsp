@@ -25,32 +25,19 @@ label {
 	<jsp:include page="./Header.jsp"></jsp:include>
 	<div id="main">
 		<div id="content" class="auto_center">
-<h1>게시판</h1>
-<table border="1">
-	<tr>
-		<th>글번호</th>
-		<th>제목</th>
-		<th>등록 날짜</th>
-		<th>작성자</th>
-	</tr>
-	
-	<tr>
-		<td>1</td>
-		<td>문의합니다</td>
-		<td>16.09.15</td>
-		<td>황민정</td>
-	</tr>
-
-
-</table>
-
-
+			<h1>게시판 등록</h1>
+			<form method="post" action="bbsInsert">
+				<label for="title">제목</label>
+				<input type="text" id="title" name="title" size="50"/>
+				
+				<label for="content">내용</label>
+				<textarea rows="10" cols="50" id="content" name="content"></textarea>
+				
+				<input type="submit" value="글 등록"/>
+			</form>
 		</div>
 	</div>
-
 	<jsp:include page="./Footer.jsp"></jsp:include>
-
-
 </head>
 <body>
 

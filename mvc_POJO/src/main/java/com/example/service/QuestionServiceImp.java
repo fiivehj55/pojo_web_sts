@@ -33,7 +33,7 @@ public class QuestionServiceImp implements QuestionService {
 
 	@Transactional
 	@Override
-	public int add(Question question) {
+	public int insertQuestion(Question question) {
 		int result = 0;
 		result = dao.insertQuestion(template, question);
 		
