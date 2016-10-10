@@ -61,27 +61,26 @@ background-size: cover;
 </head>
 <body class="homepage">
 	<!-- Header -->
-<<<<<<< HEAD
+
 
 	
 	<div id="header">
 	<div id="slider-wrapper">
-=======
+
 	 <div id="header"> 
->>>>>>> branch 'master' of https://github.com/fiivehj55/pojo_web_sts.git
 	<ul class="bxslider">
     <li><img src="css/images/image4.jpg" /></li>
     <li><img src="css/images/image3.jpg" /></li>
-<<<<<<< HEAD
+
 	</ul>
 	</div>
-=======
+
 </ul>
 	
 
 	<div id="header" class="bxslider">
 
->>>>>>> branch 'master' of https://github.com/fiivehj55/pojo_web_sts.git
+
 		<div id="nav-wrapper">
 			<!-- Nav -->
 			<nav id="nav">
