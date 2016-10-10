@@ -15,7 +15,7 @@
 <script
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="js/skel.min.js"></script>
-<script src="js/skel-panels.min.js"></script>
+<script src="js/skel-panels.min.js"></script> 
 <script src="js/init.js"></script>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/skel-noscript.css" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css" />
@@ -103,6 +103,7 @@ input, input[placeholder] {
 		</div>
 	</div>
 <script src="http://code.jquery.com/jquery.js"></script>
+
 <script>
 $(document).ready(function() {
 	var interval1 = window.setInterval(function() {
@@ -186,6 +187,15 @@ $(document).ready(function() {
 </body>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 <script>
+var image1 = "./css/images/house1.jpg";
+var image2 = "./css/images/house2.jpg";
+
+var image3 = "url(./css/images/house1.jpg) no-repeat bottom center";
+var image4 = "url(./css/images/house2.jpg) no-repeat bottom center";
+var img = [image1,image2];
+var pos = 1;
+
+var myImg = document.getElementById("test");
 	var subMenu = $(".sub");
 	subMenu.hide();
 	$(document).ready(function() {
@@ -199,6 +209,16 @@ $(document).ready(function() {
 				subMenu.hide();
 			}
 		});
+		
+		window.setInterval(function(){
+			var rand = Math.floor(Math.random()*2);
+	myImg.setAttribute("src",img[rand]);
+	$("#header").attr("background-image",img[rand]);
+	console.log("rand = "+img[rand]);
+			console.log($("#header").attr("background-image")); 
+		//	console.log($("#header").attr("background"));
+			},1000);
+		
 	});
 </script>
 </html>
