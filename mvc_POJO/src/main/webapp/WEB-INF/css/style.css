@@ -21,6 +21,17 @@
 /*********************************************************************************/
 /* Basic                                                                         */
 /*********************************************************************************/
+.liighting{
+	display:none;
+	position:absolute;
+	left:0px;
+	top:0px;
+	z-index: 0;
+}
+
+
+
+
 body {
 	margin: 0;
 	padding: 0;
@@ -2028,7 +2039,7 @@ ul.contact li a:hover {
 /*********************************************************************************/
 #header {
 	position: relative;
-	background: url(../css/images/image5.JPG) no-repeat bottom center;
+	background: url(../css/images/house1.jpg) no-repeat bottom center;
 	background-attachment: fixed;
 	background-size: cover;
 	text-align: center;

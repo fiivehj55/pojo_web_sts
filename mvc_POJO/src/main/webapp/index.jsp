@@ -102,6 +102,31 @@ input, input[placeholder] {
 			</div>
 		</div>
 	</div>
+<script src="http://code.jquery.com/jquery.js"></script>
+<script>
+$(document).ready(function() {
+	var interval1 = window.setInterval(function() {
+		$("#lightning1").fadeIn(250).fadeOut(250);
+	}, 4000);
+	var interval2 = window.setInterval(function() {
+		$("#lightning2").fadeIn(250).fadeOut(250);
+	}, 5000);
+	var interval3 = window.setInterval(function() {
+		$("#lightning3").fadeIn(250).fadeOut(250);
+	}, 7000);
+
+
+
+
+</script>	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	<!-- Featured -->
 	<div id="featured">
