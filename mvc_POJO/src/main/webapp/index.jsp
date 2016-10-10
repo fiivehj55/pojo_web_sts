@@ -64,8 +64,8 @@ background-size: cover;
 	<div id="slider-wrapper">
 
 	<ul class="bxslider">
-    <li><img src="css/images/image4.jpg" /></li>
-    <li><img src="css/images/image3.jpg" /></li>
+    <li><img src="css/images/house3.jpg" /></li>
+    <li><img src="css/images/house2.jpg" /></li>
 
 	</ul>
 	</div>
@@ -212,13 +212,14 @@ background-size: cover;
 <script>
 $(document).ready(function(){
 	$('.bxslider').bxSlider({
-		   mode: 'fade',
-		   captions: true,
-		   pagerCustom: '#bx-pager',
-		   adaptiveHeight: true,
-		   slideWidth: 1000
+			adaptiveHeight : true,
+			mode : 'fade',
+			captions : true,
+			pagerCustom : '#bx-pager',
+			slideWidth : 1500,
+
 		});
-});
+	});
 </script>
 
 </html>
