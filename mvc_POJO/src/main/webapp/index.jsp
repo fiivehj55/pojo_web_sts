@@ -221,6 +221,6 @@ var myImg = document.getElementById("test");
 			document.getElementById('header').style.backgroundImage=img2[pos];
 			up= up*(-1);
 			},1000);
-	});
+	}); 
 </script>
 </html>
