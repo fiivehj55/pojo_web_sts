@@ -2,6 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <% %>
 <!DOCTYPE html>
 <html>
@@ -62,7 +63,8 @@
 										<td>${row.questNo }</td>
 										<td><a href="bbsSelectByNo?questNo=${row.questNo }">${row.questTitle }</a></td>
 										<td><a>${row.memberId }</a></td>
-										<td>${row.questDate }</td>
+										<td><fmt:formatDate pattern="yyyy/MM/dd" value="${row.questDate }" /></td>
+										
 									</tr>
 								</c:forEach>
 							</c:when>
