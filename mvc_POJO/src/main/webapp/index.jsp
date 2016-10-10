@@ -213,14 +213,14 @@ var myImg = document.getElementById("test");
 		
 		window.setInterval(function(){
 			pos = pos+up
-	myImg.setAttribute("src",img[pos]);
-	$("#header").attr("background",img2[pos]);
-	console.log("rand = "+img[pos]);
+			myImg.setAttribute("src",img[pos]);
+			$("#header").attr("background",img2[pos]);
+			console.log("rand = "+img[pos]);
 			//console.log($("#header").attr("background-image")); 
 			console.log($("#header").attr("background"));
 			document.getElementById('header').style.backgroundImage=img2[pos];
 			up= up*(-1);
 			},1000);
-	}); 
+		}); 
 </script>
 </html>
