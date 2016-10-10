@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Linear by TEMPLATED</title>
+<title>Linear  TEMPLATED</title>
 
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="description" content="" />
@@ -12,21 +12,24 @@
 <link
 	href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900'
 	rel='stylesheet' type='text/css'>
-	
- <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="js/skel.min.js"></script>
-<script src="js/skel-panels.min.js"></script>  
+<script src="js/skel-panels.min.js"></script> 
 <script src="js/init.js"></script>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/skel-noscript.css" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style-desktop.css" />
 
 
-<!-- jQuery library (served from Google) -->
+<!-- 기본 jQuery js파일 연결 -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 
-<!-- bxSlider CSS file -->
+
+<!-- bxSlider css파일 연결 -->
 <link href="js/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
+
+
 
 
 <style>
@@ -34,18 +37,41 @@ input, input[placeholder] {
 	font-weight: bold;
 	text-align: center;
 }
+.bx-wrapper{
+position:relative;
+width:100%;
+height:30% !important;
+top:0;
+left:0;
+}
+.bxslider, .bxslider li {
+/* 높이 조정*/
+height: 30vh !important;;
+}
+
+.bxslider li {
+background-repeat: no-repeat;
+background-position: top center;
+background-size: cover;
+}
 </style>
 
 </head>
 <body class="homepage">
 	<!-- Header -->
 
-	
 	<div id="header">
+	<div id="slider-wrapper">
+
 	<ul class="bxslider">
-    <li><img src="css/images/image4.jpg" /></li>
-    <li><img src="css/images/image3.jpg" /></li>
+    <li><img src="css/images/house3.jpg" /></li>
+    <li><img src="css/images/house2.jpg" /></li>
+
 	</ul>
+	</div>
+
+
+
 		<div id="nav-wrapper">
 			<!-- Nav -->
 			<nav id="nav">
@@ -122,16 +148,13 @@ input, input[placeholder] {
 			</div>
 		</div>
 	</div>
-<script src="http://code.jquery.com/jquery.js"></script>
-<script>
-</script>	
+
 
 	<!-- Featured -->
 	<div id="featured">
 		<div class="container">
 			<header>
-				<input id="text_box" type="text" size="100" placeholder="두정동 또는 건물이름을 입력하세요"/> 
-				<input type="button" value="확인">
+				<input id="text_box" type="text" size="100" placeholder="두정동 또는 건물이름을 입력하세요"> <input type="button" value="확인">
 			</header>
 			<p>
 				지금 <a href="http://templated.co"> 인기있는 </a>숙소를 만나보세요!
@@ -145,9 +168,10 @@ input, input[placeholder] {
 
 			<div class="row">
 				<section class="6u">
-					<a href="searchByHouseNo?houseNo=99" class="image full">
-					<img src="css/images/image1.jpg"
+
+					<a href="searchByHouseNo?houseNo=99" class="image full"><img src="css/images/image1.jpg"
 						width=500 height=500 alt="" id="test"></a>
+					<a href="searchByHouseNo?houseNo=99" class="image full"><img src="css/images/image1.jpg" width=500 height=500 alt=""></a>
 
 				</section>
 				<section class="6u">
@@ -185,88 +209,23 @@ input, input[placeholder] {
 			</section>
 		</div>
 	</div>
-	<div id="footer">
-		<div class="container">
-			<section>
-				<header>
-					<h2></h2>
-					<span class="byline">
-						</span>
-				</header>
-				<ul class="contact">
-					<li><a href="#" class="fa fa-twitter"><span>Twitter</span></a></li>
-					<li class="active"><a href="#" class="fa fa-facebook"><span>Facebook</span></a></li>
-					<li><a href="#" class="fa fa-dribbble"><span>Pinterest</span></a></li>
-					<li><a href="#" class="fa fa-tumblr"><span>Google+</span></a></li>
-				</ul>
-			</section>
-		</div>
-	</div>
 
-	<!-- Copyright -->
-	<div id="copyright">
-		<div class="container">
-			Design: <a href="http://templated.co">TEMPLATED</a> Images: <a
-				href="http://unsplash.com">Unsplash</a> (<a
-				href="http://unsplash.com/cc0">CC0</a>
-		</div>
-	</div>
 
 </body>
-<!-- bxSlider Javascript file -->
-<script src="js/jquery.bxslider/jquery.bxslider.min.js"></script>
+
+<script src = "http://code.jquery.com/jquery.js"/></script>
+<script src = "js/jquery.bxslider/jquery.bxslider.min.js"></script>
 <script>
 $(document).ready(function(){
 	$('.bxslider').bxSlider({
-		  speed:1000, //default:500 이미지변환 속도
-		  auto: true, //default:false 자동 시작
-		  captions: true, // 이미지의 title 속성이 노출된다.
-		  autoControls: true, //default:false 정지,시작 콘트롤 노출, css 수정이 필요
+			adaptiveHeight : true,
+			mode : 'fade',
+			captions : true,
+			pagerCustom : '#bx-pager',
+			slideWidth : 1500,
+
 		});
-});
+	});
 </script>
 
-
-
-<script>/* 
-
-var image1 = "./css/images/house1.jpg";
-var image2 = "./css/images/house2.jpg";
-
-var image3 = "url(./css/images/house1.jpg) no-repeat bottom center";
-var image4 = "url(./css/images/house2.jpg) no-repeat bottom center";
-var img = [image1,image2];
-var img2 = [image3,image4];
-var pos = 0;
-var up = 1;
-var myImg = document.getElementById("test");
-	var subMenu = $(".sub");
-	subMenu.hide();
-	$(document).ready(function() {
-		$("#nav").hover(function(e) {
-			if (e.type == "mouseenter") {
-				subMenu.show();
-			}
-		});
-		$("#nav").hover(function(e) {
-			if (e.type == "mouseleave") {
-				subMenu.hide();
-			}
-		});
-		
-		window.setInterval(function(){
-			pos = pos+up
-
-	myImg.setAttribute("src",img[pos]);
-	$("#header").prop("background",img2[pos]);
-	console.log("rand = "+img[pos]);
-			//console.log($("#header").attr("background-image")); 
-			console.log($("#header").attr("background"));
-			document.getElementById('header').style.backgroundImage=img2[pos];
-			up= up*(-1);
-			},1000);
-
-		
-	}); */
-</script>
 </html>
