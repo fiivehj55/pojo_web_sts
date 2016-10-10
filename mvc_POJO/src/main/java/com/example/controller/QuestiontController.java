@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
@@ -21,6 +23,7 @@ import com.example.service.QuestionService;
 @Controller
 public class QuestiontController {
 
+	static Logger logger = LoggerFactory.getLogger(QuestiontController.class);
 	@Autowired
 	QuestionService qservice;
 	
@@ -81,8 +84,7 @@ public class QuestiontController {
 	}
 	
 	@RequestMapping(value = "/bbsSelectByNo", method = RequestMethod.GET)
-	public String bbsSelectByNo(Model model, 
-			@RequestParam Integer questNo,
+	public String bbsSelectByNoGet(Model model, @RequestParam Integer questNo,
 			HttpSession session) {
 		Question question = qservice.selectByNo(questNo);
 		String questTitle = question.getQuestTitle();
@@ -91,14 +93,71 @@ public class QuestiontController {
 		String memberId = question.getMemberId();
 		Integer questReplyNo = question.getQuestReplyNo();
 		
-		model.addAttribute("question", question);
-		model.addAttribute("questTitle", questTitle);
-		model.addAttribute("questContent", questContent);
-		model.addAttribute("questDate", questDate);
-		model.addAttribute("memberId", memberId);
-		model.addAttribute("questReplyNo", questReplyNo);
+		if(question != null){
+			
+			model.addAttribute("questNo", question.getQuestNo());
+			model.addAttribute("question", question);
+			model.addAttribute("questTitle", questTitle);
+			model.addAttribute("questContent", questContent);
+			model.addAttribute("questDate", questDate);
+			model.addAttribute("memberId", memberId);
+			model.addAttribute("questReplyNo", questReplyNo);
+		}
 		// view의 이름을 리턴.
 		return "/jsp/selectByTable";
+	}
+	
+	@RequestMapping(value = "/bbsSelectByNo", method = RequestMethod.POST)
+	public String bbsSelectByNoPost(Model model, HttpSession session) {
+		// view의 이름을 리턴.
+		return "jsp/Table";
+	}
+	
+	@RequestMapping(value = "/bbsUpdate", method = RequestMethod.GET)
+	public String bbsUpdate(Model model,
+			@RequestParam Integer questNo,
+			@RequestParam String questTitle,
+			@RequestParam String questContent,
+			/*@RequestParam Date questDate,
+			@RequestParam String memberId,
+			@RequestParam Integer questReplyNo,*/
+			HttpSession session) {
+		int result = 0;
+		Member member = (Member) session.getAttribute("user");
+		Question question = new Question();
+		question.setQuestNo(questNo);
+		question.setQuestTitle(questTitle);
+		question.setQuestContent(questContent);
+		question.setMemberId(member.getMemId());
+		
+		result = qservice.updateQuestion(question);
+		if(result == 1){
+			return "redirect:/bbs";
+		}else{
+			// view의 이름을 리턴.
+			return "jsp/updateTable";
+		}
+	}
+	
+/*	@RequestMapping(value = "/bbsDelete",method=RequestMethod.GET)
+	public String deletePassGet(Model model,
+			@RequestParam Integer questNo){
+		System.out.println("NO: "+questNo);
+		return "jsp/Table";
+	}*/
+	
+	@RequestMapping(value = "/bbsDelete",method=RequestMethod.GET)
+	public String deletePassPost(Model model,
+			@RequestParam Integer questNo,
+			HttpSession session){
+		System.out.println("NO: "+questNo);
+		Member member = (Member) session.getAttribute("user");
+		int result = qservice.delete(questNo);
+		if(result == 1){
+			return "redirect:/bbs";
+		}else{
+			return "jsp/selectByTable";
+		}
 	}
 
 }

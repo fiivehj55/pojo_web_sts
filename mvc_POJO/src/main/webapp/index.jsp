@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Linear by TEMPLATED</title>
+<title>Linear  TEMPLATED</title>
 
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="description" content="" />

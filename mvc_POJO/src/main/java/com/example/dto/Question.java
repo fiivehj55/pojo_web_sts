@@ -3,6 +3,8 @@ package com.example.dto;
 import java.io.Serializable;
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 /**
  * QUESTION 모델 클래스.
  * 

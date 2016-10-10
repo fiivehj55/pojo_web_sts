@@ -26,15 +26,22 @@ label {
 	<jsp:include page="./Header.jsp"></jsp:include>
 	<div id="main">
 		<div id="content" class="auto_center">
-			<h1>게시판 등록</h1>
-			<sform:form method="get" action="bbsSelectByNo" modelAttribute="question">
+			<h1>게시판 VIEW</h1>
+			<sform:form method="get" action="bbsUpdate" modelAttribute="question">
+				<sform:label path="questNo">글 번호</sform:label>
+				<sform:input type="number" path="questNo" disabled="true"/>
+				<sform:input type="hidden" path="questNo"/>
+				
 				<sform:label path="questTitle">제목</sform:label>
 				<sform:input type="text" path="questTitle" size="50"/>
 				
+				
 				<sform:label path="questContent">내용</sform:label>
 				<sform:textarea rows="10" cols="50" path="questContent"></sform:textarea>
-				
-				<input type="submit" value="글 등록"/>
+			
+				<input type="submit" value="수정"/>
+				<a href="bbsDelete?questNo=${questNo}"><input type="button" value="삭제"/></a>
+				<a href="bbs"><input type="button" value="목록"/></a>
 			</sform:form>
 		</div>
 	</div>
