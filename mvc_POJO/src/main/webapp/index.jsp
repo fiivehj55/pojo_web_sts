@@ -46,10 +46,13 @@ input, input[placeholder] {
 	<!-- Header -->
 	<div id="header">
 	<ul class="bxslider">
-    <li><img src="css/images/image2.jpg" /></li>
+    <li><img src="css/images/image4.jpg" /></li>
     <li><img src="css/images/image3.jpg" /></li>
 </ul>
 	
+=======
+	<div id="header" class="bxslider">
+>>>>>>> branch 'master' of https://github.com/fiivehj55/pojo_web_sts.git
 		<div id="nav-wrapper">
 			<!-- Nav -->
 			<nav id="nav">
@@ -121,14 +124,27 @@ input, input[placeholder] {
 		</div>
 	</div>
 <script src="http://code.jquery.com/jquery.js"></script>
+<script>
+<<<<<<< HEAD
+=======
+$(document).ready(function() {
+	var interval1 = window.setInterval(function() {
+		$("#lightning1").fadeIn(250).fadeOut(250);
+	}, 4000);
+	var interval2 = window.setInterval(function() {
+		$("#lightning2").fadeIn(250).fadeOut(250);
+	}, 5000);
+	var interval3 = window.setInterval(function() {
+		$("#lightning3").fadeIn(250).fadeOut(250);
+	}, 7000);
+>>>>>>> branch 'master' of https://github.com/fiivehj55/pojo_web_sts.git
+</script>	
 
 	<!-- Featured -->
 	<div id="featured">
 		<div class="container">
 			<header>
-				<input id="text_box" type="text" size="100"
-					placeholder="두정동 또는 건물이름을 입력하세요"> <input type="button"
-					value="확인">
+				<input id="text_box" type="text" size="100" placeholder="두정동 또는 건물이름을 입력하세요"> <input type="button" value="확인">
 			</header>
 			<p>
 				지금 <a href="http://templated.co"> 인기있는 </a>숙소를 만나보세요!
@@ -142,28 +158,28 @@ input, input[placeholder] {
 
 			<div class="row">
 				<section class="6u">
-					<a href="searchByHouseNo?houseNo=1" class="image full">
-					<img src="css/images/image1.jpg"
+<<<<<<< HEAD
+					<a href="searchByHouseNo?houseNo=99" class="image full"><img src="css/images/image1.jpg"
 						width=500 height=500 alt="" id="test"></a>
+=======
+					<a href="searchByHouseNo?houseNo=99" class="image full"><img src="css/images/image1.jpg" width=500 height=500 alt=""></a>
+>>>>>>> branch 'master' of https://github.com/fiivehj55/pojo_web_sts.git
 				</section>
 				<section class="6u">
-					<a href="#" class="image full"><img src="css/images/image2.jpg"
-						width=500 height=500 alt=""></a>
+					<a href="#" class="image full"><img src="css/images/image2.jpg" width=500 height=500 alt=""></a>
 				</section>
 			</div>
 
 			<div class="row">
 				<section class="6u">
-					<a href="#" class="image full"><img src="css/images/image3.jpg"
-						width=500 height=500 alt=""></a>
+					<a href="#" class="image full"><img src="css/images/image3.jpg" width=500 height=500 alt=""></a>
 					<header>
 						<!-- <h2>Mauris vulputate dolor</h2> -->
 					</header>
 					<!-- <p>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p> -->
 				</section>
 				<section class="6u">
-					<a href="#" class="image full"><img src="css/images/image4.jpg"
-						width=500 height=500 alt=""></a>
+					<a href="#" class="image full"><img src="css/images/image4.jpg" width=500 height=500 alt=""></a>
 					<header>
 						<!-- <h2>Mauris vulputate dolor</h2> -->
 					</header>
@@ -204,8 +220,9 @@ var image2 = "./css/images/house2.jpg";
 var image3 = "url(./css/images/house1.jpg) no-repeat bottom center";
 var image4 = "url(./css/images/house2.jpg) no-repeat bottom center";
 var img = [image1,image2];
-var pos = 1;
-
+var img2 = [image3,image4];
+var pos = 0;
+var up = 1;
 var myImg = document.getElementById("test");
 	var subMenu = $(".sub");
 	subMenu.hide();
@@ -222,14 +239,22 @@ var myImg = document.getElementById("test");
 		});
 		
 		window.setInterval(function(){
-			var rand = Math.floor(Math.random()*2);
-	myImg.setAttribute("src",img[rand]);
-	$("#header").attr("background-image",img[rand]);
-	console.log("rand = "+img[rand]);
-			console.log($("#header").attr("background-image")); 
-		//	console.log($("#header").attr("background"));
+			pos = pos+up
+
+	myImg.setAttribute("src",img[pos]);
+	$("#header").prop("background",img2[pos]);
+	console.log("rand = "+img[pos]);
+			//console.log($("#header").attr("background-image")); 
+			console.log($("#header").attr("background"));
+			document.getElementById('header').style.backgroundImage=img2[pos];
+			up= up*(-1);
 			},1000);
+<<<<<<< HEAD
 		
 	});
 </script> -->
+=======
+		}); 
+</script>
+>>>>>>> branch 'master' of https://github.com/fiivehj55/pojo_web_sts.git
 </html>

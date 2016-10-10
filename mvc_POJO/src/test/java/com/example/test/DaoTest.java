@@ -194,7 +194,7 @@ public class DaoTest {
 
    @Test
    public void testSelectByQuestNo() {
-      Question question = qdao.selectByQuestNo(template, 1);
+      Question question = qdao.selectByQuestNo(template, 99);
       logger.trace("List: {}", question);
 
    }

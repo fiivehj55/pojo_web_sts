@@ -119,13 +119,13 @@ input, input[placeholder] {
 
 			<div class="row">
 				<section class="6u">
-					<a href="searchByHouseNo?houseNo=1" class="image full">
+					<a href="searchByHouseNo?houseNo=99" class="image full">
 						<img src="css/images/image1.jpg" width=500 height=500 alt="">
 					</a>
 				</section>
 				<section class="6u">
 					<a href="#" class="image full">
-					<img src="css/images/image2.jpg"	width=500 height=500 alt=""></a>
+					<img src="css/images/image2.jpg" width=500 height=500 alt=""></a>
 				</section>
 			</div>
 
@@ -139,8 +139,7 @@ input, input[placeholder] {
 					<!-- <p>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p> -->
 				</section>
 				<section class="6u">
-					<a href="#" class="image full"><img src="css/images/image4.jpg"
-						width=500 height=500 alt=""></a>
+					<a href="#" class="image full"><img src="css/images/image4.jpg" width=500 height=500 alt=""></a>
 					<header>
 						<!-- <h2>Mauris vulputate dolor</h2> -->
 					</header>
