@@ -25,11 +25,9 @@
 <!-- 기본 jQuery js파일 연결 -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 
-<!-- bxSlider js파일 연결 -->
-<script src="./view/jquery.bxslider/jquery.bxslider.min.js"></script>
 
 <!-- bxSlider css파일 연결 -->
-<link href="./view/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
+<link href="js/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
 
 
 
@@ -62,12 +60,9 @@ background-size: cover;
 <body class="homepage">
 	<!-- Header -->
 
-
-	
 	<div id="header">
 	<div id="slider-wrapper">
 
-	 <div id="header"> 
 	<ul class="bxslider">
     <li><img src="css/images/image4.jpg" /></li>
     <li><img src="css/images/image3.jpg" /></li>
@@ -75,10 +70,6 @@ background-size: cover;
 	</ul>
 	</div>
 
-</ul>
-	
-
-	<div id="header" class="bxslider">
 
 
 		<div id="nav-wrapper">
@@ -216,15 +207,16 @@ background-size: cover;
 
 </body>
 
+<script src = "http://code.jquery.com/jquery.js"/></script>
+<script src = "js/jquery.bxslider/jquery.bxslider.min.js"></script>
 <script>
 $(document).ready(function(){
 	$('.bxslider').bxSlider({
-		  speed:1000, //default:500 이미지변환 속도
-		  slideWidth :1000,
-		  responsive : false,
-		  auto: true, //default:false 자동 시작
-		  captions: true, // 이미지의 title 속성이 노출된다.
-		  autoControls: true, //default:false 정지,시작 콘트롤 노출, css 수정이 필요
+		   mode: 'fade',
+		   captions: true,
+		   pagerCustom: '#bx-pager',
+		   adaptiveHeight: true,
+		   slideWidth: 1000
 		});
 });
 </script>
