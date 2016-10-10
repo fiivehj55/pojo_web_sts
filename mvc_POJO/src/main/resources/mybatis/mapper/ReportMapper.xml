@@ -3,11 +3,12 @@
 <mapper namespace="pojo.web.dao.ReportMapper">
 
 	<select id="selectAllReport" resultMap="reportBase">
-		select * from REPORT
+		select * from REPORT ORDER BY REPORT_NO DESC
 	</select>
 	
 	<select id="selectByReortNo" parameterType="int" resultMap="reportBase">
 		select * from REPORT where REPORT_NO = #{reportNo}
+		ORDER BY REPORT_NO DESC
 	</select>
 	
 	<insert id="insertReport" parameterType="report">

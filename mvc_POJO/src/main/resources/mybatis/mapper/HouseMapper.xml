@@ -3,14 +3,16 @@
 <mapper namespace="pojo.web.dao.houseMapper">
 
 	<select id="selectAllHouse" resultMap="houseBase">
-		select * from HOUSE
+		select * from HOUSE ORDER BY HOUSE_NO DESC
 	</select>
 	<select id="selectByIdHouse" parameterType="String" resultMap="houseBase">
 		select * from HOUSE where member_id = #{id}
+		ORDER BY HOUSE_NO DESC
 	</select>
 	
 	<select id="selectByNoHouse" parameterType="int" resultMap="houseBase">
 		select * from HOUSE where HOUSE_NO = #{houseNo}
+		ORDER BY HOUSE_NO DESC
 	</select>
 
 	<insert id="insertHouse" parameterType="house">

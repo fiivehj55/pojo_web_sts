@@ -3,14 +3,16 @@
 <mapper namespace="pojo.web.dao.ReplyMapper">
 	
 	<select id="selectAllReply" resultMap="replyBase">
-		select * from REPLY
+		select * from REPLY ORDER BY REPLY_NO DESC
 	</select>
 	
 	<select id="selectByReplyNo" parameterType="int" resultMap="replyBase">
 		select * from REPLY where REPLY_NO = #{replyNo}
+		ORDER BY REPLY_NO DESC
 	</select>
 	<select id="selectByHouseNo" parameterType="int" resultMap="replyBase">
 		select * from REPLY where REPLY_NO = #{replyNo}
+		ORDER BY REPLY_NO DESC
 	</select>
 	<insert id="insertReply" parameterType="reply" >
 		insert into REPLY
