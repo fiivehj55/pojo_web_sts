@@ -21,13 +21,7 @@
 /*********************************************************************************/
 /* Basic                                                                         */
 /*********************************************************************************/
-.liighting{
-	display:none;
-	position:absolute;
-	left:0px;
-	top:0px;
-	z-index: 0;
-}
+
 
 
 
@@ -2039,7 +2033,7 @@ ul.contact li a:hover {
 /*********************************************************************************/
 #header {
 	position: relative;
-	background: url(../css/images/house1.jpg) no-repeat bottom center;
+	background: url(../css/images/house2.jpg) no-repeat bottom center; 
 	background-attachment: fixed;
 	background-size: cover;
 	text-align: center;
@@ -2259,14 +2253,14 @@ ul.contact li a:hover {
 /* Table                                                                         */
 /*********************************************************************************/
 
-/* boardcss_list 에서 사용되는 글 등록 버튼 테이블 크기 */
+/* boardcss_list �뿉�꽌 �궗�슜�릺�뒗 湲� �벑濡� 踰꾪듉 �뀒�씠釉� �겕湲� */
 #boardcss_list_add_button_table {
 	width: 100%;
 	margin: 0 auto 15px;
 	/*position: relative; background: #bddcff; font-weight: bold;*/
 }
 
-/* 화면에 보여지는 글 등록 버튼 */
+/* �솕硫댁뿉 蹂댁뿬吏��뒗 湲� �벑濡� 踰꾪듉 */
 #boardcss_list_add_button_table .add_button {
 	cursor: pointer;
 	border: 1px solid #bebebe;
@@ -2283,29 +2277,29 @@ ul.contact li a:hover {
 	color: #ffffff;
 }
 
-/* 글 등록 버튼과 글 목록이 겹치지 않게 만들어준 아무것도 아닌것 */
+/* 湲� �벑濡� 踰꾪듉怨� 湲� 紐⑸줉�씠 寃뱀튂吏� �븡寃� 留뚮뱾�뼱以� �븘臾닿쾬�룄 �븘�땶寃� */
 #boardcss_list_add_button_table .boardcss_list_add_button ul {
 	width: 100%;
 	overflow: hidden;
 	height: 10px;
 }
 
-/* boardcss_list 에서 사용하는 글 목록 테이블 크기*/
+/* boardcss_list �뿉�꽌 �궗�슜�븯�뒗 湲� 紐⑸줉 �뀒�씠釉� �겕湲�*/
 .boardcss_list_table {
 	width: 100%;
 }
 
-/* 화면에 보여지는 글 목록 테이블 */
+/* �솕硫댁뿉 蹂댁뿬吏��뒗 湲� 紐⑸줉 �뀒�씠釉� */
 .list_table {
 	width: 100%;
 }
 
-/* 화면에 보여지는 caption */
+/* �솕硫댁뿉 蹂댁뿬吏��뒗 caption */
 .list_table caption {
 	display: none;
 }
 
-/* list_table 에서 사용되는 thead */
+/* list_table �뿉�꽌 �궗�슜�릺�뒗 thead */
 .list_table thead th {
 	text-align: center;
 	border-top: 1px solid #e5e5e5;
@@ -2314,14 +2308,14 @@ ul.contact li a:hover {
 	background: #faf9fa;
 }
 
-/* list_table 에서 사용되는 tbody */
+/* list_table �뿉�꽌 �궗�슜�릺�뒗 tbody */
 .list_table tbody td {
 	text-align: center;
 	border-bottom: 1px solid #e5e5e5;
 	padding: 5px 0;
 }
 
-/* boardcss_list 에서 사용되는 글 검색 테이블 크기 */
+/* boardcss_list �뿉�꽌 �궗�슜�릺�뒗 湲� 寃��깋 �뀒�씠釉� �겕湲� */
 #boardcss_list_search {
 	width: 100%;
 }
@@ -2338,7 +2332,7 @@ ul.contact li a:hover {
 	font-weight: bold;
 }
 
-/* input 상자 모양 */
+/* input �긽�옄 紐⑥뼇 */
 #search {
 	width: 200px;
 	height: 30px;
@@ -2357,7 +2351,7 @@ ul.contact li a:hover {
 	line-height: 29px;
 }
 
-/* 검색 버튼 */
+/* 寃��깋 踰꾪듉 */
 #boardcss_list_search ul li.search_button {
 	cursor: pointer;
 	width: 60px;
@@ -2373,7 +2367,7 @@ ul.contact li a:hover {
 	color: #ffffff;
 }
 
-/* 상세 검색버튼 */
+/* �긽�꽭 寃��깋踰꾪듉 */
 #boardcss_list_search ul li.detail_button {
 	cursor: pointer;
 	width: 100px;
@@ -2388,7 +2382,7 @@ ul.contact li a:hover {
 	color: #ffffff;
 }
 
-/* 상세검색 테이블 */
+/* �긽�꽭寃��깋 �뀒�씠釉� */
 .detailSearch {
 	width: 100%;
 	border-top: 1px solid #e5e5e5;
@@ -2431,7 +2425,7 @@ ul.contact li a:hover {
 	color: #ffffff;
 }
 
-/* 상세검색 닫기 */
+/* �긽�꽭寃��깋 �떕湲� */
 .closeButton_table {
 	width: 100%;
 	text-align: right;

@@ -165,6 +165,9 @@ input, input[placeholder] {
 </body>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 <script>
+var image1 = "url(../css/images/house1.jpg) no-repeat bottom center";
+var image2 = "url(../css/images/house2.jpg) no-repeat bottom center";
+var pos = 1;
 	var subMenu = $(".sub");
 	subMenu.hide();
 	$(document).ready(function() {
@@ -178,6 +181,16 @@ input, input[placeholder] {
 				subMenu.hide();
 			}
 		});
+		window.setInterval(function() {
+			var show;
+			if(pos==1)
+				show = image1;
+			else
+				show = image2;
+			$("#header").prop("background",show);
+			pos = pos*(-1);
+	      }, 4000);
+		
 	});
 </script>
 </html>
