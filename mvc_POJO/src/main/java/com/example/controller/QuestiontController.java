@@ -40,12 +40,12 @@ public class QuestiontController {
 		// view의 이름을 리턴.
 		return "jsp/Table";
 	}
-
+/*
 	@RequestMapping(value = "/bbs", method = RequestMethod.POST)
 	public String tablePost(Model model, HttpSession session) {
 		// view의 이름을 리턴.
 		return "jsp/Table";
-	}
+	}*/
 
 	@RequestMapping(value = "/bbsInsert", method = RequestMethod.GET)
 	public String bbsInsertGet(Model model, HttpSession session) {
@@ -73,10 +73,10 @@ public class QuestiontController {
 		session.setAttribute("question", question);
 		result = qservice.insertQuestion(question);
 		if(result != 1){
-			return "redirect:/bbs";
+			return "jsp/insertTable";
 		}else{
 			// view의 이름을 리턴.
-			return "/jsp/Table";
+			return "redirect:/bbs";
 		}
 	}
 	
