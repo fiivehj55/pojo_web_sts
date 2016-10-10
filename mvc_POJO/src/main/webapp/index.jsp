@@ -105,20 +105,6 @@ input, input[placeholder] {
 <script src="http://code.jquery.com/jquery.js"></script>
 
 <script>
-$(document).ready(function() {
-	var interval1 = window.setInterval(function() {
-		$("#lightning1").fadeIn(250).fadeOut(250);
-	}, 4000);
-	var interval2 = window.setInterval(function() {
-		$("#lightning2").fadeIn(250).fadeOut(250);
-	}, 5000);
-	var interval3 = window.setInterval(function() {
-		$("#lightning3").fadeIn(250).fadeOut(250);
-	}, 7000);
-
-
-
-
 </script>	
 
 	<!-- Featured -->
@@ -142,7 +128,7 @@ $(document).ready(function() {
 			<div class="row">
 				<section class="6u">
 					<a href="searchByHouseNo?houseNo=99" class="image full"><img src="css/images/image1.jpg"
-						width=500 height=500 alt=""></a>
+						width=500 height=500 alt="" id="test"></a>
 				</section>
 				<section class="6u">
 					<a href="#" class="image full"><img src="css/images/image2.jpg"
@@ -214,7 +200,7 @@ var myImg = document.getElementById("test");
 		window.setInterval(function(){
 			pos = pos+up
 	myImg.setAttribute("src",img[pos]);
-	$("#header").attr("background",img2[pos]);
+	$("#header").prop("background",img2[pos]);
 	console.log("rand = "+img[pos]);
 			//console.log($("#header").attr("background-image")); 
 			console.log($("#header").attr("background"));
