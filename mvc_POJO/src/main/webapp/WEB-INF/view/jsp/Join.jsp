@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,8 +13,8 @@
 		<h1>회원가입</h1>
 		<form method="post" action="join" enctype="multipart/form-data" id="myForm" >
 			<label for="memId">아이디:</label> 
-			<input type="text" name="memId" placeholder="영문+숫자 조합 8 이상"/>
-			<input type="button" value="중복확인">
+			<input type="text" name="memId" id = "memId" placeholder="영문+숫자 조합 8 이상"/>
+			<input type="button" value="중복확인" id="check">
 			<p><br/>
 			
 			<label for="memPassword">비밀번호:</label> 
@@ -79,6 +80,33 @@ $(document).ready(function() {
 				memEmail:"Please specify your Email"
 		}
 	});
+	
+	<c:url value="/userSerch" var="userSerch" />
+	    $("#check").on("click", function(){
+	        $.ajax({
+	           type:"post",
+	           url:"${userSerch}",
+	           data:{
+	              name:$("#memId").val()
+	           },
+	           success:function(res){
+	        	   if(res=="false"){
+	        	   		$("#memId").prop("disabled",true);
+	        	   }
+	        	   else
+	        		   alert("존재하는 아이디입니다.");
+	           },
+	           error: function(xhr, status, error){
+	              alert(error);
+	           }
+	        });
+	     });
+
+
+
+
+
 });
+
 </script>
 </html>

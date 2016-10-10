@@ -23,6 +23,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
@@ -80,6 +81,16 @@ public class MemberController {
 	}
 	private static final String uploadDir = "c:Temp/upload/";
 	
+	@RequestMapping(value = "/userSerch",method=RequestMethod.POST)
+	public @ResponseBody String memCheck(Model model,
+			@RequestParam String name){
+		Member user = mservice.Search(name);
+		if(user ==null)
+			return "false";
+		else 
+			return "true";
+	}
+
 	@RequestMapping(value = "/join",method=RequestMethod.POST)
 	public String joinPost(Model model,
 			@RequestParam String memId,

@@ -92,4 +92,10 @@ public class MemberServiceImp implements MemberService{
 		else
 			return null;
 	}
+	@Override
+	public Member Search(String id) {
+		Member user = null;
+		user = dao.selectByIdMember(template, id);
+		return user;
+	}
 }

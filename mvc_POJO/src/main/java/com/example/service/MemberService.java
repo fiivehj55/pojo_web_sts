@@ -13,4 +13,5 @@ public interface MemberService {
 	public int delete(String id,String password);
 	public List<Member> allMember();
 	public String find(String name,String email);
+	public Member Search(String id);
 }
