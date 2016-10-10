@@ -34,6 +34,23 @@ input, input[placeholder] {
 	font-weight: bold;
 	text-align: center;
 }
+.bx-wrapper{
+position:relative;
+width:100%;
+height:30% !important;
+top:0;
+left:0;
+}
+.bxslider, .bxslider li {
+/* 높이 조정*/
+height: 30vh !important;;
+}
+
+.bxslider li {
+background-repeat: no-repeat;
+background-position: top center;
+background-size: cover;
+}
 </style>
 
 </head>
@@ -42,10 +59,12 @@ input, input[placeholder] {
 
 	
 	<div id="header">
+	<div id="slider-wrapper">
 	<ul class="bxslider">
     <li><img src="css/images/image4.jpg" /></li>
     <li><img src="css/images/image3.jpg" /></li>
 	</ul>
+	</div>
 		<div id="nav-wrapper">
 			<!-- Nav -->
 			<nav id="nav">
@@ -213,6 +232,8 @@ input, input[placeholder] {
 $(document).ready(function(){
 	$('.bxslider').bxSlider({
 		  speed:1000, //default:500 이미지변환 속도
+		  slideWidth :1000,
+		  responsive : false,
 		  auto: true, //default:false 자동 시작
 		  captions: true, // 이미지의 title 속성이 노출된다.
 		  autoControls: true, //default:false 정지,시작 콘트롤 노출, css 수정이 필요
