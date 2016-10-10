@@ -54,6 +54,13 @@ public class QuestionServiceImp implements QuestionService {
 		Question question = dao.selectByQuestNo(template, questNo);
 		return question;
 	}
+
+	@Override
+	public int updateQuestion(Question question) {
+		int result = 0;
+		result = dao.updateQuestion(template, question);
+		return result;
+	}
 	
 	
 }

@@ -15,5 +15,7 @@ public interface QuestionService {
 	public int delete(int questNo);
 	// 문의 게시글 넘버로 긁어오기
 	public Question selectByNo(Integer questNo);
+	// 문의 게시글 업데이트
+	public int updateQuestion(Question question);
 	
 }

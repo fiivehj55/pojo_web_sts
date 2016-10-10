@@ -73,7 +73,7 @@ public class QuestiontController {
 		session.setAttribute("question", question);
 		result = qservice.insertQuestion(question);
 		if(result != 1){
-			return "jsp/Table";
+			return "redirect:/bbs";
 		}else{
 			// view의 이름을 리턴.
 			return "/jsp/Table";
@@ -81,8 +81,7 @@ public class QuestiontController {
 	}
 	
 	@RequestMapping(value = "/bbsSelectByNo", method = RequestMethod.GET)
-	public String bbsSelectByNo(Model model, 
-			@RequestParam Integer questNo,
+	public String bbsSelectByNoGet(Model model, @RequestParam Integer questNo,
 			HttpSession session) {
 		Question question = qservice.selectByNo(questNo);
 		String questTitle = question.getQuestTitle();
@@ -91,14 +90,48 @@ public class QuestiontController {
 		String memberId = question.getMemberId();
 		Integer questReplyNo = question.getQuestReplyNo();
 		
-		model.addAttribute("question", question);
-		model.addAttribute("questTitle", questTitle);
-		model.addAttribute("questContent", questContent);
-		model.addAttribute("questDate", questDate);
-		model.addAttribute("memberId", memberId);
-		model.addAttribute("questReplyNo", questReplyNo);
+		if(question != null){
+			model.addAttribute("question", question);
+			model.addAttribute("questTitle", questTitle);
+			model.addAttribute("questContent", questContent);
+			model.addAttribute("questDate", questDate);
+			model.addAttribute("memberId", memberId);
+			model.addAttribute("questReplyNo", questReplyNo);
+		}
 		// view의 이름을 리턴.
 		return "/jsp/selectByTable";
+	}
+	
+	@RequestMapping(value = "/bbsSelectByNo", method = RequestMethod.POST)
+	public String bbsSelectByNoPost(Model model, HttpSession session) {
+		// view의 이름을 리턴.
+		return "jsp/Table";
+	}
+	
+	@RequestMapping(value = "/bbsUpdate", method = RequestMethod.GET)
+	public String bbsUpdate(Model model,
+			@RequestParam Integer questNo,
+			@RequestParam String questTitle,
+			@RequestParam String questContent,
+			/*@RequestParam Date questDate,
+			@RequestParam String memberId,
+			@RequestParam Integer questReplyNo,*/
+			HttpSession session) {
+		int result = 0;
+		Member member = (Member) session.getAttribute("user");
+		Question question = new Question();
+		question.setQuestNo(questNo);
+		question.setQuestTitle(questTitle);
+		question.setQuestContent(questContent);
+		question.setMemberId(member.getMemId());
+		
+		result = qservice.updateQuestion(question);
+		if(result == 1){
+			return "redirect:/bbs";
+		}else{
+			// view의 이름을 리턴.
+			return "jsp/updateTable";
+		}
 	}
 
 }
