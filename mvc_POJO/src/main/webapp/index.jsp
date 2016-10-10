@@ -12,8 +12,8 @@
 <link
 	href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900'
 	rel='stylesheet' type='text/css'>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	
+ <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 <script src="js/skel.min.js"></script>
 <script src="js/skel-panels.min.js"></script>  
 <script src="js/init.js"></script>
@@ -24,8 +24,7 @@
 
 <!-- jQuery library (served from Google) -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-<!-- bxSlider Javascript file -->
-<script src="js/jquery.bxslider/jquery.bxslider.min.js"></script>
+
 <!-- bxSlider CSS file -->
 <link href="js/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
 
@@ -180,10 +179,36 @@ input, input[placeholder] {
 			</section>
 		</div>
 	</div>
+	<div id="footer">
+		<div class="container">
+			<section>
+				<header>
+					<h2></h2>
+					<span class="byline">
+						</span>
+				</header>
+				<ul class="contact">
+					<li><a href="#" class="fa fa-twitter"><span>Twitter</span></a></li>
+					<li class="active"><a href="#" class="fa fa-facebook"><span>Facebook</span></a></li>
+					<li><a href="#" class="fa fa-dribbble"><span>Pinterest</span></a></li>
+					<li><a href="#" class="fa fa-tumblr"><span>Google+</span></a></li>
+				</ul>
+			</section>
+		</div>
+	</div>
 
+	<!-- Copyright -->
+	<div id="copyright">
+		<div class="container">
+			Design: <a href="http://templated.co">TEMPLATED</a> Images: <a
+				href="http://unsplash.com">Unsplash</a> (<a
+				href="http://unsplash.com/cc0">CC0</a>
+		</div>
+	</div>
 
 </body>
-
+<!-- bxSlider Javascript file -->
+<script src="js/jquery.bxslider/jquery.bxslider.min.js"></script>
 <script>
 $(document).ready(function(){
 	$('.bxslider').bxSlider({
@@ -197,7 +222,6 @@ $(document).ready(function(){
 
 
 
- <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 <script>/* 
 
 var image1 = "./css/images/house1.jpg";
