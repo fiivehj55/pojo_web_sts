@@ -177,8 +177,9 @@ var image2 = "./css/images/house2.jpg";
 var image3 = "url(./css/images/house1.jpg) no-repeat bottom center";
 var image4 = "url(./css/images/house2.jpg) no-repeat bottom center";
 var img = [image1,image2];
-var pos = 1;
-
+var img2 = [image3,image4];
+var pos = 0;
+var up = 1;
 var myImg = document.getElementById("test");
 	var subMenu = $(".sub");
 	subMenu.hide();
@@ -195,12 +196,14 @@ var myImg = document.getElementById("test");
 		});
 		
 		window.setInterval(function(){
-			var rand = Math.floor(Math.random()*2);
-	myImg.setAttribute("src",img[rand]);
-	$("#header").attr("background-image",img[rand]);
-	console.log("rand = "+img[rand]);
-			console.log($("#header").attr("background-image")); 
-		//	console.log($("#header").attr("background"));
+			pos = pos+up
+	myImg.setAttribute("src",img[pos]);
+	$("#header").attr("background",img2[pos]);
+	console.log("rand = "+img[pos]);
+			//console.log($("#header").attr("background-image")); 
+			console.log($("#header").attr("background"));
+			document.getElementById('header').style.backgroundImage=img2[pos];
+			up= up*(-1);
 			},1000);
 		
 	});
