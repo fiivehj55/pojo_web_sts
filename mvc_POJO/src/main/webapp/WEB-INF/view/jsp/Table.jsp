@@ -60,7 +60,7 @@
 								<c:forEach items="${Question }" var="row">
 									<tr>
 										<td>${row.questNo }</td>
-										<td><a>${row.questTitle }</a></td>
+										<td><a href="bbsSelectByNo?questNo=${row.questNo }">${row.questTitle }</a></td>
 										<td><a>${row.memberId }</a></td>
 										<td>${row.questDate }</td>
 									</tr>

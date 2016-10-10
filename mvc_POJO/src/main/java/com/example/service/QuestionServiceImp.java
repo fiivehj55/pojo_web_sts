@@ -48,6 +48,12 @@ public class QuestionServiceImp implements QuestionService {
 		
 		return result;
 	}
+
+	@Override
+	public Question selectByNo(Integer questNo) {
+		Question question = dao.selectByQuestNo(template, questNo);
+		return question;
+	}
 	
 	
 }

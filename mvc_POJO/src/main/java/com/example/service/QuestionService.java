@@ -13,5 +13,7 @@ public interface QuestionService {
 	public int insertQuestion(Question question);
 	//문의 게시글 삭제 관리자만
 	public int delete(int questNo);
+	// 문의 게시글 넘버로 긁어오기
+	public Question selectByNo(Integer questNo);
 	
 }
