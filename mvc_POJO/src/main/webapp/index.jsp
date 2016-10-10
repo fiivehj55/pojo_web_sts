@@ -21,6 +21,19 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style-desktop.css" />
 
+
+<!-- 기본 jQuery js파일 연결 -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+<!-- bxSlider js파일 연결 -->
+<script src="bxslider/jquery.bxslider/jquery.bxslider.min.js"></script>
+
+<!-- bxSlider css파일 연결 -->
+<link href="bxslider/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
+
+
+
+
 <style>
 input, input[placeholder] {
 	font-weight: bold;
@@ -32,6 +45,11 @@ input, input[placeholder] {
 <body class="homepage">
 	<!-- Header -->
 	<div id="header">
+	<ul class="bxslider">
+    <li><img src="css/images/image2.jpg" /></li>
+    <li><img src="css/images/image3.jpg" /></li>
+</ul>
+	
 		<div id="nav-wrapper">
 			<!-- Nav -->
 			<nav id="nav">
@@ -98,7 +116,7 @@ input, input[placeholder] {
 				<h1>
 					<a href="#">사랑방손님</a>
 				</h1>
-				<span class="tag"> POJO</span>
+				<span class="tag">By POJO</span>
 			</div>
 		</div>
 	</div>
@@ -169,7 +187,16 @@ input, input[placeholder] {
 
 
 </body>
-<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+
+<script>
+  $(document).ready(function(){
+    $('.bxslider').bxSlider();
+  });
+</script>
+
+
+
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 <script>
 var image1 = "./css/images/house1.jpg";
 var image2 = "./css/images/house2.jpg";
@@ -204,5 +231,5 @@ var myImg = document.getElementById("test");
 			},1000);
 		
 	});
-</script>
+</script> -->
 </html>
