@@ -133,5 +133,22 @@ public class QuestiontController {
 			return "jsp/updateTable";
 		}
 	}
+	
+	@RequestMapping(value = "/bbsDelete",method=RequestMethod.GET)
+	public String deletePassGet(Model model){
+		return "jsp/Table";
+	}
+	
+	@RequestMapping(value = "/bbsDelete",method=RequestMethod.POST)
+	public String deletePassPost(Model model, @RequestParam Integer questNo,
+			HttpSession session){
+		Member member = (Member) session.getAttribute("user");
+		int result = qservice.delete(questNo);
+		if(result == 1){
+			return "jsp/Table";
+		}else{
+			return "jsp/selectByTable";
+		}
+	}
 
 }
