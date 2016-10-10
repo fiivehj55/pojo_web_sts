@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
@@ -21,6 +23,7 @@ import com.example.service.QuestionService;
 @Controller
 public class QuestiontController {
 
+	static Logger logger = LoggerFactory.getLogger(QuestiontController.class);
 	@Autowired
 	QuestionService qservice;
 	
@@ -91,6 +94,8 @@ public class QuestiontController {
 		Integer questReplyNo = question.getQuestReplyNo();
 		
 		if(question != null){
+			
+			model.addAttribute("questNo", question.getQuestNo());
 			model.addAttribute("question", question);
 			model.addAttribute("questTitle", questTitle);
 			model.addAttribute("questContent", questContent);
@@ -134,18 +139,22 @@ public class QuestiontController {
 		}
 	}
 	
-	@RequestMapping(value = "/bbsDelete",method=RequestMethod.GET)
-	public String deletePassGet(Model model){
+/*	@RequestMapping(value = "/bbsDelete",method=RequestMethod.GET)
+	public String deletePassGet(Model model,
+			@RequestParam Integer questNo){
+		System.out.println("NO: "+questNo);
 		return "jsp/Table";
-	}
+	}*/
 	
-	@RequestMapping(value = "/bbsDelete",method=RequestMethod.POST)
-	public String deletePassPost(Model model, @RequestParam Integer questNo,
+	@RequestMapping(value = "/bbsDelete",method=RequestMethod.GET)
+	public String deletePassPost(Model model,
+			@RequestParam Integer questNo,
 			HttpSession session){
+		System.out.println("NO: "+questNo);
 		Member member = (Member) session.getAttribute("user");
 		int result = qservice.delete(questNo);
 		if(result == 1){
-			return "jsp/Table";
+			return "redirect:/bbs";
 		}else{
 			return "jsp/selectByTable";
 		}

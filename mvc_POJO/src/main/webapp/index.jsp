@@ -12,26 +12,22 @@
 <link
 	href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900'
 	rel='stylesheet' type='text/css'>
-<script
-	src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	
 <script src="js/skel.min.js"></script>
-<script src="js/skel-panels.min.js"></script> 
+<script src="js/skel-panels.min.js"></script>  
 <script src="js/init.js"></script>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/skel-noscript.css" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style-desktop.css" />
 
 
-<!-- 기본 jQuery js파일 연결 -->
+<!-- jQuery library (served from Google) -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-
-<!-- bxSlider js파일 연결 -->
-<script src="bxslider/jquery.bxslider/jquery.bxslider.min.js"></script>
-
-<!-- bxSlider css파일 연결 -->
-<link href="bxslider/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
-
-
+<!-- bxSlider Javascript file -->
+<script src="js/jquery.bxslider/jquery.bxslider.min.js"></script>
+<!-- bxSlider CSS file -->
+<link href="js/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
 
 
 <style>
@@ -44,15 +40,13 @@ input, input[placeholder] {
 </head>
 <body class="homepage">
 	<!-- Header -->
+
+	
 	<div id="header">
 	<ul class="bxslider">
     <li><img src="css/images/image4.jpg" /></li>
     <li><img src="css/images/image3.jpg" /></li>
-</ul>
-	
-=======
-	<div id="header" class="bxslider">
->>>>>>> branch 'master' of https://github.com/fiivehj55/pojo_web_sts.git
+	</ul>
 		<div id="nav-wrapper">
 			<!-- Nav -->
 			<nav id="nav">
@@ -125,26 +119,14 @@ input, input[placeholder] {
 	</div>
 <script src="http://code.jquery.com/jquery.js"></script>
 <script>
-<<<<<<< HEAD
-=======
-$(document).ready(function() {
-	var interval1 = window.setInterval(function() {
-		$("#lightning1").fadeIn(250).fadeOut(250);
-	}, 4000);
-	var interval2 = window.setInterval(function() {
-		$("#lightning2").fadeIn(250).fadeOut(250);
-	}, 5000);
-	var interval3 = window.setInterval(function() {
-		$("#lightning3").fadeIn(250).fadeOut(250);
-	}, 7000);
->>>>>>> branch 'master' of https://github.com/fiivehj55/pojo_web_sts.git
 </script>	
 
 	<!-- Featured -->
 	<div id="featured">
 		<div class="container">
 			<header>
-				<input id="text_box" type="text" size="100" placeholder="두정동 또는 건물이름을 입력하세요"> <input type="button" value="확인">
+				<input id="text_box" type="text" size="100" placeholder="두정동 또는 건물이름을 입력하세요"/> 
+				<input type="button" value="확인">
 			</header>
 			<p>
 				지금 <a href="http://templated.co"> 인기있는 </a>숙소를 만나보세요!
@@ -158,12 +140,10 @@ $(document).ready(function() {
 
 			<div class="row">
 				<section class="6u">
-<<<<<<< HEAD
-					<a href="searchByHouseNo?houseNo=99" class="image full"><img src="css/images/image1.jpg"
+					<a href="searchByHouseNo?houseNo=99" class="image full">
+					<img src="css/images/image1.jpg"
 						width=500 height=500 alt="" id="test"></a>
-=======
-					<a href="searchByHouseNo?houseNo=99" class="image full"><img src="css/images/image1.jpg" width=500 height=500 alt=""></a>
->>>>>>> branch 'master' of https://github.com/fiivehj55/pojo_web_sts.git
+
 				</section>
 				<section class="6u">
 					<a href="#" class="image full"><img src="css/images/image2.jpg" width=500 height=500 alt=""></a>
@@ -205,15 +185,21 @@ $(document).ready(function() {
 </body>
 
 <script>
-  $(document).ready(function(){
-    $('.bxslider').bxSlider();
-  });
+$(document).ready(function(){
+	$('.bxslider').bxSlider({
+		  speed:1000, //default:500 이미지변환 속도
+		  auto: true, //default:false 자동 시작
+		  captions: true, // 이미지의 title 속성이 노출된다.
+		  autoControls: true, //default:false 정지,시작 콘트롤 노출, css 수정이 필요
+		});
+});
 </script>
 
 
 
-<!-- <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
-<script>
+ <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+<script>/* 
+
 var image1 = "./css/images/house1.jpg";
 var image2 = "./css/images/house2.jpg";
 
@@ -249,12 +235,8 @@ var myImg = document.getElementById("test");
 			document.getElementById('header').style.backgroundImage=img2[pos];
 			up= up*(-1);
 			},1000);
-<<<<<<< HEAD
+
 		
-	});
-</script> -->
-=======
-		}); 
+	}); */
 </script>
->>>>>>> branch 'master' of https://github.com/fiivehj55/pojo_web_sts.git
 </html>
