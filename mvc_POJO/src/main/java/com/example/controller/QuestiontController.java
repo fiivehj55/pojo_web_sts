@@ -1,6 +1,5 @@
 package com.example.controller;
 
-import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -36,7 +35,6 @@ public class QuestiontController {
 	public String table(Model model, HttpSession session) {
 		Member user = (Member) session.getAttribute("user");
 		List<Question> list = qservice.selectById(user.getMemId());
-		
 		session.setAttribute("Question", list);
 		// view의 이름을 리턴.
 		return "jsp/Table";

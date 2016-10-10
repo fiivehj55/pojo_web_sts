@@ -15,7 +15,7 @@
 	
 	<insert id="insertQuestion" parameterType="question">
 	    insert into QUESTION
-	    values (#{questNo}, #{questTitle}, #{questContent}, sysdate, #{memberId}, #{detailId}, #{questReplyNo})
+	    values (SEQ_QUESTION.nextval, #{questTitle}, #{questContent}, sysdate, #{memberId}, #{detailId}, #{questReplyNo})
 	</insert>
 	
 	<update id="updateQuestion" parameterType="question">

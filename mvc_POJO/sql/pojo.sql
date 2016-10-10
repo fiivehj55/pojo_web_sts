@@ -6,6 +6,26 @@ drop table REPORT;
 drop table QUESTION;
 drop table REPLY;
 
+drop sequence SEQ_HOUSE;
+drop sequence SEQ_QUESTION;
+drop sequence SEQ_REPLY;
+drop sequence SEQ_REPORT;
+
+CREATE SEQUENCE  "POJO"."SEQ_HOUSE"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE ;
+CREATE SEQUENCE  "POJO"."SEQ_QUESTION"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE ;
+CREATE SEQUENCE  "POJO"."SEQ_REPLY"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE ;
+CREATE SEQUENCE  "POJO"."SEQ_REPORT"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE ;
+
+select SEQ_HOUSE.nextval from dual;
+select SEQ_QUESTION.nextval from dual;
+select SEQ_REPLY.nextval from dual;
+select SEQ_REPORT.nextval from dual;
+
+select SEQ_HOUSE.currval from dual;
+select SEQ_QUESTION.currval from dual;
+select SEQ_REPLY.currval from dual;
+select SEQ_REPORT.currval from dual;
+
   CREATE TABLE "POJO"."MEMBER" 
    (	"MEM_ID" VARCHAR2(20 BYTE) NOT NULL ENABLE, 
 	"MEM_NAME" VARCHAR2(20 BYTE), 
@@ -159,13 +179,13 @@ insert into MEMBER values ('jang', '장길산', '5678', 'KT', '01012345678', 'ab
 insert into MEMBER values ('admin', '관리자', 'admin', 'U+', '01012345678', 'abc@naver.com', 'male', null, 'hello', 1, '최고관리자');
 insert into MEMBER_DETAIL values (1, '최고관리자');
 insert into MEMBER_DETAIL values (2, '회원');
-insert into HOUSE values (1, '공주빌라', '천안시 서북구 두정동', 350000, 8.5, 'hello', 'hong', 2, '1개', '2개', '3명', 'tv', 'aircon', 'wifi', 'elebe', 'washing', null, '일');
+insert into HOUSE values (99, '공주빌라', '천안시 서북구 두정동', 350000, 8.5, 'hello', 'hong', 2, '1개', '2개', '3명', 'tv', 'aircon', 'wifi', 'elebe', 'washing', null, '일');
 insert into REGIST_HOUSE values (1, '2016/09/25', '2016/10/7', 1, 'hong');
-insert into QUESTION values (1, '사기당했어요.', '하우스 등록자가 계속 전화를 받지 않습니다.', sysdate, 'jang', 2, null);
-insert into QUESTION values (2, '사기당했어요.', '하우스 등록자가 계속 전화를 받지 않습니다.', sysdate, 'jang', 2, null);
-insert into QUESTION values (3, '사기당했어요2.', '하우스 등록자가 계속 전화를 받지 않습니다2.', sysdate, 'hong', 2, null);
-insert into QUESTION values (4, '사기당했어요2.', '하우스 등록자가 계속 전화를 받지 않습니다2.', sysdate, 'hong', 2, null);
-insert into REPORT values (1, '피해사례', '이 사람 신고합니다.', '예약자가 입금을 하지 않습니다.', sysdate, 'jang', 2, 1);
-insert into REPLY values (1, '집을 이용했는데 정말 좋았어요', sysdate, 1, 'hong', 2);
+insert into QUESTION values (97, '사기당했어요.', '하우스 등록자가 계속 전화를 받지 않습니다.', sysdate, 'jang', 2, null);
+insert into QUESTION values (98, '사기당했어요.', '하우스 등록자가 계속 전화를 받지 않습니다.', sysdate, 'jang', 2, null);
+insert into QUESTION values (99, '사기당했어요2.', '하우스 등록자가 계속 전화를 받지 않습니다2.', sysdate, 'hong', 2, null);
+insert into QUESTION values (100, '사기당했어요2.', '하우스 등록자가 계속 전화를 받지 않습니다2.', sysdate, 'hong', 2, null);
+insert into REPORT values (99, '피해사례', '이 사람 신고합니다.', '예약자가 입금을 하지 않습니다.', sysdate, 'jang', 2, 1);
+insert into REPLY values (99, '집을 이용했는데 정말 좋았어요', sysdate, 1, 'hong', 2);
 
 commit;

@@ -15,7 +15,7 @@
 
 	<insert id="insertHouse" parameterType="house">
 		insert into HOUSE 
-		values(#{houseNo}, #{houseName}, #{houseAddress}, #{housePrice}, #{houseScore}, #{houseInfo}, #{memberId}, 
+		values(SEQ_HOUSE.nextval, #{houseName}, #{houseAddress}, #{housePrice}, #{houseScore}, #{houseInfo}, #{memberId}, 
 		#{detailId}, #{houseRoom}, #{houseBath}, #{houseHosting}, #{houseTv}, #{houseAircon}, #{houseWifi}, #{houseElebe}, #{houseWashing}, #{houseImg}, #{houseDay})
 	</insert>
 	

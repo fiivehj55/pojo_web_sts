@@ -12,7 +12,7 @@
 	
 	<insert id="insertReport" parameterType="report">
 		insert into REPORT
-		values (#{reportNo}, #{reportCategory}, #{reportSubject}, #{reportContent}, #{regitDate}, #{memberId}, #{detailId}, #{reportReplyNo})
+		values (SEQ_REPORT.nextval, #{reportCategory}, #{reportSubject}, #{reportContent}, #{regitDate}, #{memberId}, #{detailId}, #{reportReplyNo})
 	</insert>
 	
 	<update id="updateReport" parameterType="report">
