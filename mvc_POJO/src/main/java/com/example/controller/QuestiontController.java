@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -77,6 +78,27 @@ public class QuestiontController {
 			// view의 이름을 리턴.
 			return "/jsp/Table";
 		}
+	}
+	
+	@RequestMapping(value = "/bbsSelectByNo", method = RequestMethod.GET)
+	public String bbsSelectByNo(Model model, 
+			@RequestParam Integer questNo,
+			HttpSession session) {
+		Question question = qservice.selectByNo(questNo);
+		String questTitle = question.getQuestTitle();
+		String questContent = question.getQuestContent();
+		Date questDate = question.getQuestDate();
+		String memberId = question.getMemberId();
+		Integer questReplyNo = question.getQuestReplyNo();
+		
+		model.addAttribute("question", question);
+		model.addAttribute("questTitle", questTitle);
+		model.addAttribute("questContent", questContent);
+		model.addAttribute("questDate", questDate);
+		model.addAttribute("memberId", memberId);
+		model.addAttribute("questReplyNo", questReplyNo);
+		// view의 이름을 리턴.
+		return "/jsp/selectByTable";
 	}
 
 }
