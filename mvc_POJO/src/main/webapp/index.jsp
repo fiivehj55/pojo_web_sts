@@ -98,7 +98,7 @@ input, input[placeholder] {
 				<h1>
 					<a href="#">사랑방손님</a>
 				</h1>
-				<span class="tag">By POJO</span>
+				<span class="tag"> POJO</span>
 			</div>
 		</div>
 	</div>
