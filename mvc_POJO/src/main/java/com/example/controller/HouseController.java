@@ -70,6 +70,7 @@ public class HouseController {
 			HttpSession session){
 		//view의 이름을 리턴.
 		int result = 0;
+		/*Member user = (Member) session.getAttribute("user");*/
 		House house = new House();
 		house.setHouseNo(99);
 		house.setHouseName(rname);
