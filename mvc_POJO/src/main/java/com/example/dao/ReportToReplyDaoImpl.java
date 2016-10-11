@@ -30,20 +30,20 @@ public class ReportToReplyDaoImpl implements ReportToReplyDao {
 
 	@Override
 	public int insertReportToReply(SqlSessionTemplate template, ReportToReply reportToReply) {
-		// TODO Auto-generated method stub
-		return 0;
+		String stmt = REPORT_TO_REPLY_MAP + "insertReportToReply";
+		return template.update(stmt, reportToReply);
 	}
 
 	@Override
 	public int updateReportToReply(SqlSessionTemplate template, ReportToReply reportToReply) {
-		// TODO Auto-generated method stub
-		return 0;
+		String stmt = REPORT_TO_REPLY_MAP + "updateReportToReply";
+		return template.update(stmt, reportToReply);
 	}
 
 	@Override
 	public int deleteReportToReply(SqlSessionTemplate template, int reportReplyNo) {
-		// TODO Auto-generated method stub
-		return 0;
+		String stmt = REPORT_TO_REPLY_MAP + "deleteReportToReply";
+		return template.update(stmt, reportReplyNo);
 	}
 
 }
