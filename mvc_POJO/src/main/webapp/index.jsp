@@ -141,18 +141,19 @@ body{
 
 	</div>
 
+		<ul class="bxslider">
+		<li><img src="css/images/house3.jpg" /></li>
+		<li><img src="css/images/image7.jpg" /></li>
 
+		</ul>
 	<!-- Featured -->
+
 	<div id="featured">
 
 		<div class="container">
 
 			<header>
-				<ul class="bxslider">
-					<li><img src="css/images/house3.jpg" /></li>
-					<li><img src="css/images/house2.jpg" /></li>
 
-				</ul>
 				<input id="text_box" type="text" size="100"
 					placeholder="두정동 또는 건물이름을 입력하세요"> <input type="button"
 					value="확인">
@@ -232,7 +233,7 @@ body{
 			mode : 'fade',
 			captions : true,
 			pagerCustom : '#bx-pager',
-			slideWidth : 2000,
+			slideWidth :2500,
 
 		});
 	});
