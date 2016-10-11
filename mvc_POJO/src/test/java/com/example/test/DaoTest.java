@@ -301,7 +301,7 @@ public class DaoTest {
    public void testInsertReport() {
       Calendar cd = Calendar.getInstance();
       Date dd = cd.getTime();
-      Report report = new Report(2, "블랙리스트", "이사람 신고합니다.", "이 사람 사기꾼이에여~", dd, "hong", 2, 0);
+      Report report = new Report(2, "블랙리스트", "이사람 신고합니다.", "이 사람 사기꾼이에여~", dd, "hong", 0, 0);
       int result = rpdao.insertReport(template, report);
       logger.trace("List: {}", report);
 
