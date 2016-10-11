@@ -10,9 +10,12 @@ public interface ReplyService {
 	
 	Reply selectByReplyNo(int replyNo);
 	
+	Reply selectByHouseNo(int houseNo);
+	
 	int insertReply(Reply reply);
 	
 	int updateReply(Reply reply);
 	
 	int deleteReply(int replyNo);
 }
+

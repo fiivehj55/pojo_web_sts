@@ -116,7 +116,7 @@ public class HouseController {
 		}
 	}*/
 	
-	@RequestMapping(value = "/insertHouse1",method=RequestMethod.GET)
+	/*@RequestMapping(value = "/insertHouse1",method=RequestMethod.GET)
 	public String insertHouse1Get(Model model) {
 		//view의 이름을 리턴.
 		return "jsp/HouseJoin1";
@@ -135,7 +135,7 @@ public class HouseController {
 		int result = hservice.insertHouse(new_house);
 		logger.trace("result: {}",result);
 
-		/*model.addAttribute("new_house", new_house);*/
+		model.addAttribute("new_house", new_house);
 		//view의 이름을 리턴.
 		if(result != 1){
 			return "jsp/HouseJoin1";
@@ -150,7 +150,7 @@ public class HouseController {
 		model.addAttribute("new_house", new_house);
 		//view의 이름을 리턴.
 		return "jsp/HouseJoin2";
-	}
+	}*/
 	
 	@RequestMapping(value = "/searchByHouseNo",method=RequestMethod.GET)
 	public String selectByHouseNo(Model model, @RequestParam Integer houseNo,
