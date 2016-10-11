@@ -30,9 +30,9 @@ public class ReplyDaoImpl implements ReplyDao {
 	}
 	
 	@Override
-	public Reply selecyByIdHouseNo(SqlSessionTemplate template, int HouseNo) {
+	public List<Reply> selecyByIdHouseNo(SqlSessionTemplate template, int HouseNo) {
 		String stmt = REPLY_MAP + "selectByHouseNo";
-		return template.selectOne(stmt, HouseNo);
+		return template.selectList(stmt, HouseNo);
 	}
 
 	@Override

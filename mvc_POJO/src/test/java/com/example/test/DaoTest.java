@@ -249,7 +249,7 @@ public class DaoTest {
    
    @Test
    public void testSelectByHouseNo() {
-      Reply reply = rdao.selecyByIdHouseNo(template, 1);
+	   List<Reply> reply = rdao.selecyByIdHouseNo(template, 99);
       logger.trace("List: {}", reply);
 
    }

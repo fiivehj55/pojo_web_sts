@@ -1,8 +1,6 @@
 package com.example.controller;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
-
-import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -39,18 +37,16 @@ public class ReplyController {
 			@RequestParam Integer houseNo,
 			HttpSession session){
 		Member user = (Member) session.getAttribute("user");
-		Reply reply = Rpservice.selectByHouseNo(houseNo);
-		logger.trace("reply : {}",reply.getMemberId());
-		logger.trace("reply : {}",reply);
-		String memberId = reply.getMemberId();
-		String replyContent = reply.getReplyContent();
-		Date replyDate = reply.getReplyDate();
+		List<Reply> reply = Rpservice.selectByHouseNo(houseNo);
+		//String memberId = user.getMemId();
+		//String replyContent = reply.getReplyContent();
+		//Date replyDate = reply.getReplyDate();
 		logger.trace("list: {}", reply);
 		
 		model.addAttribute("reply", reply);
-		model.addAttribute("memberId", memberId);
-		model.addAttribute("replyContent", replyContent);
-		model.addAttribute("replyDate", replyDate);
+		//model.addAttribute("memberId", memberId);
+		//model.addAttribute("replyContent", replyContent);
+		//model.addAttribute("replyDate", replyDate);
 		return "jsp/HouseToReply";
 	}
 

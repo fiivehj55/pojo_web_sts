@@ -25,7 +25,7 @@ public class ReplyServiceImp implements ReplyService{
 		return	dao.selectByIdReplyNo(template, replyNo);
 	}
 	@Override
-	public Reply selectByHouseNo(int houseNo) {
+	public List<Reply> selectByHouseNo(int houseNo) {
 		return dao.selecyByIdHouseNo(template, houseNo);
 	}
 	@Transactional

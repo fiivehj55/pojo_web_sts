@@ -14,12 +14,9 @@
 <script src="js/skel.min.js"></script>
 <script src="js/skel-panels.min.js"></script>
 <script src="js/init.js"></script>
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/skel-noscript.css" />
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/style.css" />
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/style-desktop.css" />
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/skel-noscript.css" />
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css" />
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style-desktop.css" />
 
 <!-- 기본 jQuery js파일 연결 -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
@@ -142,8 +139,13 @@ body{
 	</div>
 
 		<ul class="bxslider">
-		<li><img src="css/images/house3.jpg" /></li>
-		<li><img src="css/images/image7.jpg" /></li>
+		
+	
+		<li><img src="css/images/room5.jpg" /></li>
+		<li><img src="css/images/room7.jpg" /></li>
+		<li><img src="css/images/room8.jpg" /></li>
+		<!-- <li><img src="css/images/room6.jpg" /></li> -->
+	
 
 		</ul>
 	<!-- Featured -->

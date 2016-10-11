@@ -150,15 +150,20 @@ public class HouseController {
 	@RequestMapping(value = "/searchByHouseNo",method=RequestMethod.GET)
 	public String selectByHouseNo(Model model, @RequestParam Integer houseNo,
 			HttpSession session){
+		Member user = (Member) session.getAttribute("user");
 		House house = hservice.selectByNoHouse(houseNo);
+		List<Reply> reply = Rpservice.selectByHouseNo(houseNo);
+		
 		String houseTv = house.getHouseTv();
 		String houseAircon = house.getHouseAircon();
 		String houseWifi = house.getHouseWifi();
 		String houseElebe =	house.getHouseElebe();
 		String houseWashing = house.getHouseWashing();
-
+		
+		logger.trace("list: {}", reply);
 	
 		if(house != null){
+			model.addAttribute("houseNo", houseNo);
 			model.addAttribute("houseImg", house.getHouseImg());
 			model.addAttribute("memberName", house.getMemberId());
 			model.addAttribute("houseName", house.getHouseName());
@@ -182,6 +187,7 @@ public class HouseController {
 			if(houseWashing!=null){
 				model.addAttribute("houseWashing", "세탁기");
 			}
+			model.addAttribute("reply", reply);
 			//view의 이름을 리턴.
 			return "jsp/HouseView";
 		}
