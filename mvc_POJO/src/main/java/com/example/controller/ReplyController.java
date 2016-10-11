@@ -34,14 +34,6 @@ public class ReplyController {
 	@Autowired
 	HouseService hservice;
 	
-	@Bean
-	public CommonsMultipartResolver multipartResolver(){
-		CommonsMultipartResolver resolver = new CommonsMultipartResolver();
-		resolver.setDefaultEncoding("utf-8");
-		resolver.setMaxUploadSize(1024*1024);
-		return resolver;
-	}
-	
 	/*@RequestMapping(value = "/searchByHouseNo",method=RequestMethod.GET)
 	public String selectByHouseNoforReply(Model model, 
 			@RequestParam Integer houseNo,
