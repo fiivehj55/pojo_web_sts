@@ -9,11 +9,8 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
-<link
-	href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900'
-	rel='stylesheet' type='text/css'>
-<script
-	src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="js/skel.min.js"></script>
 <script src="js/skel-panels.min.js"></script> 
 <script src="js/init.js"></script>
@@ -97,7 +94,7 @@ background-size: cover;
 					<li><a href="faq">고객센터</a>
 						<ul class="sub">
 							<li class="active"><a href="faq">FAQ</a></li>
-							<li class="active"><a href="#">신고 게시판</a></li>
+							<li class="active"><a href="report">신고 게시판</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li>
 					
