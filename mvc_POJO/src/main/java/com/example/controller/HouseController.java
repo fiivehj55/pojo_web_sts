@@ -32,15 +32,6 @@ public class HouseController {
 	
 	@Autowired
 	MemberService mservice;
-	
-	@Bean
-	public CommonsMultipartResolver multipartResolver(){
-		CommonsMultipartResolver resolver = new CommonsMultipartResolver();
-		resolver.setDefaultEncoding("utf-8");
-		resolver.setMaxUploadSize(1024*1024);
-		return resolver;
-	}
-	
 	@RequestMapping(value = "/search", method=RequestMethod.GET)
 	public String search(Model model, HttpSession session){
 		Member user = (Member) session.getAttribute("user");
@@ -200,7 +191,7 @@ public class HouseController {
 			return "jsp/HousePage";
 		}
 		//view의 이름을 리턴.
-		return "jsp/searchHouse";
+		return "jsp/HouseView";
 	}
 	
 	@ModelAttribute
