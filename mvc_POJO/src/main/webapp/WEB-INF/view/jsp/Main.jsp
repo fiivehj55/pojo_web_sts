@@ -1,13 +1,26 @@
-<!-- 검색된 페이지 -->
+<!-- 게시판 페이지 -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<% %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/skel.min.js"></script>
+<script src="js/skel-panels.min.js"></script>
+<script src="js/init.js"></script>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/skel-noscript.css" />
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css" />
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style-desktop.css" />
 
 <style>
 label {
@@ -33,7 +46,8 @@ label {
 						지금 <a href="http://templated.co"> 인기있는 </a>숙소를 만나보세요!
 				</div>
 			</div>
-			<table border=1>
+			<div class ="boardcss_list_table">
+				<table class="list_table">
 				<colgroup>
 					<col width="15%" />
 					<col width="45%" />
@@ -41,6 +55,7 @@ label {
 					<col width="15%" />
 					<col width="10%" />
 				</colgroup>
+				<thead>
 				<tr>
 					<th>하우스프로필</th>
 					<th>하우스 이름</th>
@@ -48,6 +63,7 @@ label {
 					<th>체크인&아웃</th>
 					<th>예약고객 프로필</th>
 				</tr>
+				</thead>
 				<tbody>
 					<c:choose>
 						<c:when test="${fn:length(house) > 0}">
@@ -67,8 +83,11 @@ label {
 							</tr>
 						</c:otherwise>
 					</c:choose>
+					
 				</tbody>
 			</table>
+		</div>
+			
 			<h1>${result}</h1>
 			<a href="insertHouse"> <input type="button" value="하우스 등록" /></a> <a
 				href="insertHouse1"> <input type="button" value="하우스 등록 TEST" /></a>
@@ -76,6 +95,8 @@ label {
 	</div>
 	<jsp:include page="./Footer.jsp"></jsp:include>
 </head>
+<body>
 
+</body>
 <script></script>
 </html>
