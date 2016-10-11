@@ -33,7 +33,9 @@ input, input[placeholder] {
 	font-weight: bold;
 	text-align: center;
 }
-
+body{
+	background: white;
+}
 .bx-wrapper {
 	position: relative;
 	width: 100%;
@@ -59,14 +61,6 @@ input, input[placeholder] {
 	<!-- Header -->
 
 	<div id="header">
-
-	<div id="slider-wrapper">
-
-	<ul class="bxslider">
-    	<li><img src="css/images/house3.jpg" /></li>
-    	<li><img src="css/images/house2.jpg" /></li>
-	</ul>
-	</div>
 		<div id="nav-wrapper">
 
 			<!-- Nav -->

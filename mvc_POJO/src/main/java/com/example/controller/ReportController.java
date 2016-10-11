@@ -10,6 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import com.example.dto.Member;
 import com.example.dto.Report;
 import com.example.service.ReportService;
@@ -27,6 +29,14 @@ public class ReportController {
 		List<Report> list = repservice.selectAllReport();
 		model.addAttribute("Report", list);
 		// view의 이름을 리턴.
-		return "jsp/ReportTable";
+		return "jsp/ReportList";
+	}
+	@RequestMapping(value = "/reportView", method = RequestMethod.GET)
+	public String reportView(Model model,
+			@RequestParam Integer reportNo) {
+		Report report = repservice.selectByReportNo(reportNo);
+		model.addAttribute("Report", report);
+		// view의 이름을 리턴.
+		return "jsp/ReportView";
 	}
 }
