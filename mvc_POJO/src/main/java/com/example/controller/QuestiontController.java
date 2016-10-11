@@ -96,7 +96,7 @@ public class QuestiontController {
 			model.addAttribute("questReplyNo", questReplyNo);
 		}
 		// view의 이름을 리턴.
-		return "/jsp/selectByTable";
+		return "/jsp/QuestionView";
 	}
 	
 	@RequestMapping(value = "/bbsSelectByNo", method = RequestMethod.POST)
