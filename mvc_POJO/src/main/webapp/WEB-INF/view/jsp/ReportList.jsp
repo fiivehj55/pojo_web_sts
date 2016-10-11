@@ -36,7 +36,7 @@
 			</div>
 			<!-- 등록버튼 종료 -->
 			
-			<h1>게시판</h1>
+			<h1>신고게시판</h1>
 			<!-- 테이블 시작 -->
 			<div class="boardcss_list_table">
 				<table class="list_table">
@@ -64,7 +64,7 @@
 									<tr>
 										<td>${row.reportNo }</td>
 										<td>${row.reportCategory }</td>
-										<td><a href="bbsSelectByNo?questNo=${row.reportNo }">${row.reportSubject }</a></td>
+										<td><a href="reportView?reportNo=${row.reportNo }">${row.reportSubject }</a></td>
 										<td><a>${row.memberId }</a></td>
 										<td><fmt:formatDate pattern="yyyy/MM/dd" value="${row.regitDate }" /></td>
 										

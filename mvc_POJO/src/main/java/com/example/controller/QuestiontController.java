@@ -79,21 +79,8 @@ public class QuestiontController {
 	public String bbsSelectByNoGet(Model model, @RequestParam Integer questNo,
 			HttpSession session) {
 		Question question = qservice.selectByNo(questNo);
-		String questTitle = question.getQuestTitle();
-		String questContent = question.getQuestContent();
-		Date questDate = question.getQuestDate();
-		String memberId = question.getMemberId();
-		Integer questReplyNo = question.getQuestReplyNo();
-		
 		if(question != null){
-			
-			model.addAttribute("questNo", question.getQuestNo());
 			model.addAttribute("question", question);
-			model.addAttribute("questTitle", questTitle);
-			model.addAttribute("questContent", questContent);
-			model.addAttribute("questDate", questDate);
-			model.addAttribute("memberId", memberId);
-			model.addAttribute("questReplyNo", questReplyNo);
 		}
 		// view의 이름을 리턴.
 		return "/jsp/QuestionView";
