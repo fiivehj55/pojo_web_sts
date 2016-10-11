@@ -39,9 +39,10 @@
 <jsp:include page="./Header.jsp"></jsp:include>
 	<!-- Main -->
 	<div id="main">
+		<form method="post" action="insertHouse">
 		<div id="container">
 		<h1>하우스 등록</h1>
-		<form method="post" action="insertHouse">
+		
 			<div id="one" style="display: block;">
 			
 			<fieldset>
@@ -100,24 +101,32 @@
 			</div>
 			</div>
 			<br/>
+			<div id="container">
 			<div id ="two" style="display: none;">
 			<fieldset>
 				<legend>호스팅 2단계</legend>
-				<label for="rname">숙소 이름</label><br/>
-				<input type="text" id="rname" name="rname"/> <br/> 
 				
-				<label for="infor">숙소 안내말</label> <br/>
-				<textarea rows="5" cols="20" name="infor"></textarea> <br/>
+				<p>
+				<label for="rname" class="inputlabel">숙소 이름 : </label>
+				<input type="text" id="rname" name="rname"/>
+				</p>
 				
-				<label for="photo">사진</label> <br/>
+				<label for="addr" class="inputlabel">주소 : </label>
+				<input type="text" id="addr" name="addr"/> 
+				<p>
+				
+				<p>
+				<label for="photo">사진</label> 
 				<input type="file" name="photo"/> <br/>
-				
-				<label for="addr">주소</label><br/>
-				<textarea rows="5" cols="20" name="addr"></textarea> <br/>
+				</p>
+				<label for="infor">숙소 안내말</label> <br/>
+				<textarea rows="5" cols="35" name="infor"></textarea> <br/>
 			</fieldset>	
 				<input type="button" id="nextThree" value="다음단계">
 			</div>
+			</div>
 			<br/>
+			<div id="container">
 			<div id="three" style="display: none;">
 			<fieldset>
 				<legend>호스팅 3단계</legend>
@@ -137,11 +146,14 @@
 				<label for="price">가격 : </label>
 				<input type="number" id="price" name="price"/>
 				<br/>
-				
+			
 			</fieldset>
 			<input type="submit" id="next" name="next" value="다음 단계"/> <br/>
+				
+			</div>
 			</div>
 		</form>
+		
 		</div>
 	
 <jsp:include page="./Footer.jsp"></jsp:include>

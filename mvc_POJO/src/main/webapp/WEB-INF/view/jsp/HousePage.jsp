@@ -50,17 +50,17 @@
 			
 			<fieldset>
 				<legend>하우스 정보 2단계</legend>
-				<sform:label path="houseName">숙소 이름</sform:label><br/>
+				<sform:label path="houseName" class="inputlabel">숙소이름</sform:label><br/>
 				<sform:input type="text" path="houseName"/> <br/> 
 					
-				<sform:label path="houseInfo">숙소 안내말</sform:label> <br/>
-				<sform:textarea rows="5" cols="20" path="houseInfo"></sform:textarea> <br/>
+				<sform:label path="houseAddress">주소</sform:label><br/>
+				<sform:input type="text" path="houseAddress"/> <br/>
 				
 				<sform:label path="houseImg">사진</sform:label> <br/>
 				<sform:input type="file" path="houseImg"/> <br/>
 				
-				<sform:label path="houseAddress">주소</sform:label><br/>
-				<sform:textarea rows="5" cols="20" path="houseAddress"></sform:textarea> <br/>
+				<sform:label path="houseInfo">숙소 안내말</sform:label> <br/>
+				<sform:textarea rows="5" cols="20" path="houseInfo"></sform:textarea> <br/>
 			</fieldset>
 			<br/>
 			<fieldset>
