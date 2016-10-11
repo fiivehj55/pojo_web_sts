@@ -187,7 +187,7 @@ public class HouseController {
 				model.addAttribute("houseWashing", "세탁기");
 			}
 			//view의 이름을 리턴.
-			return "jsp/searchHouse";
+			return "jsp/HouseView";
 		}
 		return "jps/index2";
 	}
