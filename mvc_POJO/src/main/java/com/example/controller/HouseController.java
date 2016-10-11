@@ -156,9 +156,9 @@ public class HouseController {
 		String houseWifi = house.getHouseWifi();
 		String houseElebe =	house.getHouseElebe();
 		String houseWashing = house.getHouseWashing();
-
 	
 		if(house != null){
+			model.addAttribute("houseNo", houseNo);
 			model.addAttribute("houseImg", house.getHouseImg());
 			model.addAttribute("memberName", house.getMemberId());
 			model.addAttribute("houseName", house.getHouseName());
