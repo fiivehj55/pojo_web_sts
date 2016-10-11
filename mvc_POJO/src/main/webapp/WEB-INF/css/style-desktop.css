@@ -59,7 +59,9 @@ header .byline {
 /* Footer                                                                        */
 /*********************************************************************************/
 #footer {
-	padding: 6em 0em;
+	padding: 6em 6em;
+	
+	
 	/* background-color:white; */
 }
 
