@@ -7,6 +7,13 @@
 <html>
 <head>
 <title></title>
+
+<style>
+.inputlabel{
+ 	display:inline-block;
+ 	width:100px;
+ 	}	
+</style>	
 </head>
 <body class="homepage">
 <jsp:include page="./Header.jsp"></jsp:include>
@@ -21,10 +28,10 @@
 		%>
 		<sform:form  action="loginSuccess" method="post" >
 			<p>
-				<label>ID: </label> <input type="text" id="id" name="id">
+				<label for="memberId" class="inputlabel">ID: </label> <input type="text" id="id" name="id">
 			</p>
 			<p>
-				<label>PASS: </label> <input type="password" id="password"
+				<label for="memberPassWord" class="inputlabel">PASS: </label> <input type="password" id="password"
 					name="password">
 			</p>
 			<p>
