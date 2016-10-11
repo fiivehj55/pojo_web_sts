@@ -38,15 +38,7 @@ public class MemberController {
 
 	@Autowired
 	MemberService mservice;
-	
-	@Bean
-	public CommonsMultipartResolver multipartResolver(){
-		CommonsMultipartResolver resolver = new CommonsMultipartResolver();
-		resolver.setDefaultEncoding("utf-8");
-		resolver.setMaxUploadSize(1024*1024);
-		return resolver;
-	}
-	
+
 	@RequestMapping(value = "/login",method=RequestMethod.GET)
 	public String loginGet(Model model){
 		return "jsp/Login";
@@ -211,8 +203,7 @@ public class MemberController {
 	}
 	@RequestMapping(value = "/findId",method=RequestMethod.GET)
 	public String findId(Model model){
-		return "jsp/FindId";
-		
+		return "jsp/FindId";	
 	}
 	@RequestMapping(value = "/findId",method=RequestMethod.POST)
 	public String findIdPost(Model model,
