@@ -1,9 +1,8 @@
 <!-- 게시판 페이지 -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<% %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +23,6 @@
 
 </head>
 <body class="">
-	<jsp:include page="./Header.jsp"></jsp:include>
 	<div id="main">
 		<div id="content" class="auto_center">
 			<!-- 등록버튼 시작 -->
@@ -36,44 +34,37 @@
 			</div>
 			<!-- 등록버튼 종료 -->
 			
-			<h1>게시판</h1>
+			<h1>후기 댓글</h1>
 			<!-- 테이블 시작 -->
 			<div class="boardcss_list_table">
 				<table class="list_table">
 					<caption>POJO의 하우스 게시판 댓글</caption>
 					<colgroup>
-						<col width="15%" />
-						<col width="10%" />
-						<col width="35%" />
-						<col width="20%" />
-						<col width="20%" />
+						<col width="33%" />
+						<col width="33%" />
+						<col width="33%" />
 					</colgroup>
 					<thead>
 						<tr>
 							<th>ID</th>
 							<th>댓글 내용</th>
 							<th>작성일자</th>
-							<th></th>
-							<th></th>
 						</tr>
 					</thead>
 					<tbody>
 						<c:choose>
-							<c:when test="${fn:length(Report) > 0}">
-								<c:forEach items="${Report }" var="row">
+							<c:when test="${fn:length(reply)>0}">
+								<c:forEach items="${reply}" var="row">
 									<tr>
-										<td>${row.reportNo }</td>
-										<td>${row.reportCategory }</td>
-										<td><a href="bbsSelectByNo?questNo=${row.reportNo }">${row.reportSubject }</a></td>
-										<td><a>${row.memberId }</a></td>
-										<td><fmt:formatDate pattern="yyyy/MM/dd" value="${row.regitDate }" /></td>
-										
+										<td>${row.memberId }</td>
+										<td>${row.replyContent }</td>
+										<td><fmt:formatDate pattern="yyyy/MM/dd" value="${row.replyDate }" /></td>
 									</tr>
 								</c:forEach>
 							</c:when>
 							<c:otherwise>
 								<tr>
-									<td colspan="5"> 조회된 결과가 없습니다. </td>
+									<td colspan="3"> 조회된 결과가 없습니다. </td>
 								</tr>
 							</c:otherwise>
 						</c:choose>
@@ -81,7 +72,7 @@
 				</table>
 			</div>
 
-			<div id="boardcss_list_search" style="display: block;">
+			<%-- <div id="boardcss_list_search" style="display: block;">
 				<ul>
 					<li>제목</li>
 					<li><input id="search" type="text" name="search_subject"
@@ -124,12 +115,10 @@
 					<a class="closeButton"
 						onclick="document.getElementById('boardcss_list_search').style.display = 'block'; document.getElementById('detailSearch').style.display = 'none';">닫기▲</a>
 				</div>
-			</div>
+			</div> --%>
 			<!-- 상세검색 테이블 종료 -->
-
 		</div>
 	</div>
-	<jsp:include page="./Footer.jsp"></jsp:include>
 </head>
 <body>
 

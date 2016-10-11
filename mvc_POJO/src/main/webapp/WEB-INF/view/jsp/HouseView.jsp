@@ -58,6 +58,7 @@
 				<!-- 예약버튼 클릭시 :: 달력 출력 -->
 				<a href="#"><button>예약하기</button></a>
 			</div>
+			<jsp:include page="./HouseToReply.jsp"></jsp:include>
 		</div>
 	</div>
 <jsp:include page="./Footer.jsp"></jsp:include>

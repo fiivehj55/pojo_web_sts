@@ -14,12 +14,9 @@
 <script src="js/skel.min.js"></script>
 <script src="js/skel-panels.min.js"></script>
 <script src="js/init.js"></script>
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/skel-noscript.css" />
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/style.css" />
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/style-desktop.css" />
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/skel-noscript.css" />
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css" />
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style-desktop.css" />
 
 <!-- 기본 jQuery js파일 연결 -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
@@ -167,6 +164,7 @@ body{
 
 			<p>
 				지금 <a href="http://templated.co"> 인기있는 </a>숙소를 만나보세요!
+				<a href="houseToReply?houseNo=99">houseToReply</a>
 		</div>
 	</div>
 
@@ -222,13 +220,12 @@ body{
 			</section>
 		</div>
 	</div>
-
-
 </body>
-
 <script src="http://code.jquery.com/jquery.js" /></script>
 <script src="js/jquery.bxslider/jquery.bxslider.min.js"></script>
 <script>
+var subMenu = $(".sub");
+subMenu.hide();
 	$(document).ready(function() {
 		$('.bxslider').bxSlider({
 			/* adaptiveHeight:true, */
@@ -240,6 +237,16 @@ body{
 			pagerCustom : '#bx-pager',
 			slideWidth :2500,
 
+		});
+		$("#nav").hover(function(e) {
+			if (e.type == "mouseenter") {
+				subMenu.show();
+			}
+		});
+		$("#nav").hover(function(e) {
+			if (e.type == "mouseleave") {
+				subMenu.hide();
+			}
 		});
 	});
 </script>
