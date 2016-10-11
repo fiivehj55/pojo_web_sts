@@ -18,15 +18,43 @@
 <link rel="stylesheet" href="css/style.css" />
 <link rel="stylesheet" href="css/style-desktop.css" />
 
+<!-- 기본 jQuery js파일 연결 -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+
+<!-- bxSlider css파일 연결 -->
+<link href="js/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
+
 <style>
 input, input[placeholder] {
 	font-weight: bold;
 	text-align: center;
 }
+body{
+	background: white;
+}
+.bx-wrapper {
+	position: relative;
+	width: 100%;
+	height: 30% !important;
+	top: 0;
+	left: 0;
+}
+
+.bxslider, .bxslider li {
+	/* 높이 조정*/
+	height: 30vh !important;;
+}
+
+.bxslider li {
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-size: cover;
+}
 </style>
 
 </head>
-<body class="homepage">
+<body class="header">
 	<!-- Header -->
 	<div id="header">
 		<div id="nav-wrapper">
@@ -105,7 +133,16 @@ input, input[placeholder] {
 			</div>
 		</div>
 	</div>
+		<ul class="bxslider">
+		
+	
+		<li><img src="css/images/room5.jpg" /></li>
+		<li><img src="css/images/room7.jpg" /></li>
+		<li><img src="css/images/room8.jpg" /></li>
+		<!-- <li><img src="css/images/room6.jpg" /></li> -->
+	
 
+		</ul>
 	<!-- Featured -->
 	<div id="featured">
 		<div class="container">
@@ -169,13 +206,22 @@ input, input[placeholder] {
 	<jsp:include page="jsp/Footer.jsp"></jsp:include>
 </body>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+<script src="js/jquery.bxslider/jquery.bxslider.min.js"></script>
 <script>
-var image1 = "url(../css/images/house1.jpg) no-repeat bottom center";
-var image2 = "url(../css/images/house2.jpg) no-repeat bottom center";
-var pos = 1;
-	var subMenu = $(".sub");
-	subMenu.hide();
+var subMenu = $(".sub");
+subMenu.hide();
 	$(document).ready(function() {
+		$('.bxslider').bxSlider({
+			/* adaptiveHeight:true, */
+			mode : 'horizontal',
+			auto : true,
+			adaptiveHeight : true,
+			mode : 'fade',
+			captions : true,
+			pagerCustom : '#bx-pager',
+			slideWidth :2500,
+
+		});
 		$("#nav").hover(function(e) {
 			if (e.type == "mouseenter") {
 				subMenu.show();
@@ -186,16 +232,6 @@ var pos = 1;
 				subMenu.hide();
 			}
 		});
-		window.setInterval(function() {
-			var show;
-			if(pos==1)
-				show = image1;
-			else
-				show = image2;
-			$("#header").prop("background",show);
-			pos = pos*(-1);
-	      }, 4000);
-		
 	});
 </script>
 </html>
