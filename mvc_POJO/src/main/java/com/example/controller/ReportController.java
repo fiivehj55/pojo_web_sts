@@ -27,6 +27,13 @@ public class ReportController {
 		List<Report> list = repservice.selectAllReport();
 		model.addAttribute("Report", list);
 		// view의 이름을 리턴.
-		return "jsp/ReportTable";
+		return "jsp/ReportList";
+	}
+	@RequestMapping(value = "/reportView", method = RequestMethod.GET)
+	public String reportView(Model model) {
+		List<Report> list = repservice.selectAllReport();
+		model.addAttribute("Report", list);
+		// view의 이름을 리턴.
+		return "jsp/ReportList";
 	}
 }

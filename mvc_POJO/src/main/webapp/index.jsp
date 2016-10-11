@@ -33,7 +33,9 @@ input, input[placeholder] {
 	font-weight: bold;
 	text-align: center;
 }
-
+body{
+	background: white;
+}
 .bx-wrapper {
 	position: relative;
 	width: 100%;
@@ -59,20 +61,6 @@ input, input[placeholder] {
 	<!-- Header -->
 
 	<div id="header">
-<<<<<<< HEAD
-		<div id="slider-wrapper"></div>
-
-
-
-=======
-	<div id="slider-wrapper">
-
-	<ul class="bxslider">
-    	<li><img src="css/images/house3.jpg" /></li>
-    	<li><img src="css/images/house2.jpg" /></li>
-	</ul>
-	</div>
->>>>>>> branch 'master' of https://github.com/fiivehj55/pojo_web_sts.git
 		<div id="nav-wrapper">
 
 			<!-- Nav -->
