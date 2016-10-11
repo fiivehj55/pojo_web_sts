@@ -142,8 +142,13 @@ body{
 	</div>
 
 		<ul class="bxslider">
-		<li><img src="css/images/house3.jpg" /></li>
-		<li><img src="css/images/image7.jpg" /></li>
+		
+	
+		<li><img src="css/images/room5.jpg" /></li>
+		<li><img src="css/images/room7.jpg" /></li>
+		<li><img src="css/images/room8.jpg" /></li>
+		<!-- <li><img src="css/images/room6.jpg" /></li> -->
+	
 
 		</ul>
 	<!-- Featured -->
