@@ -1,6 +1,12 @@
 package com.example.controller;
 
+<<<<<<< HEAD
 import java.util.List;
+=======
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
+
+import java.util.Date;
+>>>>>>> branch 'master' of https://github.com/fiivehj55/pojo_web_sts.git
 
 import javax.servlet.http.HttpSession;
 
