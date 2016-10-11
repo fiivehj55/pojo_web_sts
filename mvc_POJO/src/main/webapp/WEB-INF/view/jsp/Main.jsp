@@ -49,19 +49,20 @@ label {
 			<div class ="boardcss_list_table">
 				<table class="list_table">
 				<colgroup>
+					<col width="10%" />
 					<col width="15%" />
-					<col width="45%" />
-					<col width="15%" />
+					<col width="50%" />
 					<col width="15%" />
 					<col width="10%" />
 				</colgroup>
 				<thead>
 				<tr>
+					<th>번호</th>
 					<th>하우스프로필</th>
 					<th>하우스 이름</th>
 					<th>주소</th>
 					<th>체크인&아웃</th>
-					<th>예약고객 프로필</th>
+					
 				</tr>
 				</thead>
 				<tbody>
