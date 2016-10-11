@@ -1,5 +1,7 @@
 package com.example.controller;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
+
 import java.util.Date;
 
 import javax.servlet.http.HttpSession;
@@ -38,6 +40,8 @@ public class ReplyController {
 			HttpSession session){
 		Member user = (Member) session.getAttribute("user");
 		Reply reply = Rpservice.selectByHouseNo(houseNo);
+		logger.trace("reply : {}",reply.getMemberId());
+		logger.trace("reply : {}",reply);
 		String memberId = reply.getMemberId();
 		String replyContent = reply.getReplyContent();
 		Date replyDate = reply.getReplyDate();
