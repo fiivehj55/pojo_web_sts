@@ -16,6 +16,7 @@
 	 	<typeAlias type="com.example.dto.Report" alias="report"/>
 	 	<typeAlias type="com.example.dto.Question" alias="question"/>
 	 	<typeAlias type="com.example.dto.Reply" alias="reply"/>
+	 	<typeAlias type="com.example.dto.ReportToReply" alias="reportToReply"/>
 	 </typeAliases>
 
 	<mappers>
@@ -26,6 +27,7 @@
 		<mapper resource="mybatis/mapper/ReportMapper.xml"/>
 		<mapper resource="mybatis/mapper/QuestionMapper.xml"/>
 		<mapper resource="mybatis/mapper/ReplyMapper.xml"/>
+		<mapper resource="mybatis/mapper/ReportToReplyMapper.xml"/>
 	 </mappers>
 	
   	

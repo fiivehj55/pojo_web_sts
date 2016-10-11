@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
 import com.example.config.ApplicationConfig;
 import com.example.dao.HouseDao;
 import com.example.dao.MemberDao;
@@ -20,6 +21,7 @@ import com.example.dao.QuestionDao;
 import com.example.dao.RegistHouseDao;
 import com.example.dao.ReplyDao;
 import com.example.dao.ReportDao;
+import com.example.dao.ReportToReplyDao;
 import com.example.dto.House;
 import com.example.dto.Member;
 import com.example.dto.MemberDetail;
@@ -27,6 +29,7 @@ import com.example.dto.Question;
 import com.example.dto.RegistHouse;
 import com.example.dto.Reply;
 import com.example.dto.Report;
+import com.example.dto.ReportToReply;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { ApplicationConfig.class })
@@ -48,6 +51,8 @@ public class DaoTest {
    ReportDao rpdao;
    @Autowired
    MemberDetailDao mddao;
+   @Autowired
+   ReportToReplyDao rtrdao;
    @Autowired
    SqlSessionTemplate template;
 
@@ -364,6 +369,21 @@ public class DaoTest {
    public void testDeletMemberDetail() {
       int result = mddao.deleteMemberDetail(template, 2);
       logger.trace("List: {}", result);
+
+   }
+   
+   /** REPORT_TO_REPLY_TEST */
+   @Test
+   public void testSelectAllRTR() {
+	  List<ReportToReply> reportToReply = rtrdao.selectAllReportToReply(template); 
+      logger.trace("List: {}", reportToReply);
+
+   }
+   
+   @Test
+   public void testSelectByRTRNo() {
+      MemberDetail memberDetail = mddao.selectByMemberDetail(template, 1);
+      logger.trace("List: {}", memberDetail);
 
    }
 

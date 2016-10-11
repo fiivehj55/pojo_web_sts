@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pojo.web.dao.ReportToReplyMapper">
+
+	<select id="selectAllReportToReply" resultMap="rtrBase">
+		select * from REPORT_TO_REPLY ORDER BY REPORT_REPLY_NO DESC
+	</select>
+	
+	<select id="selectByReportReplyNo" parameterType="int" resultMap="rtrBase">
+		select * from REPORT_TO_REPLY where REPORT_REPLY_NO=#{reportReplyNo} 
+		ORDER BY REPORT_REPLY_NO DESC
+	</select>
+
+	<resultMap type="reportToReply" id="rtrBase">
+		<id column="REPORT_REPLY_NO" property="reportReplyNo" />
+		<result column="MEMBER_ID" property="memberId" />
+		<result column="REPORT_REPLY_CONTENT" property="reportReplyContent" />
+		<result column="REPORT_REPLY_DATE" property="reportReplyDate" />
+	</resultMap>
+</mapper>

@@ -7,7 +7,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import com.example.dto.Report;
 
-
 @Component
 public class ReportDaoImpl implements ReportDao {
 	
