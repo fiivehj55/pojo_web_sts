@@ -33,25 +33,5 @@ public class ReplyController {
 	
 	@Autowired
 	HouseService hservice;
-	
-	/*@RequestMapping(value = "/searchByHouseNo",method=RequestMethod.GET)
-	public String selectByHouseNoforReply(Model model, 
-			@RequestParam Integer houseNo,
-			HttpSession session){
-		Member user = (Member) session.getAttribute("user");
-		Reply reply = Rpservice.selectByHouseNo(houseNo);
-		int replyNo = reply.getReplyNo();
-		String replyContent = reply.getReplyContent();
-		Date replyDate = reply.getReplyDate();
-		String memberId = user.getMemId();
-		
-		if(reply != null){
-			model.addAttribute("replyNo", replyNo);
-			model.addAttribute("replyContent", replyContent);
-			model.addAttribute("replyDate", replyDate);
-			model.addAttribute("memberId", memberId);
-		}
-		return "jps/index2";
-	}*/
-	
+
 }
