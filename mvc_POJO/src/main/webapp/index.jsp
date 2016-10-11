@@ -216,10 +216,7 @@ body{
 			</section>
 		</div>
 	</div>
-
-
 </body>
-
 <script src="http://code.jquery.com/jquery.js" /></script>
 <script src="js/jquery.bxslider/jquery.bxslider.min.js"></script>
 <script>
