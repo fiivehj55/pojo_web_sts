@@ -39,7 +39,7 @@ public class QuestiontController {
 	public String table(Model model, HttpSession session) {
 		Member user = (Member) session.getAttribute("user");
 		List<Question> list = qservice.selectById(user.getMemId());
-		session.setAttribute("Question", list);
+		model.addAttribute("Question", list);
 		// view의 이름을 리턴.
 		return "jsp/Table";
 	}
