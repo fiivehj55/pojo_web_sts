@@ -2155,12 +2155,12 @@ ul.contact li a:hover {
 #footer {
 	position: relative;
 	text-align: center;
-	background: url(../css/images/image6.jpg) no-repeat bottom center;
+	background: url(../css/images/image10.jpg) no-repeat bottom center;
 }
 
 #footer header h2 {
 	/* color: #FFF !important; */
-	background: url(../css/images/image6.jpg) no-repeat bottom center;
+	background: url(../css/images/image10.jpg) no-repeat bottom center;
 }
 
 /* 	#footer header .byline
@@ -2173,14 +2173,14 @@ ul.contact li a:hover {
 /* Copyright                                                                     */
 /*********************************************************************************/
 #copyright {
-	background: url(../css/images/image7.jpg) no-repeat bottom center;
+	background: url(../css/images/image10.jpg) no-repeat bottom center;
 	position: relative;
 	text-align: center;
 	color: #774535;
 }
 
 #copyright .container {
-	background: url(../css/images/image7.jpg) no-repeat bottom center;
+	background: url(../css/images/image10.jpg) no-repeat bottom center;
 	padding: 3em 0em;
 	border-top: 1px solid;
 	border-color: rgba(255, 255, 255, .05);
