@@ -146,7 +146,7 @@ select SEQ_REPORT_REPLY.currval from dual;
 
   CREATE TABLE "POJO"."REPORT" 
    (	"REPORT_NO" NUMBER(30,0) NOT NULL ENABLE, 
-	"REPORT_CATEGORY" VARCHAR2(20 BYTE), 
+	"REPORT_CATEGORY" VARCHAR2(40 BYTE), 
   	"REPORT_SUBJECT" VARCHAR2(40 BYTE), 
 	"REPORT_CONTENT" VARCHAR2(400 BYTE), 
 	"REGIT_DATE" DATE, 
@@ -211,6 +211,6 @@ insert into QUESTION values (99, '사기당했어요2.', '하우스 등록자가
 insert into QUESTION values (100, '사기당했어요2.', '하우스 등록자가 계속 전화를 받지 않습니다2.', sysdate, 'hong', 2, null);
 insert into REPORT values (99, '피해사례', '이 사람 신고합니다.', '예약자가 입금을 하지 않습니다.', sysdate, 'jang', 1);
 insert into REPLY values (99, '집을 이용했는데 정말 좋았어요', sysdate, 99, 'hong', 2);
-insert into REPORT_TO_REPLY values (1, 'hong', '요청이 처리되었습니다.', sysdate);
+insert into REPORT_TO_REPLY values (1, 'admin', '요청이 처리되었습니다.', sysdate);
 
 commit;
