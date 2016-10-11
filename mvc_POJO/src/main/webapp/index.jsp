@@ -59,12 +59,7 @@ input, input[placeholder] {
 	<!-- Header -->
 
 	<div id="header">
-<<<<<<< HEAD
-		<div id="slider-wrapper"></div>
 
-
-
-=======
 	<div id="slider-wrapper">
 
 	<ul class="bxslider">
@@ -72,7 +67,6 @@ input, input[placeholder] {
     	<li><img src="css/images/house2.jpg" /></li>
 	</ul>
 	</div>
->>>>>>> branch 'master' of https://github.com/fiivehj55/pojo_web_sts.git
 		<div id="nav-wrapper">
 
 			<!-- Nav -->

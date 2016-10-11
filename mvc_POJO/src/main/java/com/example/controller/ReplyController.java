@@ -42,7 +42,7 @@ public class ReplyController {
 		return resolver;
 	}
 	
-	/*@RequestMapping(value = "/searchByHouseNo",method=RequestMethod.GET)
+	@RequestMapping(value = "/houseToReply",method=RequestMethod.GET)
 	public String selectByHouseNoforReply(Model model, 
 			@RequestParam Integer houseNo,
 			HttpSession session){
@@ -54,12 +54,13 @@ public class ReplyController {
 		String memberId = user.getMemId();
 		
 		if(reply != null){
+			model.addAttribute("reply", reply);
 			model.addAttribute("replyNo", replyNo);
 			model.addAttribute("replyContent", replyContent);
 			model.addAttribute("replyDate", replyDate);
 			model.addAttribute("memberId", memberId);
 		}
-		return "jps/index2";
-	}*/
+		return "jps/HouseToReply";
+	}
 	
 }
