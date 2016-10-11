@@ -11,8 +11,8 @@
 		ORDER BY REPLY_NO DESC
 	</select>
 	<select id="selectByHouseNo" parameterType="int" resultMap="replyBase">
-		select * from REPLY where REPLY_NO = #{replyNo}
-		ORDER BY REPLY_NO DESC
+		select * from REPLY where HOUSE_NO = #{houseNo}
+		ORDER BY HOUSE_NO DESC
 	</select>
 	<insert id="insertReply" parameterType="reply" >
 		insert into REPLY

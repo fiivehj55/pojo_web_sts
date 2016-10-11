@@ -9,11 +9,8 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
-<link
-	href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900'
-	rel='stylesheet' type='text/css'>
-<script
-	src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="js/skel.min.js"></script>
 <script src="js/skel-panels.min.js"></script>
 <script src="js/init.js"></script>
@@ -24,16 +21,12 @@
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/css/style-desktop.css" />
 
-
 <!-- 기본 jQuery js파일 연결 -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 
 
 <!-- bxSlider css파일 연결 -->
 <link href="js/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
-
-
-
 
 <style>
 input, input[placeholder] {
@@ -66,10 +59,20 @@ input, input[placeholder] {
 	<!-- Header -->
 
 	<div id="header">
+<<<<<<< HEAD
 		<div id="slider-wrapper"></div>
 
 
 
+=======
+	<div id="slider-wrapper">
+
+	<ul class="bxslider">
+    	<li><img src="css/images/house3.jpg" /></li>
+    	<li><img src="css/images/house2.jpg" /></li>
+	</ul>
+	</div>
+>>>>>>> branch 'master' of https://github.com/fiivehj55/pojo_web_sts.git
 		<div id="nav-wrapper">
 
 			<!-- Nav -->
@@ -96,7 +99,7 @@ input, input[placeholder] {
 					<li><a href="faq">고객센터</a>
 						<ul class="sub">
 							<li class="active"><a href="faq">FAQ</a></li>
-							<li class="active"><a href="#">신고 게시판</a></li>
+							<li class="active"><a href="report">신고 게시판</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li>
 

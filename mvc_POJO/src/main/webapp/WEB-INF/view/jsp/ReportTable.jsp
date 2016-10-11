@@ -43,13 +43,15 @@
 					<caption>POJO의 신고 게시판</caption>
 					<colgroup>
 						<col width="15%" />
-						<col width="45%" />
+						<col width="10%" />
+						<col width="35%" />
 						<col width="20%" />
 						<col width="20%" />
 					</colgroup>
 					<thead>
 						<tr>
 							<th>번호</th>
+							<th>카테고리</th>
 							<th>제목</th>
 							<th>이름</th>
 							<th>등록일자</th>
@@ -57,20 +59,21 @@
 					</thead>
 					<tbody>
 						<c:choose>
-							<c:when test="${fn:length(Question) > 0}">
-								<c:forEach items="${Question }" var="row">
+							<c:when test="${fn:length(Report) > 0}">
+								<c:forEach items="${Report }" var="row">
 									<tr>
-										<td>${row.questNo }</td>
-										<td><a href="bbsSelectByNo?questNo=${row.questNo }">${row.questTitle }</a></td>
+										<td>${row.reportNo }</td>
+										<td>${row.reportCategory }</td>
+										<td><a href="bbsSelectByNo?questNo=${row.reportNo }">${row.reportSubject }</a></td>
 										<td><a>${row.memberId }</a></td>
-										<td><fmt:formatDate pattern="yyyy/MM/dd" value="${row.questDate }" /></td>
+										<td><fmt:formatDate pattern="yyyy/MM/dd" value="${row.regitDate }" /></td>
 										
 									</tr>
 								</c:forEach>
 							</c:when>
 							<c:otherwise>
 								<tr>
-									<td colspan="4"> 조회된 결과가 없습니다. </td>
+									<td colspan="5"> 조회된 결과가 없습니다. </td>
 								</tr>
 							</c:otherwise>
 						</c:choose>

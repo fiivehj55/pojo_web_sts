@@ -27,21 +27,13 @@ public class QuestiontController {
 	@Autowired
 	QuestionService qservice;
 	
-	@Bean
-	public CommonsMultipartResolver multipartResolver() {
-		CommonsMultipartResolver resolver = new CommonsMultipartResolver();
-		resolver.setDefaultEncoding("utf-8");
-		resolver.setMaxUploadSize(1024 * 1024);
-		return resolver;
-	}
-
 	@RequestMapping(value = "/bbs", method = RequestMethod.GET)
 	public String table(Model model, HttpSession session) {
 		Member user = (Member) session.getAttribute("user");
 		List<Question> list = qservice.selectById(user.getMemId());
-		session.setAttribute("Question", list);
+		model.addAttribute("Question", list);
 		// view의 이름을 리턴.
-		return "jsp/Table";
+		return "jsp/QuestList";
 	}
 /*
 	@RequestMapping(value = "/bbs", method = RequestMethod.POST)
@@ -104,13 +96,13 @@ public class QuestiontController {
 			model.addAttribute("questReplyNo", questReplyNo);
 		}
 		// view의 이름을 리턴.
-		return "/jsp/selectByTable";
+		return "/jsp/QuestionView";
 	}
 	
 	@RequestMapping(value = "/bbsSelectByNo", method = RequestMethod.POST)
 	public String bbsSelectByNoPost(Model model, HttpSession session) {
 		// view의 이름을 리턴.
-		return "jsp/Table";
+		return "jsp/QuestList";
 	}
 	
 	@RequestMapping(value = "/bbsUpdate", method = RequestMethod.GET)

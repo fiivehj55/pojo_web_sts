@@ -28,6 +28,12 @@ public class ReplyDaoImpl implements ReplyDao {
 		String stmt = REPLY_MAP + "selectByReplyNo";
 		return template.selectOne(stmt, replyNo);
 	}
+	
+	@Override
+	public Reply selecyByIdHouseNo(SqlSessionTemplate template, int HouseNo) {
+		String stmt = REPLY_MAP + "selectByHouseNo";
+		return template.selectOne(stmt, HouseNo);
+	}
 
 	@Override
 	public int insertReply(SqlSessionTemplate template, Reply reply) {
@@ -46,5 +52,5 @@ public class ReplyDaoImpl implements ReplyDao {
 		String stmt = REPLY_MAP + "deleteReply";
 		return template.update(stmt, replyNo);
 	}
-	
+
 }

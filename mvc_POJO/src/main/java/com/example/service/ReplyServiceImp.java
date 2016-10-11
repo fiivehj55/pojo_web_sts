@@ -24,6 +24,10 @@ public class ReplyServiceImp implements ReplyService{
 	public Reply selectByReplyNo(int replyNo) {
 		return	dao.selectByIdReplyNo(template, replyNo);
 	}
+	@Override
+	public Reply selectByHouseNo(int houseNo) {
+		return dao.selecyByIdHouseNo(template, houseNo);
+	}
 	@Transactional
 	@Override
 	public int insertReply(Reply reply) {
@@ -39,4 +43,5 @@ public class ReplyServiceImp implements ReplyService{
 	public int deleteReply(int replyNo) {
 		return dao.deleteReply(template, replyNo);
 	}
+	
 }

@@ -9,6 +9,8 @@ public interface ReplyDao {
 	
 	Reply selectByIdReplyNo(SqlSessionTemplate template, int replyNo);
 	
+	Reply selecyByIdHouseNo(SqlSessionTemplate template, int HouseNo);
+	
 	int insertReply(SqlSessionTemplate template, Reply reply);
 	
 	int updateReply(SqlSessionTemplate template, Reply reply);

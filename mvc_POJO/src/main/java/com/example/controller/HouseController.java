@@ -1,6 +1,6 @@
 package com.example.controller;
 
-import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -8,19 +8,19 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import com.example.dto.House;
 import com.example.dto.Member;
+import com.example.dto.Reply;
 import com.example.service.HouseService;
 import com.example.service.MemberService;
+import com.example.service.ReplyService;
 
 @Controller
 public class HouseController {
@@ -32,15 +32,10 @@ public class HouseController {
 	
 	@Autowired
 	MemberService mservice;
-	
-	@Bean
-	public CommonsMultipartResolver multipartResolver(){
-		CommonsMultipartResolver resolver = new CommonsMultipartResolver();
-		resolver.setDefaultEncoding("utf-8");
-		resolver.setMaxUploadSize(1024*1024);
-		return resolver;
-	}
-	
+
+	@Autowired
+	ReplyService Rpservice;
+
 	@RequestMapping(value = "/search", method=RequestMethod.GET)
 	public String search(Model model, HttpSession session){
 		Member user = (Member) session.getAttribute("user");
@@ -116,7 +111,7 @@ public class HouseController {
 		}
 	}*/
 	
-	@RequestMapping(value = "/insertHouse1",method=RequestMethod.GET)
+	/*@RequestMapping(value = "/insertHouse1",method=RequestMethod.GET)
 	public String insertHouse1Get(Model model) {
 		//view의 이름을 리턴.
 		return "jsp/HouseJoin1";
@@ -135,7 +130,7 @@ public class HouseController {
 		int result = hservice.insertHouse(new_house);
 		logger.trace("result: {}",result);
 
-		/*model.addAttribute("new_house", new_house);*/
+		model.addAttribute("new_house", new_house);
 		//view의 이름을 리턴.
 		if(result != 1){
 			return "jsp/HouseJoin1";
@@ -150,7 +145,7 @@ public class HouseController {
 		model.addAttribute("new_house", new_house);
 		//view의 이름을 리턴.
 		return "jsp/HouseJoin2";
-	}
+	}*/
 	
 	@RequestMapping(value = "/searchByHouseNo",method=RequestMethod.GET)
 	public String selectByHouseNo(Model model, @RequestParam Integer houseNo,
@@ -161,6 +156,13 @@ public class HouseController {
 		String houseWifi = house.getHouseWifi();
 		String houseElebe =	house.getHouseElebe();
 		String houseWashing = house.getHouseWashing();
+		
+		Member user = (Member) session.getAttribute("user");
+		Reply reply = Rpservice.selectByHouseNo(houseNo);
+		int replyNo = reply.getReplyNo();
+		String replyContent = reply.getReplyContent();
+		Date replyDate = reply.getReplyDate();
+		String memberId = user.getMemId();
 	
 		if(house != null){
 			model.addAttribute("houseImg", house.getHouseImg());
@@ -186,8 +188,12 @@ public class HouseController {
 			if(houseWashing!=null){
 				model.addAttribute("houseWashing", "세탁기");
 			}
+			model.addAttribute("replyNo", replyNo);
+			model.addAttribute("replyContent", replyContent);
+			model.addAttribute("replyDate", replyDate);
+			model.addAttribute("memberId", memberId);
 			//view의 이름을 리턴.
-			return "jsp/searchHouse";
+			return "jsp/HouseView";
 		}
 		return "jps/index2";
 	}
@@ -200,7 +206,7 @@ public class HouseController {
 			return "jsp/HousePage";
 		}
 		//view의 이름을 리턴.
-		return "jsp/searchHouse";
+		return "jsp/HouseView";
 	}
 	
 	@ModelAttribute

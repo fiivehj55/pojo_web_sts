@@ -246,6 +246,13 @@ public class DaoTest {
       logger.trace("List: {}", reply);
 
    }
+   
+   @Test
+   public void testSelectByHouseNo() {
+      Reply reply = rdao.selecyByIdHouseNo(template, 1);
+      logger.trace("List: {}", reply);
+
+   }
 
    @Test
    public void testInsertReply() {
