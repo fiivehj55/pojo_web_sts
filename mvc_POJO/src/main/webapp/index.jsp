@@ -211,8 +211,12 @@ $(document).ready(function(){
 	$('.bxslider').bxSlider({
 		   mode: 'fade',
 		   captions: true,
+		   minSlides: 1,
+			maxSlides: 1,
+			moveSlides: 0,
+			slideWidth: 0,
 		   pagerCustom: '#bx-pager',
-		   adaptiveHeight: true,
+		   adaptiveHeight: false,
 		   slideWidth: 1000
 		});
 });
