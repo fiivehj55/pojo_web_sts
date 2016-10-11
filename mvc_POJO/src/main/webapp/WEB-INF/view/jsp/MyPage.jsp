@@ -10,20 +10,31 @@ label {
 	width: 100px;
 	display: inline-block;
 }
+
+#container{
+	
+	text-align:left;
+	width: 1024px;
+	margin:0px 40% 0px 40%;
+}
+
 </style>
 <title>Insert title here</title>
 </head>
-<body class="homepage">
+<body class="">
 <jsp:include page="./Header.jsp"></jsp:include>
 	<div id="main">
+	<div id="container">
 		<div id="content" class="">
 		<h1>마이페이지</h1>
 	<h2>저희 사랑방 손님을 이용해 주셔서 감사합니다.</h2>
+	<p>
+	
 	<sform:form method="post" action="mypage" modelAttribute="userinfo" enctype="multipart/form-data">
 		<p>
 			<sform:label path="memId">아이디:</sform:label> 
 			<sform:input type="text"  path = "memId"  placeholder="영문+숫자 조합 8 이상" disabled="true"/> 
-		</p>
+		<p>
 
 		<p>
 			<label for="memPassword">비밀번호:</label> 
@@ -60,7 +71,7 @@ label {
 			<img src="<%=request.getContextPath()%>/upload/${userinfo.getMemId()}/intro/${userinfo.getMemImg()}">
 			</div>
 		<p>
-			<sform:label path="memIntro">자기소개:</sform:label>
+			<sform:label path="memIntro">자기소개:</sform:label></br>
 			<sform:textarea  path="memIntro" cols="45" rows="10"></sform:textarea>
 		<p>
 			<a href="deletePass"><input type="button" value="탈퇴하기"></a>
@@ -69,6 +80,7 @@ label {
 			<a href="<%=request.getContextPath()%>/index2.jsp">
 			<input type="button" value="나가기"></a>
 		</sform:form>
+		</div>
 		</div>
 	</div>
 <jsp:include page="./Footer.jsp"></jsp:include>

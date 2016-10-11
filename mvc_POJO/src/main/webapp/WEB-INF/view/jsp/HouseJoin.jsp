@@ -146,10 +146,8 @@
 				<label for="price">가격 : </label>
 				<input type="number" id="price" name="price"/>
 				<br/>
-			
 			</fieldset>
 			<input type="submit" id="next" name="next" value="다음 단계"/> <br/>
-				
 			</div>
 			</div>
 		</form>
