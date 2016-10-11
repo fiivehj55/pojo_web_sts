@@ -22,7 +22,10 @@
 	<!--  footerì ë´ì©ê³¼ snsì°ê²° ìì´ì½ -->
 	<div id="footer">
 		<div class="container">
-			<section>
+			Design: <a href="http://templated.co">TEMPLATED</a> Images: <a
+				href="http://unsplash.com">Unsplash</a> (<a
+				href="http://unsplash.com/cc0">CC0</a>
+<!-- 			<section>
 				<header>
 					<h2></h2>
 					<span class="byline">
@@ -34,18 +37,18 @@
 					<li><a href="#" class="fa fa-dribbble"><span>Pinterest</span></a></li>
 					<li><a href="#" class="fa fa-tumblr"><span>Google+</span></a></li>
 				</ul>
-			</section>
+			</section> -->
 		</div>
 	</div>
 
 	<!-- Copyright -->
-	<div id="copyright">
+<!--  	<div id="copyright">
 		<div class="container">
 			Design: <a href="http://templated.co">TEMPLATED</a> Images: <a
 				href="http://unsplash.com">Unsplash</a> (<a
 				href="http://unsplash.com/cc0">CC0</a>
 		</div>
-	</div>
+	</div> -->
 </body>
 	<script>
 		

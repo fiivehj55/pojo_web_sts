@@ -2174,11 +2174,17 @@ ul.contact li a:hover {
 /*********************************************************************************/
 #copyright {
 	background: url(../css/images/image10.jpg) no-repeat bottom center;
+	
+	background-attachment: fixed;
+	background-size: cover;
 	position: relative;
 	text-align: center;
 	color: #774535;
 }
-
+#copyright:BEFORE {
+	width: 100%;
+	height: 100%;
+}
 #copyright .container {
 	background: url(../css/images/image10.jpg) no-repeat bottom center;
 	padding: 3em 0em;
