@@ -57,7 +57,7 @@ background-size: cover;
 </style>
 
 </head>
-<body class="homepage">
+<body class="header">
 	<!-- Header -->
 
 	<div id="header">
