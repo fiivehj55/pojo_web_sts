@@ -162,6 +162,7 @@ body{
 
 			<p>
 				지금 <a href="http://templated.co"> 인기있는 </a>숙소를 만나보세요!
+				<a href="houseToReply?houseNo=99">houseToReply</a>
 		</div>
 	</div>
 
@@ -221,6 +222,8 @@ body{
 <script src="http://code.jquery.com/jquery.js" /></script>
 <script src="js/jquery.bxslider/jquery.bxslider.min.js"></script>
 <script>
+var subMenu = $(".sub");
+subMenu.hide();
 	$(document).ready(function() {
 		$('.bxslider').bxSlider({
 			/* adaptiveHeight:true, */
@@ -232,6 +235,16 @@ body{
 			pagerCustom : '#bx-pager',
 			slideWidth :2500,
 
+		});
+		$("#nav").hover(function(e) {
+			if (e.type == "mouseenter") {
+				subMenu.show();
+			}
+		});
+		$("#nav").hover(function(e) {
+			if (e.type == "mouseleave") {
+				subMenu.hide();
+			}
 		});
 	});
 </script>
