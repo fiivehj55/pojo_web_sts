@@ -18,16 +18,12 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style-desktop.css" />
 
-
 <!-- 기본 jQuery js파일 연결 -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 
 
 <!-- bxSlider css파일 연결 -->
 <link href="js/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
-
-
-
 
 <style>
 input, input[placeholder] {
@@ -61,14 +57,10 @@ background-size: cover;
 	<div id="slider-wrapper">
 
 	<ul class="bxslider">
-    <li><img src="css/images/house3.jpg" /></li>
-    <li><img src="css/images/house2.jpg" /></li>
-
+    	<li><img src="css/images/house3.jpg" /></li>
+    	<li><img src="css/images/house2.jpg" /></li>
 	</ul>
 	</div>
-
-
-
 		<div id="nav-wrapper">
 			<!-- Nav -->
 			<nav id="nav">

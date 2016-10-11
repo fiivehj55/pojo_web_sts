@@ -42,8 +42,8 @@ public class ReplyController {
 		return resolver;
 	}
 	
-	@RequestMapping(value = "/searchByHouseNo",method=RequestMethod.GET)
-	public String selectByHouseNo(Model model, 
+	/*@RequestMapping(value = "/searchByHouseNo",method=RequestMethod.GET)
+	public String selectByHouseNoforReply(Model model, 
 			@RequestParam Integer houseNo,
 			HttpSession session){
 		Member user = (Member) session.getAttribute("user");
@@ -60,6 +60,6 @@ public class ReplyController {
 			model.addAttribute("memberId", memberId);
 		}
 		return "jps/index2";
-	}
+	}*/
 	
 }

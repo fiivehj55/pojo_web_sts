@@ -1,6 +1,6 @@
 package com.example.controller;
 
-import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -19,8 +19,10 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import com.example.dto.House;
 import com.example.dto.Member;
+import com.example.dto.Reply;
 import com.example.service.HouseService;
 import com.example.service.MemberService;
+import com.example.service.ReplyService;
 
 @Controller
 public class HouseController {
@@ -32,6 +34,9 @@ public class HouseController {
 	
 	@Autowired
 	MemberService mservice;
+	
+	@Autowired
+	ReplyService Rpservice;
 	
 	@Bean
 	public CommonsMultipartResolver multipartResolver(){
@@ -161,6 +166,13 @@ public class HouseController {
 		String houseWifi = house.getHouseWifi();
 		String houseElebe =	house.getHouseElebe();
 		String houseWashing = house.getHouseWashing();
+		
+		Member user = (Member) session.getAttribute("user");
+		Reply reply = Rpservice.selectByHouseNo(houseNo);
+		int replyNo = reply.getReplyNo();
+		String replyContent = reply.getReplyContent();
+		Date replyDate = reply.getReplyDate();
+		String memberId = user.getMemId();
 	
 		if(house != null){
 			model.addAttribute("houseImg", house.getHouseImg());
@@ -186,6 +198,10 @@ public class HouseController {
 			if(houseWashing!=null){
 				model.addAttribute("houseWashing", "세탁기");
 			}
+			model.addAttribute("replyNo", replyNo);
+			model.addAttribute("replyContent", replyContent);
+			model.addAttribute("replyDate", replyDate);
+			model.addAttribute("memberId", memberId);
 			//view의 이름을 리턴.
 			return "jsp/HouseView";
 		}
