@@ -18,4 +18,7 @@ public interface HouseService {
 	int updateHouse(House house);
 	//하우스 삭제
 	int deleteHouse(int houseNo);
+	
+	// 하우스 전체 조회
+	List<House> selectAllHouse();
 }

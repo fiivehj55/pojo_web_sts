@@ -58,6 +58,14 @@ public class HouseServiceImp implements HouseService{
 	@Override
 	public int deleteHouse(int houseNo) {
 		int result = 0;
+		result = hdao.deleteHouse(template, houseNo);
+		return result;
+	}
+
+	@Transactional
+	@Override
+	public List<House> selectAllHouse() {
+		List<House> result = hdao.selectAllHouse(template);
 		return result;
 	}
 }

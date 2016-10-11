@@ -1,6 +1,7 @@
 package com.example.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -40,14 +41,16 @@ public class HouseController {
 		return resolver;
 	}
 	
-	@RequestMapping(value = "/search",method=RequestMethod.GET)
-	public String search(Model model){
-		
+	@RequestMapping(value = "/search", method=RequestMethod.GET)
+	public String search(Model model, HttpSession session){
+		Member user = (Member) session.getAttribute("user");
+		List<House> house = hservice.selectAllHouse();
+		session.setAttribute("house", house);
 		//view의 이름을 리턴.
 		return "jsp/Main";
 	}
 	
-	@RequestMapping(value = "/insertHouse",method=RequestMethod.GET)
+	@RequestMapping(value = "/insertHouse", method=RequestMethod.GET)
 	public String insertHouseGet(Model model, HttpSession session){
 		/*House new_house = new House();*/ 
 		/*model.addAttribute("new_house", new_house);*/
@@ -70,15 +73,15 @@ public class HouseController {
 			HttpSession session){
 		//view의 이름을 리턴.
 		int result = 0;
-		/*Member user = (Member) session.getAttribute("user");*/
+		Member user = (Member) session.getAttribute("user");
 		House house = new House();
-		house.setHouseNo(99);
+		/*house.setHouseNo(null);*/
 		house.setHouseName(rname);
 		house.setHouseAddress(addr);
 		house.setHousePrice(price);
 		house.setHouseScore(9);
 		house.setHouseInfo(infor);
-		house.setMemberId("hong");
+		house.setMemberId(user.getMemId());
 		house.setDetailId(2);
 		house.setHouseRoom(room);
 		house.setHouseBath(bath);

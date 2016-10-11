@@ -33,7 +33,13 @@ input, input[placeholder] {
 			<!-- Nav -->
 			<nav id="nav">
 				<ul class="menu1">
-					<li class="active"><a href="index">호스팅하기</a>
+					<li class="active"><a href="index">메인가기</a>
+						<ul class="sub">
+							<li class="active"><a href="#">&nbsp</a></li>
+							<li class="active"><a href="#">&nbsp</a></li>
+							<li class="active"><a href="#">&nbsp</a></li>
+						</ul></li>
+					<li class="active"><a href="insertHouse">호스팅하기</a>
 						<ul class="sub">
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>

@@ -60,20 +60,29 @@ background-size: cover;
 <body class="homepage">
 	<!-- Header -->
 
-	
 	<div id="header">
 	<div id="slider-wrapper">
+
 	<ul class="bxslider">
-    <li><img src="css/images/image4.jpg" /></li>
-    <li><img src="css/images/image3.jpg" /></li>
+    <li><img src="css/images/house3.jpg" /></li>
+    <li><img src="css/images/house2.jpg" /></li>
+
 	</ul>
 	</div>
+
+
 
 		<div id="nav-wrapper">
 			<!-- Nav -->
 			<nav id="nav">
 				<ul class="menu1">
-					<li class="active"><a href="index">호스팅하기</a>
+					<li class="active"><a href="index">메인가기</a>
+						<ul class="sub">
+							<li class="active"><a href="#">&nbsp</a></li>
+							<li class="active"><a href="#">&nbsp</a></li>
+							<li class="active"><a href="#">&nbsp</a></li>
+						</ul></li>
+					<li class="active"><a href="insertHouse">호스팅하기</a>
 						<ul class="sub">
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
@@ -209,17 +218,15 @@ background-size: cover;
 <script>
 $(document).ready(function(){
 	$('.bxslider').bxSlider({
-		   mode: 'fade',
-		   captions: true,
-		   minSlides: 1,
-			maxSlides: 1,
-			moveSlides: 0,
-			slideWidth: 0,
-		   pagerCustom: '#bx-pager',
-		   adaptiveHeight: false,
-		   slideWidth: 1000
+
+			adaptiveHeight : true,
+			mode : 'fade',
+			captions : true,
+			pagerCustom : '#bx-pager',
+			slideWidth : 1500,
+
 		});
-});
+	});
 </script>
 
 </html>
