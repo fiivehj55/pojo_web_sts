@@ -4,6 +4,23 @@
 <html>
 <head>
 <title>Linear by TEMPLATED</title>
+<style>
+#container {
+	text-align:left;
+	margin:0px 30% 0px 40%;
+}
+
+#one {
+	width:1024px;
+}
+
+.inputlabel{
+ 	display:inline-block;
+ 	width:100px;
+ 	}	
+
+</style>
+
 
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="description" content="" />
@@ -22,12 +39,13 @@
 <jsp:include page="./Header.jsp"></jsp:include>
 	<!-- Main -->
 	<div id="main">
-		<div id="content" class="auto_center">
+		<div id="container">
 		<h1>하우스 등록</h1>
 		<form method="post" action="insertHouse">
 			<div id="one" style="display: block;">
-			<fieldset>
 			
+			<fieldset>
+				
 				<legend>호스팅 1단계</legend>
 				<label for="room">방의 개수 : </label>
 				<input type="radio" id="rone" name="room" value="1개">
@@ -71,13 +89,15 @@
 				<input type="checkbox" id="aircon" name="aircon" value="aircon">
 				<label for="aircon">에어컨</label> 
 				<input type="checkbox" id="wifi" name="wifi" value="wifi">
-				<label for="wifi">Wi-Fi</label> <br/>
+				<label for="wifi" >Wi-Fi</label>
 				<input type="checkbox" id="elebe" name="elebe" value="elebe">
-				<label for="elebe">엘리베이터</label>
+				<label for="elebe" >엘리베이터</label>
 				<input type="checkbox" id="washing" name="washing" value="washing">
 				<label for="washing">세탁기</label>
+				<p>
 				<input type="button" id="nextTwo" value="다음단계">
 			</fieldset>
+			</div>
 			</div>
 			<br/>
 			<div id ="two" style="display: none;">
@@ -123,7 +143,7 @@
 			</div>
 		</form>
 		</div>
-	</div>
+	
 <jsp:include page="./Footer.jsp"></jsp:include>
 </body>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
