@@ -35,7 +35,7 @@
 <link rel="stylesheet" href="css/style-desktop.css" />
 
 </head>
-<body class="homepage">
+<body class="header">
 <jsp:include page="./Header.jsp"></jsp:include>
 	<!-- Main -->
 	<div id="main">

@@ -2172,7 +2172,7 @@ ul.contact li a:hover {
 /*********************************************************************************/
 /* Copyright                                                                     */
 /*********************************************************************************/
-#copyright {
+ #copyright {
 	background: url(../css/images/image10.jpg) no-repeat bottom center;
 	
 	background-attachment: fixed;
@@ -2181,22 +2181,22 @@ ul.contact li a:hover {
 	text-align: center;
 	color: #774535;
 }
-#copyright:BEFORE {
+ #copyright:BEFORE {
 	width: 100%;
 	height: 100%;
 }
-#copyright .container {
+ #copyright .container {
 	background: url(../css/images/image10.jpg) no-repeat bottom center;
 	padding: 3em 0em;
 	border-top: 1px solid;
 	border-color: rgba(255, 255, 255, .05);
 	color: rgba(255, 255, 255, .1);
-}
+}  
 
 #copyright a {
 	text-decoration: none;
 	color: rgba(255, 255, 255, .2);
-}
+} 
 
 /*********************************************************************************/
 /* Featured                                                                      */

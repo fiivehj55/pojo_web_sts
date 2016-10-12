@@ -30,7 +30,7 @@ margin:0px 40% 0px 40%;
 }
  </style>
 </head>
-<body class="homepage">
+<body class="header">
 	<jsp:include page="./Header.jsp"></jsp:include>
 	<!-- Main -->
 	<div id="main">

@@ -9,13 +9,26 @@
 <title></title>
 
 <style>
+
+ label {
+	width: 100px;
+	display: inline-block;
+} 
+
+.auto_center {
+	width: 400px;
+	height: 400px;
+	padding: 20px;
+	margin: 200px auto;
+}
+
 .inputlabel{
  	display:inline-block;
  	width:100px;
  	}	
 </style>	
 </head>
-<body class="homepage">
+<body class="header">
 <jsp:include page="./Header.jsp"></jsp:include>
 
 	<div id="main">
@@ -58,7 +71,5 @@
 	</div>
 <jsp:include page="./Footer.jsp"></jsp:include>
 </body>
-<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 
-</body>
 </html>

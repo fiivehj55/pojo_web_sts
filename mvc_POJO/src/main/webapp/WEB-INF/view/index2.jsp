@@ -197,9 +197,11 @@ body{
 	<div id="tweet">
 		<div class="container">
 			<section>
-				<blockquote>&ldquo;In posuere eleifend odio. Quisque
-					semper augue mattis wisi. Maecenas ligula. Pellentesque viverra
-					vulputate enim. Aliquam erat volutpat.&rdquo;</blockquote>
+				<blockquote>&ldquo;2016 공주대학교 프로젝트 POJO &rdquo;
+				<p>양희준
+				홍석진
+				박준영
+				황민정</p></blockquote>
 			</section>
 		</div>
 	</div>
