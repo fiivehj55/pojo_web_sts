@@ -164,7 +164,6 @@ body{
 
 			<p>
 				지금 <a href="http://templated.co"> 인기있는 </a>숙소를 만나보세요!
-				<a href="houseToReply?houseNo=99">houseToReply</a>
 		</div>
 	</div>
 

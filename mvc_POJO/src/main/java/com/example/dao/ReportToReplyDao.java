@@ -9,6 +9,8 @@ public interface ReportToReplyDao {
 	
 	List<ReportToReply> selectAllReportToReply(SqlSessionTemplate template);
 	
+	List<ReportToReply> selectByReportReplyNo(SqlSessionTemplate template, int reportReplyNo);
+	
 	ReportToReply selectByReportToReply(SqlSessionTemplate template, int reportReplyNo);
 	
 	int insertReportToReply(SqlSessionTemplate template, ReportToReply reportToReply);

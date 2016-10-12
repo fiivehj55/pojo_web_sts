@@ -46,4 +46,10 @@ public class ReportToReplyDaoImpl implements ReportToReplyDao {
 		return template.update(stmt, reportReplyNo);
 	}
 
+	@Override
+	public List<ReportToReply> selectByReportReplyNo(SqlSessionTemplate template, int reportReplyNo) {
+		String stmt = REPORT_TO_REPLY_MAP + "selectByReportReplyNo";
+		return template.selectList(stmt, reportReplyNo);
+	}
+
 }
