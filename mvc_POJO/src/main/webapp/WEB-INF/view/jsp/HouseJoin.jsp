@@ -5,12 +5,12 @@
 <head>
 <title>Linear by TEMPLATED</title>
 <style>
-#container {
+ #container {
 	text-align:left;
-	margin:0px 30% 0px 40%;
+	margin:0px 10% 0px 20%;
 }
 
-#one {
+/* #one {
 	width:1024px;
 }
 
@@ -19,14 +19,30 @@
 .inputlabel{
  	display:inline-block;
  	width:100px;
- 	}	
+ 	}  */
 #view{
-	height: 440px;
+	height:500px;
 }
+
+label {
+	width: 100px;
+	display: inline-block;
+}
+
+.auto_center {
+	width: 400px;
+	height: 400px;
+	padding: 20px;
+	margin: 200px auto;
+}
+
+
+
+
 </style>
 
 
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<!-- <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='/text/css'>
@@ -36,7 +52,7 @@
 <script src="js/init.js"></script>
 <link rel="stylesheet" href="css/skel-noscript.css" />
 <link rel="stylesheet" href="css/style.css" />
-<link rel="stylesheet" href="css/style-desktop.css" />
+<link rel="stylesheet" href="css/style-desktop.css" /> -->
 
 </head>
 <body class="header">
