@@ -131,6 +131,7 @@ label {
 				<label for="infor">숙소 안내말</label> <br/>
 				<textarea rows="5" cols="35" name="infor"></textarea> <br/>
 			</fieldset>	
+				<input type="button" id="backOne" value="이전단계">
 				<input type="button" id="nextThree" value="다음단계">
 			</div>
 			</div>
@@ -156,6 +157,7 @@ label {
 				<input type="number" id="price" name="price"/>
 				<br/>
 			</fieldset>
+				<input type="button" id="backTwo" value="이전단계">
 			<input type="submit" id="next" name="next" value="다음 단계"/> <br/>
 			</div>
 			</div>
@@ -166,6 +168,8 @@ label {
 <jsp:include page="./Footer.jsp"></jsp:include>
 </body>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+<script
+	src="<%=request.getContextPath()%>/js/validate/dist/jquery.validate.min.js"></script>
 <script>
 $(document).ready(function() {
 	$("#nextTwo").on("click",function(){
@@ -176,6 +180,36 @@ $(document).ready(function() {
 		$("#two").css("display","none");
 		$("#three").css("display","block");
 	})
+	$("#backTwo").on("click",function(){
+
+		$("#two").css("display","block");
+		$("#three").css("display","none");
+	})
+	$("#backOne").on("click",function(){
+		$("#one").css("display","block");
+		$("#two").css("display","none");
+	})
+	
+	
+	
+	
+	$("#myForm").validate({
+		rules:{
+				room:"required",
+				bath:"required",
+				hosting:"required",
+				price:"required",
+				day:"required"
+		},
+		messages:{
+				room:"Please specify room count",
+				bath:"Please specify bath count",
+				hosting:"Please specify hosting count",
+				price:{required:"Please specify your price"},
+				day:"Please specify payment cycle"
+		}
+	});
 });
+
 </script>
 </html>
