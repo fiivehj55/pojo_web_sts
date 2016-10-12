@@ -2153,8 +2153,8 @@ ul.contact li a:hover {
 /* Footer                                                                        */
 /*********************************************************************************/
 #footer {
-	position: relative;
-	text-align: center;
+	/*  position: relative;  */
+	/* text-align: center; */
 	background: url(../css/images/image10.jpg) no-repeat bottom center;
 }
 

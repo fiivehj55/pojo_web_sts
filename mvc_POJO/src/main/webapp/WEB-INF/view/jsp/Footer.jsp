@@ -16,18 +16,48 @@
 <link rel="stylesheet" href="css/skel-noscript.css" />
 <link rel="stylesheet" href="css/style.css" />
 <link rel="stylesheet" href="css/style-desktop.css" /> -->
+
+<style>
+#container {
+    text-align: center;
+}
+#left-box {
+    float: left;
+}
+#center-box {
+    margin: 50auto; 
+}
+#right-box {
+    float: right;
+
+</style>
+
 </head>
 <body>
 	<!-- Footer -->
-	<!--  footerì ë´ì©ê³¼ snsì°ê²° ìì´ì½ -->
 	<div id="footer">
-		<div class="container">
-			 빅데이터 기반 안드로이드 전문 <!--  <a href="http://templated.co"> -->개발자 양성과정 <a
-				href="http://unsplash.com"></a> <a
-				href="http://unsplash.com/cc0"></a>
-		</div>
+<div id='container'>
+    <div id='left-box'>
+    NOTIFICATION
+    <p>[주소]
+    	대전광역시 서구 둔산3동 국화아파트   
+    <p>어쩌구 저쩌구 	
+    </div>
+    <div id='right-box'>
+    COMPANY INFO
+  <p>  법인명(상호):POJO
+    어쩌구 저쩌구  
+    </div>
+    <div id='center-box'>
+    CALL CENTER
+    010-1234-0900
+    
+    </div>
+</div>
+
 	</div>
 </body>
+
 	<script>
 		
 	</script>
