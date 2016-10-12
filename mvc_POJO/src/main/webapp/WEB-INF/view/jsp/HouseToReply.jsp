@@ -28,7 +28,7 @@
 			<!-- 등록버튼 시작 -->
 			<div id="boardcss_list_add_button_table">
 				<div class="boardcss_list_add_button">
-					<a href="bbsInsert"><button class="add_button">등록</button></a>
+					<a href="bbsInsert"><button class="add_button">댓글 등록</button></a>
 					<ul></ul>
 				</div>
 			</div>

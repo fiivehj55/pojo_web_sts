@@ -68,8 +68,6 @@ label {
 					<th>하우스프로필</th>
 					<th>하우스 이름</th>
 					<th>주소</th>
-					<th>체크인&아웃</th>
-					
 				</tr>
 				</thead>
 				<tbody>
@@ -77,11 +75,10 @@ label {
 						<c:when test="${fn:length(house) > 0}">
 							<c:forEach items="${house }" var="row">
 								<tr>
-									<td><img src="${row.houseImg }" width="40" height="40"/></td>
-									<td><a href="#">${row.houseName }</a></td>
-									<td><a>${row.houseAddress }</a></td>
-									<td><a>${row.houseDay }</a></td>
-									<td><a>${row.memberId }</a></td>									
+									<td>${row.houseNo }</td>
+									<td> <a href="searchByHouseNo?houseNo=${row.houseNo }"><img src="${row.houseImg }" width="40" height="40"/></a></td>
+									<td><a href="searchByHouseNo?houseNo=${row.houseNo }">${row.houseName }</a></td>
+									<td>${row.houseAddress }</td>									
 								</tr>
 							</c:forEach>
 						</c:when>
@@ -97,7 +94,8 @@ label {
 		</div>
 			
 			<h1>${result}</h1>
-			<a href="insertHouse"> <input type="button" value="하우스 등록" /></a>
+			<a href="insertHouse"> <input type="button" value="하우스 등록" /></a> <a
+				href="insertHouse1"> <input type="button" value="하우스 등록 TEST" /></a>
 		</div>
 	</div>
 	<jsp:include page="./Footer.jsp"></jsp:include>

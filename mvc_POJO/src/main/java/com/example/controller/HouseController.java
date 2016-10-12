@@ -1,5 +1,8 @@
 package com.example.controller;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -13,6 +16,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.example.dto.House;
 import com.example.dto.Member;
@@ -37,18 +41,13 @@ public class HouseController {
 
 	@RequestMapping(value = "/search", method=RequestMethod.GET)
 	public String search(Model model, HttpSession session){
-		Member user = (Member) session.getAttribute("user");
 		List<House> house = hservice.selectAllHouse();
 		session.setAttribute("house", house);
-		//view의 이름을 리턴.
-		return "jsp/Main";
+		return "jsp/HouseList";
 	}
 	
 	@RequestMapping(value = "/insertHouse", method=RequestMethod.GET)
 	public String insertHouseGet(Model model, HttpSession session){
-		/*House new_house = new House();*/ 
-		/*model.addAttribute("new_house", new_house);*/
-		//view의 이름을 리턴.
 		return "jsp/HouseJoin";
 	}
 	
@@ -65,7 +64,6 @@ public class HouseController {
 			@RequestParam String photo, @RequestParam String addr,
 			@RequestParam String day, @RequestParam Integer price,
 			HttpSession session){
-		//view의 이름을 리턴.
 		int result = 0;
 		Member user = (Member) session.getAttribute("user");
 		House house = new House();
@@ -92,59 +90,9 @@ public class HouseController {
 		if(result != 1){
 			return "jsp/HouseJoin";
 		}else{
-			return "jsp/Main";
+			return "jsp/HouseList";
 		}
 	}
-	
-	// 예비용 InsertHouse
-	/*@RequestMapping(value = "/insertHouse",method=RequestMethod.POST)
-	public String insertHousePost(Model model, 
-			@RequestAttribute("new_house") House house, HttpSession session){
-		//view의 이름을 리턴.
-		int result = hservice.insertHouse(house);
-		model.addAttribute("result", result);
-		if(result != 1){
-			return "jsp/HouseJoin";
-		}else{
-			return "jsp/Main";
-		}
-	}*/
-	
-	/*@RequestMapping(value = "/insertHouse1",method=RequestMethod.GET)
-	public String insertHouse1Get(Model model) {
-		//view의 이름을 리턴.
-		return "jsp/HouseJoin1";
-	}
-	
-	@RequestMapping(value = "/insertHouse1",method=RequestMethod.POST)
-	public String insertHouse1Get(Model model,
-			@RequestParam Integer houseNo,
-			@RequestParam String houseName,
-			@RequestParam String houseAddress,
-			@RequestParam Integer housePrice,
-			@RequestParam Integer houseScore,
-			@RequestParam String houseInfo) throws IOException {
-		House new_house = new House(houseNo, houseName, houseAddress, housePrice, 
-									houseScore, houseInfo, "hong", 2);
-		int result = hservice.insertHouse(new_house);
-		logger.trace("result: {}",result);
-
-		model.addAttribute("new_house", new_house);
-		//view의 이름을 리턴.
-		if(result != 1){
-			return "jsp/HouseJoin1";
-		}else{
-			return "jsp/Main";
-		}
-	}
-	
-	@RequestMapping(value = "/insertHouse2",method=RequestMethod.GET)
-	public String insertHouse2Get(Model model, HttpSession session){
-		House new_house = new House();
-		model.addAttribute("new_house", new_house);
-		//view의 이름을 리턴.
-		return "jsp/HouseJoin2";
-	}*/
 	
 	@RequestMapping(value = "/searchByHouseNo",method=RequestMethod.GET)
 	public String selectByHouseNo(Model model, @RequestParam Integer houseNo,
@@ -163,6 +111,7 @@ public class HouseController {
 	
 		if(house != null){
 			model.addAttribute("houseNo", houseNo);
+			model.addAttribute("houseUser", house.getMemberId());
 			model.addAttribute("houseImg", house.getHouseImg());
 			model.addAttribute("memberName", house.getMemberId());
 			model.addAttribute("houseName", house.getHouseName());
@@ -193,19 +142,73 @@ public class HouseController {
 		return "jps/index2";
 	}
 	
-	@RequestMapping(value = "/selectByHouse",method=RequestMethod.GET)
-	public String updateHouse(Model model, @RequestParam Integer houseNo, HttpSession session){
+	@RequestMapping(value = "/updateHouse",method=RequestMethod.GET)
+	public String HouseUpdate(Model model, @RequestParam Integer houseNo, HttpSession session){
 		House house = hservice.selectByNoHouse(houseNo);
 		if(house != null){
 			model.addAttribute("house", house);			
-			return "jsp/HousePage";
+			return "jsp/HouseUpdate";
 		}
-		//view의 이름을 리턴.
-		return "jsp/HouseView";
+		return "redirect:/search";
 	}
 	
+	private static final String uploadDir = "c:Temp/upload/";
+	
+	@RequestMapping(value = "/updateHouse",method=RequestMethod.POST)
+	public String HouseUpdatePost(Model model,
+			@RequestParam Integer houseNo,
+			@RequestParam String houseRoom, @RequestParam String houseBath,
+			@RequestParam String houseHosting, 
+			@RequestParam(value="tv",defaultValue="null") String houseTv,
+			@RequestParam(value="aircon", defaultValue="null") String houseAircon, 
+			@RequestParam(value="wifi", defaultValue="null") String houseWifi,
+			@RequestParam(value="elebe", defaultValue="null") String houseElebe, 
+			@RequestParam(value="washing", defaultValue="null") String houseWashing,
+			@RequestParam String houseName, @RequestParam String houseInfo,
+			@RequestParam MultipartFile houseImg, @RequestParam String houseAddress,
+			@RequestParam String houseDay, @RequestParam Integer housePrice,
+			HttpSession session)throws IOException{
+		Member user = (Member) session.getAttribute("user");
+		
+		File idfile = new File(uploadDir+user.getMemId());
+		//id파일 존재하지않으면 디렉토리 생성 아니면 회원가입화면으로
+		if(!idfile.exists())
+			idfile.mkdir();
+		
+		File introHouse = new File(uploadDir+"/"+user.getMemId()+"/"+houseNo);
+		if(!introHouse.exists())
+			introHouse.mkdir();
+		
+		File file = new File(uploadDir+user.getMemId()+"/"+houseNo+"/"+ houseImg.getOriginalFilename());
+		houseImg.transferTo(file);
+		String imgName = houseImg.getOriginalFilename();
+	
+		
+		House house = new House();
+		house.setHouseNo(houseNo);
+		house.setHouseName(houseName);
+		house.setHouseAddress(houseAddress);
+		house.setHousePrice(housePrice);
+		house.setHouseInfo(houseInfo);
+		house.setMemberId(user.getMemId());
+		house.setDetailId(2);
+		house.setHouseRoom(houseRoom);
+		house.setHouseBath(houseBath);
+		house.setHouseHosting(houseHosting);
+		house.setHouseTv(houseTv);
+		house.setHouseAircon(houseAircon);
+		house.setHouseWifi(houseWifi);
+		house.setHouseElebe(houseElebe);
+		house.setHouseWashing(houseWashing);
+		house.setHouseImg(imgName);
+		house.setHouseDay(houseDay);
+		
+		int result = hservice.updateHouse(house);
+		return "redirect:/search";
+	}
 	@ModelAttribute
 	private void setListData(Model model) {
+
 		// RADIO_BUTTONS
 		model.addAttribute("rooms", new String[] { "1개", "2개", "3개" });
 		model.addAttribute("baths", new String[] { "1개", "2개", "3개" });
@@ -220,4 +223,31 @@ public class HouseController {
 		model.addAttribute("day", new String[] { "일", "주", "월" });
 	}
 	
+	@RequestMapping(value = "/deleteHouse",method=RequestMethod.GET)
+	public String HouseDelete(Model model, 
+			@RequestParam Integer houseNo, HttpSession session){
+		Member user = (Member) session.getAttribute("user");
+		House house = hservice.selectByNoHouse(houseNo);
+		if(user.getMemId().equals(house.getMemberId())){
+			int result = hservice.deleteHouse(houseNo);
+			if(result ==1)
+				return "redirect:/search";
+			else
+				return "forward:/selectByHouse?houseNo="+houseNo;
+		}else{
+
+			return "forward:/selectByHouse?houseNo="+houseNo;
+		}
+	}
+	
+/*	@RequestMapping(value = "/update",method=RequestMethod.GET)
+	public String updateHouse(Model model, @RequestParam Integer houseNo, HttpSession session){
+		House house = hservice.selectByNoHouse(houseNo);
+		if(house != null){
+			model.addAttribute("house", house);			
+			return "jsp/HousePage";
+		}
+		//view의 이름을 리턴.
+		return "jsp/HouseView";
+	}*/
 }

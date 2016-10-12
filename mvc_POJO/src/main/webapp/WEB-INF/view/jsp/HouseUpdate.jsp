@@ -24,8 +24,9 @@
 	<div id="main">
 		<div id="content" class="auto_center">
 		<h1>하우스 정보</h1>
-		<sform:form method="post" action="selectByHouse" modelAttribute="house" enctype="multipart/form-data">
+		<sform:form method="post" action="updateHouse" modelAttribute="house" enctype="multipart/form-data">
 			<fieldset>
+				<sform:hidden path="houseNo"/>
 				<legend>하우스 정보 1단계</legend>
 				<sform:label path="houseRoom">방의 개수 : </sform:label>
 				<sform:radiobuttons path="houseRoom" items="${rooms}" />

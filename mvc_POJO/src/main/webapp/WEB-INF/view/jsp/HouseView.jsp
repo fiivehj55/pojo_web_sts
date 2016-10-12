@@ -31,7 +31,7 @@
 		<div id="content" class="auto_center">
 			<h1>하우스 정보</h1>
 			<div>
-				<img src="${houseImg }" width="50" height="50"/>
+				<img src="<%=request.getContextPath()%>/upload/${houseUser}/${houseNo}/${houseImg }" width="50" height="50"/>
 				<h1 class="h1">${memberName}의 ${houseName}!!</h1> <br/>
 			</div>
 			
@@ -57,6 +57,8 @@
 			<div>
 				<!-- 예약버튼 클릭시 :: 달력 출력 -->
 				<a href="#"><button>예약하기</button></a>
+				<a href="updateHouse?houseNo=${houseNo}"><button>수정하기</button></a>
+				<a href="deleteHouse?houseNo=${houseNo}"><button>삭제하기</button></a>				
 			</div>
 			<jsp:include page="./HouseToReply.jsp"></jsp:include>
 		</div>
