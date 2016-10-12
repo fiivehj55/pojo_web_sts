@@ -28,7 +28,7 @@
  	}	
 </style>	
 </head>
-<body class="header">
+
 <jsp:include page="./Header.jsp"></jsp:include>
 
 	<div id="main">
@@ -66,10 +66,12 @@
 		<%
 			}
 		%>
-	
 		</div>
+		
 	</div>
-<jsp:include page="./Footer.jsp"></jsp:include>
+	<jsp:include page="./Footer.jsp"></jsp:include>
+	</head>
+<body>
 </body>
 
 </html>
