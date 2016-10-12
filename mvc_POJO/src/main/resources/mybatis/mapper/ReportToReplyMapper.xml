@@ -18,7 +18,7 @@
 	
 	<insert id="insertRtr" parameterType="reportToReply">
 		insert into REPORT_TO_REPLY
-		values (SEQ_REPORT_REPLY.nextval, #{memberId}, #{reportReplyContent}, sysdate)
+		values (SEQ_REPORT_REPLY.nextval, #{memberId}, #{reportReplyContent}, sysdate, #{reportNo})
 	</insert>
 	
 	<update id="updateRtr" parameterType="reportToReply">

@@ -64,11 +64,11 @@
 									<tr>
 										<td>${row.memberId }</td>
 										<td>${row.replyContent }</td>
-										<td><fmt:formatDate pattern="yyyy/MM/dd"
-												value="${row.replyDate }" /></td>
+										<td><fmt:formatDate pattern="yyyy/MM/dd" value="${row.replyDate }" /></td>
 										<c:choose>
 											<c:when test="${user.memId == row.memberId }">
-												<td><a href="#"><input type="button" value="수정" /></a>
+												<td>
+													<a href="deletehtr?replyNo=${row.replyNo }"><input type="button" value="삭제" /></a>
 												</td>
 											</c:when>
 											<c:otherwise>
@@ -87,7 +87,7 @@
 					</tbody>
 				</table>
 			</div>
-
+			
 			<%-- <div id="boardcss_list_search" style="display: block;">
 				<ul>
 					<li>제목</li>
