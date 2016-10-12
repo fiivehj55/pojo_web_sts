@@ -10,17 +10,22 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<meta name="description" content="" />
-<meta name="keywords" content="" />
-<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="js/skel.min.js"></script>
-<script src="js/skel-panels.min.js"></script>
-<script src="js/init.js"></script>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/skel-noscript.css" />
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css" />
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style-desktop.css" />
+<style>
+label {
+	width: 100px;
+	display: inline-block;
+}
+
+.auto_center {
+	width: 1000px;
+	height: 400px;
+	padding: 20px;
+	margin: 200px auto;
+}
+
+
+
+</style>
 
 </head>
 <body class="">
