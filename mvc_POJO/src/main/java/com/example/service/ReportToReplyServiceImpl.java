@@ -2,13 +2,16 @@ package com.example.service;
 
 import java.util.List;
 
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.dao.ReportToReplyDao;
 import com.example.dto.ReportToReply;
 
+@Component
 public class ReportToReplyServiceImpl implements ReportToReplyService {
 	
 	@Autowired
@@ -27,8 +30,15 @@ public class ReportToReplyServiceImpl implements ReportToReplyService {
 
 	@Transactional
 	@Override
-	public List<ReportToReply> selectByReportReplyNo(int reportReplyNo) {
-		List<ReportToReply> list = rtrdao.selectByReportReplyNo(template, reportReplyNo);
+	public List<ReportToReply> selectByRtreportNo(int reportNo) {
+		List<ReportToReply> list = rtrdao.selectByRtreportNo(template, reportNo);
+		return list;
+	}
+	
+	@Transactional
+	@Override
+	public ReportToReply selectByRtrNo(int reportReplyNo) {
+		ReportToReply list = rtrdao.selectByReportToReply(template, reportReplyNo);
 		return list;
 	}
 
@@ -55,5 +65,5 @@ public class ReportToReplyServiceImpl implements ReportToReplyService {
 		result = rtrdao.deleteReportToReply(template, reportReplyNo);
 		return result;
 	}
-
+	
 }

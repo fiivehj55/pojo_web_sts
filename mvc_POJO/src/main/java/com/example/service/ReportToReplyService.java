@@ -8,9 +8,9 @@ public interface ReportToReplyService {
 	
 	List<ReportToReply> selectAllRtr();
 	
-	List<ReportToReply> selectByReportReplyNo(int reportReplyNo);
+	List<ReportToReply> selectByRtreportNo(int reportNo);
 	
-	/*ReportToReply selectByRtrNo(int reportReplyNo);*/
+	ReportToReply selectByRtrNo(int reportReplyNo);
 	
 	int insertRtr(ReportToReply ReportToReply);
 	

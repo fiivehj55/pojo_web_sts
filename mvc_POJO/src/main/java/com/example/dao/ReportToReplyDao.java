@@ -9,7 +9,7 @@ public interface ReportToReplyDao {
 	
 	List<ReportToReply> selectAllReportToReply(SqlSessionTemplate template);
 	
-	List<ReportToReply> selectByReportReplyNo(SqlSessionTemplate template, int reportReplyNo);
+	List<ReportToReply> selectByRtreportNo(SqlSessionTemplate template, int reportNo);
 	
 	ReportToReply selectByReportToReply(SqlSessionTemplate template, int reportReplyNo);
 	

@@ -25,6 +25,9 @@ public class ReportToReply implements Serializable {
 
 	/** REPORT_REPLY_DATE. */
 	private Date reportReplyDate;
+	
+	/** REPORT_NO */
+	private Integer reportNo;
 
 	/**
 	 * 생성자.
@@ -32,13 +35,14 @@ public class ReportToReply implements Serializable {
 	public ReportToReply() {
 	}
 	
-
-	public ReportToReply(Integer reportReplyNo, String memberId, String reportReplyContent, Date reportReplyDate) {
+	public ReportToReply(Integer reportReplyNo, String memberId, String reportReplyContent, Date reportReplyDate,
+			Integer reportNo) {
 		super();
 		this.reportReplyNo = reportReplyNo;
 		this.memberId = memberId;
 		this.reportReplyContent = reportReplyContent;
 		this.reportReplyDate = reportReplyDate;
+		this.reportNo = reportNo;
 	}
 
 	/**
@@ -116,6 +120,16 @@ public class ReportToReply implements Serializable {
 	public Date getReportReplyDate() {
 		return this.reportReplyDate;
 	}
+	
+	public Integer getReportNo() {
+		return reportNo;
+	}
+
+
+	public void setReportNo(Integer reportNo) {
+		this.reportNo = reportNo;
+	}
+
 
 	/**
 	 * {@inheritDoc}
@@ -153,11 +167,10 @@ public class ReportToReply implements Serializable {
 		return true;
 	}
 
-
 	@Override
 	public String toString() {
 		return "ReportToReply [reportReplyNo=" + reportReplyNo + ", memberId=" + memberId + ", reportReplyContent="
-				+ reportReplyContent + ", reportReplyDate=" + reportReplyDate + "]";
+				+ reportReplyContent + ", reportReplyDate=" + reportReplyDate + ", reportNo=" + reportNo + "]";
 	}
-	
+
 }

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.example.service.HouseService;
 import com.example.service.MemberService;
 import com.example.service.ReplyService;
+import com.example.service.ReportToReplyService;
 
 @Controller
 public class ReplyController {
@@ -27,6 +28,9 @@ public class ReplyController {
 	
 	@Autowired
 	HouseService hservice;
+	
+	@Autowired
+	ReportToReplyService rtrservice;
 	
 	@RequestMapping(value = "/houseToReply",method=RequestMethod.GET)
 	public String selectByHouseNoforReply(Model model, 
@@ -44,6 +48,13 @@ public class ReplyController {
 		//model.addAttribute("replyContent", replyContent);
 		//model.addAttribute("replyDate", replyDate);*/
 		return "jsp/HouseToReply";
+	}
+	
+	@RequestMapping(value = "/reportToReply",method=RequestMethod.GET)
+	public String selectByReportToReply(Model model, 
+			@RequestParam Integer reportNo,
+			HttpSession session){
+		return "jsp/ReportToReply";
 	}
 
 }
