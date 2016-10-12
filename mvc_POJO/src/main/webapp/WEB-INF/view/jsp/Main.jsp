@@ -27,6 +27,13 @@ label {
 	width: 100px;
 	display: inline-block;
 }
+
+.auto_center {
+	width: 1000px;
+	height: 500px;
+	padding: 20px;
+	/* margin: 200px auto; */
+}
 </style>
 
 </head>
@@ -38,12 +45,12 @@ label {
 			<div id="featured">
 				<div class="container">
 					<header>
-						<input id="text_box" type="text" size="100"
+<!-- 						<input id="text_box" type="text" size="100"
 							placeholder="두정동 또는 건물이름을 입력하세요"> <input type="button"
-							value="확인">
+							value="확인"> -->
 					</header>
 					<p>
-						지금 <a href="http://templated.co"> 인기있는 </a>숙소를 만나보세요!
+						고객님께서  <a href="http://templated.co"> 검색한 </a>페이지 입니다.
 				</div>
 			</div>
 			<div class ="boardcss_list_table">
