@@ -27,8 +27,10 @@ public class QuestiontController {
 	@RequestMapping(value = "/bbs", method = RequestMethod.GET)
 	public String table(Model model, HttpSession session) {
 		Member user = (Member) session.getAttribute("user");
+		if(user!=null){
 		List<Question> list = qservice.selectById(user.getMemId());
 		model.addAttribute("Question", list);
+		}
 		// view의 이름을 리턴.
 		return "jsp/QuestList";
 	}

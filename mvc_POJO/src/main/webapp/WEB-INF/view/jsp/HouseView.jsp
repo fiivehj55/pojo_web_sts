@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="sform" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,9 +57,13 @@
 			
 			<div>
 				<!-- 예약버튼 클릭시 :: 달력 출력 -->
+			<c:if test="${user!=null}">
 				<a href="#"><button>예약하기</button></a>
+				<c:if test="${user. memId == houseUser}">
 				<a href="updateHouse?houseNo=${houseNo}"><button>수정하기</button></a>
 				<a href="deleteHouse?houseNo=${houseNo}"><button>삭제하기</button></a>				
+				</c:if>
+			</c:if>
 			</div>
 			<jsp:include page="./HouseToReply.jsp"></jsp:include>
 		</div>
