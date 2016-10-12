@@ -22,7 +22,7 @@
 	<!--  footerì ë´ì©ê³¼ snsì°ê²° ìì´ì½ -->
 	<div id="footer">
 		<div class="container">
-			빅데이터 기반 안드로이드 전문 <!--  <a href="http://templated.co"> -->개발자 양성과정 <a
+			 빅데이터 기반 안드로이드 전문 <!--  <a href="http://templated.co"> -->개발자 양성과정 <a
 				href="http://unsplash.com"></a> <a
 				href="http://unsplash.com/cc0"></a>
 		</div>
