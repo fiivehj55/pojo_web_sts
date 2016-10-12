@@ -25,17 +25,21 @@ label {
 	<jsp:include page="./Header.jsp"></jsp:include>
 	<div id="main">
 		<div id="content" class="auto_center">
-			<h3>1.예약은 어떻게 하나요?</h3>
-			<h3>2.호스팅은 어떻게 하나요?</h3>
-			<h3>3.예약 취소는 어떻게 하나요?</h3>
-			<h3>4.호스팅 취소는 어떻게 하나요?</h3>
-			<h3>5.예약 사기를 당했어요! 어떻게 하죠?</h3>
-			<h3>6.계정과 프로필</h3>
-			<h5>-프로필 수정(탈퇴),프로필 사진 수정은 어떻게 하나요?</h5>
+<p><h3><a onclick="divcall('a1');">1.예약은 어떻게 하나요?</a></h3>
+	<div class="divs" id="a1">1답변</div>
+<p><h3><a onclick="divcall('a2');">2.호스팅은 어떻게 하나요?</a></h3>
+	<div class="divs" id="a2">2답변</div>
+<p><h3><a onclick="divcall('a3');">3.예약 취소는 어떻게 하나요?</a></h3>
+	<div class="divs" id="a3">3답변</div>
+<p><h3><a onclick="divcall('a4');">4.호스팅 취소는 어떻게 하나요?</a></h3>
+	<div class="divs" id="a4">4답변</div>
+<p><h3><a onclick="divcall('a5');">5.호스팅 취소는 어떻게 하나요?</a></h3>
+	<div class="divs" id="a5">5답변</div>
+<p><h3><a onclick="divcall('a6');">6.계정과 프로필</a></h3>
+	<div class="divs" id="a6">6답변</div>
+<p>-프로필 수정(탈퇴),프로필 사진 수정은 어떻게 하나요?
+
 			<a href="index"><button>뒤로가기</button></a>
-
-
-
 		</div>
 	</div>
 
@@ -45,5 +49,17 @@ label {
 
 
 </body>
-<script></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<style>
+    .divs {display:none;}
+</style>
+ 
+<script>
+    function divcall(text1){
+        var text2 = "#"+text1;
+        $('.divs').css('display', 'none');
+        $(text2).css('display', 'block');
+    }
+</script>
+
 </html>

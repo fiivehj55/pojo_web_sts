@@ -5,19 +5,33 @@
 <head>
 <title>Linear by TEMPLATED</title>
 <style>
- .inputlabel{
+label {
+	width: 100px;
+	display: inline-block;
+}
+
+.auto_center {
+	width:1000px;
+	height: 400px; 
+	 padding: 20px;
+	margin: 200px auto;
+}
+
+
+
+/* .inputlabel{
  	display:inline-block;
  	width:100px;
- 	}	
+ 	}	 */
  
-#main {
+/* #main {
 text-align:center;
 margin:0 auto;
-}
+} */
  
 #container {
 text-align:left;
-margin:0px 40% 0px 40%;
+margin:0px 40% 0px 40%; 
 /* 상좌하우 */
 }
  </style>
@@ -31,16 +45,19 @@ margin:0px 40% 0px 40%;
 		<h1>회원가입</h1>
 		<form action="join" method="post" id="myForm">
 		
-				<label for="memId" class="inputlabel">아이디:</label> <input type="text" name="memId"
+				<label for="memId" class="inputlabel">아이디:</label> <input type="text" size="30"name="memId"
 					id="memId" placeholder="5~10자리 영문자와 숫자" /> <input type="button"
-					value="중복확인" id="check">
+					value="중복확인" id="check"> 
 				<p>
-					<br /> <label for="memPassword" class="inputlabel">비밀번호:</label> <input
-						type="password" name="memPassword" id="memPassword"
+					<br /> <label for="memPassword" class="inputlabel">비밀번호:</label> 
+					
+					
+					<input
+						type="password" size="30" name="memPassword" id="memPassword"
 						placeholder="영문+숫자 조합 8 이상" />
 				<p>
 					<label for="passok" class="inputlabel">비밀번호 확인:</label> <input type="password"
-						name="passok" id="passok" placeholder="영문+숫자 조합 8 이상" />
+						name="passok" size="30" id="passok" placeholder="영문+숫자 조합 8 이상" />
 				<p>
 					<span id="result"></span>
 				<p>
@@ -56,11 +73,11 @@ margin:0px 40% 0px 40%;
 						<option value="SKT">SKT</option>
 						<option value="KT">KT</option>
 						<option value="U+">U+</option>
-					</select> <input type="text" name="memPhone" placeholder="-빼고 숫자만 입력" />
+					</select> <input type="text" name="memPhone" size="30"placeholder="-빼고 숫자만 입력" />
 				<p>
 
 					<label for="memEmail" class="inputlabel">이메일:</label> <input type="email"
-						name="memEmail" placeholder="ex) pojo@google.com" />
+						name="memEmail" size="40" placeholder="ex) pojo@google.com" />
 				<p>
 
 					<label for="memImg" class="inputlabel">프로필 사진:</label> <input type="file"
