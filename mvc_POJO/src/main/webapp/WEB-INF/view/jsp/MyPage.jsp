@@ -30,21 +30,28 @@ label {
 	<h2>저희 사랑방 손님을 이용해 주셔서 감사합니다.</h2>
 	<p>
 	
-	<sform:form method="post" action="mypage" modelAttribute="userinfo" enctype="multipart/form-data">
+	<sform:form method="post" action="mypage" modelAttribute="userinfo" enctype="multipart/form-data" id="myForm">
 		<p>
 			<sform:label path="memId">아이디:</sform:label> 
 			<sform:input type="text"  path = "memId"  placeholder="영문+숫자 조합 8 이상" disabled="true"/> 
-		<p>
+		<p/>
 
 		<p>
 			<label for="memPassword">비밀번호:</label> 
-			<input type="password" name="memPassword"  placeholder="영문+숫자 조합 8 이상"/>
+			<input type="password" name="memPassword" id="memPassword" placeholder="영문+숫자 조합 8 이상"/>
+		<p>
+		<span id="passSet"></span>
+		<p/>
 		<p>
 			<label for="passok">비밀번호 확인</label> 
-			<input type="password" name="password"	placeholder="영문+숫자 조합 8 이상">
+			<input type="password" name="passok"id="passok"	placeholder="영문+숫자 조합 8 이상">
+		<p/>
 		<p>
+		<span id="result"></span>
+		<p/>
+		<p>	
 			<sform:label path="memName">이름:</sform:label> 
-			<sform:input type="text" path="memName" disabled="true"/>
+			<sform:input type="text" path="memName" />
 		</p>
 		<p>
 			<sform:label path="memGender">성별:</sform:label> 
@@ -76,7 +83,7 @@ label {
 		<p>
 			<a href="deletePass"><input type="button" value="탈퇴하기"></a>
 		<p>
-			<input type="submit" value="수정하기"> 
+			<input type="submit" value="수정하기" id="set"> 
 			<a href="<%=request.getContextPath()%>/index2.jsp">
 			<input type="button" value="나가기"></a>
 		</sform:form>
@@ -84,5 +91,56 @@ label {
 		</div>
 	</div>
 <jsp:include page="./Footer.jsp"></jsp:include>
-<script></script>
+<script	src="<%=request.getContextPath()%>/js/validate/dist/jquery.validate.min.js"></script>
+<script>
+$.validator.addMethod("regex", function(value, element, regexpr) {          
+    return regexpr.test(value);
+}, "Invalid value");
+$("#myForm").validate({
+	rules:{
+		memName:"required",
+		memPhone:{
+			required:true,
+			regex: /^[0-9]{10,11}$/
+			},
+		memEmail:"required"
+	},
+	messages:{
+			memName:"Please specify your name",
+			memPhone:{required:"Please specify your Phone"},
+			memEmail:{required:"Please specify your Email"}
+	}
+});
+$("#memPassword").bind({
+	'focus':function(){
+			$("#set").prop("disabled",true);
+	},
+	'focusout':function(){
+		$("#passok").focus();
+	}
+});
+$("#memPassword").on("keyup",function(){
+	var reg = /^[A-Za-z0-9]{5,10}$/;
+	if(reg.test($(this).val())){
+		$("#set").prop("disabled",false);
+		$("#passSet").html("dd");
+	}
+	else{
+
+		$("#set").prop("disabled",true);
+		$("#passSet").html("Invalid value");
+	}
+});
+$("#passok").on("keyup",function(){
+	if($("#memPassword").val() == $(this).val()){
+			$("#set").prop("disabled",false);
+			$("#result").html("비밀번호가 일치합니다.");
+	}
+	else{
+			$("#set").prop("disabled",true);
+			$("#result").html("비밀번호를 확인해주세요.");
+	}
+		
+});
+</script>
 </html>

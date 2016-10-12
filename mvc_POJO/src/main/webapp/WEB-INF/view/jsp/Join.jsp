@@ -11,20 +11,12 @@
  	}	
  
 #main {
-
-
- 
-
 text-align:center;
-
 margin:0 auto;
-
 }
  
 #container {
-
 text-align:left;
-
 margin:0px 40% 0px 40%;
 /* 상좌하우 */
 }
@@ -37,8 +29,10 @@ margin:0px 40% 0px 40%;
 	
 	<div id="container">
 		<h1>회원가입</h1>
+		<form action="join" method="post" id="myForm">
+		
 				<label for="memId" class="inputlabel">아이디:</label> <input type="text" name="memId"
-					id="memId" placeholder="영문+숫자 조합 8 이상" /> <input type="button"
+					id="memId" placeholder="5~10자리 영문자와 숫자" /> <input type="button"
 					value="중복확인" id="check">
 				<p>
 					<br /> <label for="memPassword" class="inputlabel">비밀번호:</label> <input
@@ -88,21 +82,34 @@ margin:0px 40% 0px 40%;
 	src="<%=request.getContextPath()%>/js/validate/dist/jquery.validate.min.js"></script>
 <script>
 $(document).ready(function() {
+	$.validator.addMethod("regex", function(value, element, regexpr) {          
+	    return regexpr.test(value);
+	}, "Invalid value");
 	$("#myForm").validate({
 		rules:{
-			memId:"required",
-			memPassword:"required",
+			memId:{
+				required: true,
+				regex:/^[A-Za-z0-9]{5,10}$/
+			}
+				,
+			memPassword:{
+				required:true,
+				regex: /^[A-Za-z0-9]{8,10}$/
+				},
 			memName:"required",
-			memPhone:"required",
+			memPhone:{
+				required:true,
+				regex: /^[0-9]{10,11}$/
+				},
 			memEmail:"required",
 			memGender:"required"
 		},
 		messages:{
-			memId:"Please specify your Id",
-				memPassword:"Please specify your Password",
+			memId:{required:"Please specify your Id"},
+				memPassword:{required:"Please specify your Password"},
 				memName:"Please specify your name",
-				memPhone:"Please specify your Phone",
-				memEmail:"Please specify your Email",
+				memPhone:{required:"Please specify your Phone"},
+				memEmail:{required:"Please specify your Email"},
 				memGender:"Please specify your Gender"
 		}
 	});
