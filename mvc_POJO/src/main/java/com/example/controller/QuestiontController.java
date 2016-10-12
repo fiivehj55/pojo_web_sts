@@ -78,6 +78,7 @@ public class QuestiontController {
 		Question question = qservice.selectByNo(questNo);
 		if(question != null){
 			model.addAttribute("question", question);
+			model.addAttribute("questNo",questNo);
 		}
 		// view의 이름을 리턴.
 		return "/jsp/QuestionView";

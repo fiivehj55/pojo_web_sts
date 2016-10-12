@@ -13,7 +13,7 @@
 	
 	<insert id="insertReport" parameterType="report">
 		insert into REPORT
-		values (SEQ_REPORT.nextval, #{reportCategory}, #{reportSubject}, #{reportContent}, sysdate, #{memberId}, #{detailId,jdbcType=NUMERIC}, #{reportReplyNo,jdbcType=NUMERIC})
+		values (SEQ_REPORT.nextval, #{reportCategory}, #{reportSubject}, #{reportContent}, sysdate, #{memberId}, #{reportReplyNo,jdbcType=NUMERIC})
 	</insert>
 	
 	<update id="updateReport" parameterType="report">
@@ -33,7 +33,6 @@
 		<result column="REPORT_CONTENT" property="reportContent" />
 		<result column="REGIT_DATE" property="regitDate" />
 		<result column="MEMBER_ID" property="memberId" />
-		<result column="DETAIL_ID" property="detailId" />
 		<result column="REPORT_REPLY_NO" property="reportReplyNo" />
 	</resultMap>
 </mapper>

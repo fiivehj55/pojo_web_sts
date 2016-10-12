@@ -2,6 +2,7 @@ package com.example.controller;
 
 import java.util.List;
 
+import javax.mail.search.IntegerComparisonTerm;
 import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,6 +36,7 @@ public class ReportController {
 	public String reportView(Model model, @RequestParam Integer reportNo) {
 		Report report = repservice.selectByReportNo(reportNo);
 		model.addAttribute("Report", report);
+		model.addAttribute("reportNo",reportNo);
 		// view의 이름을 리턴.
 		return "jsp/ReportView";
 	}
@@ -60,6 +62,16 @@ public class ReportController {
 			return "redirect:/report";
 		else
 			return "jsp/ReportInsert";
+	}
+	@RequestMapping(value = "/ReportDelete", method = RequestMethod.GET)
+	public String ReportDelete(Model model,
+			@RequestParam Integer reportNo) {
+		// view의 이름을 리턴.
+		int result = repservice.deleteReport(reportNo);
+		if(result ==1)
+			return "redirect:/report";
+		else
+			return "jsp/ReportView";
 	}
 
 }

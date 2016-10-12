@@ -32,8 +32,6 @@ public class Report implements Serializable {
 	/** MEMBER_ID. */
 	private String memberId;
 
-	/** DETAIL_ID. */
-	private Integer detailId;
 	
 	/** REPORT_REPLY_NO */
 	private Integer reportReplyNo;
@@ -53,7 +51,6 @@ public class Report implements Serializable {
 		this.reportContent = reportContent;
 		this.regitDate = regitDate;
 		this.memberId = memberId;
-		this.detailId = detailId;
 		this.reportReplyNo = reportReplyNo;
 	}
 
@@ -165,19 +162,11 @@ public class Report implements Serializable {
 	 * 
 	 * @param detailId
 	 *            DETAIL_ID
-	 */
-	public void setDetailId(Integer detailId) {
-		this.detailId = detailId;
-	}
 
 	/**
 	 * DETAIL_ID을 가져옵니다..
 	 * 
 	 * @return DETAIL_ID
-	 */
-	public Integer getDetailId() {
-		return this.detailId;
-	}
 	
 	public Integer getReportReplyNo() {
 		return reportReplyNo;
@@ -227,7 +216,7 @@ public class Report implements Serializable {
 	public String toString() {
 		return "Report [reportNo=" + reportNo + ", reportCategory=" + reportCategory + ", reportSubject="
 				+ reportSubject + ", reportContent=" + reportContent + ", regitDate=" + regitDate + ", memberId="
-				+ memberId + ", detailId=" + detailId + ", reportReplyNo=" + reportReplyNo + "]";
+				+ memberId + ", detailId=" + ", reportReplyNo=" + reportReplyNo + "]";
 	}
 
 }
