@@ -12,7 +12,6 @@ public class ReportDaoImpl implements ReportDao {
 	
 	static Logger logger = LoggerFactory.getLogger(ReportDaoImpl.class);
 
-
 	private final String REPORT_MAP = "pojo.web.dao.ReportMapper.";
 
 	@Override

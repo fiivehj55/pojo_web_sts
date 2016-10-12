@@ -387,8 +387,15 @@ public class DaoTest {
 
 	@Test
 	public void testSelectByRTRNo() {
-		MemberDetail memberDetail = mddao.selectByMemberDetail(template, 1);
-		logger.trace("List: {}", memberDetail);
+		ReportToReply reportToReply = rtrdao.selectByReportToReply(template, 1);
+		logger.trace("List: {}", reportToReply);
+
+	}
+	
+	@Test
+	public void testSelectByRtreportNo() {
+		List<ReportToReply> reportToReply = rtrdao.selectByRtreportNo(template, 99);
+		logger.trace("List: {}", reportToReply);
 
 	}
 
@@ -396,7 +403,7 @@ public class DaoTest {
 	public void testInsertReportToReply() {
 		Calendar cd = Calendar.getInstance();
 		Date dd = cd.getTime();
-		ReportToReply reportToReply = new ReportToReply(2, "admin", "최종변경 되었습니다.", null);
+		ReportToReply reportToReply = new ReportToReply(2, "admin", "최종변경 되었습니다.", null, 99);
 		int result = rtrdao.insertReportToReply(template, reportToReply);
 		logger.trace("List: {}", result);
 
@@ -406,7 +413,7 @@ public class DaoTest {
 	public void testUpdateReportToReply() {
 		Calendar cd = Calendar.getInstance();
 		Date dd = cd.getTime();
-		ReportToReply reportToReply = new ReportToReply(2, "admin", "최종변경 되었습니다!!", null);
+		ReportToReply reportToReply = new ReportToReply(2, "admin", "최종변경 되었습니다!!", null, 99);
 		int result = rtrdao.updateReportToReply(template, reportToReply);
 		logger.trace("List: {}", result);
 

@@ -2,27 +2,32 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="pojo.web.dao.ReportToReplyMapper">
 
-	<select id="selectAllReportToReply" resultMap="rtrBase">
+	<select id="selectAllRtr" resultMap="rtrBase">
 		select * from REPORT_TO_REPLY ORDER BY REPORT_REPLY_NO DESC
 	</select>
 	
-	<select id="selectByReportReplyNo" parameterType="int" resultMap="rtrBase">
+	<select id="selectByRrNo" parameterType="int" resultMap="rtrBase">
 		select * from REPORT_TO_REPLY where REPORT_REPLY_NO=#{reportReplyNo} 
 		ORDER BY REPORT_REPLY_NO DESC
 	</select>
 	
-	<insert id="insertReportToReply" parameterType="reportToReply">
+	<select id="selectByRno" parameterType="int" resultMap="rtrBase">
+		select * from REPORT_TO_REPLY where REPORT_NO = #{reportNo} 
+		ORDER BY REPORT_REPLY_NO DESC
+	</select>
+	
+	<insert id="insertRtr" parameterType="reportToReply">
 		insert into REPORT_TO_REPLY
 		values (SEQ_REPORT_REPLY.nextval, #{memberId}, #{reportReplyContent}, sysdate)
 	</insert>
 	
-	<update id="updateReportToReply" parameterType="reportToReply">
+	<update id="updateRtr" parameterType="reportToReply">
 		update REPORT_TO_REPLY set
 		REPORT_REPLY_CONTENT=#{reportReplyContent}, REPORT_REPLY_DATE=sysdate
 		where REPORT_REPLY_NO = #{reportReplyNo}
 	</update>
 	
-	<delete id="deleteReportToReply" parameterType="int">
+	<delete id="deleteRtr" parameterType="int">
 		delete REPORT_TO_REPLY where REPORT_REPLY_NO = #{reportReplyNo}
 	</delete>
 
@@ -31,5 +36,6 @@
 		<result column="MEMBER_ID" property="memberId" />
 		<result column="REPORT_REPLY_CONTENT" property="reportReplyContent" />
 		<result column="REPORT_REPLY_DATE" property="reportReplyDate" />
+		<result column="REPORT_NO" property="reportNo" />
 	</resultMap>
 </mapper>

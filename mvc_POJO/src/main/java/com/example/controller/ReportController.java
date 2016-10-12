@@ -2,8 +2,8 @@ package com.example.controller;
 
 import java.util.List;
 
-import javax.mail.search.IntegerComparisonTerm;
 import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.dto.Member;
 import com.example.dto.Report;
+import com.example.dto.ReportToReply;
 import com.example.service.ReportService;
+import com.example.service.ReportToReplyService;
 
 @Controller
 public class ReportController {
@@ -23,6 +25,9 @@ public class ReportController {
 
 	@Autowired
 	ReportService repservice;
+	
+	@Autowired
+	ReportToReplyService rtservice;
 
 	@RequestMapping(value = "/report", method = RequestMethod.GET)
 	public String table(Model model) {
@@ -35,8 +40,11 @@ public class ReportController {
 	@RequestMapping(value = "/reportView", method = RequestMethod.GET)
 	public String reportView(Model model, @RequestParam Integer reportNo) {
 		Report report = repservice.selectByReportNo(reportNo);
+		List<ReportToReply> reportToReply = rtservice.selectByRtreportNo(reportNo);
 		model.addAttribute("Report", report);
+		model.addAttribute("rtr", reportToReply);
 		model.addAttribute("reportNo",reportNo);
+		
 		// view의 이름을 리턴.
 		return "jsp/ReportView";
 	}

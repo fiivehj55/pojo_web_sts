@@ -45,8 +45,10 @@ label {
 				<a href="ReportDelete?reportNo=${reportNo}"><input type="button" value="삭제"/></a>
 				<a href="bbs"><input type="button" value="목록"/></a>
 			</sform:form>
+			
 		</div>
 	</div>
+	<jsp:include page="./ReportToReply.jsp"></jsp:include>
 	<jsp:include page="./Footer.jsp"></jsp:include>
 </head>
 <body>
