@@ -14,6 +14,8 @@
 	width:1024px;
 }
 
+
+
 .inputlabel{
  	display:inline-block;
  	width:100px;
