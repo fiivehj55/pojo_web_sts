@@ -30,7 +30,7 @@ public class ReplyController {
 	HouseService hservice;
 
 	@Autowired
-	ReportToReplyService rtrservice; 
+	ReportToReplyService rtrservice;
 
 	@RequestMapping(value = "/houseToReply", method = RequestMethod.GET)
 	public String selectByHouseNoforReply(Model model, @RequestParam Integer houseNo, HttpSession session) {
