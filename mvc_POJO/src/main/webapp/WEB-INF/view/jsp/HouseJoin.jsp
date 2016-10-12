@@ -20,7 +20,9 @@
  	display:inline-block;
  	width:100px;
  	}	
-
+#view{
+	height: 440px;
+}
 </style>
 
 
@@ -40,8 +42,10 @@
 <body class="header">
 <jsp:include page="./Header.jsp"></jsp:include>
 	<!-- Main -->
+	<div id="view">
 	<div id="main">
 		<form method="post" action="insertHouse">
+	
 		<div id="container">
 		<h1>하우스 등록</h1>
 		
@@ -155,7 +159,7 @@
 		</form>
 		
 		</div>
-	
+	</div>
 <jsp:include page="./Footer.jsp"></jsp:include>
 </body>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>

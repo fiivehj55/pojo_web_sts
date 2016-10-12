@@ -29,7 +29,7 @@ label {
 }
 
 .auto_center {
-	width: 1000px;
+	width: 1200px;
 	height: 400px;
 	padding:20px;
 	margin: 200px auto; 
