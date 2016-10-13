@@ -45,12 +45,14 @@ public class HouseController {
 		session.setAttribute("house", house);
 		return "jsp/HouseList";
 	}
-
 	@RequestMapping(value = "/insertHouse", method = RequestMethod.GET)
 	public String insertHouseGet(Model model, HttpSession session) {
 		return "jsp/HouseJoin";
 	}
-
+	@RequestMapping(value = "/jusoPopup")
+	public String jusoPopup(Model model, HttpSession session) {
+		return "jsp/jusoPopup";
+	}
 	@RequestMapping(value = "/insertHouse", method = RequestMethod.POST)
 	public String insertHousePost(Model model, @RequestParam String room, @RequestParam String bath,
 			@RequestParam String hosting, @RequestParam(value = "tv", defaultValue = "null") String tv,
