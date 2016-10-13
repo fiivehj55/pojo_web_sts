@@ -34,7 +34,7 @@
 			<!-- 등록버튼 시작 -->
 			<div id="boardcss_list_add_button_table">
 				<div class="boardcss_list_add_button">
-					<a href="bbsInsert"><button class="add_button">댓글 등록</button></a>
+					<a href="inserthtr"><button class="add_button">댓글 등록</button></a>
 					<ul></ul>
 				</div>
 			</div>
@@ -69,7 +69,7 @@
 											<c:when test="${user.memId == row.memberId }">
 												<td>
 													<a href="deletehtr?replyNo=${row.replyNo }"><input type="button" value="삭제" /></a>
-												</td>
+												</td>					
 											</c:when>
 											<c:otherwise>
 												<td></td>
@@ -86,6 +86,11 @@
 						</c:choose>
 					</tbody>
 				</table>
+				<form method="post" action="inserthtr">
+					<input type="hidden" name="houseNo" value="${houseNo }"/>
+					<input type="text" id="replyContent" name="replyContent"/>
+					<input type="submit" value="댓글 등록"/>
+				</form>
 			</div>
 			
 			<%-- <div id="boardcss_list_search" style="display: block;">
