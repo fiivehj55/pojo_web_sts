@@ -22,51 +22,115 @@
 	.h1{
 		font-size: 28pt;	
 	}
+	
+	
+	.divTable{
+	display: table;
+	width: 100%;
+}
+.divTableRow {
+	display: table-row;
+}
+.divTableHeading {
+	background-color: #EEE;
+	display: table-header-group;
+}
+.divTableCell, .divTableHead {
+	border: 1px solid #999999;
+	display: table-cell;
+	padding: 3px 10px;
+}
+.divTableHeading {
+	background-color: #EEE;
+	display: table-header-group;
+	font-weight: bold;
+}
+.divTableFoot {
+	background-color: #EEE;
+	display: table-footer-group;
+	font-weight: bold;
+}
+.divTableBody {
+	display: table-row-group;
+}
+
+#left-box {
+    float: left;
+}
+#center-box {
+    margin: 50auto; 
+}
+#right-box {
+    float: right;
+	
+	
 </style>
 
 </head>
 <body class="header">
 <jsp:include page="./Header.jsp"></jsp:include>
-	<!-- Main -->
-	<div id="main">
-		<div id="content" class="auto_center">
-			
-			<div>
-				<img src="<%=request.getContextPath()%>/upload/${houseUser}/${houseNo}/${houseImg }" width="1200" height="100"/>
-				<h1 class="h1">${memberName}의 ${houseName}!!</h1> <br/>
-			</div>
-			
-			<div>
-				아주 휼룡한 ${houseScore }점!! <br/>
-				지하철역 도보 3분이라 아주 좋아요!! <br/>
-				욕실이 아주 깨끗해요. <br/>
-				호스트가 친절하세요!! <br/>
-			</div>
-			
-			<div>
-				<h1>상세설명 : ${houseInfo }</h1>
-			</div>
-				
-			<div>
-				<h1>방의 개수 : ${houseRoom }</h1>
-				<h1>화장실 개수 : ${houseBath }</h1>
-				<h1>예약 가능 인원 : ${houseHosting }</h1>
-				<h1>사용가능한 편의시설 : ${houseTv }, ${houseAircon }, ${houseWifi },
-					${houseElebe }, ${houseWashing }</h1>
-			</div>
-			
-			<div>
-				<!-- 예약버튼 클릭시 :: 달력 출력 -->
-			<c:if test="${user!=null}">
+	<!-- 맨위 -->
+	<div id="main">	
+	<div id="content" class="auto_center">
+	<div class="divTable">
+	<div class="divTableBody">
+	<div class="divTableRow">
+	<div class="divTableCell" style="width: 300px; height: 300px;">
+	
+	<img src="<%=request.getContextPath()%>/upload/${houseUser}/${houseNo}/${houseImg }"/>
+<h1 class="h1">${memberName}의 ${houseName}!!</h1> <br/>		
+		</div>	
+		
+		
+	</div>
+	
+	<!-- 가운데 -->
+<div class="divTableRow">
+<div class="divTableCell" style="width: 300px; height: 200px;">&nbsp;
+<div id='container'>
+    <div id='left-box'>
+    <p>왼쪽 
+    </div>
+    
+    <div id='right-box'>
+ 			 <c:if test="${user!=null}"> 
 				<a href="#"><button>예약하기</button></a>
 				<c:if test="${user. memId == houseUser}">
 				<a href="updateHouse?houseNo=${houseNo}"><button>수정하기</button></a>
 				<a href="deleteHouse?houseNo=${houseNo}"><button>삭제하기</button></a>				
 				</c:if>
-			</c:if>
-			</div>
-			<jsp:include page="./HouseToReply.jsp"></jsp:include>
-		</div>
+					</c:if>
+    </div>
+    
+    <div id='center-box'>
+   	 가운데   
+    </div>
+</div>
+</div>
+</div>
+
+<!-- 마지막 -->
+<div class="divTableRow">
+<div class="divTableCell" style="width: 300px; height: 500px;">
+			<h1>방의 개수 : ${houseRoom }</h1>
+				<h1>화장실 개수 : ${houseBath }</h1>
+				<h1>예약 가능 인원 : ${houseHosting }</h1>
+				<h1>사용가능한 편의시설 : ${houseTv }, ${houseAircon }, ${houseWifi },
+					${houseElebe }, ${houseWashing }</h1>
+
+
+</div>
+</div>
+</div>
+</div>
+	
+	
+	</div>
+	
+	
+	
+	
+	
 	</div>
 <jsp:include page="./Footer.jsp"></jsp:include>
 </body>
