@@ -1,6 +1,6 @@
 <!-- 로그인 페이지 -->
 <%@page import="com.example.dto.Member"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="sform" uri="http://www.springframework.org/tags/form"%>
