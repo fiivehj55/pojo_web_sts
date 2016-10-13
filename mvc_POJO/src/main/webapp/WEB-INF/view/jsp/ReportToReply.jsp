@@ -59,7 +59,16 @@
 										<td>${row.memberId }</td>
 										<td>${row.reportReplyContent }</td>
 										<td><fmt:formatDate pattern="yyyy/MM/dd" value="${row.reportReplyDate }" /></td>
-										<td><a href="#"><input type="button" value="수정"/></a></td>
+										<c:choose>
+											<c:when test="${user.memId == row.memberId }">
+												<td>
+													<a href="deleteRtr?reportReplyNo=${row.reportReplyNo }"><input type="button" value="삭제" /></a>
+												</td>
+											</c:when>
+											<c:otherwise>
+												<td></td>
+											</c:otherwise>
+										</c:choose>
 									</tr>
 								</c:forEach>
 							</c:when>

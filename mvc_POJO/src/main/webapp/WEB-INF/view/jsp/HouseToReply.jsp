@@ -12,14 +12,20 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
-<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<link
+	href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900'
+	rel='stylesheet' type='text/css'>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="js/skel.min.js"></script>
 <script src="js/skel-panels.min.js"></script>
 <script src="js/init.js"></script>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/skel-noscript.css" />
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css" />
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style-desktop.css" />
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/skel-noscript.css" />
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/style.css" />
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/style-desktop.css" />
 
 </head>
 <body class="">
@@ -33,7 +39,7 @@
 				</div>
 			</div>
 			<!-- 등록버튼 종료 -->
-			
+
 			<h1>후기 댓글</h1>
 			<!-- 테이블 시작 -->
 			<div class="boardcss_list_table">
@@ -59,20 +65,29 @@
 										<td>${row.memberId }</td>
 										<td>${row.replyContent }</td>
 										<td><fmt:formatDate pattern="yyyy/MM/dd" value="${row.replyDate }" /></td>
-										<td><a href="#"><input type="button" value="수정"/></a></td>
+										<c:choose>
+											<c:when test="${user.memId == row.memberId }">
+												<td>
+													<a href="deletehtr?replyNo=${row.replyNo }"><input type="button" value="삭제" /></a>
+												</td>
+											</c:when>
+											<c:otherwise>
+												<td></td>
+											</c:otherwise>
+										</c:choose>
 									</tr>
 								</c:forEach>
 							</c:when>
 							<c:otherwise>
 								<tr>
-									<td colspan="3"> 조회된 결과가 없습니다. </td>
+									<td colspan="3">조회된 결과가 없습니다.</td>
 								</tr>
 							</c:otherwise>
 						</c:choose>
 					</tbody>
 				</table>
 			</div>
-
+			
 			<%-- <div id="boardcss_list_search" style="display: block;">
 				<ul>
 					<li>제목</li>

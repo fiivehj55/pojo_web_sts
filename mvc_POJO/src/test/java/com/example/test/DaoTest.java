@@ -291,6 +291,21 @@ public class DaoTest {
 		logger.trace("List: {}", result);
 
 	}
+	
+	@Test
+	public void testDeletReplyHno() {
+		int result = rdao.deleteReplyHno(template, 99);
+		rdao.deleteReplyHno(template, 99);
+		logger.trace("List: {}", result);
+
+	}
+	
+	@Test
+	public void testSelectByHouseNo1() {
+		Reply reply = rdao.selectByIdHouseNo1(template, 99);
+		logger.trace("List: {}", reply);
+
+	}
 
 	/** REPORT_TEST */
 	@Test
