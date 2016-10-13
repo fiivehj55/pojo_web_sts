@@ -8,8 +8,15 @@
  #container {
 	text-align:left;
 	margin:0px 10% 0px 20%;
-}
-
+	}
+ .postcodify_address
+ {
+ 	width:280px;
+ }
+ .postcodify_details
+ {
+ 	width:280px;
+ }
 /* #one {
 	width:1024px;
 }
@@ -125,9 +132,9 @@ label {
 				<p>
 				
 				<br/>
-<input type="button" id="postcodify_search_button" value="주소 검색">
-<input type="text" name="" class="postcodify_address" value="" /><br />
-상세 주소<input type="text" name="" class="postcodify_details" value="" /><br />
+				<input type="button" id="postcodify_search_button" value="주소 검색">
+				<input type="text" name="" class="postcodify_address" value=""  /><br />
+				상세 주소<input type="text" name="" class="postcodify_details" value="" /><br />
 				<p>
 				<label for="photo">사진</label> 
 				<input type="file" name="photo"/> <br/>
