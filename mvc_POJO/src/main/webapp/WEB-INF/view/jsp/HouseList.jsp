@@ -94,8 +94,8 @@ label {
 		</div>
 			
 			<h1>${result}</h1>
-			<a href="insertHouse"> <input type="button" value="하우스 등록" /></a> <a
-				href="insertHouse1"> <input type="button" value="하우스 등록 TEST" /></a>
+			 <a href="insertHouse" class="button button-style1" >하우스 등록</a> 
+			<a href="insertHouse1" class="button button-style1" >하우스 등록 TEST</a>
 		</div>
 	</div>
 	<jsp:include page="./Footer.jsp"></jsp:include>
