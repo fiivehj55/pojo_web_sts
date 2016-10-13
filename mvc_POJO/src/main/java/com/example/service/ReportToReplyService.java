@@ -12,9 +12,9 @@ public interface ReportToReplyService {
 	
 	ReportToReply selectByRtrNo(int reportReplyNo);
 	
-	int insertRtr(ReportToReply ReportToReply);
+	int insertRtr(ReportToReply reportToReply);
 	
-	int updateRtr(ReportToReply ReportToReply);
+	int updateRtr(ReportToReply reportToReply);
 	
 	int deleteRtr(int reportReplyNo);
 }

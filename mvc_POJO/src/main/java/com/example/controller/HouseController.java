@@ -248,9 +248,9 @@ public class HouseController {
 		session.setAttribute("reply", reply);
 		result = Rpservice.insertReply(reply);
 		if(result != 1){
-			return "redirect:/selectByHouse?houseNo=" + houseNo;
+			return "redirect:/selectByHouseNo?houseNo=" + houseNo;
 		}else{
-			return "forward:/selectByHouse?houseNo=" + houseNo;
+			return "redirect:/selectByHouseNo?houseNo=" + houseNo;
 		}
 	}
 
