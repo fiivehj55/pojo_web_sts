@@ -134,7 +134,7 @@ public class HouseController {
 			// view의 이름을 리턴.
 			return "jsp/HouseView";
 		}
-		return "jps/index2";
+			return "jps/index2";
 	}
 
 	@RequestMapping(value = "/updateHouse", method = RequestMethod.GET)
