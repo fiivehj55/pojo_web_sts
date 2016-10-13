@@ -2040,6 +2040,7 @@ ul.contact li a:hover {
 }
 
 #header:before {
+	
 	content: '';
 	position: absolute;
 	left: 0;
