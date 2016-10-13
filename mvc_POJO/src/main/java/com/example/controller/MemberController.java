@@ -162,7 +162,8 @@ public class MemberController {
 		else
 			return "jsp/MyPage";
 	}
-	/*@RequestMapping(value = "/mypage",method=RequestMethod.POST)
+	/*
+	@RequestMapping(value = "/mypage",method=RequestMethod.POST)
 	public String mypagePost(Model model,
 			@RequestParam String memId,
 			@RequestParam String memPassword,
@@ -183,10 +184,10 @@ public class MemberController {
 		String imgName = "";
 		if(!memImg.equals(setImg.getOriginalFilename())){
 			File intro = new File(uploadDir+memId+"/intro");
-			/*File[] introfile = intro.listFiles();
+			File[] introfile = intro.listFiles();
 			for(File fle:introfile){
 				fle.delete();
-			}*/
+			}
 			File file = new File(uploadDir+memId+"/intro/"+setImg.getOriginalFilename());
 			setImg.transferTo(file);
 			 imgName = setImg.getOriginalFilename();
