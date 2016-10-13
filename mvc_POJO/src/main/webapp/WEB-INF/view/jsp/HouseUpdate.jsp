@@ -58,7 +58,7 @@
 				<sform:input type="text" path="houseAddress"/> <br/>
 				
 				<sform:label path="houseImg">사진</sform:label> <br/>
-				<sform:input type="file" path="houseImg"/> <br/>
+				<sform:input type="file" path="houseImg" /> <br/>
 				
 				<sform:label path="houseInfo">숙소 안내말</sform:label> <br/>
 				<sform:textarea rows="5" cols="20" path="houseInfo"></sform:textarea> <br/>

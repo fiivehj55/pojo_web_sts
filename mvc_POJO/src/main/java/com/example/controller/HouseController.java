@@ -60,12 +60,12 @@ public class HouseController {
 			@RequestParam(value = "wifi", defaultValue = "null") String wifi,
 			@RequestParam(value = "elebe", defaultValue = "null") String elebe,
 			@RequestParam(value = "washing", defaultValue = "null") String washing, @RequestParam String rname,
-			@RequestParam String infor, @RequestParam String photo, @RequestParam String addr, @RequestParam String day,
+			@RequestParam String infor, @RequestParam String photo,
+			@RequestParam String addr, @RequestParam String day,
 			@RequestParam Integer price, HttpSession session) {
 		int result = 0;
 		Member user = (Member) session.getAttribute("user");
 		House house = new House();
-		/* house.setHouseNo(null); */
 		house.setHouseName(rname);
 		house.setHouseAddress(addr);
 		house.setHousePrice(price);
@@ -88,7 +88,7 @@ public class HouseController {
 		if (result != 1) {
 			return "jsp/HouseJoin";
 		} else {
-			return "jsp/HouseList";
+			return "redirect:/search";
 		}
 	}
 
@@ -162,7 +162,6 @@ public class HouseController {
 			@RequestParam String houseInfo, @RequestParam MultipartFile houseImg, @RequestParam String houseAddress,
 			@RequestParam String houseDay, @RequestParam Integer housePrice, HttpSession session) throws IOException {
 		Member user = (Member) session.getAttribute("user");
-
 		File idfile = new File(uploadDir + user.getMemId());
 		// id파일 존재하지않으면 디렉토리 생성 아니면 회원가입화면으로
 		if (!idfile.exists())
