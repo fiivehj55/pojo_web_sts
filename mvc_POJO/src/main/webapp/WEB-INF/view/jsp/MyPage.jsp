@@ -79,8 +79,7 @@ label {
 			<a href="deletePass"><input type="button" value="탈퇴하기"></a>
 		<p>
 			<input type="submit" value="수정하기"> 
-			<a href="<%=request.getContextPath()%>/index2.jsp">
-			<input type="button" value="나가기"></a>
+			<a href="index"><input type="button" value="나가기"></a>
 		</sform:form>
 		</div>
 		</div>
