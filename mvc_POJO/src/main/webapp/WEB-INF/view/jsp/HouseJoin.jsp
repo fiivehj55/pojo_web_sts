@@ -54,7 +54,7 @@ label {
 	<!-- Main -->
 	<div id="view">
 	<div id="main">
-		<form method="post" action="insertHouse">
+		<form method="post" action="insertHouse" name="form">
 	
 		<div id="container">
 		<h1>하우스 등록</h1>
@@ -133,8 +133,8 @@ label {
 				
 				<br/>
 				<input type="button" id="postcodify_search_button" value="주소 검색">
-				<input type="text" name="" class="postcodify_address" value=""  /><br />
-				상세 주소<input type="text" name="" class="postcodify_details" value="" /><br />
+				<input type="text" id="xx" name="postcodify_address"  value=""  /><br />
+				상세 주소<input type="text" id="yy" name="postcodify_details"  value="" /><br />
 				<p>
 				<label for="photo">사진</label> 
 				<input type="file" name="photo"/> <br/>
@@ -182,17 +182,21 @@ label {
 <jsp:include page="./Footer.jsp"></jsp:include>
 </body>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
-
-<script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
 <script
 	src="<%=request.getContextPath()%>/js/validate/dist/jquery.validate.min.js"></script>
 <script>
-$(function() {
-	$("#postcodify_search_button").postcodifyPopUp(); }); 
+function goPopup(){
+var pop = window.open("<%=request.getContextPath()%>/jusoPopup","pop","width=570,height=420, scrollbars=yes"); //경로는시스템에맞게수정하여사용
+}
+function jusoCallBack(roadAddrPart1,addrDetail){
+	$("#xx").val(roadAddrPart1);
+	$("#yy").val(addrDetail);
+}
 $(document).ready(function() {
 
+	
 	$("#postcodify_search_button").on("click",function(){
-		$("#postcodify_search_button").postcodifyPopUp();
+		goPopup();
 	});
 	$("#nextTwo").on("click",function(){
 		$("#one").css("display","none");
