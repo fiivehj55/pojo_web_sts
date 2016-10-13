@@ -102,8 +102,7 @@ public class MemberController {
 		//id파일 존재하지않으면 디렉토리 생성 아니면 회원가입화면으로
 		if(!idfile.exists())
 			idfile.mkdir();
-		else
-			return "jsp/Join";
+
 		
 		File intro = new File(uploadDir+"/"+memId+"/intro");
 		if(!intro.exists())
@@ -142,12 +141,54 @@ public class MemberController {
 		member.setMemEmail(memEmail);
 		String imgName = "";
 		if(!memImg.equals(setImg.getOriginalFilename())){
-			File intro = new File(uploadDir+memId+"/intro");
-			/*File[] introfile = intro.listFiles();
+			File intro = new File(uploadDir+"/"+memId+"/intro");
+			File[] introfile = intro.listFiles();
 			for(File fle:introfile){
 				fle.delete();
-			}*/
+			}
 			File file = new File(uploadDir+memId+"/intro/"+ setImg.getOriginalFilename());
+			setImg.transferTo(file);
+			 imgName = setImg.getOriginalFilename();
+				
+		}else{
+			imgName = memImg;
+		}
+		
+		member.setMemImg(imgName);
+		member.setMemIntro(memIntro);
+		int result = mservice.update(member);
+		if(result ==1)
+			return "index2";
+		else
+			return "jsp/MyPage";
+	}
+	/*
+	@RequestMapping(value = "/mypage",method=RequestMethod.POST)
+	public String mypagePost(Model model,
+			@RequestParam String memId,
+			@RequestParam String memPassword,
+			@RequestParam String memName,
+			@RequestParam String memGender,
+			@RequestParam String memNa,
+			@RequestParam String memPhone,
+			@RequestParam String memEmail,
+			@RequestParam MultipartFile setImg,
+			@RequestParam String memImg,
+			@RequestParam String memIntro,
+			HttpSession session)throws IOException{
+		Member member = (Member) session.getAttribute("user");
+		member.setMemPassword(memPassword);
+		member.setMemName(memName);
+		member.setMemPhone(memPhone);
+		member.setMemEmail(memEmail);
+		String imgName = "";
+		if(!memImg.equals(setImg.getOriginalFilename())){
+			File intro = new File(uploadDir+memId+"/intro");
+			File[] introfile = intro.listFiles();
+			for(File fle:introfile){
+				fle.delete();
+			}
+			File file = new File(uploadDir+memId+"/intro/"+setImg.getOriginalFilename());
 			setImg.transferTo(file);
 			imgName = setImg.getOriginalFilename();
 				
@@ -162,7 +203,8 @@ public class MemberController {
 			return "index2";
 		else
 			return "jsp/MyPage";
-	}
+
+	}*/
 	
 	@RequestMapping(value = "/inputPass",method=RequestMethod.GET)
 	public String inputPass(Model model){

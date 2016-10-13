@@ -43,7 +43,7 @@ margin:0px 40% 0px 40%;
 	
 	<div id="container">
 		<h1>회원가입</h1>
-		<form action="join" method="post" id="myForm">
+		<form action="join" method="post" id="myForm"  enctype="multipart/form-data">
 		
 				<label for="memId" class="inputlabel">아이디:</label> <input type="text" size="30"name="memId"
 					id="memId" placeholder="5~10자리 영문자와 숫자" /> <input type="button"
