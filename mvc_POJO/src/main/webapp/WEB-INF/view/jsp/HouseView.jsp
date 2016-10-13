@@ -145,16 +145,10 @@
 
 </div>
 </div>
+<jsp:include page="./HouseToReply.jsp"></jsp:include>
 </div>
 </div>
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 <jsp:include page="./Footer.jsp"></jsp:include>
 </body>
