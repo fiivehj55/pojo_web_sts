@@ -171,7 +171,7 @@ public class HouseController {
 			introHouse.mkdir();
 
 		File file = new File(uploadDir + user.getMemId() + "/" + houseNo + "/" + houseImg.getOriginalFilename());
-		houseImg.transferTo(file);
+		//houseImg.transferTo(file);
 		String imgName = houseImg.getOriginalFilename();
 
 		House house = new House();
