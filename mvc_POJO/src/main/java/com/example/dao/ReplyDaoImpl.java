@@ -30,9 +30,9 @@ public class ReplyDaoImpl implements ReplyDao {
 	}
 	
 	@Override
-	public List<Reply> selecyByIdHouseNo(SqlSessionTemplate template, int HouseNo) {
+	public List<Reply> selecyByIdHouseNo(SqlSessionTemplate template, int houseNo) {
 		String stmt = REPLY_MAP + "selectByHouseNo";
-		return template.selectList(stmt, HouseNo);
+		return template.selectList(stmt, houseNo);
 	}
 
 	@Override
@@ -51,6 +51,18 @@ public class ReplyDaoImpl implements ReplyDao {
 	public int deleteReply(SqlSessionTemplate template, int replyNo) {
 		String stmt = REPLY_MAP + "deleteReply";
 		return template.update(stmt, replyNo);
+	}
+
+	@Override
+	public int deleteReplyHno(SqlSessionTemplate template, int houseNo) {
+		String stmt = REPLY_MAP + "deleteReplyHno";
+		return template.update(stmt, houseNo);
+	}
+
+	@Override
+	public Reply selectByIdHouseNo1(SqlSessionTemplate template, int houseNo) {
+		String stmt = REPLY_MAP + "selectByHouseNo";
+		return template.selectOne(stmt, houseNo);
 	}
 
 }

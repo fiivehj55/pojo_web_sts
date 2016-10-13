@@ -28,6 +28,10 @@
 	<delete id="deleteReply" parameterType="int">
 		delete REPLY where REPLY_NO = #{replyNo}
 	</delete>
+	
+	<delete id="deleteReplyHno" parameterType="int">
+		delete REPLY where HOUSE_NO = #{houseNo}
+	</delete>
 
 	<resultMap type="reply" id="replyBase">
 		<id column="REPLY_NO" property="replyNo" />

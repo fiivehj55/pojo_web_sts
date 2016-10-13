@@ -25,12 +25,13 @@ public class ReportController {
 
 	@Autowired
 	ReportService repservice;
-	
+
 	@Autowired
 	ReportToReplyService rtservice;
 
 	@RequestMapping(value = "/report", method = RequestMethod.GET)
-	public String table(Model model) {
+	public String table(Model model, HttpSession session) {
+		Member user = (Member) session.getAttribute("user");
 		List<Report> list = repservice.selectAllReport();
 		model.addAttribute("Report", list);
 		// view의 이름을 리턴.
@@ -38,13 +39,14 @@ public class ReportController {
 	}
 
 	@RequestMapping(value = "/reportView", method = RequestMethod.GET)
-	public String reportView(Model model, @RequestParam Integer reportNo) {
+	public String reportView(Model model, @RequestParam Integer reportNo, HttpSession session) {
+		Member user = (Member) session.getAttribute("user");
 		Report report = repservice.selectByReportNo(reportNo);
 		List<ReportToReply> reportToReply = rtservice.selectByRtreportNo(reportNo);
 		model.addAttribute("Report", report);
 		model.addAttribute("rtr", reportToReply);
-		model.addAttribute("reportNo",reportNo);
-		
+		model.addAttribute("reportNo", reportNo);
+
 		// view의 이름을 리턴.
 		return "jsp/ReportView";
 	}
@@ -56,8 +58,7 @@ public class ReportController {
 	}
 
 	@RequestMapping(value = "/ReportInsert", method = RequestMethod.POST)
-	public String ReportInsertPost(Model model, @RequestParam String category,
-			@RequestParam String title,
+	public String ReportInsertPost(Model model, @RequestParam String category, @RequestParam String title,
 			@RequestParam String content, HttpSession session) {
 		Member user = (Member) session.getAttribute("user");
 		Report report = new Report();
@@ -65,21 +66,34 @@ public class ReportController {
 		report.setReportSubject(title);
 		report.setReportContent(content);
 		report.setMemberId(user.getMemId());
-		int result =  repservice.insertReport(report);
-		if(result ==1)
+		int result = repservice.insertReport(report);
+		if (result == 1)
 			return "redirect:/report";
 		else
 			return "jsp/ReportInsert";
 	}
+
 	@RequestMapping(value = "/ReportDelete", method = RequestMethod.GET)
-	public String ReportDelete(Model model,
-			@RequestParam Integer reportNo) {
+	public String ReportDelete(Model model, @RequestParam Integer reportNo, HttpSession session) {
 		// view의 이름을 리턴.
 		int result = repservice.deleteReport(reportNo);
-		if(result ==1)
+		if (result == 1)
 			return "redirect:/report";
 		else
 			return "jsp/ReportView";
+	}
+
+	// 하우스 댓글 지우기
+	@RequestMapping(value = "/deleteRtr", method = RequestMethod.GET)
+	public String deleteRtr(Model model, @RequestParam Integer reportReplyNo, HttpSession session) {
+		Member user = (Member) session.getAttribute("user");
+		int result = rtservice.deleteRtr(reportReplyNo);
+
+		if (result == 1) {
+			return "redirect:/report";
+		} else {
+			return "redirect:/report";
+		}
 	}
 
 }

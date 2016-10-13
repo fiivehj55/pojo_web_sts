@@ -43,5 +43,15 @@ public class ReplyServiceImp implements ReplyService{
 	public int deleteReply(int replyNo) {
 		return dao.deleteReply(template, replyNo);
 	}
+	@Transactional
+	@Override
+	public int deleteReplyHno(int houseNo) {
+		return dao.deleteReplyHno(template, houseNo);
+	}
+	@Transactional
+	@Override
+	public Reply selectByHouseNo1(int houseNo) {
+		return dao.selectByIdHouseNo1(template, houseNo);
+	}
 	
 }

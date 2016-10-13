@@ -187,6 +187,7 @@ select SEQ_REPORT_REPLY.currval from dual;
 	"MEMBER_ID" VARCHAR2(30 BYTE), 
 	"REPORT_REPLY_CONTENT" VARCHAR2(400 BYTE), 
 	"REPORT_REPLY_DATE" DATE, 
+  "REPORT_NO" NUMBER(30,0),
 	 CONSTRAINT "REPORT_TO_REPLY_PK" PRIMARY KEY ("REPORT_REPLY_NO")
   USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
@@ -211,6 +212,6 @@ insert into QUESTION values (99, '사기당했어요2.', '하우스 등록자가
 insert into QUESTION values (100, '사기당했어요2.', '하우스 등록자가 계속 전화를 받지 않습니다2.', sysdate, 'hong', 2, null);
 insert into REPORT values (99, '피해사례', '이 사람 신고합니다.', '예약자가 입금을 하지 않습니다.', sysdate, 'jang', 1);
 insert into REPLY values (99, '집을 이용했는데 정말 좋았어요', sysdate, 99, 'hong', 2);
-insert into REPORT_TO_REPLY values (1, 'admin', '요청이 처리되었습니다.', sysdate);
+insert into REPORT_TO_REPLY values (1, 'admin', '요청이 처리되었습니다.', sysdate, 99);
 
 commit;
