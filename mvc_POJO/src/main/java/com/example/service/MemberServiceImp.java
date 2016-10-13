@@ -98,4 +98,11 @@ public class MemberServiceImp implements MemberService{
 		user = dao.selectByIdMember(template, id);
 		return user;
 	}
+
+	@Override
+	public int updateNp(Member member) {
+		int result = 0;
+		result = dao.updateMemberNp(template, member);
+		return result;
+	}
 }

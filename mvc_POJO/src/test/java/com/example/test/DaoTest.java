@@ -81,7 +81,15 @@ public class DaoTest {
 	public void testUpdateMember() {
 		Member member = new Member("yang", "양희준", "1425", "U+", "01029051217", "yang1@naver.com", "male",
 				"/index.jsp/img", "안녕하세요!!", 2, "회원");
-		int result = mdao.insertMember(template, member);
+		int result = mdao.updateMember(template, member);
+		logger.trace("List: {}", member);
+	}
+	
+	@Test
+	public void testUpdateMemberNp() {
+		Member member = new Member("yang", "양희준", "1425", "U+", "01000111100", "yang2@naver.com", "male",
+				"/index.jsp/img", "안녕하세요!!", 2, "회원");
+		int result = mdao.updateMemberNp(template, member);
 		logger.trace("List: {}", member);
 	}
 
