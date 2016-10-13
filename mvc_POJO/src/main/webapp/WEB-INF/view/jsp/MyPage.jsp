@@ -34,6 +34,7 @@ label {
 		<p>
 			<sform:label path="memId">아이디:</sform:label> 
 			<sform:input type="text"  path = "memId"  placeholder="영문+숫자 조합 8 이상" disabled="true"/> 
+			<sform:input type="hidden"  path = "memId"  placeholder="영문+숫자 조합 8 이상"/>
 		<p>
 
 		<p>
@@ -45,11 +46,12 @@ label {
 		<p>
 			<sform:label path="memName">이름:</sform:label> 
 			<sform:input type="text" path="memName" disabled="true"/>
+			<sform:input type="hidden" path="memName"/>
 		</p>
 		<p>
 			<sform:label path="memGender">성별:</sform:label> 
-			<sform:radiobutton path="memGender" value="male" label="남" disabled="true"/> 
-			<sform:radiobutton path="memGender" value="female" label="여" disabled="true"/>
+			<sform:radiobutton path="memGender" value="male" label="남"/> 
+			<sform:radiobutton path="memGender" value="female" label="여"/>
 		<p>
 			<sform:label path="memNa">전화번호:</sform:label>
 			<sform:select path="memNa">

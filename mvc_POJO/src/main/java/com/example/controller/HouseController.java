@@ -166,7 +166,7 @@ public class HouseController {
 		if (!idfile.exists())
 			idfile.mkdir();
 
-		File introHouse = new File(uploadDir + "/" + user.getMemId() + "/" + houseNo);
+		File introHouse = new File(uploadDir + user.getMemId() + "/" + houseNo);
 		if (!introHouse.exists())
 			introHouse.mkdir();
 
