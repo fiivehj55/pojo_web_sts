@@ -245,12 +245,11 @@ public class HouseController {
 		reply.setHouseNo(houseNo);
 		reply.setMemberId(id);
 		reply.setDetailId(2);
-		session.setAttribute("reply", reply);
 		result = Rpservice.insertReply(reply);
 		if(result != 1){
-			return "redirect:/selectByHouse?houseNo=" + houseNo;
+			return "redirect:/searchByHouseNo?houseNo=" + houseNo;
 		}else{
-			return "forward:/selectByHouse?houseNo=" + houseNo;
+			return "redirect:/searchByHouseNo?houseNo=" + houseNo;
 		}
 	}
 
