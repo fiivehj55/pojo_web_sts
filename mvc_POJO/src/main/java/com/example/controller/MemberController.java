@@ -102,8 +102,7 @@ public class MemberController {
 		//id파일 존재하지않으면 디렉토리 생성 아니면 회원가입화면으로
 		if(!idfile.exists())
 			idfile.mkdir();
-		else
-			return "jsp/Join";
+
 		
 		File intro = new File(uploadDir+"/"+memId+"/intro");
 		if(!intro.exists())
@@ -122,7 +121,7 @@ public class MemberController {
 			return "jsp/Join";
 		}
 	}
-	/*@RequestMapping(value = "/mypage",method=RequestMethod.POST)
+	@RequestMapping(value = "/mypage",method=RequestMethod.POST)
 	public String mypagePost(Model model,
 			@RequestParam String memId,
 			@RequestParam String memPassword,
@@ -162,8 +161,8 @@ public class MemberController {
 			return "index2";
 		else
 			return "jsp/MyPage";
-	}*/
-	@RequestMapping(value = "/mypage",method=RequestMethod.POST)
+	}
+	/*@RequestMapping(value = "/mypage",method=RequestMethod.POST)
 	public String mypagePost(Model model,
 			@RequestParam String memId,
 			@RequestParam String memPassword,
@@ -203,7 +202,7 @@ public class MemberController {
 			return "index2";
 		else
 			return "jsp/MyPage";
-	}
+	}*/
 	
 	@RequestMapping(value = "/inputPass",method=RequestMethod.GET)
 	public String inputPass(Model model){
