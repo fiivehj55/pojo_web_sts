@@ -2,6 +2,7 @@ package com.example.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -133,7 +134,7 @@ public class HouseController {
 			// view의 이름을 리턴.
 			return "jsp/HouseView";
 		}
-		return "jps/index2";
+			return "jps/index2";
 	}
 
 	@RequestMapping(value = "/updateHouse", method = RequestMethod.GET)
@@ -229,10 +230,33 @@ public class HouseController {
 		}
 	}
 
+	// 하우스 댓글 추가
+	@RequestMapping(value = "/inserthtr", method = RequestMethod.POST)
+	public String inserthtr(Model model, 
+			@RequestParam String replyContent,
+			@RequestParam Integer houseNo,
+			HttpSession session) {
+		int result = 0;
+		Member user = (Member) session.getAttribute("user");
+		String id = user.getMemId();
+		Integer deId = user.getDetailId();
+		Reply reply = new Reply();
+		reply.setReplyContent(replyContent);;
+		reply.setHouseNo(houseNo);
+		reply.setMemberId(id);
+		reply.setDetailId(2);
+		session.setAttribute("reply", reply);
+		result = Rpservice.insertReply(reply);
+		if(result != 1){
+			return "redirect:/selectByHouse?houseNo=" + houseNo;
+		}else{
+			return "forward:/selectByHouse?houseNo=" + houseNo;
+		}
+	}
+
 	// 하우스 댓글 지우기
 	@RequestMapping(value = "/deletehtr", method = RequestMethod.GET)
-	public String deleteHtr(Model model, 
-		@RequestParam Integer replyNo, HttpSession session) {
+	public String deleteHtr(Model model, @RequestParam Integer replyNo, HttpSession session) {
 		Member user = (Member) session.getAttribute("user");
 		int result = Rpservice.deleteReply(replyNo);
 

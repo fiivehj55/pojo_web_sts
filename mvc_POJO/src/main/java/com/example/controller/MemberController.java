@@ -56,6 +56,7 @@ public class MemberController {
 			return "jsp/Login";
 		}
 		else{
+			member.setMemPassword("");
 			session.setAttribute("user", member);
 			return "index2";
 		}

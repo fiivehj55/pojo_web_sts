@@ -16,7 +16,7 @@
 	</select>
 	<insert id="insertReply" parameterType="reply" >
 		insert into REPLY
-		values (SEQ_REPLY.nextval, #{replyContent}, #{replyDate}, #{houseNo}, #{memberId}, #{detailId})
+		values (SEQ_REPLY.nextval, #{replyContent}, sysdate, #{houseNo}, #{memberId}, #{detailId})
 	</insert>
 	
 	<update id="updateReply" parameterType="reply">
