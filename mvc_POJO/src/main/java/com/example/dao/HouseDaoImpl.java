@@ -48,4 +48,10 @@ public class HouseDaoImpl implements HouseDao {
 		String stmt = HOUSE_MAP + "deleteHouse";
 		return template.update(stmt, houseNo);
 	}
+
+	@Override
+	public List<House> searchHouses(SqlSessionTemplate template, String key) {
+		String stmt = HOUSE_MAP + "searchHouses";
+		return template.selectList(stmt, key);
+	}
 }

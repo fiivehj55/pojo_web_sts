@@ -14,6 +14,11 @@
 		select * from HOUSE where HOUSE_NO = #{houseNo}
 		ORDER BY HOUSE_NO DESC
 	</select>
+	
+	<select id="searchHouses" parameterType="string" resultMap="houseBase">
+		select * from HOUSE where HOUSE_NAME LIKE '%'||#{houseName}||'%'
+		ORDER BY HOUSE_NO DESC
+	</select>
 
 	<insert id="insertHouse" parameterType="house">
 		insert into HOUSE 

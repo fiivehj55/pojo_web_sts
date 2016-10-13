@@ -129,6 +129,13 @@ public class DaoTest {
 		logger.trace("List: {}", house);
 
 	}
+	
+	@Test
+	public void testSearchHouses() {
+		List<House> house = hdao.searchHouses(template, "주빌");
+		logger.trace("List: {}", house);
+
+	}
 
 	@Test
 	public void testInsertHouse() {

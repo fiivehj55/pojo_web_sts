@@ -21,4 +21,6 @@ public interface HouseService {
 	
 	// 하우스 전체 조회
 	List<House> selectAllHouse();
+	
+	List<House> searchHouses(String key);
 }

@@ -68,4 +68,10 @@ public class HouseServiceImp implements HouseService{
 		List<House> result = hdao.selectAllHouse(template);
 		return result;
 	}
+
+	@Override
+	public List<House> searchHouses(String key) {
+		List<House> result = hdao.searchHouses(template, key);
+		return result;
+	}
 }
