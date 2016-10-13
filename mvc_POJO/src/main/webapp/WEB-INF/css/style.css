@@ -2033,10 +2033,10 @@ ul.contact li a:hover {
 /*********************************************************************************/
 #header {
 	position: relative;
-	background: url(../css/images/aa.jpg) no-repeat bottom center; 
-	background-attachment: fixed;
-	background-size: cover;
-	text-align: center;
+	background: url(../css/images/z1.png) no-repeat bottom center; 
+	/*  background-attachment: fixed;
+	 */background-size: cover;
+	 text-align: center;
 }
 
 #header:before {
