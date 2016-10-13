@@ -6,6 +6,7 @@
 <head>
 <title>Linear TEMPLATED</title>
 
+
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
@@ -157,8 +158,8 @@ body{
 			<header>
 
 				<input id="text_box" type="text" size="100"
-					placeholder="두정동 또는 건물이름을 입력하세요"> <input type="button"
-					value="확인">
+					placeholder="두정동 또는 건물이름을 입력하세요">
+					<a href="#" class="button button-style1" >확인</a>
 			</header>
 
 
@@ -176,21 +177,28 @@ body{
 				<section class="6u">
 
 					<a href="searchByHouseNo?houseNo=99" class="image full"><img
-						src="css/images/image1.jpg" width=500 height=500 alt="" id="test"></a>
-				<!-- 	<a href="searchByHouseNo?houseNo=99" class="image full"><img
-						src="css/images/image1.jpg" width=500 height=500 alt=""></a> -->
+						src="css/images/image1.jpg" width=350 height=350 alt="" id="test"></a>
+									<header>
+						<h2>Mauris vulputate dolor</h2> 
+					</header>
+					<p>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p> 
 
 				</section>
 				<section class="6u">
 					<a href="#" class="image full"><img src="css/images/image2.jpg"
-						width=500 height=500 alt=""></a>
+						width=350 height=350 alt=""></a>
+									<header>
+						<h2>Mauris vulputate dolor</h2> 
+					</header>
+					<p>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p> 		
+						
 				</section>
 			</div>
 
 			<div class="row">
 				<section class="6u">
 					<a href="#" class="image full"><img src="css/images/image3.jpg"
-						width=500 height=500 alt=""></a>
+						width=350 height=350 alt=""></a>
 					<header>
 						<h2>Mauris vulputate dolor</h2> 
 					</header>
@@ -198,7 +206,7 @@ body{
 				</section>
 				<section class="6u">
 					<a href="#" class="image full"><img src="css/images/image4.jpg"
-						width=500 height=500 alt=""></a>
+						width=350 height=350 alt=""></a>
 					<header>
 						<h2>Mauris vulputate dolor</h2> 
 					</header>
