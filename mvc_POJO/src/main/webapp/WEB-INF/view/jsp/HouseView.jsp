@@ -139,7 +139,7 @@
 					<h5 class="h5">
 						<img src="css/images/icon1.png" width="50" height="50" />방의 개수: ${houseRoom } 
 						<img src="css/images/icon2.JPG" width="50" height="60" />화장실 개수: ${houseBath } 
-						<img src="css/images/icon3.JPG" width="80" height="50" />예약 가능 인원: ${houseHosting } &nbsp&nbsp
+						<img src="css/images/icon3.JPG" width="80" height="50" />예약 가능 인원: ${houseHosting }
 						<img src="css/images/icon4.JPG" width="50" height="50" />사용가능한 편의시설: ${houseAircon }, ${houseWifi },${houseElebe }, 	${houseWashing }
 					</h5>
 				</div>

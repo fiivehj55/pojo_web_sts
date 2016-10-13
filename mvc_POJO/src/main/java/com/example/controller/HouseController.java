@@ -38,6 +38,8 @@ public class HouseController {
 
 	@Autowired
 	ReplyService Rpservice;
+	
+	private static final String uploadDir = "c:\\Temp/upload/";
 
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
 	public String search(Model model, HttpSession session) {
@@ -54,7 +56,8 @@ public class HouseController {
 		return "jsp/jusoPopup";
 	}
 	@RequestMapping(value = "/insertHouse", method = RequestMethod.POST)
-	public String insertHousePost(Model model, @RequestParam String room, @RequestParam String bath,
+	public String insertHousePost(Model model, 
+			@RequestParam String room, @RequestParam String bath,
 			@RequestParam String hosting, @RequestParam(value = "tv", defaultValue = "null") String tv,
 			@RequestParam(value = "aircon", defaultValue = "null") String aircon,
 			@RequestParam(value = "wifi", defaultValue = "null") String wifi,
@@ -62,10 +65,24 @@ public class HouseController {
 			@RequestParam(value = "washing", defaultValue = "null") String washing, @RequestParam String rname,
 			@RequestParam String infor, @RequestParam String photo,
 			@RequestParam String addr, @RequestParam String day,
-			@RequestParam Integer price, HttpSession session) {
+			@RequestParam Integer price, HttpSession session) throws IOException {
 		int result = 0;
 		Member user = (Member) session.getAttribute("user");
 		House house = new House();
+		
+		/*File idfile = new File(uploadDir + user.getMemId());
+		// id파일 존재하지않으면 디렉토리 생성 아니면 회원가입화면으로
+		if (!idfile.exists())
+			idfile.mkdir();
+
+		File introHouse = new File(uploadDir + user.getMemId() + "/" + houseNo);
+		if (!introHouse.exists())
+			introHouse.mkdir();
+
+		File file = new File(uploadDir + user.getMemId() + "/" + houseNo + "/" + photo.getOriginalFilename());
+		photo.transferTo(file);
+		String imgName = photo.getOriginalFilename();*/
+		
 		house.setHouseName(rname);
 		house.setHouseAddress(addr);
 		house.setHousePrice(price);
@@ -149,10 +166,9 @@ public class HouseController {
 		return "redirect:/search";
 	}
 
-	private static final String uploadDir = "c:Temp/upload/";
-
 	@RequestMapping(value = "/updateHouse", method = RequestMethod.POST)
-	public String HouseUpdatePost(Model model, @RequestParam Integer houseNo, @RequestParam String houseRoom,
+	public String HouseUpdatePost(Model model, 
+			@RequestParam Integer houseNo, @RequestParam String houseRoom,
 			@RequestParam String houseBath, @RequestParam String houseHosting,
 			@RequestParam(value = "tv", defaultValue = "null") String houseTv,
 			@RequestParam(value = "aircon", defaultValue = "null") String houseAircon,
@@ -172,7 +188,7 @@ public class HouseController {
 			introHouse.mkdir();
 
 		File file = new File(uploadDir + user.getMemId() + "/" + houseNo + "/" + houseImg.getOriginalFilename());
-		//houseImg.transferTo(file);
+		houseImg.transferTo(file);
 		String imgName = houseImg.getOriginalFilename();
 
 		House house = new House();
