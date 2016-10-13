@@ -124,6 +124,10 @@ label {
 				<input type="text" id="addr" name="addr"/> 
 				<p>
 				
+				<br/>
+<input type="button" id="postcodify_search_button" value="주소 검색">
+<input type="text" name="" class="postcodify_address" value="" /><br />
+상세 주소<input type="text" name="" class="postcodify_details" value="" /><br />
 				<p>
 				<label for="photo">사진</label> 
 				<input type="file" name="photo"/> <br/>
@@ -165,13 +169,24 @@ label {
 		
 		</div>
 	</div>
+	
+	
+
 <jsp:include page="./Footer.jsp"></jsp:include>
 </body>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+
+<script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
 <script
 	src="<%=request.getContextPath()%>/js/validate/dist/jquery.validate.min.js"></script>
 <script>
+$(function() {
+	$("#postcodify_search_button").postcodifyPopUp(); }); 
 $(document).ready(function() {
+
+	$("#postcodify_search_button").on("click",function(){
+		$("#postcodify_search_button").postcodifyPopUp();
+	});
 	$("#nextTwo").on("click",function(){
 		$("#one").css("display","none");
 		$("#two").css("display","block");
@@ -189,10 +204,6 @@ $(document).ready(function() {
 		$("#one").css("display","block");
 		$("#two").css("display","none");
 	})
-	
-	
-	
-	
 	$("#myForm").validate({
 		rules:{
 				room:"required",

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.dto.Member;
+import com.example.dto.Reply;
 import com.example.dto.Report;
 import com.example.dto.ReportToReply;
 import com.example.service.ReportService;
@@ -83,7 +84,29 @@ public class ReportController {
 			return "jsp/ReportView";
 	}
 
-	// 하우스 댓글 지우기
+	// 신고게시판 댓글 추가
+	@RequestMapping(value = "/insertrtr", method = RequestMethod.POST)
+	public String inserthtr(Model model, 
+			@RequestParam String reportReplyContent, 
+			@RequestParam Integer reportNo,
+			HttpSession session) {
+		int result = 0;
+		Member user = (Member) session.getAttribute("user");
+		String id = user.getMemId();
+		ReportToReply reportToReply = new ReportToReply();
+		reportToReply.setReportReplyContent(reportReplyContent);
+		reportToReply.setMemberId(id);
+		reportToReply.setReportNo(reportNo);
+		session.setAttribute("reportToReply", reportToReply);
+		result = rtservice.insertRtr(reportToReply);
+		if (result != 1) {
+			return "redirect:/reportView?reportNo=" + reportNo;
+		} else {
+			return "redirect:/reportView?reportNo=" + reportNo;
+		}
+	}
+
+	// 신고게시판 댓글 지우기
 	@RequestMapping(value = "/deleteRtr", method = RequestMethod.GET)
 	public String deleteRtr(Model model, @RequestParam Integer reportReplyNo, HttpSession session) {
 		Member user = (Member) session.getAttribute("user");

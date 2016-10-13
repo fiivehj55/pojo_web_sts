@@ -247,9 +247,9 @@ public class HouseController {
 		reply.setDetailId(2);
 		result = Rpservice.insertReply(reply);
 		if(result != 1){
-			return "redirect:/searchByHouseNo?houseNo=" + houseNo;
+			return "redirect:/selectByHouseNo?houseNo=" + houseNo;
 		}else{
-			return "redirect:/searchByHouseNo?houseNo=" + houseNo;
+			return "redirect:/selectByHouseNo?houseNo=" + houseNo;
 		}
 	}
 

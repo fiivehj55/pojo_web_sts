@@ -80,6 +80,11 @@
 						</c:choose>
 					</tbody>
 				</table>
+				<form method="post" action="insertrtr">
+					<input type="hidden" name="reportNo" value="${reportNo }"/>
+					<input type="text" id="reportReplyContent" name="reportReplyContent"/>
+					<input type="submit" value="댓글 등록"/>
+				</form>
 			</div>
 
 			<%-- <div id="boardcss_list_search" style="display: block;">

@@ -44,17 +44,17 @@ public class ReportToReplyServiceImpl implements ReportToReplyService {
 
 	@Transactional
 	@Override
-	public int insertRtr(ReportToReply ReportToReply) {
+	public int insertRtr(ReportToReply reportToReply) {
 		int result = 0;
-		result = rtrdao.insertReportToReply(template, ReportToReply);
+		result = rtrdao.insertReportToReply(template, reportToReply);
 		return result;
 	}
 
 	@Transactional
 	@Override
-	public int updateRtr(ReportToReply ReportToReply) {
+	public int updateRtr(ReportToReply reportToReply) {
 		int result = 0;
-		result = rtrdao.updateReportToReply(template, ReportToReply);
+		result = rtrdao.updateReportToReply(template, reportToReply);
 		return result;
 	}
 
