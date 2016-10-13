@@ -24,14 +24,14 @@
 </style>
 
 </head>
-<body class="homepage">
+<body class="header">
 <jsp:include page="./Header.jsp"></jsp:include>
 	<!-- Main -->
 	<div id="main">
 		<div id="content" class="auto_center">
-			<h1>하우스 정보</h1>
+			
 			<div>
-				<img src="<%=request.getContextPath()%>/upload/${houseUser}/${houseNo}/${houseImg }" width="50" height="50"/>
+				<img src="<%=request.getContextPath()%>/upload/${houseUser}/${houseNo}/${houseImg }" width="1200" height="100"/>
 				<h1 class="h1">${memberName}의 ${houseName}!!</h1> <br/>
 			</div>
 			
