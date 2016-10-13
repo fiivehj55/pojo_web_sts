@@ -32,7 +32,7 @@
 		<div id="content" class="auto_center">
 			
 			<div>
-				<img src="<%=request.getContextPath()%>/upload/${houseUser}/${houseNo}/${houseImg }"/>
+				<img src="<%=request.getContextPath()%>/upload/${houseUser}/${houseNo}/${houseImg }" width="1200" height="100"/>
 				<h1 class="h1">${memberName}의 ${houseName}!!</h1> <br/>
 			</div>
 			
