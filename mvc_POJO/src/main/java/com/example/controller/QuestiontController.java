@@ -89,7 +89,7 @@ public class QuestiontController {
 	@RequestMapping(value = "/bbsSelectByNo", method = RequestMethod.POST)
 	public String bbsSelectByNoPost(Model model, HttpSession session) {
 		// view의 이름을 리턴.
-		return "jsp/QuestList";
+		return "jsp/QuestionView";
 	}
 	
 	@RequestMapping(value = "/bbsUpdate", method = RequestMethod.GET)
@@ -114,7 +114,33 @@ public class QuestiontController {
 			return "redirect:/bbs";
 		}else{
 			// view의 이름을 리턴.
-			return "jsp/updateTable";
+			return "jsp/QuestionUpdate";
+		}
+	}
+	
+	@RequestMapping(value = "/bbsView", method = RequestMethod.GET)
+	public String bbsView(Model model,
+			@RequestParam Integer questNo,
+			@RequestParam String questTitle,
+			@RequestParam String questContent,
+			/*@RequestParam Date questDate,
+			@RequestParam String memberId,
+			@RequestParam Integer questReplyNo,*/
+			HttpSession session) {
+		int result = 0;
+		Member member = (Member) session.getAttribute("user");
+		Question question = new Question();
+		question.setQuestNo(questNo);
+		question.setQuestTitle(questTitle);
+		question.setQuestContent(questContent);
+		question.setMemberId(member.getMemId());
+		
+		result = qservice.updateQuestion(question);
+		if(result == 1){
+			return "jsp/QuestionUpdate";
+		}else{
+			// view의 이름을 리턴.
+			return "jsp/QuestionView";
 		}
 	}
 	
