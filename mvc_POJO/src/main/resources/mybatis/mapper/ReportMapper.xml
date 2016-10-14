@@ -25,6 +25,16 @@
 	<delete id="deleteReport" parameterType="int">
 		delete REPORT where REPORT_NO = #{reportNo}
 	</delete>
+	
+	<!-- 페이징 -->
+	<select id="reportPaging" resultMap="reportBase">
+		select * from (
+			select sub.*, rownum as rnum from(
+				select * from REPORT
+				order by REPORT_NO desc
+			) sub
+		) where rnum &gt; = #{low} and rnum &lt; = #{high}
+	</select>
 
 	<resultMap type="report" id="reportBase">
 		<id column="REPORT_NO" property="reportNo" />

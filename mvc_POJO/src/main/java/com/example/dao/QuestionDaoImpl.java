@@ -52,4 +52,10 @@ public class QuestionDaoImpl implements QuestionDao {
 		return template.update(stmt, questNo);
 	}
 
+	@Override
+	public List<Question> selectPaging(SqlSessionTemplate template) {
+		String stmt = QUESTION_MAP + "questPaging";
+		return template.selectList(stmt);
+	}
+
 }

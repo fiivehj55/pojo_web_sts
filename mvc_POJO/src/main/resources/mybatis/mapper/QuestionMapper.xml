@@ -40,6 +40,16 @@
 	    delete QUESTION where QUEST_NO = #{questNo}
 	</delete>
 	
+	<!-- 페이징 -->
+	<select id="questPaging" resultMap="questBase">
+		select * from (
+			select sub.*, rownum as rnum from(
+				select * from QUESTION
+				order by QUEST_NO desc
+			) sub
+		) where rnum &gt; = 0 and rnum &lt; = 5
+	</select>
+	<!-- where rnum >= 0 and rnum <= 5  -->
 	<resultMap type="question" id="questBase">
 		<id column="QUEST_NO" property="questNo"/>
 		<result column="QUEST_TITLE" property="questTitle" />
