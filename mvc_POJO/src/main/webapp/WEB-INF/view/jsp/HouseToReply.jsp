@@ -1,5 +1,6 @@
 <!-- 게시판 페이지 -->
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -10,18 +11,25 @@
 <title>Insert title here</title>
 
 <style>
-	.inputReply{
-		width:80%;
-		height: 100px;
-	}
-	
-	.replyContent{
-		height: 100px;
-	}
-	
-	#boardcss_list_table{
-	background:#EAEAEA;
-	}
+.inputReply {
+	width: 80%;
+	height: 100px;
+}
+
+.replyContent {
+	height: 100px;
+}
+
+.listReply {
+	background: #EAEAEA;
+	width: 820px;
+}
+
+#boardcss_list_table {
+	text-align: left;
+	width: 1024px;
+	margin: 0px 40% 0px 5%;
+}
 </style>
 
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -45,60 +53,49 @@
 
 </head>
 
-			
-			<!-- 등록버튼 종료 -->
 
-			<h2>후기 댓글</h2>
-			<p>
-			<div id = "boardcss_list_table">
-			<ul class = "listReply">
-				<div class = "replyContent">
-					<span class = "replyId"></span>ID
-					<span class = "replyDate"></span>2016.10.14</br>
-					<span class = "replyTxt">
-						방이 너무 좋았습니다. 깔끔히 정리 정돈 잘되있네요.
-					</span>
-				</div>
-				<hr>
-				
-						
-				
-				<div class = "replyContent">
-					<span class = "replyId"></span>ID
-					<span class = "replyDate"></span>2016.10.14</br>
-					<span class = "replyTxt">
-						살짝 아쉬웠어요. 수압이 별로 좋지 않네요.
-					</span>
-				</div>
-				<hr>
-				
-				<div class = "replyContent">
-					<span class = "replyId"></span>ID
-					<span class = "replyDate"></span>2016.10.14</br>
-					<span class = "replyTxt">
-						좋은 지적 감사합니다. 다음에는 그러지 않도록 할게요.
-					</span>
-				</div>
-				<hr>
-				
-				<div class = "replyContent">
-					<span class = "replyId"></span>ID
-					<span class = "replyDate"></span>2016.10.14</br>
-					<span class = "replyTxt">
-						방이 너무 좋았습니다. 깔끔히 정리 정돈 잘되있네요.
-					</span>
-				</div>
-				<hr>
-				
-				<textarea name= "comment" tabindex="3" class="inputReply"
-				placeholder="여러분의 소중한 댓글을 입력해주세요.">
-				여러분의 소중한 댓글을 입력해주세요.
-				</textarea>
-				<button class="addButton">등록</button>
-			</ul>
-			</div>
-			
-			
+<div id="boardcss_list_table">
+	<h3 class="h3">후기 댓글</h3>
+	<p>
+	<div class="listReply">
+		<div class="replyContent">
+			<span class="replyId"></span>ID <span class="replyDate"></span>2016.10.14</br>
+			<span class="replyTxt"> 방이 너무 좋았습니다. 깔끔히 정리 정돈 잘되있네요. </span>
+		</div>
+		<hr>
+
+		<div class="replyContent">
+			<span class="replyId"></span>ID <span class="replyDate"></span>2016.10.14</br>
+			<span class="replyTxt"> 살짝 아쉬웠어요. 수압이 별로 좋지 않네요. </span>
+		</div>
+		<hr>
+	
+		<div class="replyContent">
+			<span class="replyId"></span>ID <span class="replyDate"></span>2016.10.14</br>
+			<span class="replyTxt"> 좋은 지적 감사합니다. 다음에는 그러지 않도록 할게요. </span>
+		</div>
+		<hr>
+
+		<div class="replyContent">
+			<span class="replyId"></span>ID <span class="replyDate"></span>2016.10.14</br>
+			<span class="replyTxt"> 방이 너무 좋았습니다. 깔끔히 정리 정돈 잘되있네요. </span>
+		</div>
+		<hr>
+	</div>
+	<textarea name="comment" tabindex="1" class="inputReply" 
+		placeholder="여러분의 소중한 댓글을 입력해주세요.">여러분의 소중한 댓글을 입력해주세요.
+		</textarea>
+	</br>
+	<button class="addButton">등록</button>
+</div>
+
+
+<body>
+</body>
+<script></script>
+</html>
+
+
 
 <%-- 			<!-- 테이블 시작 -->
 			<div class="boardcss_list_table">
@@ -200,8 +197,3 @@
 		</div>
 	</div>
 </head> --%>
-<body>
-
-</body>
-<script></script>
-</html>
