@@ -12,7 +12,7 @@
 
 <style>
 .inputReply {
-	width: 80%;
+	width: 750px;
 	height: 100px;
 }
 
@@ -28,7 +28,7 @@
 #boardcss_list_table {
 	text-align: left;
 	width: 1024px;
-	margin: 0px 40% 0px 5%;
+	margin: 0px 40% 0px 4%;
 }
 </style>
 
@@ -84,10 +84,11 @@
 	</div>
 	<textarea name="comment" tabindex="1" class="inputReply" 
 		placeholder="여러분의 소중한 댓글을 입력해주세요.">여러분의 소중한 댓글을 입력해주세요.
+		
 		</textarea>
+		<button class="addButton">등록</button>
 	</br>
-	<button class="addButton">등록</button>
-</div>
+	</div>
 
 
 <body>
