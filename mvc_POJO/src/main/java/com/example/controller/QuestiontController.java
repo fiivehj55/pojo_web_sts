@@ -118,6 +118,25 @@ public class QuestiontController {
 		}
 	}
 	
+	@RequestMapping(value = "/bbsUpdateBefore", method = RequestMethod.GET)
+	public String bbsUpdateBefore(Model model,
+			@RequestParam Integer questNo,
+			/*@RequestParam Date questDate,
+			@RequestParam String memberId,
+			@RequestParam Integer questReplyNo,*/
+			HttpSession session) {
+		int result = 0;
+		Member member = (Member) session.getAttribute("user");
+		Question question = qservice.selectByNo(questNo);
+		
+		if(question != null){
+			model.addAttribute("question", question);
+			model.addAttribute("questNo",questNo);
+		}
+		// view의 이름을 리턴.
+		return "/jsp/QuestionUpdate";
+	}
+	
 	@RequestMapping(value = "/bbsView", method = RequestMethod.GET)
 	public String bbsView(Model model,
 			@RequestParam Integer questNo,
@@ -135,13 +154,7 @@ public class QuestiontController {
 		question.setQuestContent(questContent);
 		question.setMemberId(member.getMemId());
 		
-		result = qservice.updateQuestion(question);
-		if(result == 1){
-			return "jsp/QuestionUpdate";
-		}else{
-			// view의 이름을 리턴.
-			return "jsp/QuestionView";
-		}
+		return "jsp/QuestionView";
 	}
 	
 /*	@RequestMapping(value = "/bbsDelete",method=RequestMethod.GET)
