@@ -26,9 +26,8 @@
 <!-- bxSlider css파일 연결 -->
 <link href="js/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
 
-
-
 <style rel="stylesheet">
+
 body
 {
   background-color:#eee
