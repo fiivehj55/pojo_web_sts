@@ -215,8 +215,7 @@ input[type=checkbox]:checked + label:before {
 	<!-- Main -->
 	<div id="view">
 	<div id="main">
-		<form method="post" action="insertHouse" name="form">
-	
+		<form method="post" action="insertHouse" name="form">	
 		<div id="container">
 	<div class="animated-text text-center">
   <a href="#">
@@ -269,7 +268,7 @@ input[type=checkbox]:checked + label:before {
 				<label for="hfour">4명</label>
 				<p><br/>
 </div>
-	<div class="checkbox">
+			<div class="checkbox">
 				<span>편의시설</span>
 				<input type="checkbox" id="tv" name="tv" value="tv">
 				<label for="tv">TV</label>
@@ -312,9 +311,9 @@ input[type=checkbox]:checked + label:before {
 				</p>
 				<span>숙소 안내말</span> <br/>
 				<textarea rows="10" cols="50" name="infor"></textarea> <br/>
-			</fieldset>			
-		<a href="#" class="button button-style-1" id="backOne">이전단계</a>
+					<a href="#" class="button button-style-1" id="backOne">이전단계</a>
 		<a href="#" class="button button-style-1" id="nextThree">다음단계</a>	
+			</fieldset>			
 			</div>
 			</div>
 			<br/>

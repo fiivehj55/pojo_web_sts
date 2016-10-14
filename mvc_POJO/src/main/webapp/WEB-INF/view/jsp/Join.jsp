@@ -5,7 +5,75 @@
 <head>
 <title>Linear by TEMPLATED</title>
 <style>
-label {
+p, h1, form, button{border:0; margin:0; padding:0;}
+.spacer{clear:both; height:1px;}
+
+.myform{
+	margin:50px;
+	width:400px;
+	padding:14px;
+}
+
+#stylized{
+	border:solid 2px #b7ddf2;
+	background:#ebf4fb;
+}
+#stylized h1 {
+	font-size:16px;
+	font-weight:bold;
+	margin-bottom:8px;
+	font-family:nanumgothic,dotum;
+
+}
+#stylized p{
+	font-size:11px;
+	color:#666666;
+	margin-bottom:20px;
+	border-bottom:solid 1px #b7ddf2;
+	padding-bottom:10px;
+	font-family:dotum;
+}
+#stylized label{
+	display:block;
+	font-weight:bold;
+	text-align:right;
+	width:140px;
+	float:left;
+	font-family:tahoma;
+}
+#stylized .small{
+	color:#666666;
+	display:block;
+	font-size:11px;
+	font-weight:normal;
+	text-align:right;
+	width:140px;
+	font-family:dotum;
+	letter-spacing:-1px;
+}
+#stylized input{
+float:left;
+font-size:12px;
+padding:4px 2px;
+border:solid 1px #aacfe4;
+width:200px;
+margin:2px 0 20px 10px;
+}
+#stylized button{
+clear:both;
+margin-left:150px;
+width:125px;
+height:31px;
+text-align:center;
+line-height:31px;
+background-color:#000;
+color:#FFFFFF;
+font-size:11px;
+font-weight:bold;
+font-family:tahoma;
+}
+
+/* label {
 	width: 100px;
 	display: inline-block;
 }
@@ -15,20 +83,8 @@ label {
 	height: 400px; 
 	 padding: 20px;
 	margin: 200px auto;
-}
-
-
-
-/* .inputlabel{
- 	display:inline-block;
- 	width:100px;
- 	}	 */
- 
-/* #main {
-text-align:center;
-margin:0 auto;
 } */
- 
+
 #container {
 text-align:left;
 margin:0px 40% 0px 40%; 
@@ -45,61 +101,60 @@ margin:0px 40% 0px 40%;
 	<div id="main">
 	
 	<div id="container">
-		<h1>회원가입</h1>
-		<form action="join" method="post" id="myForm"  enctype="multipart/form-data">
-		
-		<span class="need">* 필수입력</span>
-				<label for="memId" class="inputlabel">아이디:</label> <input type="text" size="30"name="memId"
-					id="memId" placeholder="5~10자리 영문자와 숫자" /> <input type="button"
-					value="중복확인" id="check"> 
-				<p>
-		<span class="need">* 필수입력</span>
-					<br /> <label for="memPassword" class="inputlabel">비밀번호:</label> 
-					
-					
-					<input
-						type="password" size="30" name="memPassword" id="memPassword"
-						placeholder="영문+숫자 조합 8 이상" />
-				<p>
-		<span class="need">* 필수입력</span>
-					<label for="passok" class="inputlabel">비밀번호 확인:</label> <input type="password"
-						name="passok" size="30" id="passok" placeholder="영문+숫자 조합 8 이상" />
-				<p>
-					<span id="result"></span>
-				<p>
-		<span class="need">* 필수입력</span>
-					<label for="memName" class="inputlabel">이름:</label> <input type="text" name="memName" />
-				<p>
+	<div id="stylized" class="myform">
+	<h1>회원가입</h1>
+<label for="memId" class="inputlabel">ID
+<span class="small" >ID 입력</span>
+</label>
+<input type="text" name="name" id="name" /><button id="check">중복확인</button>
 
-		<span class="need">* 필수입력</span>
-					<label for="memGender" class="inputlabel">성별:</label> <input type="radio"
-						name="memGender" value="male" /> 남 <input type="radio"
-						name="memGender" value="female" />여
-				<p>
+<label>Password
+<span class="small">패스워드 6자 이상</span>
+</label>
+<input type="text" name="password" id="password" />
 
-		<span class="need">* 필수입력</span>
-					<label for="memNa" class="inputlabel">전화번호:</label> <select name="memNa">
-						<option value="SKT">SKT</option>
-						<option value="KT">KT</option>
-						<option value="U+">U+</option>
-					</select> <input type="text" name="memPhone" size="30"placeholder="-빼고 숫자만 입력" />
-				<p>
+<label for="memPassword" class="inputlabel">Password
+<span class="small">패스워드 6자 이상</span>
+</label>
+<input type="text" name="password" id="password" />
 
-		<span class="need">* 필수입력</span>
-					<label for="memEmail" class="inputlabel">이메일:</label> <input type="email"
-						name="memEmail" size="40" placeholder="ex) pojo@google.com" />
-				<p>
+<label for="memName" class="inputlabel">이름
+<span class="small" >이름 입력:</span>
+</label>
+<input type="text" name="memName" />
 
-					<label for="memImg" class="inputlabel">프로필 사진:</label> <input type="file"
-						name="memImg">
-				<p>
-					<label for="memIntro" >자기소개:</label>
-				<p>
-					<textarea cols="45" rows="10" name="memIntro"></textarea>
-				<p>
-					<input type="submit" value="가입" id="set"> <a href="index"><input
-						type="button" value="취소"></a>
-			</form>
+<label for="memNa" class="inputlabel">전화번호
+<span class="small" >전화번호:</span>
+</label>
+<input type="text" name="memPhone"/>
+
+<label for="memEmail" class="inputlabel">Email
+<span class="small">이메일주소</span>
+</label>
+<input type="email" name="memEmail" />
+
+<label for="memImg" class="inputlabel">프로필 사진:</label> <input type="file" name="memImg">
+<p>
+
+<label for="memIntro">자기소개
+<span class="small" ></span>
+</label>
+<input type="text" name="name" id="name" />
+
+
+
+<!-- <label>성별
+<span class="small" >ID 입력</span>
+</label>
+<input type="radio" name="memGender" value="male" /> 남 <input type="radio" name="memGender" value="female" />여 -->
+
+
+
+
+<button type="submit">Sign-up</button>
+<div class="spacer"></div>
+</div>
+			
 		</div>
 	</div>
 	<jsp:include page="./Footer.jsp"></jsp:include>
