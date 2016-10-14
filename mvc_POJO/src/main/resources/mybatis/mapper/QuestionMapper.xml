@@ -5,16 +5,6 @@
 	    select * from QUESTION ORDER BY quest_no DESC
 	</select>
 
-		<select id ="selectQuestionPage" parameterType="map" resultMap="questBase">
-	    select * 
-		from (
-			select sub.*,rownum as rnum
-			from(
-			  select * from QUESTION where MEMBER_ID = #{MemberId}
-	  		 ORDER BY quest_no DESC
-			) sub
-		) where rnum &gt;= #{low} and rnum&lt;= #{high}
-	</select>
 	<select id="selectByQuestNo" parameterType="int" resultMap="questBase">
 	    select * from QUESTION where QUEST_NO = #{questNo}
 	    ORDER BY quest_no DESC
@@ -39,15 +29,15 @@
 	<delete id="deleteQuestion" parameterType="int">
 	    delete QUESTION where QUEST_NO = #{questNo}
 	</delete>
-	
 	<!-- 페이징 -->
-	<select id="questPaging" resultMap="questBase">
+	<select id="questPaging" parameterType="map" resultMap="questBase">
 		select * from (
-			select sub.*, rownum as rnum from(
-				select * from QUESTION
+			select sub.*, rownum as rnum 
+			from(
+				select * from QUESTION where MEMBER_ID = #{id,jdbcType=CHAR}
 				order by QUEST_NO desc
 			) sub
-		) where rnum &gt; = 0 and rnum &lt; = 5
+		) where rnum &gt;= #{low,jdbcType=NUMERIC} and rnum &lt;= #{high,jdbcType=NUMERIC}
 	</select>
 	<!-- where rnum >= 0 and rnum <= 5  -->
 	<resultMap type="question" id="questBase">

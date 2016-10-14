@@ -1,6 +1,9 @@
 package com.example.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -53,9 +56,14 @@ public class QuestionDaoImpl implements QuestionDao {
 	}
 
 	@Override
-	public List<Question> selectPaging(SqlSessionTemplate template) {
+	public List<Question> selectPaging(SqlSessionTemplate template,int page,String id) {
 		String stmt = QUESTION_MAP + "questPaging";
-		return template.selectList(stmt);
+		Map<String, Object> map = new HashMap<>();
+		map.put("id",id);
+		map.put("low",(page-1)*5+1);
+		map.put("high",page*5);
+		
+		return template.selectList(stmt,map);
 	}
 
 }

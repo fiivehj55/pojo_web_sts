@@ -259,7 +259,7 @@ public class DaoTest {
 	
 	@Test
 	public void testQuestionPaging() {
-		List<Question> question = qdao.selectPaging(template);
+		List<Question> question = qdao.selectPaging(template,1,"jang");
 		logger.trace("List: {}", question);
 
 	}
