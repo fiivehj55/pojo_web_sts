@@ -41,6 +41,16 @@
 	<delete id="deleteHouse" parameterType="int">
 		delete HOUSE where HOUSE_NO = #{houseNo}
 	</delete>
+	
+	<!-- 페이징 -->
+	<select id="housePaging" resultMap="houseBase">
+		select * from (
+			select sub.*, rownum as rnum from(
+				select * from HOUSE
+				order by HOUSE_NO desc
+			) sub
+		) where rnum &gt; = #{low} and rnum &lt; = #{high}
+	</select>
 
 	<resultMap type="house" id="houseBase">
 		<id column="HOSUE_NO" property="houseNo" />
