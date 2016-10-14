@@ -61,6 +61,11 @@ public class QuestionServiceImp implements QuestionService {
 		result = dao.updateQuestion(template, question);
 		return result;
 	}
-	
+	@Override
+	public List<Question> selectByIdPage(String memberId, int page) {
+		List<Question> question = null;
+		question = dao.selectPaging(template, page, memberId);
+		return question;
+	}
 	
 }
