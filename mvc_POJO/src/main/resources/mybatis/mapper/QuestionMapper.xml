@@ -4,7 +4,17 @@
 	<select id ="selectAllQuestion" resultMap="questBase">
 	    select * from QUESTION ORDER BY quest_no DESC
 	</select>
-	
+
+		<select id ="selectQuestionPage" parameterType="map" resultMap="questBase">
+	    select * 
+		from (
+			select sub.*,rownum as rnum
+			from(
+			  select * from QUESTION where MEMBER_ID = #{MemberId}
+	  		 ORDER BY quest_no DESC
+			) sub
+		) where rnum &gt;= #{low} and rnum&lt;= #{high}
+	</select>
 	<select id="selectByQuestNo" parameterType="int" resultMap="questBase">
 	    select * from QUESTION where QUEST_NO = #{questNo}
 	    ORDER BY quest_no DESC
