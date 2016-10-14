@@ -1,6 +1,8 @@
 package com.example.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Component;
@@ -10,8 +12,6 @@ import com.example.dto.House;
 @Component
 public class HouseDaoImpl implements HouseDao {
 	// 하우스 IMPL
-
-
 	private final String HOUSE_MAP = "pojo.web.dao.houseMapper.";
 	
 	@Override
@@ -53,5 +53,14 @@ public class HouseDaoImpl implements HouseDao {
 	public List<House> searchHouses(SqlSessionTemplate template, String key) {
 		String stmt = HOUSE_MAP + "searchHouses";
 		return template.selectList(stmt, key);
+	}
+
+	@Override
+	public List<House> housePaging(SqlSessionTemplate template, int page) {
+		String stmt = HOUSE_MAP + "housePaging";
+		Map<String, Object> map = new HashMap<>();
+		map.put("low",(page-1)*5+1);
+		map.put("high",page*5);
+		return template.selectList(stmt,map);
 	}
 }

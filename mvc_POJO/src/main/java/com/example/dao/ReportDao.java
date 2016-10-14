@@ -2,6 +2,8 @@ package com.example.dao;
 
 import java.util.List;
 import org.mybatis.spring.SqlSessionTemplate;
+
+import com.example.dto.Question;
 import com.example.dto.Report;
 
 
@@ -16,5 +18,7 @@ public interface ReportDao {
 	int updateReport(SqlSessionTemplate template, Report report);
 	
 	int deleteReport(SqlSessionTemplate template, int reportNo);
+	
+	List<Report> selectPaging(SqlSessionTemplate template,int page, String id);
 	
 }

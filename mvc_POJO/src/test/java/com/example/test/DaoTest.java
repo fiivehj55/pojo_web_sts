@@ -161,6 +161,13 @@ public class DaoTest {
 		logger.trace("List: {}", house);
 
 	}
+	
+	@Test
+	public void testHousePaging() {
+		List<House> house = hdao.housePaging(template, 1);
+		logger.trace("List: {}", house);
+
+	}
 
 	/** REGIST_HOUSE */
 	@Test
@@ -259,7 +266,7 @@ public class DaoTest {
 	
 	@Test
 	public void testQuestionPaging() {
-		List<Question> question = qdao.selectPaging(template);
+		List<Question> question = qdao.selectPaging(template,1,"jang");
 		logger.trace("List: {}", question);
 
 	}
@@ -369,6 +376,13 @@ public class DaoTest {
 		int result = rpdao.deleteReport(template, 1);
 		rpdao.deleteReport(template, 1);
 		logger.trace("List: {}", result);
+
+	}
+	
+	@Test
+	public void testReportPaging() {
+		List<Report> report = rpdao.selectPaging(template, 1, "jang");
+		logger.trace("List: {}", report);
 
 	}
 

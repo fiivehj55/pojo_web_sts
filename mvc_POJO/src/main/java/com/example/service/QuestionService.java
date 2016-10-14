@@ -17,5 +17,6 @@ public interface QuestionService {
 	public Question selectByNo(Integer questNo);
 	// 문의 게시글 업데이트
 	public int updateQuestion(Question question);
-	
+	// 문의 게시글 페이징
+	public List<Question> selectByIdPage(String memberId,int page);
 }
