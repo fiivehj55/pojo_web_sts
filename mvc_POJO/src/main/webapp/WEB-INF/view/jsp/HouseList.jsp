@@ -1,9 +1,8 @@
 <!-- 게시판 페이지 -->
-<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<% %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -94,8 +93,7 @@ label {
 		</div>
 			
 			<h1>${result}</h1>
-			<a href="insertHouse"> <input type="button" value="하우스 등록" /></a> <a
-				href="insertHouse1"> <input type="button" value="하우스 등록 TEST" /></a>
+			<a href="insertHouse" class="button button-style1" >하우스 등록</a> 
 		</div>
 	</div>
 	<jsp:include page="./Footer.jsp"></jsp:include>

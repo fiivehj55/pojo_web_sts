@@ -2,7 +2,6 @@ package com.example.controller;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -16,6 +15,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.example.dto.House;
@@ -38,6 +38,8 @@ public class HouseController {
 
 	@Autowired
 	ReplyService Rpservice;
+	
+	private static final String uploadDir = "c:\\Temp/upload/";
 
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
 	public String search(Model model, HttpSession session) {
@@ -47,6 +49,10 @@ public class HouseController {
 	}
 	@RequestMapping(value = "/insertHouse", method = RequestMethod.GET)
 	public String insertHouseGet(Model model, HttpSession session) {
+		Member user = (Member) session.getAttribute("user");
+		if(user == null){
+			return "jsp/Login";
+		}
 		return "jsp/HouseJoin";
 	}
 	@RequestMapping(value = "/jusoPopup")
@@ -54,18 +60,22 @@ public class HouseController {
 		return "jsp/jusoPopup";
 	}
 	@RequestMapping(value = "/insertHouse", method = RequestMethod.POST)
-	public String insertHousePost(Model model, @RequestParam String room, @RequestParam String bath,
+	public String insertHousePost(Model model, 
+			@RequestParam String room, @RequestParam String bath,
 			@RequestParam String hosting, @RequestParam(value = "tv", defaultValue = "null") String tv,
 			@RequestParam(value = "aircon", defaultValue = "null") String aircon,
 			@RequestParam(value = "wifi", defaultValue = "null") String wifi,
 			@RequestParam(value = "elebe", defaultValue = "null") String elebe,
 			@RequestParam(value = "washing", defaultValue = "null") String washing, @RequestParam String rname,
-			@RequestParam String infor, @RequestParam String photo, @RequestParam String addr, @RequestParam String day,
-			@RequestParam Integer price, HttpSession session) {
+			@RequestParam String infor, @RequestParam String photo,
+			@RequestParam String addr, @RequestParam String day,
+			@RequestParam Integer price, HttpSession session) throws IOException {
 		int result = 0;
 		Member user = (Member) session.getAttribute("user");
 		House house = new House();
-		/* house.setHouseNo(null); */
+		
+	
+		
 		house.setHouseName(rname);
 		house.setHouseAddress(addr);
 		house.setHousePrice(price);
@@ -85,10 +95,25 @@ public class HouseController {
 		house.setHouseDay(day);
 		session.setAttribute("house", house);
 		result = hservice.insertHouse(house);
+		System.out.println("방금 등록된 하우스번호 : "+house.getHouseNo());
+/*		
+		File idfile = new File(uploadDir + user.getMemId());
+		// id파일 존재하지않으면 디렉토리 생성 아니면 회원가입화면으로
+		if (!idfile.exists())
+			idfile.mkdir();
+
+		File introHouse = new File(uploadDir + user.getMemId() + "/" + house.getHouseNo());
+		if (!introHouse.exists())
+			introHouse.mkdir();
+
+		File file = new File(uploadDir + user.getMemId() + "/" + house.getHouseNo() + "/" + photo.getOriginalFilename());
+		photo.transferTo(file);
+		String imgName = photo.getOriginalFilename();*/
+		
 		if (result != 1) {
 			return "jsp/HouseJoin";
 		} else {
-			return "jsp/HouseList";
+			return "redirect:/search";
 		}
 	}
 
@@ -149,10 +174,9 @@ public class HouseController {
 		return "redirect:/search";
 	}
 
-	private static final String uploadDir = "c:Temp/upload/";
-
 	@RequestMapping(value = "/updateHouse", method = RequestMethod.POST)
-	public String HouseUpdatePost(Model model, @RequestParam Integer houseNo, @RequestParam String houseRoom,
+	public String HouseUpdatePost(Model model, 
+			@RequestParam Integer houseNo, @RequestParam String houseRoom,
 			@RequestParam String houseBath, @RequestParam String houseHosting,
 			@RequestParam(value = "tv", defaultValue = "null") String houseTv,
 			@RequestParam(value = "aircon", defaultValue = "null") String houseAircon,
@@ -162,18 +186,17 @@ public class HouseController {
 			@RequestParam String houseInfo, @RequestParam MultipartFile houseImg, @RequestParam String houseAddress,
 			@RequestParam String houseDay, @RequestParam Integer housePrice, HttpSession session) throws IOException {
 		Member user = (Member) session.getAttribute("user");
-
 		File idfile = new File(uploadDir + user.getMemId());
 		// id파일 존재하지않으면 디렉토리 생성 아니면 회원가입화면으로
 		if (!idfile.exists())
 			idfile.mkdir();
 
-		File introHouse = new File(uploadDir + "/" + user.getMemId() + "/" + houseNo);
+		File introHouse = new File(uploadDir + user.getMemId() + "/" + houseNo);
 		if (!introHouse.exists())
 			introHouse.mkdir();
 
 		File file = new File(uploadDir + user.getMemId() + "/" + houseNo + "/" + houseImg.getOriginalFilename());
-		//houseImg.transferTo(file);
+		houseImg.transferTo(file);
 		String imgName = houseImg.getOriginalFilename();
 
 		House house = new House();

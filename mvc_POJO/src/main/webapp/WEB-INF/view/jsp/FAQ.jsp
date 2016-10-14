@@ -1,5 +1,5 @@
 <!-- FAQ-자주하는 질문 -->
-<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,7 +39,7 @@ label {
 	<div class="divs" id="a6">6답변</div>
 <p>-프로필 수정(탈퇴),프로필 사진 수정은 어떻게 하나요?
 
-			<a href="index"><button>뒤로가기</button></a>
+		<p>	<a href="#" class="button button-style1" >뒤로가기</a>
 		</div>
 	</div>
 

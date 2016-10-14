@@ -14,8 +14,16 @@
 		select * from HOUSE where HOUSE_NO = #{houseNo}
 		ORDER BY HOUSE_NO DESC
 	</select>
+	
+	<select id="searchHouses" parameterType="string" resultMap="houseBase">
+		select * from HOUSE where HOUSE_NAME LIKE '%'||#{houseName}||'%'
+		ORDER BY HOUSE_NO DESC
+	</select>
 
 	<insert id="insertHouse" parameterType="house">
+	<selectKey keyProperty="houseNo" resultType="int" order="AFTER">
+	select SEQ_HOUSE.currval as houseNo from dual
+	</selectKey>
 		insert into HOUSE 
 		values(SEQ_HOUSE.nextval, #{houseName}, #{houseAddress}, #{housePrice}, #{houseScore}, #{houseInfo}, #{memberId}, 
 		#{detailId}, #{houseRoom}, #{houseBath}, #{houseHosting}, #{houseTv}, #{houseAircon}, #{houseWifi}, #{houseElebe}, #{houseWashing}, #{houseImg}, #{houseDay})

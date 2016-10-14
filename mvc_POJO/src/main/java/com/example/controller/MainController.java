@@ -34,4 +34,11 @@ public class MainController {
 		//view의 이름을 리턴.
 		return "jsp/FAQ";
 	}
+	
+	@RequestMapping(value = "/terms",method=RequestMethod.GET)
+	public String terms(Model model){
+		
+		//view의 이름을 리턴.
+		return "jsp/Terms";
+	}
 }

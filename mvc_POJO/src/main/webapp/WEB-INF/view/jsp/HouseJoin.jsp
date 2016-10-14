@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="sform" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
@@ -137,7 +137,7 @@ label {
 				상세 주소<input type="text" id="yy" name="postcodify_details"  value="" /><br />
 				<p>
 				<label for="photo">사진</label> 
-				<input type="file" name="photo"/> <br/>
+				<input type="file" name="photo"  multiple="multiple"/> <br/>
 				</p>
 				<label for="infor">숙소 안내말</label> <br/>
 				<textarea rows="5" cols="35" name="infor"></textarea> <br/>
@@ -169,7 +169,7 @@ label {
 				<br/>
 			</fieldset>
 				<input type="button" id="backTwo" value="이전단계">
-			<input type="submit" id="next" name="next" value="다음 단계"/> <br/>
+			<input type="submit" id="next" name="next" value="하우스 등록"/> <br/>
 			</div>
 			</div>
 		</form>
@@ -221,6 +221,7 @@ $(document).ready(function() {
 				bath:"required",
 				hosting:"required",
 				price:"required",
+				photo:"required",
 				day:"required"
 		},
 		messages:{
@@ -228,7 +229,8 @@ $(document).ready(function() {
 				bath:"Please specify bath count",
 				hosting:"Please specify hosting count",
 				price:{required:"Please specify your price"},
-				day:"Please specify payment cycle"
+				day:"Please specify payment cycle",
+				photo:"Must one more picture"
 		}
 	});
 });
