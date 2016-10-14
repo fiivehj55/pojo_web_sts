@@ -48,6 +48,10 @@ public class HouseController {
 	}
 	@RequestMapping(value = "/insertHouse", method = RequestMethod.GET)
 	public String insertHouseGet(Model model, HttpSession session) {
+		Member user = (Member) session.getAttribute("user");
+		if(user == null){
+			return "jsp/Login";
+		}
 		return "jsp/HouseJoin";
 	}
 	@RequestMapping(value = "/jusoPopup")
@@ -91,17 +95,17 @@ public class HouseController {
 		session.setAttribute("house", house);
 		result = hservice.insertHouse(house);
 		System.out.println("방금 등록된 하우스번호 : "+house.getHouseNo());
-		
-		/*File idfile = new File(uploadDir + user.getMemId());
+/*		
+		File idfile = new File(uploadDir + user.getMemId());
 		// id파일 존재하지않으면 디렉토리 생성 아니면 회원가입화면으로
 		if (!idfile.exists())
 			idfile.mkdir();
 
-		File introHouse = new File(uploadDir + user.getMemId() + "/" + houseNo);
+		File introHouse = new File(uploadDir + user.getMemId() + "/" + house.getHouseNo());
 		if (!introHouse.exists())
 			introHouse.mkdir();
 
-		File file = new File(uploadDir + user.getMemId() + "/" + houseNo + "/" + photo.getOriginalFilename());
+		File file = new File(uploadDir + user.getMemId() + "/" + house.getHouseNo() + "/" + photo.getOriginalFilename());
 		photo.transferTo(file);
 		String imgName = photo.getOriginalFilename();*/
 		
