@@ -5,6 +5,106 @@
 <head>
 <title>Linear by TEMPLATED</title>
 <style>
+
+
+
+
+
+/* 안내문 css */
+body {
+  background: #FFF3CD;
+  font: 18px/22px Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.animated-text {
+  font-size: 40px;
+  line-height: 50px;
+  margin: 10px 0;
+}
+.animated-text a {
+  color: #666;
+  text-decoration: none;
+  text-shadow: 1px 1px 0px #fff, 3px 1px 0px rgba(0, 0, 0, 0.15);
+  -webkit-text-shadow: 1px 1px 0px #fff, 3px 1px 0px rgba(0, 0, 0, 0.15);
+}
+.animated-text a:hover {
+  color: #c5a47e;
+}
+.animated-text span {
+  display: inline-block;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+.animated-text span:nth-of-type(1) {
+  transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+}
+.animated-text span:nth-of-type(2) {
+  transition-delay: 0.125s;
+  -webkit-transition-delay: 0.125s;
+}
+.animated-text span:nth-of-type(3) {
+  transition-delay: 0.15s;
+  -webkit-transition-delay: 0.15s;
+}
+.animated-text span:nth-of-type(4) {
+  transition-delay: 0.175s;
+  -webkit-transition-delay: 0.175s;
+}
+.animated-text span:nth-of-type(5) {
+  transition-delay: 0.2s;
+  -webkit-transition-delay: 0.2s;
+}
+.animated-text span:nth-of-type(6) {
+  transition-delay: 0.225s;
+  -webkit-transition-delay: 0.225s;
+}
+.animated-text span:nth-of-type(7) {
+  transition-delay: 0.25s;
+  -webkit-transition-delay: 0.25s;
+}
+.animated-text span:nth-of-type(8) {
+  transition-delay: 0.275s;
+  -webkit-transition-delay: 0.275s;
+  margin-right: 8px;
+}
+.animated-text span:nth-of-type(9) {
+  transition-delay: 0.3s;
+  -webkit-transition-delay: 0.3s;
+}
+.animated-text span:nth-of-type(10) {
+  transition-delay: 0.325s;
+  -webkit-transition-delay: 0.325s;
+}
+.animated-text span:nth-of-type(11) {
+  transition-delay: 0.350s;
+  -webkit-transition-delay: 0.350s;
+}
+.animated-text span:nth-of-type(12) {
+  transition-delay: 0.375s;
+  -webkit-transition-delay: 0.375s;
+}
+
+.guide-box {
+  color: #fefefe;
+  border-width: 1px 0;
+  border-style: solid;
+  border-color: #ddd;
+}
+.guide-box span {
+  margin: 2px 0;
+  background: #000;
+  padding: 15px;
+  display: block;
+}
+/* 안내문 css 종료 */
+
+
  #container {
 	text-align:left;
 	margin:0px 10% 0px 20%;
@@ -44,8 +144,69 @@ label {
 }
 
 
+.checkbox { 
+  position: relative; 
 
+ 
+  top: -0.375rem; 
+  margin: 0 1rem 0 0; 
+  cursor: pointer; 
+} 
 
+/* 라디오버튼 체크박스 css 시작 */
+label {
+ display: inline-block; 
+  cursor: pointer;
+  position: relative;
+  padding-left: 25px;
+  margin-right: 15px;
+  font-size: 13px;
+}
+input[type=radio] {
+  display: none;
+}
+
+label:before {
+  content: "";
+ display: inline-block;
+ 
+  width: 20px;
+  height: 20px;
+ 
+  margin-right: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 1px;
+  background-color:#FFD8D8;
+  box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+}
+
+.radio label:before {
+  border-radius: 20px;
+}
+
+input[type=radio]:checked + label:before {
+    content: "\2022";
+    color: #FFFFFF;
+    font-size: 43px;
+    text-align: center;
+    line-height: 22px;
+}
+input[type=checkbox] {
+  display: none;
+}
+.checkbox label:before {
+  border-radius: 3px;
+}
+input[type=checkbox]:checked + label:before {
+  content: "\2713";
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+  font-size: 30px;
+  color: #f3f3f3;
+  text-align: center;
+    line-height: 15px;
+}
+/* 라디오버튼 체크박스 css 종료 */
 </style>
 
 </head>
@@ -57,14 +218,22 @@ label {
 		<form method="post" action="insertHouse" name="form">
 	
 		<div id="container">
-		<h1>하우스 등록</h1>
-		
-			<div id="one" style="display: block;">
-			
+	<div class="animated-text text-center">
+  <a href="#">
+  <span>MINJEONG님</span>
+    <span>반</span>
+    <span>갑</span>
+    <span>습</span>
+    <span>니</span>
+    <span>다!</span>
+  </a>
+   <p> 호스트가 될 준비를 시작해보세요.	
+</div>	
+			<div id="one" style="display: block;">		
 			<fieldset>
-				
-				<legend>호스팅 1단계</legend>
-				<label for="room">방의 개수 : </label>
+		<legend>호스팅 1단계  </legend>	
+		<div class="radio">
+			<span>방의개수</span>
 				<input type="radio" id="rone" name="room" value="1개">
 				<label for="rone">1개</label>
 				
@@ -73,9 +242,9 @@ label {
 				
 				<input type="radio" id="rthree" name="room" value="3개">
 				<label for="rthree">3개</label>
-				<br/>
+				<p><br/>
 				
-				<label for="bath">욕실 개수 : </label>
+				<span>욕실개수</span>
 				<input type="radio" id="bone" name="bath" value="1개">
 				<label for="bone">1개</label>
 				
@@ -84,9 +253,9 @@ label {
 				
 				<input type="radio" id="bthree" name="bath" value="3개">
 				<label for="bthree">3개</label>
-				<br/>
+				<p>
 				
-				<label for="hosting">숙박 인원 : </label>
+				<span>숙박인원</span>
 				<input type="radio" id="hone" name="hosting" value="1개">
 				<label for="hone">1명</label>
 				
@@ -98,9 +267,10 @@ label {
 				
 				<input type="radio" id="hfour" name="hosting" value="4개">
 				<label for="hfour">4명</label>
-				<br/>
-				
-				<label for="market">편의 시설 : </label>
+				<p><br/>
+</div>
+	<div class="checkbox">
+				<span>편의시설</span>
 				<input type="checkbox" id="tv" name="tv" value="tv">
 				<label for="tv">TV</label>
 				<input type="checkbox" id="aircon" name="aircon" value="aircon">
@@ -112,49 +282,50 @@ label {
 				<input type="checkbox" id="washing" name="washing" value="washing">
 				<label for="washing">세탁기</label>
 				<p>
-				<input type="button" id="nextTwo" value="다음단계">
+		</div>
+				<a href="#" class="button button-style-1" id="nextTwo">다음단계</a>
 			</fieldset>
 			</div>
 			</div>
 			<br/>
+			
 			<div id="container">
 			<div id ="two" style="display: none;">
 			<fieldset>
-				<legend>호스팅 2단계</legend>
-				
+				<legend>호스팅 2단계</legend>			
 				<p>
-				<label for="rname" class="inputlabel">숙소 이름 : </label>
-				<input type="text" id="rname" name="rname"/>
+				<span>숙소이름</span>
+				<input type="text" id="rname" name="rname" size="50"/>
 				</p>
 				
-				<label for="addr" class="inputlabel">주소 : </label>
-				<input type="text" id="addr" name="addr"/> 
-				<p>
+				<span>주소</span>
+				<input type="text" id="addr" name="addr" size="50"/> 
+				<p>			
+				<br/>			
+				<a href="#" class="button button-style-1" id="postcodify_search_button">주소검색</a>			
 				
-				<br/>
-				<input type="button" id="postcodify_search_button" value="주소 검색">
-				<input type="text" id="xx" name="postcodify_address"  value=""  /><br />
-				상세 주소<input type="text" id="yy" name="postcodify_details"  value="" /><br />
+				<input type="text" id="xx" name="postcodify_address"  value="" size="50" /><br />
+				상세 주소<input type="text" id="yy" name="postcodify_details"  value="" size="40"/><br />
 				<p>
-				<label for="photo">사진</label> 
+				<span>사진</span>
 				<input type="file" name="photo"  multiple="multiple"/> <br/>
 				</p>
-				<label for="infor">숙소 안내말</label> <br/>
-				<textarea rows="5" cols="35" name="infor"></textarea> <br/>
-			</fieldset>	
-				<input type="button" id="backOne" value="이전단계">
-				<input type="button" id="nextThree" value="다음단계">
+				<span>숙소 안내말</span> <br/>
+				<textarea rows="10" cols="50" name="infor"></textarea> <br/>
+			</fieldset>			
+		<a href="#" class="button button-style-1" id="backOne">이전단계</a>
+		<a href="#" class="button button-style-1" id="nextThree">다음단계</a>	
 			</div>
 			</div>
 			<br/>
+		
 			<div id="container">
 			<div id="three" style="display: none;">
 			<fieldset>
-				<legend>호스팅 3단계</legend>
+				<legend>호스팅 3단계 </legend>			
+
+				<div class="radio">
 				
-				<img src="/img/mage_tp.jpg"/>
-				
-				<label for="day"></label>
 				<input type="radio" id="rone" name="day" value="일">
 				<label for="dd">일</label>
 				
@@ -166,14 +337,17 @@ label {
 				
 				<label for="price">가격 : </label>
 				<input type="number" id="price" name="price"/>
+
+
+</div>
+
 				<br/>
 			</fieldset>
-				<input type="button" id="backTwo" value="이전단계">
-			<input type="submit" id="next" name="next" value="하우스 등록"/> <br/>
+	<a href="#" class="button button-style-1" id="backTwo">이전단계</a>
+	<input type="submit" class="button button-style-1"  id="next" name="next" value="하우스등록" /> </a>
 			</div>
 			</div>
 		</form>
-		
 		</div>
 	</div>
 	
