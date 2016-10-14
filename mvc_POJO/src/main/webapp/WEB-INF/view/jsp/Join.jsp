@@ -34,6 +34,9 @@ text-align:left;
 margin:0px 40% 0px 40%; 
 /* 상좌하우 */
 }
+.need{
+	color: red;
+}
  </style>
 </head>
 <body class="header">
@@ -45,10 +48,12 @@ margin:0px 40% 0px 40%;
 		<h1>회원가입</h1>
 		<form action="join" method="post" id="myForm"  enctype="multipart/form-data">
 		
+		<span class="need">* 필수입력</span>
 				<label for="memId" class="inputlabel">아이디:</label> <input type="text" size="30"name="memId"
 					id="memId" placeholder="5~10자리 영문자와 숫자" /> <input type="button"
 					value="중복확인" id="check"> 
 				<p>
+		<span class="need">* 필수입력</span>
 					<br /> <label for="memPassword" class="inputlabel">비밀번호:</label> 
 					
 					
@@ -56,19 +61,23 @@ margin:0px 40% 0px 40%;
 						type="password" size="30" name="memPassword" id="memPassword"
 						placeholder="영문+숫자 조합 8 이상" />
 				<p>
+		<span class="need">* 필수입력</span>
 					<label for="passok" class="inputlabel">비밀번호 확인:</label> <input type="password"
 						name="passok" size="30" id="passok" placeholder="영문+숫자 조합 8 이상" />
 				<p>
 					<span id="result"></span>
 				<p>
+		<span class="need">* 필수입력</span>
 					<label for="memName" class="inputlabel">이름:</label> <input type="text" name="memName" />
 				<p>
 
+		<span class="need">* 필수입력</span>
 					<label for="memGender" class="inputlabel">성별:</label> <input type="radio"
 						name="memGender" value="male" /> 남 <input type="radio"
 						name="memGender" value="female" />여
 				<p>
 
+		<span class="need">* 필수입력</span>
 					<label for="memNa" class="inputlabel">전화번호:</label> <select name="memNa">
 						<option value="SKT">SKT</option>
 						<option value="KT">KT</option>
@@ -76,6 +85,7 @@ margin:0px 40% 0px 40%;
 					</select> <input type="text" name="memPhone" size="30"placeholder="-빼고 숫자만 입력" />
 				<p>
 
+		<span class="need">* 필수입력</span>
 					<label for="memEmail" class="inputlabel">이메일:</label> <input type="email"
 						name="memEmail" size="40" placeholder="ex) pojo@google.com" />
 				<p>
