@@ -21,6 +21,9 @@
 	</select>
 
 	<insert id="insertHouse" parameterType="house">
+	<selectKey keyProperty="houseNo" resultType="int" order="AFTER">
+	select SEQ_HOUSE.currval as houseNo from dual
+	</selectKey>
 		insert into HOUSE 
 		values(SEQ_HOUSE.nextval, #{houseName}, #{houseAddress}, #{housePrice}, #{houseScore}, #{houseInfo}, #{memberId}, 
 		#{detailId}, #{houseRoom}, #{houseBath}, #{houseHosting}, #{houseTv}, #{houseAircon}, #{houseWifi}, #{houseElebe}, #{houseWashing}, #{houseImg}, #{houseDay})
