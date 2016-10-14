@@ -197,7 +197,7 @@ input {
    <input type="password" id="password" name="password" class="signUpInput" placeholder="비밀번호를 입력하세요" required>
    
    <input type="submit" value="로그인" class="signUpButton2">
-   <a href="join"> <input type="button" value="회원가입" class="signUpButton2"/></a>
+   <a href="terms"> <input type="button" value="회원가입" class="signUpButton2"/></a>
   	<a href="findId"> <input type="button" class="signUpButton2" value="아이디 찾기" /></a> <a
 					href="findPass"> <input type="button" class="signUpButton2" value="비밀번호 찾기" /></a> 
    
