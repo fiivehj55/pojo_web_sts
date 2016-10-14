@@ -9,6 +9,21 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 
+<style>
+	.inputReply{
+		width:80%;
+		height: 100px;
+	}
+	
+	.replyContent{
+		height: 100px;
+	}
+	
+	#boardcss_list_table{
+	background:#EAEAEA;
+	}
+</style>
+
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
@@ -27,21 +42,65 @@
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/css/style-desktop.css" />
 
+
 </head>
-<body class="">
-	<div id="main">
-		<div id="content" class="auto_center">
-			<!-- 등록버튼 시작 -->
-			<div id="boardcss_list_add_button_table">
-				<div class="boardcss_list_add_button">
-					<a href="inserthtr"><button class="add_button">댓글 등록</button></a>
-					<ul></ul>
-				</div>
-			</div>
+
+			
 			<!-- 등록버튼 종료 -->
 
-			<h1>후기 댓글</h1>
-			<!-- 테이블 시작 -->
+			<h2>후기 댓글</h2>
+			<p>
+			<div id = "boardcss_list_table">
+			<ul class = "listReply">
+				<div class = "replyContent">
+					<span class = "replyId"></span>ID
+					<span class = "replyDate"></span>2016.10.14</br>
+					<span class = "replyTxt">
+						방이 너무 좋았습니다. 깔끔히 정리 정돈 잘되있네요.
+					</span>
+				</div>
+				<hr>
+				
+						
+				
+				<div class = "replyContent">
+					<span class = "replyId"></span>ID
+					<span class = "replyDate"></span>2016.10.14</br>
+					<span class = "replyTxt">
+						살짝 아쉬웠어요. 수압이 별로 좋지 않네요.
+					</span>
+				</div>
+				<hr>
+				
+				<div class = "replyContent">
+					<span class = "replyId"></span>ID
+					<span class = "replyDate"></span>2016.10.14</br>
+					<span class = "replyTxt">
+						좋은 지적 감사합니다. 다음에는 그러지 않도록 할게요.
+					</span>
+				</div>
+				<hr>
+				
+				<div class = "replyContent">
+					<span class = "replyId"></span>ID
+					<span class = "replyDate"></span>2016.10.14</br>
+					<span class = "replyTxt">
+						방이 너무 좋았습니다. 깔끔히 정리 정돈 잘되있네요.
+					</span>
+				</div>
+				<hr>
+				
+				<textarea name= "comment" tabindex="3" class="inputReply"
+				placeholder="여러분의 소중한 댓글을 입력해주세요.">
+				여러분의 소중한 댓글을 입력해주세요.
+				</textarea>
+				<button class="addButton">등록</button>
+			</ul>
+			</div>
+			
+			
+
+<%-- 			<!-- 테이블 시작 -->
 			<div class="boardcss_list_table">
 				<table class="list_table">
 					<caption>POJO의 하우스 게시판 댓글</caption>
@@ -93,7 +152,7 @@
 				</form>
 			</div>
 			
-			<%-- <div id="boardcss_list_search" style="display: block;">
+			<div id="boardcss_list_search" style="display: block;">
 				<ul>
 					<li>제목</li>
 					<li><input id="search" type="text" name="search_subject"
@@ -136,11 +195,11 @@
 					<a class="closeButton"
 						onclick="document.getElementById('boardcss_list_search').style.display = 'block'; document.getElementById('detailSearch').style.display = 'none';">닫기▲</a>
 				</div>
-			</div> --%>
+			</div>
 			<!-- 상세검색 테이블 종료 -->
 		</div>
 	</div>
-</head>
+</head> --%>
 <body>
 
 </body>
