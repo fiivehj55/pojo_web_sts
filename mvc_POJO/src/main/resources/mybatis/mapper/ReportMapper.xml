@@ -30,7 +30,7 @@
 	<select id="reportPaging" parameterType="map" resultMap="reportBase">
 		select * from (
 			select sub.*, rownum as rnum from(
-				select * from REPORT where MEMBER_ID = #{id,jdbcType=CHAR}
+				select * from REPORT 
 				order by REPORT_NO desc
 			) sub
 		)  where rnum &gt;= #{low,jdbcType=NUMERIC} and rnum &lt;= #{high,jdbcType=NUMERIC}

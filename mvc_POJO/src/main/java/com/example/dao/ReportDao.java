@@ -19,6 +19,6 @@ public interface ReportDao {
 	
 	int deleteReport(SqlSessionTemplate template, int reportNo);
 	
-	List<Report> selectPaging(SqlSessionTemplate template,int page, String id);
+	List<Report> selectPaging(SqlSessionTemplate template,int page);
 	
 }

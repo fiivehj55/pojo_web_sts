@@ -74,14 +74,13 @@ label {
 					<tbody>
 						<c:choose>
 							<c:when test="${fn:length(Report) > 0}">
-								<c:forEach items="${Report }" var="row">
+								<c:forEach items="${Report}" var="row">
 									<tr>
 										<td>${row.reportNo }</td>
 										<td>${row.reportCategory }</td>
 										<td><a href="reportView?reportNo=${row.reportNo }">${row.reportSubject }</a></td>
 										<td><a>${row.memberId }</a></td>
-										<td><fmt:formatDate pattern="yyyy/MM/dd" value="${row.regitDate }" /></td>
-										
+										<td><fmt:formatDate pattern="yyyy/MM/dd" value="${row.regitDate }" /></td>				
 									</tr>
 								</c:forEach>
 							</c:when>
@@ -105,7 +104,32 @@ label {
 						onclick="document.getElementById('boardcss_list_search').style.display = 'none'; document.getElementById('detailSearch').style.display = 'block';">상세검색▼</li>
 				</ul>
 			</div>
-
+			<div>
+				<c:if test="${page > 5}">
+			<a href="report?page=${page-5}">
+							<input type="button" value="이전"></a>
+				</c:if>
+						<a href="report?page=${num}">${num}</a>
+				<c:set var="down" value="-3"/>
+				<c:forEach var="num" begin="1" end="2">
+					<c:set var="down" value="${down+1}"/>
+						<c:if test="${0 <page+ down}">
+						<a href="report?page=${page+down}">${page+down}</a>
+						</c:if>
+				</c:forEach>
+				<span>${page}</span>
+				<c:forEach var="num" begin="1" end="2">
+						<c:if test="${page+num <= max}">
+						<a href="report?page=${page+num}">${page+num}</a>
+						</c:if>
+				</c:forEach>
+				<c:if test="${page < max-5}">
+				
+			<a href="report?page=${page+5}">
+				<input type="button" value="다음">
+				</a>
+				</c:if>
+			</div>
 			<!-- 상세검색 테이블 시작 -->
 			<div id="detailSearch" class="detailSearch" style="display: none;">
 				<table class="detailSearch_table" summary="" border="0">
