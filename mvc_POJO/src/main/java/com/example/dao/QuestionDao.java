@@ -18,4 +18,6 @@ public interface QuestionDao {
 	
 	int deleteQuestion(SqlSessionTemplate template, int questNo);
 	
+	List<Question> selectPaging(SqlSessionTemplate template);
+	
 }
