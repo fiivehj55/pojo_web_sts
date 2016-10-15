@@ -294,15 +294,19 @@ body{
 	
 
 		</ul>
+	
+
 	<!-- Featured -->
 	<div id="featured">
 		<div class="container">
 			<header>
-				<input id="text_box" type="text" size="100"	placeholder="두정동 또는 건물이름을 입력하세요"> 
-				<a href="#" class="button button-style1" >확인</a>
+				<form method="get" action="searchbar">
+					<input id="text_box" name="key" type="text" size="100" placeholder="두정동 또는 건물이름을 입력하세요">
+					<input type="submit" value="검색" class="button button-style1"/>
+				<!-- <a href="#"  >확인</a> -->
+				</form>
 			</header>
-			<p>
-				지금 <a href="http://templated.co"> 인기있는 </a>숙소를 만나보세요!
+			<p>	지금 <a href="http://templated.co"> 인기있는 </a>숙소를 만나보세요!
 		</div>
 	</div>
 

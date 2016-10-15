@@ -46,6 +46,14 @@ public class HouseController {
 		session.setAttribute("house", house);
 		return "jsp/HouseList";
 	}
+	
+	@RequestMapping(value = "/searchbar", method = RequestMethod.GET)
+	public String searchbar(Model model, @RequestParam String key, HttpSession session) {
+		List<House> house = hservice.searchHouses(key);
+		session.setAttribute("house", house);
+		return "jsp/HouseList";
+	}
+	
 	@RequestMapping(value = "/insertHouse", method = RequestMethod.GET)
 	public String insertHouseGet(Model model, HttpSession session) {
 		Member user = (Member) session.getAttribute("user");
