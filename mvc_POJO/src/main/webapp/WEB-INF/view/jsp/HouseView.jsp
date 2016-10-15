@@ -118,6 +118,7 @@
 										<p><a href="deleteHouse?houseNo=${houseNo}" class="button button-style1"> 삭제하기</a>
 									</c:if>
 							</c:if>
+							<p><a href="search" class="button button-style1">목록보기</a>
 						</div>
 
 						<div id='center-box'>

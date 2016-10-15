@@ -29,6 +29,7 @@
 	<p>
 	<input type="password" id = "pass" name= "pass">
 	<input type="submit" value="OK"/>
+	<a href="index"><input type="button" value="홈으로"/></a>
 	</p>
 	</form>
 </body>

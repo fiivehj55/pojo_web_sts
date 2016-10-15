@@ -69,22 +69,20 @@ public class HouseController {
 	@RequestMapping(value = "/insertHouse", method = RequestMethod.POST)
 	public String insertHousePost(Model model, 
 			@RequestParam String room, @RequestParam String bath,
-			@RequestParam String hosting, @RequestParam(value = "tv", defaultValue = "null") String tv,
+			@RequestParam String hosting, 
+			@RequestParam(value = "tv", defaultValue = "null") String tv,
 			@RequestParam(value = "aircon", defaultValue = "null") String aircon,
 			@RequestParam(value = "wifi", defaultValue = "null") String wifi,
 			@RequestParam(value = "elebe", defaultValue = "null") String elebe,
 			@RequestParam(value = "washing", defaultValue = "null") String washing, @RequestParam String rname,
 			@RequestParam String infor, @RequestParam String photo,
-			@RequestParam String addr, @RequestParam String day,
+			@RequestParam String postcodify_address, @RequestParam String day,
 			@RequestParam Integer price, HttpSession session) throws IOException {
 		int result = 0;
 		Member user = (Member) session.getAttribute("user");
 		House house = new House();
-		
-	
-		
 		house.setHouseName(rname);
-		house.setHouseAddress(addr);
+		house.setHouseAddress(postcodify_address);
 		house.setHousePrice(price);
 		house.setHouseScore(9);
 		house.setHouseInfo(infor);
@@ -189,9 +187,11 @@ public class HouseController {
 			@RequestParam(value = "aircon", defaultValue = "null") String houseAircon,
 			@RequestParam(value = "wifi", defaultValue = "null") String houseWifi,
 			@RequestParam(value = "elebe", defaultValue = "null") String houseElebe,
-			@RequestParam(value = "washing", defaultValue = "null") String houseWashing, @RequestParam String houseName,
-			@RequestParam String houseInfo, @RequestParam MultipartFile houseImg, @RequestParam String houseAddress,
-			@RequestParam String houseDay, @RequestParam Integer housePrice, HttpSession session) throws IOException {
+			@RequestParam(value = "washing", defaultValue = "null") String houseWashing, 
+			@RequestParam String houseName, @RequestParam String houseInfo, 
+			@RequestParam MultipartFile houseImg, @RequestParam String houseAddress, 
+			@RequestParam String houseDay, @RequestParam Integer housePrice, 
+			HttpSession session) throws IOException {
 		Member user = (Member) session.getAttribute("user");
 		File idfile = new File(uploadDir + user.getMemId());
 		// id파일 존재하지않으면 디렉토리 생성 아니면 회원가입화면으로

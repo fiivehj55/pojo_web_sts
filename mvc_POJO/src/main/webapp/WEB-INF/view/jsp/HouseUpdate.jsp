@@ -19,7 +19,7 @@
 
 </head>
 <body class="homepage">
-<jsp:include page="./Header.jsp"></jsp:include>
+	<jsp:include page="./Header.jsp"></jsp:include>
 	<!-- Main -->
 	<div id="main">
 		<div id="content" class="auto_center">
@@ -37,15 +37,15 @@
 				<br/>
 				 
 				<sform:label path="houseHosting">숙박 인원 : </sform:label>
-				<sform:radiobuttons path="houseHosting" items="${hosting }"/>
+				<sform:radiobuttons path="houseHosting" items="${hosting}"/>
 				<br/>
 				
 				<label for="market">편의 시설 : </label>
-				<sform:checkbox path="houseTv"  label="TV" value="tv"/>
-				<sform:checkbox path="houseAircon"  label="에어컨" value="aircon"/>
-				<sform:checkbox path="houseWifi"  label="WiFi" value="wifi"/> <br/>
-				<sform:checkbox path="houseElebe"  label="엘리베이터" value="elebe"/>
-				<sform:checkbox path="houseWashing"  label="세탁기" value="washing"/>
+				<sform:checkbox path="houseTv" label="TV" value="tv"/>
+				<sform:checkbox path="houseAircon" label="에어컨" value="aircon"/>
+				<sform:checkbox path="houseWifi" label="Wi-Fi" value="wifi"/> <br/>
+				<sform:checkbox path="houseElebe" label="엘리베이터" value="elebe"/>
+				<sform:checkbox path="houseWashing" label="세탁기" value="washing"/>
 			</fieldset>
 			<br/>
 			
@@ -76,12 +76,12 @@
 				<sform:input type="number" path="housePrice"/> <br/> 
 			</fieldset>
 			<input type="submit" id="complete" name="complete" value="수정완료"/> <br/>
-			<a href="index"><input type="button" value="나가기"/></a>
+			<a href="search"><input type="button" value="나가기"/></a>
 			<!-- <a href="search"><input type="button" value="다음 단계"/></a> -->
 		</sform:form>
 		</div>
 	</div>
-<jsp:include page="./Footer.jsp"></jsp:include>
+	<jsp:include page="./Footer.jsp"></jsp:include>
 </body>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 <script>
