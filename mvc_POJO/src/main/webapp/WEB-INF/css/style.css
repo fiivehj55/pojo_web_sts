@@ -2034,7 +2034,7 @@ ul.contact li a:hover {
 #header {
 	position: relative;
 
-	background: url(../css/images/q1.jpg) no-repeat bottom center; 
+/* 	background: url(../css/images/q1.jpg) no-repeat bottom center;  */
 	/* background-attachment: fixed; */
 	background-size: cover;
 	text-align: center;

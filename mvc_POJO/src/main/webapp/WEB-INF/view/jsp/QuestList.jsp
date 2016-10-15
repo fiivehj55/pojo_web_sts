@@ -118,7 +118,6 @@ label {
 				<input type="button" value="다음">
 				</a>
 				</c:if>
-	
 			</div>
 			<!-- 상세검색 테이블 시작 -->
 			<div id="detailSearch" class="detailSearch" style="display: none;">

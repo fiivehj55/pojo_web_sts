@@ -67,4 +67,11 @@ public class ReportServiceImp implements ReportService {
 		return result;
 	}
 
+	@Transactional
+	@Override
+	public List<Report> selectReportPage(int page) {
+		List<Report> report = null;
+		report = dao.selectPaging(template, page);
+		return report;
+	}
 }

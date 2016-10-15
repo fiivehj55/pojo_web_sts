@@ -26,9 +26,8 @@
 <!-- bxSlider css파일 연결 -->
 <link href="js/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
 
-
-
 <style rel="stylesheet">
+
 body
 {
   background-color:#eee
@@ -237,7 +236,7 @@ body{
 					<li><a href="faq">고객센터</a>
 						<ul class="sub">
 							<li class="active"><a href="faq">FAQ</a></li>
-							<li class="active"><a href="report">신고 게시판</a></li>
+							<li class="active"><a href="report?page=1">신고 게시판</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li>
 					<c:choose>

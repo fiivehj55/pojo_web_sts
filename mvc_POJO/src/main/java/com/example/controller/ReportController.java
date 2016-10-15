@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.dto.Member;
+import com.example.dto.Question;
 import com.example.dto.Reply;
 import com.example.dto.Report;
 import com.example.dto.ReportToReply;
@@ -31,10 +32,20 @@ public class ReportController {
 	ReportToReplyService rtservice;
 
 	@RequestMapping(value = "/report", method = RequestMethod.GET)
-	public String table(Model model, HttpSession session) {
-		Member user = (Member) session.getAttribute("user");
-		List<Report> list = repservice.selectAllReport();
+	public String table(Model model, HttpSession session,
+			@RequestParam Integer page) {
+		List<Report> list = null;
+		list = repservice.selectReportPage(page);
+		
 		model.addAttribute("Report", list);
+
+		logger.trace("search report: {}",list);
+		list = repservice.selectAllReport();
+
+		model.addAttribute("max", list.size()/5+1);
+		model.addAttribute("page", page);
+
+		logger.trace("last report: {}",list);
 		// view의 이름을 리턴.
 		return "jsp/ReportList";
 	}

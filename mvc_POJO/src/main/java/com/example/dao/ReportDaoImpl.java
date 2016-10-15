@@ -49,10 +49,9 @@ public class ReportDaoImpl implements ReportDao {
 	}
 
 	@Override
-	public List<Report> selectPaging(SqlSessionTemplate template, int page, String id) {
+	public List<Report> selectPaging(SqlSessionTemplate template, int page) {
 		String stmt = REPORT_MAP + "reportPaging";
 		Map<String, Object> map = new HashMap<>();
-		map.put("id", id);
 		map.put("low",(page-1)*5+1);
 		map.put("high",page*5);
 		return template.selectList(stmt,map);

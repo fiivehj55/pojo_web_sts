@@ -381,7 +381,7 @@ public class DaoTest {
 	
 	@Test
 	public void testReportPaging() {
-		List<Report> report = rpdao.selectPaging(template, 1, "jang");
+		List<Report> report = rpdao.selectPaging(template, 1);
 		logger.trace("List: {}", report);
 
 	}

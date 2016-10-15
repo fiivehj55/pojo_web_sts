@@ -16,4 +16,6 @@ public interface ReportService {
 	int updateReport(Report report);
 	
 	int deleteReport(int reportNo);
+	
+	List<Report> selectReportPage(int page);
 }
