@@ -74,4 +74,11 @@ public class HouseServiceImp implements HouseService{
 		List<House> result = hdao.searchHouses(template, key);
 		return result;
 	}
+
+	@Override
+	public List<House> searchHousesPaging(Integer page) {
+		List<House> result = hdao.housePaging(template, page);
+		return result;
+	}
+	
 }

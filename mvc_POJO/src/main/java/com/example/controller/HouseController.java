@@ -41,9 +41,13 @@ public class HouseController {
 	private static final String uploadDir = "c:\\Temp/upload/";
 
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
-	public String search(Model model, HttpSession session) {
-		List<House> house = hservice.selectAllHouse();
-		session.setAttribute("house", house);
+	public String search(Model model, @RequestParam Integer page,
+			HttpSession session) {
+		List<House> house = hservice.searchHousesPaging(page);
+		model.addAttribute("house", house);
+		model.addAttribute("max", house.size()/5+1);
+		model.addAttribute("page", page);
+		//session.setAttribute("house", house);
 		return "jsp/HouseList";
 	}
 	

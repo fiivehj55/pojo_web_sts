@@ -73,7 +73,7 @@
 					</c:otherwise>	
 					</c:choose>
 
-					<li><a href="search">검색된 페이지</a>
+					<li><a href="search?page=1">검색된 페이지</a>
 						<ul class="sub">
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
