@@ -310,8 +310,8 @@ input[type=checkbox]:checked+label:before {
 						<fieldset>
 							<legend>호스팅 2단계</legend>
 							<p>
-								<span>숙소이름</span> <input type="text" id="rname" name="rname"
-									size="50" />
+								<span>숙소이름</span> 
+								<input type="text" id="rname" name="rname" size="50" />
 							</p>
 
 							<!-- <span>주소</span>
@@ -322,10 +322,10 @@ input[type=checkbox]:checked+label:before {
 							 
 							<input type="text" id="xx" name="postcodify_address" value="" size="50" /><br />
 							상세 주소<input type="text" id="yy" name="postcodify_details" value="" size="40" /><br />
-							<p>
-								<span>사진</span> 
-								<input type="file" name="photo" multiple="multiple" /> <br />
-							</p>
+							
+							<span>사진</span> 
+							<input type="file" name="photo" /> 
+							<br />
 							
 							<span>숙소 안내말</span> <br />
 							<textarea rows="10" cols="50" name="infor"></textarea>

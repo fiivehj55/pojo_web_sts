@@ -3,19 +3,21 @@ package com.example.service;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.dao.HouseDao;
-import com.example.dao.HouseDaoImpl;
 import com.example.dto.House;
-
-import ch.qos.logback.core.db.dialect.DBUtil;
 
 
 @Component
 public class HouseServiceImp implements HouseService{
+	
+	private static Logger logger = LoggerFactory.getLogger(HouseServiceImp.class);
+	
 	@Autowired
 	HouseDao hdao;
 	
@@ -43,6 +45,7 @@ public class HouseServiceImp implements HouseService{
 	public int insertHouse(House house) {
 		int result = 0;
 		result = hdao.insertHouse(template, house);
+		logger.trace("result: {}", house);
 		return result;
 	}
 	

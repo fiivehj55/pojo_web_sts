@@ -76,7 +76,7 @@
 				<sform:input type="number" path="housePrice"/> <br/> 
 			</fieldset>
 			<input type="submit" id="complete" name="complete" value="수정완료"/> <br/>
-			<a href="search"><input type="button" value="나가기"/></a>
+			<a href="search?page=1"><input type="button" value="나가기"/></a>
 			<!-- <a href="search"><input type="button" value="다음 단계"/></a> -->
 		</sform:form>
 		</div>

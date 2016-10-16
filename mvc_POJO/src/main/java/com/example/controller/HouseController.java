@@ -38,8 +38,6 @@ public class HouseController {
 	@Autowired
 	ReplyService Rpservice;
 	
-	private static final String uploadDir = "c:\\Temp/upload/";
-
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
 	public String search(Model model, @RequestParam Integer page,
 			HttpSession session) {
@@ -70,6 +68,8 @@ public class HouseController {
 	public String jusoPopup(Model model, HttpSession session) {
 		return "jsp/jusoPopup";
 	}
+	
+	private static final String uploadDir = "c:\\Temp/upload/";
 	@RequestMapping(value = "/insertHouse", method = RequestMethod.POST)
 	public String insertHousePost(Model model, 
 			@RequestParam String room, @RequestParam String bath,
@@ -79,11 +79,25 @@ public class HouseController {
 			@RequestParam(value = "wifi", defaultValue = "null") String wifi,
 			@RequestParam(value = "elebe", defaultValue = "null") String elebe,
 			@RequestParam(value = "washing", defaultValue = "null") String washing, @RequestParam String rname,
-			@RequestParam String infor, @RequestParam String photo,
+			@RequestParam String infor, @RequestParam MultipartFile photo,
 			@RequestParam String postcodify_address, @RequestParam String day,
 			@RequestParam Integer price, HttpSession session) throws IOException {
 		int result = 0;
 		Member user = (Member) session.getAttribute("user");
+		
+		File idfile = new File(uploadDir + user.getMemId());
+		// id파일 존재하지않으면 디렉토리 생성 아니면 회원가입화면으로
+		if (!idfile.exists())
+			idfile.mkdir();
+
+		File introHouse = new File(uploadDir + "/" + user.getMemId() + "/house");
+		if (!introHouse.exists())
+			introHouse.mkdir();
+
+		File file = new File(uploadDir + user.getMemId() + "/house/" + photo.getOriginalFilename());
+		photo.transferTo(file);
+		String imgName = photo.getOriginalFilename();
+		
 		House house = new House();
 		house.setHouseName(rname);
 		house.setHouseAddress(postcodify_address);
@@ -100,29 +114,16 @@ public class HouseController {
 		house.setHouseWifi(wifi);
 		house.setHouseElebe(elebe);
 		house.setHouseWashing(washing);
-		house.setHouseImg(photo);
+		house.setHouseImg(imgName);
 		house.setHouseDay(day);
-		session.setAttribute("house", house);
+		/*session.setAttribute("house", house);*/
 		result = hservice.insertHouse(house);
 		System.out.println("방금 등록된 하우스번호 : "+house.getHouseNo());
-/*		
-		File idfile = new File(uploadDir + user.getMemId());
-		// id파일 존재하지않으면 디렉토리 생성 아니면 회원가입화면으로
-		if (!idfile.exists())
-			idfile.mkdir();
-
-		File introHouse = new File(uploadDir + user.getMemId() + "/" + house.getHouseNo());
-		if (!introHouse.exists())
-			introHouse.mkdir();
-
-		File file = new File(uploadDir + user.getMemId() + "/" + house.getHouseNo() + "/" + photo.getOriginalFilename());
-		photo.transferTo(file);
-		String imgName = photo.getOriginalFilename();*/
 		
 		if (result != 1) {
 			return "jsp/HouseJoin";
 		} else {
-			return "redirect:/search";
+			return "redirect:/search?page=1";
 		}
 	}
 
@@ -180,7 +181,7 @@ public class HouseController {
 			model.addAttribute("house", house);
 			return "jsp/HouseUpdate";
 		}
-		return "redirect:/search";
+		return "redirect:/search?page=1";
 	}
 
 	@RequestMapping(value = "/updateHouse", method = RequestMethod.POST)
@@ -230,7 +231,7 @@ public class HouseController {
 		house.setHouseDay(houseDay);
 
 		int result = hservice.updateHouse(house);
-		return "redirect:/search";
+		return "redirect:/search?page=1";
 	}
 
 	@ModelAttribute
