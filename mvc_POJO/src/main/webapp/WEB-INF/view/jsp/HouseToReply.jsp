@@ -1,6 +1,5 @@
 <!-- 게시판 페이지 -->
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -78,17 +77,22 @@
 		<button class="addButton">등록</button>
 		<br />
 	</div> -->
+	
 	<c:choose>
 		<c:when test="${fn:length(reply)>0}">
 			<c:forEach items="${reply}" var="row">
 				<div id="boardcss_list_table">
 					<h3 class="h3">후기 댓글</h3>
 					<p>
-					<div class="replyContent">
-						<span class="replyId">${row.memberId}</span> 
-						<span class="replyDate"><fmt:formatDate pattern="yyyy/MM/dd" value="${row.replyDate }" /></span> <br /> 
-						<span class="replyTxt"> ${row.replyContent } </span>
+					<div class="listReply">
+						<div class="replyContent">
+							<span class="replyId">${row.memberId}</span> 
+							<span class="replyDate"><fmt:formatDate pattern="yyyy/MM/dd" value="${row.replyDate }" /></span> <br /> 
+							<span class="replyTxt"> ${row.replyContent } </span>
+						</div>
 					</div>
+					<textarea name="comment" tabindex="1" class="inputReply" placeholder="여러분의 소중한 댓글을 입력해주세요.">여러분의 소중한 댓글을 입력해주세요.</textarea>
+						<button class="addButton">등록</button>
 				</div>
 				<%-- <tr>
 				<td>${row.memberId }</td>

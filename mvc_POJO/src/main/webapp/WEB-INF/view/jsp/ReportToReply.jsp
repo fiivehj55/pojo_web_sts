@@ -26,15 +26,15 @@
 	<div id="main">
 		<div id="content" class="auto_center">
 			<!-- 등록버튼 시작 -->
-			<div id="boardcss_list_add_button_table">
+			<!-- <div id="boardcss_list_add_button_table">
 				<div class="boardcss_list_add_button">
 					<a href="bbsInsert"><button class="add_button">등록</button></a>
 					<ul></ul>
 				</div>
-			</div>
+			</div> -->
 			<!-- 등록버튼 종료 -->
 			
-			<h1>후기 댓글</h1>
+			<h1>Report 댓글</h1>
 			<!-- 테이블 시작 -->
 			<div class="boardcss_list_table">
 				<table class="list_table">

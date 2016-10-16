@@ -126,7 +126,7 @@ public class HouseController {
 		}
 	}
 
-	@RequestMapping(value = "/searchByHouseNo", method = RequestMethod.GET)
+	@RequestMapping(value = "/houseView", method = RequestMethod.GET)
 	public String selectByHouseNo(Model model, @RequestParam Integer houseNo, HttpSession session) {
 		Member user = (Member) session.getAttribute("user");
 		House house = hservice.selectByNoHouse(houseNo);

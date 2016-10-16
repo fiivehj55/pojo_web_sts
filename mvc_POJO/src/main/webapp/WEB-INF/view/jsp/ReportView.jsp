@@ -31,7 +31,8 @@ label {
 				<sform:label path="reportNo">글 번호</sform:label>
 				<sform:input type="number" path="reportNo" disabled="true"/>
 				<sform:input type="hidden" path="reportNo"/>
-				<sform:label path="reportCategory">카테고리</sform:label>
+				
+				<sform:label path="reportCategory">구분</sform:label>
 				<sform:input type="text" path="reportCategory" size="50" disabled="true"/>
 				
 				<sform:label path="reportSubject">제목</sform:label>
@@ -41,9 +42,9 @@ label {
 				<sform:label path="reportContent">내용</sform:label>
 				<sform:textarea rows="10" cols="50" path="reportContent" disabled="true"></sform:textarea>
 			
-				<input type="submit" value="수정"/>
+				<!-- <input type="submit" value="수정"/> -->
 				<a href="ReportDelete?reportNo=${reportNo}"><input type="button" value="삭제"/></a>
-				<a href="bbs"><input type="button" value="목록"/></a>
+				<a href="report?page=1"><input type="button" value="목록"/></a>
 			</sform:form>
 			
 		</div>
