@@ -53,7 +53,7 @@ public class HouseController {
 	public String searchbar(Model model, 
 			@RequestParam String key, @RequestParam Integer page,
 			HttpSession session) {
-		List<House> house = hservice.searchHouses(key);
+		List<House> house = hservice.searchHouses(key, page);
 		model.addAttribute("house", house);
 		model.addAttribute("max", house.size()/5+1);
 		model.addAttribute("key", key);

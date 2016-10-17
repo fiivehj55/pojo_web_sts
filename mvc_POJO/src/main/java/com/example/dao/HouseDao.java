@@ -14,7 +14,7 @@ public interface HouseDao {
 	
 	List<House> selectByIdHouse(SqlSessionTemplate template, String id);
 	
-	List<House> searchHouses(SqlSessionTemplate template, String key);
+	List<House> searchHouses(SqlSessionTemplate template, String key, int page);
 	
 	int insertHouse(SqlSessionTemplate template, House house);
 	

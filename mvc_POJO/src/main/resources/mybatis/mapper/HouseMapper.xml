@@ -15,9 +15,17 @@
 		ORDER BY HOUSE_NO DESC
 	</select>
 	
-	<select id="searchHouses" parameterType="string" resultMap="houseBase">
-		select * from HOUSE where HOUSE_ADDRESS LIKE '%'||#{houseAddress}||'%'
-		ORDER BY HOUSE_NO DESC
+	<select id="searchHouses" parameterType="map" resultMap="houseBase">
+		select * from (
+			select sub.*, rownum as rnum from(
+				select * from HOUSE
+				where HOUSE_ADDRESS LIKE '%'||#{houseAddress}||'%'
+				order by HOUSE_NO desc
+			) sub
+		) where rnum &gt;= #{low,jdbcType=NUMERIC} and rnum &lt;= #{high,jdbcType=NUMERIC}
+	
+		<!-- select * from HOUSE where HOUSE_ADDRESS LIKE '%'||#{houseAddress}||'%'
+		ORDER BY HOUSE_NO DESC -->
 	</select>
 
 	<insert id="insertHouse" parameterType="house">

@@ -132,7 +132,7 @@ public class DaoTest {
 	
 	@Test
 	public void testSearchHouses() {
-		List<House> house = hdao.searchHouses(template, "주빌");
+		List<House> house = hdao.searchHouses(template, "두정동", 1);
 		logger.trace("List: {}", house);
 
 	}
