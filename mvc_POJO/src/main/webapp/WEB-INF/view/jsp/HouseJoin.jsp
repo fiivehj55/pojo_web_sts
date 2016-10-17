@@ -223,7 +223,7 @@ input[type=checkbox]:checked+label:before {
 	<!-- Main -->
 	<div id="view">
 		<div id="main">
-			<form method="post" action="insertHouse" name="form">
+			<form method="post" action="insertHouse" name="form" id="myForm" enctype="multipart/form-data">
 				<div class="animated-text text-center">
 						<a href="#">
 							<span>MINJEONG님</span> 

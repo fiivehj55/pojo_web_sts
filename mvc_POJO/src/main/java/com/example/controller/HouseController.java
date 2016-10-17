@@ -86,6 +86,7 @@ public class HouseController {
 			@RequestParam(value = "washing", defaultValue = "null") String washing, @RequestParam String rname,
 			@RequestParam String infor, @RequestParam List<MultipartFile> photo,
 			@RequestParam String postcodify_address, @RequestParam String day,
+			@RequestParam String postcodify_details,
 			@RequestParam Integer price, HttpSession session) throws IOException {
 		int result = 0;
 		Member user = (Member) session.getAttribute("user");
@@ -95,9 +96,6 @@ public class HouseController {
 		if (!idfile.exists())
 			idfile.mkdir();
 
-		File introHouse = new File(uploadDir + "/" + user.getMemId() + "/house");
-		if (!introHouse.exists())
-			introHouse.mkdir();
 		
 	
 		House house = new House();
@@ -121,6 +119,28 @@ public class HouseController {
 		/*session.setAttribute("house", house);*/
 		result = hservice.insertHouse(house);
 		System.out.println("방금 등록된 하우스번호 : "+house.getHouseNo());
+		
+		File introHouse = new File(uploadDir + "/" + user.getMemId() + "/"+house.getHouseNo());
+		if (!introHouse.exists())
+			introHouse.mkdir();
+		
+		if (null != photo && photo.size() > 0) 
+        {
+            for (MultipartFile multipartFile : photo) {
+ 
+                String fileName = multipartFile.getOriginalFilename();
+                File imageFile = new File(uploadDir + user.getMemId() + "/"+house.getHouseNo()+"/" + fileName);
+                try
+                {
+                    multipartFile.transferTo(imageFile);
+                } catch (IOException e) 
+                {
+                    e.printStackTrace();
+                }
+            }
+        }
+		
+		
 		/*
 		 * 파일업로드
 		 * @RequestParam MultipartFile photo 경우
