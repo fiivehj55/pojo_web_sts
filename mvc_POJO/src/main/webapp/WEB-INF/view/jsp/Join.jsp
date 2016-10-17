@@ -150,7 +150,7 @@ p, h1, form, button {
 				<form method="post" action="join" enctype="multipart/form-data" id="myform">
 				<label for="memId" class="inputlabel">ID <span class="small">ID 입력</span></label>
 				<input type="text" name="memId" id="memId" />
-				<button id="check">중복확인</button>
+				<input type="button" id="check" value="중복확인"/>
 
 				<label>Password <span class="small">영문+숫자 조합 8 이상</span></label> 
 				<input type="password" name="memNa" id="memNa" />
