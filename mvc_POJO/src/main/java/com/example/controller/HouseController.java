@@ -50,9 +50,14 @@ public class HouseController {
 	}
 	
 	@RequestMapping(value = "/searchbar", method = RequestMethod.GET)
-	public String searchbar(Model model, @RequestParam String key, HttpSession session) {
+	public String searchbar(Model model, 
+			@RequestParam String key, @RequestParam Integer page,
+			HttpSession session) {
 		List<House> house = hservice.searchHouses(key);
-		session.setAttribute("house", house);
+		model.addAttribute("house", house);
+		model.addAttribute("max", house.size()/5+1);
+		model.addAttribute("key", key);
+		model.addAttribute("page", page);
 		return "jsp/HouseList";
 	}
 	

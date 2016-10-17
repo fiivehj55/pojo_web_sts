@@ -93,26 +93,26 @@ label {
 		</div>
 		<div>
 				<c:if test="${page > 5}">
-				<a href="search?page=${page-5}">
+				<a href="searchbar?key=${key}&page=${page-5}">
 					<input type="button" value="이전">
 				</a>
 				</c:if>
-						<a href="search?page=${num}">${num}</a>
+				<a href="searchbar?key=${key}&page=${num}">${num}</a>
 				<c:set var="down" value="-3"/>
 				<c:forEach var="num" begin="1" end="2">
 					<c:set var="down" value="${down+1}"/>
 						<c:if test="${0 <page+ down}">
-							<a href="search?page=${page+down}">${page+down}</a>
+							<a href="searchbar?key=${key}&page=${page+down}">${page+down}</a>
 						</c:if>
 				</c:forEach>
 				<span>${page}</span>
 				<c:forEach var="num" begin="1" end="2">
 						<c:if test="${page+num <= max}">
-							<a href="search?page=${page+num}">${page+num}</a>
+							<a href="searchbar?key=${key}&page=${page+num}">${page+num}</a>
 						</c:if>
 				</c:forEach>
 				<c:if test="${page < max-5}">
-					<a href="search?page=${page+5}">
+					<a href="searchbar?key=${key}&page=${page+5}">
 						<input type="button" value="다음">
 					</a>
 				</c:if>
