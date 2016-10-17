@@ -19,7 +19,7 @@ p, h1, form, button {
 
 .myform {
 	margin: 50px;
-	width: 400px;
+	width:500px;
 	padding: 14px;
 }
 
@@ -75,8 +75,8 @@ p, h1, form, button {
 
 #stylized button {
 	clear: both;
-	margin-left: 150px;
-	width: 125px;
+	/* margin-left: 150px; */
+	width: 100px;
 	height: 31px;
 	text-align: center;
 	line-height: 31px;
@@ -86,6 +86,18 @@ p, h1, form, button {
 	font-weight: bold;
 	font-family: tahoma;
 }
+
+.radio {
+	width: 10px;
+	float: left;
+	font-family: tahoma;
+}
+
+
+
+
+
+
 
 /* label {
 	width: 100px;
@@ -129,7 +141,12 @@ p, h1, form, button {
 				 
 				<label for="memName" class="inputlabel">이름 <span class="small">이름 입력:</span></label> 
 				<input type="text" name="memName" />
-				 
+				
+	<!-- 			<label for="memGender" class="radio">성별:</label>
+			 	<input type="radio" name="memGender" value="male"  /> 남
+				 <input type="radio" name="memGender" value="female"  />여 	
+				 -->
+				
 				<label for="memNa" class="inputlabel">전화번호 <span class="small">전화번호:</span></label> 
 				<input type="text" name="memPhone" />
 				 
@@ -140,13 +157,12 @@ p, h1, form, button {
 				<input type="file" name="memImg" />
 				<p>
 
-				<label for="memIntro">자기소개 <span class="small"></span></label> 
-				<input type="text" name="memIntro" id="memIntro" />
+				<label for="memIntro">자기소개: <span class="small"></span></label> 
+				<textarea cols="40" rows="10" name="memIntro"></textarea>
+				<!-- <input type="text" name="memIntro" id="memIntro" /> -->
 
-				<!-- <label>성별	<span class="small" >ID 입력</span></label>
-				<input type="radio" name="memGender" value="male" /> 남 <input type="radio" name="memGender" value="female" />여 -->
-
-				<input type="submit" value="Sign-up" />
+				<input type="submit" value="가입" id="set"> <a href="index"><input
+						type="button" value="취소"></a>
 				<div class="spacer"></div>
 				</form>
 			</div>
