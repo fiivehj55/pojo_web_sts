@@ -323,7 +323,7 @@ input[type=checkbox]:checked+label:before {
 							상세 주소<input type="text" id="yy" name="postcodify_details" value="" size="40" /><br />
 							
 							<span>사진</span> 
-							<input type="file" name="photo" /> 
+							<input type="file" name="photo" multiple="multiple"/> 
 							<br />
 							
 							<span>숙소 안내말</span> <br />
