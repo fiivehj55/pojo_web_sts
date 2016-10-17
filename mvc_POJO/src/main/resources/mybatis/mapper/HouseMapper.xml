@@ -16,7 +16,7 @@
 	</select>
 	
 	<select id="searchHouses" parameterType="string" resultMap="houseBase">
-		select * from HOUSE where HOUSE_NAME LIKE '%'||#{houseName}||'%'
+		select * from HOUSE where HOUSE_ADDRESS LIKE '%'||#{houseAddress}||'%'
 		ORDER BY HOUSE_NO DESC
 	</select>
 
