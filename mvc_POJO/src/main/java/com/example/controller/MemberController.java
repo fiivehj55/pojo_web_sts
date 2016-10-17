@@ -88,7 +88,7 @@ public class MemberController {
          @RequestParam String memId,
          @RequestParam String memPassword,
          @RequestParam String memName,
-         /*@RequestParam String memGender,*/
+         @RequestParam String memGender,
          @RequestParam String memNa,
          @RequestParam String memPhone,
          @RequestParam String memEmail,
@@ -111,7 +111,7 @@ public class MemberController {
       memImg.transferTo(file);
       String imgName = memImg.getOriginalFilename();
       Member member = new Member(memId, memName, memPassword, 
-            memNa, memPhone, memEmail, null,
+            memNa, memPhone, memEmail, memGender,
             imgName, memIntro, 2, "회원");
       int result = mservice.join(member);
       if(result==1){
