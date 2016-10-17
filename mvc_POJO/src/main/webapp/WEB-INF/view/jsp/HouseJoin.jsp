@@ -304,7 +304,7 @@ input[type=checkbox]:checked+label:before {
 				</div>
 				<br />
 
-				<div id="container">
+				<div id="container1">
 					<div id="two" style="display: none;">
 						<fieldset>
 							<legend>호스팅 2단계</legend>
@@ -336,7 +336,7 @@ input[type=checkbox]:checked+label:before {
 				</div>
 				<br />
 
-				<div id="container">
+				<div id="container1">
 					<div id="three" style="display: none;">
 						<fieldset>
 							<legend>호스팅 3단계 </legend>
