@@ -23,13 +23,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 
-<!-- 기본 jQuery js파일 연결 -->
-<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
- -->
-
-<!-- bxSlider css파일 연결 -->
-<!-- <link href="js/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" /> -->
-
 <style rel="stylesheet">
 body {
 	background-color: #eee
@@ -177,24 +170,9 @@ body {
 	background: white;
 }
 
-/* .bx-wrapper {
-	position: relative;
-	width: 100%;
-	height: 30% !important;
-	top: 0;
-	left: 0;
 }
 
-.bxslider, .bxslider li {
-	/* 높이 조정*/
-	height: 30vh !important;;
-}
 
-.bxslider li {
-	background-repeat: no-repeat;
-	background-position: top center;
- */	background-size: cover;
-}
 </style>
 
 </head>
@@ -279,17 +257,11 @@ body {
 
 	<div class="block-container">
     	<div class="block">
-      	<h1>Video Background</h1>
-      	<h3>Fullscreen applied to <body> </h3>
+<!--       	<h1>Video Background</h1>
+      	<h3>Fullscreen applied to <body> </h3> -->
     	</div>
   	</div>
 	
-<!--	<ul class="bxslider">
-		<li><img src="css/images/room5.jpg" /></li>
-		<li><img src="css/images/room7.jpg" /></li>
-		<li><img src="css/images/room8.jpg" /></li>
-		<li><img src="css/images/room6.jpg" /></li>
-		</ul> -->
 		
 	<!-- Featured -->
 	<div id="featured">
