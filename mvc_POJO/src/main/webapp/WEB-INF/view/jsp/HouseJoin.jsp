@@ -115,18 +115,16 @@ body {
 	display: block;
 }
 /* 안내문 css 종료 */
-#container {
+#container1 {
 	text-align: left;
-	margin: 0px 10% 0px 20%;
+	margin: 0px 10% 0px 0px;
 }
 
 .postcodify_address {
 	width: 280px;
 }
 
-.postcodify_details {
-	width: 280px;
-}
+
 /* #one {
 	width:1024px;
 }
@@ -146,12 +144,12 @@ label {
 	display: inline-block;
 }
 
-.auto_center {
+ .auto_center {
 	width: 400px;
 	height: 400px;
 	padding: 20px;
 	margin: 200px auto;
-}
+} 
 
 .checkbox {
 	position: relative;
@@ -226,9 +224,8 @@ input[type=checkbox]:checked+label:before {
 	<div id="view">
 		<div id="main">
 			<form method="post" action="insertHouse" name="form">
-				<div id="container">
-					<div class="animated-text text-center">
-						<a href="#"> 
+				<div class="animated-text text-center">
+						<a href="#">
 							<span>MINJEONG님</span> 
 							<span>반</span> 
 							<span>갑</span> 
@@ -238,11 +235,13 @@ input[type=checkbox]:checked+label:before {
 						</a>
 						<p>호스트가 될 준비를 시작해보세요.
 					</div>
+				<div id="container1">
 					<div id="one" style="display: block;">
 						<fieldset>
 							<legend>호스팅 1단계 </legend>
 							<div class="radio">
 								<span>방의개수</span> 
+								
 								<input type="radio" id="rone" name="room" value="1개"/> 
 								<label for="rone">1개</label> 
 								
