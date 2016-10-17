@@ -18,13 +18,20 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/skel-noscript.css" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style-desktop.css" />
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  <link href="/SRC2/videoback/demo/css/fullscreenDemo.css" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+
+
+
 
 <!-- 기본 jQuery js파일 연결 -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+ -->
 
 <!-- bxSlider css파일 연결 -->
-<link href="js/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
+<!-- <link href="js/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" /> -->
 
 <style rel="stylesheet">
 
@@ -185,7 +192,7 @@ input, input[placeholder] {
 body{
 	background: white;
 }
-.bx-wrapper {
+/* .bx-wrapper {
 	position: relative;
 	width: 100%;
 	height: 30% !important;
@@ -201,7 +208,7 @@ body{
 .bxslider li {
 	background-repeat: no-repeat;
 	background-position: top center;
-	background-size: cover;
+ */	background-size: cover;
 }
 </style>
 
@@ -277,19 +284,29 @@ body{
 		<div class="container">
 			<!-- Logo -->
 			<div id="logo">
-				<h1>
+			<!-- 	<h1>
 					<a href="#">사랑방손님</a>
 				</h1>
-				<span class="tag">By POJO</span>
+				<span class="tag">By POJO</span> -->
 			</div>
 		</div>
 	</div>
-		<ul class="bxslider">
+	
+	
+	  <div class="block-container">
+    <div class="block">
+      <h1>Video Background</h1>
+      <h3>Fullscreen applied to <body> </h3>
+    </div>
+  </div>
+	
+	
+<!-- 		<ul class="bxslider">
 		<li><img src="css/images/room5.jpg" /></li>
 		<li><img src="css/images/room7.jpg" /></li>
 		<li><img src="css/images/room8.jpg" /></li>
-		<!-- <li><img src="css/images/room6.jpg" /></li> -->
-		</ul>
+		<li><img src="css/images/room6.jpg" /></li>
+		</ul> -->
 		
 	<!-- Featured -->
 	<div id="featured">
@@ -420,32 +437,35 @@ body{
 </body>
 <script src="http://code.jquery.com/jquery.js" /></script>
 <script src="js/jquery.bxslider/jquery.bxslider.min.js"></script>
-<script>
-var subMenu = $(".sub");
-subMenu.hide();
-	$(document).ready(function() {
-		$('.bxslider').bxSlider({
-			/* adaptiveHeight:true, */
-			mode : 'horizontal',
-			auto : true,
-			adaptiveHeight : true,
-			mode : 'fade',
-			captions : true,
-			pagerCustom : '#bx-pager',
-			slideWidth :2500,
+ <script type="text/javascript">
+ var subMenu = $(".sub");
+ subMenu.hide();
+ 	$(document).ready(function() {
+ 		$('.bxslider').bxSlider({
+ 			/* adaptiveHeight:true, */
+ 			mode : 'horizontal',
+ 			auto : true,
+ 			adaptiveHeight : true,
+ 			mode : 'fade',
+ 			captions : true,
+ 			pagerCustom : '#bx-pager',
+ 			slideWidth :2500,
 
-		});
-		$("#nav").hover(function(e) {
-			if (e.type == "mouseenter") {
-				subMenu.show();
-			}
-		});
-		$("#nav").hover(function(e) {
-			if (e.type == "mouseleave") {
-				subMenu.hide();
-			}
-		});
-	});
-</script>
+ 		});
+ 		$("#nav").hover(function(e) {
+ 			if (e.type == "mouseenter") {
+ 				subMenu.show();
+ 			}
+ 		});
+ 		$("#nav").hover(function(e) {
+ 			if (e.type == "mouseleave") {
+ 				subMenu.hide();
+ 			}
+ 		});
+ 	});
+  </script>
+
+  <script src="/SRC2/videoback/dist/vidbg.js"></script>
+
 
 </html>

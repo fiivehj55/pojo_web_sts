@@ -2031,11 +2031,11 @@ ul.contact li a:hover {
 /*********************************************************************************/
 /* Header                                                                        */
 /*********************************************************************************/
-#header {
+/* #header {
 	position: relative;
 
-/* 	background: url(../css/images/q1.jpg) no-repeat bottom center;  */
-	/* background-attachment: fixed; */
+	background: url(../css/images/q1.jpg) no-repeat bottom center; 
+	background-attachment: fixed;
 	background-size: cover;
 	text-align: center;
 
@@ -2051,7 +2051,7 @@ ul.contact li a:hover {
 	height: 100%;
 	background: rgba(64, 64, 64, 0.125);
 }
-
+ */
 /*********************************************************************************/
 /* Logo                                                                          */
 /*********************************************************************************/
