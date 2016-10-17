@@ -234,11 +234,6 @@ $(document).ready(function() {
 	           }
 	        });
 	     });
-
-
-
-
-
 });
 
 </script>

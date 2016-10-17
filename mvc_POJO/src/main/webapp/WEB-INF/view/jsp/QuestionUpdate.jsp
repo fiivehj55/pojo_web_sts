@@ -49,5 +49,8 @@ label {
 <body>
 
 </body>
+<script
+	src="<%=request.getContextPath()%>/js/validate/dist/jquery.validate.min.js"></script>
+
 <script></script>
 </html>
