@@ -18,10 +18,10 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/skel-noscript.css" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style-desktop.css" />
+
   <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
   <link href="/SRC2/videoback/demo/css/fullscreenDemo.css" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
 
 
 
@@ -438,6 +438,24 @@ body{
 <script src="http://code.jquery.com/jquery.js" /></script>
 <script src="js/jquery.bxslider/jquery.bxslider.min.js"></script>
  <script type="text/javascript">
+ 
+ jQuery(function($){
+     $('body').vidbg({
+         'mp4': '/SRC2/videoback/demo/media/mp4_video.mp4',
+         'webm': '/SRC2/videoback/demo/media/webm_video.webm',
+         'poster': '/SRC2/videoback/demo/media/fallback.jpg',
+     }, {
+       // Options
+       muted: true,
+       loop: true,
+					overlay: true,
+     });
+ });
+ 
+ 
+ 
+ 
+ 
  var subMenu = $(".sub");
  subMenu.hide();
  	$(document).ready(function() {
