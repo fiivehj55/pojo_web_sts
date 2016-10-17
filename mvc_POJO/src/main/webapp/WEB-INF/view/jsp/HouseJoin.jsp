@@ -117,7 +117,7 @@ body {
 /* 안내문 css 종료 */
 #container1 {
 	text-align: left;
-	margin: 0px 10% 0px 0px;
+	margin: 0px 10% 0px 50px;
 }
 
 .postcodify_address {
