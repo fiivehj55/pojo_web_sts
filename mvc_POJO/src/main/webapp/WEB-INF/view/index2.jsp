@@ -302,6 +302,7 @@ body{
 			<header>
 				<form method="get" action="searchbar">
 					<input id="text_box" name="key" type="text" size="100" placeholder="두정동 또는 건물이름을 입력하세요">
+					<input type="hidden" name="page" value="1"/>
 					<input type="submit" value="검색" class="button button-style1"/>
 				<!-- <a href="#"  >확인</a> -->
 				</form>
