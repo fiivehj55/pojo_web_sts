@@ -1,11 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Linear by TEMPLATED</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
 <style>
+
+	
 p, h1, form, button {
 	border: 0;
 	margin: 0;
@@ -21,6 +23,14 @@ p, h1, form, button {
 	margin: 50px;
 	width:500px;
 	padding: 14px;
+
+}
+
+.myform2 {
+	width: 500px;
+	padding: 14px;
+	margin: 200px auto;
+
 }
 
 #stylized {
@@ -117,7 +127,7 @@ p, h1, form, button {
 	 padding: 20px;
 	margin: 200px auto;
 } */
-#container {
+#container2 {
 	text-align: left;
 	margin: 0px 40% 0px 40%;
 	/* 상좌하우 */
@@ -132,19 +142,21 @@ p, h1, form, button {
 	<jsp:include page="./Header.jsp"></jsp:include>
 	<!-- Main -->
 	<div id="main">
-		<div id="container">
-			<div id="stylized" class="myform">
+		<div id="container2">
+			
+			<div id="stylized" class="myform2">
+			
 				<h1>회원가입</h1>
-				<form method="post" action="join" enctype="multipart/form-data">
+				<form method="post" action="join" enctype="multipart/form-data" id="myform">
 				<label for="memId" class="inputlabel">ID <span class="small">ID 입력</span></label>
 				<input type="text" name="memId" id="memId" />
 				<button id="check">중복확인</button>
 
-				<label>Password <span class="small">패스워드 6자 이상</span></label> 
-				<input type="text" name="memNa" id="memNa" />
+				<label>Password <span class="small">영문+숫자 조합 8 이상</span></label> 
+				<input type="password" name="memNa" id="memNa" />
 				
-				<label for="memPassword" class="inputlabel">Password <span class="small">패스워드 6자 이상</span></label>
-				<input type="text" name="memPassword" id="memPassword" />
+				<label for="memPassword" class="inputlabel">Password <span class="small">영문+숫자 조합 8 이상</span></label>
+				<input type="password" name="memPassword" id="memPassword" />
 				 
 				<label for="memName" class="inputlabel">이름 <span class="small">이름 입력:</span></label> 
 				<input type="text" name="memName" />
@@ -176,8 +188,9 @@ p, h1, form, button {
 				<div class="spacer"></div>
 				</form>
 			</div>
+			</div>
 		</div>
-	</div>
+	
 	<jsp:include page="./Footer.jsp"></jsp:include>
 </body>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
