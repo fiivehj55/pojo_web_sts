@@ -150,26 +150,25 @@ p, h1, form, button {
 
       <p>
          <label for="memPassword">비밀번호:</label> 
-         <input type="password" name="memPassword"  placeholder="영문+숫자 조합 8 이상"/>
+         <input type="password" name="memPassword" placeholder="영문+숫자 조합 8 이상"/>
       <p>
          <label for="passok">비밀번호 확인</label> 
-         <input type="password" name="password"   placeholder="영문+숫자 조합 8 이상">
+         <input type="password" name="password" placeholder="영문+숫자 조합 8 이상">
       <p>
          <sform:label path="memName">이름:</sform:label> 
          <sform:input type="text" path="memName" disabled="true"/>
          <sform:input type="hidden" path="memName"/>
       </p>
-				<label for="memGender" class="radio">성별:</label>
-			  <div id="radiobox">
-	 			 
-			    <input type="radio" name="memGender" value="male" class="radio" /> 남
-				 <input type="radio" name="memGender" value="female" class="radio" />여 	
-				 </div>
+		<!-- <label for="memGender" class="radio">성별:</label>
+			<div id="radiobox">
+				<input type="radio" name="memGender" value="male" class="radio" /> 남
+				<input type="radio" name="memGender" value="female" class="radio" />여 	
+			</div> -->
          <sform:label path="memNa">전화번호:</sform:label>
 -        <sform:select path="memNa">
-         <%--    <sform:option value="SKT" label="SKT"/>
+         	<sform:option value="SKT" label="SKT"/>
             <sform:option value="KT" label="KT"/>
-            <sform:option value="U+" label="U+"/>  --%>
+            <sform:option value="U+" label="U+"/>
          </sform:select>   
          <sform:input type="tel" path="memPhone" placeholder="-빼고 숫자만 입력"/>
       </p>
