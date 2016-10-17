@@ -72,7 +72,21 @@ p, h1, form, button {
 	width: 200px;
 	margin: 2px 0 20px 10px;
 }
-
+#radiobox input{
+	float:none;
+	border: solid 1px #aacfe4;
+	width: 50px;
+	margin: 2px 0 20px 10px;
+	font-family: tahoma;
+} 
+#radiobox {
+	float: left;
+	text-align:left;
+	border: solid 1px #aacfe4;
+	width: 200px;
+	margin: 2px 0 20px 10px;
+	font-family: tahoma;
+} 
 #stylized button {
 	clear: both;
 	/* margin-left: 150px; */
@@ -86,13 +100,6 @@ p, h1, form, button {
 	font-weight: bold;
 	font-family: tahoma;
 }
-
-.radio {
-	width: 10px;
-	float: left;
-	font-family: tahoma;
-}
-
 
 
 
@@ -141,11 +148,12 @@ p, h1, form, button {
 				 
 				<label for="memName" class="inputlabel">이름 <span class="small">이름 입력:</span></label> 
 				<input type="text" name="memName" />
-				
-	<!-- 			<label for="memGender" class="radio">성별:</label>
-			 	<input type="radio" name="memGender" value="male"  /> 남
-				 <input type="radio" name="memGender" value="female"  />여 	
-				 -->
+				<label for="memGender" class="radio">성별:</label>
+			  <div id="radiobox">
+	 			 
+			    <input type="radio" name="memGender" value="male" class="radio" /> 남
+				 <input type="radio" name="memGender" value="female" class="radio" />여 	
+				 </div>
 				
 				<label for="memNa" class="inputlabel">전화번호 <span class="small">전화번호:</span></label> 
 				<input type="text" name="memPhone" />
@@ -251,7 +259,7 @@ p, h1, form, button {
 		});
 
 	});
-});
+
 
 </script>
 </html>
