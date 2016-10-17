@@ -142,10 +142,10 @@ p, h1, form, button {
 				<label for="memName" class="inputlabel">이름 <span class="small">이름 입력:</span></label> 
 				<input type="text" name="memName" />
 				
-	<!-- 			<label for="memGender" class="radio">성별:</label>
+		<!-- <label for="memGender" class="radio">성별:</label>
 			 	<input type="radio" name="memGender" value="male"  /> 남
-				 <input type="radio" name="memGender" value="female"  />여 	
-				 -->
+				 <input type="radio" name="memGender" value="female"  />여 	 -->
+				 
 				
 				<label for="memNa" class="inputlabel">전화번호 <span class="small">전화번호:</span></label> 
 				<input type="text" name="memPhone" />
