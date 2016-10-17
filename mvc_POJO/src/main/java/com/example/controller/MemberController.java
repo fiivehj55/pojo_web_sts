@@ -125,7 +125,7 @@ public class MemberController {
          @RequestParam String memId,
          @RequestParam String memPassword,
          @RequestParam String memName,
-         @RequestParam String memGender,
+         /*@RequestParam String memGender,*/
          @RequestParam String memNa,
          @RequestParam String memPhone,
          @RequestParam String memEmail,

@@ -159,11 +159,11 @@ p, h1, form, button {
          <sform:input type="text" path="memName" disabled="true"/>
          <sform:input type="hidden" path="memName"/>
       </p>
-		<label for="memGender" class="radio">성별:</label>
+		<!-- <label for="memGender" class="radio">성별:</label>
 			<div id="radiobox">
 				<input type="radio" name="memGender" value="male" class="radio" /> 남
 				<input type="radio" name="memGender" value="female" class="radio" />여 	
-			</div>
+			</div> -->
          <sform:label path="memNa">전화번호:</sform:label>
 -        <sform:select path="memNa">
          	<sform:option value="SKT" label="SKT"/>

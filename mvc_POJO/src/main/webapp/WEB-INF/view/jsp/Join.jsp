@@ -145,6 +145,7 @@ p, h1, form, button {
 					<label for="memId" class="inputlabel">ID <span class="small">ID 입력</span></label>
 					<input type="text" name="memId" id="memId" />
 					<input type="button" id="check" value="중복확인"/>
+					<br/>
 
 					<label for="memPassword">Password <span class="small">영문+숫자 조합 8 이상</span></label> 
 					<input type="password" name="memPassword" placeholder="영문+숫자 조합 8 이상"/>
@@ -158,7 +159,7 @@ p, h1, form, button {
 					<label for="memGender" class="radio">성별:</label>
 			 		<div id="radiobox">
 						<input type="radio" name="memGender" value="male" class="radio" /> 남
-						<input type="radio" name="memGender" value="female" class="radio" />여 	
+						<input type="radio" name="memGender" value="female" class="radio" />여
 					 </div>
 
 					<label for="memNa" class="inputlabel">전화번호 <span class="small">전화번호:</span></label> 
