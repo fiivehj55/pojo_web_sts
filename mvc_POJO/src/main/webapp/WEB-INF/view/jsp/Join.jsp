@@ -162,7 +162,12 @@ p, h1, form, button {
 						<input type="radio" name="memGender" value="female" class="radio" />여
 					 </div>
 
-					<label for="memNa" class="inputlabel">전화번호 <span class="small">전화번호:</span></label> 
+					<label for="memNa" class="inputlabel">전화번호 <span class="small">전화번호:</span></label>
+					<select name="memNa">
+						<option value="SKT" label="SKT"/>
+						<option value="KT" label="KT"/>
+						<option value="U+" label="U+"/>
+					</select> 
 					<input type="text" name="memPhone" />
 				 
 					<label for="memEmail" class="inputlabel">Email <span class="small">이메일주소</span></label>

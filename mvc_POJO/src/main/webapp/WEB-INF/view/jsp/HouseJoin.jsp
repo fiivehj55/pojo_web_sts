@@ -156,7 +156,7 @@ label {
 	top: -0.375rem;
 	margin: 0 1rem 0 0;
 	cursor: pointer;
-}
+} 
 
 /* 라디오버튼 체크박스 css 시작 */
 label {
@@ -211,7 +211,7 @@ input[type=checkbox]:checked+label:before {
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
 	font-size: 30px;
 	color: #f3f3f3;
-	text-align: center;
+	 text-align: center; 
 	line-height: 15px;
 }
 /* 라디오버튼 체크박스 css 종료 */

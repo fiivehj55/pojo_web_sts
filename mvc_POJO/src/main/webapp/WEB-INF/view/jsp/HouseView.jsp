@@ -56,6 +56,7 @@
 	/* border: 1px solid #999999; */
 	display: table-cell;
 	padding: 3px 10px;
+	
 }
 
 .divTableHeading {
@@ -85,6 +86,7 @@
 #right-box {
 	float: right;
 }
+
 </style>
 
 </head>
@@ -95,8 +97,11 @@
 		<div class="divTable">
 			<div class="divTableBody">
 				<div class="divTableRow">
-					<div class="divTableCell" style="width: 300px; height: 300px;">
-						<img src="<%=request.getContextPath()%>/upload/${houseUser}/${houseNo}/${houseImg }" />
+					<div class="divTableCell" >
+						<img src="<%=request.getContextPath()%>/upload/${houseUser}/${houseNo}/${houseImg }"
+						width="100%" height="300"
+						 />
+						
 					</div>
 				</div>
 

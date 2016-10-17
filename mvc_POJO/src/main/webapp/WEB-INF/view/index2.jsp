@@ -19,11 +19,11 @@
 <link rel="stylesheet" href="css/style-desktop.css" />
 
 <!-- 기본 jQuery js파일 연결 -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> -->
 
 
 <!-- bxSlider css파일 연결 -->
-<link href="js/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
+<!-- <link href="js/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" /> -->
 
 <style>
 body
@@ -277,23 +277,23 @@ body{
 		<div class="container">
 			<!-- Logo -->
 			<div id="logo">
-				<h1>
+<!-- 				<h1>
 					<a href="#">사랑방손님</a>
 				</h1>
-				<span class="tag">By POJO</span>
+				<span class="tag">By POJO</span> -->
 			</div>
 		</div>
 	</div>
-		<ul class="bxslider">
+<!-- 		<ul class="bxslider">
 		
 	
 		<li><img src="css/images/room5.jpg" /></li>
 		<li><img src="css/images/room7.jpg" /></li>
 		<li><img src="css/images/room8.jpg" /></li>
-		<!-- <li><img src="css/images/room6.jpg" /></li> -->
+		<li><img src="css/images/room6.jpg" /></li>
 	
 
-		</ul>
+		</ul> -->
 	
 
 	<!-- Featured -->
@@ -302,6 +302,7 @@ body{
 			<header>
 				<form method="get" action="searchbar">
 					<input id="text_box" name="key" type="text" size="100" placeholder="두정동 또는 건물이름을 입력하세요">
+					<input type="hidden" name="page" value="1"/>
 					<input type="submit" value="검색" class="button button-style1"/>
 				<!-- <a href="#"  >확인</a> -->
 				</form>
@@ -422,33 +423,33 @@ body{
 	</div>
 	<jsp:include page="jsp/Footer.jsp"></jsp:include>
 </body>
-<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+<script src="http://code.jquery.com/jquery.js" /></script>
 <script src="js/jquery.bxslider/jquery.bxslider.min.js"></script>
-<script>
-var subMenu = $(".sub");
-subMenu.hide();
-	$(document).ready(function() {
-		$('.bxslider').bxSlider({
-			/* adaptiveHeight:true, */
-			mode : 'horizontal',
-			auto : true,
-			adaptiveHeight : true,
-			mode : 'fade',
-			captions : true,
-			pagerCustom : '#bx-pager',
-			slideWidth :2500,
+ <script type="text/javascript">
+ var subMenu = $(".sub");
+ subMenu.hide();
+ 	$(document).ready(function() {
+ 		$('.bxslider').bxSlider({
+ 			/* adaptiveHeight:true, */
+ 			mode : 'horizontal',
+ 			auto : true,
+ 			adaptiveHeight : true,
+ 			mode : 'fade',
+ 			captions : true,
+ 			pagerCustom : '#bx-pager',
+ 			slideWidth :2500,
 
-		});
-		$("#nav").hover(function(e) {
-			if (e.type == "mouseenter") {
-				subMenu.show();
-			}
-		});
-		$("#nav").hover(function(e) {
-			if (e.type == "mouseleave") {
-				subMenu.hide();
-			}
-		});
-	});
+ 		});
+ 		$("#nav").hover(function(e) {
+ 			if (e.type == "mouseenter") {
+ 				subMenu.show();
+ 			}
+ 		});
+ 		$("#nav").hover(function(e) {
+ 			if (e.type == "mouseleave") {
+ 				subMenu.hide();
+ 			}
+ 		});
+ 	});
 </script>
 </html>
