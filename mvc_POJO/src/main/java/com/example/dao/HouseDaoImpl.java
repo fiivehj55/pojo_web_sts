@@ -50,9 +50,13 @@ public class HouseDaoImpl implements HouseDao {
 	}
 
 	@Override
-	public List<House> searchHouses(SqlSessionTemplate template, String key) {
+	public List<House> searchHouses(SqlSessionTemplate template, String key, int page) {
 		String stmt = HOUSE_MAP + "searchHouses";
-		return template.selectList(stmt, key);
+		Map<String, Object> map = new HashMap<>();
+		map.put("key", key);
+		map.put("low",(page-1)*5+1);
+		map.put("high",page*5);
+		return template.selectList(stmt, map);
 	}
 
 	@Override

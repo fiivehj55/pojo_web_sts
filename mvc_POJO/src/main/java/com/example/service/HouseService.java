@@ -22,7 +22,7 @@ public interface HouseService {
 	// 하우스 전체 조회
 	List<House> selectAllHouse();
 	
-	List<House> searchHouses(String key);
+	List<House> searchHouses(String key, int page);
 	
 	List<House> searchHousesPaging(Integer page);
 }
