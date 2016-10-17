@@ -82,7 +82,7 @@ p, h1, form, button {
 #radiobox {
 	float: left;
 	text-align:left;
-	border: solid 1px #aacfe4;
+	border: none;
 	width: 200px;
 	margin: 2px 0 20px 10px;
 	font-family: tahoma;
