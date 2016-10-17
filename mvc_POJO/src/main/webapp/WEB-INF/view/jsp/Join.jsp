@@ -146,11 +146,11 @@ p, h1, form, button {
 					<input type="text" name="memId" id="memId" />
 					<input type="button" id="check" value="중복확인"/>
 
-					<label>Password <span class="small">영문+숫자 조합 8 이상</span></label> 
-					<input type="password" name="memNa" id="memNa" />
+					<label for="memPassword">Password <span class="small">영문+숫자 조합 8 이상</span></label> 
+					<input type="password" name="memPassword" placeholder="영문+숫자 조합 8 이상"/>
 				
-					<label for="memPassword" class="inputlabel">Password <span class="small">영문+숫자 조합 8 이상</span></label>
-					<input type="password" name="memPassword" id="memPassword" />
+					<label for="passok" class="inputlabel">Password <span class="small">영문+숫자 조합 8 이상</span></label>
+					<input type="password" name="password" placeholder="영문+숫자 조합 8 이상"/>
 				 
 					<label for="memName" class="inputlabel">이름 <span class="small">이름 입력:</span></label> 
 					<input type="text" name="memName" />
