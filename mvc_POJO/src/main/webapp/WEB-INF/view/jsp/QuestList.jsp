@@ -17,21 +17,18 @@ label {
 }
 
 .auto_center {
-	width: 1000px;
-	height: 400px;
+	width: 100% auto;
+	height: 100% auto;
 	padding: 20px;
 	margin: 200px auto;
 }
-
-
-
 </style>
 
 </head>
 <body class="">
 	<jsp:include page="./Header.jsp"></jsp:include>
 	<div id="main">
-		<div id="content" class="auto_center">
+		<div id="content" class="">
 			<!-- 등록버튼 시작 -->
 			<div id="boardcss_list_add_button_table">
 				<div class="boardcss_list_add_button">
