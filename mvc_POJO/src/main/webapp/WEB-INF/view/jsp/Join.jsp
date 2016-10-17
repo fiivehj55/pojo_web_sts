@@ -143,49 +143,46 @@ p, h1, form, button {
 	<!-- Main -->
 	<div id="main">
 		<div id="container2">
-			
 			<div id="stylized" class="myform2">
 			
 				<h1>회원가입</h1>
 				<form method="post" action="join" enctype="multipart/form-data" id="myform">
-				<label for="memId" class="inputlabel">ID <span class="small">ID 입력</span></label>
-				<input type="text" name="memId" id="memId" />
-				<button id="check">중복확인</button>
+					<label for="memId" class="inputlabel">ID <span class="small">ID 입력</span></label>
+					<input type="text" name="memId" id="memId" />
+					<button id="check">중복확인</button>
 
-				<label>Password <span class="small">영문+숫자 조합 8 이상</span></label> 
-				<input type="password" name="memNa" id="memNa" />
+					<label>Password <span class="small">영문+숫자 조합 8 이상</span></label> 
+					<input type="password" name="memNa" id="memNa" />
 				
-				<label for="memPassword" class="inputlabel">Password <span class="small">영문+숫자 조합 8 이상</span></label>
-				<input type="password" name="memPassword" id="memPassword" />
+					<label for="memPassword" class="inputlabel">Password <span class="small">영문+숫자 조합 8 이상</span></label>
+					<input type="password" name="memPassword" id="memPassword" />
 				 
-				<label for="memName" class="inputlabel">이름 <span class="small">이름 입력:</span></label> 
-				<input type="text" name="memName" />
+					<label for="memName" class="inputlabel">이름 <span class="small">이름 입력:</span></label> 
+					<input type="text" name="memName" />
 
-				<label for="memGender" class="radio">성별:</label>
-			  <div id="radiobox">
-	 			 
-			    <input type="radio" name="memGender" value="male" class="radio" /> 남
-				 <input type="radio" name="memGender" value="female" class="radio" />여 	
-				 </div>
+					<label for="memGender" class="radio">성별:</label>
+			 		<div id="radiobox">
+						<input type="radio" name="memGender" value="male" class="radio" /> 남
+						<input type="radio" name="memGender" value="female" class="radio" />여 	
+					 </div>
 
-				
-				<label for="memNa" class="inputlabel">전화번호 <span class="small">전화번호:</span></label> 
-				<input type="text" name="memPhone" />
+					<label for="memNa" class="inputlabel">전화번호 <span class="small">전화번호:</span></label> 
+					<input type="text" name="memPhone" />
 				 
-				<label for="memEmail" class="inputlabel">Email <span class="small">이메일주소</span></label>
-				<input type="email" name="memEmail" />
+					<label for="memEmail" class="inputlabel">Email <span class="small">이메일주소</span></label>
+					<input type="email" name="memEmail" />
 				 
-				<label for="memImg" class="inputlabel">프로필 사진:</label> 
-				<input type="file" name="memImg" />
-				<p>
+					<label for="memImg" class="inputlabel">프로필 사진:</label> 
+					<input type="file" name="memImg" />
+					<p>
 
-				<label for="memIntro">자기소개: <span class="small"></span></label> 
-				<textarea cols="40" rows="10" name="memIntro"></textarea>
-				<!-- <input type="text" name="memIntro" id="memIntro" /> -->
+					<label for="memIntro">자기소개: <span class="small"></span></label> 
+					<textarea cols="40" rows="10" name="memIntro"></textarea>
+					<!-- <input type="text" name="memIntro" id="memIntro" /> -->
 
-				<input type="submit" value="가입" id="set"> <a href="index"><input
-						type="button" value="취소"></a>
-				<div class="spacer"></div>
+					<input type="submit" value="가입" id="set"> <a href="index">
+					<input type="button" value="취소"></a>
+					<div class="spacer"></div>
 				</form>
 			</div>
 			</div>
@@ -272,9 +269,7 @@ p, h1, form, button {
 				}
 			});
 		});
-
 	});
-
 
 </script>
 </html>
