@@ -252,7 +252,7 @@ input[type=checkbox]:checked+label:before {
 								<input type="radio" id="rthree" name="room" value="3개"/> 
 								<label for="rthree">3개</label>
 								<p>
-								<br /> 
+								<br/> 
 								
 								<span>욕실개수</span> 
 								<input type="radio" id="bone" name="bath" value="1개"/> 
