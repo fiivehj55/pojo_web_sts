@@ -111,11 +111,6 @@ p, h1, form, button {
 	font-family: tahoma;
 }
 
-
-
-
-
-
 /* label {
 	width: 100px;
 	display: inline-block;
