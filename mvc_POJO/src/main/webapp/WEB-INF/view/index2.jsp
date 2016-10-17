@@ -182,7 +182,7 @@ body{
 </style>
 
 </head>
-<body class="header">
+<body class="homepage">
 	<!-- Header -->
 	<div id="header">
 		<div id="nav-wrapper">
@@ -220,7 +220,7 @@ body{
 							<ul class="sub">
 								<li class="active"><a href="terms">회원가입</a></li>
 								<li class="active"><a href="idAndPass">ID/PASS 찾기</a></li>
-								<li class="active"><a href="#">&nbsp</a></li>
+								<li class="active"><a href="kakao">카카오톡</a></li>
 							</ul>
 						</li>
 					</c:when>
