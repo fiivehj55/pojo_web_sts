@@ -47,7 +47,7 @@
 						</ul></li>
 					<li><a href="faq">고객센터</a>
 						<ul class="sub">
-							<li class="active"><a href="faq">FAQ</a></li>
+							<li class="active"><a href="faq">FAQ</a></li>container
 							<li class="active"><a href="report?page=1">신고 게시판</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li>
