@@ -317,7 +317,7 @@ input[type=checkbox]:checked+label:before {
 							<input type="text" id="addr" name="addr" size="50"/> 
 							<p>			
 							<br/>	 -->
-							<a href="#" class="button button-style-1" id="postcodify_search_button">주소검색</a>
+							<a href="#" class="button button-style-1" id="postcodify_search_button">주소검색</a><br />
 							 
 							<input type="text" id="xx" name="postcodify_address" value="" size="50" /><br />
 							상세 주소<input type="text" id="yy" name="postcodify_details" value="" size="40" /><br />
