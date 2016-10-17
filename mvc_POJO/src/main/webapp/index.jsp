@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style-desktop.css" />
 
   <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-  <link href="/SRC2/videoback/demo/css/fullscreenDemo.css" rel="stylesheet" type="text/css">
+  <link href="<%=request.getContextPath()%>/videoback/css/fullscreenDemo.css" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 
@@ -441,9 +441,9 @@ body{
  
  jQuery(function($){
      $('body').vidbg({
-         'mp4': '/SRC2/videoback/demo/media/mp4_video.mp4',
-         'webm': '/SRC2/videoback/demo/media/webm_video.webm',
-         'poster': '/SRC2/videoback/demo/media/fallback.jpg',
+         'mp4': '<%=request.getContextPath()%>/videoback/media/mp4_video.mp4',
+         'webm': '<%=request.getContextPath()%>/videoback/media/webm_video.webm',
+         'poster': '<%=request.getContextPath()%>/videoback/media/fallback.jpg',
      }, {
        // Options
        muted: true,
@@ -483,7 +483,7 @@ body{
  	});
   </script>
 
-  <script src="/SRC2/videoback/dist/vidbg.js"></script>
+  <script src="<%=request.getContextPath()%>/videoback/dist/vidbg.js"></script>
 
 
 </html>
