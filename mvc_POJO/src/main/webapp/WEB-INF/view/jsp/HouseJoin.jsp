@@ -178,7 +178,7 @@ label:before {
 	width: 20px;
 	height: 20px;
 	margin-right: 10px;
-	position: absolute;
+	/* position: absolute; */
 	left: 0;
 	bottom: 1px;
 	background-color: #FFD8D8;
