@@ -258,13 +258,13 @@ body{
 					</c:otherwise>	
 					</c:choose>
 
-					<li><a href="search">검색된 페이지</a>
+					<li><a href="search?page=1">검색된 페이지</a>
 						<ul class="sub">
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li>
-					<li><a href="bbs">문의게시판</a>
+					<li><a href="bbs?page=1">문의게시판</a>
 						<ul class="sub">
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
@@ -294,15 +294,19 @@ body{
 	
 
 		</ul>
+	
+
 	<!-- Featured -->
 	<div id="featured">
 		<div class="container">
 			<header>
-				<input id="text_box" type="text" size="100"	placeholder="두정동 또는 건물이름을 입력하세요"> 
-				<a href="#" class="button button-style1" >확인</a>
+				<form method="get" action="searchbar">
+					<input id="text_box" name="key" type="text" size="100" placeholder="두정동 또는 건물이름을 입력하세요">
+					<input type="submit" value="검색" class="button button-style1"/>
+				<!-- <a href="#"  >확인</a> -->
+				</form>
 			</header>
-			<p>
-				지금 <a href="http://templated.co"> 인기있는 </a>숙소를 만나보세요!
+			<p>	지금 <a href="http://templated.co"> 인기있는 </a>숙소를 만나보세요!
 		</div>
 	</div>
 

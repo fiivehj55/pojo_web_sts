@@ -65,7 +65,7 @@ label {
 					<thead>
 						<tr>
 							<th>번호</th>
-							<th>카테고리</th>
+							<th>구분</th>
 							<th>제목</th>
 							<th>이름</th>
 							<th>등록일자</th>

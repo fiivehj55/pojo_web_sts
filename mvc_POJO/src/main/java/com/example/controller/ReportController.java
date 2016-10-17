@@ -90,7 +90,7 @@ public class ReportController {
 		// view의 이름을 리턴.
 		int result = repservice.deleteReport(reportNo);
 		if (result == 1)
-			return "redirect:/report";
+			return "redirect:/report?page=1";
 		else
 			return "jsp/ReportView";
 	}

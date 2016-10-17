@@ -23,4 +23,6 @@ public interface HouseService {
 	List<House> selectAllHouse();
 	
 	List<House> searchHouses(String key);
+	
+	List<House> searchHousesPaging(Integer page);
 }

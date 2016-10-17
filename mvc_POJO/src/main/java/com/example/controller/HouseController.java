@@ -38,14 +38,24 @@ public class HouseController {
 	@Autowired
 	ReplyService Rpservice;
 	
-	private static final String uploadDir = "c:\\Temp/upload/";
-
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
-	public String search(Model model, HttpSession session) {
-		List<House> house = hservice.selectAllHouse();
+	public String search(Model model, @RequestParam Integer page,
+			HttpSession session) {
+		List<House> house = hservice.searchHousesPaging(page);
+		model.addAttribute("house", house);
+		model.addAttribute("max", house.size()/5+1);
+		model.addAttribute("page", page);
+		//session.setAttribute("house", house);
+		return "jsp/HouseList";
+	}
+	
+	@RequestMapping(value = "/searchbar", method = RequestMethod.GET)
+	public String searchbar(Model model, @RequestParam String key, HttpSession session) {
+		List<House> house = hservice.searchHouses(key);
 		session.setAttribute("house", house);
 		return "jsp/HouseList";
 	}
+	
 	@RequestMapping(value = "/insertHouse", method = RequestMethod.GET)
 	public String insertHouseGet(Model model, HttpSession session) {
 		Member user = (Member) session.getAttribute("user");
@@ -58,25 +68,39 @@ public class HouseController {
 	public String jusoPopup(Model model, HttpSession session) {
 		return "jsp/jusoPopup";
 	}
+	
+	private static final String uploadDir = "c:\\Temp/upload/";
 	@RequestMapping(value = "/insertHouse", method = RequestMethod.POST)
 	public String insertHousePost(Model model, 
 			@RequestParam String room, @RequestParam String bath,
-			@RequestParam String hosting, @RequestParam(value = "tv", defaultValue = "null") String tv,
+			@RequestParam String hosting, 
+			@RequestParam(value = "tv", defaultValue = "null") String tv,
 			@RequestParam(value = "aircon", defaultValue = "null") String aircon,
 			@RequestParam(value = "wifi", defaultValue = "null") String wifi,
 			@RequestParam(value = "elebe", defaultValue = "null") String elebe,
 			@RequestParam(value = "washing", defaultValue = "null") String washing, @RequestParam String rname,
-			@RequestParam String infor, @RequestParam String photo,
-			@RequestParam String addr, @RequestParam String day,
+			@RequestParam String infor, @RequestParam MultipartFile photo,
+			@RequestParam String postcodify_address, @RequestParam String day,
 			@RequestParam Integer price, HttpSession session) throws IOException {
 		int result = 0;
 		Member user = (Member) session.getAttribute("user");
+		
+		File idfile = new File(uploadDir + user.getMemId());
+		// id파일 존재하지않으면 디렉토리 생성 아니면 회원가입화면으로
+		if (!idfile.exists())
+			idfile.mkdir();
+
+		File introHouse = new File(uploadDir + "/" + user.getMemId() + "/house");
+		if (!introHouse.exists())
+			introHouse.mkdir();
+
+		File file = new File(uploadDir + user.getMemId() + "/house/" + photo.getOriginalFilename());
+		photo.transferTo(file);
+		String imgName = photo.getOriginalFilename();
+		
 		House house = new House();
-		
-	
-		
 		house.setHouseName(rname);
-		house.setHouseAddress(addr);
+		house.setHouseAddress(postcodify_address);
 		house.setHousePrice(price);
 		house.setHouseScore(9);
 		house.setHouseInfo(infor);
@@ -90,33 +114,20 @@ public class HouseController {
 		house.setHouseWifi(wifi);
 		house.setHouseElebe(elebe);
 		house.setHouseWashing(washing);
-		house.setHouseImg(photo);
+		house.setHouseImg(imgName);
 		house.setHouseDay(day);
-		session.setAttribute("house", house);
+		/*session.setAttribute("house", house);*/
 		result = hservice.insertHouse(house);
 		System.out.println("방금 등록된 하우스번호 : "+house.getHouseNo());
-/*		
-		File idfile = new File(uploadDir + user.getMemId());
-		// id파일 존재하지않으면 디렉토리 생성 아니면 회원가입화면으로
-		if (!idfile.exists())
-			idfile.mkdir();
-
-		File introHouse = new File(uploadDir + user.getMemId() + "/" + house.getHouseNo());
-		if (!introHouse.exists())
-			introHouse.mkdir();
-
-		File file = new File(uploadDir + user.getMemId() + "/" + house.getHouseNo() + "/" + photo.getOriginalFilename());
-		photo.transferTo(file);
-		String imgName = photo.getOriginalFilename();*/
 		
 		if (result != 1) {
 			return "jsp/HouseJoin";
 		} else {
-			return "redirect:/search";
+			return "redirect:/search?page=1";
 		}
 	}
 
-	@RequestMapping(value = "/searchByHouseNo", method = RequestMethod.GET)
+	@RequestMapping(value = "/houseView", method = RequestMethod.GET)
 	public String selectByHouseNo(Model model, @RequestParam Integer houseNo, HttpSession session) {
 		Member user = (Member) session.getAttribute("user");
 		House house = hservice.selectByNoHouse(houseNo);
@@ -170,7 +181,7 @@ public class HouseController {
 			model.addAttribute("house", house);
 			return "jsp/HouseUpdate";
 		}
-		return "redirect:/search";
+		return "redirect:/search?page=1";
 	}
 
 	@RequestMapping(value = "/updateHouse", method = RequestMethod.POST)
@@ -181,9 +192,11 @@ public class HouseController {
 			@RequestParam(value = "aircon", defaultValue = "null") String houseAircon,
 			@RequestParam(value = "wifi", defaultValue = "null") String houseWifi,
 			@RequestParam(value = "elebe", defaultValue = "null") String houseElebe,
-			@RequestParam(value = "washing", defaultValue = "null") String houseWashing, @RequestParam String houseName,
-			@RequestParam String houseInfo, @RequestParam MultipartFile houseImg, @RequestParam String houseAddress,
-			@RequestParam String houseDay, @RequestParam Integer housePrice, HttpSession session) throws IOException {
+			@RequestParam(value = "washing", defaultValue = "null") String houseWashing, 
+			@RequestParam String houseName, @RequestParam String houseInfo, 
+			@RequestParam MultipartFile houseImg, @RequestParam String houseAddress, 
+			@RequestParam String houseDay, @RequestParam Integer housePrice, 
+			HttpSession session) throws IOException {
 		Member user = (Member) session.getAttribute("user");
 		File idfile = new File(uploadDir + user.getMemId());
 		// id파일 존재하지않으면 디렉토리 생성 아니면 회원가입화면으로
@@ -218,7 +231,7 @@ public class HouseController {
 		house.setHouseDay(houseDay);
 
 		int result = hservice.updateHouse(house);
-		return "redirect:/search";
+		return "redirect:/search?page=1";
 	}
 
 	@ModelAttribute

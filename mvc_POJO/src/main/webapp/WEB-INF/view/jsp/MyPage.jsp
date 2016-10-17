@@ -73,7 +73,7 @@ label {
          <img src="<%=request.getContextPath()%>/upload/${userinfo.getMemId()}/intro/${userinfo.getMemImg()}">
          </div>
       <p>
-         <sform:label path="memIntro">자기소개:</sform:label></br>
+         <sform:label path="memIntro">자기소개:</sform:label><br/>
          <sform:textarea  path="memIntro" cols="45" rows="10"></sform:textarea>
       <p>
          <a href="deletePass"><input type="button" value="탈퇴하기"></a>

@@ -90,7 +90,7 @@ public class QuestiontController {
 			model.addAttribute("questNo",questNo);
 		}
 		// view의 이름을 리턴.
-		return "/jsp/QuestionView";
+		return "jsp/QuestionView";
 	}
 	
 	@RequestMapping(value = "/bbsSelectByNo", method = RequestMethod.POST)
@@ -118,7 +118,7 @@ public class QuestiontController {
 		
 		result = qservice.updateQuestion(question);
 		if(result == 1){
-			return "redirect:/bbs";
+			return "redirect:/bbs?page=1";
 		}else{
 			// view의 이름을 리턴.
 			return "jsp/QuestionUpdate";
