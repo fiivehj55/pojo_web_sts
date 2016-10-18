@@ -43,7 +43,7 @@ p, h1, form, button {
 	font-size: 16px;
 	font-weight: bold;
 	margin-bottom: 8px;
-	font-family: nanumgothic, dotum;
+	font-family: nanumgoic, dotum;
 }
 
 #stylized p {
@@ -136,6 +136,17 @@ p, h1, form, button {
 .required{
 	text-align:right;
 }
+
+.boardWrite input{
+	vertical-align: middle;
+	height:22px;
+	line-height:180%;
+}
+
+.boardWrite th{
+	width:150px;
+	text-align:left;
+}
 </style>
 </head>
 <body class="header">
@@ -145,15 +156,24 @@ p, h1, form, button {
 		<h2>JOIN</h2>
 	</div>
 	<hr class="layout"></hr>
-	
+	<div class="smallArea">
 	<h3>기본정보</h3>
-	<p class="required">필수입력사항</p>
+	</div>
+	<p class="required">
+	<img alt="필수" 
+	src="http://img.echosting.cafe24.com/skin/base_ko_KR/member
+	/ico_required.gif"></img>
+	필수입력사항</p>
 	<hr><p>
 	<div class="boardWrite">
 		<table border="1" summary="">
 			<tbody>
 				<tr>
-					<th scope="row">ID</th>
+					<th scope="row">ID
+					<img alt="필수" 
+					src="http://img.echosting.cafe24.com/skin/base_ko_KR/member
+					/ico_required.gif"></img>
+					</th>
 				<td>
 					<input name="member_id" class="inputTypeText" id="member_id" type="text"></input>
 					<input type="button" id="check" value="ID 중복확인"></input>
@@ -162,7 +182,11 @@ p, h1, form, button {
 				</tr>
 				
 				<tr>
-					<th scope="row">PASSWORD</th>
+					<th scope="row">PASSWORD
+					<img alt="필수" 
+					src="http://img.echosting.cafe24.com/skin/base_ko_KR/member
+					/ico_required.gif"></img>
+					</th>
 				<td>
 					<input name="password" id="password" type="password" maxlength="16"></input>
 					(영문 + 숫자 조합 8자 이상)	
@@ -170,14 +194,22 @@ p, h1, form, button {
 				</tr>
 				
 				<tr>
-					<th scope="row">PASSWORD 확인</th>
+					<th scope="row">PASSWORD 확인
+					<img alt="필수" 
+					src="http://img.echosting.cafe24.com/skin/base_ko_KR/member
+					/ico_required.gif"></img>
+					</th>
 				<td>
 					<input name="user_password_confirm" id="password" type="password" maxlength="16"></input>
 				</td>
 				</tr>
 				
 				<tr>
-					<th id ="nameTitle" scope="row">이름</th>
+					<th id ="nameTitle" scope="row">이름
+					<img alt="필수" 
+					src="http://img.echosting.cafe24.com/skin/base_ko_KR/member
+					/ico_required.gif"></img>
+					</th>
 					<td>
 						<span id="nameContents">
 							<input name="name" id="name" type="text"
@@ -189,7 +221,11 @@ p, h1, form, button {
 				
 				
 				<tr>
-					<th id ="userGender" scope="row">성별</th>
+					<th id ="userGender" scope="row">성별
+					<img alt="필수" 
+					src="http://img.echosting.cafe24.com/skin/base_ko_KR/member
+					/ico_required.gif"></img>
+					</th>
 					<td>
 						<input type="radio" name="memGender" value="male" class="radio" /> 남
 						<input type="radio" name="memGender" value="female" class="radio" />여
@@ -239,7 +275,11 @@ p, h1, form, button {
 				</tr>
 				
 				<tr>
-					<th scope="row">휴대전화</th>
+					<th scope="row">휴대전화
+					<img alt="필수" 
+					src="http://img.echosting.cafe24.com/skin/base_ko_KR/member
+					/ico_required.gif"></img>
+					</th>
 					<td>
 						<select name="mobile[]" id="mobile1">
 						<option value="02">010</option>
@@ -258,7 +298,11 @@ p, h1, form, button {
 				</tr>
 				
 				<tr>
-					<th scope="row">이메일</th>
+					<th scope="row">이메일
+					<img alt="필수" 
+					src="http://img.echosting.cafe24.com/skin/base_ko_KR/member
+					/ico_required.gif"></img>
+					</th>
 					<td>
 						<input name="email" id="email" type="text"></input>
 						@
@@ -282,7 +326,8 @@ p, h1, form, button {
 			<tr>
 				<th scope="row">프로필 사진</th>
 				<td>
-					<label for="memImg" class="inputlabel">프로필 사진:</label> 
+					
+					<label for="memImg" class="inputlabel"></label> 
 					<input type="file" name="memImg" />	
 				</td>
 			</tr>					
@@ -292,7 +337,9 @@ p, h1, form, button {
 		</table>
 	</div>
 	<hr>
+	<div class="smallArea">
 	<h3>이용약관 동의</h3>
+	</div>
 	<p><p><hr>
 	
 	<div class = "agreeArea">
@@ -306,7 +353,9 @@ p, h1, form, button {
 	</p>
 	
 	<hr>
+	<div class="smallArea">
 	<h3>개인정보 수집 및 이용동의</h3>
+	</div>
 	<p><p><hr>
 	<div class = "agreeArea">
 		<div class="agree">이미지</div>

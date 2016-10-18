@@ -12,7 +12,9 @@ body {
 }
 
 body, input, textarea, select {
-	
+	vertical-align: middle;
+	height:22px;
+	line-height:180%;
 }
 
 header {
