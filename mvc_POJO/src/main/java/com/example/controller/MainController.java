@@ -41,4 +41,11 @@ public class MainController {
 		//view의 이름을 리턴.
 		return "jsp/Terms";
 	}
+	
+	@RequestMapping(value = "/kakao",method=RequestMethod.GET)
+	public String kakao(Model model){
+
+		logger.trace("KAKAO");
+		return "jsp/kakao";
+	}
 }

@@ -35,7 +35,8 @@ p, h1, form, button {
 
 #stylized {
 	border: solid 2px #b7ddf2;
-	background: #ebf4fb;
+	background: #FFFFFF;
+	
 }
 
 #stylized h1 {
@@ -105,7 +106,7 @@ p, h1, form, button {
 	text-align: center;
 	line-height: 31px;
 	background-color: #000;
-	color: #FFFFFF;
+	color: #FFFFFF; /* 흰색 */
 	font-size: 11px;
 	font-weight: bold;
 	font-family: tahoma;
@@ -131,22 +132,215 @@ p, h1, form, button {
 .need {
 	color: red;
 }
+
+.required{
+	text-align:right;
+}
 </style>
 </head>
 <body class="header">
 	<jsp:include page="./Header.jsp"></jsp:include>
 	<!-- Main -->
-	<div id="main">
+	<div class="titleArea">
+		<h2>JOIN</h2>
+	</div>
+	<hr class="layout"></hr>
+	
+	<h3>기본정보</h3>
+	<p class="required">필수입력사항</p>
+	<hr><p>
+	<div class="boardWrite">
+		<table border="1" summary="">
+			<tbody>
+				<tr>
+					<th scope="row">ID</th>
+				<td>
+					<input name="member_id" class="inputTypeText" id="member_id" type="text"></input>
+					<input type="button" id="check" value="ID 중복확인"></input>
+					(영문소문자/숫자, 4~16자)
+				</td>
+				</tr>
+				
+				<tr>
+					<th scope="row">PASSWORD</th>
+				<td>
+					<input name="password" id="password" type="password" maxlength="16"></input>
+					(영문 + 숫자 조합 8자 이상)	
+				</td>
+				</tr>
+				
+				<tr>
+					<th scope="row">PASSWORD 확인</th>
+				<td>
+					<input name="user_password_confirm" id="password" type="password" maxlength="16"></input>
+				</td>
+				</tr>
+				
+				<tr>
+					<th id ="nameTitle" scope="row">이름</th>
+					<td>
+						<span id="nameContents">
+							<input name="name" id="name" type="text"
+							maxlength="20"></input>
+						</span>
+					</td>
+				
+				</tr>
+				
+				
+				<tr>
+					<th id ="userGender" scope="row">성별</th>
+					<td>
+						<input type="radio" name="memGender" value="male" class="radio" /> 남
+						<input type="radio" name="memGender" value="female" class="radio" />여
+					</td>
+					
+				</tr>
+				
+				<tr>
+					<th scope="row">일반전화</th>
+					<td>
+						<select name="phone[]" id="phone1">
+						<option value="02">02</option>
+						<option value="031">031</option>
+						<option value="032">032</option>
+						<option value="033">033</option>
+						<option value="041">041</option>
+						<option value="042">042</option>
+						<option value="043">043</option>
+						<option value="044">044</option>
+						<option value="051">051</option>
+						<option value="052">052</option>
+						<option value="053">053</option>
+						<option value="054">054</option>
+						<option value="055">055</option>
+						<option value="061">061</option>
+						<option value="062">062</option>
+						<option value="063">063</option>
+						<option value="064">064</option>
+						<option value="0502">0502</option>
+						<option value="0505">0505</option>
+						<option value="0506">0506</option>
+						<option value="0507">0507</option>
+						<option value="070">070</option>
+						<option value="010">010</option>
+						<option value="011">011</option>
+						<option value="016">016</option>
+						<option value="017">017</option>
+						<option value="018">018</option>
+						<option value="019">019</option>
+						</select>
+						
+						-
+						<input name="phone[]" id="phone2" type="text" maxlength="4"></input>
+						-
+						<input name="phone[]" id="phone3" type="text" maxlength="4"></input>
+					</td>
+				</tr>
+				
+				<tr>
+					<th scope="row">휴대전화</th>
+					<td>
+						<select name="mobile[]" id="mobile1">
+						<option value="02">010</option>
+						<option value="011">011</option>
+						<option value="016">016</option>
+						<option value="017">017</option>
+						<option value="018">018</option>
+						<option value="019">019</option>
+						</select>
+						
+						-
+						<input name="mobile[]" id="mobile2" type="text" maxlength="4"></input>
+						-
+						<input name="mobile[]" id="mobile3" type="text" maxlength="4"></input>
+					</td>
+				</tr>
+				
+				<tr>
+					<th scope="row">이메일</th>
+					<td>
+						<input name="email" id="email" type="text"></input>
+						@
+						<input name="email2" id="email2" type="text"></input>
+						<select id="email3">
+						<option selected ="selected" value=""> --이메일 선택--</option>
+						<option value="naver.com">naver.com</option>
+						<option value="daum.net">daum.net</option>
+						<option value="nate.com">nate.com</option>
+						<option value="hotmail.com">hotmail.com</option>
+						<option value="yahoo.com">yahoo.com</option>
+						<option value="empas.com">empas.com</option>
+						<option value="korea.com">korea.com</option>
+						<option value="dreamwiz.com">dreamwiz.com</option>
+						<option value="gamil.com">gamil.com</option>
+						<option value="etc">직접입력</option>
+						</select>
+					</td>
+				</tr>
+			
+			<tr>
+				<th scope="row">프로필 사진</th>
+				<td>
+					<label for="memImg" class="inputlabel">프로필 사진:</label> 
+					<input type="file" name="memImg" />	
+				</td>
+			</tr>					
+			</tbody>
+			
+			
+		</table>
+	</div>
+	<hr>
+	<h3>이용약관 동의</h3>
+	<p><p><hr>
+	
+	<div class = "agreeArea">
+		<div class="agree">이미지</div>
+	</div>
+	<p class = "check">
+	<span>이용약관에 동의하십니까?</span>
+	<input name="agree_service_check[]"
+	id="agree_service_check0" type="checkbox"></input>
+	<label for ="agree_service_check0">동의함</label>
+	</p>
+	
+	<hr>
+	<h3>개인정보 수집 및 이용동의</h3>
+	<p><p><hr>
+	<div class = "agreeArea">
+		<div class="agree">이미지</div>
+	</div>
+	<p class = "check">
+	<span>이용약관에 동의하십니까?</span>
+	<input name="agree_privacy_check[]"
+	id="agree_privacy_check0" type="checkbox"></input>
+	<label for ="agree_privacy_check0">동의함</label>
+	</p>
+	
+	<div class="btn">
+		<div class="btnArea">
+			<a class="black">회원가입</a>
+		</div>
+		
+		<div class="btnArea">
+			<a class="gray">회원가입취소</a>
+		</div>
+	</div>
+	
+	<!-- <div id="main">
 		<div id="container2">
 			<div id="stylized" class="myform2">
 			
 				<h1>회원가입</h1>
 				<form method="post" action="join" enctype="multipart/form-data" id="myform">
-					<label for="memId" class="inputlabel">ID <span class="small">ID 입력</span></label>
+					<label for="memId" class="inputlabel">ID 
+					<span class="small">ID 입력</span></label>
 					<input type="text" name="memId" id="memId" />
+					<br/>
 					<input type="button" id="check" value="중복확인"/>
 					<br/>
-
+					
 					<label for="memPassword">Password <span class="small">영문+숫자 조합 8 이상</span></label> 
 					<input type="password" name="memPassword" placeholder="영문+숫자 조합 8 이상"/>
 				
@@ -161,10 +355,10 @@ p, h1, form, button {
 						<input type="radio" name="memGender" value="male" class="radio" /> 남
 						<input type="radio" name="memGender" value="female" class="radio" />여
 					 </div>
-
-					<label for="memNa" class="inputlabel">전화번호 <span class="small">전화번호:</span></label>
+					
+					<label for="memNa" class="inputlabel">전화번호<span class="small">전화번호:</span></label>
 					<select name="memNa">
-						<option value="SKT" label="SKT"/>
+						<option value="SKT" label="SKT"/> 
 						<option value="KT" label="KT"/>
 						<option value="U+" label="U+"/>
 					</select> 
@@ -179,7 +373,7 @@ p, h1, form, button {
 
 					<label for="memIntro">자기소개: <span class="small"></span></label> 
 					<textarea cols="40" rows="10" name="memIntro"></textarea>
-					<!-- <input type="text" name="memIntro" id="memIntro" /> -->
+					<input type="text" name="memIntro" id="memIntro" />
 
 					<input type="submit" value="가입" id="set"> <a href="index">
 					<input type="button" value="취소"></a>
@@ -187,7 +381,7 @@ p, h1, form, button {
 				</form>
 			</div>
 			</div>
-		</div>
+		</div> -->
 	
 	<jsp:include page="./Footer.jsp"></jsp:include>
 </body>

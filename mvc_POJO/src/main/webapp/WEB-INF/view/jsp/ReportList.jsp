@@ -13,18 +13,18 @@
 
 <style>
 label {
-	width: 100px;
+	width: 100px auto;
 	display: inline-block;
 }
 
 .auto_center {
-	width: 1000px;
-	height: 400px;
+	width: 100% auto;
+	height: 100% auto;
 	padding: 20px;
-	margin: 200px auto;
+	margin: 100px auto;
 }
 </style>
-<%-- <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
@@ -34,13 +34,13 @@ label {
 <script src="js/init.js"></script>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/skel-noscript.css" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css" />
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style-desktop.css" /> --%>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style-desktop.css" />
 
 </head>
 <body class="">
 	<jsp:include page="./Header.jsp"></jsp:include>
 	<div id="main">
-		<div id="content" class="auto_center">
+		<div id="content" class="">
 			<!-- 등록버튼 시작 -->
 			<div id="boardcss_list_add_button_table">
 				<div class="boardcss_list_add_button">

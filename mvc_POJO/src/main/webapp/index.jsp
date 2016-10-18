@@ -18,17 +18,9 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style-desktop.css" />
 
-  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-  <link href="<%=request.getContextPath()%>/videoback/css/fullscreenDemo.css" rel="stylesheet" type="text/css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
-
-<!-- 기본 jQuery js파일 연결 -->
-<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
- -->
-
-<!-- bxSlider css파일 연결 -->
-<!-- <link href="js/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" /> -->
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+<link href="<%=request.getContextPath()%>/videoback/css/fullscreenDemo.css" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 <style rel="stylesheet">
 body {
@@ -177,30 +169,14 @@ body {
 	background: white;
 }
 
-/* .bx-wrapper {
-	position: relative;
-	width: 100%;
-	height: 30% !important;
-	top: 0;
-	left: 0;
 }
 
-.bxslider, .bxslider li {
-	/* 높이 조정*/
-	height: 30vh !important;;
-}
 
-.bxslider li {
-	background-repeat: no-repeat;
-	background-position: top center;
- */	background-size: cover;
-}
 </style>
 
 </head>
-<body class="header">
+<body class="homepage">
 	<!-- Header -->
-
 	<div id="header">
 		<div id="nav-wrapper">
 
@@ -237,7 +213,7 @@ body {
 								<ul class="sub">
 									<li class="active"><a href="terms">회원가입</a></li>
 									<li class="active"><a href="idAndPass">ID/PASS 찾기</a></li>
-									<li class="active"><a href="#">&nbsp</a></li>
+									<li class="active"><a href="kakao">카카오톡</a></li>
 								</ul></li>
 						</c:when>
 						<c:otherwise>
@@ -279,22 +255,23 @@ body {
 
 	<div class="block-container">
     	<div class="block">
-      	<h1>Video Background</h1>
-      	<h3>Fullscreen applied to <body> </h3>
+<!--       	<h1>Video Background</h1>
+      	<h3>Fullscreen applied to <body> </h3> -->
     	</div>
   	</div>
 	
-<!--	<ul class="bxslider">
-		<li><img src="css/images/room5.jpg" /></li>
-		<li><img src="css/images/room7.jpg" /></li>
-		<li><img src="css/images/room8.jpg" /></li>
-		<li><img src="css/images/room6.jpg" /></li>
-		</ul> -->
 		
 	<!-- Featured -->
 	<div id="featured">
 		<div class="container">
+		
+		
 			<header>
+			
+				<h2>Welcome to Linear</h2>
+				</header>
+				<p>This is <strong>Linear</strong>, a responsive HTML5 site template freebie by <a href="http://templated.co">TEMPLATED</a>. Released for free under the <a href="http://templated.co/license">Creative Commons Attribution</a> license, so use it for whatever (personal or commercial) &ndash; just give us credit! Check out more of our stuff at <a href="http://templated.co">our site</a> or follow us on <a href="http://twitter.com/templatedco">Twitter</a>.</p>
+				<hr />
 				<form method="get" action="searchbar">
 					<input id="text_box" name="key" type="text" size="100"
 						placeholder="두정동 또는 건물이름을 입력하세요"> <input type="hidden"

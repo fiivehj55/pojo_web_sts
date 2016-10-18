@@ -215,11 +215,40 @@ input[type=checkbox]:checked+label:before {
 	line-height: 15px;
 }
 /* 라디오버튼 체크박스 css 종료 */
+
+.header2 {
+	position: relative;
+
+	background: url(../css/images/q1.jpg) no-repeat bottom center; 
+	background-attachment: fixed;
+	background-size: cover;
+	text-align: center;
+
+}
+
+#header:before {
+	
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(64, 64, 64, 0.125);
+}
+
+
+
 </style>
 
 </head>
 <body class="header">
 	<jsp:include page="./Header.jsp"></jsp:include>
+	<div class="header2">
+	<img src='css/images/air2.jpg' width="100%" height="500"/>
+	
+	
+	</div>
 	<!-- Main -->
 	<div id="view">
 		<div id="main">

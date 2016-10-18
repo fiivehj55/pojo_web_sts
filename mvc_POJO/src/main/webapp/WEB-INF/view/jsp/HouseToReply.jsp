@@ -94,7 +94,7 @@
 						</div>
 					</div>
 					<textarea name="comment" tabindex="1" class="inputReply" placeholder="여러분의 소중한 댓글을 입력해주세요.">여러분의 소중한 댓글을 입력해주세요.</textarea>
-						<button class="addButton">등록</button>
+					<button class="addButton">등록</button>
 				</div>
 				<%-- <tr>
 				<td>${row.memberId }</td>
