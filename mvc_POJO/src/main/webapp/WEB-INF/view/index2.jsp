@@ -210,11 +210,11 @@ box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.64);
 }
 
 input, input[placeholder] {
-	font-weight: bold;
-	text-align: center;
+   font-weight: bold;
+   text-align: center;
 }
 body{
-	background: white;
+   background: white;
 }
 
 
@@ -223,119 +223,119 @@ body{
 
 </head>
 <body class="homepage">
-	<!-- Header -->
-	<div id="header">
-		<div id="nav-wrapper">
-			<!-- Nav -->
-			<nav id="nav">
-				<ul class="menu1">
-					<li class="active"><a href="index">메인가기</a>
-						<ul class="sub">
-							<li class="active"><a href="#">&nbsp</a></li>
-							<li class="active"><a href="#">&nbsp</a></li>
-							<li class="active"><a href="#">&nbsp</a></li>
-						</ul></li>
-					<li class="active"><a href="insertHouse">호스팅하기</a>
-						<ul class="sub">
-							<li class="active"><a href="#">&nbsp</a></li>
-							<li class="active"><a href="#">&nbsp</a></li>
-							<li class="active"><a href="#">&nbsp</a></li>
-						</ul></li>
-					<li><a href="left-sidebar.html">메시지</a>
-						<ul class="sub">
-							<li class="active"><a href="#">&nbsp</a></li>
-							<li class="active"><a href="#">&nbsp</a></li>
-							<li class="active"><a href="#">&nbsp</a></li>
-						</ul></li>
-					<li><a href="faq">고객센터</a>
-						<ul class="sub">
-							<li class="active"><a href="faq">FAQ</a></li>
-							<li class="active"><a href="report?page=1">신고 게시판</a></li>
-							<li class="active"><a href="#">&nbsp</a></li>
-						</ul></li> 
-					
-					<c:choose>	
-					<c:when test="${ empty user }">
-						<li><a href="login">로그인</a>
-							<ul class="sub">
-								<li class="active"><a href="terms">회원가입</a></li>
-								<li class="active"><a href="idAndPass">ID/PASS 찾기</a></li>
-								<li class="active"><a href="kakao">카카오톡</a></li>
-							</ul>
-						</li>
-					</c:when>
-					<c:otherwise>
-						<li><a href="inputPass">마이페이지</a>
-							<ul class="sub">
-								<li class="active"><a href="logout">로그아웃</a></li>
-								<li class="active"><a href="#">&nbsp</a></li>
-								<li class="active"><a href="#">&nbsp</a></li>
-							</ul>
-						</li>
-					</c:otherwise>	
-					</c:choose>
+   <!-- Header -->
+   <div id="header">
+      <div id="nav-wrapper">
+         <!-- Nav -->
+         <nav id="nav">
+            <ul class="menu1">
+               <li class="active"><a href="index">메인가기</a>
+                  <ul class="sub">
+                     <li class="active"><a href="#">&nbsp</a></li>
+                     <li class="active"><a href="#">&nbsp</a></li>
+                     <li class="active"><a href="#">&nbsp</a></li>
+                  </ul></li>
+               <li class="active"><a href="insertHouse">호스팅하기</a>
+                  <ul class="sub">
+                     <li class="active"><a href="#">&nbsp</a></li>
+                     <li class="active"><a href="#">&nbsp</a></li>
+                     <li class="active"><a href="#">&nbsp</a></li>
+                  </ul></li>
+               <li><a href="left-sidebar.html">메시지</a>
+                  <ul class="sub">
+                     <li class="active"><a href="#">&nbsp</a></li>
+                     <li class="active"><a href="#">&nbsp</a></li>
+                     <li class="active"><a href="#">&nbsp</a></li>
+                  </ul></li>
+               <li><a href="faq">고객센터</a>
+                  <ul class="sub">
+                     <li class="active"><a href="faq">FAQ</a></li>
+                     <li class="active"><a href="report?page=1">신고 게시판</a></li>
+                     <li class="active"><a href="#">&nbsp</a></li>
+                  </ul></li> 
+               
+               <c:choose>   
+               <c:when test="${ empty user }">
+                  <li><a href="login">로그인</a>
+                     <ul class="sub">
+                        <li class="active"><a href="terms">회원가입</a></li>
+                        <li class="active"><a href="idAndPass">ID/PASS 찾기</a></li>
+                        <li class="active"><a href="kakao">카카오톡</a></li>
+                     </ul>
+                  </li>
+               </c:when>
+               <c:otherwise>
+                  <li><a href="inputPass">마이페이지</a>
+                     <ul class="sub">
+                        <li class="active"><a href="logout">로그아웃</a></li>
+                        <li class="active"><a href="#">&nbsp</a></li>
+                        <li class="active"><a href="#">&nbsp</a></li>
+                     </ul>
+                  </li>
+               </c:otherwise>   
+               </c:choose>
 
-					<!-- <li><a href="search?page=1">검색된 페이지</a>
-						<ul class="sub">
-							<li class="active"><a href="#">&nbsp</a></li>
-							<li class="active"><a href="#">&nbsp</a></li>
-							<li class="active"><a href="#">&nbsp</a></li>
-						</ul></li> -->
-					<li><a href="bbs?page=1">문의게시판</a>
-						<ul class="sub">
-							<li class="active"><a href="#">&nbsp</a></li>
-							<li class="active"><a href="#">&nbsp</a></li>
-							<li class="active"><a href="#">&nbsp</a></li>
-						</ul></li>
-				</ul>
-			</nav>
-		</div>
+               <!-- <li><a href="search?page=1">검색된 페이지</a>
+                  <ul class="sub">
+                     <li class="active"><a href="#">&nbsp</a></li>
+                     <li class="active"><a href="#">&nbsp</a></li>
+                     <li class="active"><a href="#">&nbsp</a></li>
+                  </ul></li> -->
+               <li><a href="bbs?page=1">문의게시판</a>
+                  <ul class="sub">
+                     <li class="active"><a href="#">&nbsp</a></li>
+                     <li class="active"><a href="#">&nbsp</a></li>
+                     <li class="active"><a href="#">&nbsp</a></li>
+                  </ul></li>
+            </ul>
+         </nav>
+      </div>
 
-		<div class="container">
-			<!-- Logo -->
-			<div id="logo">
-<!-- 				<h1>
-					<a href="#">사랑방손님</a>
-				</h1>
-				<span class="tag">By POJO</span> -->
-			</div>
-		</div>
-	</div>
+      <div class="container">
+         <!-- Logo -->
+         <div id="logo">
+<!--             <h1>
+               <a href="#">사랑방손님</a>
+            </h1>
+            <span class="tag">By POJO</span> -->
+         </div>
+      </div>
+   </div>
 
-		<div class="block-container">
-    	<div class="block">
-<!--       	<h1>Video Background</h1>
-      	<h3>Fullscreen applied to <body> </h3> -->
-    	</div>
-  	</div>
+      <div class="block-container">
+       <div class="block">
+<!--          <h1>Video Background</h1>
+         <h3>Fullscreen applied to <body> </h3> -->
+       </div>
+     </div>
 
-	<!-- Featured -->
-	<div id="featured">
-		<div class="container">
-			<header>
-				<h2>Welcome to Site!</h2>
-				</header>
-				<p>저희 <strong>사랑방손님은</strong>,온라인 및 모바일에서 두정동 근처의 독특한 숙소들을 올리고, 발견하고, <a href="http://templated.co">예약할 수 있는</a>믿을만한 커뮤니티 플랫폼 입니다. 
-			<!-- 	<a href="http://templated.co/license">사랑방손님은 간편합니다.</a> -->
-				 하룻밤 지낼 원룸, 일주일 동안 지낼 수 있는 오피스텔, 한달 동안 지낼 수 있는 빌라 등 &ndash; 다양한 가격대의 숙소가 여러분을 기다리고 있습니다!
-				  사랑방 손님은 남는 공간을 통해  <a href="http://templated.co">수익을 창출하고 </a> 여러사람들에게 보여줄 수 있는 가장  <a href="http://twitter.com/templatedco">쉬운 방법입니다.</a><br/></p>
-				<hr />		
-				
-	<div class="d3">
+   <!-- Featured -->
+   <div id="featured">
+      <div class="container">
+         <header>
+            <h2>Welcome to Site!</h2>
+            </header>
+            <p>저희 <strong>사랑방손님은</strong>,온라인 및 모바일에서 두정동 근처의 독특한 숙소들을 올리고, 발견하고, <a href="http://templated.co">예약할 수 있는</a>믿을만한 커뮤니티 플랫폼 입니다. 
+         <!--    <a href="http://templated.co/license">사랑방손님은 간편합니다.</a> -->
+             하룻밤 지낼 원룸, 일주일 동안 지낼 수 있는 오피스텔, 한달 동안 지낼 수 있는 빌라 등 &ndash; 다양한 가격대의 숙소가 여러분을 기다리고 있습니다!
+              사랑방 손님은 남는 공간을 통해  <a href="http://templated.co">수익을 창출하고 </a> 여러사람들에게 보여줄 수 있는 가장  <a href="http://twitter.com/templatedco">쉬운 방법입니다.</a><br/></p>
+            <hr />      
+            
+   <div class="d3">
 <form method="get" action="searchbar">
   <input id="text_box" name="key" type="text" placeholder="두정동 또는 건물이름을 입력하세요">
   <input type="hidden" name="page" value="1" />
   <button type="submit"></button>
 </form>
-</div>	
+</div>   
 
-			<p>
-				지금 <a href="http://templated.co"> 인기있는 </a>숙소를 만나보세요!
-		</div>
-	</div>		
+         <p>
+            지금 <a href="http://templated.co"> 인기있는 </a>숙소를 만나보세요!
+      </div>
+   </div>      
 
-	<!-- Main -->
-	<div class="container">
+   <!-- Main -->
+   <div class="container">
 <div class="wrap">
 <div class="tile"> 
   <img src='css/images/image2.jpg'/>
@@ -426,21 +426,21 @@ body{
  </div>
 </div>
 
-	
+   
 </div>
 
-	<!-- Tweet -->
-	<div id="tweet">
-		<div class="container1">
-			<section>
-				<blockquote>&ldquo;2016 공주대학교 프로젝트 POJO &rdquo;
-					<p>양희준 	홍석진 박준영  황민정</p>
-				</blockquote>
-			</section>
-		</div>
-	</div>
-	<br/><br/><br/><br/><br/>
-	<jsp:include page="jsp/Footer.jsp"></jsp:include> 
+   <!-- Tweet -->
+   <div id="tweet">
+      <div class="container1">
+         <section>
+            <blockquote>&ldquo;2016 공주대학교 프로젝트 POJO &rdquo;
+               <p>양희준    홍석진 박준영  황민정</p>
+            </blockquote>
+         </section>
+      </div>
+   </div>
+   <br/><br/><br/><br/><br/>
+   <jsp:include page="jsp/Footer.jsp"></jsp:include>
 </body>
 <script src="http://code.jquery.com/jquery.js" /></script>
 <script src="js/jquery.bxslider/jquery.bxslider.min.js"></script>
@@ -456,34 +456,34 @@ body{
        // Options
        muted: true,
        loop: true,
-		overlay: true,
+      overlay: true,
      });
  });
  
  var subMenu = $(".sub");
  subMenu.hide();
- 	$(document).ready(function() {
- 		$('.bxslider').bxSlider({
- 			/* adaptiveHeight:true, */
- 			mode : 'horizontal',
- 			auto : true,
- 			adaptiveHeight : true,
- 			mode : 'fade',
- 			captions : true,
- 			pagerCustom : '#bx-pager',
- 			slideWidth :2500,
+    $(document).ready(function() {
+       $('.bxslider').bxSlider({
+          /* adaptiveHeight:true, */
+          mode : 'horizontal',
+          auto : true,
+          adaptiveHeight : true,
+          mode : 'fade',
+          captions : true,
+          pagerCustom : '#bx-pager',
+          slideWidth :2500,
 
- 		});
- 		$("#nav").hover(function(e) {
- 			if (e.type == "mouseenter") {
- 				subMenu.show();
- 			}
- 		});
- 		$("#nav").hover(function(e) {
- 			if (e.type == "mouseleave") {
- 				subMenu.hide();
- 			}
- 		});
- 	});
+       });
+       $("#nav").hover(function(e) {
+          if (e.type == "mouseenter") {
+             subMenu.show();
+          }
+       });
+       $("#nav").hover(function(e) {
+          if (e.type == "mouseleave") {
+             subMenu.hide();
+          }
+       });
+    });
 </script>
 </html>
