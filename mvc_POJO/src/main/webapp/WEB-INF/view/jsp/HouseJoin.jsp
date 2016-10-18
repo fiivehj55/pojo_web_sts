@@ -306,25 +306,27 @@ body {
 					<div id="one" style="display: block;">
 						<fieldset>
 							<legend>호스팅 1단계 </legend>
-							
-							
+						
+	<label for="room">방의개수</label>				
 	<span class="dropdown-el">
-	<span>방의개수</span>
-    <input type="radio" name="room" value="1개" id="rone"><label for="rone">1개</label>
+    <input type="radio" name="room" value="1개" id="rone" checked="checked"><label for="rone" >1개</label>
     <input type="radio" name="room" value="2개" id="rtwo"><label for="rtwo">2개</label>
     <input type="radio" name="room" value="3개" id="rthree"><label for="rthree">3개</label>
+    
   </span>	
   <br/>
+  
+	<label for="bath">욕실개수</label>  
   	<span class="dropdown-el">
-	<span>욕실개수</span>
-    <input type="radio" name="bath" value="1개" id="bone"><label for="rone">1개</label>
-    <input type="radio" name="bath" value="2개" id="btwo"><label for="rtwo">2개</label>
-    <input type="radio" name="bath" value="3개" id="bthree"><label for="rthree">3개</label>
+	
+    <input type="radio" name="bath" value="1개" id="bone" checked="checked"><label for="bone">1개</label>
+    <input type="radio" name="bath" value="2개" id="btwo"><label for="btwo">2개</label>
+    <input type="radio" name="bath" value="3개" id="bthree"><label for="bthree">3개</label>
   </span>	
    <br/>
+   <label for="hosting">숙박인원</label>
   	<span class="dropdown-el">
-	<span>숙박인원</span>
-    <input type="radio" name="hosting" value="1개" id="hone"><label for="hone">1명</label>
+    <input type="radio" name="hosting" value="1개" id="hone" checked="checked"><label for="hone">1명</label>
     <input type="radio" name="hosting" value="2개" id="htwo"><label for="htwo">2명</label>
     <input type="radio" name="hosting" value="3개" id="hthree"><label for="hthree">3명</label>
   </span>					
@@ -437,22 +439,15 @@ body {
 					<div id="three" style="display: none;">
 						<fieldset>
 							<legend>호스팅 3단계 </legend>
-
-							<div class="radio">
-								<input type="radio" id="dd" name="day" value="일" /> 
-								<label for="dd">일</label> 
-								
-								<input type="radio" id="ww" name="day" value="주" /> 
-								<label for="ww">주</label> 
-
-								<input type="radio" id="mm" name="day" value="월" /> 
-								<label for="mm">월</label> <br />
-
-								<label for="price">가격 : </label> 
-								<input type="number" id="price" name="price" />
-							</div>
-
-							<br />
+	<label for="room">방의개수</label>				
+	<span class="dropdown-el">
+    <input type="radio" name="day" value="일" id="dd" checked="checked"><label for="dd" >일</label>
+    <input type="radio" name="day" value="주" id="ww"><label for="ww">주</label>
+    <input type="radio" name="day" value="월" id="mm"><label for="mm">월</label>
+<br/>
+</span>
+	<br/><label for="price" >가격 : </label> 
+	<input type="number" id="price" name="price" />
 						</fieldset>
 						<a href="#" class="button button-style-1" id="backTwo">이전단계</a> 
 						<input type="submit" class="button button-style-1" id="next" name="next" value="하우스등록" />
@@ -462,10 +457,22 @@ body {
 		</div>
 	</div>
 	<jsp:include page="./Footer.jsp"></jsp:include>
-</body>
-<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
 <script src="<%=request.getContextPath()%>/js/validate/dist/jquery.validate.min.js"></script>
-<script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript">
+$('.dropdown-el').click(function(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  $(this).toggleClass('expanded');
+  $('#'+$(e.target).attr('for')).prop('checked',true);
+});
+$(document).click(function() {
+  $('.dropdown-el').removeClass('expanded');
+});
+
 function goPopup(){
 	var pop = window.open("<%=request.getContextPath()%>/jusoPopup", "pop", "width=570,height=420, scrollbars=yes"); //경로는시스템에맞게수정하여사용
 	}
@@ -514,24 +521,8 @@ function goPopup(){
 			}
 		});
 	});
-</script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
-<script type="text/javascript">
-$('.dropdown-el').click(function(e) {
-  e.preventDefault();
-  e.stopPropagation();
-  $(this).toggleClass('expanded');
-  $('#'+$(e.target).attr('for')).prop('checked',true);
-});
-$(document).click(function() {
-  $('.dropdown-el').removeClass('expanded');
-});
-</script>
 
 
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script>
 ;(function($) {
 
     $.fn.toggleCheckbox = function(toggleContents, callback) {
@@ -615,5 +606,5 @@ $('.demo-1').toggleCheckbox([
 
 </script>
 
-
+</body>
 </html>
