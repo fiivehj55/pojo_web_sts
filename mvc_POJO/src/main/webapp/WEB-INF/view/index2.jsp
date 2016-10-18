@@ -273,13 +273,17 @@ body{
 	<div id="featured">
 		<div class="container">
 			<header>
+							<h2>Welcome to Linear</h2>
+				</header>
+				<p>This is <strong>Linear</strong>, a responsive HTML5 site template freebie by <a href="http://templated.co">TEMPLATED</a>. Released for free under the <a href="http://templated.co/license">Creative Commons Attribution</a> license, so use it for whatever (personal or commercial) &ndash; just give us credit! Check out more of our stuff at <a href="http://templated.co">our site</a> or follow us on <a href="http://twitter.com/templatedco">Twitter</a>.</p>
+				<hr />
 				<form method="get" action="searchbar">
 					<input id="text_box" name="key" type="text" size="100" placeholder="두정동 또는 건물이름을 입력하세요">
 					<input type="hidden" name="page" value="1"/>
 					<input type="submit" value="검색" class="button button-style1"/>
 				<!-- <a href="#"  >확인</a> -->
 				</form>
-			</header>
+			
 			<p>	지금 <a href="http://templated.co"> 인기있는 </a>숙소를 만나보세요!
 		</div>
 	</div>
@@ -381,16 +385,15 @@ body{
 
 	<!-- Tweet -->
 	<div id="tweet">
-		<div class="container">
+		<div class="container1">
 			<section>
 				<blockquote>&ldquo;2016 공주대학교 프로젝트 POJO &rdquo;
-				<p>양희준
-				홍석진
-				박준영
-				황민정</p></blockquote>
+					<p>양희준 	홍석진 박준영  황민정</p>
+				</blockquote>
 			</section>
 		</div>
 	</div>
+	<br/><br/><br/><br/><br/>
 	<jsp:include page="jsp/Footer.jsp"></jsp:include>
 </body>
 <script src="http://code.jquery.com/jquery.js" /></script>

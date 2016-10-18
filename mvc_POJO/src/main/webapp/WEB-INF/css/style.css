@@ -2200,7 +2200,7 @@ ul.contact li a:hover {
 }
  #copyright:BEFORE {
 	width: 100%;
-	height: 100%;
+	height: 70%;
 }
  #copyright .container {
 	background: url(../css/images/image10.jpg) no-repeat bottom center;
@@ -2241,14 +2241,16 @@ ul.contact li a:hover {
 /* Tweet                                                                         */
 /*********************************************************************************/
 #tweet {
-	position: relative;
+	position: absolute;
 	text-align: center;
 	background: url(../css/images/image5.JPG) no-repeat center center;
 	background-attachment: fixed;
-	background-size: cover;
+	background-size: 100%;
+	width:100%;
+	height:7%;
 }
 
-#tweet:before {
+/* #tweet:before {
 	content: '';
 	position: absolute;
 	left: 0;
@@ -2256,7 +2258,7 @@ ul.contact li a:hover {
 	width: 100%;
 	height: 100%;
 	background: rgba(64, 64, 64, 0.5);
-}
+} */ 
 
 #tweet section {
 	border-top: 1px solid;
