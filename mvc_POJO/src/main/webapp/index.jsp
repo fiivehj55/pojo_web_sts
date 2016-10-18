@@ -438,9 +438,8 @@ body {
 			</section>
 		</div>
 	</div>
-
-		<br/><br/><br/><br/><br/>
-	<%-- <jsp:include page="jsp/Footer.jsp"></jsp:include> --%> 
+	<br/><br/><br/><br/><br/>
+	<jsp:include page="jsp/Footer.jsp"></jsp:include>
 </body>
 <script src="http://code.jquery.com/jquery.js" /></script>
  <script src="<%=request.getContextPath()%>/videoback/dist/vidbg.js"></script>

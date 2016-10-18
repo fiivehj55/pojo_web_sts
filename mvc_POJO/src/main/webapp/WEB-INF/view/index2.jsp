@@ -449,8 +449,8 @@ body{
  
  jQuery(function($){
      $('#header').vidbg({
-         'mp4': '<%=request.getContextPath()%>/videoback/media/mp4_video.mp4',
-         'webm': '<%=request.getContextPath()%>/videoback/media/webm_video.webm',
+         'mp4': '<%=request.getContextPath()%>/videoback/media/air.mp4',
+         'webm': '<%=request.getContextPath()%>/videoback/media/air.webm',
          'poster': '<%=request.getContextPath()%>/videoback/media/fallback.jpg',
      }, {
        // Options
