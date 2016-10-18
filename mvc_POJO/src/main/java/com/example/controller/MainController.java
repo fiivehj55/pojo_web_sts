@@ -15,16 +15,12 @@ public class MainController {
 	
 	@RequestMapping(value = "/hello",method=RequestMethod.GET)
 	public String sayHello(Model model){
-		model.addAttribute("message", "good morning");
-		logger.trace("message");
 		//view의 이름을 리턴.
 		return "showMessage";
 	}
 	
 	@RequestMapping(value = "/index",method=RequestMethod.GET)
 	public String index(Model model){
-
-		logger.trace("message");
 		return "index2";
 	}
 	

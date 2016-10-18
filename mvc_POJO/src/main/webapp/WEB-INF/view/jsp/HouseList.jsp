@@ -144,16 +144,13 @@ label {
 	var centerKN;
 //센터 좌표
 var centerLocation;
-
+ //var houseList = ${house};
 		//센터 값 설정
-		
+	//	console.log(houseList);
 	<c:url value="https://maps.googleapis.com/maps/api/geocode/json?address=${key}" var="getmap"/>
 		$.ajax({
-				type : "post",
+				type : "get",
 				url : "${getmap}",
-				data : {
-					name : $("#memId").val()
-				},
 				success : function(data,staus) {
 				centerKN = data.results[0].formatted_address;
 				centerLocation = data.results[0].geometry.location;
@@ -201,9 +198,26 @@ var centerLocation;
 		    map: map,
 		    title: centerKN
 		  });
+		  
 		  marker.addListener('click', function() {
 		    infowindow.open(map, marker);
 		  });
+		  
+		 /*  var marker, i;
+
+		    for (i = 0; i < locations.length; i++) {  
+		      marker = new google.maps.Marker({
+		        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+		        map: map
+		      });
+
+		      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+		        return function() {
+		          infowindow.setContent(locations[i][0]);
+		          infowindow.open(map, marker);
+		        }
+		      })(marker, i));
+		    } */
 		}
 
 </script>
