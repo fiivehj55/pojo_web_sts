@@ -450,7 +450,7 @@ body {
 	<input type="number" id="price" name="price" />
 						</fieldset>
 						<a href="#" class="button button-style-1" id="backTwo">이전단계</a> 
-						<input type="submit" class="button button-style-1" id="next" name="next" value="하우스등록" />
+						<input type="submit" class="button button-style-1" id="next" name="next" value="하우스등록"  style="height:50px"/>
 					</div>
 				</div>
 			</form>
