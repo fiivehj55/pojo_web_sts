@@ -438,7 +438,7 @@ body{
 
   <!-- Tweet -->
 	<div id="tweet">
-		<div class="container">
+		<div class="container1">
 			<section>
 				<blockquote>
 					&ldquo; 2016 공주대학교 프로젝트 POJO &rdquo;
@@ -447,7 +447,6 @@ body{
 			</section>
 		</div>
 	</div>
-   <br/><br/><br/><br/><br/>
    <jsp:include page="jsp/Footer.jsp"></jsp:include>
 </body>
 <script src="http://code.jquery.com/jquery.js" /></script>

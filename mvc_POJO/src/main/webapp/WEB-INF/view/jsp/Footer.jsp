@@ -27,7 +27,7 @@
 }
 
 #center-box {
-	margin: 50auto;
+	margin: 5px;
 }
 
 #right-box {
@@ -39,11 +39,10 @@
 <body>
 	<!-- Footer -->
 	<div id="footer">
-		<div id='container'>
+		<div id="container">
 			<div id='left-box'>
 				NOTIFICATION
 				<p>[주소] 대전광역시 서구 둔산3동 국화아파트
-				<p>어쩌구 저쩌구
 			</div>
 			<div id='right-box'>
 				COMPANY INFO

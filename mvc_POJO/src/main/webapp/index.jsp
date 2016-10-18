@@ -11,9 +11,9 @@
 <meta name="keywords" content="" />
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="<%=request.getContextPath()%>/js/skel.min.js"></script>
-<script src="<%=request.getContextPath()%>/js/skel-panels.min.js"></script>
-<script src="<%=request.getContextPath()%>/js/init.js"></script>
+<script src="js/skel.min.js"></script>
+<script src="js/skel-panels.min.js"></script>
+<script src="js/init.js"></script>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/skel-noscript.css" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style-desktop.css" />
@@ -308,27 +308,26 @@ body{
 	
 		
 <!-- Featured -->
-   <div id="featured">
-      <div class="container">
-         <header>
-            <h2>Welcome to Site!</h2>
+	<div id="featured">
+		<div class="container">
+			<header>
+            	<h2>Welcome to Site!</h2>
             </header>
-            <p>저희 <strong>사랑방손님은</strong>,온라인 및 모바일에서 두정동 근처의 독특한 숙소들을 올리고, 발견하고, <a href="http://templated.co">예약할 수 있는</a>믿을만한 커뮤니티 플랫폼 입니다. 
-         <!--    <a href="http://templated.co/license">사랑방손님은 간편합니다.</a> -->
-             하룻밤 지낼 원룸, 일주일 동안 지낼 수 있는 오피스텔, 한달 동안 지낼 수 있는 빌라 등 &ndash; 다양한 가격대의 숙소가 여러분을 기다리고 있습니다!
-              사랑방 손님은 남는 공간을 통해  <a href="http://templated.co">수익을 창출하고 </a> 여러사람들에게 보여줄 수 있는 가장  <a href="http://twitter.com/templatedco">쉬운 방법입니다.</a><br/></p>
+			<p>저희 <strong>사랑방손님은</strong>,온라인 및 모바일에서 두정동 근처의 독특한 숙소들을 올리고, 발견하고, <a href="http://templated.co">예약할 수 있는</a>믿을만한 커뮤니티 플랫폼 입니다. 
+			<!--    <a href="http://templated.co/license">사랑방손님은 간편합니다.</a> -->
+			하룻밤 지낼 원룸, 일주일 동안 지낼 수 있는 오피스텔, 한달 동안 지낼 수 있는 빌라 등 &ndash; 다양한 가격대의 숙소가 여러분을 기다리고 있습니다!
+			사랑방 손님은 남는 공간을 통해  <a href="http://templated.co">수익을 창출하고 </a> 여러사람들에게 보여줄 수 있는 가장  <a href="http://twitter.com/templatedco">쉬운 방법입니다.</a><br/></p>
             <hr />      
             
-   <div class="d3">
-<form method="get" action="searchbar">
-  <input id="text_box" name="key" type="text" placeholder="두정동 또는 건물이름을 입력하세요">
-  <input type="hidden" name="page" value="1" />
-  <button type="submit"></button>
-</form>
-</div>   			
-			
-			<p>
-				지금 <a href="http://templated.co"> 인기있는 </a>숙소를 만나보세요!
+			<div class="d3">
+				<form method="get" action="searchbar">
+					<input id="text_box" name="key" type="text" placeholder="두정동 또는 건물이름을 입력하세요">
+					<input type="hidden" name="page" value="1" />
+					<button type="submit"></button>
+				</form>
+			</div>   			
+	
+			<p> 지금 <a href="http://templated.co"> 인기있는 </a>숙소를 만나보세요!
 		</div>
 	</div>
 
@@ -349,7 +348,6 @@ body{
 				</div>
 				</a>
 			</div>
-
 
 			<div class="tile">
 				<a href="#"><img src='css/images/image2.jpg' />
@@ -399,7 +397,6 @@ body{
 				</div>
 			</div>
 
-
 			<div class="tile">
 				<img src='http://www.blueb.co.kr/SRC2/_image/s_02.jpg' />
 				<a href="#">
@@ -416,7 +413,6 @@ body{
 				</a>
 			</div>
 
-			
 			<div class="tile">
 				<a href="#">
 				<img src='http://www.blueb.co.kr/SRC2/_image/s_03.jpg' />
@@ -435,7 +431,7 @@ body{
 		</div>	
 	<!-- Tweet -->
 	<div id="tweet">
-		<div class="container">
+		<div class="container1">
 			<section>
 				<blockquote>
 					&ldquo; 2016 공주대학교 프로젝트 POJO &rdquo;
@@ -444,8 +440,7 @@ body{
 			</section>
 		</div>
 	</div>
-	<br/><br/><br/><br/><br/>
-	<jsp:include page="jsp/Footer.jsp"></jsp:include>
+	<jsp:include page="WEB-INF/view/jsp/Footer.jsp"></jsp:include>
 </body>
 <script src="http://code.jquery.com/jquery.js" /></script>
 <script src="js/jquery.bxslider/jquery.bxslider.min.js"></script>
