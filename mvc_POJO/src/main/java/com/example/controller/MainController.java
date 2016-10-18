@@ -38,10 +38,10 @@ public class MainController {
 		return "jsp/Terms";
 	}
 	
-	@RequestMapping(value = "/kakao",method=RequestMethod.GET)
+	@RequestMapping(value = "/chat1",method=RequestMethod.GET)
 	public String kakao(Model model){
 
 		logger.trace("KAKAO");
-		return "jsp/kakao";
+		return "jsp/socketchat";
 	}
 }

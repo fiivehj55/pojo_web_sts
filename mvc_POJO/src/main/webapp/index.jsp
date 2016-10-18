@@ -253,7 +253,7 @@ body {
 								<ul class="sub">
 									<li class="active"><a href="terms">회원가입</a></li>
 									<li class="active"><a href="idAndPass">ID/PASS 찾기</a></li>
-									<li class="active"><a href="kakao">카카오톡</a></li>
+									<li class="active"><a href="chat">chatting</a></li>
 								</ul></li>
 						</c:when>
 						<c:otherwise>
