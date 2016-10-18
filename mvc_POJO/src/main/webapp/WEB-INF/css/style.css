@@ -2171,21 +2171,21 @@ ul.contact li a:hover {
 /* Footer                                                                        */
 /*********************************************************************************/
 #footer {
-	 position: relative;
-	 text-align: center; 
+	/*  position: relative;  */
+	/* text-align: center; */
 	background: url(../css/images/footer1.jpg) no-repeat bottom center;
 }
 
 #footer header h2 {
-	color: #FFF !important; 
+	/* color: #FFF !important; */
 	background: url(../css/images/footer1.jpg) no-repeat bottom center;
 }
 
-	#footer header .byline
+/* 	#footer header .byline
 	{
 		color: rgba(255,255,255,.2);
 		background: url(../css/images/image5.JPG) no-repeat bottom center;
-	} 
+	} */
 
 /*********************************************************************************/
 /* Copyright                                                                     */
