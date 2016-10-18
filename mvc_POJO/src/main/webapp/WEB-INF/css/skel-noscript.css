@@ -66,6 +66,13 @@ body {
 	margin-right: auto;
 }
 
+.container1 {
+	width: 100%;
+	margin-top:0px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 /* Modifiers */
 .container.small {
 	width: 900px;
