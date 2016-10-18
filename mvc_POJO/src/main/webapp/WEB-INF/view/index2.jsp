@@ -394,7 +394,7 @@ body{
 		</div>
 	</div>
 	<br/><br/><br/><br/><br/>
-	<jsp:include page="jsp/Footer.jsp"></jsp:include>
+	<jsp:include page="jsp/Footer.jsp"></jsp:include> 
 </body>
 <script src="http://code.jquery.com/jquery.js" /></script>
 <script src="js/jquery.bxslider/jquery.bxslider.min.js"></script>

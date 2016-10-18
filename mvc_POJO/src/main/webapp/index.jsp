@@ -396,7 +396,7 @@ body {
 		</div>
 	</div>
 		
-	<%-- <jsp:include page="jsp/Footer.jsp"></jsp:include>  --%>
+	<jsp:include page="jsp/Footer.jsp"></jsp:include>
 </body>
 <script src="http://code.jquery.com/jquery.js" /></script>
  <script src="<%=request.getContextPath()%>/videoback/dist/vidbg.js"></script>
@@ -411,7 +411,7 @@ body {
        // Options
        muted: true,
        loop: true,
-					overlay: true,
+       overlay: true,
      });
  });
 
