@@ -187,38 +187,35 @@ var locat = new Array();
 				    zoom: 15,
 				     mapTypeId: google.maps.MapTypeId.ROADMAP
 				  });
-				 //  addMaker(); 
 				   var infowindow = new google.maps.InfoWindow();
 				  
 				   var marker, k;
 					for (k = 0; k < ${fn:length(house)}; k++) {
-
-				         getlocation(houseList[k][1],k);
-				         console.log(locat);
+						 getlocation(houseList[k][1],k);
 				      marker = new google.maps.Marker({
 				        position: new google.maps.LatLng(locat[k].lat, locat[k].lng),
 				        map: map
 				      });
-				      var centerMaker = '<div id="content">'+
-				      '<div id="siteNotice">'+
-				      '</div>'+
-				      '<h1 id="firstHeading" class="firstHeading">'+houseList[k][0]+'</h1>'+
-				      '<div id="bodyContent">'+
-				      '<p>'+houseList[k][2]+'</p>'+
-				      '<p>'+houseList[k][1]+'</p>'+
-				      '<p>'+houseList[k][3]+'</p>'+
-				      '</div>'+
-				      '</div>';
+		
 				  var infowindow = new google.maps.InfoWindow();
-				      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+				  
+				   google.maps.event.addListener(marker, 'click', (function(marker, i) {
 				        return function() {
+				        	   var centerMaker = '<div id="content">'+
+							      '<div id="siteNotice">'+
+							      '</div>'+
+							      '<h1 id="firstHeading" class="firstHeading">'+houseList[i][0]+'</h1>'+
+							      '<div id="bodyContent">'+
+							      '<p>'+houseList[i][2]+'</p>'+
+							      '<p>'+houseList[i][1]+'</p>'+
+							      '<p>'+houseList[i][3]+'</p>'+
+							      '</div>'+
+							      '</div>';
 				          infowindow.setContent(centerMaker );
 				          infowindow.open(map, marker);
 				        }
 				      })(marker, k));
 				    }
-
-
 			}; 
  	 		var houseList = new Array();
 	<c:forEach var="j" begin="0" end="${fn:length(house)-1}">		 
@@ -228,85 +225,7 @@ var locat = new Array();
 		  houseList[${j}][2] = "${house[j].houseName}";
 		  houseList[${j}][3] = ${house[j].housePrice};
 	</c:forEach> 
-	//var marker;
-	  function addMaker(){
-	/* 	  marker = new google.maps.Marker({
-	             position: centerLocation,
-	             map: map,
-	             title: centerKN
-	         });
-		  marker.addListener('click', function() {
-			    infowindow.open(map, marker);
-			  });
-		    var contentString = '<div id="content">'+
-		      '<div id="siteNotice">'+
-		      '</div>'+
-		      '<h1 id="firstHeading" class="firstHeading">'+centerKN+'</h1>'+
-		      '<div id="bodyContent">'+
-		      '</div>'+
-		      '</div>';
-		  var infowindow = new google.maps.InfoWindow({
-			    content: contentString,
-			    maxWidth: 200
-			  }); */
-			  var   marker ,k;
-		for (k = 0; k < ${fn:length(house)}; k++) {
-	         // init markers
-	         getlocation(houseList[k][1],k);
-	         console.log(locat);
-	         var latLong = {lat: locat[k].lat,lng:locat[k].lng};
-	  	     marker = new google.maps.Marker({
-	             position: latLong,
-	             map: map,
-	             title: ""+houseList[k][0]+""
-	         });
-	         var centerMaker = '<div id="content">'+
-		      '<div id="siteNotice">'+
-		      '</div>'+
-		      '<h1 id="firstHeading" class="firstHeading">'+houseList[k][0]+'</h1>'+
-		      '<div id="bodyContent">'+
-		      '<p>'+houseList[k][2]+'</p>'+
-		      '<p>'+houseList[k][1]+'</p>'+
-		      '<p>'+houseList[k][3]+'</p>'+
-		      '</div>'+
-		      '</div>';
-	         // process multiple info windows
-	         (function(marker, k) {
-	             // add click event
-	             google.maps.event.addListener(marker, 'click', function() {
-	                 infowindow = new google.maps.InfoWindow({
-	                     content: centerMaker
-	                 });
-	                 infowindow.open(map, marker);
-	             });
-	         })(marker, k);
-		}
 	  } 
-		
-/* 	  var locations = [
-	                   ['삼익사이버 아파트', 37.0211403, 127.0971617, 28],
-	                   ['국립축산과학원 축산자원개발부', 36.93309333, 127.10487485, 10]
-	                 ];
-	                 var map = new google.maps.Map(document.getElementById('map'), {
-	                   zoom: 8,
-	                   center: new google.maps.LatLng(37, 127.1),
-	                   mapTypeId: google.maps.MapTypeId.ROADMAP
-	                 });
-	                 var infowindow = new google.maps.InfoWindow();
-	                 var marker, i;
-	                 for (i = 0; i < locations.length; i++) {  
-	                   marker = new google.maps.Marker({
-	                     position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-	                     map: map
-	                   });
-	                   google.maps.event.addListener(marker, 'click', (function(marker, i) {
-	                     return function() {
-	                       infowindow.setContent(locations[i][0]);
-	                       infowindow.open(map, marker);
-	                     }
-	                   })(marker, i));
-	                 }
- */
 
 </script>
     <script async defer
