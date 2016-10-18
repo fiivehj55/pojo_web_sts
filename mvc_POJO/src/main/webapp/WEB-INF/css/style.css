@@ -2173,12 +2173,12 @@ ul.contact li a:hover {
 #footer {
 	/*  position: relative;  */
 	/* text-align: center; */
-	background: url(../css/images/image10.jpg) no-repeat bottom center;
+	background: url(../css/images/footer1.jpg) no-repeat bottom center;
 }
 
 #footer header h2 {
 	/* color: #FFF !important; */
-	background: url(../css/images/image10.jpg) no-repeat bottom center;
+	background: url(../css/images/footer1.jpg) no-repeat bottom center;
 }
 
 /* 	#footer header .byline
@@ -2191,7 +2191,7 @@ ul.contact li a:hover {
 /* Copyright                                                                     */
 /*********************************************************************************/
  #copyright {
-	background: url(../css/images/image10.jpg) no-repeat bottom center;
+	background: url(../css/images/footer1.jpg) no-repeat bottom center;
 	
 	background-attachment: fixed;
 	background-size: cover;
@@ -2204,7 +2204,7 @@ ul.contact li a:hover {
 	height: 70%;
 }
  #copyright .container {
-	background: url(../css/images/image10.jpg) no-repeat bottom center;
+	background: url(../css/images/footer1.jpg) no-repeat bottom center;
 	padding: 3em 0em;
 	border-top: 1px solid;
 	border-color: rgba(255, 255, 255, .05);
@@ -2244,7 +2244,7 @@ ul.contact li a:hover {
 #tweet {
 	position: absolute;
 	text-align: center;
-	background: url(../css/images/image5.JPG) no-repeat center center;
+	background: url(../css/images/footer1.jpg) no-repeat center center;
 	background-attachment: fixed;
 	background-size: 100%;
 	width:100%;
