@@ -1,11 +1,14 @@
 <!-- 회원의 마이페이지 -->
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="sform" uri="http://www.springframework.org/tags/form" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="sform" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style>
+
+	
 p, h1, form, button {
 	border: 0;
 	margin: 0;
@@ -33,14 +36,15 @@ p, h1, form, button {
 
 #stylized {
 	border: solid 2px #b7ddf2;
-	background: #ebf4fb;
+	background: #FFFFFF;
+	
 }
 
 #stylized h1 {
 	font-size: 16px;
 	font-weight: bold;
 	margin-bottom: 8px;
-	font-family: nanumgothic, dotum;
+	font-family: nanumgoic, dotum;
 }
 
 #stylized p {
@@ -103,7 +107,7 @@ p, h1, form, button {
 	text-align: center;
 	line-height: 31px;
 	background-color: #000;
-	color: #FFFFFF;
+	color: #FFFFFF; /* 흰색 */
 	font-size: 11px;
 	font-weight: bold;
 	font-family: tahoma;
@@ -130,8 +134,225 @@ p, h1, form, button {
 	color: red;
 }
 
+.required{
+	text-align:right;
+}
+
+.boardWrite input{
+	vertical-align: middle;
+	height:22px;
+	line-height:180%;
+}
+
+.boardWrite th{
+	width:150px;
+	text-align:left;
+}
 </style>
-<title>Insert title here</title>
+
+</head>
+<body class="header">
+	<jsp:include page="./Header.jsp"></jsp:include>
+	<!-- Main -->
+	<div class="titleArea">
+		<h2>MY PAGE</h2>
+	</div>
+	<hr class="layout"></hr>
+	<div class="smallArea">
+		<h3>기본정보</h3>
+	</div>
+	<p class="required">
+		<img alt="필수"
+			src="http://img.echosting.cafe24.com/skin/base_ko_KR/member
+	/ico_required.gif"></img>
+	필수입력사항</p>
+	<hr><p>
+		<div class="boardWrite">
+		<table border="1" summary="">
+			<tbody>
+				<tr>
+					<th scope="row">ID
+					<img alt="필수"
+						src="http://img.echosting.cafe24.com/skin/base_ko_KR/member
+					/ico_required.gif"></img>
+					</th>
+				<td>
+					<input name="member_id" class="inputTypeText" id="member_id"
+						type="text"></input>
+					<input type="button" id="check" value="ID 중복확인"></input>
+					(영문소문자/숫자, 4~16자)
+				</td>
+				</tr>
+				
+				<tr>
+					<th scope="row">PASSWORD
+					<img alt="필수"
+						src="http://img.echosting.cafe24.com/skin/base_ko_KR/member
+					/ico_required.gif"></img>
+					</th>
+				<td>
+					<input name="password" id="password" type="password" maxlength="16"></input>
+					(영문 + 숫자 조합 8자 이상)	
+				</td>
+				</tr>
+				
+				<tr>
+					<th scope="row">PASSWORD 확인
+					<img alt="필수"
+						src="http://img.echosting.cafe24.com/skin/base_ko_KR/member
+					/ico_required.gif"></img>
+					</th>
+				<td>
+					<input name="user_password_confirm" id="password" type="password"
+						maxlength="16"></input>
+				</td>
+				</tr>
+				
+				<tr>
+					<th id="nameTitle" scope="row">이름
+					<img alt="필수"
+						src="http://img.echosting.cafe24.com/skin/base_ko_KR/member
+					/ico_required.gif"></img>
+					</th>
+					<td>
+						<span id="nameContents">
+							<input name="name" id="name" type="text" maxlength="20"></input>
+						</span>
+					</td>
+				
+				</tr>
+				
+				
+				<tr>
+					<th id="userGender" scope="row">성별
+					<img alt="필수"
+						src="http://img.echosting.cafe24.com/skin/base_ko_KR/member
+					/ico_required.gif"></img>
+					</th>
+					<td>
+						<input type="radio" name="memGender" value="male" class="radio" /> 남
+						<input type="radio" name="memGender" value="female" class="radio" />여
+					</td>
+					
+				</tr>
+				
+				<tr>
+					<th scope="row">일반전화</th>
+					<td>
+						<select name="phone[]" id="phone1">
+						<option value="02">02</option>
+						<option value="031">031</option>
+						<option value="032">032</option>
+						<option value="033">033</option>
+						<option value="041">041</option>
+						<option value="042">042</option>
+						<option value="043">043</option>
+						<option value="044">044</option>
+						<option value="051">051</option>
+						<option value="052">052</option>
+						<option value="053">053</option>
+						<option value="054">054</option>
+						<option value="055">055</option>
+						<option value="061">061</option>
+						<option value="062">062</option>
+						<option value="063">063</option>
+						<option value="064">064</option>
+						<option value="0502">0502</option>
+						<option value="0505">0505</option>
+						<option value="0506">0506</option>
+						<option value="0507">0507</option>
+						<option value="070">070</option>
+						<option value="010">010</option>
+						<option value="011">011</option>
+						<option value="016">016</option>
+						<option value="017">017</option>
+						<option value="018">018</option>
+						<option value="019">019</option>
+						</select>
+						
+						-
+						<input name="phone[]" id="phone2" type="text" maxlength="4"></input>
+						-
+						<input name="phone[]" id="phone3" type="text" maxlength="4"></input>
+					</td>
+				</tr>
+				
+				<tr>
+					<th scope="row">휴대전화
+					<img alt="필수"
+						src="http://img.echosting.cafe24.com/skin/base_ko_KR/member
+					/ico_required.gif"></img>
+					</th>
+					<td>
+						<select name="mobile[]" id="mobile1">
+						<option value="02">010</option>
+						<option value="011">011</option>
+						<option value="016">016</option>
+						<option value="017">017</option>
+						<option value="018">018</option>
+						<option value="019">019</option>
+						</select>
+						
+						-
+						<input name="mobile[]" id="mobile2" type="text" maxlength="4"></input>
+						-
+						<input name="mobile[]" id="mobile3" type="text" maxlength="4"></input>
+					</td>
+				</tr>
+				
+				<tr>
+					<th scope="row">이메일
+					<img alt="필수"
+						src="http://img.echosting.cafe24.com/skin/base_ko_KR/member
+					/ico_required.gif"></img>
+					</th>
+					<td>
+						<input name="email" id="email" type="text"></input>
+						@
+						<input name="email2" id="email2" type="text"></input>
+						<select id="email3">
+						<option selected="selected" value=""> --이메일 선택--</option>
+						<option value="naver.com">naver.com</option>
+						<option value="daum.net">daum.net</option>
+						<option value="nate.com">nate.com</option>
+						<option value="hotmail.com">hotmail.com</option>
+						<option value="yahoo.com">yahoo.com</option>
+						<option value="empas.com">empas.com</option>
+						<option value="korea.com">korea.com</option>
+						<option value="dreamwiz.com">dreamwiz.com</option>
+						<option value="gamil.com">gamil.com</option>
+						<option value="etc">직접입력</option>
+						</select>
+					</td>
+				</tr>
+			
+			<tr>
+				<th scope="row">프로필 사진</th>
+				<td>
+					
+					<label for="memImg" class="inputlabel"></label> 
+					<input type="file" name="memImg" />	
+				</td>
+			</tr>					
+			</tbody>
+			
+			
+		</table>
+	</div>
+	<hr>
+	
+	
+	<div class="btn">
+		<div class="btnArea">
+			<a class="black">뒤로가기</a>
+		</div>
+		
+		<div class="btnArea">
+			<a class="gray">수정완료</a>
+		</div>
+	</div>
+
+<%-- <title>Insert title here</title>
 </head>
 <body class="">
 <jsp:include page="./Header.jsp"></jsp:include>
@@ -197,7 +418,8 @@ p, h1, form, button {
       </div>
       </div>
       
-   </div>
-<jsp:include page="./Footer.jsp"></jsp:include>
+   </div> --%>
+		<jsp:include page="./Footer.jsp"></jsp:include>
 <script></script>
-</html>
+
+	</html>
