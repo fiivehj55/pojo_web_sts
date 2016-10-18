@@ -33,6 +33,10 @@ label {
 	padding:20px;
 	margin: 200px auto; 
 }
+#map{
+		width:50%;
+        height: 100%;
+}
 </style>
 
 </head>
@@ -49,8 +53,10 @@ label {
 							value="확인"> -->
 					</header>
 					<p>
-						고객님께서  <a href="http://templated.co"> 검색한 </a>페이지 입니다.
+						${key} 검색한 페이지 입니다.
 				</div>
+			</div>
+			<div id = "map">
 			</div>
 			<div class ="boardcss_list_table">
 				<table class="list_table">
@@ -122,10 +128,84 @@ label {
 			<a href="insertHouse" class="button button-style1" >하우스 등록</a> 
 		</div>
 	</div>
+	<c:url value="https://maps.googleapis.com/maps/api/geocode/json?address=서울시 강남구" var="userSerch"/>
 	<jsp:include page="./Footer.jsp"></jsp:include>
 </head>
 <body>
 
 </body>
-<script></script>
+<script src="http://code.jquery.com/jquery.js"></script>
+ <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRgGbfPF9xbceQJLP0o1qKFlJpK7UdjQ8&callback=initMap">
+    </script>
+<script>
+
+//센터 한글명
+	var centerKN;
+//센터 좌표
+var centerLocation;
+
+		//센터 값 설정
+		
+	<c:url value="https://maps.googleapis.com/maps/api/geocode/json?address=${key}" var="getmap"/>
+		$.ajax({
+				type : "post",
+				url : "${getmap}",
+				data : {
+					name : $("#memId").val()
+				},
+				success : function(data,staus) {
+				centerKN = data.results[0].formatted_address;
+				centerLocation = data.results[0].geometry.location;
+					console.log(data.results[0]);
+					console.log(centerLocation);
+					initMap();
+				},
+				error : function(xhr, status, error) {
+					alert(error);
+				}
+			});
+
+	//구글맵
+	function initMap() {
+		  var uluru = {lat: -25.363, lng: 131.044};
+		  var map = new google.maps.Map(document.getElementById('map'), {
+		    zoom: 15,
+		    center: centerLocation
+		  });
+		console.log(uluru);
+		  var contentString = '<div id="content">'+
+	      '<div id="siteNotice">'+
+	      '</div>'+
+	      '<h1 id="firstHeading" class="firstHeading">'+centerKN+'</h1>'+
+	      '<div id="bodyContent">'+
+	      '</div>'+
+	      '</div>';
+	      
+	      var centerMaker = '<div id="content">'+
+	      '<div id="siteNotice">'+
+	      '</div>'+
+	      '<h1 id="firstHeading" class="firstHeading">하우스번호</h1>'+
+	      '<div id="bodyContent">'+
+	      '<p>하우스 이름</p>'+
+	      '<p>하우스 주소</p>'+
+	      '<p>가격</p>'+
+	      '</div>'+
+	      '</div>';
+		  var infowindow = new google.maps.InfoWindow({
+		    content: contentString
+		  });
+
+		  var marker = new google.maps.Marker({
+		    position: centerLocation,
+		    map: map,
+		    title: centerKN
+		  });
+		  marker.addListener('click', function() {
+		    infowindow.open(map, marker);
+		  });
+		}
+
+</script>
+  
 </html>

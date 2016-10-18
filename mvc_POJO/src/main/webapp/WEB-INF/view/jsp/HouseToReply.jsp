@@ -46,7 +46,8 @@
 </head>
 <body>
 	<!-- <div id="boardcss_list_table">
-		<h3 class="h3">후기 댓글</h3>
+		<h3 class="h3">후기 댓글</h3
+		>
 		<p>
 		<div class="listReply">
 			<div class="replyContent">
@@ -78,11 +79,12 @@
 		<br />
 	</div> -->
 	
+	
+					<h3 class="h3">후기 댓글</h3>
 	<c:choose>
 		<c:when test="${fn:length(reply)>0}">
 			<c:forEach items="${reply}" var="row">
 				<div id="boardcss_list_table">
-					<h3 class="h3">후기 댓글</h3>
 					<p>
 					<div class="listReply">
 						<div class="replyContent">
