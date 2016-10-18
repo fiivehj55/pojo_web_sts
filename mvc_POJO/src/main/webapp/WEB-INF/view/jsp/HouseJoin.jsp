@@ -6,6 +6,18 @@
 <head>
 <title>Linear by TEMPLATED</title>
 <style>
+.button2 {
+    position: relative;
+    display: inline-block;
+    background: #ff7e82;
+    padding: 0.6em 1em;
+    text-decoration: none !important;
+    font-size: 1.2em;
+    font-weight: 300;
+    color: #FFF !important;
+    border-radius:5px;
+
+}
 /* 안내문 css */
 body {
 	background: #FFF3CD;
@@ -439,18 +451,18 @@ body {
 					<div id="three" style="display: none;">
 						<fieldset>
 							<legend>호스팅 3단계 </legend>
-	<label for="room">방의개수</label>				
+	<label for="room">결제단위</label>				
 	<span class="dropdown-el">
-    <input type="radio" name="day" value="일" id="dd" checked="checked"><label for="dd" >일</label>
-    <input type="radio" name="day" value="주" id="ww"><label for="ww">주</label>
-    <input type="radio" name="day" value="월" id="mm"><label for="mm">월</label>
+    <input type="radio" name="day" value="일" id="dd" checked="checked"><label for="dd" >일(Day)</label>
+    <input type="radio" name="day" value="주" id="ww"><label for="ww">주(Weekend)</label>
+    <input type="radio" name="day" value="월" id="mm"><label for="mm">월(Month)</label>
 <br/>
 </span>
-	<br/><label for="price" >가격 : </label> 
+	<br/><label for="price" >가격(원) : </label> 
 	<input type="number" id="price" name="price" />
 						</fieldset>
 						<a href="#" class="button button-style-1" id="backTwo">이전단계</a> 
-						<input type="submit" class="button button-style-1" id="next" name="next" value="하우스등록"  style="height:50px"/>
+						<input type="submit" class="button2" id="next" name="next" value="하우스등록"  style="height:50px"/>
 					</div>
 				</div>
 			</form>

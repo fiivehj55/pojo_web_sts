@@ -395,9 +395,10 @@ body {
 			</section>
 		</div>
 	</div>
+		
+	<%-- <jsp:include page="jsp/Footer.jsp"></jsp:include>  --%>
 </body>
 <script src="http://code.jquery.com/jquery.js" /></script>
-<script src="js/jquery.bxslider/jquery.bxslider.min.js"></script>
  <script src="<%=request.getContextPath()%>/videoback/dist/vidbg.js"></script>
  <script type="text/javascript">
  
