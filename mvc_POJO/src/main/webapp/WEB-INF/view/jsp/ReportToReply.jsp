@@ -21,6 +21,28 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style-desktop.css" />
 
+<style>
+.inputReply {
+	width: 750px;
+	height: 100px;
+}
+
+.replyContent {
+	height: 100px;
+}
+
+.listReply {
+	background: #EAEAEA;
+	width: 820px;
+}
+
+#boardcss_list_table {
+	text-align: left;
+	width: 1024px;
+	margin: 0px 40% 0px 4%;
+}
+</style>
+
 </head>
 <body class="">
 	<div id="main">
@@ -34,9 +56,47 @@
 			</div> -->
 			<!-- 등록버튼 종료 -->
 			
-			<h1>Report 댓글</h1>
+			<h3 class="h3">REPORT 댓글</h3>
+			<p>
 			<!-- 테이블 시작 -->
-			<div class="boardcss_list_table">
+			<c:choose>
+			<c:when test="${fn:length(rtr)>0}">
+			<c:forEach items="${rtr}" var="row">
+				<div id="boardcss_list_table">
+					
+					<div class="listReply">
+						<div class="replyContent">
+							<span class="replyId">${row.memberId}</span> 
+							<span class="replyDate"><fmt:formatDate pattern="yyyy/MM/dd" value="${row.reportReplyDate }" /></span> <br /> 
+							<span class="replyTxt"> ${row.reportReplyContent } </span>
+						</div>
+					</div>
+					<textarea name="comment" tabindex="1" class="inputReply" placeholder="여러분의 소중한 댓글을 입력해주세요.">여러분의 소중한 댓글을 입력해주세요.</textarea>
+					<button class="addButton">등록</button>
+				</div>
+				<%-- <tr>
+				<td>${row.memberId }</td>
+				<td>${row.replyContent }</td>
+				<td><fmt:formatDate pattern="yyyy/MM/dd" value="${row.replyDate }" /></td> --%>
+				<c:choose>
+					<c:when test="${user.memId == row.memberId }">
+						<a href="deleteRtr?reportReplyNo=${row.reportReplyNo }"><input type="button" value="삭제" /></a>
+					</c:when>
+					<c:otherwise>
+						<td></td>
+					</c:otherwise>
+				</c:choose>
+			</c:forEach>
+		</c:when>
+		<c:otherwise>
+			<tr>
+				<td colspan="3">조회된 결과가 없습니다.</td>
+			</tr>
+		</c:otherwise>
+	</c:choose>
+			
+			
+			<%-- <div class="boardcss_list_table">
 				<table class="list_table">
 					<caption>POJO의 하우스 게시판 댓글</caption>
 					<colgroup>
@@ -79,7 +139,7 @@
 							</c:otherwise>
 						</c:choose>
 					</tbody>
-				</table>
+				</table> --%>
 				<form method="post" action="insertrtr">
 					<input type="hidden" name="reportNo" value="${reportNo }"/>
 					<input type="text" id="reportReplyContent" name="reportReplyContent"/>

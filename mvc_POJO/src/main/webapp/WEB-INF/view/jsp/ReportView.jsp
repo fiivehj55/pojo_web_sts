@@ -25,22 +25,22 @@ label {
 <body class="">
 	<jsp:include page="./Header.jsp"></jsp:include>
 	<div id="main">
-		<div id="content" class="auto_center">
+		<div id="content" class="">
 			<h1>게시판 VIEW</h1>
 			<sform:form method="get" action="bbsUpdate" modelAttribute="Report">
 				<sform:label path="reportNo">글 번호</sform:label>
-				<sform:input type="number" path="reportNo" disabled="true"/>
-				<sform:input type="hidden" path="reportNo"/>
+				<sform:input type="number" path="reportNo" size="50" disabled="true"/>
+				<sform:input type="hidden" path="reportNo"/> <br/>
 				
 				<sform:label path="reportCategory">구분</sform:label>
-				<sform:input type="text" path="reportCategory" size="50" disabled="true"/>
+				<sform:input type="text" path="reportCategory" size="50" disabled="true"/> <br/>
 				
 				<sform:label path="reportSubject">제목</sform:label>
-				<sform:input type="text" path="reportSubject" size="50" disabled="true"/>
+				<sform:input type="text" path="reportSubject" size="50" disabled="true"/> <br/>
 				
 				
 				<sform:label path="reportContent">내용</sform:label>
-				<sform:textarea rows="10" cols="50" path="reportContent" disabled="true"></sform:textarea>
+				<sform:textarea rows="10" cols="50" path="reportContent" disabled="true"></sform:textarea> <br/>
 			
 				<!-- <input type="submit" value="수정"/> -->
 				<a href="ReportDelete?reportNo=${reportNo}"><input type="button" value="삭제"/></a>

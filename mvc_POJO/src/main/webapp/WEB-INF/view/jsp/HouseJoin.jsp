@@ -156,7 +156,7 @@ label {
 	top: -0.375rem;
 	margin: 0 1rem 0 0;
 	cursor: pointer;
-}
+} 
 
 /* 라디오버튼 체크박스 css 시작 */
 label {
@@ -211,7 +211,7 @@ input[type=checkbox]:checked+label:before {
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
 	font-size: 30px;
 	color: #f3f3f3;
-	text-align: center;
+	 text-align: center; 
 	line-height: 15px;
 }
 /* 라디오버튼 체크박스 css 종료 */
@@ -223,7 +223,7 @@ input[type=checkbox]:checked+label:before {
 	<!-- Main -->
 	<div id="view">
 		<div id="main">
-			<form method="post" action="insertHouse" name="form">
+			<form method="post" action="insertHouse" name="form" id="myForm" enctype="multipart/form-data">
 				<div class="animated-text text-center">
 						<a href="#">
 							<span>MINJEONG님</span> 
@@ -251,7 +251,7 @@ input[type=checkbox]:checked+label:before {
 								<input type="radio" id="rthree" name="room" value="3개"/> 
 								<label for="rthree">3개</label>
 								<p>
-								<br /> 
+								<br/> 
 								
 								<span>욕실개수</span> 
 								<input type="radio" id="bone" name="bath" value="1개"/> 
@@ -323,7 +323,7 @@ input[type=checkbox]:checked+label:before {
 							상세 주소<input type="text" id="yy" name="postcodify_details" value="" size="40" /><br />
 							
 							<span>사진</span> 
-							<input type="file" name="photo" /> 
+							<input type="file" name="photo" multiple="multiple"/> 
 							<br />
 							
 							<span>숙소 안내말</span> <br />

@@ -7,6 +7,9 @@
 <head>
 <title>Insert title here</title>
 
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"/>
+
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
@@ -18,6 +21,8 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/skel-noscript.css" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style-desktop.css" />
+
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
 </head>
 <body>
@@ -58,7 +63,7 @@
 							<ul class="sub">
 								<li class="active"><a href="terms">회원가입</a></li>
 								<li class="active"><a href="idAndPass">ID/PASS 찾기</a></li>
-								<li class="active"><a href="#">&nbsp</a></li>
+								<li class="active"><a href="kakao">카카오톡</a></li>
 							</ul>
 						</li>
 					</c:when>
@@ -73,12 +78,12 @@
 					</c:otherwise>	
 					</c:choose>
 
-					<li><a href="search?page=1">검색된 페이지</a>
+					<!-- <li><a href="search?page=1">검색된 페이지</a>
 						<ul class="sub">
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
-						</ul></li>
+						</ul></li> -->
 					<li><a href="bbs?page=1">문의게시판</a>
 						<ul class="sub">
 							<li class="active"><a href="#">&nbsp</a></li>

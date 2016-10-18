@@ -18,12 +18,9 @@
 <link rel="stylesheet" href="css/style.css" />
 <link rel="stylesheet" href="css/style-desktop.css" />
 
-<!-- 기본 jQuery js파일 연결 -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-
-
-<!-- bxSlider css파일 연결 -->
-<link href="js/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  <link href="<%=request.getContextPath()%>/videoback/css/fullscreenDemo.css" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 <style>
 body
@@ -172,11 +169,6 @@ box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.64);
   }
 }
 
-
-
-
-
-
 input, input[placeholder] {
 	font-weight: bold;
 	text-align: center;
@@ -184,28 +176,13 @@ input, input[placeholder] {
 body{
 	background: white;
 }
-.bx-wrapper {
-	position: relative;
-	width: 100%;
-	height: 30% !important;
-	top: 0;
-	left: 0;
-}
 
-.bxslider, .bxslider li {
-	/* 높이 조정*/
-	height: 30vh !important;;
-}
 
-.bxslider li {
-	background-repeat: no-repeat;
-	background-position: top center;
-	background-size: cover;
-}
+
 </style>
 
 </head>
-<body class="header">
+<body class="homepage">
 	<!-- Header -->
 	<div id="header">
 		<div id="nav-wrapper">
@@ -243,7 +220,7 @@ body{
 							<ul class="sub">
 								<li class="active"><a href="terms">회원가입</a></li>
 								<li class="active"><a href="idAndPass">ID/PASS 찾기</a></li>
-								<li class="active"><a href="#">&nbsp</a></li>
+								<li class="active"><a href="kakao">카카오톡</a></li>
 							</ul>
 						</li>
 					</c:when>
@@ -258,12 +235,12 @@ body{
 					</c:otherwise>	
 					</c:choose>
 
-					<li><a href="search?page=1">검색된 페이지</a>
+					<!-- <li><a href="search?page=1">검색된 페이지</a>
 						<ul class="sub">
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
-						</ul></li>
+						</ul></li> -->
 					<li><a href="bbs?page=1">문의게시판</a>
 						<ul class="sub">
 							<li class="active"><a href="#">&nbsp</a></li>
@@ -277,24 +254,20 @@ body{
 		<div class="container">
 			<!-- Logo -->
 			<div id="logo">
-				<h1>
+<!-- 				<h1>
 					<a href="#">사랑방손님</a>
 				</h1>
-				<span class="tag">By POJO</span>
+				<span class="tag">By POJO</span> -->
 			</div>
 		</div>
 	</div>
-		<ul class="bxslider">
-		
-	
-		<li><img src="css/images/room5.jpg" /></li>
-		<li><img src="css/images/room7.jpg" /></li>
-		<li><img src="css/images/room8.jpg" /></li>
-		<!-- <li><img src="css/images/room6.jpg" /></li> -->
-	
 
-		</ul>
-	
+		<div class="block-container">
+    	<div class="block">
+<!--       	<h1>Video Background</h1>
+      	<h3>Fullscreen applied to <body> </h3> -->
+    	</div>
+  	</div>
 
 	<!-- Featured -->
 	<div id="featured">
@@ -302,6 +275,7 @@ body{
 			<header>
 				<form method="get" action="searchbar">
 					<input id="text_box" name="key" type="text" size="100" placeholder="두정동 또는 건물이름을 입력하세요">
+					<input type="hidden" name="page" value="1"/>
 					<input type="submit" value="검색" class="button button-style1"/>
 				<!-- <a href="#"  >확인</a> -->
 				</form>
@@ -402,9 +376,6 @@ body{
  </div>
 </div>
 
-
-
-
 	
 </div>
 
@@ -422,33 +393,48 @@ body{
 	</div>
 	<jsp:include page="jsp/Footer.jsp"></jsp:include>
 </body>
-<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+<script src="http://code.jquery.com/jquery.js" /></script>
 <script src="js/jquery.bxslider/jquery.bxslider.min.js"></script>
-<script>
-var subMenu = $(".sub");
-subMenu.hide();
-	$(document).ready(function() {
-		$('.bxslider').bxSlider({
-			/* adaptiveHeight:true, */
-			mode : 'horizontal',
-			auto : true,
-			adaptiveHeight : true,
-			mode : 'fade',
-			captions : true,
-			pagerCustom : '#bx-pager',
-			slideWidth :2500,
+ <script src="<%=request.getContextPath()%>/videoback/dist/vidbg.js"></script>
+ <script type="text/javascript">
+ 
+ jQuery(function($){
+     $('body').vidbg({
+         'mp4': '<%=request.getContextPath()%>/videoback/media/mp4_video.mp4',
+         'webm': '<%=request.getContextPath()%>/videoback/media/webm_video.webm',
+         'poster': '<%=request.getContextPath()%>/videoback/media/fallback.jpg',
+     }, {
+       // Options
+       muted: true,
+       loop: true,
+					overlay: true,
+     });
+ });
+ 
+ var subMenu = $(".sub");
+ subMenu.hide();
+ 	$(document).ready(function() {
+ 		$('.bxslider').bxSlider({
+ 			/* adaptiveHeight:true, */
+ 			mode : 'horizontal',
+ 			auto : true,
+ 			adaptiveHeight : true,
+ 			mode : 'fade',
+ 			captions : true,
+ 			pagerCustom : '#bx-pager',
+ 			slideWidth :2500,
 
-		});
-		$("#nav").hover(function(e) {
-			if (e.type == "mouseenter") {
-				subMenu.show();
-			}
-		});
-		$("#nav").hover(function(e) {
-			if (e.type == "mouseleave") {
-				subMenu.hide();
-			}
-		});
-	});
+ 		});
+ 		$("#nav").hover(function(e) {
+ 			if (e.type == "mouseenter") {
+ 				subMenu.show();
+ 			}
+ 		});
+ 		$("#nav").hover(function(e) {
+ 			if (e.type == "mouseleave") {
+ 				subMenu.hide();
+ 			}
+ 		});
+ 	});
 </script>
 </html>
