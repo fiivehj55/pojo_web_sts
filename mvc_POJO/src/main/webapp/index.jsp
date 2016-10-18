@@ -21,8 +21,48 @@
 <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 <link href="<%=request.getContextPath()%>/videoback/css/fullscreenDemo.css" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <style rel="stylesheet">
+
+* {box-sizing: border-box;}
+body{margin: 0;}
+div {padding: 0px 0}
+form {
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.d3 {background: #F9F0DA;}
+.d3 form {
+  background: #A3D0C3;
+}
+.d3 input, .d3 button {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+.d3 input {
+  width: 100%;
+  height: 42px;
+  padding-left: 15px;
+}
+.d3 button {
+  height: 42px;
+  width: 42px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+.d3 button:before {
+  content: "\f002";
+  font-family: FontAwesome;
+  font-size: 16px;
+  color: #F9F0DA;
+}
+
+
 body {
 	background-color: #eee
 }
@@ -265,18 +305,21 @@ body {
 	<div id="featured">
 		<div class="container">
 			<header>
-				<h2>Welcome to Linear</h2>
+				<h2>Welcome to Site!</h2>
 				</header>
-				<p>This is <strong>Linear</strong>, a responsive HTML5 site template freebie by <a href="http://templated.co">TEMPLATED</a>. Released for free under the <a href="http://templated.co/license">Creative Commons Attribution</a> license, so use it for whatever (personal or commercial) &ndash; just give us credit! Check out more of our stuff at <a href="http://templated.co">our site</a> or follow us on <a href="http://twitter.com/templatedco">Twitter</a>.</p>
+				<p>저희 <strong>사랑방손님은</strong>,온라인 및 모바일에서 두정동 근처의 독특한 숙소들을 올리고, 발견하고, <a href="http://templated.co">예약할 수 있는</a>믿을만한 커뮤니티 플랫폼 입니다. 
+			<!-- 	<a href="http://templated.co/license">사랑방손님은 간편합니다.</a> -->
+				 하룻밤 지낼 원룸, 일주일 동안 지낼 수 있는 오피스텔, 한달 동안 지낼 수 있는 빌라 등 &ndash; 다양한 가격대의 숙소가 여러분을 기다리고 있습니다!
+				  사랑방 손님은 남는 공간을 통해  <a href="http://templated.co">수익을 창출하고 </a> 여러사람들에게 보여줄 수 있는 가장  <a href="http://twitter.com/templatedco">쉬운 방법입니다.</a><br/></p>
 				<hr />		
-			
-				<form method="get" action="searchbar">
-					<input id="text_box" name="key" type="text" size="100"
-						placeholder="두정동 또는 건물이름을 입력하세요"> <input type="hidden"
-						name="page" value="1" /> <input type="submit" value="검색"
-						class="button button-style1" />
-					<!-- <a href="#"  >확인</a> -->
-				</form>
+				
+	<div class="d3">
+<form method="get" action="searchbar">
+  <input id="text_box" name="key" type="text" placeholder="두정동 또는 건물이름을 입력하세요">
+  <input type="hidden" name="page" value="1" />
+  <button type="submit"></button>
+</form>
+</div>			
 			
 			<p>
 				지금 <a href="http://templated.co"> 인기있는 </a>숙소를 만나보세요!
@@ -395,8 +438,9 @@ body {
 			</section>
 		</div>
 	</div>
-		
-	<jsp:include page="jsp/Footer.jsp"></jsp:include>
+
+		<br/><br/><br/><br/><br/>
+	<%-- <jsp:include page="jsp/Footer.jsp"></jsp:include> --%> 
 </body>
 <script src="http://code.jquery.com/jquery.js" /></script>
  <script src="<%=request.getContextPath()%>/videoback/dist/vidbg.js"></script>
@@ -404,8 +448,8 @@ body {
  
  jQuery(function($){
      $('body').vidbg({
-         'mp4': '<%=request.getContextPath()%>/videoback/media/mp4_video.mp4',
-         'webm': '<%=request.getContextPath()%>/videoback/media/webm_video.webm',
+         'mp4': '<%=request.getContextPath()%>/videoback/media/air.mp4',
+         'webm': '<%=request.getContextPath()%>/videoback/media/air.webm',
          'poster': '<%=request.getContextPath()%>/videoback/media/fallback.jpg',
      }, {
        // Options
