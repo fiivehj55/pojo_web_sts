@@ -286,13 +286,14 @@ ul.style .first {
 .fa:before {
 	display: inline-block;
 	font-family: FontAwesome;
-	font-size: 1.25em;
+	font-size: 0.6em;
 	text-decoration: none;
 	font-style: normal;
 	font-weight: normal;
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	color: #80BA8E;
 }
 
 .fa-lg {
@@ -2088,7 +2089,7 @@ ul.contact li a:hover {
 }
 
 #nav-wrapper {
-	background: rgba(0, 0, 0, .1);
+	background: rgba(128,186,142,0.3);
 	position: absolute;
 	top: 0;
 	left: 0;

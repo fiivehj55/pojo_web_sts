@@ -159,67 +159,105 @@ label {
 } 
 
 /* 라디오버튼 체크박스 css 시작 */
-label {
-	display: inline-block;
-	cursor: pointer;
-	position: relative;
-	padding-left: 25px;
-	margin-right: 15px;
-	font-size: 13px;
+body {
+  text-align: center;
+  background: #ebf4fb;
+  min-height: 95vh;
+  margin: 0;
+  padding: 0;
+  border-bottom: 5vh solid #3694d7;
+  font-family: "malgun gothic";
+  font-size: 14px;
+  letter-spacing:-1px
 }
 
-input[type=radio] {
-	display: none;
+.dropdown-el {
+  margin-top: 0vh;
+  min-width: 12em;
+  position: relative;
+  display: inline-block;
+  margin-right: 1em;
+  min-height: 2em;
+  max-height: 2em;
+  overflow: hidden;
+  top: .5em;
+  cursor: pointer;
+  text-align: left;
+  white-space: nowrap;
+  color: #444;
+  outline: none;
+  border: .06em solid transparent;
+  border-radius: 1em;
+  background-color:rgba(128,186,142,0.3);
+  transition: 0.3s all ease-in-out;
+}
+.dropdown-el input {
+  display: none;
+}
+.dropdown-el label {
+  border-top: .06em solid #d9d9d9;
+  display: block;
+  height: 2em;
+  line-height: 2em;
+  padding-left: 1em;
+  padding-right: 3em;
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s color ease-in-out;
+}
+.dropdown-el label:nth-child(2) {
+  margin-top: 2em;
+  border-top: .06em solid #d9d9d9;
+}
+.dropdown-el input:checked + label {
+  display: block;
+  border-top: none;
+  position: absolute;
+  top: 0;
+}
+.dropdown-el input:checked + label:nth-child(2) {
+  margin-top: 0;
+  position: relative;
+}
+.dropdown-el::after {
+  content: "";
+  position: absolute;
+  right: 0.8em;
+  top: 0.9em;
+  border: 0.3em solid #80BA8E;
+  border-color: #80BA8E transparent transparent transparent;
+  transition: .4s all ease-in-out;
+}
+.dropdown-el.expanded {
+  border: 0.06em solid #80BA8E;
+  background: #fff;
+  border-radius: .25em;
+  padding: 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 3px 3px 5px 0px;
+  max-height: 15em;
+}
+.dropdown-el.expanded label {
+  border-top: .06em solid #d9d9d9;
+}
+.dropdown-el.expanded label:hover {
+  color: #3694d7;
+}
+.dropdown-el.expanded input:checked + label {
+  color: #3694d7;
+}
+.dropdown-el.expanded::after {
+  transform: rotate(-180deg);
+  top: .55em;
 }
 
-label:before {
-	content: "";
-	display: inline-block;
-	width: 20px;
-	height: 20px;
-	margin-right: 10px;
-	/* position: absolute; */
-	left: 0;
-	bottom: 1px;
-	background-color: #FFD8D8;
-	box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px
-		rgba(255, 255, 255, .8);
-}
 
-.radio label:before {
-	border-radius: 20px;
-}
 
-input[type=radio]:checked+label:before {
-	content: "\2022";
-	color: #FFFFFF;
-	font-size: 43px;
-	text-align: center;
-	line-height: 22px;
-}
 
-input[type=checkbox] {
-	display: none;
-}
-
-.checkbox label:before {
-	border-radius: 3px;
-}
-
-input[type=checkbox]:checked+label:before {
-	content: "\2713";
-	text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
-	font-size: 30px;
-	color: #f3f3f3;
-	 text-align: center; 
-	line-height: 15px;
-}
 /* 라디오버튼 체크박스 css 종료 */
 
 .header2 {
 	position: relative;
-
-	background: url(../css/images/q1.jpg) no-repeat bottom center; 
+	color: rgba(128,186,142,0.3);
 	background-attachment: fixed;
 	background-size: cover;
 	text-align: center;
@@ -268,7 +306,30 @@ input[type=checkbox]:checked+label:before {
 					<div id="one" style="display: block;">
 						<fieldset>
 							<legend>호스팅 1단계 </legend>
-							<div class="radio">
+							
+							
+	<span class="dropdown-el">
+	<span>방의개수</span>
+    <input type="radio" name="room" value="1개" id="rone"><label for="rone">1개</label>
+    <input type="radio" name="room" value="2개" id="rtwo"><label for="rtwo">2개</label>
+    <input type="radio" name="room" value="3개" id="rthree"><label for="rthree">3개</label>
+  </span>	
+  <br/>
+  	<span class="dropdown-el">
+	<span>욕실개수</span>
+    <input type="radio" name="bath" value="1개" id="bone"><label for="rone">1개</label>
+    <input type="radio" name="bath" value="2개" id="btwo"><label for="rtwo">2개</label>
+    <input type="radio" name="bath" value="3개" id="bthree"><label for="rthree">3개</label>
+  </span>	
+   <br/>
+  	<span class="dropdown-el">
+	<span>숙박인원</span>
+    <input type="radio" name="hosting" value="1개" id="hone"><label for="hone">1명</label>
+    <input type="radio" name="hosting" value="2개" id="htwo"><label for="htwo">2명</label>
+    <input type="radio" name="hosting" value="3개" id="hthree"><label for="hthree">3명</label>
+  </span>					
+	<br/>						
+<!-- 							<div class="radio">
 								<span>방의개수</span> 
 								
 								<input type="radio" id="rone" name="room" value="1개"/> 
@@ -307,10 +368,17 @@ input[type=checkbox]:checked+label:before {
 								<label for="hfour">4명</label>
 								<p>
 								<br />
-							</div>
+							</div> -->
 							
 							<div class="checkbox">
-								<span>편의시설</span> 
+						<br/>	<span>편의시설</span> 		
+	<input name="checkboxes[]" type="checkbox" class="demo-1" id="tv" name="tv" value="tv"><label for="tv">TV</label> 
+	<input name="checkboxes[]" type="checkbox" class="demo-1" id="aircon" name="aircon" value="aircon"><label for="aircon">에어컨</label>
+	<input name="checkboxes[]" type="checkbox" class="demo-1" id="wifi" name="wifi" value="wifi" ><label for="wifi">Wi-Fi</label>
+	<input name="checkboxes[]" type="checkbox" class="demo-1" id="elebe" name="elebe" value="elebe"><label for="elebe">엘리베이터</label> 		
+	<input name="checkboxes[]" type="checkbox" class="demo-1" id="washing" name="washing" value="washing"><label for="washing">세탁기</label>			
+							
+<!-- 								<span>편의시설</span> 
 								<input type="checkbox" id="tv" name="tv" value="tv"/> 
 								<label for="tv">TV</label> 
 								
@@ -324,7 +392,7 @@ input[type=checkbox]:checked+label:before {
 								<label for="elebe">엘리베이터</label> 
 								
 								 <input type="checkbox" id="washing" name="washing" value="washing"/> 
-								 <label for="washing">세탁기</label>
+								 <label for="washing">세탁기</label> -->
 								<p>
 							</div>
 							<a href="#" class="button button-style-1" id="nextTwo">다음단계</a>
@@ -447,4 +515,105 @@ function goPopup(){
 		});
 	});
 </script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+<script type="text/javascript">
+$('.dropdown-el').click(function(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  $(this).toggleClass('expanded');
+  $('#'+$(e.target).attr('for')).prop('checked',true);
+});
+$(document).click(function() {
+  $('.dropdown-el').removeClass('expanded');
+});
+</script>
+
+
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+;(function($) {
+
+    $.fn.toggleCheckbox = function(toggleContents, callback) {
+
+        var TC = {
+
+            isChecked: function(element){
+
+                return $(element).is(':checked');
+
+            },
+            getContentIndex: function(element){
+
+                return (TC.isChecked(element)) ? 1 : 0;
+
+            },
+            getContent: function(index){
+
+                var container = $('<span class="toggle-checkbox-container"></span>');
+
+                return container.on('click', function(e){
+
+                    var checkbox = $(this).prev();
+                    var nextChecked = !TC.getContentIndex(checkbox);
+                    var contentIndex = (nextChecked) ? 1 : 0;
+                    var toggleContent = TC.getContent(contentIndex);
+
+                    checkbox.after(toggleContent).prop('checked', nextChecked);
+                    $(this).remove();
+                    TC.fireCallback(e, checkbox);
+
+                })
+                .css('cursor', 'pointer')
+                .html(toggleContents[index]);
+
+            },
+            fireCallback: function(e, checkbox){
+
+                if(typeof(callback) == 'function') {
+
+                    callback(e, checkbox);
+
+                }
+
+            }
+
+        };
+
+        $.each(this, function(key, element){
+
+            var contentIndex = TC.getContentIndex(element);
+            var toggleContent = TC.getContent(contentIndex);
+            $(element).after(toggleContent)
+                .css('display', 'none')
+                .on('change', function(e){
+
+                    var className = $(this).next().attr('class');
+
+                    if(className == 'toggle-checkbox-container') {
+
+                        $(this).next().remove();
+                        var contentIndex = TC.getContentIndex(this);
+                        var toggleContent = TC.getContent(contentIndex);
+                        $(this).after(toggleContent);
+                        TC.fireCallback(e, $(this));
+
+                    }
+
+            });
+
+        });
+
+    }
+
+})(jQuery);
+
+$('.demo-1').toggleCheckbox([
+    '<i class="fa fa-circle-o fa-4x"></i>',
+    '<i class="fa fa-check-circle-o fa-4x"></i>'
+]);
+
+</script>
+
+
 </html>
