@@ -402,7 +402,7 @@ body{
  <script type="text/javascript">
  
  jQuery(function($){
-     $('body').vidbg({
+     $('#header').vidbg({
          'mp4': '<%=request.getContextPath()%>/videoback/media/mp4_video.mp4',
          'webm': '<%=request.getContextPath()%>/videoback/media/webm_video.webm',
          'poster': '<%=request.getContextPath()%>/videoback/media/fallback.jpg',
@@ -410,7 +410,7 @@ body{
        // Options
        muted: true,
        loop: true,
-					overlay: true,
+		overlay: true,
      });
  });
  
