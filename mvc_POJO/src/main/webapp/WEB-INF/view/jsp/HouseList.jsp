@@ -141,7 +141,14 @@ label {
 //센터 좌표
 var centerLocation;
 var locat = new Array();
-
+ var houseList = new Array();
+	<c:forEach var="j" begin="0" end="${fn:length(house)-1}">		 
+		 houseList[${j}] = new Array();
+		  houseList[${j}][0] = ${house[j].houseNo};
+		  houseList[${j}][1] = "${house[j].houseAddress}";
+		  houseList[${j}][2] = "${house[j].houseName}";
+		  houseList[${j}][3] = ${house[j].housePrice};
+	</c:forEach> 
 	<c:url value="https://maps.googleapis.com/maps/api/geocode/json?" var="getmap"/>
  	 function getlocationMain(pos){	
 	$.ajax({
@@ -183,23 +190,23 @@ var locat = new Array();
 			function initMap() { 
 				getlocationMain("${key}");
 				  map = new google.maps.Map(document.getElementById('map'), {
-				    center: centerLocation,
-				    zoom: 15,
+				   	 center: centerLocation,
+				   	 zoom: 15,
 				     mapTypeId: google.maps.MapTypeId.ROADMAP
 				  });
-				   var infowindow = new google.maps.InfoWindow();
-				  
-				   var marker, k;
-					for (k = 0; k < ${fn:length(house)}; k++) {
-						 getlocation(houseList[k][1],k);
-				      marker = new google.maps.Marker({
-				        position: new google.maps.LatLng(locat[k].lat, locat[k].lng),
-				        map: map
-				      });
-		
 				  var infowindow = new google.maps.InfoWindow();
 				  
-				   google.maps.event.addListener(marker, 'click', (function(marker, i) {
+				  var marker, k;
+				for (k = 0; k < ${fn:length(house)}; k++) {
+						 getlocation(houseList[k][1],k);
+				     	 marker = new google.maps.Marker({
+				        position: new google.maps.LatLng(locat[k].lat, locat[k].lng),
+				        map: map
+				     	});
+		
+				 		 var infowindow = new google.maps.InfoWindow();
+				  
+				  		 google.maps.event.addListener(marker, 'click', (function(marker, i) {
 				        return function() {
 				        	   var centerMaker = '<div id="content">'+
 							      '<div id="siteNotice">'+
@@ -211,21 +218,12 @@ var locat = new Array();
 							      '<p>'+houseList[i][3]+'</p>'+
 							      '</div>'+
 							      '</div>';
-				          infowindow.setContent(centerMaker );
-				          infowindow.open(map, marker);
-				        }
-				      })(marker, k));
+				        		  infowindow.setContent(centerMaker );
+				         		 infowindow.open(map, marker);
+				       		 }
+				    	  })(marker, k));
 				    }
 			}; 
- 	 		var houseList = new Array();
-	<c:forEach var="j" begin="0" end="${fn:length(house)-1}">		 
-		 houseList[${j}] = new Array();
-		  houseList[${j}][0] = ${house[j].houseNo};
-		  houseList[${j}][1] = "${house[j].houseAddress}";
-		  houseList[${j}][2] = "${house[j].houseName}";
-		  houseList[${j}][3] = ${house[j].housePrice};
-	</c:forEach> 
-	  } 
 
 </script>
     <script async defer
