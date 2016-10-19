@@ -162,11 +162,9 @@ p, h1, form, button {
 		<h3>기본정보</h3>
 	</div>
 	<p class="required">
-		<img alt="필수"
-			src="http://img.echosting.cafe24.com/skin/base_ko_KR/member
-	/ico_required.gif"></img>
-	필수입력사항</p>
+		<img alt="필수" src="http://img.echosting.cafe24.com/skin/base_ko_KR/member/ico_required.gif"></img>필수입력사항</p>
 	<hr><p>
+	<sform:form method="post" action="mypage" modelAttribute="userinfo" enctype="multipart/form-data">
 		<div class="boardWrite">
 		<table border="1" summary="">
 			<tbody>
@@ -177,10 +175,10 @@ p, h1, form, button {
 					/ico_required.gif"></img>
 					</th>
 				<td>
-					<input name="member_id" class="inputTypeText" id="member_id"
-						type="text"></input>
-					<input type="button" id="check" value="ID 중복확인"></input>
-					(영문소문자/숫자, 4~16자)
+					<sform:label path="memId"></sform:label> 
+         			<sform:input type="text"  path = "memId"  placeholder="영문+숫자 조합 8 이상" disabled="true"/> 
+         			<sform:input type="hidden"  path = "memId"  placeholder="영문+숫자 조합 8 이상"/>
+					<!-- <input name="member_id" class="inputTypeText" id="member_id" type="text"/> -->
 				</td>
 				</tr>
 				
@@ -191,8 +189,10 @@ p, h1, form, button {
 					/ico_required.gif"></img>
 					</th>
 				<td>
-					<input name="password" id="password" type="password" maxlength="16"></input>
-					(영문 + 숫자 조합 8자 이상)	
+					<label for="memPassword"></label> 
+         			<input type="password" name="memPassword" placeholder="영문+숫자 조합 8 이상"/>
+					<!-- <input name="password" id="password" type="password" maxlength="16"></input>
+					(영문 + 숫자 조합 8자 이상) -->	
 				</td>
 				</tr>
 				
@@ -203,8 +203,9 @@ p, h1, form, button {
 					/ico_required.gif"></img>
 					</th>
 				<td>
-					<input name="user_password_confirm" id="password" type="password"
-						maxlength="16"></input>
+					<label for="passok"></label> 
+         			<input type="password" name="password" placeholder="영문+숫자 조합 8 이상">
+					<!-- <input name="user_password_confirm" id="password" type="password" maxlength="16"></input> -->
 				</td>
 				</tr>
 				
@@ -215,28 +216,34 @@ p, h1, form, button {
 					/ico_required.gif"></img>
 					</th>
 					<td>
-						<span id="nameContents">
+						<sform:label path="memName"></sform:label> 
+         				<sform:input type="text" path="memName" disabled="true"/>
+         				<sform:input type="hidden" path="memName"/>
+						<!-- <span id="nameContents">
 							<input name="name" id="name" type="text" maxlength="20"></input>
-						</span>
+						</span> -->
 					</td>
 				
 				</tr>
 				
 				
-				<tr>
+				<%-- <tr>
 					<th id="userGender" scope="row">성별
 					<img alt="필수"
 						src="http://img.echosting.cafe24.com/skin/base_ko_KR/member
 					/ico_required.gif"></img>
 					</th>
 					<td>
+						<sform:label path="memGender"></sform:label>
+						<sform:input type="radio" path="memGender" value="male" /> 남
+						<sform:input type="radio" path="memGender" value="female"/>여 	
 						<input type="radio" name="memGender" value="male" class="radio" /> 남
 						<input type="radio" name="memGender" value="female" class="radio" />여
 					</td>
 					
-				</tr>
+				</tr> --%>
 				
-				<tr>
+				<!-- <tr>
 					<th scope="row">일반전화</th>
 					<td>
 						<select name="phone[]" id="phone1">
@@ -275,7 +282,7 @@ p, h1, form, button {
 						-
 						<input name="phone[]" id="phone3" type="text" maxlength="4"></input>
 					</td>
-				</tr>
+				</tr> -->
 				
 				<tr>
 					<th scope="row">휴대전화
@@ -284,7 +291,14 @@ p, h1, form, button {
 					/ico_required.gif"></img>
 					</th>
 					<td>
-						<select name="mobile[]" id="mobile1">
+						<sform:label path="memNa"></sform:label>
+						<sform:select path="memNa">
+         					<sform:option value="SKT" label="SKT"/>
+            				<sform:option value="KT" label="KT"/>
+            				<sform:option value="U+" label="U+"/>
+         				</sform:select>   
+         				<sform:input type="tel" path="memPhone" placeholder="-빼고 숫자만 입력"/>
+						<!-- <select name="mobile[]" id="mobile1">
 						<option value="02">010</option>
 						<option value="011">011</option>
 						<option value="016">016</option>
@@ -296,7 +310,7 @@ p, h1, form, button {
 						-
 						<input name="mobile[]" id="mobile2" type="text" maxlength="4"></input>
 						-
-						<input name="mobile[]" id="mobile3" type="text" maxlength="4"></input>
+						<input name="mobile[]" id="mobile3" type="text" maxlength="4"></input> -->
 					</td>
 				</tr>
 				
@@ -307,7 +321,9 @@ p, h1, form, button {
 					/ico_required.gif"></img>
 					</th>
 					<td>
-						<input name="email" id="email" type="text"></input>
+						<sform:label path="memEmail"></sform:label> 
+         				<sform:input type="email" path="memEmail" placeholder="pojo@google.com"/>
+						<!-- <input name="email" id="email" type="text"></input>
 						@
 						<input name="email2" id="email2" type="text"></input>
 						<select id="email3">
@@ -322,27 +338,41 @@ p, h1, form, button {
 						<option value="dreamwiz.com">dreamwiz.com</option>
 						<option value="gamil.com">gamil.com</option>
 						<option value="etc">직접입력</option>
-						</select>
+						</select> -->
 					</td>
 				</tr>
 			
 			<tr>
 				<th scope="row">프로필 사진</th>
 				<td>
-					
-					<label for="memImg" class="inputlabel"></label> 
-					<input type="file" name="memImg" />	
+					<label for="memImg">프로필 사진:</label> 
+         			<sform:hidden path="memImg"/>
+         			<input type="file" name="setImg">
+         			<div>
+         				<img src="<%=request.getContextPath()%>/upload/${userinfo.getMemId()}/intro/${userinfo.getMemImg()}" width="150" height="150">
+         			</div>
+					<!-- <label for="memImg" class="inputlabel"></label> 
+					<input type="file" name="memImg" />	 -->
+				</td>
+			</tr>
+			
+			<tr>
+				<th scope="row">자기 소개</th>
+				<td>
+					<sform:label path="memIntro"></sform:label>
+         			<sform:textarea  path="memIntro" cols="40" rows="10"></sform:textarea>
 				</td>
 			</tr>					
 			</tbody>
-			
-			
 		</table>
 	</div>
 	<hr>
 	
+	<input type="submit" value="수정하기">
+	<a href="deletePass"><input type="button" value="탈퇴하기"></a>
+	<a href="index"><input type="button" value="나가기"></a>
 	
-	<div class="btn">
+	<!-- <div class="btn">
 		<div class="btnArea">
 			<a class="black">뒤로가기</a>
 		</div>
@@ -350,8 +380,8 @@ p, h1, form, button {
 		<div class="btnArea">
 			<a class="gray">수정완료</a>
 		</div>
-	</div>
-
+	</div> -->
+	</sform:form>
 <%-- <title>Insert title here</title>
 </head>
 <body class="">
