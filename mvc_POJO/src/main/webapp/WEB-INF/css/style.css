@@ -2242,7 +2242,7 @@ ul.contact li a:hover {
 /* Tweet                                                                         */
 /*********************************************************************************/
 #tweet {
-	position: absolute;
+	position: relative;
 	text-align: center;
 	background: url(../css/images/footer1.jpg) no-repeat center center;
 	background-attachment: fixed;
@@ -2271,7 +2271,7 @@ ul.contact li a:hover {
 	position: relative;
 	border: none;
 	margin: 0;
-	font-weight: 300;
+	font-weight: 100;
 	color: rgba(255, 255, 255, .6);
 }
 
