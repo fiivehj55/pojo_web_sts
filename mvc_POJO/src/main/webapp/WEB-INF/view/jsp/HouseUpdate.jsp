@@ -53,13 +53,17 @@
 				<legend>하우스 정보 2단계</legend>
 				<sform:label path="houseName" class="inputlabel">숙소이름</sform:label><br/>
 				<sform:input type="text" path="houseName"/> <br/> 
-					
-				<sform:label path="houseAddress">주소</sform:label><br/>
-				<sform:input type="text" path="houseAddress"/> <br/>
-				
-				<sform:label path="houseImg">사진</sform:label> <br/>
-				<sform:input type="file" path="houseImg" /> <br/>
-				
+				<a href="#" class="button button-style-1" id="postcodify_search_button">주소검색</a><br />
+				<sform:label path="houseAddress"  size="50" >주소</sform:label><br/>
+				<sform:input type="text" path="houseAddress" id="xx"/> <br/>
+				<sform:label path="houseAddressDetail"  size="50" >상세 주소</sform:label><br/>
+				<sform:input type="text" path="houseAddressDetail" id="yy"/> <br/>
+				<label for="mainPhoto">메인 사진</label> 
+				<input type="file" name="mainPhoto"/> 
+				<br />
+				<label for="photo">사진</label> 
+				<input type="file" name="photo" multiple="multiple"/> 
+				<br />
 				<sform:label path="houseInfo">숙소 안내말</sform:label> <br/>
 				<sform:textarea rows="5" cols="20" path="houseInfo"></sform:textarea> <br/>
 			</fieldset>
@@ -85,5 +89,12 @@
 </body>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 <script>
+function goPopup(){
+	var pop = window.open("<%=request.getContextPath()%>/jusoPopup", "pop", "width=570,height=420, scrollbars=yes"); //경로는시스템에맞게수정하여사용
+	}
+	function jusoCallBack(roadAddrPart1, addrDetail) {
+		$("#xx").val(roadAddrPart1);
+		$("#yy").val(addrDetail);
+	}
 </script>
 </html>

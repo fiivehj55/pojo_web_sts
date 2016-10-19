@@ -253,7 +253,10 @@ public class HouseController {
 			@RequestParam(value = "elebe", defaultValue = "null") String houseElebe,
 			@RequestParam(value = "washing", defaultValue = "null") String houseWashing, 
 			@RequestParam String houseName, @RequestParam String houseInfo, 
-			@RequestParam MultipartFile houseImg, @RequestParam String houseAddress, 
+			@RequestParam MultipartFile mainPhoto,
+			@RequestParam List<MultipartFile> photo,
+			@RequestParam String houseAddress,
+			@RequestParam String houseAddressDetail,
 			@RequestParam String houseDay, @RequestParam Integer housePrice, 
 			HttpSession session) throws IOException {
 		Member user = (Member) session.getAttribute("user");
@@ -262,18 +265,15 @@ public class HouseController {
 		if (!idfile.exists())
 			idfile.mkdir();
 
-		File introHouse = new File(uploadDir + user.getMemId() + "/" + houseNo);
-		if (!introHouse.exists())
-			introHouse.mkdir();
-
-		File file = new File(uploadDir + user.getMemId() + "/" + houseNo + "/" + houseImg.getOriginalFilename());
+	
+/*		File file = new File(uploadDir + user.getMemId() + "/" + houseNo + "/" + houseImg.getOriginalFilename());
 		houseImg.transferTo(file);
-		String imgName = houseImg.getOriginalFilename();
-
-		House house = new House();
+		String imgName = houseImg.getOriginalFilename();*/
+		House house = hservice.selectByNoHouse(houseNo);
 		house.setHouseNo(houseNo);
 		house.setHouseName(houseName);
 		house.setHouseAddress(houseAddress);
+		house.setHouseAddressDetail(houseAddressDetail);
 		house.setHousePrice(housePrice);
 		house.setHouseInfo(houseInfo);
 		house.setMemberId(user.getMemId());
@@ -286,11 +286,21 @@ public class HouseController {
 		house.setHouseWifi(houseWifi);
 		house.setHouseElebe(houseElebe);
 		house.setHouseWashing(houseWashing);
-		house.setHouseImg(imgName);
+		//house.setHouseImg(imgName);
 		house.setHouseDay(houseDay);
-
+		File introHouse = new File(uploadDir + "/" + user.getMemId() + "/"+house.getHouseNo());
+		if (!introHouse.exists())
+			introHouse.mkdir();
+		File mainHouse = new File(uploadDir + "/" + user.getMemId() + "/"+house.getHouseNo()+"/other");
+		if (!mainHouse.exists())
+			mainHouse.mkdir();
+		
+		File otherHouse = new File(uploadDir + "/" + user.getMemId() + "/"+house.getHouseNo()+"/main");
+		if (!otherHouse.exists())
+			otherHouse.mkdir();
+	//	if()
 		int result = hservice.updateHouse(house);
-		return "redirect:/search?page=1";
+		return "redirect:/houseView?houseNo="+house.getHouseNo();
 	}
 
 	@ModelAttribute
