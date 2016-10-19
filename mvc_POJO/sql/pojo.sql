@@ -92,10 +92,12 @@ select SEQ_REPORT_REPLY.currval from dual;
   TABLESPACE "USERS" ;
   
   
+  
   CREATE TABLE "POJO"."HOUSE" 
    (	"HOUSE_NO" NUMBER(30,0) NOT NULL ENABLE, 
 	"HOUSE_NAME" VARCHAR2(40 BYTE), 
 	"HOUSE_ADDRESS" VARCHAR2(200 BYTE), 
+  "HOUSE_ADDRESS_DETAIL" VARCHAR2(400 BYTE), 
 	"HOUSE_PRICE" NUMBER(30,0), 
 	"HOUSE_SCORE" NUMBER(20,0), 
 	"HOUSE_INFO" VARCHAR2(400 BYTE), 
@@ -111,6 +113,8 @@ select SEQ_REPORT_REPLY.currval from dual;
 	"HOUSE_WASHING" VARCHAR2(20 BYTE), 
 	"HOUSE_IMG" VARCHAR2(400 BYTE), 
 	"HOUSE_DAY" VARCHAR2(20 BYTE), 
+	"POSS_CHECK_IN" DATE, 
+	"POSS_CHECK_OUT" DATE, 
 	 CONSTRAINT "HOUSE_PK" PRIMARY KEY ("HOUSE_NO")
   USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
@@ -204,12 +208,13 @@ insert into MEMBER values ('jang', '장길산', '5678', 'KT', '01012345678', 'ab
 insert into MEMBER values ('admin', '관리자', 'admin', 'U+', '01012345678', 'abc@naver.com', 'male', null, 'hello', 1, '최고관리자');
 insert into MEMBER_DETAIL values (1, '최고관리자');
 insert into MEMBER_DETAIL values (2, '회원');
-insert into HOUSE values (99, '공주빌라', '천안시 서북구 두정동', 350000, 8.5, 'hello', 'hong', 2, '1개', '2개', '3명', 'tv', 'aircon', 'wifi', 'elebe', 'washing', null, '일');
-insert into HOUSE values (98, '대전빌라', '천안시 서북구 두정동', 350000, 8.5, 'hello', 'hong', 2, '1개', '2개', '3명', 'tv', 'aircon', 'wifi', 'elebe', 'washing', null, '일');
-insert into HOUSE values (97, '광주빌라', '천안시 서북구 두정동', 350000, 8.5, 'hello', 'hong', 2, '1개', '2개', '3명', 'tv', 'aircon', 'wifi', 'elebe', 'washing', null, '일');
-insert into HOUSE values (96, '두정빌라', '천안시 서북구 두정동', 350000, 8.5, 'hello', 'hong', 2, '1개', '2개', '3명', 'tv', 'aircon', 'wifi', 'elebe', 'washing', null, '일');
-insert into HOUSE values (95, '천안빌라', '천안시 서북구 두정동', 350000, 8.5, 'hello', 'hong', 2, '1개', '2개', '3명', 'tv', 'aircon', 'wifi', 'elebe', 'washing', null, '일');
-insert into HOUSE values (94, '서울빌라', '천안시 서북구 두정동', 350000, 8.5, 'hello', 'hong', 2, '1개', '2개', '3명', 'tv', 'aircon', 'wifi', 'elebe', 'washing', null, '일');
+insert into HOUSE values (99, '공주빌라', '천안시 서북구 두정동', '1642번지', 350000, 8.5, 'hello', 'hong', 2, '1개', '2개', '3명', 'tv', 'aircon', 'wifi', 'elebe', 'washing', null, '일', '2016/09/23', '2016/10/23');
+insert into HOUSE values (98, '대전빌라', '천안시 서북구 두정동', '1642번지', 350000, 8.5, 'hello', 'hong', 2, '1개', '2개', '3명', 'tv', 'aircon', 'wifi', 'elebe', 'washing', null, '일', '2016/09/23', '2016/10/23');
+insert into HOUSE values (97, '광주빌라', '천안시 서북구 두정동', '1642번지', 350000, 8.5, 'hello', 'hong', 2, '1개', '2개', '3명', 'tv', 'aircon', 'wifi', 'elebe', 'washing', null, '일', '2016/09/23', '2016/10/23');
+insert into HOUSE values (96, '두정빌라', '천안시 서북구 두정동', '1642번지', 350000, 8.5, 'hello', 'hong', 2, '1개', '2개', '3명', 'tv', 'aircon', 'wifi', 'elebe', 'washing', null, '일', '2016/09/23', '2016/10/23');
+insert into HOUSE values (95, '천안빌라', '천안시 서북구 두정동', '1642번지', 350000, 8.5, 'hello', 'hong', 2, '1개', '2개', '3명', 'tv', 'aircon', 'wifi', 'elebe', 'washing', null, '일', '2016/09/23', '2016/10/23');
+insert into HOUSE values (94, '서울빌라', '천안시 서북구 두정동', '1642번지', 350000, 8.5, 'hello', 'hong', 2, '1개', '2개', '3명', 'tv', 'aircon', 'wifi', 'elebe', 'washing', null, '일', '2016/09/23', '2016/10/23');
+insert into HOUSE values (93, '서울빌라', '대전광역시 유성구 장대동', '1642번지', 350000, 8.5, 'hello', 'hong', 2, '1개', '2개', '3명', 'tv', 'aircon', 'wifi', 'elebe', 'washing', null, '일', '2016/09/23', '2016/10/23');
 insert into REGIST_HOUSE values (1, '2016/09/25', '2016/10/7', 1, 'hong');
 insert into REGIST_HOUSE values (2, '2016/09/25', '2016/10/7', 1, 'jang');
 insert into REGIST_HOUSE values (3, '2016/09/25', '2016/10/7', 1, 'hong');

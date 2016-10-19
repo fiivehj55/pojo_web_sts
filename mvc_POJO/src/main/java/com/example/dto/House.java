@@ -1,6 +1,7 @@
 package com.example.dto;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * HOUSE 모델 클래스.
@@ -21,6 +22,9 @@ public class House implements Serializable {
 
 	/** HOUSE_ADDRESS. */
 	private String houseAddress;
+	
+	/** HOUSE_ADDRESS. */
+	private String houseAddressDetail;
 
 	/** HOUSE_PRICE. */
 	private Integer housePrice;
@@ -67,6 +71,12 @@ public class House implements Serializable {
 	/** HOUSE_DAY */
 	private String houseDay;
 	
+	/** POSS_CHECK_IN */
+	private Date possCheckIn;
+	
+	/** POSS_CHECK_OUT */
+	private Date possCheckOut;
+	
 	/**
 	 * 생성자.
 	 */
@@ -97,14 +107,15 @@ public class House implements Serializable {
 		this.detailId = detailId;
 	}
 	
-	public House(Integer houseNo, String houseName, String houseAddress, Integer housePrice, Integer houseScore,
+	public House(Integer houseNo, String houseName, String houseAddress, String houseAddressDetail, Integer housePrice, Integer houseScore,
 			String houseInfo, String memberId, Integer detailId, String houseRoom, String houseBath,
 			String houseHosting, String houseTv, String houseAircon, String houseWifi, String houseElebe,
-			String houseWashing, String houseImg, String houseDay) {
+			String houseWashing, String houseImg, String houseDay, Date possCheckIn, Date possCheckOut) {
 		super();
 		this.houseNo = houseNo;
 		this.houseName = houseName;
 		this.houseAddress = houseAddress;
+		this.houseAddressDetail = houseAddressDetail;
 		this.housePrice = housePrice;
 		this.houseScore = houseScore;
 		this.houseInfo = houseInfo;
@@ -120,6 +131,8 @@ public class House implements Serializable {
 		this.houseWashing = houseWashing;
 		this.houseImg = houseImg;
 		this.houseDay = houseDay;
+		this.possCheckIn = possCheckIn;
+		this.possCheckOut = possCheckOut;
 	}
 
 	/**
@@ -352,6 +365,30 @@ public class House implements Serializable {
 
 	public void setHouseDay(String houseDay) {
 		this.houseDay = houseDay;
+	}
+	
+	public String getHouseAddressDetail() {
+		return houseAddressDetail;
+	}
+
+	public void setHouseAddressDetail(String houseAddressDetail) {
+		this.houseAddressDetail = houseAddressDetail;
+	}
+
+	public Date getPossCheckIn() {
+		return possCheckIn;
+	}
+
+	public void setPossCheckIn(Date possCheckIn) {
+		this.possCheckIn = possCheckIn;
+	}
+
+	public Date getPossCheckOut() {
+		return possCheckOut;
+	}
+
+	public void setPossCheckOut(Date possCheckOut) {
+		this.possCheckOut = possCheckOut;
 	}
 
 	/**
