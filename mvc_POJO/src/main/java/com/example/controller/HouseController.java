@@ -62,7 +62,7 @@ public class HouseController {
 		model.addAttribute("max", houses.size()/5+1);
 		model.addAttribute("key", key);
 		model.addAttribute("page", page);
-		for(House house:houses){
+	/*	for(House house:houses){
 			File file = new File(uploadDir + "/" + house.getMemberId() + "/"+house.getHouseNo()+"/main");
 			File[] files = file.listFiles();	
 			if(files!=null){
@@ -72,7 +72,7 @@ public class HouseController {
 				house.setHouseImg(fileName);
 				}catch(ArrayIndexOutOfBoundsException e){}
 			}
-		}
+		}*/
 		model.addAttribute("house", houses);
 		
 		return "jsp/HouseList";
@@ -119,6 +119,7 @@ public class HouseController {
 	
 		House house = new House();
 		house.setHouseName(rname);
+		house.setHouseAddressDetail(postcodify_details);
 		house.setHouseAddress(postcodify_address);
 		house.setHousePrice(price);
 		house.setHouseScore(9);
@@ -133,7 +134,7 @@ public class HouseController {
 		house.setHouseWifi(wifi);
 		house.setHouseElebe(elebe);
 		house.setHouseWashing(washing);
-	//	house.setHouseImg(imgName);
+		house.setHouseImg(mainPhoto.getOriginalFilename());
 		house.setHouseDay(day);
 		/*session.setAttribute("house", house);*/
 		result = hservice.insertHouse(house);

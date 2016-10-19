@@ -35,7 +35,7 @@
 		insert into HOUSE 
 		values(SEQ_HOUSE.nextval, #{houseName}, #{houseAddress}, #{houseAddressDetail}, #{housePrice}, #{houseScore}, #{houseInfo}, #{memberId}, 
 		#{detailId}, #{houseRoom}, #{houseBath}, #{houseHosting}, #{houseTv}, #{houseAircon}, #{houseWifi}, #{houseElebe}, #{houseWashing}, 
-		#{houseImg,jdbcType=VARCHAR}, #{houseDay}, #{possCheckIn}, #{possCheckOut})
+		#{houseImg,jdbcType=VARCHAR}, #{houseDay}, #{possCheckIn,jdbcType=DATE}, #{possCheckOut,jdbcType=DATE})
 	</insert>
 	
 	<update id="updateHouse" parameterType="house">
