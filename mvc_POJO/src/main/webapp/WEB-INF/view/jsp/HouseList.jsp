@@ -81,7 +81,7 @@ label {
 							<c:forEach items="${house }" var="row">
 								<tr>
 									<td>${row.houseNo }</td>
-									<td> <a href="houseView?houseNo=${row.houseNo}"><img src="<%=request.getContextPath()%>/upload/${row.memberId}/${row.houseNo}/${row.houseImg}" width="40" height="40"/></a></td>
+									<td> <a href="houseView?houseNo=${row.houseNo}"><img src="<%=request.getContextPath()%>/upload/${row.memberId}/${row.houseNo}/main/${row.houseImg}" width="40" height="40"/></a></td>
 									<td> <a href="houseView?houseNo=${row.houseNo }">${row.houseName }</a></td>
 									<td>${row.houseAddress }</td>									
 								</tr>

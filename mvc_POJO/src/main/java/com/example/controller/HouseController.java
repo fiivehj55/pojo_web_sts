@@ -53,11 +53,23 @@ public class HouseController {
 	public String searchbar(Model model, 
 			@RequestParam String key, @RequestParam Integer page,
 			HttpSession session) {
-		List<House> house = hservice.searchHouses(key, page);
-		model.addAttribute("house", house);
-		model.addAttribute("max", house.size()/5+1);
+		List<House> houses = hservice.searchHouses(key, page);
+		model.addAttribute("max", houses.size()/5+1);
 		model.addAttribute("key", key);
 		model.addAttribute("page", page);
+		for(House house:houses){
+			File file = new File(uploadDir + "/" + house.getMemberId() + "/"+house.getHouseNo()+"/main");
+			File[] files = file.listFiles();	
+			if(files!=null){
+				try{
+					//파일 이름
+				String fileName = files[0].getName();
+				house.setHouseImg(fileName);
+				}catch(ArrayIndexOutOfBoundsException e){}
+			}
+		}
+		model.addAttribute("house", houses);
+		
 		return "jsp/HouseList";
 	}
 	
@@ -84,7 +96,9 @@ public class HouseController {
 			@RequestParam(value = "wifi", defaultValue = "null") String wifi,
 			@RequestParam(value = "elebe", defaultValue = "null") String elebe,
 			@RequestParam(value = "washing", defaultValue = "null") String washing, @RequestParam String rname,
-			@RequestParam String infor, @RequestParam List<MultipartFile> photo,
+			@RequestParam String infor,
+			@RequestParam MultipartFile mainPhoto,
+			@RequestParam List<MultipartFile> photo,
 			@RequestParam String postcodify_address, @RequestParam String day,
 			@RequestParam String postcodify_details,
 			@RequestParam Integer price, HttpSession session) throws IOException {
@@ -123,13 +137,24 @@ public class HouseController {
 		File introHouse = new File(uploadDir + "/" + user.getMemId() + "/"+house.getHouseNo());
 		if (!introHouse.exists())
 			introHouse.mkdir();
+		File mainHouse = new File(uploadDir + "/" + user.getMemId() + "/"+house.getHouseNo()+"/other");
+		if (!mainHouse.exists())
+			mainHouse.mkdir();
+		
+		File otherHouse = new File(uploadDir + "/" + user.getMemId() + "/"+house.getHouseNo()+"/main");
+		if (!otherHouse.exists())
+			otherHouse.mkdir();
+		
+		 String mainName = mainPhoto.getOriginalFilename();
+         File mainimageFile = new File(uploadDir + user.getMemId() + "/"+house.getHouseNo()+"/main/" + mainName);
+         mainPhoto.transferTo(mainimageFile);
 		
 		if (null != photo && photo.size() > 0) 
         {
             for (MultipartFile multipartFile : photo) {
  
-                String fileName = multipartFile.getOriginalFilename();
-                File imageFile = new File(uploadDir + user.getMemId() + "/"+house.getHouseNo()+"/" + fileName);
+            	String fileName = multipartFile.getOriginalFilename();
+                File imageFile = new File(uploadDir + user.getMemId() + "/"+house.getHouseNo()+"/other/" + fileName);
                 try
                 {
                     multipartFile.transferTo(imageFile);

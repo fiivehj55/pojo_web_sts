@@ -432,6 +432,9 @@ body {
 							 
 							<input type="text" id="xx" name="postcodify_address" value="" size="50" /><br />
 							상세 주소<input type="text" id="yy" name="postcodify_details" value="" size="40" /><br />
+							<span>메인 사진</span> 
+							<input type="file" name="mainPhoto"/> 
+							<br />
 							
 							<span>사진</span> 
 							<input type="file" name="photo" multiple="multiple"/> 
