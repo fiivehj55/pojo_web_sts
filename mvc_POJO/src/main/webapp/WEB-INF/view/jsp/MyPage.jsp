@@ -227,21 +227,18 @@ p, h1, form, button {
 				</tr>
 				
 				
-				<%-- <tr>
+				<!-- <tr>
 					<th id="userGender" scope="row">성별
 					<img alt="필수"
 						src="http://img.echosting.cafe24.com/skin/base_ko_KR/member
 					/ico_required.gif"></img>
 					</th>
 					<td>
-						<sform:label path="memGender"></sform:label>
-						<sform:input type="radio" path="memGender" value="male" /> 남
-						<sform:input type="radio" path="memGender" value="female"/>여 	
 						<input type="radio" name="memGender" value="male" class="radio" /> 남
 						<input type="radio" name="memGender" value="female" class="radio" />여
 					</td>
 					
-				</tr> --%>
+				</tr> -->
 				
 				<!-- <tr>
 					<th scope="row">일반전화</th>

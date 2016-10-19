@@ -139,8 +139,10 @@ public class DaoTest {
 
 	@Test
 	public void testInsertHouse() {
-		House house = new House(2, "대전빌라", "천안시 서북구 두정동", 350000, 8, "hello", "hong", 2, "2개", "1개", "3명", "tv",
-				"aircon", "wifi", "elebe", "washing", "/index.jsp/img.jpg", "일");
+		Calendar cd = Calendar.getInstance();
+		Date dd = cd.getTime();
+		House house = new House(2, "대전빌라", "천안시 서북구 두정동", "1623번지", 350000, 8, "hello", "hong", 2, "2개", "1개", "3명", "tv",
+				"aircon", "wifi", "elebe", "washing", "/index.jsp/img.jpg", "일", dd, dd);
 		int result = hdao.insertHouse(template, house);
 		logger.trace("List: {}", house);
 

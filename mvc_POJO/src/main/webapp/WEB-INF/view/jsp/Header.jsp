@@ -40,7 +40,7 @@
 						</ul></li>
 					<li class="active"><a href="insertHouse">호스팅하기</a>
 						<ul class="sub">
-							<li class="active"><a href="#">&nbsp</a></li>
+							<li class="active"><a href="hosting">호스팅이란?</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li>
