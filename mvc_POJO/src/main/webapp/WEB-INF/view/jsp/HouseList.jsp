@@ -28,22 +28,31 @@ label {
 }
 
 .auto_center {
-	width: 1200px;
-	height: 400px;
+	width: 100%;
+	height: 1000px;
 	padding:20px;
 	margin: 200px auto; 
 }
 #map{
-		width:50%;
-        height: 100%;
+	float: right;
+	width:50%;
+    height: 100%;
+}
+#gallery{
+	float: left;
+	width:50%;
+    height: 100%;
+}
+
+#main{
+
 }
 </style>
 
 </head>
 <body class="">
 	<jsp:include page="./Header.jsp"></jsp:include>
-
-	<div id="main">
+	<div id="main1">
 		<div id="content" class="auto_center">
  			<div id="featured">
 				 <div class="container">  
@@ -56,9 +65,23 @@ label {
 						${key} 검색한 페이지 입니다.
 				</div>
 			</div>
-			<div id = "map">
+			<div id="gallery">
+				<c:choose>
+					<c:when test="${fn:length(house) > 0}">
+						<c:forEach items="${house }" var="row">
+								<a href="houseView?houseNo=${row.houseNo}">
+									<img src="<%=request.getContextPath()%>/upload/${row.memberId}/${row.houseNo}/main/${row.houseImg}" width="300" height="300"/>
+								</a>
+								<%-- <a href="houseView?houseNo=${row.houseNo }">${row.houseName }</a> --%>
+						</c:forEach>
+					</c:when>
+					<c:otherwise>
+							조회된 결과가 없습니다.
+					</c:otherwise>
+				</c:choose>
 			</div>
-			<div class ="boardcss_list_table">
+			<div id="map"></div>
+			<%-- <div class ="boardcss_list_table">
 				<table class="list_table">
 				<colgroup>
 					<col width="10%" />
@@ -96,7 +119,8 @@ label {
 					
 				</tbody>
 			</table>
-		</div>
+		</div> --%>
+		<p>
 		<div>
 				<c:if test="${page > 5}">
 				<a href="searchbar?key=${key}&page=${page-5}">
