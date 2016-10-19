@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 	<jsp:include page="./Header.jsp"></jsp:include>
 	호스팅이란 레이아웃 작성하기
 	

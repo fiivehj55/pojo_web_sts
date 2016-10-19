@@ -45,4 +45,9 @@ public class MainController {
 		return "jsp/Footer";
 	}
 	
+	@RequestMapping(value = "/hosting", method = RequestMethod.GET)
+	public String hosting(Model model) {
+		return "jsp/Hosting";
+	}
+	
 }

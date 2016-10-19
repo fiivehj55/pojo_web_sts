@@ -38,11 +38,6 @@ public class HouseController {
 	@Autowired
 	ReplyService Rpservice;
 	
-	@RequestMapping(value = "/hosting", method = RequestMethod.GET)
-	public String hosting(Model model) {
-		return "jsp/Hosting";
-	}
-	
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
 	public String search(Model model, @RequestParam Integer page,
 			HttpSession session) {
