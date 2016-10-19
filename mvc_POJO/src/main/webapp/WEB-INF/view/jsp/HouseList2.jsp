@@ -28,61 +28,37 @@ label {
 }
 
 .auto_center {
-	width: 100%;
-	height: 1000px;
+	width: 1200px;
+	height: 400px;
 	padding:20px;
 	margin: 200px auto; 
 }
 #map{
-	float: right;
-	width:50%;
-    height: 100%;
-}
-#gallery{
-	float: left;
-	width:50%;
-    height: 100%;
-}
-
-#main{
-
+		width:50%;
+        height: 100%;
 }
 </style>
 
 </head>
 <body class="">
 	<jsp:include page="./Header.jsp"></jsp:include>
-	<div id="main1">
+
+	<div id="main">
 		<div id="content" class="auto_center">
- 			<div id="featured" style="width:512px">
+ 			<div id="featured">
 				 <div class="container">  
-				 <div>
 					<header>
-					<input id="text_box" type="text" size="100"
+<!-- 						<input id="text_box" type="text" size="100"
 							placeholder="두정동 또는 건물이름을 입력하세요"> <input type="button"
-							value="확인"> 
+							value="확인"> -->
 					</header>
 					<p>
 						${key} 검색한 페이지 입니다.
 				</div>
 			</div>
-			<div id="gallery">
-				<c:choose>
-					<c:when test="${fn:length(house) > 0}">
-						<c:forEach items="${house }" var="row">
-								<a href="houseView?houseNo=${row.houseNo}">
-									<img src="<%=request.getContextPath()%>/upload/${row.memberId}/${row.houseNo}/main/${row.houseImg}" width="300" height="300"/>
-								</a>
-								<%-- <a href="houseView?houseNo=${row.houseNo }">${row.houseName }</a> --%>
-						</c:forEach>
-					</c:when>
-					<c:otherwise>
-							조회된 결과가 없습니다.
-					</c:otherwise>
-				</c:choose>
+			<div id = "map">
 			</div>
-			<div id="map"></div>
-			<%-- <div class ="boardcss_list_table">
+			<div class ="boardcss_list_table">
 				<table class="list_table">
 				<colgroup>
 					<col width="10%" />
@@ -120,8 +96,7 @@ label {
 					
 				</tbody>
 			</table>
-		</div> --%>
-		<p>
+		</div>
 		<div>
 				<c:if test="${page > 5}">
 				<a href="searchbar?key=${key}&page=${page-5}">
@@ -159,7 +134,7 @@ label {
 
 </body>
 <script src="http://code.jquery.com/jquery.js"></script>
- <script>
+<script>
 
 //센터 한글명
 	var centerKN;
@@ -253,5 +228,5 @@ var locat = new Array();
 </script>
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRgGbfPF9xbceQJLP0o1qKFlJpK7UdjQ8&callback=initMap">
-    </script>  
+    </script> 
 </html>
