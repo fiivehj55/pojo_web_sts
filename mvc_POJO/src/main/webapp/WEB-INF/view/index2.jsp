@@ -241,7 +241,7 @@ body{
                      <li class="active"><a href="#">&nbsp</a></li>
                      <li class="active"><a href="#">&nbsp</a></li>
                   </ul></li>
-               <li><a href="left-sidebar.html">메시지</a>
+               <li><a href="chat">메시지</a>
                   <ul class="sub">
                      <li class="active"><a href="#">&nbsp</a></li>
                      <li class="active"><a href="#">&nbsp</a></li>
