@@ -44,26 +44,24 @@ label {
     height: 100%;
 }
 
-#main{
-
-}
 </style>
 
 </head>
 <body class="">
 	<jsp:include page="./Header.jsp"></jsp:include>
-	<div id="main1">
+	<div id="main">
 		<div id="content" class="auto_center">
- 			<div id="featured" style="width:512px">
+ 			<div id="featured">
 				 <div class="container">  
 				 <div>
-					<header>
+					<!-- <header>
 					<input id="text_box" type="text" size="100"
 							placeholder="두정동 또는 건물이름을 입력하세요"> <input type="button"
 							value="확인"> 
-					</header>
+					</header> -->
 					<p>
 						${key} 검색한 페이지 입니다.
+				</div>
 				</div>
 			</div>
 			<div id="gallery">
@@ -153,10 +151,7 @@ label {
 			<a href="insertHouse" class="button button-style1" >하우스 등록</a> 
 		</div>
 	</div>
-	<jsp:include page="./Footer.jsp"></jsp:include>
-</head>
-<body>
-
+<jsp:include page="./Footer.jsp"></jsp:include>
 </body>
 <script src="http://code.jquery.com/jquery.js"></script>
  <script>
