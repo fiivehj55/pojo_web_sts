@@ -35,6 +35,8 @@ form {
 .d3 {background: #F9F0DA;}
 .d3 form {
   background: #A3D0C3;
+  width:70%;
+  margin: 0 auto;
 }
 .d3 input, .d3 button {
   border: none;
