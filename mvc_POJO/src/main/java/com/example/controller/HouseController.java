@@ -291,14 +291,41 @@ public class HouseController {
 		File introHouse = new File(uploadDir + "/" + user.getMemId() + "/"+house.getHouseNo());
 		if (!introHouse.exists())
 			introHouse.mkdir();
-		File mainHouse = new File(uploadDir + "/" + user.getMemId() + "/"+house.getHouseNo()+"/other");
+		File mainHouse = new File(uploadDir + "/" + user.getMemId() + "/"+house.getHouseNo()+"/main");
 		if (!mainHouse.exists())
 			mainHouse.mkdir();
 		
-		File otherHouse = new File(uploadDir + "/" + user.getMemId() + "/"+house.getHouseNo()+"/main");
+		File otherHouse = new File(uploadDir + "/" + user.getMemId() + "/"+house.getHouseNo()+"/other");
 		if (!otherHouse.exists())
 			otherHouse.mkdir();
-	//	if()
+		if(!mainPhoto.getOriginalFilename().equals("")){
+			System.out.println("mainphoto: "+mainPhoto.getOriginalFilename());
+			String imgName = mainPhoto.getOriginalFilename();
+			house.setHouseImg(imgName);
+			File[] files = mainHouse.listFiles();
+			try{
+				for(File file : files){
+					file.delete();
+				}}catch (NullPointerException e) {
+					// TODO: handle exception
+				}
+			File mainfile = new File(uploadDir + "/" + user.getMemId() + "/"+house.getHouseNo()+"/main/"+imgName);
+			mainPhoto.transferTo(mainfile);
+		}
+		if(!photo.get(0).getOriginalFilename().equals("")){
+			File[] files = otherHouse.listFiles();
+			try{
+			for(File file : files){
+				file.delete();
+			}}catch (NullPointerException e) {
+				// TODO: handle exception
+			}
+			for(MultipartFile multipartFile: photo){
+				String fileName = multipartFile.getOriginalFilename();
+				File otherfile = new File(uploadDir + "/" + user.getMemId() + "/"+house.getHouseNo()+"/other/"+fileName);
+				multipartFile.transferTo(otherfile);
+			}
+		}
 		int result = hservice.updateHouse(house);
 		return "redirect:/houseView?houseNo="+house.getHouseNo();
 	}
