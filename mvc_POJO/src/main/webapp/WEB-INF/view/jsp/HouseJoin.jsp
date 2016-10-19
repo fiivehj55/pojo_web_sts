@@ -342,71 +342,14 @@ body {
     <input type="radio" name="hosting" value="2개" id="htwo"><label for="htwo">2명</label>
     <input type="radio" name="hosting" value="3개" id="hthree"><label for="hthree">3명</label>
   </span>					
-	<br/>						
-<!-- 							<div class="radio">
-								<span>방의개수</span> 
-								
-								<input type="radio" id="rone" name="room" value="1개"/> 
-								<label for="rone">1개</label> 
-								
-								<input type="radio" id="rtwo" name="room" value="2개"/> 
-								<label for="rtwo">2개</label> 
-								
-								<input type="radio" id="rthree" name="room" value="3개"/> 
-								<label for="rthree">3개</label>
-								<p>
-								<br/> 
-								
-								<span>욕실개수</span> 
-								<input type="radio" id="bone" name="bath" value="1개"/> 
-								<label for="bone">1개</label> 
-								
-								<input type="radio" id="btwo" name="bath" value="2개"/> 
-								<label for="btwo">2개</label> 
-								
-								<input type="radio" id="bthree" name="bath" value="3개"/> 
-								<label for="bthree">3개</label>
-								<p>
-
-								<span>숙박인원</span> 
-								<input type="radio" id="hone" name="hosting" value="1명"/> 
-								<label for="hone">1명</label> 
-								
-								<input type="radio" id="htwo" name="hosting" value="2명"/> 
-								<label for="htwo">2명</label> 
-								
-								<input type="radio" id="hthree" name="hosting" value="3명"/> 
-								<label for="hthree">3명</label>
-
-								<input type="radio" id="hfour" name="hosting" value="4명"/>
-								<label for="hfour">4명</label>
-								<p>
-								<br />
-							</div> -->
-							
-							<div class="checkbox">
-						<br/>	<span>편의시설</span> 		
+	<br/>												
+	<div class="checkbox">
+	<br/>	<span>편의시설</span> 		
 	<input name="checkboxes[]" type="checkbox" class="demo-1" id="tv" name="tv" value="tv"><label for="tv">TV</label> 
 	<input name="checkboxes[]" type="checkbox" class="demo-1" id="aircon" name="aircon" value="aircon"><label for="aircon">에어컨</label>
 	<input name="checkboxes[]" type="checkbox" class="demo-1" id="wifi" name="wifi" value="wifi" ><label for="wifi">Wi-Fi</label>
 	<input name="checkboxes[]" type="checkbox" class="demo-1" id="elebe" name="elebe" value="elebe"><label for="elebe">엘리베이터</label> 		
 	<input name="checkboxes[]" type="checkbox" class="demo-1" id="washing" name="washing" value="washing"><label for="washing">세탁기</label>			
-							
-<!-- 								<span>편의시설</span> 
-								<input type="checkbox" id="tv" name="tv" value="tv"/> 
-								<label for="tv">TV</label> 
-								
-								<input type="checkbox" id="aircon" name="aircon" value="aircon"/>
-								<label for="aircon">에어컨</label> 
-								
-								<input type="checkbox" id="wifi" name="wifi" value="wifi"/> 
-								<label for="wifi">Wi-Fi</label>
-								
-								<input type="checkbox" id="elebe" name="elebe" value="elebe"/>
-								<label for="elebe">엘리베이터</label> 
-								
-								 <input type="checkbox" id="washing" name="washing" value="washing"/> 
-								 <label for="washing">세탁기</label> -->
 								<p>
 							</div>
 							<a href="#" class="button button-style-1" id="nextTwo">다음단계</a>
@@ -420,14 +363,12 @@ body {
 						<fieldset>
 							<legend>호스팅 2단계</legend>
 							<p>
-								<span>숙소이름</span> 
+								<label>숙소이름</label> 
 								<input type="text" id="rname" name="rname" size="50" />
 							</p>
-
-							<!-- <span>주소</span>
-							<input type="text" id="addr" name="addr" size="50"/> 
-							<p>			
-							<br/>	 -->
+							
+							<label>주소</label>
+							<input type="text" id="xx" name="postcodify_address" value="" size="50" />
 							<a href="#" class="button button-style-1" id="postcodify_search_button">주소검색</a><br />
 							 
 							<input type="text" id="xx" name="postcodify_address" value="" size="50" /><br />
@@ -435,12 +376,11 @@ body {
 							<span>메인 사진</span> 
 							<input type="file" name="mainPhoto"/> 
 							<br />
-							
-							<span>사진</span> 
+							<label>사진</label> 
 							<input type="file" name="photo" multiple="multiple"/> 
 							<br />
 							
-							<span>숙소 안내말</span> <br />
+							<label>숙소 안내말</label>
 							<textarea rows="10" cols="50" name="infor"></textarea>
 							<br /> 
 							<a href="#" class="button button-style-1" id="backOne">이전단계</a>

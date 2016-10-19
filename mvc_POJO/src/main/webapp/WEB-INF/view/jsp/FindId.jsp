@@ -6,36 +6,197 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<meta name="description" content="" />
-<meta name="keywords" content="" />
-<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="js/skel.min.js"></script>
-<script src="js/skel-panels.min.js"></script>
-<script src="js/init.js"></script>
-<link rel="stylesheet" href="css/skel-noscript.css" />
-<link rel="stylesheet" href="css/style.css" />
-<link rel="stylesheet" href="css/style-desktop.css" />
-
 <style>
-label {
+p, h1, form, button {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.spacer {
+	clear: both;
+	height: 1px;
+}
+
+.myform {
+	margin: 50px;
+	width:500px;
+	padding: 14px;
+
+}
+
+.myform2 {
+	width: 500px;
+	padding: 14px;
+	margin: 200px auto;
+
+}
+
+#stylized {
+	border: solid 2px #b7ddf2;
+	background: #FFFFFF;
+	
+}
+
+#stylized h1 {
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 8px;
+	font-family: nanumgoic, dotum;
+}
+
+#stylized p {
+	font-size: 11px;
+	color: #666666;
+	margin-bottom: 20px;
+	border-bottom: solid 1px #b7ddf2;
+	padding-bottom: 10px;
+	font-family: dotum;
+}
+
+#stylized label {
+	display: block;
+	font-weight: bold;
+	text-align: right;
+	width: 140px;
+	float: left;
+	font-family: tahoma;
+}
+
+#stylized .small {
+	color: #666666;
+	display: block;
+	font-size: 11px;
+	font-weight: normal;
+	text-align: right;
+	width: 140px;
+	font-family: dotum;
+	letter-spacing: -1px;
+}
+
+#stylized input {
+	float: left;
+	font-size: 12px;
+	padding: 4px 2px;
+	border: solid 1px #aacfe4;
+	width: 200px;
+	margin: 2px 0 20px 10px;
+}
+#radiobox input{
+	float:none;
+	border: solid 1px #aacfe4;
+	width: 50px;
+	margin: 2px 0 20px 10px;
+	font-family: tahoma;
+} 
+#radiobox {
+	float: left;
+	text-align:left;
+	border: none;
+	width: 200px;
+	margin: 2px 0 20px 10px;
+	font-family: tahoma;
+} 
+#stylized button {
+	clear: both;
+	/* margin-left: 150px; */
+	width: 100px;
+	height: 31px;
+	text-align: center;
+	line-height: 31px;
+	background-color: #000;
+	color: #FFFFFF; /* 흰색 */
+	font-size: 11px;
+	font-weight: bold;
+	font-family: tahoma;
+}
+
+/* label {
 	width: 100px;
 	display: inline-block;
 }
 
 .auto_center {
-	width: 400px;
-	height: 400px;
-	padding: 20px;
+	width:1000px;
+	height: 400px; 
+	 padding: 20px;
 	margin: 200px auto;
+} */
+#container2 {
+	text-align: left;
+	margin: 0px 40% 0px 40%;
+	/* 상좌하우 */
+}
+
+.need {
+	color: red;
+}
+
+.required{
+	text-align:right;
+}
+
+.boardWrite input{
+	vertical-align: middle;
+	height:22px;
+	line-height:180%;
+}
+
+.boardWrite th{
+	width:150px;
+	text-align:left;
 }
 </style>
 
 </head>
-<body class="">
+<body class="header">
 	<jsp:include page="./Header.jsp"></jsp:include>
-	<div id="main">
+	<div class="titleArea">
+		<h2>아이디찾기</h2></div>
+	<hr class="layout"></hr>
+	<div class="smallArea">
+		<h3>회원가입시 입력한 이메일로 회원님의 아이디 정보가 전송됩니다.</h3>
+	</div>
+	<p class="required">
+		<img alt="필수"
+			src="http://img.echosting.cafe24.com/skin/base_ko_KR/member
+	/ico_required.gif"></img>
+	필수입력사항</p>
+	<hr><p>
+		<div class="boardWrite">
+		<form action="<%=request.getContextPath()%>/findId" method="post">
+		<table border="1" summary="">
+			<tbody>
+				<tr>
+					<th scope="row">이름
+					<img alt="필수"
+						src="http://img.echosting.cafe24.com/skin/base_ko_KR/member
+					/ico_required.gif"></img>
+					</th>
+				<td>
+					<input type="text" id="name" name="name"></input>
+				</td>
+				</tr>
+				
+				<tr>
+					<th scope="row">이메일
+					<img alt="필수"
+						src="http://img.echosting.cafe24.com/skin/base_ko_KR/member
+					/ico_required.gif"></img>
+					</th>
+				<td>
+					<input type="email" id="email" name="email" maxlength="30"></input>
+						<input type="submit" value="확인">			
+			<a href="login" class="black">뒤로가기</a>
+			<a href="findPass" class="black">비밀번호찾기</a>		
+				</td>				
+	</tr>
+	</tbody>
+	</table>
+	</form>
+	</div>
+	
+<%-- 	<div id="main">
 		<div id="content" class="auto_center">
 			<h1>아이디 찾기</h1>
 			<form action="<%=request.getContextPath()%>/findId" method="post">
@@ -48,12 +209,9 @@ label {
 				</p>
 					<input type="submit" value="확인">
 			<a href="login"><button>뒤로가기</button></a>
-			</form>
+			</form> --%>
 
 
-
-		</div>
-	</div>
 
 	<jsp:include page="./Footer.jsp"></jsp:include>
 </body>

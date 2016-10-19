@@ -165,6 +165,7 @@ p, h1, form, button {
 	/ico_required.gif"></img>
 	필수입력사항</p>
 	<hr><p>
+	<form method="post" action="join" enctype="multipart/form-data" id="myform">
 	<div class="boardWrite">
 		<table border="1" summary="">
 			<tbody>
@@ -175,8 +176,8 @@ p, h1, form, button {
 					/ico_required.gif"></img>
 					</th>
 				<td>
-					<input name="member_id" class="inputTypeText" id="member_id" type="text"></input>
-					<input type="button" id="check" value="ID 중복확인"></input>
+					<input name="memId" class="inputTypeText" id="memId" type="text"/>
+					<input type="button" id="check" value="ID 중복확인"/>
 					(영문소문자/숫자, 4~16자)
 				</td>
 				</tr>
@@ -188,8 +189,10 @@ p, h1, form, button {
 					/ico_required.gif"></img>
 					</th>
 				<td>
-					<input name="password" id="password" type="password" maxlength="16"></input>
-					(영문 + 숫자 조합 8자 이상)	
+					<label for="memPassword"></label> 
+					<input type="password" name="memPassword" placeholder="영문+숫자 조합 8 이상"/>
+					<!-- <input name="memPassword" id="memPassword" type="password" maxlength="16"></input>
+					(영문 + 숫자 조합 8자 이상) -->	
 				</td>
 				</tr>
 				
@@ -200,7 +203,8 @@ p, h1, form, button {
 					/ico_required.gif"></img>
 					</th>
 				<td>
-					<input name="user_password_confirm" id="password" type="password" maxlength="16"></input>
+					<label for="passok" class="inputlabel"></label>
+					<input type="password" name="password" placeholder="영문+숫자 조합 8 이상"/>
 				</td>
 				</tr>
 				
@@ -211,10 +215,11 @@ p, h1, form, button {
 					/ico_required.gif"></img>
 					</th>
 					<td>
-						<span id="nameContents">
-							<input name="name" id="name" type="text"
-							maxlength="20"></input>
-						</span>
+						<label for="memName" class="inputlabel"></label> 
+						<input type="text" name="memName" />
+						<!-- <span id="nameContents">
+							<input name="name" id="name" type="text" maxlength="20"></input>
+						</span> -->
 					</td>
 				
 				</tr>
@@ -233,7 +238,7 @@ p, h1, form, button {
 					
 				</tr>
 				
-				<tr>
+				<!-- <tr>
 					<th scope="row">일반전화</th>
 					<td>
 						<select name="phone[]" id="phone1">
@@ -295,6 +300,24 @@ p, h1, form, button {
 						-
 						<input name="mobile[]" id="mobile3" type="text" maxlength="4"></input>
 					</td>
+				</tr>  -->
+				
+				<tr>
+					<th scope="row">휴대전화
+					<img alt="필수" 
+					src="http://img.echosting.cafe24.com/skin/base_ko_KR/member
+					/ico_required.gif"></img>
+					</th>
+					<td>
+						<label for="memNa" class="inputlabel"></label>
+						<select name="memNa">
+							<option value="SKT" label="SKT"/> 
+							<option value="KT" label="KT"/>
+							<option value="U+" label="U+"/>
+						</select> 
+						<input type="text" name="memPhone" />
+						<!-- <input name="mobile[]" id="mobile3" type="text" maxlength="4"></input> -->
+					</td>
 				</tr>
 				
 				<tr>
@@ -304,7 +327,9 @@ p, h1, form, button {
 					/ico_required.gif"></img>
 					</th>
 					<td>
-						<input name="email" id="email" type="text"></input>
+						<label for="memEmail" class="inputlabel"></label>
+						<input type="email" name="memEmail" />
+						<!-- <input name="email" id="email" type="text"></input>
 						@
 						<input name="email2" id="email2" type="text"></input>
 						<select id="email3">
@@ -319,21 +344,27 @@ p, h1, form, button {
 						<option value="dreamwiz.com">dreamwiz.com</option>
 						<option value="gamil.com">gamil.com</option>
 						<option value="etc">직접입력</option>
-						</select>
+						</select> -->
 					</td>
 				</tr>
 			
 			<tr>
 				<th scope="row">프로필 사진</th>
 				<td>
-					
 					<label for="memImg" class="inputlabel"></label> 
-					<input type="file" name="memImg" />	
+					<input type="file" name="memImg" />
+				</td>
+			</tr>
+			
+			<tr>
+				<th scope="row">자기소개</th>
+				<td>
+					<label for="memIntro"></label> 
+					<textarea cols="40" rows="10" name="memIntro"></textarea>
+					<!-- <input type="text" name="memIntro" id="memIntro" /> -->
 				</td>
 			</tr>					
 			</tbody>
-			
-			
 		</table>
 	</div>
 	<hr>
@@ -367,7 +398,9 @@ p, h1, form, button {
 	<label for ="agree_privacy_check0">동의함</label>
 	</p>
 	
-	<div class="btn">
+	<input type="submit" value="가입" id="set"> 
+	<a href="index"><input type="button" value="취소"></a>	
+	<!-- <div class="btn">
 		<div class="btnArea">
 			<a class="black">회원가입</a>
 		</div>
@@ -375,8 +408,8 @@ p, h1, form, button {
 		<div class="btnArea">
 			<a class="gray">회원가입취소</a>
 		</div>
-	</div>
-	
+	</div> -->
+	</form>
 	<!-- <div id="main">
 		<div id="container2">
 			<div id="stylized" class="myform2">
@@ -504,7 +537,8 @@ p, h1, form, button {
 				},
 				success : function(res) {
 					if (res == "false") {
-						$("#memId").prop("disabled", true);
+						/* $("#memId").prop("disabled", true); */
+						alert("사용가능합니다.");
 					} else
 						alert("존재하는 아이디입니다.");
 				},
