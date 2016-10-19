@@ -51,7 +51,8 @@ h2 span {
 	font-size: 85%;
 }
 .column {
-	margin: 15px 15px 0;
+	float:left;
+	margin: 50px 15px 0;
 	padding: 0;
 }
 .column:last-child {
@@ -380,7 +381,7 @@ label {
 </head>
 <body class="">
 	<jsp:include page="./Header.jsp"></jsp:include>
-	<div id="main">
+	<div id="">
 		<div id="content" class="auto_center">
 			<div id="featured">
 				<div class="container">
@@ -394,13 +395,20 @@ label {
 					</div>
 				</div>
 			</div>
-			<div id="gallery">				
+			<div id="gallery">
 				<c:choose>
 					<c:when test="${fn:length(house) > 0}">
 						<c:forEach items="${house }" var="row">
-								<a href="houseView?houseNo=${row.houseNo}">
-									<img src="<%=request.getContextPath()%>/upload/${row.memberId}/${row.houseNo}/main/${row.houseImg}" width="300" height="300"/>
-								</a>
+							<div class="hover01 column">
+								<div>
+									<figure>
+										<a href="houseView?houseNo=${row.houseNo}">
+											<img src="<%=request.getContextPath()%>/upload/${row.memberId}/${row.houseNo}/main/${row.houseImg}" width="300" height="300"/>
+										</a>
+									</figure>
+								<span><a href="houseView?houseNo=${row.houseNo }">${row.houseName }</a></span>
+								</div>
+							</div>
 						</c:forEach>
 					</c:when>
 					<c:otherwise>
@@ -448,7 +456,7 @@ label {
 				</tbody>
 			</table>  
 		</div>--%>
-			<p>
+
 			<div>
 				<c:if test="${page > 5}">
 					<a href="searchbar?key=${key}&page=${page-5}"> <input
@@ -487,7 +495,7 @@ label {
 <script>
 
 //센터 한글명
-	var centerKN;
+var centerKN;
 //센터 좌표
 var centerLocation;
 var locat = new Array();

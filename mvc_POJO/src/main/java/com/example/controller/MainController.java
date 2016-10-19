@@ -50,4 +50,9 @@ public class MainController {
 		return "jsp/Hosting";
 	}
 	
+	@RequestMapping(value = "/kakao", method = RequestMethod.GET)
+	public String kakao(Model model) {
+		return "jsp/kakao";
+	}
+	
 }

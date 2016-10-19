@@ -98,10 +98,7 @@
 			<div class="divTableBody">
 				<div class="divTableRow">
 					<div class="divTableCell" >
-						<img src="<%=request.getContextPath()%>/upload/${houseUser}/${houseNo}/${houseImg }"
-						width="100%" height="300"
-						 />
-						
+						<img src="<%=request.getContextPath()%>/upload/${houseUser}/${houseNo}/${houseImg }" width="100%" height="300"/>
 					</div>
 				</div>
 
