@@ -370,10 +370,10 @@ body {
 							<label>주소</label>
 							<input type="text" id="xx" name="postcodify_address" value="" size="50" />
 							<a href="#" class="button button-style-1" id="postcodify_search_button">주소검색</a><br />
-							 
-							<input type="text" id="xx" name="postcodify_address" value="" size="50" /><br />
-							상세 주소<input type="text" id="yy" name="postcodify_details" value="" size="40" /><br />
-							<span>메인 사진</span> 
+							
+							<label>상세 주소</label>
+							<input type="text" id="yy" name="postcodify_details" value="" size="40" /><br />
+							<label>메인 사진</label> 
 							<input type="file" name="mainPhoto"/> 
 							<br />
 							<label>사진</label> 

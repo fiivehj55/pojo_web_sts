@@ -45,13 +45,12 @@ label {
 
 	<div id="main">
 		<div id="content" class="auto_center">
- 			<div id="featured" style="width:512px">
+ 			<div id="featured">
 				 <div class="container">  
-				 <div>
 					<header>
-					<input id="text_box" type="text" size="100"
+<!-- 						<input id="text_box" type="text" size="100"
 							placeholder="두정동 또는 건물이름을 입력하세요"> <input type="button"
-							value="확인"> 
+							value="확인"> -->
 					</header>
 					<p>
 						${key} 검색한 페이지 입니다.
@@ -135,7 +134,7 @@ label {
 
 </body>
 <script src="http://code.jquery.com/jquery.js"></script>
- <script>
+<script>
 
 //센터 한글명
 	var centerKN;
@@ -229,5 +228,5 @@ var locat = new Array();
 </script>
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRgGbfPF9xbceQJLP0o1qKFlJpK7UdjQ8&callback=initMap">
-    </script>  
+    </script> 
 </html>
