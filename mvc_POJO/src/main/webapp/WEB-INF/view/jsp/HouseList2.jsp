@@ -22,43 +22,139 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style-desktop.css" /> --%>
 
 <style>
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container{
+  padding: 2rem;
+}
+.gallery{
+  width: 100%;
+  max-width: 960px;
+  min-height: 100vh;
+  margin: 2rem auto;
+  
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.gallery-item{
+  box-shadow: 2px 2px 8px -1px #3498DB;
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  background: #000;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.gallery-item-image{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: lightblue;
+  z-index:20;
+  -webkit-transition:all .5s ease;
+  transition: all .5s ease;
+  bottom:0;
+  overflow: hidden;
+
+}
+
+.gallery-item:hover .gallery-item-image{
+  bottom: 80px;
+}
+
+.gallery-item-description{
+  color:white;
+  font-size: .8rem;
+  width: 100%;
+  height: 80px;
+  padding: .5rem .8rem;
+  background: #3498DB;
+  position: absolute;
+  bottom:0;
+}
+
+
+
 label {
 	width: 100px;
 	display: inline-block;
 }
 
 .auto_center {
-	width: 1200px;
-	height: 400px;
+	width: 100%;
+	height: 1000px;
 	padding:20px;
 	margin: 200px auto; 
 }
 #map{
-		width:50%;
-        height: 100%;
+	float: right;
+	width:50%;
+    height: 100%;
 }
+#gallery{
+	float: left;
+	width:50%;
+    height: 100%;
+}
+
 </style>
 
 </head>
 <body class="">
 	<jsp:include page="./Header.jsp"></jsp:include>
-
 	<div id="main">
 		<div id="content" class="auto_center">
  			<div id="featured">
 				 <div class="container">  
-					<header>
-<!-- 						<input id="text_box" type="text" size="100"
+				 <div>
+					<!-- <header>
+					<input id="text_box" type="text" size="100"
 							placeholder="두정동 또는 건물이름을 입력하세요"> <input type="button"
-							value="확인"> -->
-					</header>
+							value="확인"> 
+					</header> -->
 					<p>
 						${key} 검색한 페이지 입니다.
 				</div>
+				</div>
 			</div>
-			<div id = "map">
+			<div id="gallery">
+				<c:choose>
+					<c:when test="${fn:length(house) > 0}">
+						<c:forEach items="${house }" var="row">
+								<a href="houseView?houseNo=${row.houseNo}">
+									<img src="<%=request.getContextPath()%>/upload/${row.memberId}/${row.houseNo}/main/${row.houseImg}" width="300" height="300"/>
+								</a>
+								<%-- <a href="houseView?houseNo=${row.houseNo }">${row.houseName }</a> --%>
+						</c:forEach>
+					</c:when>
+					<c:otherwise>
+							조회된 결과가 없습니다.
+					</c:otherwise>
+				</c:choose>
 			</div>
-			<div class ="boardcss_list_table">
+			<div id="map"></div>
+			<%-- <div class ="boardcss_list_table">
 				<table class="list_table">
 				<colgroup>
 					<col width="10%" />
@@ -96,7 +192,8 @@ label {
 					
 				</tbody>
 			</table>
-		</div>
+		</div> --%>
+		<p>
 		<div>
 				<c:if test="${page > 5}">
 				<a href="searchbar?key=${key}&page=${page-5}">
@@ -128,13 +225,10 @@ label {
 			<a href="insertHouse" class="button button-style1" >하우스 등록</a> 
 		</div>
 	</div>
-	<jsp:include page="./Footer.jsp"></jsp:include>
-</head>
-<body>
-
+<jsp:include page="./Footer.jsp"></jsp:include>
 </body>
 <script src="http://code.jquery.com/jquery.js"></script>
-<script>
+ <script>
 
 //센터 한글명
 	var centerKN;
@@ -228,5 +322,5 @@ var locat = new Array();
 </script>
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRgGbfPF9xbceQJLP0o1qKFlJpK7UdjQ8&callback=initMap">
-    </script> 
+    </script>  
 </html>
