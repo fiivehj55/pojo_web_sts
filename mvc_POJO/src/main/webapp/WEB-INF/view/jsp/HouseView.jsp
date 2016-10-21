@@ -6,8 +6,8 @@
 <head>
 <title>Linear by TEMPLATED</title>
 
-<link rel="stylesheet" type="text/css" href="/SRC2/slidepro/dist/css/slider-pro.min.css" media="screen"/>
-<link rel="stylesheet" type="text/css" href="/SRC2/slidepro/css/examples.css" media="screen"/>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/slidepro/dist/css/slider-pro.min.css" media="screen"/>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/slidepro/examples/css/examples.css" media="screen"/>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
 
 
@@ -106,9 +106,9 @@
 	<div id="example1" class="slider-pro">
 		<div class="sp-slides">
 			<div class="sp-slide">
-				<img class="sp-image" src="/SRC2/slidepro/src/css/images/blank.gif"
-					data-src="/SRC2/slidepro/image/image1_medium.jpg"
-					data-retina="/SRC2/slidepro/image/image1_large.jpg"/>
+				<img class="sp-image" src="<%=request.getContextPath() %>/slidepro/src/css/images/blank.gif"
+					data-src="<%=request.getContextPath() %>/slidepro/image/image1_medium.jpg"
+					data-retina="<%=request.getContextPath() %>/slidepro/image/image1_large.jpg"/>
 				
 				<p class="sp-layer sp-white sp-padding"
 					data-horizontal="50" data-vertical="50"
@@ -130,9 +130,9 @@
 			</div>
 
 	        <div class="sp-slide">
-	        	<img class="sp-image" src="/SRC2/slidepro/src/css/images/blank.gif"
-	        		data-src="/SRC2/slidepro/image/image2_medium.jpg"
-	        		data-retina="/SRC2/slidepro/image/image2_large.jpg"/>
+	        	<img class="sp-image" src="<%=request.getContextPath() %>/slidepro/src/css/images/blank.gif"
+	        		data-src="<%=request.getContextPath() %>/slidepro/image/image2_medium.jpg"
+	        		data-retina="<%=request.getContextPath() %>/slidepro/image/image2_large.jpg"/>
 
 				<h3 class="sp-layer sp-black sp-padding" 
 					data-horizontal="40" data-vertical="10%" 
@@ -154,9 +154,9 @@
 			</div>
 
 			<div class="sp-slide">
-				<img class="sp-image" src="/SRC2/slidepro/src/css/images/blank.gif"
-					data-src="/SRC2/slidepro/image/image3_medium.jpg"
-					data-retina="/SRC2/slidepro/image/image3_large.jpg"/>
+				<img class="sp-image" src="<%=request.getContextPath() %>/slidepro/src/css/images/blank.gif"
+					data-src="<%=request.getContextPath() %>/slidepro/image/image3_medium.jpg"
+					data-retina="<%=request.getContextPath() %>/slidepro/image/image3_large.jpg"/>
 
 				<p class="sp-layer sp-white sp-padding" 
 					data-position="centerCenter" data-vertical="-50" 
@@ -367,8 +367,8 @@
 	<jsp:include page="./Footer.jsp"></jsp:include>
 </body>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
-<script type="text/javascript" src="/SRC2/slidepro/libs/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="/SRC2/slidepro/dist/js/jquery.sliderPro.min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath() %>/slidepro/libs/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath() %>/slidepro/dist/js/jquery.sliderPro.min.js"></script>
 
 <script type="text/javascript">
 	$( document ).ready(function( $ ) {
