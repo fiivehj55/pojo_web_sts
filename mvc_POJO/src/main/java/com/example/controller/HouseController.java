@@ -57,6 +57,7 @@ public class HouseController {
 		model.addAttribute("max", houses.size()/5+1);
 		model.addAttribute("key", key);
 		model.addAttribute("page", page);
+		session.setAttribute("key", key);
 	/*	for(House house:houses){
 			File file = new File(uploadDir + "/" + house.getMemberId() + "/"+house.getHouseNo()+"/main");
 			File[] files = file.listFiles();	
