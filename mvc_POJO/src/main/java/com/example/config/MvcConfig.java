@@ -27,7 +27,7 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
 	public CommonsMultipartResolver multipartResolver(){
 		CommonsMultipartResolver resolver = new CommonsMultipartResolver();
 		resolver.setDefaultEncoding("utf-8");
-		resolver.setMaxUploadSize(1024*1024);
+		resolver.setMaxUploadSize(1024*1024*20);
 		return resolver;
 	}
 	@Override
@@ -39,6 +39,6 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
 		registry.addResourceHandler("/upload/**").addResourceLocations("WEB-INF/upload/");
 		registry.addResourceHandler("/bxslider/**").addResourceLocations("WEB-INF/view/");
 		registry.addResourceHandler("/videoback/**").addResourceLocations("WEB-INF/view/videobackground/");
-		
+		registry.addResourceHandler("/slidepro/**").addResourceLocations("WEB-INF/view/sliderpro/");
 	}
 }

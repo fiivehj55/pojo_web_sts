@@ -32,11 +32,10 @@ public class QuestiontController {
 		if(user!=null){
 		list = qservice.selectByIdPage(user.getMemId(), page);
 		model.addAttribute("Question", list);
-		}
 		list = qservice.selectById(user.getMemId());
-		
 		model.addAttribute("max", list.size()/5+1);
 		model.addAttribute("page", page);
+		}
 		
 		// view의 이름을 리턴.
 		return "jsp/QuestList";

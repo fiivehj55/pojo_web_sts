@@ -35,6 +35,8 @@ form {
 .d3 {background: #F9F0DA;}
 .d3 form {
   background: #A3D0C3;
+  width:70%;
+  margin: 0 auto;
 }
 .d3 input, .d3 button {
   border: none;
@@ -237,11 +239,11 @@ body{
                   </ul></li>
                <li class="active"><a href="insertHouse">호스팅하기</a>
                   <ul class="sub">
-                     <li class="active"><a href="#">&nbsp</a></li>
+                     <li class="active"><a href="hosting">호스팅이란?</a></li>
                      <li class="active"><a href="#">&nbsp</a></li>
                      <li class="active"><a href="#">&nbsp</a></li>
                   </ul></li>
-               <li><a href="left-sidebar.html">메시지</a>
+               <li><a href="chat">메시지</a>
                   <ul class="sub">
                      <li class="active"><a href="#">&nbsp</a></li>
                      <li class="active"><a href="#">&nbsp</a></li>
@@ -260,7 +262,7 @@ body{
                      <ul class="sub">
                         <li class="active"><a href="terms">회원가입</a></li>
                         <li class="active"><a href="idAndPass">ID/PASS 찾기</a></li>
-                        <li class="active"><a href="kakao">카카오톡</a></li>
+                        <li class="active"><a href="#">&nbsp</a></li>
                      </ul>
                   </li>
                </c:when>
@@ -335,111 +337,118 @@ body{
    </div>      
 
    <!-- Main -->
-   <div class="container">
-<div class="wrap">
-<div class="tile"> 
-  <img src='css/images/image2.jpg'/>
-  <div class="text">
-  <h1>Lorem ipsum.</h1>
-  <h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
-  <p class="animate-text">Bacon ipsum dolor amet pork belly tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank sirloin strip steak prosciutto kevin turducken. </p>
-<div class="dots">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-  </div>
- </div>
+	<div class="container">
+		<div class="wrap">
+			<div class="tile">
+				<a href="#"><img src='css/images/image2.jpg' />
+				<div class="text">
+					<h1>Lorem ipsum.</h1>
+					<h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
+					<p class="animate-text">Bacon ipsum dolor amet pork belly
+						tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank
+						sirloin strip steak prosciutto kevin turducken.</p>
+					<div class="dots">
+						<span></span> <span></span> <span></span>
+					</div>
+				</div>
+				</a>
+			</div>
 
 
-<div class="tile"> 
-  <img src='css/images/image2.jpg'/>
-  <div class="text">
-  <h1>Lorem ipsum.</h1>
-  <h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
-  <p class="animate-text">Bacon ipsum dolor amet pork belly tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank sirloin strip steak prosciutto kevin turducken. </p>
-<div class="dots">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-  </div>
- </div>
-  
-  <div class="tile"> 
-  <img src='css/images/image2.jpg'/>
-  <div class="text">
-  <h1>Lorem ipsum.</h1>
-  <h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
-  <p class="animate-text">Bacon ipsum dolor amet pork belly tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank sirloin strip steak prosciutto kevin turducken. </p>
-<div class="dots">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-  </div>
- </div>
-</div>
+			<div class="tile">
+				<a href="#"><img src='css/images/image2.jpg' />
+				<div class="text">
+					<h1>Lorem ipsum.</h1>
+					<h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
+					<p class="animate-text">Bacon ipsum dolor amet pork belly
+						tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank
+						sirloin strip steak prosciutto kevin turducken.</p>
+					<div class="dots">
+						<span></span> <span></span> <span></span>
+					</div>
+				</div>
+				</a>
+			</div>
 
-<div class="wrap">
-<div class="tile"> 
-  <img src='http://www.blueb.co.kr/SRC2/_image/s_01.jpg'/>
-  <div class="text">
-  <h1>Lorem ipsum.</h1>
-  <h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
-  <p class="animate-text">Bacon ipsum dolor amet pork belly tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank sirloin strip steak prosciutto kevin turducken. </p>
-<div class="dots">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-  </div>
- </div>
+			<div class="tile">
+				<a href="#"><img src='css/images/image2.jpg' />
+				<div class="text">
+					<h1>Lorem ipsum.</h1>
+					<h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
+					<p class="animate-text">Bacon ipsum dolor amet pork belly
+						tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank
+						sirloin strip steak prosciutto kevin turducken.</p>
+					<div class="dots">
+						<span></span> <span></span> <span></span>
+					</div>
+				</div>
+				</a>
+			</div>
+		</div>
+
+		<div class="wrap">
+			<div class="tile">
+				<a href="#">
+				<img src='http://www.blueb.co.kr/SRC2/_image/s_01.jpg' />
+				<div class="text">
+					<h1>Lorem ipsum.</h1>
+					<h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
+					<p class="animate-text">Bacon ipsum dolor amet pork belly
+						tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank
+						sirloin strip steak prosciutto kevin turducken.</p>
+					<div class="dots">
+						<span></span> <span></span> <span></span>
+					</div>
+				</a>
+				</div>
+			</div>
 
 
-<div class="tile"> 
-  <img src='http://www.blueb.co.kr/SRC2/_image/s_02.jpg'/>
-  <div class="text">
-  <h1>Lorem ipsum.</h1>
-  <h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
-  <p class="animate-text">Bacon ipsum dolor amet pork belly tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank sirloin strip steak prosciutto kevin turducken. </p>
-<div class="dots">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-  </div>
- </div>
-  
-  <div class="tile"> 
-  <img src='http://www.blueb.co.kr/SRC2/_image/s_03.jpg'/>
-  <div class="text">
-  <h1>Lorem ipsum.</h1>
-  <h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
-  <p class="animate-text">Bacon ipsum dolor amet pork belly tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank sirloin strip steak prosciutto kevin turducken. </p>
-<div class="dots">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-  </div>
- </div>
-</div>
+			<div class="tile">
+				<img src='http://www.blueb.co.kr/SRC2/_image/s_02.jpg' />
+				<a href="#">
+				<div class="text">
+					<h1>Lorem ipsum.</h1>
+					<h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
+					<p class="animate-text">Bacon ipsum dolor amet pork belly
+						tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank
+						sirloin strip steak prosciutto kevin turducken.</p>
+					<div class="dots">
+						<span></span> <span></span> <span></span>
+					</div>
+				</div>
+				</a>
+			</div>
 
-   
-</div>
+			
+			<div class="tile">
+				<a href="#">
+				<img src='http://www.blueb.co.kr/SRC2/_image/s_03.jpg' />
+				<div class="text">
+					<h1>Lorem ipsum.</h1>
+					<h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
+					<p class="animate-text">Bacon ipsum dolor amet pork belly
+						tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank
+						sirloin strip steak prosciutto kevin turducken.</p>
+					<div class="dots">
+						<span></span> <span></span> <span></span>
+					</div>
+				</div>
+				</a>
+			</div>
+		</div>	
 
-   <!-- Tweet -->
-   <div id="tweet">
-      <div class="container1">
-         <section>
-            <blockquote>&ldquo;2016 공주대학교 프로젝트 POJO &rdquo;
-               <p>양희준    홍석진 박준영  황민정</p>
-            </blockquote>
-         </section>
-      </div>
-   </div>
-   <br/><br/><br/><br/><br/>
+  <!-- Tweet -->
+	<div id="tweet">
+		<div class="container1">
+			<section>
+				<blockquote>
+					&ldquo; 2016 공주대학교 프로젝트 POJO &rdquo;
+					<p>양희준 홍석진 박준영 황민정</p>
+				</blockquote>
+			</section>
+		</div>
+	</div>
    <jsp:include page="jsp/Footer.jsp"></jsp:include>
 </body>
 <script src="http://code.jquery.com/jquery.js" /></script>

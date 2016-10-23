@@ -5,7 +5,7 @@
 <html>
 <head>
 <title>Insert title here</title>
-<!-- <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
@@ -15,7 +15,7 @@
 <script src="js/init.js"></script>
 <link rel="stylesheet" href="css/skel-noscript.css" />
 <link rel="stylesheet" href="css/style.css" />
-<link rel="stylesheet" href="css/style-desktop.css" /> -->
+<link rel="stylesheet" href="css/style-desktop.css" />
 
 <style>
 #container {
@@ -27,7 +27,7 @@
 }
 
 #center-box {
-	margin: 50auto;
+	margin: 5px;
 }
 
 #right-box {
@@ -39,17 +39,26 @@
 <body>
 	<!-- Footer -->
 	<div id="footer">
-		<div id='container'>
+		<div id="container">
 			<div id='left-box'>
 				NOTIFICATION
-				<p>[주소] 대전광역시 서구 둔산3동 국화아파트
-				<p>어쩌구 저쩌구
+				<p>상호:(주)사랑방손님
+				<p>오시는길:충청남도 천안시 서북구 천안대로 1223-24
+				
 			</div>
 			<div id='right-box'>
-				COMPANY INFO
-				<p>법인명(상호):POJO 어쩌구 저쩌구
+			CALL CENTER
+			<p>전화번호:041-521-9114
+			<p>이메일:fivehj55@naver.com
 			</div>
-			<div id='center-box'>CALL CENTER 010-1234-0900</div>
+			<div id='center-box'>
+			COMPANY INFO
+				
+				<p>대표:양희준 홍석진 박준영 황민정
+				<p>
+		
+			
+			</div>
 		</div>
 
 	</div>

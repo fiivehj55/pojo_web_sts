@@ -33,16 +33,19 @@
 	select SEQ_HOUSE.currval as houseNo from dual
 	</selectKey>
 		insert into HOUSE 
-		values(SEQ_HOUSE.nextval, #{houseName}, #{houseAddress}, #{housePrice}, #{houseScore}, #{houseInfo}, #{memberId}, 
-		#{detailId}, #{houseRoom}, #{houseBath}, #{houseHosting}, #{houseTv}, #{houseAircon}, #{houseWifi}, #{houseElebe}, #{houseWashing}, #{houseImg,jdbcType=VARCHAR}, #{houseDay})
+		values(SEQ_HOUSE.nextval, #{houseName}, #{houseAddress}, #{houseAddressDetail}, #{housePrice}, #{houseScore}, #{houseInfo}, #{memberId}, 
+		#{detailId}, #{houseRoom}, #{houseBath}, #{houseHosting}, #{houseTv}, #{houseAircon}, #{houseWifi}, #{houseElebe}, #{houseWashing}, 
+		#{houseImg,jdbcType=VARCHAR}, #{houseDay}, #{possCheckIn,jdbcType=DATE}, #{possCheckOut,jdbcType=DATE})
 	</insert>
 	
 	<update id="updateHouse" parameterType="house">
 		update HOUSE set
-		HOUSE_NAME=#{houseName}, HOUSE_INFO=#{houseInfo}, HOUSE_ADDRESS=#{houseAddress}, HOUSE_PRICE=#{housePrice},
-		HOUSE_ROOM=#{houseRoom}, HOUSE_BATH=#{houseBath}, HOUSE_HOSTING=#{houseHosting}, HOUSE_TV=#{houseTv}, 
-		HOUSE_AIRCON=#{houseAircon}, HOUSE_WIFI=#{houseWifi}, HOUSE_ELEBE=#{houseElebe},
-		HOUSE_WASHING=#{houseWashing}, HOUSE_IMG=#{houseImg}, HOUSE_DAY=#{houseDay}
+		HOUSE_NAME=#{houseName}, HOUSE_INFO=#{houseInfo}, HOUSE_ADDRESS=#{houseAddress}, 
+		HOUSE_ADDRESS_DETAIL=#{houseAddressDetail},	HOUSE_PRICE=#{housePrice},
+		HOUSE_ROOM=#{houseRoom}, HOUSE_BATH=#{houseBath}, HOUSE_HOSTING=#{houseHosting}, 
+		HOUSE_TV=#{houseTv}, HOUSE_AIRCON=#{houseAircon}, HOUSE_WIFI=#{houseWifi}, 
+		HOUSE_ELEBE=#{houseElebe}, HOUSE_WASHING=#{houseWashing}, HOUSE_IMG=#{houseImg,jdbcType=VARCHAR}, 
+		HOUSE_DAY=#{houseDay}, POSS_CHECK_IN=#{possCheckIn}, POSS_CHECK_OUT=#{possCheckOut}
 		where house_no=#{houseNo}
 	</update>
 	
@@ -64,6 +67,7 @@
 		<id column="HOSUE_NO" property="houseNo" />
 		<result column="HOUSE_NAME" property="houseName" />
 		<result column="HOUSE_ADDRESS" property="houseAddress" />
+		<result column="HOUSE_ADDRESS_DETAIL" property="houseAddressDetail" />
 		<result column="HOUSE_PRICE" property="housePrice" />
 		<result column="HOUSE_SCORE" property="houseScore" />
 		<result column="HOUSE_INFO" property="houseInfo" />
@@ -79,5 +83,7 @@
 		<result column="HOUSE_WASHING" property="houseWashing"/>
 		<result column="HOUSE_IMG" property="houseImg"/>
 		<result column="HOUSE_DAY" property="houseDay"/>
+		<result column="POSS_CHECK_IN" property="possCheckIn"/>
+		<result column="POSS_CHECK_OUT" property="possCheckOut"/>
 	</resultMap>
 </mapper>

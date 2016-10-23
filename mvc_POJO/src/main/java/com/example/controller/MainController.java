@@ -38,4 +38,21 @@ public class MainController {
 		return "jsp/Terms";
 	}
 	
+	@RequestMapping(value = "/footer",method=RequestMethod.GET)
+	public String footer(Model model){
+		
+		//view의 이름을 리턴.
+		return "jsp/Footer";
+	}
+	
+	@RequestMapping(value = "/hosting", method = RequestMethod.GET)
+	public String hosting(Model model) {
+		return "jsp/Hosting";
+	}
+	
+	@RequestMapping(value = "/kakao", method = RequestMethod.GET)
+	public String kakao(Model model) {
+		return "jsp/kakao";
+	}
+	
 }
