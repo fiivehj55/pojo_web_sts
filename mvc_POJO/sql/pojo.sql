@@ -205,9 +205,11 @@ select SEQ_REPORT_REPLY.currval from dual;
 
 insert into MEMBER values ('hong', '홍길동', '1234', 'SKT', '01012345678', 'abc@naver.com', 'male', null, 'hello', 2, '회원');
 insert into MEMBER values ('jang', '장길산', '5678', 'KT', '01012345678', 'abc@naver.com', 'male', null, 'hello', 2, '회원');
+insert into MEMBER values ('black', '검은사용자', '5678', 'KT', '01012345678', 'abc@naver.com', 'male', null, 'hello', 3, '블랙리스트');
 insert into MEMBER values ('admin', '관리자', 'admin', 'U+', '01012345678', 'abc@naver.com', 'male', null, 'hello', 1, '최고관리자');
 insert into MEMBER_DETAIL values (1, '최고관리자');
 insert into MEMBER_DETAIL values (2, '회원');
+insert into MEMBER_DETAIL values (3, '블랙리스트');
 insert into HOUSE values (99, '공주빌라', '천안시 서북구 두정동', '1642번지', 350000, 8.5, 'hello', 'hong', 2, '1개', '2개', '3명', 'tv', 'aircon', 'wifi', 'elebe', 'washing', null, '일', '2016/09/23', '2016/10/23');
 insert into HOUSE values (98, '대전빌라', '천안시 서북구 두정동', '1642번지', 350000, 8.5, 'hello', 'hong', 2, '1개', '2개', '3명', 'tv', 'aircon', 'wifi', 'elebe', 'washing', null, '일', '2016/09/23', '2016/10/23');
 insert into HOUSE values (97, '광주빌라', '천안시 서북구 두정동', '1642번지', 350000, 8.5, 'hello', 'hong', 2, '1개', '2개', '3명', 'tv', 'aircon', 'wifi', 'elebe', 'washing', null, '일', '2016/09/23', '2016/10/23');

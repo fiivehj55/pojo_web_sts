@@ -60,9 +60,15 @@ public class MainController {
 	}
 	
 	@RequestMapping(value = "/chat", method = RequestMethod.GET)
-	public String chat(Model model) {
+	public String chat(Model model, @RequestParam String memId) {
 		return "jsp/socketchat";
 	}
+	
+	@RequestMapping(value = "/chattest", method = RequestMethod.GET)
+	public String chattest(Model model) {
+		return "jsp/chattest";
+	}
+
 	@RequestMapping(value = "/dateView", method = RequestMethod.GET)
 	public String dateView(Model model) {
 		return "jsp/dateView";
@@ -101,4 +107,5 @@ public class MainController {
 		}
 		return str;
 	}
+
 }
