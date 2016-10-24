@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class MainController {
@@ -56,8 +57,13 @@ public class MainController {
 	}
 	
 	@RequestMapping(value = "/chat", method = RequestMethod.GET)
-	public String chat(Model model) {
+	public String chat(Model model, @RequestParam String memId) {
 		return "jsp/socketchat";
+	}
+	
+	@RequestMapping(value = "/chattest", method = RequestMethod.GET)
+	public String chattest(Model model) {
+		return "jsp/chattest";
 	}
 
 }

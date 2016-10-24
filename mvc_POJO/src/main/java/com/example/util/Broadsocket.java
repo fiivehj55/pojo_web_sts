@@ -27,8 +27,13 @@ import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.ServerEndpoint;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @ServerEndpoint(value = "/broadcasting")
 public class Broadsocket {
+	private static Logger logger = LoggerFactory.getLogger(Broadsocket.class);
+
 	private static Set<Session> clients = Collections.synchronizedSet(new HashSet<Session>());
 	
 	@OnMessage
@@ -38,6 +43,7 @@ public class Broadsocket {
 			for (Session client : clients){
 				if(!client.equals(session)){
 					client.getBasicRemote().sendText(message);
+					
 				}
 			}
 		}
@@ -45,7 +51,8 @@ public class Broadsocket {
 	
 	@OnOpen
 	public void onOpen (Session session){
-		System.out.println(session);
+		System.out.println(session.getId());
+		logger.info(session.getId());
 		clients.add(session);
 	}
 	
