@@ -84,7 +84,7 @@
 			<div class="left">
 				<input type="button" value="◀" onclick="before()">
 			</div>
-			<div class="center">
+			<div class="center" id="dateBar">
 				<h1><%=today.get(Calendar.YEAR)%>년
 					<%=today.get(Calendar.MONTH) + 1%>월
 				</h1>
@@ -93,7 +93,7 @@
 				<input type="button" value="▶" onclick="after()">
 			</div>
 		</div>
-		<div id="box">
+		
 			<div class="day">일</div>
 			<div class="day">월</div>
 			<div class="day">화</div>
@@ -101,6 +101,7 @@
 			<div class="day">목</div>
 			<div class="day">금</div>
 			<div class="day">토</div>
+		<div id="box">
 			<%
 				for (int i = 1; i <= 42; i++) {
 			%>
@@ -136,6 +137,35 @@
 <script src="http://code.jquery.com/jquery.js"></script>
 <script>
 	var thisMonth = <%=today.get(Calendar.MONTH)%>;
+	var thisYear = <%=today.get(Calendar.YEAR)%>;
+	function before(){
+		thisMonth--;
+	 var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+		document.getElementById("dateBar").innerHTML = "<h1>"+thisYear+"년 "+(thisMonth+1)+"월</h1>";		
+	      document.getElementById("box").innerHTML = this.responseText;
+	      console.log((thisMonth+1)+"월");
+	      console.log(this.responseText);
+	    }
+	  };
+	  xhttp.open("POST", "dateView?month="+thisMonth, true);
+	  xhttp.send();
+	}
+	function after(){
+		thisMonth++;
+	 var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+		document.getElementById("dateBar").innerHTML = "<h1>"+thisYear+"년 "+(thisMonth+1)+"월</h1>";
+	      document.getElementById("box").innerHTML = this.responseText;
+	      console.log((thisMonth+1)+"월");
+	      console.log(this.responseText);
+	    }
+	  };
+	  xhttp.open("POST", "dateView?month="+thisMonth, true);
+	  xhttp.send();
+	}
 </script>
 
 </html>
