@@ -74,9 +74,13 @@ public class MainController {
 		return "jsp/dateView";
 	}
 	@RequestMapping(value = "/dateView", method = RequestMethod.POST)
-	public @ResponseBody String dateViewPost(Model model,@RequestParam Integer month) {
+	public @ResponseBody String dateViewPost(Model model,
+			@RequestParam Integer month,
+			@RequestParam Integer year
+			) {
 		Calendar today = Calendar.getInstance();
 		today.set(Calendar.MONTH,month);
+		today.set(Calendar.YEAR,year);
 		int toMonth = today.get(Calendar.MONTH);
 		today.set(Calendar.MONTH, toMonth - 1);
 		int pre = today.getActualMaximum(Calendar.DATE);

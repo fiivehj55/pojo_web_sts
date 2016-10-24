@@ -140,7 +140,12 @@
 	var thisMonth = <%=today.get(Calendar.MONTH)%>;
 	var thisYear = <%=today.get(Calendar.YEAR)%>;
 	function before(){
-		thisMonth--;
+		if(thisMonth!= 0){
+			thisMonth--;
+		}else{
+			thisYear--;
+			thisMonth = 11;
+		}
 	 var xhttp = new XMLHttpRequest();
 	  xhttp.onreadystatechange = function() {
 	    if (this.readyState == 4 && this.status == 200) {
@@ -150,11 +155,16 @@
 	      console.log(this.responseText);
 	    }
 	  };
-	  xhttp.open("POST", "dateView?month="+thisMonth, true);
+	  xhttp.open("POST", "dateView?month="+thisMonth+"&year="+thisYear, true);
 	  xhttp.send();
 	}
 	function after(){
-		thisMonth++;
+		if(thisMonth!= 11){
+			thisMonth++;
+		}else{
+			thisYear++;
+			thisMonth = 0;
+		}
 	 var xhttp = new XMLHttpRequest();
 	  xhttp.onreadystatechange = function() {
 	    if (this.readyState == 4 && this.status == 200) {
@@ -164,7 +174,7 @@
 	      console.log(this.responseText);
 	    }
 	  };
-	  xhttp.open("POST", "dateView?month="+thisMonth, true);
+	  xhttp.open("POST", "dateView?month="+thisMonth+"&year="+thisYear, true);
 	  xhttp.send();
 	}
 </script>
