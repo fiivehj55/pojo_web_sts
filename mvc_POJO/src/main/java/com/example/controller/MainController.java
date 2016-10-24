@@ -66,4 +66,9 @@ public class MainController {
 		return "jsp/chattest";
 	}
 
+	@RequestMapping(value = "/dateView", method = RequestMethod.GET)
+	public String dateView(Model model) {
+		return "jsp/dateView";
+	}
+
 }
