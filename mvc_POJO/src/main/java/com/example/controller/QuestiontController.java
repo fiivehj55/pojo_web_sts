@@ -34,7 +34,7 @@ public class QuestiontController {
 		model.addAttribute("Question", list);
 		list = qservice.selectById(user.getMemId());
 		model.addAttribute("max", list.size()/5+1);
-		model.addAttribute("page", page);
+		session.setAttribute("page", page);
 		}
 		
 		// view의 이름을 리턴.

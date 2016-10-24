@@ -59,5 +59,5 @@ public class MainController {
 	public String ychat(Model model) {
 		return "jsp/ychat";
 	}
-	
+
 }

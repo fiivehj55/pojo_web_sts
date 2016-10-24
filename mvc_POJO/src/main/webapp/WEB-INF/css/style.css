@@ -88,8 +88,11 @@ em, i {
 
 a {
 	text-decoration: none;
-	color: #faf9fa;
+	color:#80BA8E ;
 }
+
+
+a.class
 
 a:hover {
 	text-decoration: underline;

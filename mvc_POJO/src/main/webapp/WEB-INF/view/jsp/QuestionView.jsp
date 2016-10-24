@@ -42,7 +42,7 @@ label {
 				<sform:textarea rows="10" cols="50" path="questContent" style="display:none;"></sform:textarea>
 				<input type="submit" value="수정"/>
 				<%-- <a href="bbsUpdate?questNo=${questNo}"><input type="submit" value="수정"/></a> --%>				
-				<a href="bbs?page=1"><input type="button" value="목록"/></a>
+				<a href="bbs?page=${page}"><input type="button" value="목록"/></a>
 			</sform:form>
 		</div>
 	</div>

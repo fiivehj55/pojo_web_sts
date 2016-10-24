@@ -347,10 +347,11 @@ public class HouseController {
 	public String HouseDelete(Model model, @RequestParam Integer houseNo, HttpSession session) {
 		Member user = (Member) session.getAttribute("user");
 		House house = hservice.selectByNoHouse(houseNo);
+		System.out.println(user.getMemId());
 		if (user.getMemId().equals(house.getMemberId())) {
 			int result = hservice.deleteHouse(houseNo);
 			if (result == 1)
-				return "redirect:/search";
+				return "redirect:/search?page=1";
 			else
 				return "forward:/selectByHouse?houseNo=" + houseNo;
 		} else {
