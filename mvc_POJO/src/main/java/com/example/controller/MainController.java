@@ -54,5 +54,8 @@ public class MainController {
 	public String kakao(Model model) {
 		return "jsp/kakao";
 	}
-	
+	@RequestMapping(value = "/chat", method = RequestMethod.GET)
+	public String chatting(Model model) {
+		return "jsp/kakao";
+	}
 }
