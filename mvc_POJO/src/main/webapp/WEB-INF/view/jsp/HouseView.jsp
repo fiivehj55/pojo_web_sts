@@ -335,7 +335,6 @@
 							<h1 class="h1">${memberName}의${houseName}</h1>
 							<br /> 아주 휼룡한 ${houseScore }점!! <br /> 지하철역 도보 3분이라 아주 좋아요!! <br />
 							욕실이 아주 깨끗해요. 호스트가 친절하세요!! <br />
-
 						</div>
 					</div>
 				</div>

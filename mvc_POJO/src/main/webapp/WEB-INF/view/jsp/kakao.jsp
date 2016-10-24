@@ -10,7 +10,7 @@
 </head>
 <body>
 	<a id="kakao-login-btn"></a>
-	<a href="http://alpha-developers.kakao.com/logout"></a>
+		<a href="http://alpha-developers.kakao.com/logout"></a>
 	<br/>
 	
 	<a id="custom-login-btn" href="javascript:loginWithKakao()">
@@ -111,31 +111,30 @@
 		
 		function sendTo(){
         	Kakao.Auth.login({
-            //// 메모챗을 발송하기 위해서는 로그인할때 추가적인 scope 을 얻어야 한다.
-            scope: "PROFILE,TALK_MESSAGE",
-            success: function(res) {
-                Kakao.API.request({
-                    url: '/v1/api/talk/memo/send',
-                    data: {
-                        template_id: '0',
-                        args: '{"${USER_NAME}": "developer","${AGE}": 20}'
-                    },
-                    success: function(res) {
-                        alert('success!');
-                        console.log(res);
-                    },
-                    fail: function(error) {
-                        alert('error! \n' + JSON.stringify(error));
-                        console.log(error);
-                    }
-                })
-            },
-            fail: function(error) {
-                console.log(error);
-            }
-        });
-    }
-  //]]>
+            	//// 메모챗을 발송하기 위해서는 로그인할때 추가적인 scope 을 얻어야 한다.
+            	scope: "PROFILE,TALK_MESSAGE",
+            	success: function(res) {
+            	    Kakao.API.request({
+        	            url: '/v1/api/talk/memo/send',
+    	                data: {
+	                        template_id: '294727897',
+                        	args: '{"${USER_NAME}": "developer","${AGE}": 20}'
+                    	},
+                    	success: function(res) {
+                        	alert('success!');
+                        	console.log(res);
+                    	},
+                    	fail: function(error) {
+                    	    alert('error! \n' + JSON.stringify(error));
+                	        console.log(error);
+            	        }
+        	        })
+    	        },
+	            fail: function(error) {
+                	console.log(error);
+            	}
+        	});
+    	}
 	</script>
 </body>
 </html>
