@@ -2,6 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="sform" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,34 +54,29 @@ background-image:url
 	</div>
 	<hr class="layout"></hr>
 	<div class="boardView">
+	
 		<table border="1" summary="">
 			<tr>
 				<th scope="row">제목</th>
-				<td class="title">이 사람 신고합니다.</td>
+				<td class="title">${reportSubject }</td>
 			</tr>
 			<hr>
 
 			<tr>
 				<th scope="row">구분</th>
-				<td class="category">피해사례</td>
+				<td class="category">${reportCategory }</td>
 			</tr>
 
 			<tr>
 				<th scope="row">글번호</th>
-				<td>100 <span class="date">작성일 : 2016-10-23</span> 
+				<td>${reportNo} <span class="date">작성일 : 2016-10-23</span> 
 				<span class="hit">조회수 : 1000</span>
 				</td>
 			</tr>
 			
 			<tr class="view">
 				<td colspan="2">
-					<div class="detail">양희준을 신고합니다. 사기꾼입니다. 양희준을 신고합니다. 사기꾼입니다.
-						양희준을 신고합니다. 사기꾼입니다. 양희준을 신고합니다. 사기꾼입니다. 양희준을 신고합니다. 사기꾼입니다. 양희준을
-						신고합니다. 사기꾼입니다. 양희준을 신고합니다. 사기꾼입니다. 양희준을 신고합니다. 사기꾼입니다. 양희준을 신고합니다.
-						사기꾼입니다. 양희준을 신고합니다. 사기꾼입니다. 양희준을 신고합니다. 사기꾼입니다. 양희준을 신고합니다.
-						사기꾼입니다. 양희준을 신고합니다. 사기꾼입니다. 양희준을 신고합니다. 사기꾼입니다. 양희준을 신고합니다.
-						사기꾼입니다. 양희준을 신고합니다. 사기꾼입니다. 양희준을 신고합니다. 사기꾼입니다. 양희준을 신고합니다.
-						사기꾼입니다.</div>
+					<div class="detail">${reportContent}</div>
 				</td>
 			</tr>
 		</table>
@@ -95,15 +91,19 @@ background-image:url
 	
 	<div class=prevnext>
 	<ul>
+	
+	<c:if test="${reportPrevious != null}">
 		<li class="prev">
 		<strong>이전글</strong>
-		<a href="/board/free/read.html?no=122433&board_no=1&page=">홍석진 사기꾼입니다.</a>
+		<a href="reportView?reportNo=${reportNo+1}">${reportPrevious.reportSubject}</a>
 		</li>
-	
+	</c:if>
+	<c:if test="${reportNext != null}">
 		<li class="next">
 		<strong>다음글</strong>
-		<a href="/board/free/read.html?no=122433&board_no=1&page=">황민정 사기꾼입니다.</a>
+		<a href="reportView?reportNo=${reportNo-1}">${reportNext.reportSubject}</a>
 		</li>
+		</c:if>
 	</ul>
 	</div>
 	

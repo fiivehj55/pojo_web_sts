@@ -53,11 +53,8 @@
 			</div>
 			<div id='center-box'>
 			COMPANY INFO
-				
 				<p>대표:양희준 홍석진 박준영 황민정
 				<p>
-		
-			
 			</div>
 		</div>
 
