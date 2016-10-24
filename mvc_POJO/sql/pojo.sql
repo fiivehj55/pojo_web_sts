@@ -251,4 +251,4 @@ insert into REPORT_TO_REPLY values (4, 'admin', '요청이 처리되었습니다
 insert into REPORT_TO_REPLY values (5, 'admin', '요청이 처리되었습니다.', sysdate, 98);
 insert into REPORT_TO_REPLY values (6, 'admin', '요청이 처리되었습니다.', sysdate, 99);
 
-commit;
+commit; 

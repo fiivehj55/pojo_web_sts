@@ -152,6 +152,7 @@ p, h1, form, button {
 <body class="header">
 	<jsp:include page="./Header.jsp"></jsp:include>
 	<!-- Main -->
+	
 	<div class="titleArea">
 		<h2>JOIN</h2>
 	</div>
@@ -392,7 +393,7 @@ p, h1, form, button {
 		<div class="agree">이미지</div>
 	</div>
 	<p class = "check">
-	<span>이용약관에 동의하십니까?</span>
+	<span>개인정보에 수집 및 이용에 동의하십니까?</span>
 	<input name="agree_privacy_check[]"
 	id="agree_privacy_check0" type="checkbox"></input>
 	<label for ="agree_privacy_check0">동의함</label>
