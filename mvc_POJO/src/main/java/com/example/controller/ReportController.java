@@ -43,7 +43,7 @@ public class ReportController {
 		list = repservice.selectAllReport();
 
 		model.addAttribute("max", list.size()/5+1);
-		model.addAttribute("page", page);
+		session.setAttribute("page", page);
 
 		logger.trace("last report: {}",list);
 		// view의 이름을 리턴.

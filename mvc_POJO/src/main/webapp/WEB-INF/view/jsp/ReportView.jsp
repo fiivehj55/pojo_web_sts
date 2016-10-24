@@ -88,7 +88,7 @@ background-image:url
 	
 	<div class="button">
 		<div class="btnArea M b_left">
-			<a class="black_s" href="board/free/list.html?board_act=list&board_no=1">목록보기</a>
+			<a class="black_s" href="report?page=${page}">목록보기</a>
 		</div>
 	</div>
 	<p>
