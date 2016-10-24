@@ -6,22 +6,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <style>
-#container {
+#container2 {
   display: flex;
 }
-#left-box {
+#left-box2 {
   flex: 1;
   background: red;
 }
-#center-box {
+#center-box2 {
   flex: 2;
   background: yellow;
-  text-align: center;
 }
-#right-box {
+#right-box2 {
   flex: 1;
   background: blue;
-  text-align: right;
+}
+#right-box {
+	float: right;
 }
 </style>
 
@@ -29,10 +30,10 @@
 </head>
 <body>
 	<jsp:include page="./Header.jsp"></jsp:include>
-<div id='container'>
-    <div id='left-box'>왼쪽</div>
-    <div id='center-box'>가운데</div>
-    <div id='right-box'>오른쪽</div>
+<div id='container2'>
+    <div id='left-box2'>왼쪽</div>
+    <div id='center-box2'>가운데</div>
+    <div id='right-box2'>오른쪽</div>
 </div>
 	<jsp:include page="./Footer.jsp"></jsp:include>
 </body>

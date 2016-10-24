@@ -59,5 +59,8 @@ public class MainController {
 	public String ychat(Model model) {
 		return "jsp/ychat";
 	}
-
+	@RequestMapping(value = "/dateView", method = RequestMethod.GET)
+	public String dateView(Model model) {
+		return "jsp/dateView";
+	}
 }
