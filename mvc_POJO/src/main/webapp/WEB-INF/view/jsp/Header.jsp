@@ -44,12 +44,24 @@
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li>
-					<li><a href="<%=request.getContextPath()%>/left-sidebar.html">메시지</a>
+					<c:choose>
+						<c:when test="${empty user }">
+							<li><a href="#">메시지</a>
 						<ul class="sub">
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li>
+						</c:when>
+						<c:otherwise>
+						<li><a href="chat">메시지</a>
+							<ul class="sub">
+								<li class="active"><a href="kakao">카카오톡</a></li>
+								<li class="active"><a href="#">&nbsp</a></li>
+								<li class="active"><a href="#">&nbsp</a></li>
+							</ul></li>
+						</c:otherwise>
+					</c:choose>
 					<li><a href="faq">고객센터</a>
 						<ul class="sub">
 							<li class="active"><a href="faq">FAQ</a></li>
@@ -63,7 +75,7 @@
 							<ul class="sub">
 								<li class="active"><a href="terms">회원가입</a></li>
 								<li class="active"><a href="idAndPass">ID/PASS 찾기</a></li>
-								<li class="active"><a href="kakao">카카오톡</a></li>
+								<li class="active"><a href="#">&nbsp</a></li>
 							</ul>
 						</li>
 					</c:when>
