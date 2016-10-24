@@ -9,39 +9,63 @@
 <title>Insert title here</title>
 <style type="text/css">
 
-        div
-        {
-        float:left;
-        margin-right: 10px;
-        margin-bottom: 10px;
-        width: 48px; 
-        height: 48px;
-        border: 1px; 
-        solid #000000;
-        padding: 5;
-        border-radius: 5px;
-        
-        }
-        .week{
-        clear: both;
-        color: #FF0000;
-        }
-        .title{
-        background-color: gray;
-        color: #FFFFFF;
-        width: 50px; 
-        height: 20px;
-        padding: 5;
-        border-width:0;
-        text-align: center; 
-        }
-        #sun{background-color: #FF0000;}
-        #sat{background-color: #0000FF;}
 
 #main {
 	width: 100%;
 }
 
+.day {
+	float: left;
+	width: 14%;
+	border: 1px solid;
+	width: 14%;
+}
+
+.date {
+	float: left;
+	width: 14%;
+	border: 1px solid;
+}
+
+.next {
+	float: left;
+	width: 14%;
+	border: 1px solid;
+	color: gray;
+}
+
+.pre {
+	float: left;
+	width: 14%;
+	border: 1px solid;
+	color: gray;
+}
+
+#bar {
+	width: 100%;
+	float: none;
+	clear: both;
+}
+
+.left {
+	float: left;
+	width: 30%;
+}
+
+.right {
+	float: right;
+	width: 30%;
+}
+
+.center {
+	width: 30%;
+	display: inline-block;
+	margin: 0 auto;
+}
+
+.center h1 {
+	display: inline-block;
+}
 
 </style>
 </head>
@@ -57,55 +81,6 @@
 		int start = today.get(Calendar.DAY_OF_WEEK);
 		int end = today.getActualMaximum(Calendar.DATE);
 	%>
-  <div id="sun" class="class">sun</div>
-    <div class="title">mon</div>
-    <div class="title">tue</div>
-    <div class="title">wed</div>
-    <div class="title">thu</div>
-    <div class="title">fri</div>
-    <div id="sat" class="title">sat</div>
-    
-    <div class="week">&nbsp;</div>
-    <div>&nbsp;</div>
-    <div>&nbsp;</div>
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-    
-    <div class="week">5</div>
-    <div>6</div>
-    <div>7</div>
-    <div>8</div>
-    <div>9</div>
-    <div>10</div>
-    <div>11</div>
-    
-    <div class="week">12</div>
-    <div>13</div>
-    <div>14</div>
-    <div>15</div>
-    <div>16</div>
-    <div>17</div>
-    <div>18</div>
-    
-    <div class="week">19</div>
-    <div>20</div>
-    <div>21</div>
-    <div>22</div>
-    <div>23</div>
-    <div>24</div>
-    <div>25</div>
-    
-    <div class="week">26</div>
-    <div>27</div>
-    <div>28</div>
-    <div>29</div>
-    <div>30</div>
-    <div>&nbsp;</div>
-    <div>&nbsp;</div>
-
-
 		<div id="bar">
 			<div class="left">
 				<input type="button" value="◀" onclick="before()">
@@ -158,7 +133,7 @@
 				}
 			%>
 		</div>
-	</div>
+	
 </body>
 <script src="http://code.jquery.com/jquery.js"></script>
 <script>
