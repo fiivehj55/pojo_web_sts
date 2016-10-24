@@ -13,10 +13,12 @@
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
- 
+
 package com.example.util;
 
 import java.io.IOException;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -28,6 +30,7 @@ import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.ServerEndpoint;
 
+@ServerEndpoint(value = "/chat")
 public class ChatAnnotation {
 
     private static final String GUEST_PREFIX = "Guest";
@@ -37,7 +40,7 @@ public class ChatAnnotation {
     // 예를 들어, toArray()메소드를 통해 쉽게 Object[] 형의 데이터를 추출할 수 있다.
     private static final Set<ChatAnnotation> connections =
             new CopyOnWriteArraySet<ChatAnnotation>();
-
+    
     private final String nickname;
     // 클라이언트가 새로 접속할 때마다 한개의 Session 객체가 생성된다.
     // Session 객체를 컬렉션에 보관하여 두고 해당 클라이언트에게 데이터를 전송할 때마다 사용한다
@@ -113,4 +116,4 @@ public class ChatAnnotation {
             }
         }
     }
-}*/
+} */

@@ -55,9 +55,9 @@ public class MainController {
 		return "jsp/kakao";
 	}
 	
-	@RequestMapping(value = "/ychat", method = RequestMethod.GET)
-	public String ychat(Model model) {
-		return "jsp/ychat";
+	@RequestMapping(value = "/chat", method = RequestMethod.GET)
+	public String chat(Model model) {
+		return "jsp/socketchat";
 	}
 
 }
