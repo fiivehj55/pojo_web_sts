@@ -361,8 +361,8 @@ label {
 .auto_center {
 	width: 100%;
 	height: 1000px;
-	padding: 20px;
-	margin: 200px auto;
+	padding-top: 0px;
+	margin: 130px auto;
 }
 
 #map {
@@ -376,6 +376,8 @@ label {
 	width: 50%;
 	height: 100%;
 }
+
+
 </style>
 
 </head>
@@ -391,7 +393,7 @@ label {
 							placeholder="두정동 또는 건물이름을 입력하세요"> <input type="button"
 							value="확인"> 
 					</header> -->
-						<p>${key}검색한페이지 입니다.
+						<p>${key}검색한페이지 입니다.</p>
 					</div>
 				</div>
 			</div>
