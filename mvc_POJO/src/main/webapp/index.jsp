@@ -326,7 +326,7 @@ body {
 						<ul class="sub">
 							<li class="active"><a href="adminReport">신고게시판 관리</a></li>
 							<li class="active"><a href="adminQuestion">문의게시판 관리</a></li>
-							<li class="active"><a href="adminBoard">게시판 관리</a></li>
+							<li class="active"><a href="adminHouse">하우스 관리</a></li>
 							<li class="active"><a href="adminReply">댓글 관리</a></li>
 						</ul></li>
 				</ul>

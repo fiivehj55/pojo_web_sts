@@ -5,19 +5,33 @@ import java.util.Calendar;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.example.dto.Member;
+import com.example.service.QuestionService;
+import com.example.service.ReplyService;
+import com.example.service.ReportService;
+
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class MainController {
 	
 	private static Logger logger = LoggerFactory.getLogger(MainController.class);
-
+	
+	@Autowired
+	QuestionService qService;
+	
+	@Autowired
+	ReplyService replyService;
+	
+	@Autowired
+	ReportService reportService;
+	
 	
 	@RequestMapping(value = "/hello",method=RequestMethod.GET)
 	public String sayHello(Model model){
@@ -82,13 +96,13 @@ public class MainController {
 		return "jsp/dateView";
 	}
 	
-	@RequestMapping(value = "/admin", method = RequestMethod.GET)
-	public String adminBoard(Model model) {
-		return "jsp/adminBoard";
-	}
 	@RequestMapping(value = "/adminBoard", method = RequestMethod.GET)
+	public String adminBoard(Model model) {
+		return "jsp/adminHouse";
+	}
+	@RequestMapping(value = "/adminHouse", method = RequestMethod.GET)
 	public String adminBoard2(Model model) {
-		return "jsp/adminBoard";
+		return "jsp/adminHouse";
 	}
 	@RequestMapping(value = "/adminQuestion", method = RequestMethod.GET)
 	public String adminQuestion(Model model) {
