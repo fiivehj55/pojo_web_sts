@@ -61,9 +61,9 @@ public class MainController {
 		return "jsp/kakao";
 	}
 	
-	@RequestMapping(value = "/chat", method = RequestMethod.GET)
+	@RequestMapping(value = "/chatprivate", method = RequestMethod.GET)
 	public String chat(Model model, @RequestParam String memId) {
-		return "jsp/socketchat1";
+		return "jsp/socketchatRoom";
 	}
 	
 	@RequestMapping(value = "/chattest", method = RequestMethod.GET)
