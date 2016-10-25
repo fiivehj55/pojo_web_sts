@@ -35,14 +35,14 @@ input#chat {
 	<h1>${user.memId}의 채팅방</h1>
 	<hr/>
 	<div>
+		<div id="console-container">
+			<ul id="msglist"></ul>
+		</div>
 		<p>
 			<input type="text" placeholder="방 이름을 넣으세요." id="room" value="${user.memId }" />
 			<button id="btnRoom">방 만들기</button>
 			<input type="text" placeholder="메시지를 입력하고 엔터를 누르세요." id="chat" />
 		</p>
-		<div id="console-container">
-			<ul id="msglist"></ul>
-		</div>
 	</div>
 </body>
 <script src="http://code.jquery.com/jquery.min.js"></script>
