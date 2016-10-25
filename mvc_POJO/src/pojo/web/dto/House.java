@@ -1,4 +1,5 @@
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * HOUSE 모델 클래스.
@@ -20,6 +21,9 @@ public class House implements Serializable {
 	/** HOUSE_ADDRESS. */
 	private String houseAddress;
 
+	/** HOUSE_ADDRESS_DETAIL. */
+	private String houseAddressDetail;
+
 	/** HOUSE_PRICE. */
 	private Integer housePrice;
 
@@ -38,8 +42,8 @@ public class House implements Serializable {
 	/** HOUSE_ROOM. */
 	private String houseRoom;
 
-	/** HOSUE_BATH. */
-	private String hosueBath;
+	/** HOUSE_BATH. */
+	private String houseBath;
 
 	/** HOUSE_HOSTING. */
 	private String houseHosting;
@@ -64,6 +68,12 @@ public class House implements Serializable {
 
 	/** HOUSE_DAY. */
 	private String houseDay;
+
+	/** POSS_CHECK_IN. */
+	private Date possCheckIn;
+
+	/** POSS_CHECK_OUT. */
+	private Date possCheckOut;
 
 	/**
 	 * 생성자.
@@ -126,6 +136,25 @@ public class House implements Serializable {
 	 */
 	public String getHouseAddress() {
 		return this.houseAddress;
+	}
+
+	/**
+	 * HOUSE_ADDRESS_DETAIL을 설정합니다..
+	 * 
+	 * @param houseAddressDetail
+	 *            HOUSE_ADDRESS_DETAIL
+	 */
+	public void setHouseAddressDetail(String houseAddressDetail) {
+		this.houseAddressDetail = houseAddressDetail;
+	}
+
+	/**
+	 * HOUSE_ADDRESS_DETAIL을 가져옵니다..
+	 * 
+	 * @return HOUSE_ADDRESS_DETAIL
+	 */
+	public String getHouseAddressDetail() {
+		return this.houseAddressDetail;
 	}
 
 	/**
@@ -243,22 +272,22 @@ public class House implements Serializable {
 	}
 
 	/**
-	 * HOSUE_BATH을 설정합니다..
+	 * HOUSE_BATH을 설정합니다..
 	 * 
-	 * @param hosueBath
-	 *            HOSUE_BATH
+	 * @param houseBath
+	 *            HOUSE_BATH
 	 */
-	public void setHosueBath(String hosueBath) {
-		this.hosueBath = hosueBath;
+	public void setHouseBath(String houseBath) {
+		this.houseBath = houseBath;
 	}
 
 	/**
-	 * HOSUE_BATH을 가져옵니다..
+	 * HOUSE_BATH을 가져옵니다..
 	 * 
-	 * @return HOSUE_BATH
+	 * @return HOUSE_BATH
 	 */
-	public String getHosueBath() {
-		return this.hosueBath;
+	public String getHouseBath() {
+		return this.houseBath;
 	}
 
 	/**
@@ -411,6 +440,44 @@ public class House implements Serializable {
 	 */
 	public String getHouseDay() {
 		return this.houseDay;
+	}
+
+	/**
+	 * POSS_CHECK_IN을 설정합니다..
+	 * 
+	 * @param possCheckIn
+	 *            POSS_CHECK_IN
+	 */
+	public void setPossCheckIn(Date possCheckIn) {
+		this.possCheckIn = possCheckIn;
+	}
+
+	/**
+	 * POSS_CHECK_IN을 가져옵니다..
+	 * 
+	 * @return POSS_CHECK_IN
+	 */
+	public Date getPossCheckIn() {
+		return this.possCheckIn;
+	}
+
+	/**
+	 * POSS_CHECK_OUT을 설정합니다..
+	 * 
+	 * @param possCheckOut
+	 *            POSS_CHECK_OUT
+	 */
+	public void setPossCheckOut(Date possCheckOut) {
+		this.possCheckOut = possCheckOut;
+	}
+
+	/**
+	 * POSS_CHECK_OUT을 가져옵니다..
+	 * 
+	 * @return POSS_CHECK_OUT
+	 */
+	public Date getPossCheckOut() {
+		return this.possCheckOut;
 	}
 
 	/**

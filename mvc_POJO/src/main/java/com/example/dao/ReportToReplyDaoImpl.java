@@ -1,6 +1,8 @@
 package com.example.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.slf4j.Logger;
@@ -50,6 +52,15 @@ public class ReportToReplyDaoImpl implements ReportToReplyDao {
 	public List<ReportToReply> selectByRtreportNo(SqlSessionTemplate template, int reportNo) {
 		String stmt = REPORT_TO_REPLY_MAP + "selectByRno";
 		return template.selectList(stmt, reportNo);
+	}
+
+	@Override
+	public List<ReportToReply> rtrPaging(SqlSessionTemplate template, int page) {
+		String stmt = REPORT_TO_REPLY_MAP + "rtrPaging";
+		Map<String, Object> map = new HashMap<>();
+		map.put("low",(page-1)*6+1);
+		map.put("high",page*6);
+		return template.selectList(stmt,map);
 	}
 
 }

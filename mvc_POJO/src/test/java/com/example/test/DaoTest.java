@@ -18,6 +18,7 @@ import com.example.dao.HouseDao;
 import com.example.dao.MemberDao;
 import com.example.dao.MemberDetailDao;
 import com.example.dao.QuestionDao;
+import com.example.dao.QuestionToReplyDao;
 import com.example.dao.RegistHouseDao;
 import com.example.dao.ReplyDao;
 import com.example.dao.ReportDao;
@@ -26,6 +27,7 @@ import com.example.dto.House;
 import com.example.dto.Member;
 import com.example.dto.MemberDetail;
 import com.example.dto.Question;
+import com.example.dto.QuestionToReply;
 import com.example.dto.RegistHouse;
 import com.example.dto.Reply;
 import com.example.dto.Report;
@@ -45,6 +47,8 @@ public class DaoTest {
 	RegistHouseDao rhdao;
 	@Autowired
 	QuestionDao qdao;
+	@Autowired
+	QuestionToReplyDao qtrdao;
 	@Autowired
 	ReplyDao rdao;
 	@Autowired
@@ -476,6 +480,69 @@ public class DaoTest {
 	public void testDeletReportToReply() {
 		int result = rtrdao.deleteReportToReply(template, 2);
 		logger.trace("List: {}", result);
+
+	}
+	
+	@Test
+	public void testRtrPaging() {
+		List<ReportToReply> reportToReply = rtrdao.rtrPaging(template, 1);
+		logger.trace("List: {}", reportToReply);
+
+	}
+	
+	/** QUESTION_TO_REPLY_TEST */
+	@Test
+	public void testSelectAllQTR() {
+		List<QuestionToReply> questionToReply = qtrdao.selectAllQuestionToReply(template);
+		logger.trace("List: {}", questionToReply);
+
+	}
+
+	@Test
+	public void testSelectByQTQNo() {
+		QuestionToReply questionToReply = qtrdao.selectByQuestionToReply(template, 1);
+		logger.trace("List: {}", questionToReply);
+
+	}
+	
+	@Test
+	public void testSelectByQtquestNo() {
+		List<QuestionToReply> questionToReply = qtrdao.selectByQtquestNo(template, 99);
+		logger.trace("List: {}", questionToReply);
+
+	}
+
+	@Test
+	public void testInsertQuestionToReply() {
+		Calendar cd = Calendar.getInstance();
+		Date dd = cd.getTime();
+		QuestionToReply questionToReply = new QuestionToReply(null, "admin", "최종변경 되었습니다.", null, 99);
+		int result = qtrdao.insertQuestToReply(template, questionToReply);
+		logger.trace("List: {}", result);
+
+	}
+
+	@Test
+	public void testUpdateQuestionToReply() {
+		Calendar cd = Calendar.getInstance();
+		Date dd = cd.getTime();
+		QuestionToReply questionToReply = new QuestionToReply(7, "admin", "최종변경 되었습니다!!", null, 99);
+		int result = qtrdao.updateQuestToReply(template, questionToReply);
+		logger.trace("List: {}", result);
+
+	}
+	
+	@Test
+	public void testDeletQuestionToReply() {
+		int result = qtrdao.deleteQuestToReply(template, 7);
+		logger.trace("List: {}", result);
+
+	}
+	
+	@Test
+	public void testQtrPaging() {
+		List<QuestionToReply> questionToReply = qtrdao.qtrPaging(template, 1);
+		logger.trace("List: {}", questionToReply);
 
 	}
 

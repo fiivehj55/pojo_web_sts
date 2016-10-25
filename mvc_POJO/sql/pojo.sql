@@ -4,6 +4,7 @@ drop table HOUSE;
 drop table REGIST_HOUSE;
 drop table REPORT;
 drop table QUESTION;
+drop table QUESTION_TO_REPLY;
 drop table REPLY;
 drop table REPORT_TO_REPLY;
 
@@ -146,6 +147,23 @@ select SEQ_REPORT_REPLY.currval from dual;
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS" ;
   
+  
+  CREATE TABLE "POJO"."QUESTION_TO_REPLY" 
+   (	"QUEST_REPLY_NO" NUMBER(30,0) NOT NULL ENABLE, 
+	"MEMBER_ID" VARCHAR2(30 BYTE), 
+	"QUEST_REPLY_CONTENT" VARCHAR2(400 BYTE), 
+	"QUEST_REPLY_DATE" DATE, 
+	"QUEST_NO" NUMBER(30,0), 
+	 CONSTRAINT "QUESTION_TO_REPLY_PK" PRIMARY KEY ("QUEST_REPLY_NO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ; 
  
 
   CREATE TABLE "POJO"."REPORT" 
@@ -252,5 +270,12 @@ insert into REPORT_TO_REPLY values (3, 'admin', '요청이 처리되었습니다
 insert into REPORT_TO_REPLY values (4, 'admin', '요청이 처리되었습니다.', sysdate, 97);
 insert into REPORT_TO_REPLY values (5, 'admin', '요청이 처리되었습니다.', sysdate, 98);
 insert into REPORT_TO_REPLY values (6, 'admin', '요청이 처리되었습니다.', sysdate, 99);
+insert into QUESTION_TO_REPLY values (1, 'admin', '요청이 처리되었습니다.', sysdate, 99);
+insert into QUESTION_TO_REPLY values (2, 'admin', '요청이 처리되었습니다.', sysdate, 98);
+insert into QUESTION_TO_REPLY values (3, 'admin', '요청이 처리되었습니다.', sysdate, 97);
+insert into QUESTION_TO_REPLY values (4, 'admin', '요청이 처리되었습니다.', sysdate, 96);
+insert into QUESTION_TO_REPLY values (5, 'admin', '요청이 처리되었습니다.', sysdate, 95);
+insert into QUESTION_TO_REPLY values (6, 'admin', '요청이 처리되었습니다.', sysdate, 94);
+insert into QUESTION_TO_REPLY values (7, 'admin', '요청이 처리되었습니다.', sysdate, 93);
 
 commit;
