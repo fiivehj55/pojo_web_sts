@@ -63,7 +63,8 @@ public class MainController {
 	
 
 	@RequestMapping(value = "/chatprivate", method = RequestMethod.GET)
-	public String chat(Model model, @RequestParam String memId) {
+	public String chat(Model model, HttpSession session) {
+		Member member = (Member) session.getAttribute("user");
 		return "jsp/socketchatRoom";
 	}
 	
@@ -82,10 +83,23 @@ public class MainController {
 	}
 	
 	@RequestMapping(value = "/admin", method = RequestMethod.GET)
-	public String admin(Model model) {
-		return "jsp/admin";
+	public String adminBoard(Model model) {
+		return "jsp/adminBoard";
 	}
-
+	@RequestMapping(value = "/adminBoard", method = RequestMethod.GET)
+	public String adminBoard2(Model model) {
+		return "jsp/adminBoard";
+	}
+	@RequestMapping(value = "/adminQuestion", method = RequestMethod.GET)
+	public String adminQuestion(Model model) {
+		return "jsp/adminQuestion";
+	}@RequestMapping(value = "/adminReply", method = RequestMethod.GET)
+	public String adminReply(Model model) {
+		return "jsp/adminReply";
+	}@RequestMapping(value = "/adminReport", method = RequestMethod.GET)
+	public String adminReport(Model model) {
+		return "jsp/adminReport";
+	}
 	@RequestMapping(value = "/dateView", method = RequestMethod.POST)
 	public @ResponseBody String dateViewPost(Model model,
 			@RequestParam Integer month,

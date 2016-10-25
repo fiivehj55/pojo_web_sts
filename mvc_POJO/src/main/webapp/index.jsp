@@ -251,10 +251,12 @@ body {
 							<li class="active"><a href="dateView">달력 테스트</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
+							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li>
 					<li class="active"><a href="insertHouse">호스팅하기</a>
 						<ul class="sub">
 							<li class="active"><a href="hosting">호스팅이란?</a></li>
+							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li>
@@ -265,21 +267,25 @@ body {
 									<li class="active"><a href="#">&nbsp</a></li>
 									<li class="active"><a href="#">&nbsp</a></li>
 									<li class="active"><a href="#">&nbsp</a></li>
+							<li class="active"><a href="#">&nbsp</a></li>
 								</ul></li>
 						</c:when>
 						<c:otherwise>
-							<li><a href="chatprivate?memId=${user.memId}">메시지</a>
-								<ul class="sub">
-									<li class="active"><a href="kakao">카카오톡</a></li>
-									<li class="active"><a href="#">&nbsp</a></li>
-									<li class="active"><a href="#">&nbsp</a></li>
-								</ul></li>
+
+						<li><a href="chatprivate">메시지</a>
+							<ul class="sub">
+								<li class="active"><a href="kakao">카카오톡</a></li>
+								<li class="active"><a href="#">&nbsp</a></li>
+								<li class="active"><a href="#">&nbsp</a></li>
+							<li class="active"><a href="#">&nbsp</a></li>
+							</ul></li>
 						</c:otherwise>
 					</c:choose>
 					<li><a href="faq">고객센터</a>
 						<ul class="sub">
 							<li class="active"><a href="faq">FAQ</a></li>
 							<li class="active"><a href="report?page=1">신고 게시판</a></li>
+							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li>
 					<c:choose>
@@ -289,6 +295,7 @@ body {
 									<li class="active"><a href="terms">회원가입</a></li>
 									<li class="active"><a href="idAndPass">ID/PASS 찾기</a></li>
 									<li class="active"><a href="#">&nbsp</a></li>
+							<li class="active"><a href="#">&nbsp</a></li>
 								</ul></li>
 						</c:when>
 						<c:otherwise>
@@ -297,6 +304,7 @@ body {
 									<li class="active"><a href="logout">로그아웃</a></li>
 									<li class="active"><a href="#">&nbsp</a></li>
 									<li class="active"><a href="#">&nbsp</a></li>
+							<li class="active"><a href="#">&nbsp</a></li>
 								</ul></li>
 						</c:otherwise>
 					</c:choose>
@@ -312,12 +320,14 @@ body {
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
+							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li>
 					<li><a href="admin">관리자 페이지</a>
 						<ul class="sub">
-							<li class="active"><a href="#">&nbsp</a></li>
-							<li class="active"><a href="#">&nbsp</a></li>
-							<li class="active"><a href="#">&nbsp</a></li>
+							<li class="active"><a href="adminReport">신고게시판 관리</a></li>
+							<li class="active"><a href="adminQuestion">문의게시판 관리</a></li>
+							<li class="active"><a href="adminBoard">게시판 관리</a></li>
+							<li class="active"><a href="adminReply">댓글 관리</a></li>
 						</ul></li>
 				</ul>
 			</nav>
