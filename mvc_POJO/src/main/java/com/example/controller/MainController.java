@@ -2,6 +2,7 @@ package com.example.controller;
 
 import javax.servlet.http.HttpSession;
 import java.util.Calendar;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,7 +12,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.example.dto.House;
 import com.example.dto.Member;
+import com.example.dto.Report;
+import com.example.service.HouseService;
 import com.example.service.QuestionService;
 import com.example.service.ReplyService;
 import com.example.service.ReportService;
@@ -32,6 +37,8 @@ public class MainController {
 	@Autowired
 	ReportService reportService;
 	
+	@Autowired
+	HouseService hService;
 	
 	@RequestMapping(value = "/hello",method=RequestMethod.GET)
 	public String sayHello(Model model){
@@ -101,19 +108,67 @@ public class MainController {
 		return "jsp/adminHouse";
 	}
 	@RequestMapping(value = "/adminHouse", method = RequestMethod.GET)
-	public String adminBoard2(Model model) {
+	public String adminBoard2(Model model,
+			@RequestParam Integer page) {
+		List<House> list =  hService.searchHousesPaging(page);
+		model.addAttribute("house", list);
+		list = hService.selectAllHouse();
+		int size = list.size()/6;
+		if(size*6 < list.size())
+			model.addAttribute("max", size+1);
+		else
+			model.addAttribute("max", size);
+		model.addAttribute("page", page);
 		return "jsp/adminHouse";
 	}
 	@RequestMapping(value = "/adminQuestion", method = RequestMethod.GET)
-	public String adminQuestion(Model model) {
+	public String adminQuestion(Model model,
+			@RequestParam Integer page) {
+		/*
+		List<House> list =  qService.selectByIdPage(memberId, page)(page);
+		model.addAttribute("house", list);
+		int size = list.size()/6;
+		if(size*6 < list.size())
+			model.addAttribute("max", size+1);
+		else
+			model.addAttribute("max", size);
+		model.addAttribute("page", page);*/
 		return "jsp/adminQuestion";
 	}@RequestMapping(value = "/adminReply", method = RequestMethod.GET)
-	public String adminReply(Model model) {
+	public String adminReply(Model model,
+			@RequestParam Integer page) {
+		
+		//하우스 댓글 페이징 작업!!
+		
+		/*
+		List<House> list =  replyService.selectAllReply(page);
+		model.addAttribute("house", list);
+		int size = list.size()/6;
+		if(size*6 < list.size())
+			model.addAttribute("max", size+1);
+		else
+			model.addAttribute("max", size);
+		model.addAttribute("page", page);*/
 		return "jsp/adminReply";
 	}@RequestMapping(value = "/adminReport", method = RequestMethod.GET)
-	public String adminReport(Model model) {
+	public String adminReport(Model model,
+			@RequestParam Integer page, HttpSession session) {
+		List<Report> list = null;
+		list = reportService.selectReportPage(page);
+		
+		model.addAttribute("Report", list);
+		list = reportService.selectAllReport();
+
+		int size = list.size()/5;
+		if(size*5 < list.size())
+			model.addAttribute("max", size+1);
+		else
+			model.addAttribute("max", size);
+			
+		session.setAttribute("page", page);
 		return "jsp/adminReport";
 	}
+	
 	@RequestMapping(value = "/dateView", method = RequestMethod.POST)
 	public @ResponseBody String dateViewPost(Model model,
 			@RequestParam Integer month,

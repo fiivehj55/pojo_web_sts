@@ -46,8 +46,7 @@ public class ReportController {
 		if(size*5 < list.size())
 			model.addAttribute("max", size+1);
 		else
-			model.addAttribute("max", size+1);
-			
+			model.addAttribute("max", size);
 		session.setAttribute("page", page);
 
 		logger.trace("last report: {}",list);

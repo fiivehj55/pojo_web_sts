@@ -1,4 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE>
 <html>
 <head>
@@ -99,46 +102,25 @@
 				<th>관리</th>
 				<th>번호</th>
 				<th>제목</th>
-				<th>이름</th>
-				<th>등록일자</th>
+				<th>등록자</th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
+		<c:choose>
+					<c:when test="${fn:length(house) > 0}">
+						<c:forEach items="${house }" var="row">
+						<tr>
 				<td><input type="checkbox"></td>
-				<td>5</td>
-				<td>관리게시판 글</td>
-				<td>사용자5</td>
-				<td>2016-10-19</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td>4</td>
-				<td>관리게시판 글</td>
-				<td>사용자4</td>
-				<td>2016-10-19</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td>3</td>
-				<td>문의게시판 글</td>
-				<td>사용자3</td>
-				<td>2016-10-19</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td>2</td>
-				<td>문의게시판 글</td>
-				<td>사용자2</td>
-				<td>2016-10-19</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox"></td>
-				<td>1</td>
-				<td>관리게시판,문의게시판 관리</td>
-				<td>사용자1</td>
-				<td>2016-10-19</td>
-			</tr>
+				<td>${row.houseNo}</td>
+				<td><a href="houseView?houseNo=${row.houseNo}">${row.houseName}</a></td>
+				<td>${row.memberId}</td>
+				</tr>
+						</c:forEach>
+					</c:when>
+					<c:otherwise>
+							조회된 결과가 없습니다.
+					</c:otherwise>
+				</c:choose>
 		</tbody>
 	</table>
 </div>
@@ -149,7 +131,6 @@
 		<li class="search_button">검색</li>
 		<li class="detail_button" onclick="document.getElementById('boardcss_list_search').style.display = 'none'; document.getElementById('detailSearch').style.display = 'block';">상세검색▼</li>
 	</ul>
-		<button>수정</button>
 		<button>삭제</button>
 </div>
 <!-- 검색 테이블 종료 -->
@@ -185,7 +166,34 @@
 		<a class="closeButton" onclick="document.getElementById('boardcss_list_search').style.display = 'block'; document.getElementById('detailSearch').style.display = 'none';">닫기▲</a>
 	</div>
 </div>
-</ul>
+<!-- 페이징 -->
+<div>
+				<c:if test="${page > 5}">
+					<a href="adminHouse?page=${page-5}"> <input
+						type="button" value="이전">
+					</a>
+				</c:if>
+				<a href="adminHouse?page=${num}">${num}</a>
+				<c:set var="down" value="-3" />
+				<c:forEach var="num" begin="1" end="2">
+					<c:set var="down" value="${down+1}" />
+					<c:if test="${0 <page+ down}">
+						<a href="adminHouse?page=${page+down}">${page+down}</a>
+					</c:if>
+				</c:forEach>
+				<span>${page}</span>
+				<c:forEach var="num" begin="1" end="2">
+					<c:if test="${page+num <= max}">
+						<a href="adminHouse?page=${page+num}">${page+num}</a>
+					</c:if>
+				</c:forEach>
+				<c:if test="${page < max-5}">
+					<a href="adminHouse?page=${page+5}"> <input
+						type="button" value="다음">
+					</a>
+				</c:if>
+			</div>
+
 
 
 </body>

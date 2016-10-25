@@ -388,11 +388,6 @@ label {
 			<div id="featured">
 				<div class="container">
 					<div>
-						<!-- <header>
-					<input id="text_box" type="text" size="100"
-							placeholder="두정동 또는 건물이름을 입력하세요"> <input type="button"
-							value="확인"> 
-					</header> -->
 						<p>${key}검색한페이지 입니다.</p>
 					</div>
 				</div>
@@ -419,46 +414,6 @@ label {
 				</c:choose>
 			</div>
 			<div id="map"></div>
-			<%-- <div class ="boardcss_list_table">
-				<table class="list_table">
-				<colgroup>
-					<col width="10%" />
-					<col width="15%" />
-					<col width="50%" />
-					<col width="15%" />
-					<col width="10%" />
-				</colgroup>
-				<thead>
-				<tr>
-					<th>번호</th>
-					<th>하우스프로필</th>
-					<th>하우스 이름</th>
-					<th>주소</th>
-				</tr>
-				</thead>
-				<tbody>
-					<c:choose>
-						<c:when test="${fn:length(house) > 0}">
-							<c:forEach items="${house }" var="row">
-								<tr>
-									<td>${row.houseNo }</td>
-									<td> <a href="houseView?houseNo=${row.houseNo}"><img src="<%=request.getContextPath()%>/upload/${row.memberId}/${row.houseNo}/main/${row.houseImg}" width="40" height="40"/></a></td>
-									<td> <a href="houseView?houseNo=${row.houseNo }">${row.houseName }</a></td>
-									<td>${row.houseAddress }</td>									
-								</tr>
-							</c:forEach>
-						</c:when>
-						<c:otherwise>
-							<tr>
-								<td colspan="4">조회된 결과가 없습니다.</td>
-							</tr>
-						</c:otherwise>
-					</c:choose>
-					
-				</tbody>
-			</table>  
-		</div>--%>
-
 			<div>
 				<c:if test="${page > 5}">
 					<a href="searchbar?key=${key}&page=${page-5}"> <input

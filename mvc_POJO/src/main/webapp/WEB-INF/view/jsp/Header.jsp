@@ -112,10 +112,10 @@
 						</ul></li>
 					<li><a href="admin">관리자 페이지</a>
 						<ul class="sub">
-							<li class="active"><a href="adminReport">신고게시판 관리</a></li>
-							<li class="active"><a href="adminQuestion">문의게시판 관리</a></li>
-							<li class="active"><a href="adminHouse">하우스 관리</a></li>
-							<li class="active"><a href="adminReply">댓글 관리</a></li>
+							<li class="active"><a href="adminReport?page=1">신고게시판 관리</a></li>
+							<li class="active"><a href="adminQuestion?page=1">문의게시판 관리</a></li>
+							<li class="active"><a href="adminHouse?page=1">하우스 관리</a></li>
+							<li class="active"><a href="adminReply?page=1">댓글 관리</a></li>
 						</ul></li>
 				</ul>
 			</nav>
