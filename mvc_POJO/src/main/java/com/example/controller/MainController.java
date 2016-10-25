@@ -61,11 +61,13 @@ public class MainController {
 		return "jsp/kakao";
 	}
 	
+	//희준이 구현소스
 	@RequestMapping(value = "/chat", method = RequestMethod.GET)
 	public String chat(Model model, @RequestParam String memId) {
 		return "jsp/socketchat1";
 	}
 	
+	//강사님이 주신소스
 	@RequestMapping(value = "/chattest", method = RequestMethod.GET)
 	public String chattest(Model model, @RequestParam String memId, HttpSession session) {
 		Member member = (Member) session.getAttribute("user");
