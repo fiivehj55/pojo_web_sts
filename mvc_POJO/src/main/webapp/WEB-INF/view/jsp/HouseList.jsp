@@ -24,6 +24,12 @@
 
 <style>
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
+#right-box {
+	float: right;
+}
+#left-box {
+	float: left;
+}
 body {
 	color: #333;
 	font-family: 'Open Sans', sans-serif;
@@ -567,17 +573,23 @@ var locat = new Array();
 				 		 var infowindow = new google.maps.InfoWindow();
 				  
 				  		 google.maps.event.addListener(marker, 'click', (function(marker, i) {
-				        return function() {
-				        	   var centerMaker = '<div id="content">'+
+				  			
+				        return function() {				        	
+				        	   var centerMaker = 			        		  
+				        		  '<div  style="width:400px; heigth:150px;" id="content">'+
 							      '<div id="siteNotice">'+
 							      '</div>'+
+							      '<div id="left-box">'+
 							      '<h1 id="firstHeading" class="firstHeading">'+houseList[i][0]+'</h1>'+
 							      '<div id="bodyContent">'+
-							      '<p>'+houseList[i][2]+'</p>'+
-							      '<p>'+houseList[i][1]+'</p>'+
-							      '<p>'+houseList[i][3]+'</p>'+
+							      '<span style="font-size:25px">'+houseList[i][2]+'</span>'+
+							      '<p><b>주소:&nbsp</b>'+houseList[i][1]+'</p>'+
+							      '<p><b>가격:&nbsp</b>'+houseList[i][3]+'원</p>'+
+							     	'</div>'+
 							      '</div>'+
-							      '</div>';
+							      '</div>'+
+							      '<div id="right-box"><img src=css/images/aaa.jpg width="200px" height="280px"></div>';
+							      
 				        		  infowindow.setContent(centerMaker );
 				         		 infowindow.open(map, marker);
 				       		 }
