@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import javax.servlet.http.HttpSession;
 import java.util.Calendar;
 
 import org.slf4j.Logger;
@@ -9,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import com.example.dto.Member;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
@@ -61,18 +63,27 @@ public class MainController {
 	
 	@RequestMapping(value = "/chat", method = RequestMethod.GET)
 	public String chat(Model model, @RequestParam String memId) {
-		return "jsp/socketchat";
+		return "jsp/socketchat1";
 	}
 	
 	@RequestMapping(value = "/chattest", method = RequestMethod.GET)
-	public String chattest(Model model) {
-		return "jsp/chattest";
+	public String chattest(Model model, @RequestParam String memId, HttpSession session) {
+		Member member = (Member) session.getAttribute("user");
+		String id = member.getMemId();
+		logger.trace(id);
+		return "jsp/socketchat";
 	}
 
 	@RequestMapping(value = "/dateView", method = RequestMethod.GET)
 	public String dateView(Model model) {
 		return "jsp/dateView";
 	}
+	
+	@RequestMapping(value = "/admin", method = RequestMethod.GET)
+	public String admin(Model model) {
+		return "jsp/admin";
+	}
+
 	@RequestMapping(value = "/dateView", method = RequestMethod.POST)
 	public @ResponseBody String dateViewPost(Model model,
 			@RequestParam Integer month,

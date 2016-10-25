@@ -8,8 +8,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-
-
 #main {
 	width: 100%;
 }
@@ -66,7 +64,6 @@
 .center h1 {
 	display: inline-block;
 }
-
 </style>
 </head>
 <body>
@@ -81,11 +78,13 @@
 		int start = today.get(Calendar.DAY_OF_WEEK);
 		int end = today.getActualMaximum(Calendar.DATE);
 	%>
+	<div id="main">
+
 		<div id="bar">
 			<div class="left">
 				<input type="button" value="◀" onclick="before()">
 			</div>
-			<div class="center" id="dateBar">
+			<div class="center">
 				<h1><%=today.get(Calendar.YEAR)%>년
 					<%=today.get(Calendar.MONTH) + 1%>월
 				</h1>
@@ -94,7 +93,7 @@
 				<input type="button" value="▶" onclick="after()">
 			</div>
 		</div>
-		
+		<div id="box">
 			<div class="day">일</div>
 			<div class="day">월</div>
 			<div class="day">화</div>
@@ -102,7 +101,6 @@
 			<div class="day">목</div>
 			<div class="day">금</div>
 			<div class="day">토</div>
-		<div id="box">
 			<%
 				for (int i = 1; i <= 42; i++) {
 			%>
@@ -133,50 +131,11 @@
 				}
 			%>
 		</div>
-	
+	</div>
 </body>
 <script src="http://code.jquery.com/jquery.js"></script>
 <script>
 	var thisMonth = <%=today.get(Calendar.MONTH)%>;
-	var thisYear = <%=today.get(Calendar.YEAR)%>;
-	function before(){
-		if(thisMonth!= 0){
-			thisMonth--;
-		}else{
-			thisYear--;
-			thisMonth = 11;
-		}
-	 var xhttp = new XMLHttpRequest();
-	  xhttp.onreadystatechange = function() {
-	    if (this.readyState == 4 && this.status == 200) {
-		document.getElementById("dateBar").innerHTML = "<h1>"+thisYear+"년 "+(thisMonth+1)+"월</h1>";		
-	      document.getElementById("box").innerHTML = this.responseText;
-	      console.log((thisMonth+1)+"월");
-	      console.log(this.responseText);
-	    }
-	  };
-	  xhttp.open("POST", "dateView?month="+thisMonth+"&year="+thisYear, true);
-	  xhttp.send();
-	}
-	function after(){
-		if(thisMonth!= 11){
-			thisMonth++;
-		}else{
-			thisYear++;
-			thisMonth = 0;
-		}
-	 var xhttp = new XMLHttpRequest();
-	  xhttp.onreadystatechange = function() {
-	    if (this.readyState == 4 && this.status == 200) {
-		document.getElementById("dateBar").innerHTML = "<h1>"+thisYear+"년 "+(thisMonth+1)+"월</h1>";
-	      document.getElementById("box").innerHTML = this.responseText;
-	      console.log((thisMonth+1)+"월");
-	      console.log(this.responseText);
-	    }
-	  };
-	  xhttp.open("POST", "dateView?month="+thisMonth+"&year="+thisYear, true);
-	  xhttp.send();
-	}
 </script>
 
 </html>

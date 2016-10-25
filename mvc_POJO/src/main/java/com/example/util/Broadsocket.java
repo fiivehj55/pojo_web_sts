@@ -20,6 +20,8 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.concurrent.CopyOnWriteArraySet;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import javax.websocket.OnClose;
 import javax.websocket.OnMessage;
@@ -43,7 +45,6 @@ public class Broadsocket {
 			for (Session client : clients){
 				if(!client.equals(session)){
 					client.getBasicRemote().sendText(message);
-					
 				}
 			}
 		}
@@ -51,8 +52,7 @@ public class Broadsocket {
 	
 	@OnOpen
 	public void onOpen (Session session){
-		System.out.println(session.getId());
-		logger.info(session.getId());
+		System.out.println("[Client Connected] " + session);
 		clients.add(session);
 	}
 	

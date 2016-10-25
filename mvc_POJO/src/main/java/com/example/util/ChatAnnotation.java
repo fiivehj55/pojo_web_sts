@@ -13,12 +13,10 @@
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
-
+*/
 package com.example.util;
 
 import java.io.IOException;
-import java.util.Collections;
-import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -30,7 +28,9 @@ import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.ServerEndpoint;
 
-@ServerEndpoint(value = "/chat")
+import com.example.dto.Member;
+
+@ServerEndpoint(value = "/chattesting")
 public class ChatAnnotation {
 
     private static final String GUEST_PREFIX = "Guest";
@@ -38,8 +38,7 @@ public class ChatAnnotation {
     private static final AtomicInteger connectionIds = new AtomicInteger(0);
     // CopyOnWriteArraySet 을 사용하면 컬렉션에 저장된 객체를 좀더 간편하게 추출할 수 있다
     // 예를 들어, toArray()메소드를 통해 쉽게 Object[] 형의 데이터를 추출할 수 있다.
-    private static final Set<ChatAnnotation> connections =
-            new CopyOnWriteArraySet<ChatAnnotation>();
+    private static final Set<ChatAnnotation> connections = new CopyOnWriteArraySet<ChatAnnotation>();
     
     private final String nickname;
     // 클라이언트가 새로 접속할 때마다 한개의 Session 객체가 생성된다.
@@ -51,13 +50,14 @@ public class ChatAnnotation {
     	String threadName = "Thread-Name:"+Thread.currentThread().getName();
     	// getAndIncrement()은 카운트를 1 증가하고 증가된 숫자를 리턴한다
         nickname = GUEST_PREFIX + connectionIds.getAndIncrement();
+        
         System.out.println(threadName+", "+nickname);
     }
 
 
     @OnOpen
     public void start(Session session) {
-    	System.out.println("클라이언트 접속됨 "+session);
+    	System.out.println("클라이언트 접속됨 "+session + nickname);
     	// 접속자마다 한개의 세션이 생성되어 데이터 통신수단으로 사용됨
         this.session = session;
         connections.add(this);
@@ -76,7 +76,6 @@ public class ChatAnnotation {
     // 현재 세션과 연결된 클라이언트로부터 메시지가 도착할 때마다 새로운 쓰레드가 실행되어 incoming()을 호출함
     @OnMessage
     public void incoming(String message) {
-    	
     	String threadName = "Thread-Name:"+Thread.currentThread().getName();
     	System.out.println(threadName+", "+nickname);
         if(message==null || message.trim().equals("")) return;
@@ -110,10 +109,9 @@ public class ChatAnnotation {
                     // Ignore
                 }
                 // 한 클라이언트의 퇴장을 모든 이용자에게 알린다
-                String message = String.format("* %s %s",
-                        client.nickname, "has been disconnected.");
+                String message = String.format("* %s %s", client.nickname, "has been disconnected.");
                 broadcast(message);
             }
         }
     }
-} */
+} 

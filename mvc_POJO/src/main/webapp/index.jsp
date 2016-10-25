@@ -252,7 +252,7 @@ body{
 						</ul></li>
 						</c:when>
 						<c:otherwise>
-						<li><a href="chat">메시지</a>
+						<li><a href="chattest?memId=${user.memId}">메시지</a>
 							<ul class="sub">
 								<li class="active"><a href="kakao">카카오톡</a></li>
 								<li class="active"><a href="#">&nbsp</a></li>
@@ -292,6 +292,12 @@ body{
 							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li> -->
 					<li><a href="bbs?page=1">문의게시판</a>
+						<ul class="sub">
+							<li class="active"><a href="#">&nbsp</a></li>
+							<li class="active"><a href="#">&nbsp</a></li>
+							<li class="active"><a href="#">&nbsp</a></li>
+						</ul></li>
+					<li><a href="admin">관리자 페이지</a>
 						<ul class="sub">
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
