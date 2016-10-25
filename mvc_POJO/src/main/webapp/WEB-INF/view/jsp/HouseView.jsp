@@ -316,7 +316,7 @@
 						&nbsp;
 						<!-- <div id='container'> -->
 						<div id='left-box'>
-							<img src="css/images/n1.jpg" width="250" height="150" />
+							<img src="<%=request.getContextPath()%>/upload/${memberName}/intro/${memImg}" width="250" height="150" />
 						</div>
 
 						<div id='right-box'>

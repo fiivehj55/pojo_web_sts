@@ -305,7 +305,7 @@ body {
 			<form method="post" action="insertHouse" name="form" id="myForm" enctype="multipart/form-data">
 				<div class="animated-text text-center">
 						<a href="#">
-							<span>MINJEONG님</span> 
+							<span>${user.memName }님</span> 
 							<span>반</span> 
 							<span>갑</span> 
 							<span>습</span> 

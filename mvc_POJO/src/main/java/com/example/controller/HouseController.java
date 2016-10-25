@@ -215,6 +215,11 @@ public class HouseController {
 			model.addAttribute("houseRoom", house.getHouseRoom());
 			model.addAttribute("houseBath", house.getHouseBath());
 			model.addAttribute("houseHosting", house.getHouseHosting());
+			/*
+			 * 등록자의 이미지 등록
+			String memImg = 
+			model.addAttribute("memImg", attributeValue)
+			*/
 			if (houseTv != null) {
 				model.addAttribute("houseTv", "TV");
 			}
