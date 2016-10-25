@@ -1,6 +1,7 @@
 package com.example.controller;
 
 import javax.servlet.http.HttpSession;
+import java.util.Calendar;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,8 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import com.example.dto.Member;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class MainController {
@@ -81,6 +82,45 @@ public class MainController {
 	@RequestMapping(value = "/admin", method = RequestMethod.GET)
 	public String admin(Model model) {
 		return "jsp/admin";
+	}
+
+	@RequestMapping(value = "/dateView", method = RequestMethod.POST)
+	public @ResponseBody String dateViewPost(Model model,
+			@RequestParam Integer month,
+			@RequestParam Integer year
+			) {
+		Calendar today = Calendar.getInstance();
+		today.set(Calendar.MONTH,month);
+		today.set(Calendar.YEAR,year);
+		int toMonth = today.get(Calendar.MONTH);
+		today.set(Calendar.MONTH, toMonth - 1);
+		int pre = today.getActualMaximum(Calendar.DATE);
+		today.set(Calendar.MONTH, toMonth);
+		int hr = today.get(Calendar.DATE);
+		today.set(Calendar.DATE, 1);
+		int start = today.get(Calendar.DAY_OF_WEEK);
+		int end = today.getActualMaximum(Calendar.DATE);
+		
+		String str = "";
+		for (int i = 1; i <= 42; i++) {
+			if (i >= start) {
+				if (i - start + 1 <= end) {
+					str+="<div class='date'>"+
+							(i - start + 1)+
+							"</div>";
+				} else {
+					str+="<div class='next'>"+
+							(i - end - start + 1)+
+							"</div>";
+					
+				}
+			} else {
+				str+="<div class='pre'>"+
+						(pre - start + i + 1)+
+						"</div>";			
+			}
+		}
+		return str;
 	}
 
 }
