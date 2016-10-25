@@ -62,7 +62,8 @@ public class MainController {
 	}
 	
 	@RequestMapping(value = "/chatprivate", method = RequestMethod.GET)
-	public String chat(Model model, @RequestParam String memId) {
+	public String chat(Model model, HttpSession session) {
+		Member member = (Member) session.getAttribute("user");
 		return "jsp/socketchatRoom";
 	}
 	
