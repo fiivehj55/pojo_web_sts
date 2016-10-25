@@ -65,5 +65,11 @@ public class ReportToReplyServiceImpl implements ReportToReplyService {
 		result = rtrdao.deleteReportToReply(template, reportReplyNo);
 		return result;
 	}
+
+	@Override
+	public List<ReportToReply> searchRtrPaging(Integer page) {
+		List<ReportToReply> result = rtrdao.rtrPaging(template, page);
+		return null;
+	}
 	
 }

@@ -17,4 +17,6 @@ public interface ReportToReplyService {
 	int updateRtr(ReportToReply reportToReply);
 	
 	int deleteRtr(int reportReplyNo);
+	
+	List<ReportToReply> searchRtrPaging(Integer page);
 }

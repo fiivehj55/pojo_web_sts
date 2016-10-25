@@ -3,6 +3,8 @@ package com.example.dao;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
+
+import com.example.dto.QuestionToReply;
 import com.example.dto.ReportToReply;
 
 public interface ReportToReplyDao {
@@ -19,4 +21,5 @@ public interface ReportToReplyDao {
 	
 	int deleteReportToReply(SqlSessionTemplate template, int reportReplyNo);
 
+	List<ReportToReply> rtrPaging(SqlSessionTemplate template, int page);
 }

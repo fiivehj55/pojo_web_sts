@@ -24,6 +24,9 @@ public class ReportToReply implements Serializable {
 	/** REPORT_REPLY_DATE. */
 	private Date reportReplyDate;
 
+	/** REPORT_NO. */
+	private Integer reportNo;
+
 	/**
 	 * 생성자.
 	 */
@@ -104,6 +107,25 @@ public class ReportToReply implements Serializable {
 	 */
 	public Date getReportReplyDate() {
 		return this.reportReplyDate;
+	}
+
+	/**
+	 * REPORT_NO을 설정합니다..
+	 * 
+	 * @param reportNo
+	 *            REPORT_NO
+	 */
+	public void setReportNo(Integer reportNo) {
+		this.reportNo = reportNo;
+	}
+
+	/**
+	 * REPORT_NO을 가져옵니다..
+	 * 
+	 * @return REPORT_NO
+	 */
+	public Integer getReportNo() {
+		return this.reportNo;
 	}
 
 	/**

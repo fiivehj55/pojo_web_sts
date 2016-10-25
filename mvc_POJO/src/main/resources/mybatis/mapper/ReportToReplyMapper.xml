@@ -30,6 +30,16 @@
 	<delete id="deleteRtr" parameterType="int">
 		delete REPORT_TO_REPLY where REPORT_REPLY_NO = #{reportReplyNo}
 	</delete>
+	
+	<!-- 페이징 -->
+	<select id="rtrPaging" parameterType="map" resultMap="rtrBase">
+		select * from (
+			select sub.*, rownum as rnum from(
+				select * from REPORT_TO_REPLY
+				order by REPORT_REPLY_NO desc
+			) sub
+		) where rnum &gt;= #{low,jdbcType=NUMERIC} and rnum &lt;= #{high,jdbcType=NUMERIC}
+	</select>
 
 	<resultMap type="reportToReply" id="rtrBase">
 		<id column="REPORT_REPLY_NO" property="reportReplyNo" />
