@@ -59,9 +59,9 @@ input#chat {
 			var url; 
 			console.log(window.location.pathname.substr(0,window.location.pathname.indexOf("/", 1)));
 			if (window.location.protocol == 'http:') {
-				url = 'ws://localhost:9090/mvc_POJO/chatprivate';
+				url = 'ws://210.125.213.51:9090/mvc_POJO/chatprivate';
 			} else {
-				url = 'wss://localhost:9090/mvc_POJO/chatprivate';
+				url = 'wss://210.125.213.51:9090/mvc_POJO/chatprivate';
 			}
 			ws = new WebSocket(url+"?room="+roomName);
 			
