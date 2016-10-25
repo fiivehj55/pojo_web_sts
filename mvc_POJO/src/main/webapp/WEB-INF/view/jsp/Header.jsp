@@ -54,7 +54,7 @@
 						</ul></li>
 						</c:when>
 						<c:otherwise>
-						<li><a href="chattest?memId=${user.memId}">메시지</a>
+						<li><a href="chatprivate?memId=${user.memId}">메시지</a>
 							<ul class="sub">
 								<li class="active"><a href="kakao">카카오톡</a></li>
 								<li class="active"><a href="#">&nbsp</a></li>

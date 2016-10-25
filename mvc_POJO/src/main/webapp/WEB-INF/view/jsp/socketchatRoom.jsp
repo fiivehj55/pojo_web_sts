@@ -32,10 +32,10 @@ input#chat {
 
 </head>
 <body>
-	<h1>${user.memId}의 채팅방</h1>
-	<hr/>
 	<div>
 		<p>
+			<input type="text" placeholder="방 이름을 넣으세요." id="room" />
+			<button id="btnRoom">방 만들기</button>
 			<input type="text" placeholder="메시지를 입력하고 엔터를 누르세요." id="chat" />
 		</p>
 		<div id="console-container">
@@ -47,16 +47,21 @@ input#chat {
 <script>
 	$(function(){
 		var ws;
-		function initialize(){
+		
+		$("#btnRoom").on("click", function(){
+			var roomName = $("#room").val();
+			initialize(roomName);
+		});
+		
+		function initialize(roomName){
 			var url; 
 			console.log(window.location.pathname.substr(0,window.location.pathname.indexOf("/", 1)));
 			if (window.location.protocol == 'http:') {
-
-				url = 'ws://localhost:9090/mvc_POJO/chattesting';
+				url = 'ws://localhost:9090/mvc_POJO/chatprivate';
 			} else {
-				url = 'wss://localhost:9090/mvc_POJO//chattesting';
+				url = 'wss://localhost:9090/mvc_POJO/chatprivate';
 			}
-			ws = new WebSocket(url);
+			ws = new WebSocket(url+"?room="+roomName);
 			
 			$(ws).on("open", function(e){
 				$("#msglist").append($("<li>채팅 서버에 연결되었습니다.</li>"));
@@ -77,8 +82,6 @@ input#chat {
 				}
 			}
 		});
-		
-		initialize();
 	});
 </script>
 </html>

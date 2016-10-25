@@ -61,10 +61,10 @@ public class MainController {
 		return "jsp/kakao";
 	}
 	
-	//희준이 구현소스
-	@RequestMapping(value = "/chat", method = RequestMethod.GET)
+
+	@RequestMapping(value = "/chatprivate", method = RequestMethod.GET)
 	public String chat(Model model, @RequestParam String memId) {
-		return "jsp/socketchat1";
+		return "jsp/socketchatRoom";
 	}
 	
 	//강사님이 주신소스
