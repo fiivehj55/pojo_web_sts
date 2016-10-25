@@ -469,6 +469,8 @@ var locat = new Array();
 		  houseList[${j}][1] = "${house[j].houseAddress}";
 		  houseList[${j}][2] = "${house[j].houseName}";
 		  houseList[${j}][3] = ${house[j].housePrice};
+		  houseList[${j}][4] = "${house[j].houseImg}";
+		  houseList[${j}][5] = "${house[j].memberId}";
 	</c:forEach> 
 	<c:url value="https://maps.googleapis.com/maps/api/geocode/json?" var="getmap"/>
  	 function getlocationMain(pos){	
@@ -543,7 +545,8 @@ var locat = new Array();
 							     	'</div>'+
 							      '</div>'+
 							      '</div>'+
-							      '<div id="right-box"><img src=css/images/aaa.jpg width="200px" height="280px"></div>';
+							      '<div id="right-box">'+
+							      '<img src="<%=request.getContextPath()%>/upload/'+houseList[i][5]+'/'+houseList[i][0]+'/main/'+houseList[i][4]+'" width="200px" height="280px"></div>';
 							      
 				        		  infowindow.setContent(centerMaker );
 				         		 infowindow.open(map, marker);
