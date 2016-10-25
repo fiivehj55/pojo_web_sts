@@ -54,8 +54,8 @@ public class HouseDaoImpl implements HouseDao {
 		String stmt = HOUSE_MAP + "searchHouses";
 		Map<String, Object> map = new HashMap<>();
 		map.put("key", key);
-		map.put("low",(page-1)*5+1);
-		map.put("high",page*5);
+		map.put("low",(page-1)*6+1);
+		map.put("high",page*6);
 		return template.selectList(stmt, map);
 	}
 
@@ -63,8 +63,8 @@ public class HouseDaoImpl implements HouseDao {
 	public List<House> housePaging(SqlSessionTemplate template, int page) {
 		String stmt = HOUSE_MAP + "housePaging";
 		Map<String, Object> map = new HashMap<>();
-		map.put("low",(page-1)*5+1);
-		map.put("high",page*5);
+		map.put("low",(page-1)*6+1);
+		map.put("high",page*6);
 		return template.selectList(stmt,map);
 	}
 }

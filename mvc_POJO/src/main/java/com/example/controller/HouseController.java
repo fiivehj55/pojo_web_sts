@@ -43,7 +43,11 @@ public class HouseController {
 			HttpSession session) {
 		List<House> house = hservice.searchHousesPaging(page);
 		model.addAttribute("house", house);
-		model.addAttribute("max", house.size()/5+1);
+		int size = house.size()/6;
+		if(size*6 < house.size())
+			model.addAttribute("max", size+1);
+		else
+			model.addAttribute("max", size);
 		model.addAttribute("page", page);
 		//session.setAttribute("house", house);
 		return "jsp/HouseList";
@@ -54,9 +58,13 @@ public class HouseController {
 			@RequestParam String key, @RequestParam Integer page,
 			HttpSession session) {
 		List<House> houses = hservice.searchHouses(key, page);
-		model.addAttribute("max", houses.size()/5+1);
+		int size = houses.size()/6;
+		if(size*6 < houses.size())
+			model.addAttribute("max", size+1);
+		else
+			model.addAttribute("max", size);
 		model.addAttribute("key", key);
-		model.addAttribute("page", page);
+		session.setAttribute("page", page);
 		session.setAttribute("key", key);
 	/*	for(House house:houses){
 			File file = new File(uploadDir + "/" + house.getMemberId() + "/"+house.getHouseNo()+"/main");
