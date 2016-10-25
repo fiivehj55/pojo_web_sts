@@ -42,7 +42,12 @@ public class ReportController {
 		logger.trace("search report: {}",list);
 		list = repservice.selectAllReport();
 
-		model.addAttribute("max", list.size()/5+1);
+		int size = list.size()/5;
+		if(size*5 < list.size())
+			model.addAttribute("max", size+1);
+		else
+			model.addAttribute("max", size+1);
+			
 		session.setAttribute("page", page);
 
 		logger.trace("last report: {}",list);

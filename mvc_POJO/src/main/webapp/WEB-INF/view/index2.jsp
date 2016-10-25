@@ -342,10 +342,11 @@ body{
             <hr />      
             
    <div class="d3">
-<form method="get" action="searchbar">
-  <input id="text_box" name="key" type="text" placeholder="두정동 또는 건물이름을 입력하세요">
+<form method="get" action="searchbar" name="form1" onsubmit="return false;">
+  <input id="text_box" name="key" type="text"
+   placeholder="두정동 또는 건물이름을 입력하세요" onkeydown="if(event.keyCode == 13) submitCheck();">
   <input type="hidden" name="page" value="1" />
-  <button type="submit"></button>
+  <button type="button" onclick="submitCheck()"></button>
 </form>
 </div>   
 
@@ -473,7 +474,13 @@ body{
 <script src="js/jquery.bxslider/jquery.bxslider.min.js"></script>
  <script src="<%=request.getContextPath()%>/videoback/dist/vidbg.js"></script>
  <script type="text/javascript">
- 
+ function submitCheck(){
+	 var key = document.getElementById('text_box').value;
+	 if(key != "")
+		 document.form1.submit();
+	 else
+		 return false;
+ }
  jQuery(function($){
      $('#header').vidbg({
          'mp4': '<%=request.getContextPath()%>/videoback/media/air.mp4',

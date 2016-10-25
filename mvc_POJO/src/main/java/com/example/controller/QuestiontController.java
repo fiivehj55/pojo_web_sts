@@ -33,7 +33,12 @@ public class QuestiontController {
 		list = qservice.selectByIdPage(user.getMemId(), page);
 		model.addAttribute("Question", list);
 		list = qservice.selectById(user.getMemId());
-		model.addAttribute("max", list.size()/5+1);
+		int size = list.size()/5;
+		if(size*5 < list.size())
+			model.addAttribute("max", size+1);
+		else
+			model.addAttribute("max", size+1);
+	
 		session.setAttribute("page", page);
 		}
 		
