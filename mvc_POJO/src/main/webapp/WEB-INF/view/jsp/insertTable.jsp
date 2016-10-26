@@ -7,6 +7,34 @@
 <title>Insert title here</title>
 
 <style>
+  .button3 {
+	 position: relative; 
+	display: inline-block;
+	background: #80BA8E;
+	padding: 0.6em 1em;
+	text-decoration: none !important;
+	font-size: 1.2em;
+	font-weight: 300;
+	color: #FFF !important;
+	-moz-transition: color 0.35s ease-in-out, background-color 0.35s
+		ease-in-out;
+	-webkit-transition: color 0.35s ease-in-out, background-color 0.35s
+		ease-in-out;
+	-o-transition: color 0.35s ease-in-out, background-color 0.35s
+		ease-in-out;
+	-ms-transition: color 0.35s ease-in-out, background-color 0.35s
+		ease-in-out;
+	transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+	text-align: center;
+	border-radius: 0.25em;
+}
+
+.button3:hover {
+	background: #70AA7E;
+	color: #FFF !important;
+} 
+
+
 label {
 	width: 100px;
 	display: inline-block;
@@ -25,6 +53,18 @@ label {
 #view {
 	height: 100%;
 }
+.button2 {
+    position: relative;
+    display: inline-block;
+    background: #ff7e82;
+    padding: 0.6em 1em;
+    text-decoration: none !important;
+    font-size: 1.2em;
+    font-weight: 300;
+    color: #FFF !important;
+    border-radius:5px;
+
+}
 </style>
 
 </head>
@@ -41,11 +81,12 @@ label {
       <td width="5"></td>
      </tr>
     </table>
+    <form method="post" action="bbsInsert">
    <table>
-     <tr>
+     <tr> 
       <td>&nbsp;</td>
       <td align="center">제목</td>
-      <td><input name="title" size="50" maxlength="100"></td>
+      <td><input type="text" id="title"size="50" maxlength="100"></td>
       <td>&nbsp;</td>
      </tr>
      <tr height="1" bgcolor="#dddddd"><td colspan="4"></td></tr>
@@ -61,32 +102,21 @@ label {
      <tr>
       <td>&nbsp;</td>
       <td align="center">내용</td>
-      <td><textarea name="memo" cols="50" rows="13" style="margin:0px; width:1214px; height:441px;"></textarea></td>
+      <td><textarea class="textclass" id="content" name="content" cols="50" rows="13" style="margin:0px; width:1214px; height:441px;"></textarea></td>
       <td>&nbsp;</td>
      </tr>
      <tr height="1"><td colspan="4"></td></tr>
      <tr height="1" ><td colspan="4"></td></tr>
    
       	<div id="right-box">
-       <a href="#" class="button button-style-1" id="nextTwo">등록</a>
-      <a href="#" class="button button-style-1" id="nextTwo">취소</a>
-      </div>
-      <br/>
+	  <input type="submit" class="button3" style="height: 50px"value="글등록"  >
+      <a href="bbs?page=${page }" class="button3" >목록</a>   
       </div>  
-<!--      <tr align="center">    
-      <td>&nbsp;</td>
-      <td colspan="2"><input type=button value="등록">
-       <input type=button value="취소">
-       
-      <td>&nbsp;</td>
-     </tr> -->
     </table>
-   </td>
-  </tr>
+    </form>
  </table>
 
 	<jsp:include page="./Footer.jsp"></jsp:include>
-</head>
 
 
 </body>
