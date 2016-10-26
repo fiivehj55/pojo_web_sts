@@ -128,6 +128,7 @@ public class MainController {
 		
 		List<Question> list =  qService.selectByPage(page);
 		model.addAttribute("Question", list);
+		list =  qService.selectAll();
 		int size = list.size()/6;
 		if(size*6 < list.size())
 			model.addAttribute("max", size+1);

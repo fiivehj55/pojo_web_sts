@@ -23,6 +23,13 @@ public class QuestionServiceImp implements QuestionService {
 	@Autowired
 	SqlSessionTemplate template;
 	
+	@Override
+	public List<Question> selectAll() {
+		List<Question> question = null;
+		question = dao.selectAllQuestion(template);
+		return question;
+	}
+	
 	@Transactional
 	@Override
 	public List<Question> selectById(String memberId) {
