@@ -95,7 +95,7 @@ public class MainController {
 		Member member = (Member) session.getAttribute("user");
 		String id = member.getMemId();
 		logger.trace(id);
-		return "jsp/socketchat";
+		return "jsp/socketchat1";
 	}
 
 	@RequestMapping(value = "/dateView", method = RequestMethod.GET)
