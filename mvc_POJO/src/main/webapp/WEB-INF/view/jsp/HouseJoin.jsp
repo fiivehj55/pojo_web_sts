@@ -128,6 +128,7 @@ body {
 }
 /* 안내문 css 종료 */
 #container1 {
+
 	text-align: left;
 	margin: 0px 10% 0px 50px;
 }
@@ -262,7 +263,12 @@ body {
   top: .55em;
 }
 
-
+.textclass {
+	width:500px;
+/* 	vertical-align: middle; */
+	height:150px;
+/* 	line-height:180%; */
+}
 
 
 /* 라디오버튼 체크박스 css 종료 */
@@ -317,6 +323,7 @@ body {
 				<div id="container1">
 					<div id="one" style="display: block;">
 						<fieldset>
+						
 							<legend>호스팅 1단계 </legend>
 						
 	<label for="room">방의개수</label>				
@@ -381,7 +388,7 @@ body {
 							<br />
 							
 							<label>숙소 안내말</label>
-							<textarea rows="10" cols="50" name="infor"></textarea>
+							<textarea class="textclass"  name="infor"></textarea>
 							<br /> 
 							<a href="#" class="button button-style-1" id="backOne">이전단계</a>
 							<a href="#" class="button button-style-1" id="nextThree">다음단계</a>
