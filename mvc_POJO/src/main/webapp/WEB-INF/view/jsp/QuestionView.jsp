@@ -1,6 +1,8 @@
 <!-- 게시판 페이지 -->
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="sform" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,43 +58,26 @@ background-image:url
 		<table border="1" summary="">
 			<tr>
 				<th scope="row">제 목</th>
-				<td class="title">궁금합니다.</td>
+				<td class="title">${ QuestTitle}</td>
 			</tr>
 			
 			<tr>
 				<th scope="row">글 번호</th>
-				<td class="number">100</td>
+				<td class="number">${questNo }</td>
 			</tr>
 
 			<tr>
 				<th scope="row">작성자</th>
-				<td>박준영
-				<span class="date">작성일 : 2016-10-23</span> 
+				<td>${MemberId }
+								
+				<span class="date">작성일 :<fmt:formatDate pattern="yyyy/MM/dd" value="${QuestDate}" /></span> 
 				<span class="hit">조회수 : 1000</span>
 				</td>
 			</tr>
 			
 			<tr class="view">
 				<td colspan="2">
-					<div class="detail">문의합니다. 문의합니다. 문의합니다. 
-					문의합니다.문의합니다. 문의합니다.문의합니다. 문의합니다.
-					문의합니다. 문의합니다.문의합니다. 문의합니다.문의합니다. 
-					문의합니다.문의합니다. 문의합니다.문의합니다. 문의합니다.
-					문의합니다. 문의합니다.문의합니다. 문의합니다.문의합니다. 
-					문의합니다.문의합니다. 문의합니다.문의합니다. 문의합니다.
-					문의합니다. 문의합니다.
-					문의합니다.문의합니다. 문의합니다.문의합니다. 문의합니다.
-					문의합니다. 문의합니다.문의합니다. 문의합니다.문의합니다. 
-					문의합니다.문의합니다. 문의합니다.문의합니다. 문의합니다.
-					문의합니다. 문의합니다.문의합니다. 문의합니다.문의합니다. 
-					문의합니다.문의합니다. 문의합니다.문의합니다. 문의합니다.
-					문의합니다. 문의합니다.
-					문의합니다.문의합니다. 문의합니다.문의합니다. 문의합니다.
-					문의합니다. 문의합니다.문의합니다. 문의합니다.문의합니다. 
-					문의합니다.문의합니다. 문의합니다.문의합니다. 문의합니다.
-					문의합니다. 문의합니다.문의합니다. 문의합니다.문의합니다. 
-					문의합니다.문의합니다. 문의합니다.문의합니다. 문의합니다.
-					문의합니다. 문의합니다.
+					<div class="detail">${QuestContent }
 					</div>
 				</td>
 			</tr>
@@ -111,18 +96,22 @@ background-image:url
 		</div>
 	</div>
 	<p>
-	
 	<div class=prevnext>
 	<ul>
+	
+	<c:if test="${questionPrevious != null}">
 		<li class="prev">
 		<strong>이전글</strong>
-		<a href="/board/free/read.html?no=122433&board_no=1&page=">홍석진 사기꾼입니다.</a>
+		<a href="bbsSelectByNo?questNo=${questionPrevious.questNo }">${questionPrevious.questTitle }</a>
 		</li>
+	</c:if>
 	
+	<c:if test="${questionNext != null}">
 		<li class="next">
 		<strong>다음글</strong>
-		<a href="/board/free/read.html?no=122433&board_no=1&page=">황민정 사기꾼입니다.</a>
+		<a href="bbsSelectByNo?questNo=${questionNext.questNo }">${ questionNext.questTitle}</a>
 		</li>
+		</c:if>
 	</ul>
 	</div>
 	

@@ -21,5 +21,5 @@ public interface QuestionService {
 	public List<Question> selectByIdPage(String memberId, int page);
 	
 	// 문의 게시글 페이징
-	public List<Question> selectByIdPage1(int page);
+	public List<Question> selectByPage(int page);
 }

@@ -56,7 +56,6 @@ public class ReportController {
 
 	@RequestMapping(value = "/reportView", method = RequestMethod.GET)
 	public String reportView(Model model, @RequestParam Integer reportNo, HttpSession session) {
-		Member user = (Member) session.getAttribute("user");
 		Report report = repservice.selectByReportNo(reportNo);
 		Report reportPrevious = repservice.selectByReportNo(reportNo+1);
 		Report reportNext = repservice.selectByReportNo(reportNo-1);
@@ -64,7 +63,6 @@ public class ReportController {
 		model.addAttribute("reportCategory", report.getReportCategory());
 		model.addAttribute("reportSubject", report.getReportSubject());
 		model.addAttribute("reportContent", report.getReportContent());
-		
 		model.addAttribute("rtr", reportToReply);
 		model.addAttribute("reportNo", reportNo);
 		model.addAttribute("reportPrevious", reportPrevious);
