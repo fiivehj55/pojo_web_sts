@@ -66,7 +66,13 @@ label {
      </tr>
      <tr height="1"><td colspan="4"></td></tr>
      <tr height="1" ><td colspan="4"></td></tr>
-     
+   
+      	<div id="right-box">
+       <a href="#" class="button button-style-1" id="nextTwo">등록</a>
+      <a href="#" class="button button-style-1" id="nextTwo">취소</a>
+      </div>
+      <br/>
+      </div>  
 <!--      <tr align="center">    
       <td>&nbsp;</td>
       <td colspan="2"><input type=button value="등록">
@@ -78,12 +84,7 @@ label {
    </td>
   </tr>
  </table>
-   	<div id="right-box">
-       <a href="#" class="button button-style-1" id="nextTwo">등록</a>
-      <a href="#" class="button button-style-1" id="nextTwo">취소</a>
-      </div>
-      <br/>
-      </div>
+
 	<jsp:include page="./Footer.jsp"></jsp:include>
 </head>
 
