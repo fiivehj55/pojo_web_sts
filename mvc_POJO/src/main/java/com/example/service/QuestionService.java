@@ -7,6 +7,8 @@ import com.example.dto.Question;
 
 //1:1 문의 게시판
 public interface QuestionService {
+	
+	public List<Question> selectAll();
 	//문의 게시글 전체 긁어오기
 	public List<Question> selectById(String memberId);
 	//문의 게시글 추가

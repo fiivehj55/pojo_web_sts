@@ -242,7 +242,7 @@
 					<c:when test="${fn:length(Question) > 0}">
 						<c:forEach items="${Question }" var="row">
 							<tr>
-								<td><input type="checkbox"></td>
+								<td  class="check"><input type="checkbox"></td>
 								<td>${row.questNo}</td>
 								<td><a href="bbsSelectByNo?questNo=${row.questNo }">${row.questTitle }</a></td>
 								<td>${row.memberId}</td>
@@ -268,7 +268,7 @@
 				onclick="document.getElementById('boardcss_list_search').style.display = 'none'; document.getElementById('detailSearch').style.display = 'block';">상세검색▼</li>
 		</ul>
 		<button>수정</button>
-		<button>삭제</button>
+		<button id="del">삭제</button>
 	</div>
 	<!-- 검색 테이블 종료 -->
 
@@ -305,8 +305,64 @@
 				onclick="document.getElementById('boardcss_list_search').style.display = 'block'; document.getElementById('detailSearch').style.display = 'none';">닫기▲</a>
 		</div>
 	</div>
-	</ul>
+<!-- 페이징 -->
+<div>
+				<c:if test="${page > 5}">
+					<a href="adminHouse?page=${page-5}"> <input
+						type="button" value="이전">
+					</a>
+				</c:if>
+				<a href="adminHouse?page=${num}">${num}</a>
+				<c:set var="down" value="-3" />
+				<c:forEach var="num" begin="1" end="2">
+					<c:set var="down" value="${down+1}" />
+					<c:if test="${0 <page+ down}">
+						<a href="adminHouse?page=${page+down}">${page+down}</a>
+					</c:if>
+				</c:forEach>
+				<span>${page}</span>
+				<c:forEach var="num" begin="1" end="2">
+					<c:if test="${page+num <= max}">
+						<a href="adminHouse?page=${page+num}">${page+num}</a>
+					</c:if>
+				</c:forEach>
+				<c:if test="${page < max-5}">
+					<a href="adminHouse?page=${page+5}"> <input
+						type="button" value="다음">
+					</a>
+				</c:if>
+			</div>
 
 
+
+		<c:set var='del' value='bbsDel'></c:set>
 </body>
+<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+<script>
+$("#del").on("click",function(){
+	var tr = $("input[type=checkbox]:checked").parent().parent();
+	tr.each(function(index,item){
+		var num =  item.children;
+		console.log(num);
+		console.log($(num[1]).html());
+
+		//체크된 번호 글 삭제
+		$.ajax({
+			type : "post",
+			url : "${del}",
+			data : {
+				No : $(num[1]).html()
+			},   
+			async: false,
+			success : function(data,staus) {
+				console.log("delete success");
+			},
+			error : function(xhr, status, error) {
+				alert(error);
+			}
+		});
+	})
+	 location.reload();
+})
+</script>
 </html>

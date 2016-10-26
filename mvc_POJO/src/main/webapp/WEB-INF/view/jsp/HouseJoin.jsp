@@ -12,7 +12,7 @@
     background: #ff7e82;
     padding: 0.6em 1em;
     text-decoration: none !important;
-    font-size: 1.2em;
+    font-size: 1.2em;.
     font-weight: 300;
     color: #FFF !important;
     border-radius:5px;
@@ -435,7 +435,7 @@ label {
 								<input type="number" id="price" name="price" />
 						</fieldset>
 						<a href="#" class="button button-style-1" id="backTwo">이전단계</a> 
-						<input type="submit" class="button2" id="next" name="next" value="하우스등록"  style="height:50px"/>
+						<input type="submit" class="button2" id="next" name="next" value="하우스등록"  style="padding:10px;"/>
 					</div>
 				</div>
 			</form>

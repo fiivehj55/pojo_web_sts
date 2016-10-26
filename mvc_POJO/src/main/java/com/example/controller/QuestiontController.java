@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.dto.Member;
 import com.example.dto.Question;
@@ -201,5 +202,11 @@ public class QuestiontController {
 			return "jsp/selectByTable";
 		}
 	}
-
+	
+	@RequestMapping(value = "/bbsDel",method=RequestMethod.POST)
+	public @ResponseBody String deleteAdmin(Model model,@RequestParam Integer No){
+		qservice.delete(No);
+		return null;
+	}
+	
 }
