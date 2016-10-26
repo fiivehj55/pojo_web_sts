@@ -12,9 +12,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.dto.Member;
 import com.example.dto.Question;
+import com.example.dto.Report;
+import com.example.dto.ReportToReply;
 import com.example.service.QuestionService;
 
 @Controller
@@ -89,10 +92,21 @@ public class QuestiontController {
 	public String bbsSelectByNoGet(Model model, @RequestParam Integer questNo,
 			HttpSession session) {
 		Question question = qservice.selectByNo(questNo);
-		if(question != null){
-			model.addAttribute("question", question);
-			model.addAttribute("questNo",questNo);
-		}
+			Question questionPrevious = qservice.selectByNo(questNo+1);
+			Question questionNext = qservice.selectByNo(questNo-1);
+			
+			//문의 게시판 댓글
+			//List<ReportToReply> reportToReply = qservice.selectB
+			model.addAttribute("QuestTitle", question.getQuestTitle());
+			model.addAttribute("MemberId", question.getMemberId());
+			model.addAttribute("QuestDate", question.getQuestDate());
+			model.addAttribute("QuestContent", question.getQuestContent());
+			model.addAttribute("questNo", questNo);
+			
+			model.addAttribute("questionPrevious", questionPrevious);
+			model.addAttribute("questionNext", questionNext);		
+
+	
 		// view의 이름을 리턴.
 		return "jsp/QuestionView";
 	}
@@ -188,5 +202,11 @@ public class QuestiontController {
 			return "jsp/selectByTable";
 		}
 	}
-
+	
+	@RequestMapping(value = "/bbsDel",method=RequestMethod.POST)
+	public @ResponseBody String deleteAdmin(Model model,@RequestParam Integer No){
+		qservice.delete(No);
+		return null;
+	}
+	
 }

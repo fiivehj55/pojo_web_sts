@@ -32,13 +32,21 @@ body {
 	background: #161616;
 }
 
-body, input, textarea, select {
+body, textarea, select {
 	font-family: 'Montserrat', sans-serif;
 	font-size: 11pt;
 	font-weight: 300;
 	line-height: 1.75em;
 	color: #777;
 }
+
+/* body, input, textarea, select {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 11pt;
+	font-weight: 300;
+	line-height: 1.75em;
+	color: #777;
+} */
 
 h1, h2, h3, h4, h5, h6 {
 	font-weight: 300;
@@ -291,6 +299,10 @@ ul.style .first {
 	background: #70AA7E;
 	color: #FFF !important;
 }
+
+
+
+
 
 /*********************************************************************************/
 /* Icons                                                                         */

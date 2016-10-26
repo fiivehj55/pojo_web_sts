@@ -112,6 +112,10 @@ p, h1, form, button {
 	font-weight: bold;
 	font-family: tahoma;
 }
+.textclass {
+	width:500px;
+	height:150px;
+}
 
 /* label {
 	width: 100px;
@@ -357,17 +361,18 @@ p, h1, form, button {
 				<th scope="row">자기 소개</th>
 				<td>
 					<sform:label path="memIntro"></sform:label>
-         			<sform:textarea  path="memIntro" cols="40" rows="10"></sform:textarea>
+         			<sform:textarea class="textclass" path="memIntro" ></sform:textarea>	
 				</td>
 			</tr>					
 			</tbody>
 		</table>
 	</div>
-	<hr>
-	
 	<input type="submit" value="수정하기">
 	<a href="deletePass"><input type="button" value="탈퇴하기"></a>
 	<a href="index"><input type="button" value="나가기"></a>
+	<hr>
+	<br/>
+
 	
 	<!-- <div class="btn">
 		<div class="btnArea">

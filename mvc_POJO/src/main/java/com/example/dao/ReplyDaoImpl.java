@@ -1,6 +1,9 @@
 package com.example.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -63,6 +66,15 @@ public class ReplyDaoImpl implements ReplyDao {
 	public Reply selectByIdHouseNo1(SqlSessionTemplate template, int houseNo) {
 		String stmt = REPLY_MAP + "selectByHouseNo";
 		return template.selectOne(stmt, houseNo);
+	}
+
+	@Override
+	public List<Reply> htrPaging(SqlSessionTemplate template, int page) {
+		String stmt = REPLY_MAP + "htrPaging";
+		Map<String, Object> map = new HashMap<>();
+		map.put("low",(page-1)*6+1);
+		map.put("high",page*6);
+		return template.selectList(stmt,map);
 	}
 
 }

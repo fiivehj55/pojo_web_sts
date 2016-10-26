@@ -3,6 +3,7 @@ package com.example.service;
 import java.util.List;
 
 import com.example.dto.Reply;
+import com.example.dto.ReportToReply;
 
 public interface ReplyService {
 
@@ -21,5 +22,7 @@ public interface ReplyService {
 	int deleteReply(int replyNo);
 	
 	int deleteReplyHno(int houseNo);
+	
+	List<Reply> htrPaging(Integer page);
 }
 

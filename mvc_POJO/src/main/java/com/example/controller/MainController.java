@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.dto.House;
 import com.example.dto.Member;
+import com.example.dto.Question;
 import com.example.dto.Report;
 import com.example.service.HouseService;
 import com.example.service.QuestionService;
@@ -124,17 +125,19 @@ public class MainController {
 	@RequestMapping(value = "/adminQuestion", method = RequestMethod.GET)
 	public String adminQuestion(Model model,
 			@RequestParam Integer page) {
-		/*
-		List<House> list =  qService.selectByIdPage(memberId, page)(page);
-		model.addAttribute("house", list);
+		
+		List<Question> list =  qService.selectByPage(page);
+		model.addAttribute("Question", list);
+		list =  qService.selectAll();
 		int size = list.size()/6;
 		if(size*6 < list.size())
 			model.addAttribute("max", size+1);
 		else
 			model.addAttribute("max", size);
-		model.addAttribute("page", page);*/
+		model.addAttribute("page", page);
 		return "jsp/adminQuestion";
-	}@RequestMapping(value = "/adminReply", method = RequestMethod.GET)
+	}
+	@RequestMapping(value = "/adminReply", method = RequestMethod.GET)
 	public String adminReply(Model model,
 			@RequestParam Integer page) {
 		
