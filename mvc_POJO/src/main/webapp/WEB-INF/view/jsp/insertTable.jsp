@@ -15,33 +15,78 @@ label {
 .auto_center {
 	width: 400px;
 	height: 400px;
-	padding: 20px;
+	padding: 10px;
 	margin: 200px auto;
+}
+#right-box {
+	float: right;
+	padding-top:1px;
+}
+#view {
+	height: 100%;
 }
 </style>
 
 </head>
-<body class="">
+<body>
 	<jsp:include page="./Header.jsp"></jsp:include>
-	<div id="main">
-		<div id="content" class="auto_center">
-			<h1>게시판 등록</h1>
-			<form method="post" action="bbsInsert">
-				<label for="title">제목</label>
-				<input type="text" id="title" name="title" size="50"/>
-				
-				<label for="content">내용</label>
-				<textarea rows="10" cols="50" id="content" name="content"></textarea>
-				
-				<input type="submit" value="글 등록"/>
-				<a href="bbs?page=${page }"><input type="button" value="목록"/></a>
-			</form>
-			
-		</div>
-	</div>
+	<div class="view">
+<table>
+  <tr>
+   <td>
+    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+     <tr style="background:url('img/table_mid.gif') repeat-x; text-align:center;">
+      <td width="5"></td>
+      <td>글쓰기</td>
+      <td width="5"></td>
+     </tr>
+    </table>
+   <table>
+     <tr>
+      <td>&nbsp;</td>
+      <td align="center">제목</td>
+      <td><input name="title" size="50" maxlength="100"></td>
+      <td>&nbsp;</td>
+     </tr>
+     <tr height="1" bgcolor="#dddddd"><td colspan="4"></td></tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td align="center">이름</td>
+      <td><input name="name" size="30" maxlength="50"></td>
+      <td>&nbsp;</td>
+     </tr>
+      <tr height="1" bgcolor="#dddddd"><td colspan="4"></td></tr>
+
+     <tr height="1" bgcolor="#dddddd"><td colspan="4"></td></tr>
+     <tr>
+      <td>&nbsp;</td>
+      <td align="center">내용</td>
+      <td><textarea name="memo" cols="50" rows="13" style="margin:0px; width:1214px; height:441px;"></textarea></td>
+      <td>&nbsp;</td>
+     </tr>
+     <tr height="1"><td colspan="4"></td></tr>
+     <tr height="1" ><td colspan="4"></td></tr>
+     
+<!--      <tr align="center">    
+      <td>&nbsp;</td>
+      <td colspan="2"><input type=button value="등록">
+       <input type=button value="취소">
+       
+      <td>&nbsp;</td>
+     </tr> -->
+    </table>
+   </td>
+  </tr>
+ </table>
+   	<div id="right-box">
+       <a href="#" class="button button-style-1" id="nextTwo">등록</a>
+      <a href="#" class="button button-style-1" id="nextTwo">취소</a>
+      </div>
+      <br/>
+      </div>
 	<jsp:include page="./Footer.jsp"></jsp:include>
 </head>
-<body>
+
 
 </body>
 <script></script>
