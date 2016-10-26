@@ -3,6 +3,7 @@ package com.example.dao;
 import java.util.List;
 import org.mybatis.spring.SqlSessionTemplate;
 import com.example.dto.Reply;
+import com.example.dto.ReportToReply;
 
 public interface ReplyDao {
 	List<Reply> selectAllReply(SqlSessionTemplate template);
@@ -20,4 +21,7 @@ public interface ReplyDao {
 	int deleteReply(SqlSessionTemplate template, int replyNo);
 	
 	int deleteReplyHno(SqlSessionTemplate template, int houseNo);
+	
+	// 댓글 페이징
+	List<Reply> htrPaging(SqlSessionTemplate template, int page);
 }

@@ -32,6 +32,16 @@
 	<delete id="deleteReplyHno" parameterType="int">
 		delete REPLY where HOUSE_NO = #{houseNo}
 	</delete>
+	
+	<!-- 페이징 -->
+	<select id="htrPaging" parameterType="map" resultMap="replyBase">
+		select * from (
+			select sub.*, rownum as rnum from(
+				select * from REPLY
+				order by REPLY_NO desc
+			) sub
+		) where rnum &gt;= #{low,jdbcType=NUMERIC} and rnum &lt;= #{high,jdbcType=NUMERIC}
+	</select>
 
 	<resultMap type="reply" id="replyBase">
 		<id column="REPLY_NO" property="replyNo" />
