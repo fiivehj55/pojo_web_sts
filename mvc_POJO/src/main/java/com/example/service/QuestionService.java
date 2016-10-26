@@ -19,4 +19,7 @@ public interface QuestionService {
 	public int updateQuestion(Question question);
 	// 문의 게시글 페이징
 	public List<Question> selectByIdPage(String memberId, int page);
+	
+	// 문의 게시글 페이징
+	public List<Question> selectByIdPage1(int page);
 }

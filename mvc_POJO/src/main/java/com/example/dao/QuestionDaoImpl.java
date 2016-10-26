@@ -56,13 +56,22 @@ public class QuestionDaoImpl implements QuestionDao {
 	}
 
 	@Override
-	public List<Question> selectPaging(SqlSessionTemplate template,int page,String id) {
+	public List<Question> selectPaging(SqlSessionTemplate template,int page, String id) {
 		String stmt = QUESTION_MAP + "questPaging";
 		Map<String, Object> map = new HashMap<>();
 		map.put("id",id);
 		map.put("low",(page-1)*5+1);
 		map.put("high",page*5);
 		
+		return template.selectList(stmt,map);
+	}
+
+	@Override
+	public List<Question> selectPaging1(SqlSessionTemplate template, int page) {
+		String stmt = QUESTION_MAP + "questPaging1";
+		Map<String, Object> map = new HashMap<>();
+		map.put("low",(page-1)*5+1);
+		map.put("high",page*5);
 		return template.selectList(stmt,map);
 	}
 

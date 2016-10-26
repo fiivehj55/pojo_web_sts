@@ -40,6 +40,17 @@
 		) where rnum &gt;= #{low,jdbcType=NUMERIC} and rnum &lt;= #{high,jdbcType=NUMERIC}
 	</select>
 	<!-- where rnum >= 0 and rnum <= 5  -->
+	
+	<select id="questPaging1" parameterType="map" resultMap="questBase">
+		select * from (
+			select sub.*, rownum as rnum 
+			from(
+				select * from QUESTION
+				order by QUEST_NO desc
+			) sub
+		) where rnum &gt;= #{low,jdbcType=NUMERIC} and rnum &lt;= #{high,jdbcType=NUMERIC}
+	</select>
+	
 	<resultMap type="question" id="questBase">
 		<id column="QUEST_NO" property="questNo"/>
 		<result column="QUEST_TITLE" property="questTitle" />

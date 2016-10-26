@@ -276,6 +276,13 @@ public class DaoTest {
 		logger.trace("List: {}", question);
 
 	}
+	
+	@Test
+	public void testQuestionPaging1() {
+		List<Question> question = qdao.selectPaging1(template,1);
+		logger.trace("List: {}", question);
+
+	}
 
 	/** REPLY_TEST */
 	@Test
