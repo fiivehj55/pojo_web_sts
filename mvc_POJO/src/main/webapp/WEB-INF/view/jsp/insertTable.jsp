@@ -119,7 +119,7 @@ label {
 						</table>
 						<div id="right-box">
 							<input type="submit" class="button2" value="글등록" style="padding:10px;"> 
-							<a href="bbs?page=${page }" class="button2">목록</a>
+							<a href="bbs?page=${page }" class="button2">목록</a> 
 						</div>
 					</form>
 				</td>
