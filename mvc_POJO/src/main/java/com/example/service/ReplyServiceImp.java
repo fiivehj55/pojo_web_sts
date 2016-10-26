@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.dao.ReplyDao;
+import com.example.dto.QuestionToReply;
 import com.example.dto.Reply;
 
 @Component
@@ -52,6 +53,11 @@ public class ReplyServiceImp implements ReplyService{
 	@Override
 	public Reply selectByHouseNo1(int houseNo) {
 		return dao.selectByIdHouseNo1(template, houseNo);
+	}
+	@Override
+	public List<Reply> htrPaging(Integer page) {
+		List<Reply> result = dao.htrPaging(template, page);
+		return result;
 	}
 	
 }

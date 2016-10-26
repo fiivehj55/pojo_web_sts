@@ -174,7 +174,7 @@ public class DaoTest {
 		logger.trace("List: {}", house);
 
 	}
-
+	
 	/** REGIST_HOUSE */
 	@Test
 	public void testSelectAllRegistHouse() {
@@ -345,6 +345,13 @@ public class DaoTest {
 	@Test
 	public void testSelectByHouseNo1() {
 		Reply reply = rdao.selectByIdHouseNo1(template, 99);
+		logger.trace("List: {}", reply);
+
+	}
+	
+	@Test
+	public void testHouseToReplyPaging() {
+		List<Reply> reply = rdao.htrPaging(template, 1);
 		logger.trace("List: {}", reply);
 
 	}
