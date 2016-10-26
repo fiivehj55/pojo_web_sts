@@ -39,7 +39,7 @@ label {
 				<label for="content">내용</label>
 				<textarea rows="10" cols="50" id="content" name="content"></textarea>
 				<input type="submit" value="글 등록"/>
-				<a href="report"><input type="button" value="목록"/></a>
+				<a href="report?page=${page}"><input type="button" value="목록"/></a>
 			</form>
 		</div>
 	</div>
