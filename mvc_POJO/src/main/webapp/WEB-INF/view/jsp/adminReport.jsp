@@ -75,7 +75,7 @@
 </style></head>
 
 <body>
-<jsp:include page="./Header.jsp"></jsp:include>	
+<jsp:include page="./adminHeader.jsp"></jsp:include>	
 <a href="#">신고게시판 관리</a> 
 <ul>
 <li>게시판관리</li>
