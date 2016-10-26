@@ -2183,7 +2183,9 @@ ul.contact li a:hover {
 /* Footer                                                                        */
 /*********************************************************************************/
 #footer {
-	/*  position: relative;  */
+	position: relative;
+	width: 100%;	
+	/* position: relative; */
 	/* text-align: center; */
 	background: url(../css/images/footer1.jpg) no-repeat bottom center;
 }
@@ -2207,7 +2209,7 @@ ul.contact li a:hover {
 	
 	background-attachment: fixed;
 	background-size: cover;
-	position: relative;
+	position: absolute;
 	text-align: center;
 	color: #774535;
 }
