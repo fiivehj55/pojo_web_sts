@@ -11,9 +11,14 @@ body {
 	
 }
 
-body, input, textarea, select {
+body, textarea, select {
 	font-size: 11pt;
 }
+
+/* body, input, textarea, select {
+	font-size: 11pt;
+} */
+
 
 header {
 	margin-bottom: 1.6em;
