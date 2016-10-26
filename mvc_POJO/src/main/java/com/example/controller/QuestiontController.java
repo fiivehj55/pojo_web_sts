@@ -81,7 +81,7 @@ public class QuestiontController {
 			return "jsp/insertTable";
 		}else{
 			// view의 이름을 리턴.
-			return "redirect:/bbs";
+			return "redirect:/bbs?page=1";
 		}
 	}
 	

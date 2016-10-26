@@ -91,7 +91,7 @@ public class ReportController {
 		report.setMemberId(user.getMemId());
 		int result = repservice.insertReport(report);
 		if (result == 1)
-			return "redirect:/report";
+			return "redirect:/report?page=1";
 		else
 			return "jsp/ReportInsert";
 	}

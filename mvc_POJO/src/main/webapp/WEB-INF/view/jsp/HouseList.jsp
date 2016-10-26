@@ -551,6 +551,7 @@ var locat = new Array();
 				        		  infowindow.setContent(centerMaker );
 				         		 infowindow.open(map, marker);
 				       		 }
+				        
 				    	  })(marker, k));
 				    }
 			}; 
@@ -560,3 +561,4 @@ var locat = new Array();
 	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRgGbfPF9xbceQJLP0o1qKFlJpK7UdjQ8&callback=initMap">
     </script>
 </html>
+?
