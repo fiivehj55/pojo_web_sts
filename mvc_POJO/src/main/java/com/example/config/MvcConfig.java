@@ -40,5 +40,6 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
 		registry.addResourceHandler("/bxslider/**").addResourceLocations("WEB-INF/view/");
 		registry.addResourceHandler("/videoback/**").addResourceLocations("WEB-INF/view/videobackground/");
 		registry.addResourceHandler("/slidepro/**").addResourceLocations("WEB-INF/view/sliderpro/");
+		registry.addResourceHandler("/daumeditor/**").addResourceLocations("WEB-INF/view/daumeditor/");
 	}
 }
