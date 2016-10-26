@@ -39,7 +39,7 @@
 			) sub
 		) where rnum &gt;= #{low,jdbcType=NUMERIC} and rnum &lt;= #{high,jdbcType=NUMERIC}
 	</select>
-	<!-- where rnum >= 0 and rnum <= 5  -->
+	<!-- where rnum >= 1 and rnum <= 5  -->
 	
 	<select id="questPaging1" parameterType="map" resultMap="questBase">
 		select * from (
@@ -49,6 +49,29 @@
 				order by QUEST_NO desc
 			) sub
 		) where rnum &gt;= #{low,jdbcType=NUMERIC} and rnum &lt;= #{high,jdbcType=NUMERIC}
+	</select>
+	
+	<!-- 페이징 고객게시물 -->
+	
+	<select id="questPagingView" parameterType="map" resultMap="questBase">
+		select * from (
+			select sub.*, rownum as rnum 
+			from(
+				select * from QUESTION where MEMBER_ID = #{id,jdbcType=CHAR}
+				order by QUEST_NO desc
+			) sub
+		) where rnum &gt;= 1 and rnum &lt;= 3
+	</select>
+	<!-- 페이징 관리자게시물 -->
+	
+	<select id="questPagingViewAdmin" parameterType="map" resultMap="questBase">
+		select * from (
+			select sub.*, rownum as rnum 
+			from(
+				select * from QUESTION
+				order by QUEST_NO desc
+			) sub
+		) where rnum &gt;= 1 and rnum &lt;= 3
 	</select>
 	
 	<resultMap type="question" id="questBase">

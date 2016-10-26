@@ -409,7 +409,12 @@ public class HouseController {
 			return "redirect:/search";
 		}
 	}
-
+	
+	@RequestMapping(value = "/DelHouse",method=RequestMethod.POST)
+	public @ResponseBody String deleteAdmin(Model model,@RequestParam Integer No){
+		hservice.deleteHouse(No);
+		return null;
+	}
 	/*
 	 * @RequestMapping(value = "/update",method=RequestMethod.GET) public String
 	 * updateHouse(Model model, @RequestParam Integer houseNo, HttpSession
