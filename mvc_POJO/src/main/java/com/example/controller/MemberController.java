@@ -348,6 +348,29 @@ public class MemberController {
         } 
    }
    
+   @RequestMapping(value = "/chatstart",method=RequestMethod.GET)
+   public String chatstart(Model model,
+		   @RequestParam String guest,HttpSession session){
+	   
+	   
+	   Member user = (Member) session.getAttribute("user");
+	   if(user == null)
+		   return "jsp/Login";
+	   String url = "당신과 대화를 하고 싶어합니다.\ns"
+	   		+ "210.125.213.51:9090/mvc_POJO/chatGuest"+user.getMemId();
+	   Member guestid = mservice.Search(guest);
+	   sendMail(url,guestid.getMemEmail());
+	   
+	   model.addAttribute("roomName",user.getMemId());
+      //view의 이름을 리턴.
+      return "jsp/socketchatRoomGuest";
+   }
+   @RequestMapping(value = "/chatGuest",method=RequestMethod.GET)
+   public String chatGuest(Model model,@RequestParam String room){
+	   model.addAttribute("roomName",room);
+      //view의 이름을 리턴.
+      return "jsp/socketchatRoomGuest";
+   }
    @RequestMapping(value = "/idAndPass",method=RequestMethod.GET)
    public String idAndPass(Model model){
       return "jsp/IdPass";

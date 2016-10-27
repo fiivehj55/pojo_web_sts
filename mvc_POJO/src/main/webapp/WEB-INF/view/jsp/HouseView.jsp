@@ -329,7 +329,7 @@
 									</c:if>
 							</c:if>
 							<p><a href="searchbar?key=${key}&page=${page}" class="button button-style1">목록보기</a>
-							<p><a href="searchbar?key=${key}&page=${page}" class="button button-style1">메세지보내기</a>
+							<p><a href="chatstart?guest=${memberName}" class="button button-style1">메세지보내기</a>
 						</div>
 
 						<div id='center-box'>

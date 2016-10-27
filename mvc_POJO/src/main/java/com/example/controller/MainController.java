@@ -89,7 +89,10 @@ public class MainController {
 		Member member = (Member) session.getAttribute("user");
 		return "jsp/socketchatRoom";
 	}
-	
+	@RequestMapping(value = "/chatLogin", method = RequestMethod.GET)
+	public String chatLogin(Model model, HttpSession session) {
+		return "jsp/LoginChat";
+	}
 /*	//강사님이 주신소스
 	@RequestMapping(value = "/chattest", method = RequestMethod.GET)
 	public String chattest(Model model, @RequestParam String memId, HttpSession session) {
