@@ -124,10 +124,11 @@ public class MainController {
 	}
 	@RequestMapping(value = "/adminQuestion", method = RequestMethod.GET)
 	public String adminQuestion(Model model,
-			@RequestParam Integer page) {
+			@RequestParam Integer page,
+			HttpSession session) {
 		
 		List<Question> list =  qService.selectByPage(page);
-		model.addAttribute("Question", list);
+		session.setAttribute("Question", list);
 		list =  qService.selectAll();
 		int size = list.size()/6;
 		if(size*6 < list.size())
@@ -158,8 +159,8 @@ public class MainController {
 			@RequestParam Integer page, HttpSession session) {
 		List<Report> list = null;
 		list = reportService.selectReportPage(page);
-		
-		model.addAttribute("Report", list);
+
+		session.setAttribute("Report", list);
 		list = reportService.selectAllReport();
 
 		int size = list.size()/5;

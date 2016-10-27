@@ -193,7 +193,6 @@ public class HouseController {
 
 	@RequestMapping(value = "/houseView", method = RequestMethod.GET)
 	public String selectByHouseNo(Model model, @RequestParam Integer houseNo, HttpSession session) {
-		Member user = (Member) session.getAttribute("user");
 		House house = hservice.selectByNoHouse(houseNo);
 		List<Reply> reply = Rpservice.selectByHouseNo(houseNo);
 
@@ -216,6 +215,12 @@ public class HouseController {
 			model.addAttribute("houseRoom", house.getHouseRoom());
 			model.addAttribute("houseBath", house.getHouseBath());
 			model.addAttribute("houseHosting", house.getHouseHosting());
+			File userImg = new File(uploadDir+house.getMemberId()+ "/intro");
+			File[] imgs = userImg.listFiles();
+			if(imgs != null){
+			String imgName = imgs[0].getName();
+			model.addAttribute("memImg", imgName);
+			}
 			/*
 			 * 등록자의 이미지 등록
 			String memImg = 

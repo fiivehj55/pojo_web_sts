@@ -92,11 +92,16 @@ background-image:url
 	
 	<div class="button">
 		<div class="btnArea M b_left">
-			<a class="black_s" href="report?page=${page}">목록보기</a>
-		</div>
+			<c:if test="${user.memId=='admin'}">
+			<a class="black_s" href="adminQuestion?page=${page}">목록보기</a>
+			</c:if>
+			<c:if test="${user.memId!='admin'}">
+			<a class="black_s" href="bbs?page=${page}">목록보기</a>
+			</c:if>
+	</div>
 	</div>
 	<p>
-	<div class=prevnext>
+<%-- 	<div class=prevnext>
 	<ul>
 	
 	<c:if test="${questionPrevious != null}">
@@ -113,10 +118,10 @@ background-image:url
 		</li>
 		</c:if>
 	</ul>
-	</div>
-	
-</head>
-
+	</div> --%>
+	<jsp:include page="./QuestSubList.jsp"></jsp:include>
+	<jsp:include page="./Footer.jsp"></jsp:include>
+</body>
 <%-- </head>
 <body class="">
 	<jsp:include page="./Header.jsp"></jsp:include>
@@ -144,8 +149,7 @@ background-image:url
 	</div>
 	<jsp:include page="./Footer.jsp"></jsp:include>
 </head> --%>
-<body>
-
-</body>
-<script></script>
+<script>
+console.log(${user})
+</script>
 </html>

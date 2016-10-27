@@ -34,7 +34,7 @@ public class QuestiontController {
 		List<Question> list = null;
 		if(user!=null){
 		list = qservice.selectByIdPage(user.getMemId(), page);
-		model.addAttribute("Question", list);
+		session.setAttribute("Question", list);
 		list = qservice.selectById(user.getMemId());
 		int size = list.size()/5;
 		if(size*5 < list.size())
