@@ -316,7 +316,7 @@
 						&nbsp;
 						<!-- <div id='container'> -->
 						<div id='left-box'>
-							<img src="<%=request.getContextPath()%>/upload/${memberName}/intro/${memImg}" width="250" height="150" />
+							<img src="<%=request.getContextPath()%>/upload/${memberName}/intro/${memImg}" width="250" height="150" onclick="goPopup()"/>
 						</div>
 
 						<div id='right-box'>
@@ -385,6 +385,11 @@
 			}
 		});
 	});
+	
+	function goPopup(){
+		   var pop = 
+			   window.open("<%=request.getContextPath()%>/profile", "pop", "width=570,height=800, scrollbars=yes");	
+	}
 </script>
 
 </html>
