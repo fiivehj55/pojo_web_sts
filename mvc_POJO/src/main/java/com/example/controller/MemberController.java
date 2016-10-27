@@ -357,7 +357,7 @@ public class MemberController {
 	   if(user == null)
 		   return "jsp/Login";
 	   String url = "당신과 대화를 하고 싶어합니다.<br/>"
-	   		+ "210.125.213.51:9090/mvc_POJO/chatGuest?"+user.getMemId();
+	   		+ "210.125.213.51:9090/mvc_POJO/chatGuest?room="+user.getMemId();
 	   Member guestid = mservice.Search(guest);
 	   sendMail(url,guestid.getMemEmail());
 	   
