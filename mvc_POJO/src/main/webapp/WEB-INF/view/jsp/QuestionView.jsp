@@ -25,9 +25,11 @@ label {
 .detail{
 	position: relative;
 	z-index: 2;
-	border-top: 10px solid;
+	border-top: 1px solid;
 	border-bottom: 1px solid;
-	line-height: 1.7;
+	line-height: 20;
+	width:1265px;
+	vertical-align:top;
 }
 
 .button a{
@@ -45,8 +47,12 @@ background-image:url
 				("http://img.echosting.cafe24.com/skin/base_ko_KR/board/ico_move_prev.qif");
 
 }
-</style>
 
+.button{
+	margin-left:1150px;	
+}
+
+</style>
 </head>
 <body class="">
 	<jsp:include page="./Header.jsp"></jsp:include>
@@ -55,48 +61,50 @@ background-image:url
 	</div>
 	<hr class="layout"></hr>
 	<div class="boardView">
+	
 		<table border="1" summary="">
 			<tr>
-				<th scope="row">제 목</th>
-				<td class="title">${ QuestTitle}</td>
+				<th scope="row">제목</th>
+				<td class="title">${reportSubject }</td>
 			</tr>
-			
+			<hr>
+
 			<tr>
-				<th scope="row">글 번호</th>
-				<td class="number">${questNo }</td>
+				<th scope="row">구분</th>
+				<td class="category">${reportCategory }</td>
 			</tr>
 
 			<tr>
-				<th scope="row">작성자</th>
-				<td>${MemberId }
-								
-				<span class="date">작성일 :<fmt:formatDate pattern="yyyy/MM/dd" value="${QuestDate}" /></span> 
+				<th scope="row">글번호</th>
+				<td>${reportNo} <span class="date">작성일 : 2016-10-23</span> 
 				<span class="hit">조회수 : 1000</span>
 				</td>
 			</tr>
 			
 			<tr class="view">
-				<td colspan="1">
-					<div class="detail">${QuestContent }
-					</div>
+				<td colspan="2">
+					<div class="detail">${reportContent}</div>
 				</td>
+				<td></td>
 			</tr>
 		</table>
 	</div>
 	
-	<jsp:include page="./QuestionToReply.jsp"></jsp:include>
-	
 	<div class="button">
 		<div class="btnArea M b_left">
-			<c:if test="${user.memId=='admin'}">
-			<a class="black_s" href="adminQuestion?page=${page}">목록보기</a>
+				<c:if test="${user.memId=='admin'}">
+			<a class="black_s" href="adminReport?page=${page}">목록보기</a>
 			</c:if>
 			<c:if test="${user.memId!='admin'}">
-			<a class="black_s" href="bbs?page=${page}">목록보기</a>
+			<a class="black_s" href="report?page=${page}">목록보기</a>
 			</c:if>
-	</div>
+		</div>
 	</div>
 	<p>
+	
+	<jsp:include page="./QuestSubList.jsp"></jsp:include>
+	<jsp:include page="./Footer.jsp"></jsp:include>
+
 <%-- 	<div class=prevnext>
 	<ul>
 	
@@ -115,9 +123,7 @@ background-image:url
 		</c:if>
 	</ul>
 	</div> --%>
-	<jsp:include page="./QuestSubList.jsp"></jsp:include>
-	<jsp:include page="./Footer.jsp"></jsp:include>
-</body>
+
 <%-- </head>
 <body class="">
 	<jsp:include page="./Header.jsp"></jsp:include>
@@ -145,7 +151,3 @@ background-image:url
 	</div>
 	<jsp:include page="./Footer.jsp"></jsp:include>
 </head> --%>
-<script>
-console.log(${user})
-</script>
-</html>

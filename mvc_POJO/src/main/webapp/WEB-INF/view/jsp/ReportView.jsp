@@ -1,6 +1,5 @@
 <!-- 게시판 페이지 -->
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="sform" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -22,16 +21,32 @@ label {
 	margin: 200px auto;
 }
 
-.detail{
+#detail{
 	position: relative;
 	z-index: 2;
+<<<<<<< HEAD
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+	line-height: 20;
+	width:1265px;
+=======
 	/* border-top: 1px solid; */
 	/* border-bottom: 1px solid; */
 	line-height: 50;
 	width:2048px;
 	valign: top;
 	align: left;
+>>>>>>> branch 'master' of https://github.com/fiivehj55/pojo_web_sts.git
 }
+
+/* #trViewTd {
+	border: solid 1px #17375E;
+	padding-top: 10em;
+	padding-bottom: 10em;
+	padding-left: 20em;
+	padding-right: 20em;
+} */
+
 
 .button a{
 	color: #faf9fa;
@@ -48,6 +63,10 @@ background-image:url
 				("http://img.echosting.cafe24.com/skin/base_ko_KR/board/ico_move_prev.qif");
 
 }
+.button{
+	margin-left:1150px;	
+}
+
 </style>
 </head>
 <body class="">
@@ -72,6 +91,7 @@ background-image:url
 
 			<tr style="border-bottom: 1px solid;">
 				<th scope="row">글번호</th>
+				<hr>
 				<td>${reportNo} <span class="date">작성일 : 2016-10-23</span> 
 				<span class="hit">조회수 : 1000</span>
 				</td>
@@ -82,6 +102,7 @@ background-image:url
 					<div class="detail"></div>
 					${reportContent} 
 				</td>
+				<td></td>
 			</tr>
 		</table>
 	</div>
