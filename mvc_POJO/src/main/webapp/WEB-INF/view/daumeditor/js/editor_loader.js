@@ -1,231 +1,288 @@
-(function() {
-	var v = document, g = window, C = v.documentElement, H = false, s = true, t = null, k;
-	var E = "", j = "tx_", f = "uninitialized", J = "loading", a = "complete", w = "production", I = "development", p = 1000, r = 5;
-	var z = /\/([6-9][a-z.]?\.[a-z0-9\-]+\.[\-\w]+)\//;
-	var c = {
-		environment : w,
-		service : "core",
-		version : "",
-		host : ""
+(function(document) {
+	// TODO option parameter 문서 정리
+	// TODO bookmarklet 작성
+	var DEFAULT_UNKNOWN_OPTION_VALUE = "",
+			PREFIX_COOKIE = "tx_",
+			STATUS_UNINITIALIZED = "uninitialized",
+			STATUS_LOADING = "loading",
+			STATUS_COMPLETE = "complete",
+			ENV_PRODUCTION = "production",
+			ENV_DEVELOPMENT = "development",
+			MILLISECOND = 1000,
+			DEFAULT_TIMEOUT = 5;
+	
+	var REGX_MATCH_VERSION = /\/(\d+[a-z.]?\.[a-z0-9\-]+\.[\-\w]+)\//;
+
+	var DEFAULT_OPTIONS = {
+		environment: ENV_PRODUCTION,
+        service: "core",
+		version: "",
+		host: ""
 	};
-	function e(K) {
-		return K.replace(/[^\/]+\/?$/, "")
+
+	function getBasePath(url) {
+		return url.replace(/[^\/]+\/?$/, '');
 	}
-	function b(L) {
-		var K = v.getElementsByTagName("script");
-		for (var M = 0; M < K.length; M++) {
-			if (K[M].src.indexOf(L) >= 0) {
-				return K[M]
+
+	function findLoaderScriptElement(filename) {
+		var scripts = document.getElementsByTagName("script");
+		for (var i = 0; i < scripts.length; i++) {
+			if (scripts[i].src.indexOf(filename) >= 0) {
+				return scripts[i];
 			}
 		}
-		throw "cannot find '" + L + "' script element"
+		throw "cannot find '" + filename + "' script element";
 	}
-	function h(L) {
-		var K = b(L);
-		var M = K.src;
-		return M.substring(M.indexOf("?") + 1)
+
+	function readURLParam(filename) {
+		var script = findLoaderScriptElement(filename);
+		var url = script.src;
+		return url.substring(url.indexOf("?") + 1);
 	}
-	function q(L) {
-		var K = b(L);
-		var M = K.src.match(z);
-		if (M && M.length == 2) {
-			return M[1]
+	
+	function readCurrentURLVersion(filename) {
+		var script = findLoaderScriptElement(filename);
+		var urlMatch = script.src.match(REGX_MATCH_VERSION);
+		if( urlMatch && urlMatch.length == 2 ){
+			return urlMatch[1];
 		}
-		return ""
+		return "";
 	}
-	function D(K) {
-		return c[K] || E
+
+	function getDefaultOption(name) {
+		return DEFAULT_OPTIONS[name] || DEFAULT_UNKNOWN_OPTION_VALUE;
 	}
-	function i(K) {
-		var L = n.parse(h(F.NAME), "&");
-		return L.findByName(K)
+
+	function getUserOption(name) {
+		var userOptions = Options.parse(readURLParam(Loader.NAME), "&");
+		return userOptions.findByName(name);
 	}
-	function B(K) {
-		var M = n.parse(v.cookie, /;[ ]*/);
-		var L = M.findByName(j + K);
-		return L ? decodeURIComponent(L) : L
+
+	function getCookieOption(name) {
+		var cookieOptions = Options.parse(document.cookie, /;[ ]*/);
+		var value = cookieOptions.findByName(PREFIX_COOKIE + name);
+		return value ? decodeURIComponent(value) : value;
 	}
-	var n = function() {
-		this.data = []
+
+
+	var Options = function() {
+		this.data = [];
 	};
-	n.prototype = {
-		add : function(K, L) {
-			this.data.push({
-				name : K,
-				value : L
-			})
+
+	Options.prototype = {
+		add: function(name, value) {
+			this.data.push({ "name": name, "value": value });
 		},
-		findByName : function(K) {
-			var M;
-			for (var L = 0; L < this.data.length; L++) {
-				if (this.data[L] && this.data[L].name === K) {
-					M = this.data[L].value;
-					break
+		findByName: function(name) {
+			var founded;
+			for (var i = 0; i < this.data.length; i++) {
+				if (this.data[i] && this.data[i].name === name) {
+					founded = this.data[i].value;
+					break;
 				}
 			}
-			return M
+			return founded;
 		}
 	};
-	n.parse = function(M, O) {
-		var K = new n();
-		var P = M.split(O);
-		for (var L = 0; L < P.length; L++) {
-			var N = P[L].split("=");
-			K.add(N[0], N[1])
+
+	Options.parse = function(rawOptions, separator) {
+		var options = new Options();
+		var params = rawOptions.split(separator);
+		for (var i = 0; i < params.length; i++) {
+			var nameAndValue = params[i].split("=");
+			options.add(nameAndValue[0], nameAndValue[1]);
 		}
-		return K
+		return options;
 	};
-	function m(L) {
-		var K = v.createElement("script");
-		K.type = "text/javascript";
-		K.src = L;
-		return K
+	
+	
+	function createScriptDOMElement(src) {
+		var script = document.createElement("script");
+		script.type = "text/javascript";
+		script.src = src;
+		return script;
 	}
-	function l(M) {
-		var K = document.location;
-		if (M.match(/^(https?|file):\/\//)) {
+
+	function absolutizeURL(url) {
+		var location = document.location;
+		if (url.match(/^(https?:|file:|)\/\//)) {
+		} else if (url.indexOf("/") === 0) {
+			url = "http://" + location.host + url;
 		} else {
-			if (M.indexOf("/") === 0) {
-				M = "http://" + K.host + M
-			} else {
-				var L = K.href;
-				var N = L.lastIndexOf("/");
-				M = L.substring(0, N + 1) + M
-			}
+			var href = location.href;
+			var cutPos = href.lastIndexOf("/");
+			url = href.substring(0, cutPos + 1) + url;
 		}
-		return M
+		return url;
 	}
-	function o(M, N) {
-		var K = m(M);
-		var L = v.getElementsByTagName("head")[0] || C;
-		x(K, L, N);
-		L.insertBefore(K, L.firstChild);
-		return K
+
+	function loadScriptDOMElement(src, callback) {
+		var script = createScriptDOMElement(src);
+		var head = document.getElementsByTagName("head")[0] || document.documentElement;
+		
+		addScriptLoadListener(script, head, callback);
+		
+		head.insertBefore(script, head.firstChild); // Use insertBefore instead of appendChild to circumvent an IE6 bug.
+		return script;
 	}
-	function x(K, L, M) {
-		if (M) {
-			K.onload = K.onreadystatechange = function() {
-				if (!this.readyState || this.readyState === "loaded"
-						|| this.readyState === "complete") {
-					M();
+	
+	function addScriptLoadListener(script, head, callback){
+		if(callback){
+			script.onload = script.onreadystatechange = function() {
+				if ( !this.readyState ||
+						this.readyState === "loaded" || 
+						this.readyState === "complete") {
+					
+					callback();
+					
+					// Handle memory leak in IE
 					if (/MSIE/i.test(navigator.userAgent)) {
-						K.onload = K.onreadystatechange = t;
-						if (L && K.parentNode) {
-							L.removeChild(K)
+						script.onload = script.onreadystatechange = null;
+						if ( head && script.parentNode ) {
+							head.removeChild( script );
 						}
 					}
 				}
-			}
+			};
 		}
 	}
-	function G(K) {
-		if (typeof K === "function") {
-			K(Editor)
+
+	function callEditorOnLoadHandler(fn) {
+		if (typeof fn === "function") {
+			fn(Editor);
 		}
 	}
-	var u = function(K) {
-		this.TIMEOUT = r * p;
-		this.readyState = f;
-		this.url = K.url;
-		this.callback = K.callback || function() {
-		};
-		this.id = K.id;
-		this.load()
+
+	var AsyncLoader = function(config){
+		this.TIMEOUT = DEFAULT_TIMEOUT * MILLISECOND;
+		this.readyState = STATUS_UNINITIALIZED;
+		this.url = config.url;
+		this.callback = config.callback || function(){};
+		this.id = config.id;
+		this.load();
 	};
-	u.prototype = {
-		load : function() {
-			var M = this.url;
-			var L = this;
+	AsyncLoader.prototype = {
+		load: function(){
+			var url = this.url;
+			var self = this;
 			try {
-				b(M)
-			} catch (N) {
-				L.readyState = J;
-				var K = o(M, function() {
-					L.callback();
-					L.readyState = a
+				findLoaderScriptElement(url);
+			} catch(e){
+				self.readyState = STATUS_LOADING;
+				var script = loadScriptDOMElement(url, function(){
+					self.callback();
+					self.readyState = STATUS_COMPLETE;
 				});
-				if (L.id) {
-					K.id = L.id
+				if( self.id ){
+					script.id = self.id;
 				}
-			}
-			return this
+			} 
+			return this;
 		},
-		startErrorTimer : function() {
-			var K = this;
+		startErrorTimer: function() {
+			var self = this;
 			setTimeout(function() {
-				if (K.readyState !== a) {
-					K.onTimeout()
+				if (self.readyState !== STATUS_COMPLETE) {
+					self.onTimeout();
 				}
-			}, K.TIMEOUT)
+			}, self.TIMEOUT);
 		},
-		onTimeout : function() {
+		onTimeout: function() {
+			//NOTE: retry or error log?
 		},
-		onLoadComplete : function() {
+		onLoadComplete: function(){
 		}
 	};
-	var A = [], y;
-	var F = {
-		NAME : "editor_loader.js",
-		TIMEOUT : r * p,
-		readyState : f,
-		loadModule : function(L) {
-			function M(N) {
-				return !N.match(/^((https?|file):\/\/|\.\.\/|\/)/)
+	
+	var onLoadHandlers = [], isRetry;
+
+	//noinspection UnnecessaryLocalVariableJS
+	var Loader = {
+		NAME: "editor_loader.js",
+
+		TIMEOUT: DEFAULT_TIMEOUT * MILLISECOND,
+
+		readyState: STATUS_UNINITIALIZED,
+
+		/**
+		 * <p>개발 환경에서 페이지 로딩시 module 불러오기</p>
+		 * @param moduleName {string} e.g. trex/header.js
+		 */
+		loadModule: function(moduleName) {
+			function isModuleNameNotPath(name) {
+				return !name.match(/^((https?:|file:|)\/\/|\.\.\/|\/)/);
 			}
-			var K = M(L) ? this.getJSBasePath() + L : L;
-			if (c.environment === I) {
-				K = K + "?dummy=" + new Date().getTime()
+			
+			var url = isModuleNameNotPath(moduleName) ? this.getJSBasePath() + moduleName : moduleName;
+			if (DEFAULT_OPTIONS.environment === ENV_DEVELOPMENT) {
+				url = url + '?dummy=' + new Date().getTime();				
 			}
-			v.write('<script type="text/javascript" src="' + K
-					+ '" charset="utf-8"><\/script>')
+			document.write('<script type="text/javascript" src="' + url + '" charset="utf-8"></script>');
 		},
-		asyncLoadModule : function(K) {
-			return new u(K)
+
+		/**
+		 * <p>페이지 로딩 완료 후 module 불러오기</p>
+		 */
+		asyncLoadModule: function(config) {
+			return new AsyncLoader(config);
 		},
-		ready : function(K) {
-			if (this.readyState === a) {
-				G(K)
+
+		/**
+		 * <p>editor javascript 파일이 로딩 완료되었을 때 호출될 함수를 등록한다.</p>
+		 * @param fn {function} 실행될 함수
+		 */
+		ready: function(fn) {
+			if (this.readyState === STATUS_COMPLETE) {
+				callEditorOnLoadHandler(fn);
 			} else {
-				A.push(K)
+				onLoadHandlers.push(fn);
 			}
 		},
-		finish : function() {
-			for (var K = 0; K < A.length; K++) {
-				G(A[K])
+
+		finish: function() {
+			for (var i = 0; i < onLoadHandlers.length; i++) {
+				callEditorOnLoadHandler(onLoadHandlers[i]);
 			}
-			A = []
+			onLoadHandlers = [];
 		},
-		getBasePath : function(L) {
-			var M = B("base_path");
-			if (!M) {
-				var K = b(L || F.NAME);
-				M = e(e(K.src))
+
+		getBasePath: function(filename) {
+			var basePath = getCookieOption("base_path");
+			if (!basePath) {
+				var script = findLoaderScriptElement(filename || Loader.NAME);				
+				basePath = getBasePath(getBasePath(script.src));
 			}
-			return l(M)
+			return absolutizeURL(basePath);
 		},
-		getJSBasePath : function(K) {
-			console.log(this.getBasePath());
-			return this.getBasePath() + ""
+
+		getJSBasePath: function(filename) {
+			return this.getBasePath() + "js/";
 		},
-		getCSSBasePath : function() {
-			return this.getBasePath() + ""
+
+		getCSSBasePath: function() {
+			return this.getBasePath() + "css/";
 		},
-		getPageBasePath : function() {
-			return this.getBasePath() + ""
+
+		getPageBasePath: function() {
+			return this.getBasePath() + "pages/";
 		},
-		getOption : function(K) {
-			return B(K) || i(K) || D(K)
+
+		getOption: function(name) {
+			return getCookieOption(name) || getUserOption(name) || getDefaultOption(name);
 		}
 	};
-	window.EditorJSLoader = F;
-	function d() {
-		var L = "editor.js";
-		c.version = q(F.NAME);
-		var K = i("environment");
-		if (K) {
-			c.environment = K
+	window.EditorJSLoader = Loader;
+
+	function initialize() {
+		var jsModuleName = "editor.js";
+		
+		DEFAULT_OPTIONS["version"] = readCurrentURLVersion(Loader.NAME);
+		var envConfig = getUserOption("environment");
+		if (envConfig) {
+			DEFAULT_OPTIONS.environment = envConfig;
 		}
-		F.loadModule(L)
+		Loader.loadModule(jsModuleName);
 	}
-	d()
-})();
+
+	initialize();
+})(document);

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pojo.web.dao.HouseAvailDateMapper">
+
+	<select id="selectAllHad" resultMap="hadBase">
+		select * from HOUSE_AVAIL_DATE ORDER BY HOUSE_AVAIL_NO DESC
+	</select>
+	
+	<select id="selectByNoHad" parameterType="int" resultMap="hadBase">
+		select * from HOUSE_AVAIL_DATE where HOUSE_AVAIL_NO = #{houseAvailNo}
+		ORDER BY HOUSE_AVAIL_NO DESC
+	</select>
+
+	<insert id="insertHad" parameterType="houseAvailDate">
+	<selectKey keyProperty="houseAvailNo" resultType="int" order="AFTER">
+	select SEQ_HOUSE_AVAIL_DATE.currval as houseAvailNo from dual
+	</selectKey>
+		insert into HOUSE_AVAIL_DATE 
+		values(SEQ_HOUSE_AVAIL_DATE.nextval, #{availCheckIn}, #{availCheckOut}, #{houseNo})
+	</insert>
+	
+	<update id="updateHad" parameterType="houseAvailDate">
+		update HOUSE_AVAIL_DATE set
+		AVAIL_CHECK_IN=#{availCheckIn}, AVAIL_CHECK_OUT=#{availCheckOut}, HOUSE_NO=#{houseNo}
+		where HOUSE_AVAIL_NO=#{houseAvailNo}
+	</update>
+	
+	<delete id="deleteHad" parameterType="int">
+		delete HOUSE_AVAIL_DATE where HOUSE_AVAIL_NO = #{houseAvailNo}
+	</delete>
+
+	<resultMap type="houseAvailDate" id="hadBase">
+		<id column="HOSUE_AVAIL_NO" property="houseAvailNo" />
+		<result column="AVAIL_CHECK_IN" property="availCheckIn" />
+		<result column="AVAIL_CHECK_OUT" property="availCheckOut" />
+		<result column="HOUSE_NO" property="houseNo" />
+	</resultMap>
+</mapper>

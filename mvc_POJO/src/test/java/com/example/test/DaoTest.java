@@ -14,6 +14,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.example.config.ApplicationConfig;
+import com.example.dao.HouseAvailDateDao;
 import com.example.dao.HouseDao;
 import com.example.dao.MemberDao;
 import com.example.dao.MemberDetailDao;
@@ -24,6 +25,7 @@ import com.example.dao.ReplyDao;
 import com.example.dao.ReportDao;
 import com.example.dao.ReportToReplyDao;
 import com.example.dto.House;
+import com.example.dto.HouseAvailDate;
 import com.example.dto.Member;
 import com.example.dto.MemberDetail;
 import com.example.dto.Question;
@@ -57,6 +59,8 @@ public class DaoTest {
 	MemberDetailDao mddao;
 	@Autowired
 	ReportToReplyDao rtrdao;
+	@Autowired
+	HouseAvailDateDao haddao;
 	@Autowired
 	SqlSessionTemplate template;
 
@@ -172,6 +176,51 @@ public class DaoTest {
 	public void testHousePaging() {
 		List<House> house = hdao.housePaging(template, 1);
 		logger.trace("List: {}", house);
+
+	}
+	
+	/** HOUSE_AVAIL_DATE */
+	@Test
+	public void testSelectAllHouseAvailDate() {
+		List<HouseAvailDate> had = haddao.selectAllHouseAvailDate(template);
+		logger.trace("List: {}", had);
+
+	}
+	
+	@Test
+	public void testSelectByNoHouseAvailDate() {
+		HouseAvailDate had = haddao.selectByNoHouseAvailDate(template, 1);
+		logger.trace("List: {}", had);
+
+	}
+	
+	@Test
+	public void testInsertHouseAvailDate() {
+		Calendar cd = Calendar.getInstance();
+		Date dd = cd.getTime();
+		HouseAvailDate had = new HouseAvailDate(null, dd, dd, 99);
+		int result = haddao.insertHouseAvailDate(template, had);
+		logger.trace("List: {}", had);
+
+	}
+	
+	@Test
+	public void testUpdateHouseAvailDate() {
+		Calendar cd = Calendar.getInstance();
+		Date dd = cd.getTime();
+		HouseAvailDate had = new HouseAvailDate(2, dd, dd, 98);
+		int result = haddao.updateHouseAvailDate(template, had);
+		logger.trace("List: {}", had);
+
+	}
+	
+	@Test
+	public void testDeleteHouseAvailDate() {
+		Calendar cd = Calendar.getInstance();
+		Date dd = cd.getTime();
+		HouseAvailDate had = new HouseAvailDate(2, dd, dd, 98);
+		int result = haddao.deleteHouseAvailDate(template, 2);
+		logger.trace("List: {}", had);
 
 	}
 	
