@@ -417,12 +417,31 @@ label {
 						</fieldset>
 					</div>
 				</div>
-				<br />
+				<br/>
 
 				<div id="container1">
 					<div id="three" style="display: none;">
-						<fieldset>
+					<fieldset>
 							<legend>호스팅 3단계 </legend>
+							가능한 날짜
+							<p>
+							 시작일 <input type="date" onchange="checkDate(this)"> ~ 종료일 <input type="date">
+							</p>
+							<p>
+							시작일 <input type="date" onchange="checkDate(this)"> ~ 종료일 <input type="date">
+							</p>
+							<p>
+							시작일 <input type="date" onchange="checkDate(this)"> ~ 종료일 <input type="date">
+							</p>
+						<a href="#" class="button button-style-1" id="backTwo">이전단계</a>
+							<a href="#" class="button button-style-1" id="nextFour">다음단계</a>
+					</fieldset>
+					</div>
+				</div>
+				<div id="container1">
+					<div id="four" style="display: none;">
+						<fieldset>
+							<legend>호스팅 4단계 </legend>
 								<label for="room">결제단위</label>				
 								<span class="dropdown-el">
     								<input type="radio" name="day" value="일" id="dd" checked="checked"><label for="dd" >일(Day)</label>
@@ -434,7 +453,7 @@ label {
 								<label for="price" >가격(원) : </label> 
 								<input type="number" id="price" name="price" />
 						</fieldset>
-						<a href="#" class="button button-style-1" id="backTwo">이전단계</a> 
+						<a href="#" class="button button-style-1" id="backThree">이전단계</a> 
 						<input type="submit" class="button2" id="next" name="next" value="하우스등록"  style="padding:10px;"/>
 					</div>
 				</div>
@@ -458,6 +477,10 @@ $(document).click(function() {
   $('.dropdown-el').removeClass('expanded');
 });
 
+function checkDate(dateTag){
+	var dateVal = dateTag.val();
+}
+
 function goPopup(){
 	var pop = window.open("<%=request.getContextPath()%>/jusoPopup", "pop", "width=570,height=420, scrollbars=yes"); //경로는시스템에맞게수정하여사용
 	}
@@ -477,6 +500,15 @@ function goPopup(){
 		$("#nextThree").on("click", function() {
 			$("#two").css("display", "none");
 			$("#three").css("display", "block");
+		})
+		$("#nextFour").on("click", function() {
+			$("#three").css("display", "none");
+			$("#four").css("display", "block");
+		})
+		$("#backThree").on("click", function() {
+
+			$("#three").css("display", "block");
+			$("#four").css("display", "none");
 		})
 		$("#backTwo").on("click", function() {
 
