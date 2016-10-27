@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.service.HouseService;
 import com.example.service.MemberService;
@@ -52,5 +53,10 @@ public class ReplyController {
 	public String selectByReportToReply(Model model, @RequestParam Integer reportNo, HttpSession session) {
 		return "jsp/ReportToReply";
 	}
-
+	@RequestMapping(value = "/DelReply",method=RequestMethod.POST)
+	public @ResponseBody String deleteAdmin(Model model,@RequestParam Integer No){
+		rtrservice.deleteRtr(No);
+		return null;
+	}
+	
 }

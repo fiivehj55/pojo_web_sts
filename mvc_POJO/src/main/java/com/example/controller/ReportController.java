@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.dto.Member;
 import com.example.dto.Question;
@@ -139,4 +140,9 @@ public class ReportController {
 		}
 	}
 
+	@RequestMapping(value = "/DelReport",method=RequestMethod.POST)
+	public @ResponseBody String deleteAdmin(Model model,@RequestParam Integer No){
+		repservice.deleteReport(No);
+		return null;
+	}
 }

@@ -48,12 +48,6 @@ public class QuestiontController {
 		// view의 이름을 리턴.
 		return "jsp/QuestList";
 	}
-/*
-	@RequestMapping(value = "/bbs", method = RequestMethod.POST)
-	public String tablePost(Model model, HttpSession session) {
-		// view의 이름을 리턴.
-		return "jsp/Table";
-	}*/
 
 	@RequestMapping(value = "/bbsInsert", method = RequestMethod.GET)
 	public String bbsInsertGet(Model model, HttpSession session) {
@@ -61,7 +55,10 @@ public class QuestiontController {
 		// view의 이름을 리턴.
 		return "/jsp/insertTable";
 	}
-	
+	@RequestMapping(value = "/daum", method = RequestMethod.POST)
+	public String daum(Model model, HttpSession session) {
+		return "/jsp/insertTable";
+	}
 	@RequestMapping(value = "/bbsInsert", method = RequestMethod.POST)
 	public String bbsInsertPost(Model model,
 			@RequestParam String title, 

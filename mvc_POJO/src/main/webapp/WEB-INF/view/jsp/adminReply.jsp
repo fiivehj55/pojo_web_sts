@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE>
 <html>
 <head>
@@ -150,7 +151,7 @@
 		<li class="detail_button" onclick="document.getElementById('boardcss_list_search').style.display = 'none'; document.getElementById('detailSearch').style.display = 'block';">상세검색▼</li>
 	</ul>
 		<button>수정</button>
-		<button>삭제</button>
+		<buttonid="del">삭제</button>
 </div>
 <!-- 검색 테이블 종료 -->
 
@@ -185,8 +186,35 @@
 		<a class="closeButton" onclick="document.getElementById('boardcss_list_search').style.display = 'block'; document.getElementById('detailSearch').style.display = 'none';">닫기▲</a>
 	</div>
 </div>
-</ul>
-
-
+<!-- 삭제 url -->
+		<c:set var='del' value='DelReply'></c:set>
 </body>
+<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+<script>
+$("#del").on("click",function(){
+	var tr = $("input[type=checkbox]:checked").parent().parent();
+	tr.each(function(index,item){
+		var num =  item.children;
+		console.log(num);
+		console.log($(num[1]).html());
+
+		//체크된 번호 글 삭제
+		$.ajax({
+			type : "post",
+			url : "${del}",
+			data : {
+				No : $(num[1]).html()
+			},   
+			async: false,
+			success : function(data,staus) {
+				console.log("delete success");
+			},
+			error : function(xhr, status, error) {
+				alert(error);
+			}
+		});
+	})
+	 location.reload();
+})
+</script>
 </html>
