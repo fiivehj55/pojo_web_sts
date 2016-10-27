@@ -96,6 +96,7 @@ public class MainController {
 		Member member = (Member) session.getAttribute("user");
 		String id = member.getMemId();
 		logger.trace(id);
+<<<<<<< HEAD
 		return "jsp/socketchat";
 	}*/
 

@@ -18,10 +18,11 @@ package com.example.util;
 
 import java.io.IOException;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
-import java.util.concurrent.CopyOnWriteArraySet;
-import java.util.concurrent.atomic.AtomicInteger;
 
 import javax.websocket.OnClose;
 import javax.websocket.OnMessage;
@@ -36,7 +37,14 @@ import org.slf4j.LoggerFactory;
 public class Broadsocket {
 	private static Logger logger = LoggerFactory.getLogger(Broadsocket.class);
 
+	// 클라이언트 생성
 	private static Set<Session> clients = Collections.synchronizedSet(new HashSet<Session>());
+	
+	// 방 만들기
+	private static final Map<String, Set<Broadsocket>> rooms = new HashMap<String, Set<Broadsocket>>();
+	private String roomName;
+	
+	private Session session;
 	
 	@OnMessage
 	public void onMessage(String message, Session session) throws IOException {
@@ -54,6 +62,20 @@ public class Broadsocket {
 	public void onOpen (Session session){
 		System.out.println("[Client Connected] " + session);
 		clients.add(session);
+	}
+	
+	private void putToRoom(Session session) {
+		Map<String, List<String>> param = session.getRequestParameterMap();
+		List<String> roomInfo = param.get("room");
+		if (roomInfo != null && roomInfo.size() == 1) {
+			this.roomName = roomInfo.get(0);
+			Set<Broadsocket> privateRoom = rooms.get(roomName);
+			if (privateRoom == null) {
+				privateRoom = new HashSet<>();
+				rooms.put(roomName, privateRoom);
+			}
+			privateRoom.add(this);
+		}
 	}
 	
 	@OnClose

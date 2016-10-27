@@ -25,7 +25,7 @@ label {
 .detail{
 	position: relative;
 	z-index: 2;
-	border-top: 1px solid;
+	border-top: 10px solid;
 	border-bottom: 1px solid;
 	line-height: 1.7;
 }
@@ -76,7 +76,7 @@ background-image:url
 			</tr>
 			
 			<tr class="view">
-				<td colspan="2">
+				<td colspan="1">
 					<div class="detail">${QuestContent }
 					</div>
 				</td>
