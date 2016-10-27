@@ -81,14 +81,6 @@
 </div>
 </body>
 <script>
-function closeMe(){
-
-	var win=window.open(“”,”_self”);
-
-	win.close();
-
-	}
-
 
 </script>
 </html>
