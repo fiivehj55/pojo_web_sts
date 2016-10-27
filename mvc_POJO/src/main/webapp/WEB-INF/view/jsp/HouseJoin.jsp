@@ -7,16 +7,15 @@
 <title>Linear by TEMPLATED</title>
 <style>
 .button2 {
-    position: relative;
-    display: inline-block;
-    background: #ff7e82;
-    padding: 0.6em 1em;
-    text-decoration: none !important;
-    font-size: 1.2em;.
-    font-weight: 300;
-    color: #FFF !important;
-    border-radius:5px;
-
+	position: relative;
+	display: inline-block;
+	background: #ff7e82;
+	padding: 0.6em 1em;
+	text-decoration: none !important;
+	font-size: 1.2em; .
+	font-weight: 300;
+	color: #FFF !important;
+	border-radius: 5px;
 }
 /* 안내문 css */
 body {
@@ -128,7 +127,6 @@ body {
 }
 /* 안내문 css 종료 */
 #container1 {
-
 	text-align: left;
 	margin: 0px 10% 0px 50px;
 }
@@ -136,7 +134,6 @@ body {
 .postcodify_address {
 	width: 280px;
 }
-
 
 /* #one {
 	width:1024px;
@@ -157,19 +154,19 @@ label {
 	display: inline-block;
 }
 
- .auto_center {
+.auto_center {
 	width: 400px;
 	height: 400px;
 	padding: 20px;
 	margin: 200px auto;
-} 
+}
 
 .checkbox {
 	position: relative;
 	top: -0.375rem;
 	margin: 0 1rem 0 0;
 	cursor: pointer;
-} 
+}
 
 /* 라디오버튼 체크박스 css 시작 */
 /* body {
@@ -183,106 +180,113 @@ label {
   font-size: 14px;
   letter-spacing:-1px
 } */
-
 .dropdown-el {
-  margin-top: 0vh;
-  min-width: 12em;
-  position: relative;
-  display: inline-block;
-  margin-right: 1em;
-  min-height: 2em;
-  max-height: 2em;
-  overflow: hidden;
-  top: .5em;
-  cursor: pointer;
-  text-align: left;
-  white-space: nowrap;
-  color: #444;
-  outline: none;
-  border: .06em solid transparent;
-  border-radius: 1em;
-  background-color:rgba(128,186,142,0.3);
-  transition: 0.3s all ease-in-out;
+	margin-top: 0vh;
+	min-width: 12em;
+	position: relative;
+	display: inline-block;
+	margin-right: 1em;
+	min-height: 2em;
+	max-height: 2em;
+	overflow: hidden;
+	top: .5em;
+	cursor: pointer;
+	text-align: left;
+	white-space: nowrap;
+	color: #444;
+	outline: none;
+	border: .06em solid transparent;
+	border-radius: 1em;
+	background-color: rgba(128, 186, 142, 0.3);
+	transition: 0.3s all ease-in-out;
 }
+
 .dropdown-el input {
-  display: none;
+	display: none;
 }
+
 .dropdown-el label {
-  border-top: .06em solid #d9d9d9;
-  display: block;
-  height: 2em;
-  line-height: 2em;
-  padding-left: 1em;
-  padding-right: 3em;
-  cursor: pointer;
-  position: relative;
-  transition: 0.3s color ease-in-out;
+	border-top: .06em solid #d9d9d9;
+	display: block;
+	height: 2em;
+	line-height: 2em;
+	padding-left: 1em;
+	padding-right: 3em;
+	cursor: pointer;
+	position: relative;
+	transition: 0.3s color ease-in-out;
 }
+
 .dropdown-el label:nth-child(2) {
-  margin-top: 2em;
-  border-top: .06em solid #d9d9d9;
+	margin-top: 2em;
+	border-top: .06em solid #d9d9d9;
 }
-.dropdown-el input:checked + label {
-  display: block;
-  border-top: none;
-  position: absolute;
-  top: 0;
+
+.dropdown-el input:checked+label {
+	display: block;
+	border-top: none;
+	position: absolute;
+	top: 0;
 }
-.dropdown-el input:checked + label:nth-child(2) {
-  margin-top: 0;
-  position: relative;
+
+.dropdown-el input:checked+label:nth-child(2) {
+	margin-top: 0;
+	position: relative;
 }
+
 .dropdown-el::after {
-  content: "";
-  position: absolute;
-  right: 0.8em;
-  top: 0.9em;
-  border: 0.3em solid #80BA8E;
-  border-color: #80BA8E transparent transparent transparent;
-  transition: .4s all ease-in-out;
+	content: "";
+	position: absolute;
+	right: 0.8em;
+	top: 0.9em;
+	border: 0.3em solid #80BA8E;
+	border-color: #80BA8E transparent transparent transparent;
+	transition: .4s all ease-in-out;
 }
+
 .dropdown-el.expanded {
-  border: 0.06em solid #80BA8E;
-  background: #fff;
-  border-radius: .25em;
-  padding: 0;
-  box-shadow: rgba(0, 0, 0, 0.1) 3px 3px 5px 0px;
-  max-height: 15em;
+	border: 0.06em solid #80BA8E;
+	background: #fff;
+	border-radius: .25em;
+	padding: 0;
+	box-shadow: rgba(0, 0, 0, 0.1) 3px 3px 5px 0px;
+	max-height: 15em;
 }
+
 .dropdown-el.expanded label {
-  border-top: .06em solid #d9d9d9;
+	border-top: .06em solid #d9d9d9;
 }
+
 .dropdown-el.expanded label:hover {
-  color: #3694d7;
+	color: #3694d7;
 }
-.dropdown-el.expanded input:checked + label {
-  color: #3694d7;
+
+.dropdown-el.expanded input:checked+label {
+	color: #3694d7;
 }
+
 .dropdown-el.expanded::after {
-  transform: rotate(-180deg);
-  top: .55em;
+	transform: rotate(-180deg);
+	top: .55em;
 }
 
 .textclass {
-	width:500px;
-/* 	vertical-align: middle; */
-	height:150px;
-/* 	line-height:180%; */
+	width: 500px;
+	/* 	vertical-align: middle; */
+	height: 150px;
+	/* 	line-height:180%; */
 }
 
 /* 라디오버튼 체크박스 css 종료 */
-
 .header2 {
 	position: relative;
-	color: rgba(128,186,142,0.3);
+	color: rgba(128, 186, 142, 0.3);
 	background-attachment: fixed;
 	background-size: cover;
 	text-align: center;
-
 }
 
 #header:before {
-	
 	content: '';
 	position: absolute;
 	left: 0;
@@ -291,97 +295,66 @@ label {
 	height: 100%;
 	background: rgba(64, 64, 64, 0.125);
 }
-
-
-
 </style>
 
 </head>
 <body class="">
 	<jsp:include page="./Header.jsp"></jsp:include>
 	<div class="header2">
-	<img src='css/images/air2.jpg' width="100%" height="500"/>
-	
-	
+		<img src='css/images/air2.jpg' width="100%" height="500" />
+
+
 	</div>
 	<!-- Main -->
 	<div id="view">
 		<div id="main">
-			<form method="post" action="insertHouse" name="form" id="myForm" enctype="multipart/form-data">
+			<form method="post" action="insertHouse" name="form" id="myForm"
+				enctype="multipart/form-data">
 				<div class="animated-text text-center">
-						<a href="#">
-							<span>${user.memName }님</span> 
-							<span>반</span> 
-							<span>갑</span> 
-							<span>습</span> 
-							<span>니</span> 
-							<span>다!</span>
-						</a>
-						<p>호스트가 될 준비를 시작해보세요.
-					</div>
+					<a href="#"> <span>${user.memName }님</span> <span>반</span> <span>갑</span>
+						<span>습</span> <span>니</span> <span>다!</span>
+					</a>
+					<p>호스트가 될 준비를 시작해보세요.
+				</div>
 				<div id="container1">
 					<div id="one" style="display: block;">
 						<fieldset>
-						
+
 							<legend>호스팅 1단계 </legend>
-								<label for="room">방의개수</label>				
-								<span class="dropdown-el">
-    								<input type="radio" name="room" value="1개" id="rone" checked="checked">
-    								<label for="rone" >1개</label>
-    							
-    								<input type="radio" name="room" value="2개" id="rtwo">
-    								<label for="rtwo">2개</label>
-    							
-								    <input type="radio" name="room" value="3개" id="rthree">
-							    	<label for="rthree">3개</label>
-								</span>	
-  								<br/>
-  
-								<label for="bath">욕실개수</label>  
-  								<span class="dropdown-el">
-									<input type="radio" name="bath" value="1개" id="bone" checked="checked">
-									<label for="bone">1개</label>
-									
-    								<input type="radio" name="bath" value="2개" id="btwo">
-    								<label for="btwo">2개</label>
-    								
-    								<input type="radio" name="bath" value="3개" id="bthree">
-    								<label for="bthree">3개</label>
-  								</span>	
-   								<br/>
-   
-   								<label for="hosting">숙박인원</label>
-  								<span class="dropdown-el">
-    								<input type="radio" name="hosting" value="1명" id="hone" checked="checked">
-    								<label for="hone">1명</label>
-    								
-    								<input type="radio" name="hosting" value="2명" id="htwo">
-    								<label for="htwo">2명</label>
-    								
-    								<input type="radio" name="hosting" value="3명" id="hthree">
-    								<label for="hthree">3명</label>
-    								
-    								<input type="radio" name="hosting" value="4명" id="hfour">
-    								<label for="hfour">4명</label>
-  								</span>					
-								<br/>												
-	
-								<div class="checkbox"> <br/>
-								<span>편의시설</span> 		
-								<input type="checkbox" class="demo-1" id="tv" name="tv" value="tv">
-								<label for="tv">TV</label>
-								 
-								<input type="checkbox" class="demo-1" id="aircon" name="aircon" value="aircon">
-								<label for="aircon">에어컨</label>
-								
-								<input type="checkbox" class="demo-1" id="wifi" name="wifi" value="wifi" >
-								<label for="wifi">Wi-Fi</label>
-								
-								<input type="checkbox" class="demo-1" id="elebe" name="elebe" value="elebe">
-								<label for="elebe">엘리베이터</label>
-								 		
-								<input type="checkbox" class="demo-1" id="washing" name="washing" value="washing">
-								<label for="washing">세탁기</label>			
+							<label for="room">방의개수</label> <span class="dropdown-el">
+								<input type="radio" name="room" value="1개" id="rone"
+								checked="checked"> <label for="rone">1개</label> <input
+								type="radio" name="room" value="2개" id="rtwo"> <label
+								for="rtwo">2개</label> <input type="radio" name="room" value="3개"
+								id="rthree"> <label for="rthree">3개</label>
+							</span> <br /> <label for="bath">욕실개수</label> <span class="dropdown-el">
+								<input type="radio" name="bath" value="1개" id="bone"
+								checked="checked"> <label for="bone">1개</label> <input
+								type="radio" name="bath" value="2개" id="btwo"> <label
+								for="btwo">2개</label> <input type="radio" name="bath" value="3개"
+								id="bthree"> <label for="bthree">3개</label>
+							</span> <br /> <label for="hosting">숙박인원</label> <span
+								class="dropdown-el"> <input type="radio" name="hosting"
+								value="1명" id="hone" checked="checked"> <label
+								for="hone">1명</label> <input type="radio" name="hosting"
+								value="2명" id="htwo"> <label for="htwo">2명</label> <input
+								type="radio" name="hosting" value="3명" id="hthree"> <label
+								for="hthree">3명</label> <input type="radio" name="hosting"
+								value="4명" id="hfour"> <label for="hfour">4명</label>
+							</span> <br />
+
+							<div class="checkbox">
+								<br /> <span>편의시설</span> <input type="checkbox" class="demo-1"
+									id="tv" name="tv" value="tv"> <label for="tv">TV</label>
+
+								<input type="checkbox" class="demo-1" id="aircon" name="aircon"
+									value="aircon"> <label for="aircon">에어컨</label> <input
+									type="checkbox" class="demo-1" id="wifi" name="wifi"
+									value="wifi"> <label for="wifi">Wi-Fi</label> <input
+									type="checkbox" class="demo-1" id="elebe" name="elebe"
+									value="elebe"> <label for="elebe">엘리베이터</label> <input
+									type="checkbox" class="demo-1" id="washing" name="washing"
+									value="washing"> <label for="washing">세탁기</label>
 								<p>
 							</div>
 							<a href="#" class="button button-style-1" id="nextTwo">다음단계</a>
@@ -395,236 +368,259 @@ label {
 						<fieldset>
 							<legend>호스팅 2단계</legend>
 							<p>
-								<label>숙소이름</label> 
-								<input type="text" id="rname" name="rname" size="50" />
+								<label>숙소이름</label> <input type="text" id="rname" name="rname"
+									size="50" />
 							</p>
-							
-							<a href="#" class="button button-style-1" id="postcodify_search_button">주소검색</a><br />		
-							<label>상세 주소</label>
-							<input type="text" id="xx" name="postcodify_address" value="" size="50" /><br />
-							<label></label>
-							<input type="text" id="yy" name="postcodify_details" value="" size="50" /><br />
-							<label>메인 사진</label> 
 
-							<input type="file" name="mainPhoto"/> 
-							<br />
-							<label>사진</label> 
-							<input type="file" name="photo" multiple="multiple"/> 
-							<br />
-							
-							<label>숙소 안내말</label>
-							<textarea class="textclass"  name="infor"></textarea>
-							<br /> 
-							<a href="#" class="button button-style-1" id="backOne">이전단계</a>
+							<a href="#" class="button button-style-1"
+								id="postcodify_search_button">주소검색</a><br /> <label>상세
+								주소</label> <input type="text" id="xx" name="postcodify_address" value=""
+								size="50" /><br /> <label></label> <input type="text" id="yy"
+								name="postcodify_details" value="" size="50" /><br /> <label>메인
+								사진</label> <input type="file" name="mainPhoto" /> <br /> <label>사진</label>
+							<input type="file" name="photo" multiple="multiple" /> <br /> <label>숙소
+								안내말</label>
+							<textarea class="textclass" name="infor"></textarea>
+							<br /> <a href="#" class="button button-style-1" id="backOne">이전단계</a>
 							<a href="#" class="button button-style-1" id="nextThree">다음단계</a>
 						</fieldset>
 					</div>
 				</div>
-				<br/>
+				<br />
 
 				<div id="container1">
 					<div id="three" style="display: none;">
-					<fieldset>
+						<fieldset>
 							<legend>호스팅 3단계 </legend>
 							가능한 날짜
 							<p>
-							 시작일 <input type="date" onchange="checkDate(this)"> ~ 종료일 <input type="date">
+								시작일 <input type="date" onchange="checkDate(this)"> ~ 종료일
+								<input type="date">
 							</p>
 							<p>
-							시작일 <input type="date" onchange="checkDate(this)"> ~ 종료일 <input type="date">
+								시작일 <input type="date" onchange="checkDate(this)"> ~ 종료일
+								<input type="date">
 							</p>
 							<p>
-							시작일 <input type="date" onchange="checkDate(this)"> ~ 종료일 <input type="date">
+								시작일 <input type="date" onchange="checkDate(this)"> ~ 종료일
+								<input type="date">
 							</p>
-						<a href="#" class="button button-style-1" id="backTwo">이전단계</a>
-							<a href="#" class="button button-style-1" id="nextFour">다음단계</a>
-					</fieldset>
+							<a href="#" class="button button-style-1" id="backTwo">이전단계</a> <a
+								href="#" class="button button-style-1" id="nextFour">다음단계</a>
+						</fieldset>
 					</div>
 				</div>
 				<div id="container1">
 					<div id="four" style="display: none;">
 						<fieldset>
 							<legend>호스팅 4단계 </legend>
-								<label for="room">결제단위</label>				
-								<span class="dropdown-el">
-    								<input type="radio" name="day" value="일" id="dd" checked="checked"><label for="dd" >일(Day)</label>
-    								<input type="radio" name="day" value="주" id="ww"><label for="ww">주(Weekend)</label>
-    								<input type="radio" name="day" value="월" id="mm"><label for="mm">월(Month)</label>
-									<br/>
-								</span>
-								<br/>
-								<label for="price" >가격(원) : </label> 
-								<input type="number" id="price" name="price" />
+							<label for="room">결제단위</label> <span class="dropdown-el">
+								<input type="radio" name="day" value="일" id="dd"
+								checked="checked"><label for="dd">일(Day)</label> <input
+								type="radio" name="day" value="주" id="ww"><label
+								for="ww">주(Weekend)</label> <input type="radio" name="day"
+								value="월" id="mm"><label for="mm">월(Month)</label> <br />
+							</span> <br /> <label for="price">가격(원) : </label> <input type="number"
+								id="price" name="price" />
 						</fieldset>
-						<a href="#" class="button button-style-1" id="backThree">이전단계</a> 
-						<input type="submit" class="button2" id="next" name="next" value="하우스등록"  style="padding:10px;"/>
+						<a href="#" class="button button-style-1" id="backThree">이전단계</a>
+						<input type="submit" class="button2" id="next" name="next"
+							value="하우스등록" style="padding: 10px;" />
 					</div>
 				</div>
 			</form>
 		</div>
 	</div>
 
-	<jsp:include page="./Footer.jsp"></jsp:include>	
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
-<script src="<%=request.getContextPath()%>/js/validate/dist/jquery.validate.min.js"></script>
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<jsp:include page="./Footer.jsp"></jsp:include>
 
-<script type="text/javascript">
-$('.dropdown-el').click(function(e) {
-  e.preventDefault();
-  e.stopPropagation();
-  $(this).toggleClass('expanded');
-  $('#'+$(e.target).attr('for')).prop('checked',true);
-});
-$(document).click(function() {
-  $('.dropdown-el').removeClass('expanded');
-});
+	 	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	 
+	 <script
+		src="<%=request.getContextPath()%>/js/validate/dist/jquery.validate.min.js"></script>
+
+	<script type="text/javascript">
 
 function checkDate(dateTag){
-	var dateVal = dateTag.val();
+	console.log(dateTag);
+	var dateVal =  new Date(dateTag.value);
+	console.log(dateVal);
+	var date = new Date();
+	if(dateVal < date)
+		alert("설정 불가능한 날짜입니다.");
 }
 
 function goPopup(){
-	var pop = window.open("<%=request.getContextPath()%>/jusoPopup", "pop", "width=570,height=420, scrollbars=yes"); //경로는시스템에맞게수정하여사용
-	}
-	function jusoCallBack(roadAddrPart1, addrDetail) {
-		$("#xx").val(roadAddrPart1);
-		$("#yy").val(addrDetail);
-	}
-	$(document).ready(function() {
+	var pop = window.open("<%=request.getContextPath()%>/jusoPopup","pop", "width=570,height=420, scrollbars=yes");
+		}
+		function jusoCallBack(roadAddrPart1, addrDetail) {
+			$("#xx").val(roadAddrPart1);
+			$("#yy").val(addrDetail);
+		}
+		$(document).ready(function() {
 
-		$("#postcodify_search_button").on("click", function() {
-			goPopup();
+			$('.dropdown-el').click(function(e) {
+				  e.preventDefault();
+				  e.stopPropagation();
+				  $(this).toggleClass('expanded');
+				  $('#'+$(e.target).attr('for')).prop('checked',true);
+				});
+				$(document).click(function() {
+				  $('.dropdown-el').removeClass('expanded');
+				});
+				
+			$("#postcodify_search_button").on("click", function() {
+				goPopup();
+			});
+			$("#nextTwo").on("click", function() {
+				$("#one").css("display", "none");
+				$("#two").css("display", "block");
+			});
+			$("#nextThree").on("click", function() {
+				$("#two").css("display", "none");
+				$("#three").css("display", "block");
+			});
+			$("#nextFour").on("click", function() {
+				$("#three").css("display", "none");
+				$("#four").css("display", "block");
+			});
+			$("#backThree").on("click", function() {
+
+				$("#three").css("display", "block");
+				$("#four").css("display", "none");
+			});
+			$("#backTwo").on("click", function() {
+
+				$("#two").css("display", "block");
+				$("#three").css("display", "none");
+			});
+			$("#backOne").on("click", function() {
+				$("#one").css("display", "block");
+				$("#two").css("display", "none");
+			});
+			$("#myForm").validate({
+				rules : {
+					room : "required",
+					bath : "required",
+					hosting : "required",
+					price : "required",
+					photo : "required",
+					day : "required"
+				},
+				messages : {
+					room : "Please specify room count",
+					bath : "Please specify bath count",
+					hosting : "Please specify hosting count",
+					price : {
+						required : "Please specify your price"
+					},
+					day : "Please specify payment cycle",
+					photo : "Must one more picture"
+				}
+			});
 		});
-		$("#nextTwo").on("click", function() {
-			$("#one").css("display", "none");
-			$("#two").css("display", "block");
-		})
-		$("#nextThree").on("click", function() {
-			$("#two").css("display", "none");
-			$("#three").css("display", "block");
-		})
-		$("#nextFour").on("click", function() {
-			$("#three").css("display", "none");
-			$("#four").css("display", "block");
-		})
-		$("#backThree").on("click", function() {
 
-			$("#three").css("display", "block");
-			$("#four").css("display", "none");
-		})
-		$("#backTwo").on("click", function() {
+		;
+		(function($) {
 
-			$("#two").css("display", "block");
-			$("#three").css("display", "none");
-		})
-		$("#backOne").on("click", function() {
-			$("#one").css("display", "block");
-			$("#two").css("display", "none");
-		})
-		$("#myForm").validate({
-			rules : {
-				room : "required",
-				bath : "required",
-				hosting : "required",
-				price : "required",
-				photo : "required",
-				day : "required"
-			},
-			messages : {
-				room : "Please specify room count",
-				bath : "Please specify bath count",
-				hosting : "Please specify hosting count",
-				price : {required : "Please specify your price"},
-				day : "Please specify payment cycle",
-				photo : "Must one more picture"
+			$.fn.toggleCheckbox = function(toggleContents, callback) {
+
+				var TC = {
+
+					isChecked : function(element) {
+
+						return $(element).is(':checked');
+
+					},
+					getContentIndex : function(element) {
+
+						return (TC.isChecked(element)) ? 1 : 0;
+
+					},
+					getContent : function(index) {
+
+						var container = $('<span class="toggle-checkbox-container"></span>');
+
+						return container.on(
+								'click',
+								function(e) {
+
+									var checkbox = $(this).prev();
+									var nextChecked = !TC
+											.getContentIndex(checkbox);
+									var contentIndex = (nextChecked) ? 1 : 0;
+									var toggleContent = TC
+											.getContent(contentIndex);
+
+									checkbox.after(toggleContent).prop(
+											'checked', nextChecked);
+									$(this).remove();
+									TC.fireCallback(e, checkbox);
+
+								}).css('cursor', 'pointer').html(
+								toggleContents[index]);
+
+					},
+					fireCallback : function(e, checkbox) {
+
+						if (typeof (callback) == 'function') {
+
+							callback(e, checkbox);
+
+						}
+
+					}
+
+				};
+
+				$
+						.each(
+								this,
+								function(key, element) {
+
+									var contentIndex = TC
+											.getContentIndex(element);
+									var toggleContent = TC
+											.getContent(contentIndex);
+									$(element)
+											.after(toggleContent)
+											.css('display', 'none')
+											.on(
+													'change',
+													function(e) {
+
+														var className = $(this)
+																.next()
+																.attr('class');
+
+														if (className == 'toggle-checkbox-container') {
+
+															$(this).next()
+																	.remove();
+															var contentIndex = TC
+																	.getContentIndex(this);
+															var toggleContent = TC
+																	.getContent(contentIndex);
+															$(this)
+																	.after(
+																			toggleContent);
+															TC.fireCallback(e,
+																	$(this));
+
+														}
+
+													});
+
+								});
+
 			}
-		});
-	});
 
+		})(jQuery);
 
-;(function($) {
-
-    $.fn.toggleCheckbox = function(toggleContents, callback) {
-
-        var TC = {
-
-            isChecked: function(element){
-
-                return $(element).is(':checked');
-
-            },
-            getContentIndex: function(element){
-
-                return (TC.isChecked(element)) ? 1 : 0;
-
-            },
-            getContent: function(index){
-
-                var container = $('<span class="toggle-checkbox-container"></span>');
-
-                return container.on('click', function(e){
-
-                    var checkbox = $(this).prev();
-                    var nextChecked = !TC.getContentIndex(checkbox);
-                    var contentIndex = (nextChecked) ? 1 : 0;
-                    var toggleContent = TC.getContent(contentIndex);
-
-                    checkbox.after(toggleContent).prop('checked', nextChecked);
-                    $(this).remove();
-                    TC.fireCallback(e, checkbox);
-
-                })
-                .css('cursor', 'pointer')
-                .html(toggleContents[index]);
-
-            },
-            fireCallback: function(e, checkbox){
-
-                if(typeof(callback) == 'function') {
-
-                    callback(e, checkbox);
-
-                }
-
-            }
-
-        };
-
-        $.each(this, function(key, element){
-
-            var contentIndex = TC.getContentIndex(element);
-            var toggleContent = TC.getContent(contentIndex);
-            $(element).after(toggleContent)
-                .css('display', 'none')
-                .on('change', function(e){
-
-                    var className = $(this).next().attr('class');
-
-                    if(className == 'toggle-checkbox-container') {
-
-                        $(this).next().remove();
-                        var contentIndex = TC.getContentIndex(this);
-                        var toggleContent = TC.getContent(contentIndex);
-                        $(this).after(toggleContent);
-                        TC.fireCallback(e, $(this));
-
-                    }
-
-            });
-
-        });
-
-    }
-
-})(jQuery);
-
-$('.demo-1').toggleCheckbox([
-    '<i class="fa fa-circle-o fa-4x"></i>',
-    '<i class="fa fa-check-circle-o fa-4x"></i>'
-]);
-
-</script>
+		$('.demo-1').toggleCheckbox(
+				[ '<i class="fa fa-circle-o fa-4x"></i>',
+						'<i class="fa fa-check-circle-o fa-4x"></i>' ]);
+	</script>
 
 </body>
 </html>
