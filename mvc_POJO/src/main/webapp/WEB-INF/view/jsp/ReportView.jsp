@@ -24,10 +24,19 @@ label {
 #detail{
 	position: relative;
 	z-index: 2;
+<<<<<<< HEAD
 	border-top: 1px solid;
 	border-bottom: 1px solid;
 	line-height: 20;
 	width:1265px;
+=======
+	/* border-top: 1px solid; */
+	/* border-bottom: 1px solid; */
+	line-height: 50;
+	width:2048px;
+	valign: top;
+	align: left;
+>>>>>>> branch 'master' of https://github.com/fiivehj55/pojo_web_sts.git
 }
 
 /* #trViewTd {
@@ -80,7 +89,7 @@ background-image:url
 				<td class="category">${reportCategory }</td>
 			</tr>
 
-			<tr>
+			<tr style="border-bottom: 1px solid;">
 				<th scope="row">글번호</th>
 				<hr>
 				<td>${reportNo} <span class="date">작성일 : 2016-10-23</span> 
@@ -88,9 +97,10 @@ background-image:url
 				</td>
 			</tr>
 			
-			<tr class="view">
-				<td colspan="2">
-					<div class="detail">${reportContent}</div>
+			<tr class="view" style="border-bottom: 1px solid;">
+			<td colspan="2" align="left" valign="top" height="512px">
+					<div class="detail"></div>
+					${reportContent}
 				</td>
 				<td></td>
 			</tr>
@@ -108,7 +118,7 @@ background-image:url
 		</div>
 	</div>
 	<p>
-	
+	<%-- <jsp:include page="./ReportToReply.jsp"></jsp:include> --%>
 	<jsp:include page="./ReportSubList.jsp"></jsp:include>
 	<jsp:include page="./Footer.jsp"></jsp:include>
 </body>

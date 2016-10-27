@@ -118,7 +118,7 @@ public class ReportController {
 		reportToReply.setReportReplyContent(reportReplyContent);
 		reportToReply.setMemberId(id);
 		reportToReply.setReportNo(reportNo);
-		session.setAttribute("reportToReply", reportToReply);
+		session.setAttribute("rtr", reportToReply);
 		result = rtservice.insertRtr(reportToReply);
 		if (result != 1) {
 			return "redirect:/reportView?reportNo=" + reportNo;
