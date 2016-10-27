@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="pojo.web.dao.houseMapper">
+<mapper namespace="pojo.web.dao.HouseMapper">
 
 	<select id="selectAllHouse" resultMap="houseBase">
 		select * from HOUSE ORDER BY HOUSE_NO DESC
@@ -46,7 +46,7 @@
 		HOUSE_TV=#{houseTv}, HOUSE_AIRCON=#{houseAircon}, HOUSE_WIFI=#{houseWifi}, 
 		HOUSE_ELEBE=#{houseElebe}, HOUSE_WASHING=#{houseWashing}, HOUSE_IMG=#{houseImg,jdbcType=VARCHAR}, 
 		HOUSE_DAY=#{houseDay}, POSS_CHECK_IN=#{possCheckIn}, POSS_CHECK_OUT=#{possCheckOut}
-		where house_no=#{houseNo}
+		where HOSUE_NO=#{houseNo}
 	</update>
 	
 	<delete id="deleteHouse" parameterType="int">

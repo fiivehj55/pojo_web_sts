@@ -31,7 +31,7 @@ label {
 </head>
 <body class="">
 	<jsp:include page="./Header.jsp"></jsp:include>
-	 <jsp:include page="../daumeditor/editor.jsp"></jsp:include>
+	<jsp:include page="../daumeditor/editor.jsp"></jsp:include>
 	<div id="main">
 	
 		<div id="content" class="auto_center">

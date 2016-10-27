@@ -249,7 +249,7 @@ body {
 					<li class="active"><a href="index">메인가기</a>
 						<ul class="sub">
 							<li class="active"><a href="dateView">달력 테스트</a></li>
-							<li class="active"><a href="#">&nbsp</a></li>
+							<li class="active"><a href="profile">프로필 작업</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li>
@@ -292,7 +292,7 @@ body {
 						<c:when test="${ empty user }">
 							<li><a href="login">로그인</a>
 								<ul class="sub">
-									<li class="active"><a href="terms">회원가입</a></li>
+									<li class="active"><a href="join">회원가입</a></li>
 									<li class="active"><a href="idAndPass">ID/PASS 찾기</a></li>
 									<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>

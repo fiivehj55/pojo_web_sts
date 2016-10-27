@@ -12,7 +12,7 @@ import com.example.dto.House;
 @Component
 public class HouseDaoImpl implements HouseDao {
 	// 하우스 IMPL
-	private final String HOUSE_MAP = "pojo.web.dao.houseMapper.";
+	private final String HOUSE_MAP = "pojo.web.dao.HouseMapper.";
 	
 	@Override
 	public List<House> selectAllHouse(SqlSessionTemplate template) {

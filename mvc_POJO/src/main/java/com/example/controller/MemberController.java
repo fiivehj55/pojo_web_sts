@@ -375,4 +375,11 @@ public class MemberController {
    public String idAndPass(Model model){
       return "jsp/IdPass";
    }
+   
+   // 프로필 페이지
+   @RequestMapping(value = "/profile",method=RequestMethod.GET)
+   public String profile(Model model){
+      return "jsp/profile";
+   }
+   
 }
