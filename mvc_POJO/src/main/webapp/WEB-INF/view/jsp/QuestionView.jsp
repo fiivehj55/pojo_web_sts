@@ -84,11 +84,7 @@ background-image:url
 		</table>
 	</div>
 	
-	<form method="post" action="insertrtr">
-					<input type="hidden" name="reportNo" value="${reportNo }"/>
-					<input type="text" id="reportReplyContent" name="reportReplyContent"/>
-					<input type="submit" value="댓글 등록"/>
-	</form>
+	<jsp:include page="./QuestionToReply.jsp"></jsp:include>
 	
 	<div class="button">
 		<div class="btnArea M b_left">

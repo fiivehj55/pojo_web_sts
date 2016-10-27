@@ -25,10 +25,12 @@ label {
 .detail{
 	position: relative;
 	z-index: 2;
-	border-top: 1px solid;
-	border-bottom: 1px solid;
+	/* border-top: 1px solid; */
+	/* border-bottom: 1px solid; */
 	line-height: 50;
 	width:2048px;
+	valign: top;
+	align: left;
 }
 
 .button a{
@@ -68,16 +70,17 @@ background-image:url
 				<td class="category">${reportCategory }</td>
 			</tr>
 
-			<tr>
+			<tr style="border-bottom: 1px solid;">
 				<th scope="row">글번호</th>
 				<td>${reportNo} <span class="date">작성일 : 2016-10-23</span> 
 				<span class="hit">조회수 : 1000</span>
 				</td>
 			</tr>
 			
-			<tr class="view">
-				<td colspan="2">
-					<div class="detail">${reportContent}</div>
+			<tr class="view" style="border-bottom: 1px solid;">
+			<td colspan="2" align="left" valign="top" height="512px">
+					<div class="detail"></div>
+					${reportContent}
 				</td>
 			</tr>
 		</table>
@@ -94,7 +97,7 @@ background-image:url
 		</div>
 	</div>
 	<p>
-	
+	<%-- <jsp:include page="./ReportToReply.jsp"></jsp:include> --%>
 	<jsp:include page="./ReportSubList.jsp"></jsp:include>
 	<jsp:include page="./Footer.jsp"></jsp:include>
 </body>

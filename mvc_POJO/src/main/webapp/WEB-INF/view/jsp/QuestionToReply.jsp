@@ -38,7 +38,7 @@
 
 #boardcss_list_table {
 	text-align: left;
-	width: 1024px;
+	/* width: 1024px; */
 	margin: 0px 40% 0px 4%;
 }
 </style>
@@ -46,7 +46,7 @@
 </head>
 <body class="">
 	<div id="main">
-		<div id="content" class="auto_center">
+		<div id="content" class="">
 			<!-- 등록버튼 시작 -->
 			<!-- <div id="boardcss_list_add_button_table">
 				<div class="boardcss_list_add_button">
@@ -56,7 +56,7 @@
 			</div> -->
 			<!-- 등록버튼 종료 -->
 			
-			<h3 class="h3">REPORT 댓글</h3>
+			<h3 class="h3">QUESTION 댓글</h3>
 			<p>
 			<!-- 테이블 시작 -->
 			<c:choose>
