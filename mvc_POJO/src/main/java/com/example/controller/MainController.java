@@ -90,14 +90,14 @@ public class MainController {
 		return "jsp/socketchatRoom";
 	}
 	
-	//강사님이 주신소스
+/*	//강사님이 주신소스
 	@RequestMapping(value = "/chattest", method = RequestMethod.GET)
 	public String chattest(Model model, @RequestParam String memId, HttpSession session) {
 		Member member = (Member) session.getAttribute("user");
 		String id = member.getMemId();
 		logger.trace(id);
 		return "jsp/socketchat";
-	}
+	}*/
 
 	@RequestMapping(value = "/dateView", method = RequestMethod.GET)
 	public String dateView(Model model) {
