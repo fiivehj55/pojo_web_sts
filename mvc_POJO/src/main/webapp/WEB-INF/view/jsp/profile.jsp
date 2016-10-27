@@ -57,7 +57,7 @@
 <body>
     <div class="container3">
   <div class="avatar-flip">
-    <img src="css/images/pic1.png" height="150" width="150">
+    <img src="css/images/pic1.png" height="150" width="150"><!-- 사용자사진 -->
     <img src="css/images/pic1.png" height="150" width="150">
   </div>
   <div id="font">MINJEONG94</div> <!-- 사용자아이디 -->
@@ -76,10 +76,19 @@
 	<div id="center-box3">
 <p><a href="chatstart?guest=${memberName}" class="button2">메세지보내기</a>
 <span id="center-box3"></span>
-<a href="#" class="button2" >나가기</a>
+<a href="javascript:window.open('','_parent','');window.close();" class="button2" >나가기</a>
   </div>  
 </div>
 </body>
 <script>
+function closeMe(){
+
+	var win=window.open(“”,”_self”);
+
+	win.close();
+
+	}
+
+
 </script>
 </html>
