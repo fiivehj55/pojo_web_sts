@@ -84,32 +84,18 @@ background-image:url
 	
 	<div class="button">
 		<div class="btnArea M b_left">
+				<c:if test="${user.memId=='admin'}">
+			<a class="black_s" href="adminReport?page=${page}">목록보기</a>
+			</c:if>
+			<c:if test="${user.memId!='admin'}">
 			<a class="black_s" href="report?page=${page}">목록보기</a>
+			</c:if>
 		</div>
 	</div>
 	<p>
 	
-	<div class=prevnext>
-	<ul>
-	
-	<c:if test="${reportPrevious != null}">
-		<li class="prev">
-		<strong>이전글</strong>
-		<a href="reportView?reportNo=${reportNo+1}">${reportPrevious.reportSubject}</a>
-		</li>
-	</c:if>
-	<c:if test="${reportNext != null}">
-		<li class="next">
-		<strong>다음글</strong>
-		<a href="reportView?reportNo=${reportNo-1}">${reportNext.reportSubject}</a>
-		</li>
-		</c:if>
-	</ul>
-	</div>
-	
-</head>
-<body>
-
+	<jsp:include page="./ReportSubList.jsp"></jsp:include>
+	<jsp:include page="./Footer.jsp"></jsp:include>
 </body>
 
 <%-- </head>
@@ -144,8 +130,5 @@ background-image:url
 	<jsp:include page="./Footer.jsp"></jsp:include>
 </head>
 --%>
-
-<body>
-</body>
 <script></script>
 </html>
