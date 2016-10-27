@@ -27,7 +27,8 @@ label {
 	z-index: 2;
 	border-top: 1px solid;
 	border-bottom: 1px solid;
-	line-height: 1.7;
+	line-height: 50;
+	width:2048px;
 }
 
 .button a{

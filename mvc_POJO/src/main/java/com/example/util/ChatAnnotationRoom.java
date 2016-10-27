@@ -47,8 +47,6 @@ public class ChatAnnotationRoom {
 	private String roomName;
 	
 	private final String nickname;
-	
-
 
 	// 클라이언트가 새로 접속할 때마다 한개의 Session 객체가 생성된다.
 	// Session 객체를 컬렉션에 보관하여 두고 해당 클라이언트에게 데이터를 전송할 때마다 사용한다
@@ -98,12 +96,11 @@ public class ChatAnnotationRoom {
 	// 현재 세션과 연결된 클라이언트로부터 메시지가 도착할 때마다 새로운 쓰레드가 실행되어 incoming()을 호출함
 	@OnMessage
 	public void incoming(String message) {
-
 		String threadName = "Thread-Name:" + Thread.currentThread().getName();
-		System.out.println(threadName + ", " + nickname);
+		System.out.println(threadName + ", " + message);
 		if (message == null || message.trim().equals(""))
 			return;
-		String filteredMessage = String.format("%s: %s", nickname, message);
+		String filteredMessage = String.format("%s", message);
 		broadcast(filteredMessage);
 	}
 

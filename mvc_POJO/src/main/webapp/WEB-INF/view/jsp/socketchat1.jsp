@@ -9,6 +9,9 @@
 </head>
 <body>
 	<fieldset>
+		<input type="text" placeholder="방 이름을 넣으세요." id="room" value="${user.memId }" />
+		<button id="btnRoom">방 만들기</button>
+		<br/>
 		<textarea rows="10" cols="50" id="messageWindow" readonly="true"></textarea> <br/>
 		<input type="text" id="inputMessage"/>
 		<input type="submit" value="send" onclick="send()"/>
@@ -19,6 +22,11 @@
 	var textarea = document.getElementById("messageWindow");
 	var webSocket = new WebSocket('ws://localhost:9090/mvc_POJO/broadcasting');
 	var inputMessage = document.getElementById('inputMessage');
+	
+	$("#btnRoom").on("click", function(){
+		var roomName = $("#room").val();
+		initialize(roomName);
+	});
 	
 	webSocket.onerror = function(event){
 		onError(event);
