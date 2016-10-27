@@ -1,6 +1,5 @@
 <!-- 게시판 페이지 -->
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="sform" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -22,14 +21,23 @@ label {
 	margin: 200px auto;
 }
 
-.detail{
+#detail{
 	position: relative;
 	z-index: 2;
 	border-top: 1px solid;
 	border-bottom: 1px solid;
-	line-height: 50;
-	width:2048px;
+	line-height: 20;
+	width:1265px;
 }
+
+/* #trViewTd {
+	border: solid 1px #17375E;
+	padding-top: 10em;
+	padding-bottom: 10em;
+	padding-left: 20em;
+	padding-right: 20em;
+} */
+
 
 .button a{
 	color: #faf9fa;
@@ -46,6 +54,10 @@ background-image:url
 				("http://img.echosting.cafe24.com/skin/base_ko_KR/board/ico_move_prev.qif");
 
 }
+.button{
+	margin-left:1150px;	
+}
+
 </style>
 </head>
 <body class="">
@@ -70,6 +82,7 @@ background-image:url
 
 			<tr>
 				<th scope="row">글번호</th>
+				<hr>
 				<td>${reportNo} <span class="date">작성일 : 2016-10-23</span> 
 				<span class="hit">조회수 : 1000</span>
 				</td>
@@ -79,6 +92,7 @@ background-image:url
 				<td colspan="2">
 					<div class="detail">${reportContent}</div>
 				</td>
+				<td></td>
 			</tr>
 		</table>
 	</div>
