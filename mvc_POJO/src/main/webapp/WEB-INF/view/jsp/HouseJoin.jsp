@@ -352,32 +352,35 @@ label {
    
    								<label for="hosting">숙박인원</label>
   								<span class="dropdown-el">
-    								<input type="radio" name="hosting" value="1개" id="hone" checked="checked">
+    								<input type="radio" name="hosting" value="1명" id="hone" checked="checked">
     								<label for="hone">1명</label>
     								
-    								<input type="radio" name="hosting" value="2개" id="htwo">
+    								<input type="radio" name="hosting" value="2명" id="htwo">
     								<label for="htwo">2명</label>
     								
-    								<input type="radio" name="hosting" value="3개" id="hthree">
+    								<input type="radio" name="hosting" value="3명" id="hthree">
     								<label for="hthree">3명</label>
+    								
+    								<input type="radio" name="hosting" value="4명" id="hfour">
+    								<label for="hfour">4명</label>
   								</span>					
 								<br/>												
 	
 								<div class="checkbox"> <br/>
 								<span>편의시설</span> 		
-								<input name="checkboxes[]" type="checkbox" class="demo-1" id="tv" name="tv" value="tv">
+								<input type="checkbox" class="demo-1" id="tv" name="tv" value="tv">
 								<label for="tv">TV</label>
 								 
-								<input name="checkboxes[]" type="checkbox" class="demo-1" id="aircon" name="aircon" value="aircon">
+								<input type="checkbox" class="demo-1" id="aircon" name="aircon" value="aircon">
 								<label for="aircon">에어컨</label>
 								
-								<input name="checkboxes[]" type="checkbox" class="demo-1" id="wifi" name="wifi" value="wifi" >
+								<input type="checkbox" class="demo-1" id="wifi" name="wifi" value="wifi" >
 								<label for="wifi">Wi-Fi</label>
 								
-								<input name="checkboxes[]" type="checkbox" class="demo-1" id="elebe" name="elebe" value="elebe">
+								<input type="checkbox" class="demo-1" id="elebe" name="elebe" value="elebe">
 								<label for="elebe">엘리베이터</label>
 								 		
-								<input name="checkboxes[]" type="checkbox" class="demo-1" id="washing" name="washing" value="washing">
+								<input type="checkbox" class="demo-1" id="washing" name="washing" value="washing">
 								<label for="washing">세탁기</label>			
 								<p>
 							</div>
