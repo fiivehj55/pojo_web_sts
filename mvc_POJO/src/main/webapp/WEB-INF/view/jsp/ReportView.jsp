@@ -80,7 +80,7 @@ background-image:url
 			<tr class="view" style="border-bottom: 1px solid;">
 			<td colspan="2" align="left" valign="top" height="512px">
 					<div class="detail"></div>
-					${reportContent}
+					${reportContent} 
 				</td>
 			</tr>
 		</table>
