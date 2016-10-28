@@ -23,13 +23,18 @@
 
 <style>
 .inputReply {
-	width: 750px;
+	width: 700px;
 	height: 100px;
 }
 
 .replyContent {
 	height: 100px;
-	margin-left:20px;
+	margin-left: 20px;
+}
+
+.replyContent1 {
+	height: 100px;
+	margin-left: 0px;
 }
 
 .listReply {
@@ -39,7 +44,7 @@
 
 #boardcss_list_table {
 	text-align: left;
-	/* width: 1024px; */
+	width: 1024px;
 	margin: 0px 40% 0px 4%;
 }
 </style>
@@ -48,59 +53,54 @@
 <body class="">
 	<div id="main">
 		<div id="content" class="">
-			<!-- 등록버튼 시작 -->
-			<!-- <div id="boardcss_list_add_button_table">
-				<div class="boardcss_list_add_button">
-					<a href="bbsInsert"><button class="add_button">등록</button></a>
-					<ul></ul>
-				</div>
-			</div> -->
-			<!-- 등록버튼 종료 -->
-			
-			<h3 class="h3">QUESTION 댓글</h3>
-			<p>
+		<!-- 등록버튼 종료 -->
+		<h3 class="h3">QUESTION 댓글</h3>
+		<p>
 			<!-- 테이블 시작 -->
 			<c:choose>
-			<c:when test="${fn:length(questionToReply)>0}">
-			<c:forEach items="${questionToReply}" var="row">
-				<div id="boardcss_list_table">
-					<div class="listReply">
-						<div class="replyContent">
-							<span class="replyId">${row.memberId}</span> 
-							<span class="replyDate" style="margin-left:10px;"><fmt:formatDate pattern="yyyy/MM/dd" value="${row.questReplyDate }" /></span> <br /> 
-							<span class="replyTxt"> ${row.questReplyContent } </span>
-						
-							<c:choose>
-								<c:when test="${user.memId == row.memberId }">
-									<a href="deleteqtr?questNo=${row.questNo }" style="float:right; margin-right:20px;">삭제</a>
-								</c:when>
-								<c:otherwise>
-									로그인 후 이용이 가능 합니다.
-								</c:otherwise>
-							</c:choose>
+				<c:when test="${fn:length(questionToReply)>0}">
+					<c:forEach items="${questionToReply}" var="row">
+						<div id="boardcss_list_table">
+							<div class="listReply">
+								<div class="replyContent">
+									<span class="replyId">${row.memberId}</span>
+									<span class="replyDate" style="margin-left: 10px;">
+										<fmt:formatDate pattern="yyyy/MM/dd" value="${row.questReplyDate }" /></span> <br />
+									<span class="replyTxt"> ${row.questReplyContent } </span>
+									<c:choose>
+										<c:when test="${user.memId == row.memberId }">
+											<a href="deleteqtr?questNo=${row.questNo }" style="float: right; margin-right: 20px;">삭제</a>
+										</c:when>
+										<c:otherwise>
+											로그인 후 이용이 가능 합니다.
+										</c:otherwise>
+									</c:choose>
+								</div>
+							</div>
 						</div>
+					</c:forEach>
+				</c:when>
+				<c:otherwise>
+					조회된 결과가 없습니다.
+				</c:otherwise>
+			</c:choose>
+			<div id="boardcss_list_table">
+				<div class="listReply">
+					<div class="replyContent1">
+						<form method="post" action="insertqtr">
+							<input type="hidden" name="questNo" value="${questNo }" />
+							<textarea name="questReplyContent" tabindex="1"
+								class="inputReply" placeholder="여러분의 소중한 댓글을 입력해주세요."></textarea>
+							<!-- <input type="text" id="questReplyContent" name="questReplyContent"/> -->
+							<input type="submit" value="댓글 등록" style="height:100px; width:110px;"/>
+						</form>
 					</div>
 				</div>
-			</c:forEach>
-		</c:when>
-		<c:otherwise>
-			<tr>
-				<td colspan="3">조회된 결과가 없습니다.</td>
-			</tr>
-		</c:otherwise>
-	</c:choose>
-	<form method="post" action="insertqtr">
-		<input type="hidden" name="questNo" value="${questNo }"/>
-		<textarea name="questReplyContent" tabindex="1" class="inputReply" placeholder="여러분의 소중한 댓글을 입력해주세요."></textarea>
-		<!-- <input type="text" id="questReplyContent" name="questReplyContent"/> -->
-		<input type="submit" value="댓글 등록"/>
-		</form>
-	</div>
-
-			
-			<!-- 상세검색 테이블 종료 -->
+			</div>
 		</div>
-	</body>
+	</div>
+	<!-- 상세검색 테이블 종료 -->
+</body>
 </head>
 <body>
 

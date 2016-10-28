@@ -28,7 +28,8 @@ label {
 	/* border-top: 1px solid; */
 	/* border-bottom: 1px solid; */
 	line-height: 50;
-	width:1200px;
+	/* width:1200px; */
+	width:1300px;
 	valign: top;
 	align: left;
 }
@@ -105,15 +106,15 @@ background-image:url
 			</tr>
 			
 			<tr class="view" style="border-bottom: 1px solid;">
-			<td colspan="2" align="left" valign="top" height="512px">
-					<div class="detail"></div>
+				<td colspan="2" align="left" valign="top" height="512px" width="100%">
+					<!-- <div class="detail"></div> -->
 					${reportContent} 
 				</td>
 				<td></td>
 			</tr>
 		</table>
 	</div>
-	
+
 	<div class="button">
 		<div class="btnArea M b_left">
 				<c:if test="${user.memId=='admin'}">

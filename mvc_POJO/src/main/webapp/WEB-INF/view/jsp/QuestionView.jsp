@@ -28,7 +28,7 @@ label {
 /* 	border-top: 1px solid;
 	border-bottom: 1px solid; */
 	line-height: 50;
-	width:2048px;
+	width:1300px;
 	valign: top;
 	align: left;
 }
