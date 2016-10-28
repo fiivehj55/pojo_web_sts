@@ -76,8 +76,9 @@
 
 </div>
 
+<div>
 <div id = "map">
-
+</div>
 </div>
 
 <div class="houseBook">
@@ -161,6 +162,7 @@ var centerLocation;
 				}
 			});
 	};  
+	 var marker;
 function initMap() { 
 	getlocationMain("${address}");
 
@@ -172,25 +174,22 @@ function initMap() {
 	  });
 	  var infowindow = new google.maps.InfoWindow();
 	  
-	  var marker, k;
-	     	 marker = new google.maps.Marker({
+	      marker = new google.maps.Marker({
 	        position: new google.maps.LatLng(centerLocation.lat, centerLocation.lng),
 	        map: map
 	     	});
 
 	 		 var infowindow = new google.maps.InfoWindow();
 	  
-	  		  google.maps.event.addListener(marker, 'click', (function(marker, i) {
-	  			
-	        return function() {				        	
-	        	   var centerMaker = 			        		  
+	 		marker.addListener('click', function() {
+	  	   	   var centerMaker = 			        		  
 	        		  '<div  style="width:400px; heigth:150px;" id="content">'+
 				      '<div id="siteNotice">'+
 				      '</div>'+
 				      '<div id="left-box">'+
 				      '<h1 id="firstHeading" class="firstHeading">'+${house.houseNo}+'</h1>'+
 				      '<div id="bodyContent">'+
-				      '<span style="font-size:25px">'+${house.houseName}+'</span>'+
+				      '<span style="font-size:25px">${house.houseName}</span>'+
 				      '<p><b>주소:&nbsp</b>${house.houseAddress}</p>'+
 				      '<p><b>가격:&nbsp</b>${house.housePrice}원</p>'+
 				     	'</div>'+
@@ -199,12 +198,9 @@ function initMap() {
 				      '<div id="right-box">'+
 				      '<img src="<%=request.getContextPath()%>/upload/${house.memberId}/${house.houseNo}/main/${house.houseImg}" width="200px" height="280px"></div>';
 				      
-	        		  infowindow.setContent(centerMaker );
+	        		 infowindow.setContent(centerMaker);
 	         		 infowindow.open(map, marker);
-	       		 }
-	        
-	    	  })(marker, k)); 
-	    
+	 		});
 }; 
 </script>
 <script async defer
