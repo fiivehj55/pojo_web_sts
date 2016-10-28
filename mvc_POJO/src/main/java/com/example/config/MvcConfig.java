@@ -42,7 +42,7 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
 		registry.addResourceHandler("/slidepro/**").addResourceLocations("WEB-INF/view/sliderpro/");
 		registry.addResourceHandler("/daumeditor/**").addResourceLocations("WEB-INF/view/daumeditor/");
 		registry.addResourceHandler("/ProfileAction/**").addResourceLocations("WEB-INF/view/jsp/ProfileAction/");
-	
+		registry.addResourceHandler("/NaverEditor/**").addResourceLocations("WEB-INF/view/NaverEditor/");
 	}
 	
 }
