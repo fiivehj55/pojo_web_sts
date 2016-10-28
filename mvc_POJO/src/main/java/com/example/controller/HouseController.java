@@ -433,8 +433,12 @@ public class HouseController {
 	 * //view의 이름을 리턴. return "jsp/HouseView"; }
 	 */
 	
-	@RequestMapping(value = "/CustomerReservation")
-	public String CustomerReservation(Model model, HttpSession session) {
+	@RequestMapping(value = "/CustomerReservation",method=RequestMethod.GET)
+	public String CustomerReservation(Model model,
+			@RequestParam Integer No){
+		House house = hservice.selectByNoHouse(No);
+		model.addAttribute("address",house.getHouseAddress());
+		model.addAttribute("house",house);
 		return "jsp/CustomerReservation";
 	}
 }
