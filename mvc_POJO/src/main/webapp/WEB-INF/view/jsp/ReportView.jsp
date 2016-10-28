@@ -21,22 +21,15 @@ label {
 	margin: 200px auto;
 }
 
-#detail{
+.detail{
 	position: relative;
 	z-index: 2;
-<<<<<<< HEAD
-	border-top: 1px solid;
-	border-bottom: 1px solid;
-	line-height: 20;
-	width:1265px;
-=======
 	/* border-top: 1px solid; */
 	/* border-bottom: 1px solid; */
 	line-height: 50;
 	width:2048px;
 	valign: top;
 	align: left;
->>>>>>> branch 'master' of https://github.com/fiivehj55/pojo_web_sts.git
 }
 
 /* #trViewTd {

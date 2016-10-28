@@ -112,6 +112,13 @@ p, h1, form, button {
 	font-family: tahoma;
 }
 
+.agree textarea{
+	vertical-align: middle;
+	height:120px;
+	line-height:180%;
+}
+
+
 /* label {
 	width: 100px;
 	display: inline-block;
@@ -146,6 +153,10 @@ p, h1, form, button {
 .boardWrite th{
 	width:150px;
 	text-align:left;
+}
+
+.joinCancel{
+	margin:5px;
 }
 </style>
 </head>
@@ -378,6 +389,7 @@ p, h1, form, button {
 		<div class="agree">사랑방 손님 이용약관(필수)</div>
 	</div>
 	<p class = "check">
+	<div class = "agree">
 	<textarea rows="5" cols="100">
 제 1 조 (목적)
 이 약관은 사랑방손님 주식회사 ("회사" 또는 "사랑방손님")가 제공하는 사랑방손님 및 사랑방손님 관련 제반 서비스의 이용과 관련하여 회사와 회원과의 권리, 의무 및 책임사항, 기타 필요한 사항을 규정함을 목적으로 합니다.
@@ -724,9 +736,12 @@ p, h1, form, button {
 	<input name="agree_privacy_check[]"	id="agree_privacy_check0" type="checkbox"></input>
 	<label for ="agree_privacy_check0">동의함</label>
 	</p>
+</div>
 	
-	<input type="submit" value="가입" id="set"> 
-	<a href="index"><input type="button" value="취소"></a>	
+	<div class="joinCancel">
+	<a href="index" class="button button-style1">가입</a>
+	<a href="index" class="button button-style1">취소</a>
+	</div>	
 	<!-- <div class="btn">
 		<div class="btnArea">
 			<a class="black">회원가입</a>
@@ -791,7 +806,7 @@ p, h1, form, button {
 			</div>
 			</div>
 		</div> -->
-	
+	<p><p>
 	<jsp:include page="./Footer.jsp"></jsp:include>
 </body>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
