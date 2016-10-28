@@ -392,19 +392,20 @@ label {
 					<div id="three" style="display: none;">
 						<fieldset>
 							<legend>호스팅 3단계 </legend>
-							가능한 날짜
-							<p>
-								시작일 <input type="date" onchange="checkDate(this)"> ~ 종료일
-								<input type="date">
+							가능한 날짜 <span>(최대 3개 날짜 입력이 가능합니다.)</span>
+							<p >
+								시작일 <input type="date" onchange="checkDate(this)" name="possCheckIn"> ~ 종료일
+								<input type="date" onchange="lastDate(this)" name="possCheckOut"> <!-- <input type="button" onclick="nextDate(this)" value="+"> -->
 							</p>
-							<p>
+					<!-- 		<p style="display: none;">
 								시작일 <input type="date" onchange="checkDate(this)"> ~ 종료일
-								<input type="date">
+								<input type="date" onchange="lastDate(this)"><input type="button" onclick="nextDate(this)" value="+">
 							</p>
-							<p>
+							<p style="display: none;">
 								시작일 <input type="date" onchange="checkDate(this)"> ~ 종료일
-								<input type="date">
-							</p>
+								<input type="date" onchange="lastDate(this)">
+							</p> -->
+							
 							<a href="#" class="button button-style-1" id="backTwo">이전단계</a> <a
 								href="#" class="button button-style-1" id="nextFour">다음단계</a>
 						</fieldset>
@@ -442,14 +443,31 @@ label {
 	<script type="text/javascript">
 
 function checkDate(dateTag){
-	console.log(dateTag);
 	var dateVal =  new Date(dateTag.value);
-	console.log(dateVal);
 	var date = new Date();
-	if(dateVal < date)
+	if(dateVal < date){
 		alert("설정 불가능한 날짜입니다.");
+		dateTag.value = "";
+	}
 }
-
+function lastDate(dateTag){
+	var dateVal =  new Date(dateTag.value);
+	var firstDate = $(dateTag).prev();
+	var date = new Date($(firstDate).val());
+	if($(firstDate).val() == ""){
+		alert("시작일을 먼저 설정해주세요");
+		$(dateTag).val("");
+	}
+	if(dateVal < date){
+		alert("설정 불가능한 날짜입니다.");
+		dateTag.value = "";
+	}
+}
+/* function nextDate(btn){
+	var p =  $(btn).parent();
+	var p2 = $(p).next();
+	$(p2).css("display","block");
+} */
 function goPopup(){
 	var pop = window.open("<%=request.getContextPath()%>/jusoPopup","pop", "width=570,height=420, scrollbars=yes");
 		}

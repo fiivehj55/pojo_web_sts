@@ -72,10 +72,10 @@ public class House implements Serializable {
 	private String houseDay;
 	
 	/** POSS_CHECK_IN */
-	private Date possCheckIn;
+	private String possCheckIn;
 	
 	/** POSS_CHECK_OUT */
-	private Date possCheckOut;
+	private String possCheckOut;
 	
 	/**
 	 * 생성자.
@@ -96,31 +96,20 @@ public class House implements Serializable {
 	
 	public House(Integer houseNo, String houseName, String houseAddress, Integer housePrice, Integer houseScore,
 			String houseInfo, String memberId, Integer detailId) {
-		super();
-		this.houseNo = houseNo;
-		this.houseName = houseName;
-		this.houseAddress = houseAddress;
-		this.housePrice = housePrice;
-		this.houseScore = houseScore;
-		this.houseInfo = houseInfo;
+
+		this(houseNo,houseName,houseAddress,housePrice,houseScore,houseInfo);
 		this.memberId = memberId;
 		this.detailId = detailId;
 	}
 	
-	public House(Integer houseNo, String houseName, String houseAddress, String houseAddressDetail, Integer housePrice, Integer houseScore,
-			String houseInfo, String memberId, Integer detailId, String houseRoom, String houseBath,
-			String houseHosting, String houseTv, String houseAircon, String houseWifi, String houseElebe,
-			String houseWashing, String houseImg, String houseDay, Date possCheckIn, Date possCheckOut) {
-		super();
-		this.houseNo = houseNo;
-		this.houseName = houseName;
-		this.houseAddress = houseAddress;
-		this.houseAddressDetail = houseAddressDetail;
-		this.housePrice = housePrice;
-		this.houseScore = houseScore;
-		this.houseInfo = houseInfo;
-		this.memberId = memberId;
-		this.detailId = detailId;
+	
+
+	public House(Integer houseNo, String houseName, String houseAddress, Integer housePrice, Integer houseScore,
+			String houseInfo, String memberId, Integer detailId,
+			String houseRoom, String houseBath, String houseHosting, String houseTv, String houseAircon,
+			String houseWifi, String houseElebe, String houseWashing, String houseImg, String houseDay,
+			String possCheckIn, String possCheckOut) {
+		this(houseNo,houseName,houseAddress,housePrice,houseScore,houseInfo,memberId,detailId);
 		this.houseRoom = houseRoom;
 		this.houseBath = houseBath;
 		this.houseHosting = houseHosting;
@@ -375,19 +364,21 @@ public class House implements Serializable {
 		this.houseAddressDetail = houseAddressDetail;
 	}
 
-	public Date getPossCheckIn() {
+
+
+	public String getPossCheckIn() {
 		return possCheckIn;
 	}
 
-	public void setPossCheckIn(Date possCheckIn) {
+	public void setPossCheckIn(String possCheckIn) {
 		this.possCheckIn = possCheckIn;
 	}
 
-	public Date getPossCheckOut() {
+	public String getPossCheckOut() {
 		return possCheckOut;
 	}
 
-	public void setPossCheckOut(Date possCheckOut) {
+	public void setPossCheckOut(String possCheckOut) {
 		this.possCheckOut = possCheckOut;
 	}
 

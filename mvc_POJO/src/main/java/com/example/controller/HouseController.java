@@ -2,6 +2,7 @@ package com.example.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -111,6 +112,8 @@ public class HouseController {
 			@RequestParam List<MultipartFile> photo,
 			@RequestParam String postcodify_address, @RequestParam String day,
 			@RequestParam String postcodify_details,
+			@RequestParam String possCheckIn,
+			@RequestParam String possCheckOut,
 			@RequestParam Integer price, HttpSession session) throws IOException {
 		int result = 0;
 		Member user = (Member) session.getAttribute("user");
@@ -141,6 +144,8 @@ public class HouseController {
 		house.setHouseWashing(washing);
 		house.setHouseImg(mainPhoto.getOriginalFilename());
 		house.setHouseDay(day);
+		house.setPossCheckIn(possCheckIn);
+		house.setPossCheckOut(possCheckOut);
 		/*session.setAttribute("house", house);*/
 		result = hservice.insertHouse(house);
 		System.out.println("방금 등록된 하우스번호 : "+house.getHouseNo());
@@ -187,7 +192,7 @@ public class HouseController {
 		if (result != 1) {
 			return "jsp/HouseJoin";
 		} else {
-			return "redirect:/search?page=1";
+			return "index2";
 		}
 	}
 

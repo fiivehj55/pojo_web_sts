@@ -2,6 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="sform" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +28,7 @@ label {
 	/* border-top: 1px solid; */
 	/* border-bottom: 1px solid; */
 	line-height: 50;
-	width:2048px;
+	width:1200px;
 	valign: top;
 	align: left;
 }
@@ -75,18 +76,31 @@ background-image:url
 				<th scope="row">제목</th>
 				<td class="title">${reportSubject }</td>
 			</tr>
-			<hr>
 
 			<tr>
 				<th scope="row">구분</th>
 				<td class="category">${reportCategory }</td>
 			</tr>
+			
+			<tr>
+				<th scope="row">작성자</th>
+				<td class="category">${memberId }</td>
+			</tr>
 
-			<tr style="border-bottom: 1px solid;">
+			<tr>
 				<th scope="row">글번호</th>
-				<hr>
-				<td>${reportNo} <span class="date">작성일 : 2016-10-23</span> 
-				<span class="hit">조회수 : 1000</span>
+				<td>${reportNo} 
+				<!-- <span class="date">작성일 : 2016-10-23</span> 
+				<span class="hit">조회수 : 1000</span> -->
+				</td>
+			</tr>
+			
+			<tr style="border-bottom: 1px solid;">
+				<th scope="row">작성일</th>
+				<td>
+					<%-- <fmt:formatDate pattern="yyyy/MM/dd" value="${reportDate }" /> --%>
+					<span class="date">${reportDate }</span> 
+					<!-- <span class="hit">조회수 : 1000</span> -->
 				</td>
 			</tr>
 			
@@ -111,7 +125,7 @@ background-image:url
 		</div>
 	</div>
 	<p>
-	<%-- <jsp:include page="./ReportToReply.jsp"></jsp:include> --%>
+	<jsp:include page="./ReportToReply.jsp"></jsp:include>
 	<jsp:include page="./ReportSubList.jsp"></jsp:include>
 	<jsp:include page="./Footer.jsp"></jsp:include>
 </body>

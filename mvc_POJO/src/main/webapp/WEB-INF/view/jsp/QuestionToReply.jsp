@@ -60,14 +60,14 @@
 			<p>
 			<!-- 테이블 시작 -->
 			<c:choose>
-			<c:when test="${fn:length(rtr)>0}">
-			<c:forEach items="${rtr}" var="row">
+			<c:when test="${fn:length(questionToReply)>0}">
+			<c:forEach items="${questionToReply}" var="row">
 				<div id="boardcss_list_table">
 					<div class="listReply">
 						<div class="replyContent">
 							<span class="replyId">${row.memberId}</span> 
-							<span class="replyDate"><fmt:formatDate pattern="yyyy/MM/dd" value="${row.reportReplyDate }" /></span> <br /> 
-							<span class="replyTxt"> ${row.reportReplyContent } </span>
+							<span class="replyDate"><fmt:formatDate pattern="yyyy/MM/dd" value="${row.questReplyDate }" /></span> <br /> 
+							<span class="replyTxt"> ${row.questReplyContent } </span>
 						</div>
 					</div>
 					<textarea name="comment" tabindex="1" class="inputReply" placeholder="여러분의 소중한 댓글을 입력해주세요.">여러분의 소중한 댓글을 입력해주세요.</textarea>
@@ -79,7 +79,7 @@
 				<td><fmt:formatDate pattern="yyyy/MM/dd" value="${row.replyDate }" /></td> --%>
 				<c:choose>
 					<c:when test="${user.memId == row.memberId }">
-						<a href="deleteRtr?reportReplyNo=${row.reportReplyNo }"><input type="button" value="삭제" /></a>
+						<a href="deleteqtr?questNo=${row.questNo }"><input type="button" value="삭제" /></a>
 					</c:when>
 					<c:otherwise>
 						<td></td>
@@ -139,9 +139,9 @@
 						</c:choose>
 					</tbody>
 				</table> --%>
-				<form method="post" action="insertrtr">
-					<input type="hidden" name="reportNo" value="${reportNo }"/>
-					<input type="text" id="reportReplyContent" name="reportReplyContent"/>
+				<form method="post" action="insertqtr">
+					<input type="hidden" name="questNo" value="${questNo }"/>
+					<input type="text" id="questReplyContent" name="questReplyContent"/>
 					<input type="submit" value="댓글 등록"/>
 				</form>
 			</div>
