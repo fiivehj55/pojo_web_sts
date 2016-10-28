@@ -6,7 +6,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <style>
-
+.font{
+	font-size:20px;
+	font-weight:bold;
+}
 p, h1, form, button{border:0; margin:0; padding:0;}
 .spacer{clear:both; height:1px;}
 
@@ -58,19 +61,18 @@ float:left;
 font-size:12px;
 padding:4px 2px;
 border:solid 1px #bbb;
-width:200px;
+/* width:200px; */
 margin:2px 0 20px 10px;
 }
 #stylized button{
 clear:both;
-margin-left:150px;
+margin-left:5px;
 width:125px;
-height:31px;
+ height:31px; 
 text-align:center;
-line-height:31px;
-background-color:#000;
+background-color:#80ba8e;
 color:#FFFFFF;
-font-size:11px;
+font-size:13px;
 font-weight:bold;
 font-family:tahoma;
 }
@@ -94,16 +96,15 @@ font-family:tahoma;
 <jsp:include page="./Header.jsp"></jsp:include>
 <form method="post" action="bbsInsert">
 	<div id="tableHeader">
-	<span id="font"></span>
-	<!-- <img src='css/images/header.jpg' width="100%" height="250"/> --></div>
+<img src='css/images/t1.jpg' width="100%" height="5%"/> </div>
 	<div class="center">
 		<div id="stylized" class="myform">
 			<div class="center2">
-				<label for="title">제목</label>
-					<input type="text" id="title" name="title" size="50"/>
-					<input type="button" class="button button-style1" value="글 등록" onclick="submitContents(this)"/>
-					<a href="bbs?page=${page }"><input type="button" class="button button-style1"value="목록"/></a>
-				<textarea name="content" id="ir1" rows="10" cols="100" style="width:1200px; height: 412px; display: none;" 
+				<label for="title">제목:</label>
+					<input type="text" id="title" name="title" size="100"/>
+					<button type="button" class="button button-style1" onclick="submitContents(this)">글등록</button>
+					<a href="bbs?page=${page }"><button type="button" class="button button-style1">목록</button></a>
+				<textarea name="content" id="ir1" rows="10" cols="100" style="width:70%; height: 412px; display: none;" 
 							placeholder="에디터에 기본으로 삽입할 글(수정 모드)이 없다면 이 value 값을 지정하지 않으시면 됩니다.">
 				</textarea>
 			</div>
