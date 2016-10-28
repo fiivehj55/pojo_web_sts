@@ -93,13 +93,14 @@ public class QuestiontController {
 		Question question = qservice.selectByNo(questNo);
 		Question questionPrevious = qservice.selectByNo(questNo + 1);
 		Question questionNext = qservice.selectByNo(questNo - 1);
-
+		List<QuestionToReply> questionToReply = qtservice.selectByQtreportNo(questNo);
 		// 문의 게시판 댓글
 		// List<ReportToReply> reportToReply = qservice.selectB
 		model.addAttribute("QuestTitle", question.getQuestTitle());
 		model.addAttribute("MemberId", question.getMemberId());
 		model.addAttribute("QuestDate", question.getQuestDate());
 		model.addAttribute("QuestContent", question.getQuestContent());
+		model.addAttribute("questionToReply", questionToReply);
 		model.addAttribute("questNo", questNo);
 
 		model.addAttribute("questionPrevious", questionPrevious);

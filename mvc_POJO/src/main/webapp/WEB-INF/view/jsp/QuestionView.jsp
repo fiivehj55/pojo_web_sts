@@ -112,7 +112,7 @@ background-image:url
 		</div>
 	</div>
 	<p>
-	<%-- <jsp:include page="./QuestionToReply.jsp"></jsp:include> --%>
+	<jsp:include page="./QuestionToReply.jsp"></jsp:include>
 	<jsp:include page="./QuestSubList.jsp"></jsp:include>
 	<jsp:include page="./Footer.jsp"></jsp:include>
 
