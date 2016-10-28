@@ -89,7 +89,6 @@ background-image:url
 
 			<tr>
 				<th scope="row">글번호</th>
-				<hr>
 				<td>${reportNo} 
 				<!-- <span class="date">작성일 : 2016-10-23</span> 
 				<span class="hit">조회수 : 1000</span> -->
@@ -99,8 +98,8 @@ background-image:url
 			<tr style="border-bottom: 1px solid;">
 				<th scope="row">작성일</th>
 				<td>
-					<fmt:formatDate pattern="yyyy/MM/dd" value="${reportDate }" />
-					<%-- <span class="date">${reportDate }</span> --%> 
+					<%-- <fmt:formatDate pattern="yyyy/MM/dd" value="${reportDate }" /> --%>
+					<span class="date">${reportDate }</span> 
 					<!-- <span class="hit">조회수 : 1000</span> -->
 				</td>
 			</tr>
