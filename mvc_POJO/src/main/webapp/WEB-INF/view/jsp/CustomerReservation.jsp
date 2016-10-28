@@ -72,7 +72,7 @@
 </div>
 
 <div class="houseBook">
-	<label class="book
+	<label class="book"></label>
 </div>
 <%-- <body class="">
 	<div class="titleArea">
