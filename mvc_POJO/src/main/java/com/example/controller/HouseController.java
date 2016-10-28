@@ -192,7 +192,7 @@ public class HouseController {
 		if (result != 1) {
 			return "jsp/HouseJoin";
 		} else {
-			return "redirect:/search?page=1";
+			return "index2";
 		}
 	}
 
