@@ -64,6 +64,8 @@ public class ReportController {
 		model.addAttribute("reportCategory", report.getReportCategory());
 		model.addAttribute("reportSubject", report.getReportSubject());
 		model.addAttribute("reportContent", report.getReportContent());
+		model.addAttribute("memberId", report.getMemberId());
+		model.addAttribute("reportDate", report.getRegitDate());
 		model.addAttribute("rtr", reportToReply);
 		model.addAttribute("reportNo", reportNo);
 		model.addAttribute("reportPrevious", reportPrevious);
@@ -129,14 +131,16 @@ public class ReportController {
 
 	// 신고게시판 댓글 지우기
 	@RequestMapping(value = "/deleteRtr", method = RequestMethod.GET)
-	public String deleteRtr(Model model, @RequestParam Integer reportReplyNo, HttpSession session) {
+	public String deleteRtr(Model model, 
+			@RequestParam Integer reportReplyNo,
+			HttpSession session) {
 		Member user = (Member) session.getAttribute("user");
 		int result = rtservice.deleteRtr(reportReplyNo);
 
 		if (result == 1) {
-			return "redirect:/report";
+			return "redirect:/report?page=1";
 		} else {
-			return "redirect:/report";
+			return "redirect:/report?page=1";
 		}
 	}
 
