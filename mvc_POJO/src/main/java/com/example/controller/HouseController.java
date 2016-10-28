@@ -427,4 +427,9 @@ public class HouseController {
 	 * null){ model.addAttribute("house", house); return "jsp/HousePage"; }
 	 * //view의 이름을 리턴. return "jsp/HouseView"; }
 	 */
+	
+	@RequestMapping(value = "/CustomerReservation")
+	public String CustomerReservation(Model model, HttpSession session) {
+		return "jsp/CustomerReservation";
+	}
 }
