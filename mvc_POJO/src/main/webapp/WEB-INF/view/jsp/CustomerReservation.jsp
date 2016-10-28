@@ -10,20 +10,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 
-<%-- <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<meta name="description" content="" />
-<meta name="keywords" content="" />
-<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="js/skel.min.js"></script>
-<script src="js/skel-panels.min.js"></script>
-<script src="js/init.js"></script>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/skel-noscript.css" />
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css" />
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style-desktop.css" /> --%>
-
 <style>
-label {
+/* label {
 	width: 100px;
 	display: inline-block;
 }
@@ -39,16 +27,61 @@ label {
 	width: 50%;
 	height: 100%;
 }
+ */
+
+.h1{
+	font-size:28pt;
+	font-weight:bold;
+}
+
+.h3{
+	color: #4C4C4C;
+	font-weight: bold;
+	font-size: 18pt;
+}
 </style>
 
 </head>
-<body class="">
+<body class="header">
+	<jsp:include page="./Header.jsp"></jsp:include>
+	<!-- 맨위 -->
+<div class="houseinfo">
+<!-- 하우스이름 -->
+<h1 class ="h1">hong의 공주빌라</h1>
+<p> <br><br>
+
+<!-- 주소 -->
+주소: 경기도 성남시 분당구(양팀장이 db에서 따와줘~) 
+
+<p>
+<!-- 하우스시설정보 -->
+<h3 class = "h3">상세설명</h3>
+<h5 class ="h5">
+	<img src="css/images/icon1.png" width="50" height="50">
+	"방의 개수: 1개"
+	
+	<img src="css/images/icon2.JPG" width="50" height="60">
+	"화장실 개수: 2개"
+	
+	<img src="css/images/icon3.JPG" width="80" height="50">
+	"예약 가능 인원: 3개"
+	
+	<img src="css/images/icon4.JPG" width="50" height="50">
+	"사용가능한 편의시설: 에어컨, WI-FI, 엘리베이터, 세탁기"
+</h5>
+</div>
+
+<div class="houseBook">
+	<label class="book
+</div>
+<%-- <body class="">
 	<div class="titleArea">
 		<h2>고객 화면에서 예약 확인하기</h2>
 	</div>
 	<hr class="layout"></hr>
 	<div class="smallArea">
 		<h3>고객 XXX님의 하우스 예약 현황</h3>
+	
 	</div>
 
 	<hr class="layout"></hr>
@@ -85,11 +118,9 @@ label {
 		</div>
 	</div>
 </head>
+
 <body>
 
-</body>
-
-
-
-
+</body> --%>
+<jsp:include page="./Footer.jsp"></jsp:include>
 </html>
