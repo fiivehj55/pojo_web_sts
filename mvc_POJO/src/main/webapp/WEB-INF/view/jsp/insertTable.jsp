@@ -83,8 +83,7 @@ font-family:tahoma;
 
 }
 .center2{
-	float:center;
-
+	margin-left: 11%;
 }
 </style>
 <script type="text/javascript"
@@ -97,24 +96,21 @@ font-family:tahoma;
 	<div id="tableHeader">
 	<span id="font"></span>
 	<!-- <img src='css/images/header.jpg' width="100%" height="250"/> --></div>
-			<div class="center">
+	<div class="center">
+		<div id="stylized" class="myform">
 			<div class="center2">
-			<div id="stylized" class="myform">
-			
 				<label for="title">제목</label>
-				<input type="text" id="title" name="title" size="50"/>
+					<input type="text" id="title" name="title" size="50"/>
 					<input type="button" class="button button-style1" value="글 등록" onclick="submitContents(this)"/>
-				<a href="bbs?page=${page }"><input type="button" class="button button-style1"value="목록"/></a>
-	<textarea name="content" id="ir1" rows="10" cols="100"
-		style="width:900px; height: 412px; display: none;"	>
-에디터에 기본으로 삽입할 글(수정 모드)이 없다면 이 value 값을 지정하지 않으시면 됩니다.</textarea>
-</div>
-
+					<a href="bbs?page=${page }"><input type="button" class="button button-style1"value="목록"/></a>
+				<textarea name="content" id="ir1" rows="10" cols="100" style="width:1200px; height: 412px; display: none;" 
+							placeholder="에디터에 기본으로 삽입할 글(수정 모드)이 없다면 이 value 값을 지정하지 않으시면 됩니다.">
+				</textarea>
 			</div>
-				</form>
-				
-
-	<jsp:include page="./Footer.jsp"></jsp:include>
+		</div>
+	</div>
+</form>
+<jsp:include page="./Footer.jsp"></jsp:include>
 	
 </body>
 <script type="text/javascript">
