@@ -380,6 +380,15 @@ public class MemberController {
    @RequestMapping(value = "/profile",method=RequestMethod.GET)
    public String profile(Model model,@RequestParam String memberName){
 		model.addAttribute("memberName", memberName);
+		Member userInfo = mservice.Search(memberName);
+		File userImg = new File(uploadDir+memberName+ "/intro");
+		File[] imgs = userImg.listFiles();
+		if(imgs != null){
+		String imgName = imgs[0].getName();
+		model.addAttribute("memImg", imgName);
+		}
+		model.addAttribute("userInfo", userInfo);
+		
       return "jsp/profile";
    }
    

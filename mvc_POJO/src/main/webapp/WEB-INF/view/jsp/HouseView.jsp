@@ -329,7 +329,10 @@
 									</c:if>
 							</c:if>
 							<p><a href="searchbar?key=${key}&page=${page}" class="button button-style1">목록보기</a>
+							
+									<c:if test="${user. memId != houseUser}">
 							<p><a href="chatstart?guest=${memberName}" class="button button-style1">메세지보내기</a>
+							</p></c:if>
 						</div>
 
 						<div id='center-box'>
