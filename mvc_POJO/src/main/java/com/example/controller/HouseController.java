@@ -454,19 +454,19 @@ public class HouseController {
 		String houseWifi = house.getHouseWifi();
 		String houseElebe = house.getHouseElebe();
 		String houseWashing = house.getHouseWashing();
-		if (houseTv != null) {
+		if (!houseTv.equals("null") ) {
 			model.addAttribute("houseTv", "TV");
 		}
-		if (houseAircon != null) {
+		if ( !houseAircon.equals("null")) {
 			model.addAttribute("houseAircon", "에어컨");
 		}
-		if (houseWifi != null) {
+		if ( !houseWifi.equals("null")) {
 			model.addAttribute("houseWifi", "WI-FI");
 		}
-		if (houseElebe != null) {
+		if ( !houseElebe.equals("null")) {
 			model.addAttribute("houseElebe", "엘리베이터");
 		}
-		if (houseWashing != null) {
+		if ( !houseWashing.equals("null")) {
 			model.addAttribute("houseWashing", "세탁기");
 		}
 		return "jsp/CustomerReservation";
