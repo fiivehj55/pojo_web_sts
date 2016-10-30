@@ -377,7 +377,7 @@ label {
 								주소</label> <input type="text" id="xx" name="postcodify_address" value=""
 								size="50" /><br /> <label></label> <input type="text" id="yy"
 								name="postcodify_details" value="" size="50" /><br /> <label>메인
-								사진</label> <input type="file" name="mainPhoto" /> <br /> <label>사진</label>
+								사진</label> <input type="file" name="mainPhoto" /> <br /> <label>사진 최대 10장 가능합니다.</label>
 							<input type="file" name="photo" multiple="multiple" /> <br /> <label>숙소
 								안내말</label>
 							<textarea class="textclass" name="infor"></textarea>
@@ -471,8 +471,8 @@ function lastDate(dateTag){
 function goPopup(){
 	var pop = window.open("<%=request.getContextPath()%>/jusoPopup","pop", "width=570,height=420, scrollbars=yes");
 		}
-		function jusoCallBack(roadAddrPart1, addrDetail) {
-			$("#xx").val(roadAddrPart1);
+		function jusoCallBack(addrDetail,jibunAddr) {
+			$("#xx").val(jibunAddr);
 			$("#yy").val(addrDetail);
 		}
 		$(document).ready(function() {

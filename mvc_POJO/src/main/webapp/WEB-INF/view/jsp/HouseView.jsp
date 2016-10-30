@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="sform" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -108,15 +109,22 @@
 					<div class="divTableCell" >
 		<div id="example1" class="slider-pro">
 		<div class="sp-slides">
-			<div class="sp-slide">
+				
+					<c:set value="${0}" var="num"></c:set>
+				<c:choose>
+					<c:when test="${fn:length(imgList) > 0}">
+						<c:forEach items="${imgList }" var="row">
+						
+					<c:set value="${num+1}" var="num"></c:set>
+							<div class="sp-slide">
 				<img class="sp-image" src="<%=request.getContextPath() %>/slidepro/src/css/images/aaa.jpg"
-					data-src="<%=request.getContextPath() %>/slidepro/src/css/images/aaa.jpg"
-					data-retina="<%=request.getContextPath() %>/slidepro/src/css/images/aaa.jpg"/>
+					data-src="<%=request.getContextPath() %>/upload/${memberName}/${ houseNo}/other/${row}"
+					data-retina="<%=request.getContextPath() %>/upload/src/css/images/aaa.jpg"/>
 				
 				<p class="sp-layer sp-white sp-padding"
 					data-horizontal="50" data-vertical="50"
 					data-show-transition="left" data-hide-transition="up" data-show-delay="400" data-hide-delay="200">
-					공주빌라내부사진1
+					공주빌라내부사진${num}
 				</p>
 
 				<p class="sp-layer sp-black sp-padding hide-small-screen"
@@ -131,7 +139,37 @@
 					안락합니다.
 				</p>
 			</div>
+						</c:forEach>
+					</c:when>
+					<c:otherwise>
+							조회된 사진 없습니다.
+					</c:otherwise>
+				</c:choose>
+			
+			<%-- <div class="sp-slide">
+				<img class="sp-image" src="<%=request.getContextPath() %>/slidepro/src/css/images/aaa.jpg"
+					data-src="<%=request.getContextPath() %>/slidepro/src/css/images/aaa.jpg"
+					data-retina="<%=request.getContextPath() %>/slidepro/src/css/images/aaa.jpg"/>
+				
+				<p class="sp-layer sp-white sp-padding"
+					data-horizontal="50" data-vertical="50"
+					data-show-transition="left" data-hide-transition="up" data-show-delay="400" data-hide-delay="200">
+					공주빌라내부사진1
+				</p> 
 
+				<p class="sp-layer sp-black sp-padding hide-small-screen"
+					data-horizontal="180" data-vertical="50"
+					data-show-transition="left" data-hide-transition="up" data-show-delay="600" data-hide-delay="100">
+					깔끔합니다
+				</p>
+
+				<p class="sp-layer sp-white sp-padding hide-medium-screen"
+					data-horizontal="315" data-vertical="50"
+					data-show-transition="left" data-hide-transition="up" data-show-delay="800">
+					안락합니다.
+				</p> 
+			</div> --%>
+<%-- 
 	        <div class="sp-slide">
 	        	<img class="sp-image" src="<%=request.getContextPath() %>/slidepro/src/css/images/aaa.jpg"
 	        		data-src="<%=request.getContextPath() %>/slidepro/src/css/images/aaa4.jpg"
@@ -249,11 +287,23 @@
 				<img class="sp-image" src="<%=request.getContextPath()%>/slidepro/src/css/images/blank.gif"
 					data-src="<%=request.getContextPath() %>/slidepro/image/image10_medium.jpg"
 					data-retina="<%=request.getContextPath() %>/slidepro/image/image10_large.jpg"/>
-			</div>
+			</div> --%>
 		</div>
 
 		<div class="sp-thumbnails">
+		<c:choose>
+					<c:when test="${fn:length(imgList) > 0}">
+						<c:forEach items="${imgList }" var="row">
+						
 			<div class="sp-thumbnail">
+				<div class="sp-thumbnail-title">공주빌라 사진1</div>
+				<div class="sp-thumbnail-description">반갑습니다</div>
+			</div>
+			
+				</c:forEach>
+				</c:when>
+				</c:choose>
+		<!-- 	<div class="sp-thumbnail">
 				<div class="sp-thumbnail-title">공주빌라 사진1</div>
 				<div class="sp-thumbnail-description">반갑습니다</div>
 			</div>
@@ -301,7 +351,7 @@
 			<div class="sp-thumbnail">
 				<div class="sp-thumbnail-title">Laudantium</div>
 				<div class="sp-thumbnail-description">Totam rem aperiam, eaque ipsa quae ab illo</div>
-			</div>
+			</div> -->
 		</div>
     </div>				
 					
@@ -321,18 +371,21 @@
 
 						<div id='right-box'>
 							<c:if test="${user!=null}">
-								<a href="#" class="button button-style1">예약하기</a>
+											<c:if test="${user. memId != houseUser}">
+								<a href="CustomerReservation?No=${houseNo }" class="button button-style1">예약하기</a>
+										</c:if>
 								<p>
 									<c:if test="${user. memId == houseUser}">
 										<p><a href="updateHouse?houseNo=${houseNo}" class="button button-style1"> 수정하기</a>
 										<p><a href="deleteHouse?houseNo=${houseNo}" class="button button-style1"> 삭제하기</a>
 									</c:if>
+									<c:if test="${user. memId != houseUser}">
+								<p>
+									<a href="chatstart?guest=${memberName}" class="button button-style1">메세지보내기</a>
+								</p>
+								</c:if>
 							</c:if>
 							<p><a href="searchbar?key=${key}&page=${page}" class="button button-style1">목록보기</a>
-							
-									<c:if test="${user. memId != houseUser}">
-							<p><a href="chatstart?guest=${memberName}" class="button button-style1">메세지보내기</a>
-							</p></c:if>
 						</div>
 
 						<div id='center-box'>
@@ -354,7 +407,7 @@
 						<img src="css/images/icon1.png" width="50" height="50" />방의 개수: ${houseRoom } 
 						<img src="css/images/icon2.JPG" width="50" height="60" />화장실 개수: ${houseBath } 
 						<img src="css/images/icon3.JPG" width="80" height="50" />예약 가능 인원: ${houseHosting }
-						<img src="css/images/icon4.JPG" width="50" height="50" />사용가능한 편의시설: ${houseAircon }, ${houseWifi },${houseElebe }, 	${houseWashing }
+						<img src="css/images/icon4.JPG" width="50" height="50" />사용가능한 편의시설: ${houseAircon }&nbsp; ${houseWifi } &nbsp;${houseElebe }&nbsp; ${houseWashing }
 					</h5>
 				</div>
 			</div>

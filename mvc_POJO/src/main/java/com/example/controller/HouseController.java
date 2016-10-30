@@ -2,6 +2,7 @@ package com.example.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -220,30 +221,38 @@ public class HouseController {
 			model.addAttribute("houseRoom", house.getHouseRoom());
 			model.addAttribute("houseBath", house.getHouseBath());
 			model.addAttribute("houseHosting", house.getHouseHosting());
+			//등록자 이미지 등록
 			File userImg = new File(uploadDir+house.getMemberId()+ "/intro");
 			File[] imgs = userImg.listFiles();
 			if(imgs != null){
 			String imgName = imgs[0].getName();
 			model.addAttribute("memImg", imgName);
 			}
-			/*
-			 * 등록자의 이미지 등록
-			String memImg = 
-			model.addAttribute("memImg", attributeValue)
-			*/
-			if (houseTv != null) {
+			//하우스 이미지 등록
+			File listImg = new File(uploadDir+house.getMemberId()+ "/"+house.getHouseNo()+"/other");
+			File[] listFile = listImg.listFiles();
+			List<String> imgList = new ArrayList<>();
+			
+			if(listFile!=null){
+				for(File file:listFile){
+					imgList.add(file.getName());
+				}
+			}
+			
+			model.addAttribute("imgList",imgList);
+			if (!houseTv.equals("null") ) {
 				model.addAttribute("houseTv", "TV");
 			}
-			if (houseAircon != null) {
+			if ( !houseAircon.equals("null")) {
 				model.addAttribute("houseAircon", "에어컨");
 			}
-			if (houseWifi != null) {
+			if ( !houseWifi.equals("null")) {
 				model.addAttribute("houseWifi", "WI-FI");
 			}
-			if (houseElebe != null) {
+			if ( !houseElebe.equals("null")) {
 				model.addAttribute("houseElebe", "엘리베이터");
 			}
-			if (houseWashing != null) {
+			if ( !houseWashing.equals("null")) {
 				model.addAttribute("houseWashing", "세탁기");
 			}
 			model.addAttribute("reply", reply);
@@ -439,6 +448,27 @@ public class HouseController {
 		House house = hservice.selectByNoHouse(No);
 		model.addAttribute("address",house.getHouseAddress());
 		model.addAttribute("house",house);
+
+		String houseTv = house.getHouseTv();
+		String houseAircon = house.getHouseAircon();
+		String houseWifi = house.getHouseWifi();
+		String houseElebe = house.getHouseElebe();
+		String houseWashing = house.getHouseWashing();
+		if (houseTv != null) {
+			model.addAttribute("houseTv", "TV");
+		}
+		if (houseAircon != null) {
+			model.addAttribute("houseAircon", "에어컨");
+		}
+		if (houseWifi != null) {
+			model.addAttribute("houseWifi", "WI-FI");
+		}
+		if (houseElebe != null) {
+			model.addAttribute("houseElebe", "엘리베이터");
+		}
+		if (houseWashing != null) {
+			model.addAttribute("houseWashing", "세탁기");
+		}
 		return "jsp/CustomerReservation";
 	}
 }
