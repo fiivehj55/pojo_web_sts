@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="css/style.css" />
 <link rel="stylesheet" href="css/style-desktop.css" />
 </head>
-<style type="text/css">
+<style>
 /* 라디오버튼 체크박스 css 시작 */
 /* body {
   text-align: center;
@@ -127,103 +127,60 @@
 	/* 	line-height:180%; */
 }
 
-.header2 {
-	position: relative;
-	color: rgba(128, 186, 142, 0.3);
-	background-attachment: fixed;
-	background-size: cover;
-	text-align: center;
-}
-
-#header:before {
-	content: '';
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(64, 64, 64, 0.125);
-}
-#view {
-	height: 100%;
-}
-#side{
-	height:100%;
-	width:33%;
-	float:left;
-	
-}
-
-.font{
-	font-weight: bold;
-	font-size: 20px;
-
-}
 
 </style>
-<body class="">
+<body class="homepage">
 	<jsp:include page="./Header.jsp"></jsp:include>
-	<div class="header2">
-	</div>
 	<!-- Main -->
-	<div id="view">
 	<div id="main">
-		<!-- <div id="content" class=""> -->
-		<div id="area" > 
+		<div id="content" class="auto_center">
+		<h1>하우스 정보</h1>
 		<sform:form method="post" action="updateHouse" modelAttribute="house" enctype="multipart/form-data">
-			<div id="side">
-				
+			<fieldset>
 				<sform:hidden path="houseNo"/>
-				<div class="font">하우스 정보 1단계</div>
-				<sform:label path="houseRoom">방의 개수 : </sform:label><span class="dropdown-el">
+				<legend>하우스 정보 1단계</legend>
+				<sform:label path="houseRoom">방의 개수 : </sform:label>
 				<sform:radiobuttons path="houseRoom" items="${rooms}" />
-				</span><br/>
+				<br/>
 				
-				<sform:label path="houseBath">욕실 개수 : </sform:label><span class="dropdown-el">
+				<sform:label path="houseBath">욕실 개수 : </sform:label>
 				<sform:radiobuttons path="houseBath" items="${baths}"/>
-				</span><br/>
+				<br/>
 				 
-				<sform:label path="houseHosting">숙박 인원 : </sform:label><span class="dropdown-el">
+				<sform:label path="houseHosting">숙박 인원 : </sform:label>
 				<sform:radiobuttons path="houseHosting" items="${hosting}"/>
-				</span><br/>
+				<br/>
 				
 				<label for="market">편의 시설 : </label>
-				<sform:checkbox path="houseTv" class="demo-1" label="TV" value="tv"/>
-				<sform:checkbox path="houseAircon" class="demo-1" label="에어컨" value="aircon"/>
-				<sform:checkbox path="houseWifi" class="demo-1" label="Wi-Fi" value="wifi"/> <br/>
-				<sform:checkbox path="houseElebe" class="demo-1" label="엘리베이터" value="elebe"/>
-				<sform:checkbox path="houseWashing" class="demo-1" label="세탁기" value="washing"/>
-			
-			
-			</div>
+				<sform:checkbox path="houseTv" label="TV" value="tv"/>
+				<sform:checkbox path="houseAircon" label="에어컨" value="aircon"/>
+				<sform:checkbox path="houseWifi" label="Wi-Fi" value="wifi"/> <br/>
+				<sform:checkbox path="houseElebe" label="엘리베이터" value="elebe"/>
+				<sform:checkbox path="houseWashing" label="세탁기" value="washing"/>
+			</fieldset>
 			<br/>
-			<div id="side" >
 			
-				
-				<div class="font">하우스 정보 2단계</div>
+			<fieldset>
+				<legend>하우스 정보 2단계</legend>
 				<sform:label path="houseName" class="inputlabel">숙소이름</sform:label><br/>
-				<sform:input type="text" path="houseName" size="50"/> <br/> 
+				<sform:input type="text" path="houseName"/> <br/> 
 				<a href="#" class="button button-style-1" id="postcodify_search_button">주소검색</a><br />
-				<sform:label path="houseAddress"   >주소</sform:label><br/>
-				<sform:input type="text" path="houseAddress" id="xx" size="50"/> <br/>
-				<sform:label path="houseAddressDetail"  >상세 주소</sform:label><br/>
-				<sform:input type="text" path="houseAddressDetail" id="yy"  size="50"/> <br/>
-				<label for="mainPhoto">메인 사진:</label> 
+				<sform:label path="houseAddress"  size="50" >주소</sform:label><br/>
+				<sform:input type="text" path="houseAddress" id="xx"/> <br/>
+				<sform:label path="houseAddressDetail"  size="50" >상세 주소</sform:label><br/>
+				<sform:input type="text" path="houseAddressDetail" id="yy"/> <br/>
+				<label for="mainPhoto">메인 사진</label> 
 				<input type="file" name="mainPhoto"/> 
 				<br />
-				<label for="photo">사진:</label> 
-				<label><input type="file" name="photo" multiple="multiple"/> </label>
+				<label for="photo">사진</label> 
+				<input type="file" name="photo" multiple="multiple"/> 
 				<br />
 				<sform:label path="houseInfo">숙소 안내말</sform:label> <br/>
-				<sform:textarea style="margin:0px;width:400px;height:265px;" path="houseInfo"></sform:textarea> <br/>
-			
-			
-			</div>
+				<sform:textarea rows="5" cols="20" path="houseInfo"></sform:textarea> <br/>
+			</fieldset>
 			<br/>
-			<div id="side">
-		
-				
-				<div class="font">하우스 정보 3단계</div>
+			<fieldset>
+				<legend>하우스 정보 3단계</legend>
 				
 				<img src="/img/mage_tp.jpg"/>
 				
@@ -232,18 +189,14 @@
 				
 				<sform:label path="housePrice">가격 : </sform:label>
 				<sform:input type="number" path="housePrice"/> <br/> 
-			
-			
-			</div>
-			<br/>
-			<input type="submit" class="button button-style-1" id="complete" name="complete" value="수정완료"/>
-			<a href="search?page=1"><input type="button" class="button button-style-1" value="나가기"/></a>
+			</fieldset>
+			<input type="submit" id="complete" name="complete" value="수정완료"/> <br/>
+			<a href="search?page=1"><input type="button" value="나가기"/></a>
 			<!-- <a href="search"><input type="button" value="다음 단계"/></a> -->
 		</sform:form>
 		</div>
 	</div>
-	</div>
-	<%--  <jsp:include page="./Footer.jsp"></jsp:include>  --%>
+	<jsp:include page="./Footer.jsp"></jsp:include>
 </body>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 <script>
@@ -255,22 +208,4 @@ function goPopup(){
 		$("#yy").val(addrDetail);
 	}
 </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
-<script type="text/javascript">
-$('.dropdown-el').click(function(e) {
-  e.preventDefault();
-  e.stopPropagation();
-  $(this).toggleClass('expanded');
-  $('#'+$(e.target).attr('for')).prop('checked',true);
-});
-$(document).click(function() {
-  $('.dropdown-el').removeClass('expanded');
-});
-
-$('.demo-1').toggleCheckbox(
-		[ '<i class="fa fa-circle-o fa-4x"></i>',
-				'<i class="fa fa-check-circle-o fa-4x"></i>' ]);
-</script>
-
-
 </html>
