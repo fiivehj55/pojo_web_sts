@@ -389,6 +389,8 @@ label {
 </head>
 <body class="">
 	<jsp:include page="./Header.jsp"></jsp:include>
+		<div id="tableHeader">
+<img src='css/images/t4.jpg' width="100%" height="1%"/> </div>
 	<div id="">
 		<div id="content" class="auto_center">
 			<div id="featured">
