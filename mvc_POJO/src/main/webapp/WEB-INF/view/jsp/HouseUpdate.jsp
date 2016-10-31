@@ -135,7 +135,7 @@
 	text-align: center;
 }
 
-#header:before {
+.header2:before {
 	content: '';
 	position: absolute;
 	left: 0;
@@ -144,20 +144,24 @@
 	height: 100%;
 	background: rgba(64, 64, 64, 0.125);
 }
+
 #view {
 	height: 100%;
-}
-#side{
-	height:100%;
-	width:33%;
-	float:left;
-	
 }
 
 .font{
 	font-weight: bold;
 	font-size: 20px;
+}
 
+#side{
+	height:100%;
+	float: left;
+	width: 33%;
+}
+
+#main{
+	position: relative;
 }
 
 </style>
@@ -169,10 +173,8 @@
 	<div id="view">
 	<div id="main">
 		<!-- <div id="content" class=""> -->
-		<div id="area" > 
 		<sform:form method="post" action="updateHouse" modelAttribute="house" enctype="multipart/form-data">
 			<div id="side">
-				
 				<sform:hidden path="houseNo"/>
 				<div class="font">하우스 정보 1단계</div>
 				<sform:label path="houseRoom">방의 개수 : </sform:label><span class="dropdown-el">
@@ -193,13 +195,9 @@
 				<sform:checkbox path="houseWifi" class="demo-1" label="Wi-Fi" value="wifi"/> <br/>
 				<sform:checkbox path="houseElebe" class="demo-1" label="엘리베이터" value="elebe"/>
 				<sform:checkbox path="houseWashing" class="demo-1" label="세탁기" value="washing"/>
-			
-			
 			</div>
-			<br/>
-			<div id="side" >
 			
-				
+			<div id="side" >
 				<div class="font">하우스 정보 2단계</div>
 				<sform:label path="houseName" class="inputlabel">숙소이름</sform:label><br/>
 				<sform:input type="text" path="houseName" size="50"/> <br/> 
@@ -216,15 +214,10 @@
 				<br />
 				<sform:label path="houseInfo">숙소 안내말</sform:label> <br/>
 				<sform:textarea style="margin:0px;width:400px;height:265px;" path="houseInfo"></sform:textarea> <br/>
-			
-			
 			</div>
-			<br/>
+			
 			<div id="side">
-		
-				
 				<div class="font">하우스 정보 3단계</div>
-				
 				<img src="/img/mage_tp.jpg"/>
 				
 				<sform:label path="houseDay"></sform:label>
@@ -232,18 +225,15 @@
 				
 				<sform:label path="housePrice">가격 : </sform:label>
 				<sform:input type="number" path="housePrice"/> <br/> 
-			
-			
 			</div>
-			<br/>
 			<input type="submit" class="button button-style-1" id="complete" name="complete" value="수정완료"/>
 			<a href="search?page=1"><input type="button" class="button button-style-1" value="나가기"/></a>
 			<!-- <a href="search"><input type="button" value="다음 단계"/></a> -->
 		</sform:form>
-		</div>
 	</div>
 	</div>
-	<%--  <jsp:include page="./Footer.jsp"></jsp:include>  --%>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<jsp:include page="./Footer.jsp"></jsp:include>	
 </body>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 <script>

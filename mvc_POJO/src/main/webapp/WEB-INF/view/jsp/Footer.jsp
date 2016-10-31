@@ -22,7 +22,7 @@
 	text-align: center;
 }
 
-#left-box {
+#left-box {	
 	float: left;
 }
 
@@ -52,7 +52,7 @@
 			<p>이메일:fivehj55@naver.com
 			</div>
 			<div id='center-box'>
-			COMPANY INFO
+				COMPANY INFO
 				<p>대표:양희준 홍석진 박준영 황민정
 				<p>
 			</div>
