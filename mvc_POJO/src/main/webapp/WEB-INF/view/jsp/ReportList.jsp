@@ -43,10 +43,13 @@ label {
 		<div id="content" class="">
 			<!-- 등록버튼 시작 -->
 			<div id="boardcss_list_add_button_table">
+			
+			<c:if test="${user != null }">
 				<div class="boardcss_list_add_button">
 					<a href="ReportInsert"><button class="add_button">등록</button></a>
 					<ul></ul>
 				</div>
+			</c:if>
 			</div>
 			<!-- 등록버튼 종료 -->
 			
@@ -94,7 +97,7 @@ label {
 				</table>
 			</div>
 
-			<div id="boardcss_list_search" style="display: block;">
+			<!-- <div id="boardcss_list_search" style="display: block;">
 				<ul>
 					<li>제목</li>
 					<li><input id="search" type="text" name="search_subject"
@@ -103,7 +106,7 @@ label {
 					<li class="detail_button"
 						onclick="document.getElementById('boardcss_list_search').style.display = 'none'; document.getElementById('detailSearch').style.display = 'block';">상세검색▼</li>
 				</ul>
-			</div>
+			</div> -->
 			<div>
 				<c:if test="${page > 5}">
 			<a href="report?page=${page-5}">

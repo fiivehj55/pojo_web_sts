@@ -25,11 +25,10 @@ label {
 .detail{
 	position: relative;
 	z-index: 2;
-	/* border-top: 1px solid; */
-	/* border-bottom: 1px solid; */
+/* 	border-top: 1px solid;
+	border-bottom: 1px solid; */
 	line-height: 50;
-	/* width:1200px; */
-	width:1300px;
+	width:1260px;
 	valign: top;
 	align: left;
 }
@@ -107,7 +106,7 @@ background-image:url
 			
 			<tr class="view" style="border-bottom: 1px solid;">
 				<td colspan="2" align="left" valign="top" height="512px" width="100%">
-					<!-- <div class="detail"></div> -->
+					<div class="detail"></div> 
 					${reportContent} 
 				</td>
 				<td></td>

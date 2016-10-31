@@ -33,7 +33,7 @@ function init(){
 		document.form.action="http://www.juso.go.kr/addrlink/addrLinkUrl.do"; //인터넷망
 		document.form.submit();
 	}else{
-		opener.jusoCallBack("<%=roadAddrPart1%>","<%=addrDetail%>");
+		opener.jusoCallBack("<%=addrDetail%>","<%=jibunAddr%>");
 		window.close();
 	}
 }

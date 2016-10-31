@@ -70,7 +70,7 @@ label {
 				</table>
 			</div>
 
-			<div id="boardcss_list_search" style="display: block;">
+			<!-- <div id="boardcss_list_search" style="display: block;">
 				<ul>
 					<li>제목</li>
 					<li><input id="search" type="text" name="search_subject"
@@ -79,7 +79,7 @@ label {
 					<li class="detail_button"
 						onclick="document.getElementById('boardcss_list_search').style.display = 'none'; document.getElementById('detailSearch').style.display = 'block';">상세검색▼</li>
 				</ul>
-			</div>
+			</div> -->
 			<div>
 				<c:if test="${page > 5}">
 				<a href="bbs?page=${page-5}">
