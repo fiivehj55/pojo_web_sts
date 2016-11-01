@@ -69,13 +69,13 @@
 									<span class="replyTxt"> ${row.questReplyContent } </span>
 									<c:choose>
 										<c:when test="${user.memId == row.memberId }">
-											<a href="deleteqtr?questNo=${row.questNo }" style="float: right; margin-right: 20px;">삭제</a>
+											<a href="deleteqtr?questReplyNo=${row.questReplyNo }" style="float: right; margin-right: 20px;">삭제</a>
 										</c:when>
 										<c:otherwise>
 											로그인 후 이용이 가능 합니다.
 										</c:otherwise>
 									</c:choose>
-								</div>
+								</div>	
 							</div>
 						</div>
 					</c:forEach>

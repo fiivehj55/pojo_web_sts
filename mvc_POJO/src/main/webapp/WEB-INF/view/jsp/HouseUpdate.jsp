@@ -177,15 +177,18 @@
 			<div id="side">
 				<sform:hidden path="houseNo"/>
 				<div class="font">하우스 정보 1단계</div>
-				<sform:label path="houseRoom">방의 개수 : </sform:label><span class="dropdown-el">
+				<sform:label path="houseRoom">방의 개수 : </sform:label>
+				<span class="dropdown-el">
 				<sform:radiobuttons path="houseRoom" items="${rooms}" />
 				</span><br/>
 				
-				<sform:label path="houseBath">욕실 개수 : </sform:label><span class="dropdown-el">
+				<sform:label path="houseBath">욕실 개수 : </sform:label>
+				<span class="dropdown-el">
 				<sform:radiobuttons path="houseBath" items="${baths}"/>
 				</span><br/>
 				 
-				<sform:label path="houseHosting">숙박 인원 : </sform:label><span class="dropdown-el">
+				<sform:label path="houseHosting">숙박 인원 : </sform:label>
+				<span class="dropdown-el">
 				<sform:radiobuttons path="houseHosting" items="${hosting}"/>
 				</span><br/>
 				
@@ -201,17 +204,20 @@
 				<div class="font">하우스 정보 2단계</div>
 				<sform:label path="houseName" class="inputlabel">숙소이름</sform:label><br/>
 				<sform:input type="text" path="houseName" size="50"/> <br/> 
+				
 				<a href="#" class="button button-style-1" id="postcodify_search_button">주소검색</a><br />
-				<sform:label path="houseAddress"   >주소</sform:label><br/>
+				<sform:label path="houseAddress">주소</sform:label><br/>
+				
 				<sform:input type="text" path="houseAddress" id="xx" size="50"/> <br/>
 				<sform:label path="houseAddressDetail"  >상세 주소</sform:label><br/>
 				<sform:input type="text" path="houseAddressDetail" id="yy"  size="50"/> <br/>
+				
 				<label for="mainPhoto">메인 사진:</label> 
-				<input type="file" name="mainPhoto"/> 
-				<br />
+				<input type="file" name="mainPhoto"/> <br />
+				
 				<label for="photo">사진:</label> 
-				<label><input type="file" name="photo" multiple="multiple"/> </label>
-				<br />
+				<label><input type="file" name="photo" multiple="multiple"/> </label> <br />
+				
 				<sform:label path="houseInfo">숙소 안내말</sform:label> <br/>
 				<sform:textarea style="margin:0px;width:400px;height:265px;" path="houseInfo"></sform:textarea> <br/>
 			</div>
@@ -247,19 +253,149 @@ function goPopup(){
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
 <script type="text/javascript">
-$('.dropdown-el').click(function(e) {
-  e.preventDefault();
-  e.stopPropagation();
-  $(this).toggleClass('expanded');
-  $('#'+$(e.target).attr('for')).prop('checked',true);
-});
-$(document).click(function() {
-  $('.dropdown-el').removeClass('expanded');
-});
+function goPopup(){
+	var pop = window.open("<%=request.getContextPath()%>/jusoPopup","pop", "width=570,height=420, scrollbars=yes");
+		}
+		function jusoCallBack(addrDetail,jibunAddr) {
+			$("#xx").val(jibunAddr);
+			$("#yy").val(addrDetail);
+		}
+		$(document).ready(function() {
 
-$('.demo-1').toggleCheckbox(
-		[ '<i class="fa fa-circle-o fa-4x"></i>',
-				'<i class="fa fa-check-circle-o fa-4x"></i>' ]);
+			$('.dropdown-el').click(function(e) {
+				  e.preventDefault();
+				  e.stopPropagation();
+				  $(this).toggleClass('expanded');
+				  $('#'+$(e.target).attr('for')).prop('checked',true);
+				});
+				$(document).click(function() {
+				  $('.dropdown-el').removeClass('expanded');
+				});
+				$('.demo-1').toggleCheckbox(
+					[ '<i class="fa fa-circle-o fa-4x"></i>',
+					'<i class="fa fa-check-circle-o fa-4x"></i>' ]
+				);
+			$("#postcodify_search_button").on("click", function() {
+				goPopup();
+			});
+			$("#myForm").validate({
+				rules : {
+					room : "required",
+					bath : "required",
+					hosting : "required",
+					price : "required",
+					photo : "required",
+					day : "required"
+				},
+				messages : {
+					room : "Please specify room count",
+					bath : "Please specify bath count",
+					hosting : "Please specify hosting count",
+					price : {
+						required : "Please specify your price"
+					},
+					day : "Please specify payment cycle",
+					photo : "Must one more picture"
+				}
+			});
+		});
+		
+		;
+		(function($) {
+
+			$.fn.toggleCheckbox = function(toggleContents, callback) {
+
+				var TC = {
+
+					isChecked : function(element) {
+
+						return $(element).is(':checked');
+
+					},
+					getContentIndex : function(element) {
+
+						return (TC.isChecked(element)) ? 1 : 0;
+
+					},
+					getContent : function(index) {
+
+						var container = $('<span class="toggle-checkbox-container"></span>');
+
+						return container.on(
+								'click',
+								function(e) {
+
+									var checkbox = $(this).prev();
+									var nextChecked = !TC
+											.getContentIndex(checkbox);
+									var contentIndex = (nextChecked) ? 1 : 0;
+									var toggleContent = TC
+											.getContent(contentIndex);
+
+									checkbox.after(toggleContent).prop(
+											'checked', nextChecked);
+									$(this).remove();
+									TC.fireCallback(e, checkbox);
+
+								}).css('cursor', 'pointer').html(
+								toggleContents[index]);
+
+					},
+					fireCallback : function(e, checkbox) {
+
+						if (typeof (callback) == 'function') {
+
+							callback(e, checkbox);
+
+						}
+
+					}
+
+				};
+
+				$
+						.each(
+								this,
+								function(key, element) {
+
+									var contentIndex = TC
+											.getContentIndex(element);
+									var toggleContent = TC
+											.getContent(contentIndex);
+									$(element)
+											.after(toggleContent)
+											.css('display', 'none')
+											.on(
+													'change',
+													function(e) {
+
+														var className = $(this)
+																.next()
+																.attr('class');
+
+														if (className == 'toggle-checkbox-container') {
+
+															$(this).next()
+																	.remove();
+															var contentIndex = TC
+																	.getContentIndex(this);
+															var toggleContent = TC
+																	.getContent(contentIndex);
+															$(this)
+																	.after(
+																			toggleContent);
+															TC.fireCallback(e,
+																	$(this));
+
+														}
+
+													});
+
+								});
+
+			}
+
+		})(jQuery);
 </script>
 
 

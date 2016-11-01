@@ -238,14 +238,15 @@ public class QuestiontController {
 
 	// 문의게시판 댓글 지우기
 	@RequestMapping(value = "/deleteqtr", method = RequestMethod.GET)
-	public String deleteRtr(Model model, @RequestParam Integer questReplyNo, HttpSession session) {
+	public String deleteRtr(Model model, 
+			@RequestParam Integer questReplyNo, HttpSession session) {
 		Member user = (Member) session.getAttribute("user");
 		int result = qtservice.deleteQtr(questReplyNo);
 
 		if (result == 1) {
-			return "redirect:/report";
+			return "redirect:/bbs?page=1";
 		} else {
-			return "redirect:/report";
+			return "redirect:/bbs?page=1";
 		}
 	}
 

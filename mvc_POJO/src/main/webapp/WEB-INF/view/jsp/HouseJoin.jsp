@@ -298,7 +298,7 @@ label {
 
 </head>
 <body class="">
-	<jsp:include page="./Header.jsp"></jsp:include>
+<jsp:include page="./Header.jsp"></jsp:include>
 	<div class="header2">
 		<img src='css/images/air2.jpg' width="100%" height="500" />
 
@@ -320,40 +320,65 @@ label {
 						<fieldset>
 
 							<legend>호스팅 1단계 </legend>
-							<label for="room">방의개수</label> <span class="dropdown-el">
-								<input type="radio" name="room" value="1개" id="rone"
-								checked="checked"> <label for="rone">1개</label> <input
-								type="radio" name="room" value="2개" id="rtwo"> <label
-								for="rtwo">2개</label> <input type="radio" name="room" value="3개"
-								id="rthree"> <label for="rthree">3개</label>
-							</span> <br /> <label for="bath">욕실개수</label> <span class="dropdown-el">
-								<input type="radio" name="bath" value="1개" id="bone"
-								checked="checked"> <label for="bone">1개</label> <input
-								type="radio" name="bath" value="2개" id="btwo"> <label
-								for="btwo">2개</label> <input type="radio" name="bath" value="3개"
-								id="bthree"> <label for="bthree">3개</label>
-							</span> <br /> <label for="hosting">숙박인원</label> <span
+							<label for="room">방의개수</label> 
+							<span class="dropdown-el">
+							
+							<input type="radio" name="room" value="1개" id="rone" checked="checked"> 
+							<label for="rone">1개</label> 
+							
+							<input type="radio" name="room" value="2개" id="rtwo"> 
+							<label for="rtwo">2개</label> 
+							
+							<input type="radio" name="room" value="3개" id="rthree"> 
+							<label for="rthree">3개</label>
+							
+							</span> <br /> 
+							
+							<label for="bath">욕실개수</label> 
+							<span class="dropdown-el">
+								
+							<input type="radio" name="bath" value="1개" id="bone" checked="checked"> 
+							<label for="bone">1개</label> 
+							
+							<input type="radio" name="bath" value="2개" id="btwo"> 
+							<label for="btwo">2개</label> 
+							
+							<input type="radio" name="bath" value="3개" id="bthree"> 
+							<label for="bthree">3개</label>
+							
+							</span> <br /> 
+							<label for="hosting">숙박인원</label> 
+							<span
 								class="dropdown-el"> <input type="radio" name="hosting"
-								value="1명" id="hone" checked="checked"> <label
-								for="hone">1명</label> <input type="radio" name="hosting"
-								value="2명" id="htwo"> <label for="htwo">2명</label> <input
-								type="radio" name="hosting" value="3명" id="hthree"> <label
-								for="hthree">3명</label> <input type="radio" name="hosting"
-								value="4명" id="hfour"> <label for="hfour">4명</label>
+								value="1명" id="hone" checked="checked"> 
+								<label for="hone">1명</label> 
+								
+								<input type="radio" name="hosting" value="2명" id="htwo"> 
+								<label for="htwo">2명</label> 
+								
+								<input type="radio" name="hosting" value="3명" id="hthree"> 
+								<label for="hthree">3명</label>
+								 
+								<input type="radio" name="hosting" value="4명" id="hfour"> 
+								<label for="hfour">4명</label>
 							</span> <br />
 
 							<div class="checkbox">
-								<br /> <span>편의시설</span> <input type="checkbox" class="demo-1"
-									id="tv" name="tv" value="tv"> <label for="tv">TV</label>
+								<br /> <span>편의시설</span> 
+								<input type="checkbox" class="demo-1" id="tv" name="tv" value="tv"> 
+								<label for="tv">TV</label>
 
-								<input type="checkbox" class="demo-1" id="aircon" name="aircon"
-									value="aircon"> <label for="aircon">에어컨</label> <input
-									type="checkbox" class="demo-1" id="wifi" name="wifi"
-									value="wifi"> <label for="wifi">Wi-Fi</label> <input
-									type="checkbox" class="demo-1" id="elebe" name="elebe"
-									value="elebe"> <label for="elebe">엘리베이터</label> <input
-									type="checkbox" class="demo-1" id="washing" name="washing"
-									value="washing"> <label for="washing">세탁기</label>
+								<input type="checkbox" class="demo-1" id="aircon" name="aircon" value="aircon"> 
+								<label for="aircon">에어컨</label> 
+								
+								<input type="checkbox" class="demo-1" id="wifi" name="wifi" value="wifi"> 
+								<label for="wifi">Wi-Fi</label> 
+								
+								<input type="checkbox" class="demo-1" id="elebe" name="elebe" value="elebe"> 
+								<label for="elebe">엘리베이터</label>
+								 
+								<input type="checkbox" class="demo-1" id="washing" name="washing" value="washing"> 
+								<label for="washing">세탁기</label>
 								<p>
 							</div>
 							<a href="#" class="button button-style-1" id="nextTwo">다음단계</a>
@@ -367,21 +392,26 @@ label {
 						<fieldset>
 							<legend>호스팅 2단계</legend>
 							<p>
-								<label>숙소이름</label> <input type="text" id="rname" name="rname"
-									size="50" />
+								<label>숙소이름</label> <input type="text" id="rname" name="rname" size="50" />
 							</p>
 
-							<a href="#" class="button button-style-1"
-								id="postcodify_search_button">주소검색</a><br /> <label>상세
-								주소</label> <input type="text" id="xx" name="postcodify_address" value=""
-								size="50" /><br /> <label></label> <input type="text" id="yy"
-								name="postcodify_details" value="" size="50" /><br /> <label>메인
-								사진</label> <input type="file" name="mainPhoto" /> <br /> <label>사진 최대 10장 가능합니다.</label>
-							<input type="file" name="photo" multiple="multiple" /> <br /> <label>숙소
-								안내말</label>
-							<textarea class="textclass" name="infor"></textarea>
-							<br /> <a href="#" class="button button-style-1" id="backOne">이전단계</a>
-							<a href="#" class="button button-style-1" id="nextThree">다음단계</a>
+							<a href="#" class="button button-style-1" id="postcodify_search_button">주소검색</a><br /> 
+								<label>상세 주소</label> 
+								
+								<input type="text" id="xx" name="postcodify_address" value="" size="50" /><br /> 
+								<label></label> 
+								<input type="text" id="yy" name="postcodify_details" value="" size="50" /><br /> 
+								
+								<label>메인 사진</label> 
+								<input type="file" name="mainPhoto" /> <br />
+								<label>사진 최대 10장 가능합니다.</label>
+							
+								<input type="file" name="photo" multiple="multiple" /> <br /> 
+								<label>숙소 안내말</label>
+								<textarea class="textclass" name="infor"></textarea> <br />
+								
+								<a href="#" class="button button-style-1" id="backOne">이전단계</a>
+								<a href="#" class="button button-style-1" id="nextThree">다음단계</a>
 						</fieldset>
 					</div>
 				</div>
@@ -431,16 +461,11 @@ label {
 			</form>
 		</div>
 	</div>
+<jsp:include page="./Footer.jsp"></jsp:include>
 
-	<jsp:include page="./Footer.jsp"></jsp:include>
-
-	 	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-	 
-	 <script
-		src="<%=request.getContextPath()%>/js/validate/dist/jquery.validate.min.js"></script>
-
-	<script type="text/javascript">
-
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="<%=request.getContextPath()%>/js/validate/dist/jquery.validate.min.js"></script>
+<script type="text/javascript">
 function checkDate(dateTag){
 	var dateVal =  new Date(dateTag.value);
 	var date = new Date();

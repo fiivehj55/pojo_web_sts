@@ -739,7 +739,8 @@ p, h1, form, button {
 </div>
 	
 	<div class="joinCancel">
-	<a href="index" class="button button-style1">가입</a>
+	<input type="submit" class="button button-style1" value="가입"/>
+	<!-- <a href="index" class="button button-style1">가입</a> -->
 	<a href="index" class="button button-style1">취소</a>
 	</div>	
 	<!-- <div class="btn">
