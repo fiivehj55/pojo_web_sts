@@ -268,6 +268,8 @@ public class HouseController {
 		House house = hservice.selectByNoHouse(houseNo);
 		if (house != null) {
 			model.addAttribute("house", house);
+			model.addAttribute("PossCheckIn", house.getPossCheckIn());
+			model.addAttribute("PossCheckOut", house.getPossCheckOut());
 			return "jsp/HouseUpdate";
 		}
 		return "redirect:/search?page=1";
@@ -287,6 +289,8 @@ public class HouseController {
 			@RequestParam List<MultipartFile> photo,
 			@RequestParam String houseAddress,
 			@RequestParam String houseAddressDetail,
+			@RequestParam String possCheckIn,
+			@RequestParam String possCheckOut,
 			@RequestParam String houseDay, @RequestParam Integer housePrice, 
 			HttpSession session) throws IOException {
 		Member user = (Member) session.getAttribute("user");
@@ -318,6 +322,9 @@ public class HouseController {
 		house.setHouseWashing(houseWashing);
 		//house.setHouseImg(imgName);
 		house.setHouseDay(houseDay);
+		house.setPossCheckIn(possCheckIn);
+		house.setPossCheckOut(possCheckOut);
+		
 		File introHouse = new File(uploadDir + "/" + user.getMemId() + "/"+house.getHouseNo());
 		if (!introHouse.exists())
 			introHouse.mkdir();
