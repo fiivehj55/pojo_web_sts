@@ -139,7 +139,7 @@ p, h1, form, button {
 
 <body class="header">
 	<jsp:include page="./Header.jsp"></jsp:include>
-	<div class="titleArea">
+	<div class="titleArea" >
 		<h2>마이페이지</h2></div>
 	<hr class="layout"></hr>
 	<div class="smallArea">
@@ -152,7 +152,7 @@ p, h1, form, button {
 	필수입력사항</p>
 	<hr><p>
 		<div class="boardWrite">
-		<form action="inputPass" method="post">
+		<form action="inputPass" method="post" style="height:600px;">
 		<table border="1" summary="">
 			<tbody>
 				<tr>

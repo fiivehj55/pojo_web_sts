@@ -94,7 +94,7 @@ font-family:tahoma;
 </head>
 <body>
 <jsp:include page="./Header.jsp"></jsp:include>
-<form method="post" action="bbsInsert">
+<form method="post" action="bbsInsert" >
 	<div id="tableHeader">
 <img src='css/images/t1.jpg' width="100%" height="5%"/> </div>
 	<div class="center">

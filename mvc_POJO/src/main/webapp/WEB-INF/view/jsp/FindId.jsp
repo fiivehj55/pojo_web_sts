@@ -146,6 +146,8 @@ p, h1, form, button {
 	width:150px;
 	text-align:left;
 }
+
+
 </style>
 
 </head>
@@ -155,7 +157,7 @@ p, h1, form, button {
 		<h2>아이디찾기</h2></div>
 	<hr class="layout"></hr>
 	<div class="smallArea">
-		<h3>회원가입시 입력한 이메일로 회원님의 아이디 정보가 전송됩니다.</h3>
+		<div style="margin-left: 35%;">회원가입시 입력한 이메일로 회원님의 아이디 정보가 전송됩니다.</div>
 	</div>
 	<p class="required">
 		<img alt="필수"
@@ -164,7 +166,7 @@ p, h1, form, button {
 	필수입력사항</p>
 	<hr><p>
 		<div class="boardWrite">
-		<form action="<%=request.getContextPath()%>/findId" method="post">
+		<form action="<%=request.getContextPath()%>/findId" method="post" style="margin-left: 35%;height:600px;">
 		<table border="1" summary="">
 			<tbody>
 				<tr>
@@ -174,7 +176,7 @@ p, h1, form, button {
 					/ico_required.gif"></img>
 					</th>
 				<td>
-					<input type="text" id="name" name="name"></input>
+					<input type="text" id="name" name="name"></input><br/>
 				</td>
 				</tr>
 				
@@ -185,9 +187,9 @@ p, h1, form, button {
 					/ico_required.gif"></img>
 					</th>
 				<td>
-					<input type="email" id="email" name="email" maxlength="30"></input>
-						<input type="submit" value="확인">			
-			<a href="login" class="black">뒤로가기</a>
+					<input type="email" id="email" name="email" maxlength="50" style="width:300px;"></input>
+						<br/><input type="submit" class="button button-style-1" style="width:200px;height:50px;"value="확인">			
+			<br/><a href="login" class="black">뒤로가기</a>
 			<a href="findPass" class="black">비밀번호찾기</a>		
 				</td>				
 	</tr>
@@ -195,22 +197,6 @@ p, h1, form, button {
 	</table>
 	</form>
 	</div>
-	
-<%-- 	<div id="main">
-		<div id="content" class="auto_center">
-			<h1>아이디 찾기</h1>
-			<form action="<%=request.getContextPath()%>/findId" method="post">
-				
-				<p>
-					<label for="name">이름: </label> <input type="text" id="name" name="name">
-				</p>
-				<p>
-					<label for="email">이메일</label> <input type="email" id="email" name="email">
-				</p>
-					<input type="submit" value="확인">
-			<a href="login"><button>뒤로가기</button></a>
-			</form> --%>
-
 
 
 	<jsp:include page="./Footer.jsp"></jsp:include>
