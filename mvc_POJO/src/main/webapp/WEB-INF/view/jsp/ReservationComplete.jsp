@@ -77,34 +77,6 @@
 				<td>판다(panda)</td>
 				<td>2012-10-19</td>
 			</tr>
-			<tr>
-				<td>4</td>
-				<td>사진</td>
-				<td>판다의 이상한 게시판 with CSS, DIV</td>
-				<td>판다(panda)</td>
-				<td>2012-10-19</td>
-			</tr>
-			<tr>
-				<td>3</td>
-				<td>사진</td>
-				<td>판다의 이상한 게시판 with CSS, DIV</td>
-				<td>판다(panda)</td>
-				<td>2012-10-19</td>
-			</tr>
-			<tr>
-				<td>2</td>
-				<td>사진</td>
-				<td>판다의 이상한 게시판 with CSS, DIV</td>
-				<td>판다(panda)</td>
-				<td>2012-10-19</td>
-			</tr>
-			<tr>
-				<td>1</td>
-				<td>사진</td>
-				<td>판다의 이상한 게시판 with CSS, DIV</td>
-				<td>판다(panda)</td>
-				<td>2012-10-19</td>
-			</tr>
 		</tbody>
 	</table>
 	</div>

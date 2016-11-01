@@ -468,8 +468,15 @@ public class HouseController {
 		return "jsp/CustomerReservation";
 	}
 	
-	@RequestMapping(value = "/ReservationComplete")
-	public String ReservationComplete(Model model, HttpSession session) {
+	@RequestMapping(value = "/ReservationComplete", method=RequestMethod.GET)
+	public String ReservationComplete(Model model,
+			@RequestParam String possCheckIn,
+			@RequestParam String possCheckOut,
+			@RequestParam Integer houseNo,
+			HttpSession session) {
+		Member user = (Member) session.getAttribute("user");
+		String id = user.getMemId();
+		
 		return "jsp/ReservationComplete";
 	}
 }

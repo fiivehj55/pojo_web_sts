@@ -146,7 +146,7 @@
 					</c:otherwise>
 				</c:choose>
 			
-			<%-- <div class="sp-slide">
+			<div class="sp-slide">
 				<img class="sp-image" src="<%=request.getContextPath() %>/slidepro/src/css/images/aaa.jpg"
 					data-src="<%=request.getContextPath() %>/slidepro/src/css/images/aaa.jpg"
 					data-retina="<%=request.getContextPath() %>/slidepro/src/css/images/aaa.jpg"/>
@@ -168,8 +168,7 @@
 					data-show-transition="left" data-hide-transition="up" data-show-delay="800">
 					안락합니다.
 				</p> 
-			</div> --%>
-<%-- 
+			</div> 
 	        <div class="sp-slide">
 	        	<img class="sp-image" src="<%=request.getContextPath() %>/slidepro/src/css/images/aaa.jpg"
 	        		data-src="<%=request.getContextPath() %>/slidepro/src/css/images/aaa4.jpg"
@@ -287,7 +286,7 @@
 				<img class="sp-image" src="<%=request.getContextPath()%>/slidepro/src/css/images/blank.gif"
 					data-src="<%=request.getContextPath() %>/slidepro/image/image10_medium.jpg"
 					data-retina="<%=request.getContextPath() %>/slidepro/image/image10_large.jpg"/>
-			</div> --%>
+			</div>
 		</div>
 
 		<div class="sp-thumbnails">
@@ -303,7 +302,7 @@
 				</c:forEach>
 				</c:when>
 				</c:choose>
-		<!-- 	<div class="sp-thumbnail">
+		<div class="sp-thumbnail">
 				<div class="sp-thumbnail-title">공주빌라 사진1</div>
 				<div class="sp-thumbnail-description">반갑습니다</div>
 			</div>
@@ -351,7 +350,7 @@
 			<div class="sp-thumbnail">
 				<div class="sp-thumbnail-title">Laudantium</div>
 				<div class="sp-thumbnail-description">Totam rem aperiam, eaque ipsa quae ab illo</div>
-			</div> -->
+			</div> 
 		</div>
     </div>				
 					
