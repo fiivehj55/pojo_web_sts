@@ -75,8 +75,10 @@ body {
 <body>
 
 <jsp:include page="./Header.jsp"></jsp:include>
+<div id="tableHeader1">
+<img src='css/images/c5.jpg' width="100%" height="300px;"/> </div>
 <div class="wrapper">
-  <div class="table" style="height:600px;">
+ <br/> <div class="table" style="height:600px;">
     <div class="row header green">
       <div class="2u">
        	번호
