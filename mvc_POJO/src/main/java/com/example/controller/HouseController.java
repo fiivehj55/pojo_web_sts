@@ -410,27 +410,17 @@ public class HouseController {
 		reply.setDetailId(2);
 		session.setAttribute("reply", reply);
 		result = Rpservice.insertReply(reply);
-		if(result != 1){
 			return "redirect:/houseView?houseNo=" + houseNo;
-		}else{
-			return "redirect:/houseView?houseNo=" + houseNo;
-		}
 	}
 
 	// 하우스 댓글 지우기
 	@RequestMapping(value = "/deletehtr", method = RequestMethod.GET)
 	public String deleteHtr(Model model, 
 			@RequestParam Integer replyNo,
+			@RequestParam Integer houseNo,
 			HttpSession session) {
-		Member user = (Member) session.getAttribute("user");
-		int result = Rpservice.deleteReply(replyNo);
-		String key = (String) session.getAttribute("key");
-
-		if (result == 1) {
-			return "redirect:/searchbar?key="+ key +"&page=1";
-		} else {
-			return "redirect:/searchbar?key="+ key +"&page=1";
-		}
+		Rpservice.deleteReply(replyNo);
+		return "redirect:/houseView?houseNo=" + houseNo;
 	}
 	
 	@RequestMapping(value = "/DelHouse",method=RequestMethod.POST)

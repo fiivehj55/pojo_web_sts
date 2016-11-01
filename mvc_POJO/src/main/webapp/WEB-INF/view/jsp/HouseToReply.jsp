@@ -95,7 +95,7 @@
 							<span class="replyTxt">${row.replyContent } </span>
 							<c:choose>
 								<c:when test="${user.memId == row.memberId }">
-									<a href="deletehtr?replyNo=${row.replyNo }" style="float: right; margin-right: 20px;">삭제</a>
+									<a href="deletehtr?replyNo=${row.replyNo }&houseNo=${houseNo}" style="float: right; margin-right: 20px;">삭제</a>
 								</c:when>
 								<c:otherwise>
 									로그인 후 이용이 가능합니다.
