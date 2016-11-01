@@ -421,7 +421,7 @@ label {
 					<div id="three" style="display: none;">
 						<fieldset>
 							<legend>호스팅 3단계 </legend>
-							가능한 날짜 <span>(최대 3개 날짜 입력이 가능합니다.)</span>
+							가능한 날짜
 							<p >
 								시작일 <input type="date" onchange="checkDate(this)" name="possCheckIn"> ~ 종료일
 								<input type="date" onchange="lastDate(this)" name="possCheckOut"> <!-- <input type="button" onclick="nextDate(this)" value="+"> -->
