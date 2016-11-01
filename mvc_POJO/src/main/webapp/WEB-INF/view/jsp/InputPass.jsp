@@ -143,7 +143,7 @@ p, h1, form, button {
 		<h2>마이페이지</h2></div>
 	<hr class="layout"></hr>
 	<div class="smallArea">
-		<h3>비밀번호를 입력하면 마이페이지로 이동합니다.</h3>
+		<div style="margin-left:38%;">비밀번호를 입력하면 마이페이지로 이동합니다.</div>
 	</div>
 	<p class="required">
 		<img alt="필수"
@@ -152,7 +152,7 @@ p, h1, form, button {
 	필수입력사항</p>
 	<hr><p>
 		<div class="boardWrite">
-		<form action="inputPass" method="post" style="height:600px;">
+		<form action="inputPass" method="post" style="height:600px; margin-left: 35%;">
 		<table border="1" summary="">
 			<tbody>
 				<tr>
