@@ -146,7 +146,7 @@
 					</c:otherwise>
 				</c:choose>
 			
-			<div class="sp-slide">
+			 <div class="sp-slide">
 				<img class="sp-image" src="<%=request.getContextPath() %>/slidepro/src/css/images/aaa.jpg"
 					data-src="<%=request.getContextPath() %>/slidepro/src/css/images/aaa.jpg"
 					data-retina="<%=request.getContextPath() %>/slidepro/src/css/images/aaa.jpg"/>
@@ -154,21 +154,22 @@
 				<p class="sp-layer sp-white sp-padding"
 					data-horizontal="50" data-vertical="50"
 					data-show-transition="left" data-hide-transition="up" data-show-delay="400" data-hide-delay="200">
-					공주빌라내부사진1
+					${houseName}에
 				</p> 
 
 				<p class="sp-layer sp-black sp-padding hide-small-screen"
 					data-horizontal="180" data-vertical="50"
 					data-show-transition="left" data-hide-transition="up" data-show-delay="600" data-hide-delay="100">
-					깔끔합니다
+					오신 것을
 				</p>
 
 				<p class="sp-layer sp-white sp-padding hide-medium-screen"
 					data-horizontal="315" data-vertical="50"
 					data-show-transition="left" data-hide-transition="up" data-show-delay="800">
-					안락합니다.
+					환영합니다.
 				</p> 
 			</div> 
+
 	        <div class="sp-slide">
 	        	<img class="sp-image" src="<%=request.getContextPath() %>/slidepro/src/css/images/aaa.jpg"
 	        		data-src="<%=request.getContextPath() %>/slidepro/src/css/images/aaa4.jpg"
@@ -177,19 +178,19 @@
 				<h3 class="sp-layer sp-black sp-padding" 
 					data-horizontal="40" data-vertical="10%" 
 					data-show-transition="left" data-hide-transition="left">
-					공주빌라내부사진2
+					이 숙소는 최대
 				</h3>
 
 				<p class="sp-layer sp-white sp-padding hide-medium-screen" 
 					data-horizontal="40" data-vertical="22%" 
 					data-show-transition="left" data-show-delay="200" data-hide-transition="left" data-hide-delay="200">
-					엄청 깔끔합니다
+					${houseHosting}까지
 				</p>
 
 				<p class="sp-layer sp-black sp-padding hide-small-screen" 
 					data-horizontal="40" data-vertical="34%" data-width="350" 
 					data-show-transition="left" data-show-delay="400" data-hide-transition="left" data-hide-delay="500">
-					지하철역 도보 3분 거리에 위치합니다!!
+					이용이 가능합니다.
 				</p>
 			</div>
 
@@ -201,13 +202,13 @@
 				<p class="sp-layer sp-white sp-padding" 
 					data-position="centerCenter" data-vertical="-50" 
 					data-show-transition="right" data-hide-transition="left" data-show-delay="500" >
-					단기로 사실 분에게 최적화 되어있습니다.
+					지금 바로 ${houseName }에서 
 				</p>
 
 				<p class="sp-layer sp-black sp-padding hide-small-screen" 
 					data-position="centerCenter" data-vertical="50" 
 					data-show-transition="left" data-show-delay="700" data-hide-transition="right" data-hide-delay="200">
-					환영해요 공주빌라 꽥
+					안락한 생활을 누려보세요!
 				</p>
 			</div>
 
@@ -217,9 +218,9 @@
 					data-retina="<%=request.getContextPath() %>/slidepro/image/image4_large.jpg"/>
 
 				<p class="sp-layer sp-black sp-padding" 
-					data-position="bottomLeft"
+					data-position="Left"
 					data-show-transition="up" data-hide-transition="down">
-					화장실도 깨끗합니다 <span class="hide-small-screen">샤워도구도 배치되어 있습니다.</span> <span class="hide-medium-screen"></span>
+					단기로 사실 분들에게 최적화 된 곳입니다.<span class="hide-small-screen"></span><span class="hide-medium-screen"></span>
 				</p>
 			</div>
 
@@ -231,7 +232,7 @@
 				<p class="sp-layer sp-white sp-padding" 
 					data-vertical="10" data-horizontal="2%" data-width="96%" 
 					data-show-transition="down" data-show-delay="400" data-hide-transition="up">
-					Lorem ipsum dolor sit amet <span class="hide-small-screen">, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span> <span class="hide-medium-screen">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
+					추가 문의 사항은 <span class="hide-small-screen"> 하단의 메세지보내기를 이용해 주세요.</span> <span class="hide-medium-screen"></span>
 				</p>
 			</div>
 
@@ -242,7 +243,7 @@
 
 				<p class="sp-layer sp-white sp-padding" 
 					data-horizontal="10" data-vertical="10" data-width="35%">
-					Lorem ipsum dolor sit amet <span class="hide-small-screen">, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span> <span class="hide-medium-screen">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
+					${houseName }에<span class="hide-small-screen">오신것을 환영합니다.</span> <span class="hide-medium-screen"></span>
 				</p>
 			</div>
 
@@ -252,9 +253,9 @@
 					data-retina="<%=request.getContextPath() %>/slidepro/image/image7_large.jpg"/>
 
 				<p class="sp-layer sp-black sp-padding" 
-					data-position="bottomLeft" data-vertical="10" data-horizontal="2%" data-width="96%" 
+					data-position="Left" data-vertical="10" data-horizontal="2%" data-width="96%" 
 					data-show-transition="up" data-show-delay="400" data-hide-transition="down">
-					Lorem ipsum dolor sit amet <span class="hide-small-screen">, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span> <span class="hide-medium-screen">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
+					이 숙소는 최대 <span class="hide-small-screen">${houseHosting } 까지</span> <span class="hide-medium-screen">이용이 가능합니다.</span>
 				</p>
 			</div>
 
@@ -262,6 +263,13 @@
 				<img class="sp-image" src="<%=request.getContextPath() %>/slidepro/src/css/images/blank.gif"
 					data-src="<%=request.getContextPath() %>/slidepro/image/image8_medium.jpg"
 					data-retina="<%=request.getContextPath() %>/slidepro/image/image8_large.jpg"/>
+					
+				<p class="sp-layer sp-black sp-padding" 
+					data-position="bottomLeft" data-horizontal="50" data-vertical="100"
+					data-show-transition="down" data-show-delay="500" data-hide-transition="up">
+					지금 바로 ${houseName}에서 안락한 생활을 누려보세요!
+				</p>		
+					
 			</div>
 
 			<div class="sp-slide">
@@ -269,16 +277,12 @@
 					data-src="<%=request.getContextPath() %>/slidepro/image/image9_medium.jpg"
 					data-retina="<%=request.getContextPath() %>/slidepro/image/image9_large.jpg"/>
 
-				<p class="sp-layer sp-black sp-padding" 
-					data-position="bottomLeft" data-horizontal="50" data-vertical="100"
-					data-show-transition="down" data-show-delay="500" data-hide-transition="up">
-					Lorem ipsum dolor sit amet
-				</p>
+
 
 				<p class="sp-layer sp-white sp-padding hide-small-screen" 
 					data-position="bottomLeft" data-horizontal="50" data-vertical="50"
 					data-show-transition="up" data-show-delay="500" data-hide-transition="down">
-					consectetur adipisicing elit <span class="hide-medium-screen">, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+					단기로 사실 분들에게  <span class="hide-medium-screen">최적화 된 곳입니다.</span>
 				</p>
 			</div>
 
@@ -286,7 +290,18 @@
 				<img class="sp-image" src="<%=request.getContextPath()%>/slidepro/src/css/images/blank.gif"
 					data-src="<%=request.getContextPath() %>/slidepro/image/image10_medium.jpg"
 					data-retina="<%=request.getContextPath() %>/slidepro/image/image10_large.jpg"/>
-			</div>
+				<p class="sp-layer sp-black sp-padding" 
+					data-position="bottomLeft" data-horizontal="50" data-vertical="100"
+					data-show-transition="down" data-show-delay="500" data-hide-transition="up">
+					추가 문의사항은
+				</p>
+
+				<p class="sp-layer sp-white sp-padding hide-small-screen" 
+					data-position="bottomLeft" data-horizontal="50" data-vertical="50"
+					data-show-transition="up" data-show-delay="500" data-hide-transition="down">
+					하단의 메세지 보내기를 <span class="hide-medium-screen">이용해 주세요.</span>
+				</p>
+			</div> 
 		</div>
 
 		<div class="sp-thumbnails">
@@ -294,62 +309,60 @@
 					<c:when test="${fn:length(imgList) > 0}">
 						<c:forEach items="${imgList }" var="row">
 						
-			<div class="sp-thumbnail">
-				<div class="sp-thumbnail-title">공주빌라 사진1</div>
-				<div class="sp-thumbnail-description">반갑습니다</div>
-			</div>
+<%-- 			<div class="sp-thumbnail">
+				<div class="sp-thumbnail-title">${houseName } 사진1</div>
+				
+			</div> --%>
 			
 				</c:forEach>
 				</c:when>
 				</c:choose>
-		<div class="sp-thumbnail">
-				<div class="sp-thumbnail-title">공주빌라 사진1</div>
-				<div class="sp-thumbnail-description">반갑습니다</div>
+			<div class="sp-thumbnail">
+				<div class="sp-thumbnail-title">${houseName } 사진1</div>
 			</div>
 
 			<div class="sp-thumbnail">
-				<div class="sp-thumbnail-title">공주빌라 사진2</div>
-				<div class="sp-thumbnail-description">두정역 근처</div>
+				<div class="sp-thumbnail-title">${houseName } 사진2</div>
+				
 			</div>
 
 			<div class="sp-thumbnail">
-				<div class="sp-thumbnail-title">공주빌라 사진3</div>
-				<div class="sp-thumbnail-description">편의시설 배치</div>
+				<div class="sp-thumbnail-title">${houseName } 사진3</div>
+				
 			</div>
 
 			<div class="sp-thumbnail">
-				<div class="sp-thumbnail-title">공주빌라 사진4</div>
-				<div class="sp-thumbnail-description">인테리어한 화장실</div>
+				<div class="sp-thumbnail-title">${houseName } 사진4</div>
+				
 			</div>
 
 			<div class="sp-thumbnail">
-				<div class="sp-thumbnail-title">Duis aute</div>
-				<div class="sp-thumbnail-description">Irure dolor in reprehenderit in voluptate velit</div>
+				<div class="sp-thumbnail-title">${houseName } 사진5</div>
+				
 			</div>
 
 			<div class="sp-thumbnail">
-				<div class="sp-thumbnail-title">Esse cillum</div>
-				<div class="sp-thumbnail-description">Dolore eu fugiat nulla pariatur excepteur</div>
+				<div class="sp-thumbnail-title">${houseName } 사진6</div>
+			
 			</div>
 
 			<div class="sp-thumbnail">
-				<div class="sp-thumbnail-title">Sint occaecat</div>
-				<div class="sp-thumbnail-description">Cupidatat non proident, sunt in culpa qui officia</div>
+				<div class="sp-thumbnail-title">${houseName } 사진7</div>
+			
 			</div>
 
 			<div class="sp-thumbnail">
-				<div class="sp-thumbnail-title">Deserunt</div>
-				<div class="sp-thumbnail-description">Mollit anim id est laborum sed ut perspiciatis</div>
+				<div class="sp-thumbnail-title">${houseName } 사진8</div>
+			
 			</div>
 
 			<div class="sp-thumbnail">
-				<div class="sp-thumbnail-title">Unde omnis</div>
-				<div class="sp-thumbnail-description">Iste natus error sit voluptatem doloremque</div>
+				<div class="sp-thumbnail-title">${houseName } 사진9</div>
+				
 			</div>
 
 			<div class="sp-thumbnail">
-				<div class="sp-thumbnail-title">Laudantium</div>
-				<div class="sp-thumbnail-description">Totam rem aperiam, eaque ipsa quae ab illo</div>
+				<div class="sp-thumbnail-title">${houseName } 사진10</div>
 			</div> 
 		</div>
     </div>				

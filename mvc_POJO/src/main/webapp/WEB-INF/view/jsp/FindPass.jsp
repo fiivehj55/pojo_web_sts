@@ -143,7 +143,7 @@ p, h1, form, button {
 		<h2>비밀번호찾기</h2></div>
 	<hr class="layout"></hr>
 	<div class="smallArea">
-		<h3>아래의 정보를 입력하면 비밀번호 재설정을 하실 수 있습니다.</h3>
+		<div style="margin-left: 35%;">아래의 정보를 입력하면 비밀번호 재설정을 하실 수 있습니다.</div>
 	</div>
 	<p class="required">
 		<img alt="필수"
@@ -152,7 +152,7 @@ p, h1, form, button {
 	필수입력사항</p>
 	<hr><p>
 		<div class="boardWrite">
-		<form method="post" action="findPass" style="height:600px;">
+		<form method="post" action="findPass" style="height:600px; margin-left: 35%;">
 		<table border="1" summary="">
 			<tbody>
 				<tr>
@@ -182,8 +182,8 @@ p, h1, form, button {
 					/ico_required.gif"></img>
 					</th>
 				<td>
-					<input type="email" id="email" name="email"></input>
-						<input type="submit" value="확인">			
+					<input type="email" id="email" name="email" style="width:300px;"></input>
+						<br/><input type="submit" class="button button-style-1" style="width:200px;height:50px;" value="확인" >			
 			<a href="login" class="black">뒤로가기</a>
 			
 				</td>				

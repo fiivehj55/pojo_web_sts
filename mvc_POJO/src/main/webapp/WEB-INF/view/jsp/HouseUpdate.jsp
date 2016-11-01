@@ -224,7 +224,10 @@
 			
 			<div id="side">
 				<div class="font">하우스 정보 3단계</div>
-				<img src="/img/mage_tp.jpg"/>
+				<label for="possCheckIn">시작일</label>
+				<input type="date"   name="possCheckIn"  id="possCheckIn"/> ~
+				<label for="possCheckOut">종료일</label>
+				<input type="date"  name="possCheckOut"  id="possCheckOut" /> <br/>
 				
 				<sform:label path="houseDay"></sform:label>
 				<sform:radiobuttons path="houseDay" items="${day }"/> <br/>
@@ -252,6 +255,7 @@ function goPopup(){
 	}
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+<script src="<%=request.getContextPath()%>/js/validate/dist/jquery.validate.min.js"></script>
 <script type="text/javascript">
 function goPopup(){
 	var pop = window.open("<%=request.getContextPath()%>/jusoPopup","pop", "width=570,height=420, scrollbars=yes");
@@ -260,8 +264,16 @@ function goPopup(){
 			$("#xx").val(jibunAddr);
 			$("#yy").val(addrDetail);
 		}
+		console.log('${PossCheckIn}');
+
 		$(document).ready(function() {
 
+			var PossCheckIn= '${PossCheckIn}';
+
+			var PossCheckOut= '${PossCheckOut}';
+			$("#possCheckIn").val(PossCheckIn.substring(0,10));
+			$("#possCheckOut").val(PossCheckOut.substring(0,10));
+			
 			$('.dropdown-el').click(function(e) {
 				  e.preventDefault();
 				  e.stopPropagation();
@@ -300,7 +312,7 @@ function goPopup(){
 			});
 		});
 		
-		;
+		
 		(function($) {
 
 			$.fn.toggleCheckbox = function(toggleContents, callback) {

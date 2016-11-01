@@ -474,6 +474,7 @@ label {
 function checkDate(dateTag){
 	var dateVal =  new Date(dateTag.value);
 	var date = new Date();
+	date.setDate( date.getDate() -1 );
 	if(dateVal < date){
 		alert("설정 불가능한 날짜입니다.");
 		dateTag.value = "";
