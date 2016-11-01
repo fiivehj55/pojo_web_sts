@@ -22,9 +22,11 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.example.dto.House;
 import com.example.dto.Member;
+import com.example.dto.RegistHouse;
 import com.example.dto.Reply;
 import com.example.service.HouseService;
 import com.example.service.MemberService;
+import com.example.service.RegistHouseService;
 import com.example.service.ReplyService;
 
 @Controller
@@ -40,6 +42,9 @@ public class HouseController {
 
 	@Autowired
 	ReplyService Rpservice;
+	
+	@Autowired
+	RegistHouseService rhservice;
 	
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
 	public String search(Model model, @RequestParam Integer page,
@@ -483,6 +488,18 @@ public class HouseController {
 			HttpSession session) {
 		Member user = (Member) session.getAttribute("user");
 		String id = user.getMemId();
+		House house = hservice.selectByNoHouse(houseNo);
+		
+		model.addAttribute("house", house);
+		model.addAttribute("checkIn", possCheckIn);
+		model.addAttribute("checkOut", possCheckOut);
+		model.addAttribute("user", user);
+		
+		RegistHouse rh = new RegistHouse();
+		rh.setCheckIn(possCheckIn);
+		rh.setCheckOut(possCheckOut);
+		rh.setHouseNo(houseNo);
+		rh.setMemberId(id);
 		
 		return "jsp/ReservationComplete";
 	}

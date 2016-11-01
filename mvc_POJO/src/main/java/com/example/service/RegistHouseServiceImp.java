@@ -11,7 +11,7 @@ import com.example.dto.RegistHouse;
 
 
 @Component
-public class Regist_HouseServiceImp implements Regist_HouseService{
+public class RegistHouseServiceImp implements RegistHouseService{
 	@Autowired
 	RegistHouseDao dao;
 	@Autowired

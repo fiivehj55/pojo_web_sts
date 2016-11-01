@@ -4,7 +4,7 @@ import com.example.dto.RegistHouse;
 
 
 //예약 관리 하우스
-public interface Regist_HouseService {
+public interface RegistHouseService {
 	
 	public RegistHouse selectByHouseNo(int houseNo);
 	public int add(RegistHouse rH);

@@ -244,7 +244,7 @@ public class DaoTest {
 	public void testInsertRegistHouse() {
 		Calendar cd = Calendar.getInstance();
 		Date dd = cd.getTime();
-		RegistHouse rhouse = new RegistHouse(2, dd, dd, 1, "hong");
+		RegistHouse rhouse = new RegistHouse(2, "dd", "dd", 1, "hong");
 		int result = rhdao.insertRegistHouse(template, rhouse);
 		logger.trace("List: {}", rhouse);
 
@@ -255,7 +255,7 @@ public class DaoTest {
 	public void testUpdateRegistHouse() {
 		Calendar cd = Calendar.getInstance();
 		Date dd = cd.getTime();
-		RegistHouse rHouse = new RegistHouse(2, dd, dd);
+		RegistHouse rHouse = new RegistHouse(2, "dd", "dd");
 		int result = rhdao.updateRegistHouse(template, rHouse);
 		logger.trace("List: {}", rHouse);
 

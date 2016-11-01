@@ -19,10 +19,10 @@ public class RegistHouse implements Serializable {
 	private Integer rhId;
 
 	/** CHECK_IN. */
-	private Date checkIn;
+	private String checkIn;
 
 	/** CHECK_OUT. */
-	private Date checkOut;
+	private String checkOut;
 	
 	/** HOUSE_NO */
 	private Integer houseNo;
@@ -39,14 +39,14 @@ public class RegistHouse implements Serializable {
 	public RegistHouse() {
 	}
 	
-	public RegistHouse(Integer rhId, Date checkIn, Date checkOut) {
+	public RegistHouse(Integer rhId, String checkIn, String checkOut) {
 		super();
 		this.rhId = rhId;
 		this.checkIn = checkIn;
 		this.checkOut = checkOut;
 	}
 	
-	public RegistHouse(Integer rhId, Date checkIn, Date checkOut, Integer houseNo, String memberId) {
+	public RegistHouse(Integer rhId, String checkIn, String checkOut, Integer houseNo, String memberId) {
 		super();
 		this.rhId = rhId;
 		this.checkIn = checkIn;
@@ -80,7 +80,7 @@ public class RegistHouse implements Serializable {
 	 * @param checkIn
 	 *            CHECK_IN
 	 */
-	public void setCheckIn(Date checkIn) {
+	public void setCheckIn(String checkIn) {
 		this.checkIn = checkIn;
 	}
 
@@ -89,7 +89,7 @@ public class RegistHouse implements Serializable {
 	 * 
 	 * @return CHECK_IN
 	 */
-	public Date getCheckIn() {
+	public String getCheckIn() {
 		return this.checkIn;
 	}
 
@@ -99,7 +99,7 @@ public class RegistHouse implements Serializable {
 	 * @param checkOut
 	 *            CHECK_OUT
 	 */
-	public void setCheckOut(Date checkOut) {
+	public void setCheckOut(String checkOut) {
 		this.checkOut = checkOut;
 	}
 
@@ -108,7 +108,7 @@ public class RegistHouse implements Serializable {
 	 * 
 	 * @return CHECK_OUT
 	 */
-	public Date getCheckOut() {
+	public String getCheckOut() {
 		return this.checkOut;
 	}
 	

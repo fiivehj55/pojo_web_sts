@@ -123,6 +123,7 @@
 	<br/>
 	가능한 날짜
 	<p >
+		<input type="hidden" name="houseNo" value="${house.houseNo }"/>
 		시작일 <input type="date" onchange="checkDate(this)" name="possCheckIn">
 		 ~ 종료일 	<input type="date" onchange="lastDate(this)" name="possCheckOut"> 
 		 <!-- <input type="button" onclick="nextDate(this)" value="+"> -->
