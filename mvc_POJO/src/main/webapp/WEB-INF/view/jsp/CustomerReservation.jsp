@@ -50,6 +50,7 @@
 </head>
 <body class="header">
 	<jsp:include page="./Header.jsp"></jsp:include>
+	<form method="get" action="ReservationComplete">
 	<!-- 맨위 -->
 	<div class="houseinfo">
 		<!-- 하우스이름 -->
@@ -92,7 +93,6 @@
 					${houseWashing }<br/>
 				</th>
 			</tr>
-			<hr/>
 			
 			<tr>
 				<th>가격</th>
@@ -128,78 +128,12 @@
 		 <!-- <input type="button" onclick="nextDate(this)" value="+"> -->
 	</p>
 	
-	<a href="<%=request.getContextPath()%>/ReservationComplete"><input type="button" class="button button-style-1" value="예약 완료"/></a>
+	<input type="submit" class="button button-style-1" value="예약 완료"/>
 	<a href="<%=request.getContextPath()%>/index"><input type="button" class="button button-style-1" value="취소"/></a>
+	</form>
 <p>
-<!-- 하우스시설정보 -->
-<%-- <h3 class = "h3">상세설명</h3>
-<h5 class ="h5">
-	<img src="css/images/icon1.png" width="50" height="50">
-	"방의 개수: ${house.houseRoom}"
-	
-	<img src="css/images/icon2.JPG" width="50" height="60">
-	"화장실 개수: ${house.houseBath}"
-	
-	<img src="css/images/icon3.JPG" width="80" height="50">
-	"예약 가능 인원: ${house.houseHosting}"
-	
-	<img src="css/images/icon4.JPG" width="50" height="50">
-	"사용가능한 편의시설: ${houseTv}, ${houseAircon }, ${houseWifi },${houseElebe }, 	${houseWashing }"
-</h5>
-	<div id="map"></div>
-	<div class="houseBook">
-		<label class="book"></label>
-	</div> 
-	<body class="">
-	<div class="titleArea">
-		<h2>고객 화면에서 예약 확인하기</h2>
-	</div>
-	<hr class="layout"></hr>
-	<div class="smallArea">
-		<h3>고객 XXX님의 하우스 예약 현황</h3>
-	
-	</div>
 
-	<hr class="layout"></hr>
-
-	<div id="main">
-		<div class="boardcss_list_table">
-			<table class="list_table">
-				<colgroup>
-					<col width="5%" />
-					<col width="15%" />
-					<col width="20%" />
-					<col width="50%" />
-					<col width="10%" />
-
-				</colgroup>
-				<thead>
-					<tr>
-						<th>번호</th>
-						<th>하우스</br> 프로필
-						</th>
-						<th>하우스 이름</th>
-						<th>주소</th>
-						<th>가격(월 기준)</br> 체크인아웃
-						</th>
-					</tr>
-				</thead>
-
-				<tbody>
-					<tr>
-						<td colspan="4">조회된 결과가 없습니다.</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
-</head>
-
-<body>
-
-</body> --%>
-
-	<jsp:include page="./Footer.jsp"></jsp:include>
+<jsp:include page="./Footer.jsp"></jsp:include>
 </body>
 <script src="http://code.jquery.com/jquery.js"></script>
 <script>

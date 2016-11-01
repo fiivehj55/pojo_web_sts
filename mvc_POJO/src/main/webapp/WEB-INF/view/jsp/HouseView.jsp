@@ -319,7 +319,6 @@
 				</c:choose>
 			<div class="sp-thumbnail">
 				<div class="sp-thumbnail-title">${houseName } 사진1</div>
-			
 			</div>
 
 			<div class="sp-thumbnail">
@@ -364,7 +363,6 @@
 
 			<div class="sp-thumbnail">
 				<div class="sp-thumbnail-title">${houseName } 사진10</div>
-		
 			</div> 
 		</div>
     </div>				

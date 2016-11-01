@@ -12,7 +12,7 @@
     
     <insert id="insertRegistHouse" parameterType="registHouse">
         insert into REGIST_HOUSE
-        values (#{rhId}, #{checkIn}, #{checkOut}, #{houseNo}, #{memberId})
+       	values (SEQ_REGIST_RH_ID.nextval, #{checkIn}, #{checkOut}, #{houseNo}, #{memberId})
     </insert>
     
     <update id="updateRegistHouse" parameterType="registHouse">
