@@ -435,8 +435,8 @@ label {
 								<input type="date" onchange="lastDate(this)">
 							</p> -->
 							
-							<a href="#" class="button button-style-1" id="backTwo">이전단계</a> <a
-								href="#" class="button button-style-1" id="nextFour">다음단계</a>
+							<a href="#" class="button button-style-1" id="backTwo">이전단계</a> 
+							<a href="#" class="button button-style-1" id="nextFour">다음단계</a>
 						</fieldset>
 					</div>
 				</div>
@@ -444,18 +444,23 @@ label {
 					<div id="four" style="display: none;">
 						<fieldset>
 							<legend>호스팅 4단계 </legend>
-							<label for="room">결제단위</label> <span class="dropdown-el">
-								<input type="radio" name="day" value="일" id="dd"
-								checked="checked"><label for="dd">일(Day)</label> <input
-								type="radio" name="day" value="주" id="ww"><label
-								for="ww">주(Weekend)</label> <input type="radio" name="day"
-								value="월" id="mm"><label for="mm">월(Month)</label> <br />
-							</span> <br /> <label for="price">가격(원) : </label> <input type="number"
-								id="price" name="price" />
+							<label for="room">결제단위</label> 
+							<span class="dropdown-el">
+							
+							<input type="radio" name="day" value="일" id="dd" checked="checked">
+							<label for="dd">일(Day)</label>
+							 
+							<input type="radio" name="day" value="주" id="ww">
+							<label for="ww">주(Weekend)</label>
+							 
+							<input type="radio" name="day" value="월" id="mm"><label for="mm">월(Month)</label> <br />
+							</span> <br /> 
+							
+							<label for="price">가격(원) : </label> 
+							<input type="number" id="price" name="price" />
 						</fieldset>
 						<a href="#" class="button button-style-1" id="backThree">이전단계</a>
-						<input type="submit" class="button2" id="next" name="next"
-							value="하우스등록" style="padding: 10px;" />
+						<input type="submit" class="button2" id="next" name="next" value="하우스등록" style="padding: 10px;" />
 					</div>
 				</div>
 			</form>

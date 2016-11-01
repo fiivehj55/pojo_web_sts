@@ -70,10 +70,9 @@
 		<table>
 			<tr>
 				<th>숙소</th>
-				<th>숙박가능인원:3<br>
-					욕실:1<br>
-					침실:1<br>
-					침대:2<br>
+				<th>숙박가능인원 : ${house.houseHosting}<br>
+					방의 개수: ${house.houseRoom}<br>
+					화장실 개수: ${house.houseBath}<br>
 				</th>
 				
 				
@@ -86,30 +85,27 @@
 			
 			<tr>
 				<th>시설</th>
-				<th>TV<br>
-					인터넷<br>
-					세탁기<br>
-					에어컨<br>
-					헤어 드라이기
+				<th>${houseTv}<br>
+					${houseAircon }<br>
+					${houseWifi }<br>
+					${houseElebe }<br>
+					${houseWashing }<br/>
 				</th>
 			</tr>
-			<hr>
+			<hr/>
 			
 			<tr>
 				<th>가격</th>
-				<th>추가 인원 요금 : $10000 / 박 (2명 초과 시)<br>
-					보증금<br>
-					청소비:$ 3000
-					</th>
+				<th>${house.housePrice }원<br>
 			</tr>
 			
-			<tr>
+			<!-- <tr>
 				<th>숙소 이용규칙</th>
 				<th>흡연 금지<br>
 					반려동물 동반에 적합하지 않음<br>
 					체크인은 15:00 이후입니다.
 				</th>
-			</tr>
+			</tr> -->
 			
 			<tr>
 				<th>예약 가능 여부</th>
@@ -123,8 +119,17 @@
 		</table>
 	</div>
 	<div id="map"></div>
-<!-- 주소 -->
-
+	<!-- 주소 -->
+	<br/>
+	가능한 날짜
+	<p >
+		시작일 <input type="date" onchange="checkDate(this)" name="possCheckIn">
+		 ~ 종료일 	<input type="date" onchange="lastDate(this)" name="possCheckOut"> 
+		 <!-- <input type="button" onclick="nextDate(this)" value="+"> -->
+	</p>
+	
+	<a href="<%=request.getContextPath()%>/ReservationComplete"><input type="button" class="button button-style-1" value="예약 완료"/></a>
+	<a href="<%=request.getContextPath()%>/index"><input type="button" class="button button-style-1" value="취소"/></a>
 <p>
 <!-- 하우스시설정보 -->
 <%-- <h3 class = "h3">상세설명</h3>
@@ -139,7 +144,7 @@
 	"예약 가능 인원: ${house.houseHosting}"
 	
 	<img src="css/images/icon4.JPG" width="50" height="50">
-	"사용가능한 편의시설: ${houseAircon }, ${houseWifi },${houseElebe }, 	${houseWashing }"
+	"사용가능한 편의시설: ${houseTv}, ${houseAircon }, ${houseWifi },${houseElebe }, 	${houseWashing }"
 </h5>
 	<div id="map"></div>
 	<div class="houseBook">
@@ -198,6 +203,29 @@
 </body>
 <script src="http://code.jquery.com/jquery.js"></script>
 <script>
+// 날짜 스크립트
+function checkDate(dateTag){
+	var dateVal =  new Date(dateTag.value);
+	var date = new Date();
+	if(dateVal < date){
+		alert("설정 불가능한 날짜입니다.");
+		dateTag.value = "";
+	}
+}
+function lastDate(dateTag){
+	var dateVal =  new Date(dateTag.value);
+	var firstDate = $(dateTag).prev();
+	var date = new Date($(firstDate).val());
+	if($(firstDate).val() == ""){
+		alert("시작일을 먼저 설정해주세요");
+		$(dateTag).val("");
+	}
+	if(dateVal < date){
+		alert("설정 불가능한 날짜입니다.");
+		dateTag.value = "";
+	}
+}
+
 
 //센터 한글명
 var centerKN;
