@@ -78,91 +78,91 @@ body {
 <div class="wrapper">
   <div class="table" style="height:600px;">
     <div class="row header green">
-      <div class="cell">
+      <div class="2u">
        	번호
       </div>
-      <div class="cell">
+      <div class="4u">
      	  사진
       </div>
-      <div class="cell">
+      <div class="2u">
         	제목/주소
       </div>
-      <div class="cell">
+      <div class="2u">
      	   프로필
       </div>
-      <div class="cell">
+      <div class="2u">
         체크인/체크아웃
       </div>
     </div>
     
     <div class="row">
-      <div class="cell">
+      <div class="2u">
        1
       </div>
-      <div class="cell">
+      <div class="4u">
         사진
       </div>
-      <div class="cell">
+      <div class="2u">
        충청남도 서북구 두정동
       </div>
-      <div class="cell">
+      <div class="2u">
        프로필사진
       </div>
-      <div class="cell">
+      <div class="2u">
        2016.11.10~2016.12.10
       </div>
     </div>
     
     <div class="row">
-      <div class="cell">
+      <div class="2u">
       2
       </div>
-      <div class="cell">
+      <div class="4u">
        
       </div>
-      <div class="cell">
+      <div class="2u">
        
       </div>
-      <div class="cell">
+      <div class="2u">
        
       </div>
-      <div class="cell">
+      <div class="2u">
         
       </div>
     </div>
     
     <div class="row">
-      <div class="cell">
+      <div class="2u">
         3
       </div>
-      <div class="cell">
+      <div class="4u">
        
       </div>
-      <div class="cell">
+      <div class="2u">
        
       </div>
-      <div class="cell">
+      <div class="2u">
        
       </div>
-      <div class="cell">
+      <div class="2u">
         
       </div>
     </div>
     
     <div class="row">
-      <div class="cell">
+      <div class="2u">
        4
       </div>
-      <div class="cell">
+      <div class="4u">
       
       </div>
-      <div class="cell">
+      <div class="2u">
        
       </div>
-      <div class="cell">
+      <div class="2u">
        
       </div>
-      <div class="cell">
+      <div class="2u">
         
       </div>
     </div>
