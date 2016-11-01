@@ -2,6 +2,7 @@ package com.example.dto;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 /**
  * REGIST_HOUSE 모델 클래스.
@@ -28,6 +29,9 @@ public class RegistHouse implements Serializable {
 	
 	/** MEMBER_ID */
 	private String memberId;
+	
+	/** HOUSE */
+	private Set<House> house;
 
 	/**
 	 * 생성자.
@@ -123,6 +127,14 @@ public class RegistHouse implements Serializable {
 	public void setMemberId(String memberId) {
 		this.memberId = memberId;
 	}
+	
+	public Set<House> getHouse() {
+		return house;
+	}
+
+	public void setHouse(Set<House> house) {
+		this.house = house;
+	}
 
 	/**
 	 * {@inheritDoc}
@@ -163,7 +175,7 @@ public class RegistHouse implements Serializable {
 	@Override
 	public String toString() {
 		return "RegistHouse [rhId=" + rhId + ", checkIn=" + checkIn + ", checkOut=" + checkOut + ", houseNo=" + houseNo
-				+ ", memberId=" + memberId + "]";
+				+ ", memberId=" + memberId + ", house=" + house + "]";
 	}
 
 }

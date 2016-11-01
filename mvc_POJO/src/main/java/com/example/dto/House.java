@@ -1,7 +1,7 @@
 package com.example.dto;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.util.Set;
 
 /**
  * HOUSE 모델 클래스.
@@ -76,6 +76,9 @@ public class House implements Serializable {
 	
 	/** POSS_CHECK_OUT */
 	private String possCheckOut;
+	
+	/** REGIST_HOUSE */
+	private Set<RegistHouse> registHouse;
 	
 	/**
 	 * 생성자.
@@ -381,6 +384,14 @@ public class House implements Serializable {
 	public void setPossCheckOut(String possCheckOut) {
 		this.possCheckOut = possCheckOut;
 	}
+	
+	public Set<RegistHouse> getRegistHouse() {
+		return registHouse;
+	}
+
+	public void setRegistHouse(Set<RegistHouse> registHouse) {
+		this.registHouse = registHouse;
+	}
 
 	/**
 	 * {@inheritDoc}
@@ -421,11 +432,13 @@ public class House implements Serializable {
 	@Override
 	public String toString() {
 		return "House [houseNo=" + houseNo + ", houseName=" + houseName + ", houseAddress=" + houseAddress
-				+ ", housePrice=" + housePrice + ", houseScore=" + houseScore + ", houseInfo=" + houseInfo
-				+ ", memberId=" + memberId + ", detailId=" + detailId + ", houseRoom=" + houseRoom + ", houseBath="
-				+ houseBath + ", houseHosting=" + houseHosting + ", houseTv=" + houseTv + ", houseAircon=" + houseAircon
-				+ ", houseWifi=" + houseWifi + ", houseElebe=" + houseElebe + ", houseWashing=" + houseWashing
-				+ ", houseImg=" + houseImg + ", houseDay=" + houseDay + "]";
+				+ ", houseAddressDetail=" + houseAddressDetail + ", housePrice=" + housePrice + ", houseScore="
+				+ houseScore + ", houseInfo=" + houseInfo + ", memberId=" + memberId + ", detailId=" + detailId
+				+ ", houseRoom=" + houseRoom + ", houseBath=" + houseBath + ", houseHosting=" + houseHosting
+				+ ", houseTv=" + houseTv + ", houseAircon=" + houseAircon + ", houseWifi=" + houseWifi + ", houseElebe="
+				+ houseElebe + ", houseWashing=" + houseWashing + ", houseImg=" + houseImg + ", houseDay=" + houseDay
+				+ ", possCheckIn=" + possCheckIn + ", possCheckOut=" + possCheckOut + ", registHouse=" + registHouse
+				+ "]";
 	}
 
 }
