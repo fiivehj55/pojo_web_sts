@@ -486,4 +486,9 @@ public class HouseController {
 		
 		return "jsp/ReservationComplete";
 	}
+	
+	@RequestMapping(value = "/ReservationComplete1", method=RequestMethod.GET)
+	public String ReservationComplete1(Model model, HttpSession session) {
+		return "jsp/ReservationComplete";
+	}
 }
