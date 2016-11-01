@@ -23,6 +23,9 @@ label {
 	padding: 20px;
 	margin: 100px auto;
 }
+.view{
+	height:100%;
+}
 </style>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="description" content="" />
@@ -41,8 +44,10 @@ label {
 	<jsp:include page="./Header.jsp"></jsp:include>
 		<div id="tableHeader">
 <img src='css/images/t3.jpg' width="100%" height="5%"/> </div>
-	<div id="main">
-		<div id="content" class="">
+	
+	<div id="main" style="height:500px;">
+	
+		<div id="content">
 			<!-- 등록버튼 시작 -->
 			<div id="boardcss_list_add_button_table">
 			
@@ -171,6 +176,7 @@ label {
 			<!-- 상세검색 테이블 종료 -->
 
 		</div>
+	</div>
 	</div>
 	<jsp:include page="./Footer.jsp"></jsp:include>
 </head>

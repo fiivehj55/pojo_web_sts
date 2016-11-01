@@ -35,7 +35,7 @@
 					<li class="active"><a href="index">메인가기</a>
 						<ul class="sub">
 							<li class="active"><a href="#">&nbsp</a></li>
-							<li class="active"><a href="profile">프로필 작업</a></li>
+							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li>
@@ -46,31 +46,11 @@
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li>
-					<c:choose>
-						<c:when test="${empty user }">
-							<li><a href="#">메시지</a>
-						<ul class="sub">
-							<li class="active"><a href="#">&nbsp</a></li>
-							<li class="active"><a href="#">&nbsp</a></li>
-							<li class="active"><a href="#">&nbsp</a></li>
-							<li class="active"><a href="#">&nbsp</a></li>
-						</ul></li>
-						</c:when>
-						<c:otherwise>
-						<li><a href="chatprivate">메시지</a>
-							<ul class="sub">
-								<li class="active"><a href="kakao">카카오톡</a></li>
-								<li class="active"><a href="#">&nbsp</a></li>
-								<li class="active"><a href="#">&nbsp</a></li>
-								<li class="active"><a href="#">&nbsp</a></li>
-						</ul></li>
-						</c:otherwise>
-					</c:choose>
 					<li><a href="faq">고객센터</a>
 						<ul class="sub">
 							<li class="active"><a href="faq">FAQ</a></li>
 							<li class="active"><a href="report?page=1">신고 게시판</a></li>
-							<li class="active"><a href="#">&nbsp</a></li>
+							<li class="active"><a href="bbs?page=1">문의 게시판</a>
 							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li>
 					
@@ -103,13 +83,13 @@
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li> -->
-					<li><a href="bbs?page=1">문의게시판</a>
+<!-- 					<li><a href="bbs?page=1">문의게시판</a>
 						<ul class="sub">
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
-						</ul></li>
+						</ul></li> -->
 					<li><a href="admin">관리자 페이지</a>
 						<ul class="sub">
 							<li class="active"><a href="adminReport?page=1">신고게시판 관리</a></li>

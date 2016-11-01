@@ -152,7 +152,7 @@ p, h1, form, button {
 	필수입력사항</p>
 	<hr><p>
 		<div class="boardWrite">
-		<form method="post" action="findPass">
+		<form method="post" action="findPass" style="height:600px;">
 		<table border="1" summary="">
 			<tbody>
 				<tr>

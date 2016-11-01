@@ -216,6 +216,7 @@ public class HouseController {
 			model.addAttribute("houseImg", house.getHouseImg());
 			model.addAttribute("memberName", house.getMemberId());
 			model.addAttribute("houseName", house.getHouseName());
+			model.addAttribute("housePrice", house.getHousePrice());
 			model.addAttribute("houseScore", house.getHouseScore());
 			model.addAttribute("houseInfo", house.getHouseInfo());
 			model.addAttribute("houseRoom", house.getHouseRoom());
@@ -463,6 +464,12 @@ public class HouseController {
 		if ( !houseWashing.equals("null")) {
 			model.addAttribute("houseWashing", "세탁기");
 		}
+		
 		return "jsp/CustomerReservation";
+	}
+	
+	@RequestMapping(value = "/ReservationComplete")
+	public String ReservationComplete(Model model, HttpSession session) {
+		return "jsp/ReservationComplete";
 	}
 }

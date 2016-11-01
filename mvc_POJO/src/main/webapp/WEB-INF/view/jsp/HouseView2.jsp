@@ -121,7 +121,7 @@
 								<p>
 									<c:if test="${user. memId == houseUser}">
 										<p><a href="updateHouse?houseNo=${houseNo}" class="button button-style1"> 수정하기</a>
-										<p><a href="deleteHouse?houseNo=${houseNo}" class="button button-style1"> 삭제하기</a>
+										<p><a href="deleteHouse?houseNo=${houseNo}" class="button button-style1"> 취소하기</a>
 									</c:if>
 							</c:if>
 						</div>

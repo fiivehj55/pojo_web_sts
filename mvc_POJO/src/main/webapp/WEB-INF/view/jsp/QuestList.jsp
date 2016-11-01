@@ -29,7 +29,7 @@ label {
 	<jsp:include page="./Header.jsp"></jsp:include>
 		<div id="tableHeader">
 <img src='css/images/t1.jpg' width="100%" height="5%"/> </div>
-	<div id="main">
+	<div id="main" style="height:600px;">
 		<div id="content" class="">
 			<!-- 등록버튼 시작 -->
 			<div id="boardcss_list_add_button_table">
