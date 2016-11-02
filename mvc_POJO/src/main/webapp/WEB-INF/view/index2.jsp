@@ -333,12 +333,11 @@ body{
 
    <!-- Main -->
 	<div class="container">
-	<div class="wrap">
 	<c:choose>
 		<c:when test="${fn:length(house) > 0}">
 			<c:forEach items="${house }" var="row">
-			
-				<div class="tile">
+			<div class="wrap">
+				<div class="tile">			
 				<a href="houseView?houseNo=${row.houseNo}">
 					<img src="<%=request.getContextPath()%>/upload/${row.memberId}/${row.houseNo}/main/${row.houseImg}"/>
 					<div class="text">
@@ -355,15 +354,16 @@ body{
    					</div>
 				</a>
 				</div>
+			</div>
 			</c:forEach>
 		</c:when>
 		<c:otherwise>
 			조회된 결과가 없습니다.
 		</c:otherwise>
 	</c:choose>
-	</div>	
 	</div>
-								
+	
+	
 <!-- <div class="container">
 		<div class="wrap">
 			<div class="tile">
