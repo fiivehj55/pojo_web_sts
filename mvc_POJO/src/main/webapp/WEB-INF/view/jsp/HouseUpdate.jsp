@@ -177,19 +177,36 @@
 			<div id="side">
 				<sform:hidden path="houseNo"/>
 				<div class="font">하우스 정보 1단계</div>
-				<sform:label path="houseRoom">방의 개수 : </sform:label>
+				<label>방의 개수 :</label>
 				<span class="dropdown-el">
-				<sform:radiobuttons path="houseRoom" items="${rooms}" />
+				<sform:radiobutton path="houseRoom" value="1개" id="houseRoom1"/>
+				<label for="houseRoom1">1개</label>
+				<sform:radiobutton path="houseRoom" value="2개" id="houseRoom2"/>
+				<label for="houseRoom2">2개</label>
+				<sform:radiobutton path="houseRoom" value="3개" id="houseRoom3"/>
+				<label for="houseRoom3">3개</label>
+				
 				</span><br/>
 				
-				<sform:label path="houseBath">욕실 개수 : </sform:label>
+				<label>욕실 개수 : </label>
 				<span class="dropdown-el">
-				<sform:radiobuttons path="houseBath" items="${baths}"/>
+					<sform:radiobutton path="houseBath" value="1개" id="houseBath1"/>
+				<label for="houseBath1">1개</label>
+				<sform:radiobutton path="houseBath" value="2개" id="houseBath2"/>
+				<label for="houseBath2">2개</label>
+				<sform:radiobutton path="houseBath" value="3개" id="houseBath3"/>
+				<label for="houseBath3">3개</label>
 				</span><br/>
-				 
-				<sform:label path="houseHosting">숙박 인원 : </sform:label>
+				<label>숙박 인원 : </label>
 				<span class="dropdown-el">
-				<sform:radiobuttons path="houseHosting" items="${hosting}"/>
+				<sform:radiobutton path="houseHosting" value="1명" id="houseHosting1"/>
+				<label for="houseHosting1">1명</label>
+				<sform:radiobutton path="houseHosting" value="2명" id="houseHosting2"/>
+				<label for="houseHosting2">2명</label>
+				<sform:radiobutton path="houseHosting" value="3명" id="houseHosting3"/>
+				<label for="houseHosting3">3명</label>
+					<sform:radiobutton path="houseHosting" value="4명" id="houseHosting4"/>
+				<label for="houseHosting4">4명</label>
 				</span><br/>
 				
 				<label for="market">편의 시설 : </label>

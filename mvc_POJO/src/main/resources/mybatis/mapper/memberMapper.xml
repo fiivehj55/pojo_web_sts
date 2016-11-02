@@ -49,4 +49,6 @@
 		<result column="MEM_IMG" property="memImg" />
 		<result column="MEM_INTRO" property="memIntro" />
 	</resultMap>
+	
+	
 </mapper>
