@@ -24,12 +24,14 @@
 
 <style>
 .inputReply {
-	width: 700px;
+	width:  950px;
 	height: 100px;
 }
 
 .replyContent {
 	height: 100px;
+	margin-left: 20px;
+	width: 1050px;
 }
 
 .replyContent1 {
@@ -39,7 +41,7 @@
 
 .listReply {
 	background: #EAEAEA;
-	width: 820px;
+	width: 1070px;
 }
 
 #boardcss_list_table {
@@ -47,6 +49,16 @@
 	width: 1024px;
 	margin: 0px 40% 0px 4%;
 }
+
+.h3{
+	margin: 50px;
+	padding: 5px 0;
+	color: #000;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+
 </style>
 
 </head>
@@ -69,6 +81,7 @@
 							<c:choose>
 								<c:when test="${user.memId == row.memberId }">
 									<a href="deleteRtr?reportReplyNo=${row.reportReplyNo }"style="float: right; margin-right: 20px;">삭제</a>
+									
 								</c:when>
 								<c:otherwise>
 									로그인 후 이용이 가능 합니다.
