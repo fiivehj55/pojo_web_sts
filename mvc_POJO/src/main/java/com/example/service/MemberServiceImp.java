@@ -105,4 +105,10 @@ public class MemberServiceImp implements MemberService{
 		result = dao.updateMemberNp(template, member);
 		return result;
 	}
+	@Override
+	public Member selectByIdMemberJoinRegistHouse(String memId) {
+		 Member list = null;
+		 list = dao.selectByIdMemberJoinRegistHouse(template, memId);
+		return list;
+	}
 }

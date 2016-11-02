@@ -110,6 +110,13 @@ public class DaoTest {
 	}
 
 	@Test
+	public void testMeberJoinRegist() {
+		Member  list = mdao.selectByIdMemberJoinRegistHouse(template, "jang");
+		/* mdao.deleteMember(template, "hong", "1234"); */
+		logger.trace("List: {}", list);
+
+	}
+	@Test
 	public void testFindIdMember() {
 		String result = mdao.selectId(template, "hh", "abc@naver.com");
 		logger.trace("id: {}", result);

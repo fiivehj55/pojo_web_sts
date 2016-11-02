@@ -38,6 +38,15 @@
         where mem_name = #{name} and
         mem_email = #{email}
     </select>
+    
+    <select id="RegistInfo" parameterType="String" resultMap="memberJRH">
+    select *
+    from MEMBER m
+    join REGIST_HOUSE rh on m.MEM_ID = rh.MEMBER_ID
+    join HOUSE h on rh.HOUSE_NO = h.HOUSE_NO
+     where m.MEM_ID = #{id}
+    </select>
+    
     <resultMap type="member" id="memBase">
 		<id column="MEM_ID" property="memId" />
 		<result column="MEM_NAME" property="memName" />
@@ -47,8 +56,12 @@
 		<result column="MEM_EMAIL" property="memEmail" />
 		<result column="MEM_GENDER" property="memGender" />
 		<result column="MEM_IMG" property="memImg" />
-		<result column="MEM_INTRO" property="memIntro" />
+		<result column="MEM_INTRO" property="memIntro"/>
 	</resultMap>
-	
+	<resultMap type="member" id="memberJRH" extends="memBase">
+		<collection property="registHouse" resultMap="pojo.web.dao.RegistHouseMapper.regHouseJH">
+		<id column="MEM_ID" property="memberId"/>
+		</collection>
+	</resultMap>
 	
 </mapper>

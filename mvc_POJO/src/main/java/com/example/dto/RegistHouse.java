@@ -31,7 +31,7 @@ public class RegistHouse implements Serializable {
 	private String memberId;
 	
 	/** HOUSE */
-	private Set<House> house;
+	private House house;
 
 	/**
 	 * 생성자.
@@ -128,11 +128,11 @@ public class RegistHouse implements Serializable {
 		this.memberId = memberId;
 	}
 	
-	public Set<House> getHouse() {
+	public House getHouse() {
 		return house;
 	}
 
-	public void setHouse(Set<House> house) {
+	public void setHouse(House house) {
 		this.house = house;
 	}
 

@@ -506,6 +506,9 @@ public class HouseController {
 	
 	@RequestMapping(value = "/ReservationComplete1", method=RequestMethod.GET)
 	public String ReservationComplete1(Model model, HttpSession session) {
+		Member user =  (Member) session.getAttribute("user");
+		Member userInfo = mservice.selectByIdMemberJoinRegistHouse(user.getMemId());
+		model.addAttribute("userInfo",userInfo );
 		return "jsp/ReservationComplete";
 	}
 	
