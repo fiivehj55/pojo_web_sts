@@ -50,6 +50,7 @@
 
 .find a {
 	color: #434343;
+	
 }
 
 .btnArea {
@@ -100,6 +101,18 @@ input {
 	float: left;
 	padding: 10px 10px 10px 0;
 }
+
+.a{
+	margin: 6px;
+}
+
+.b{
+	font-size:10px;
+}
+
+.idPass{
+	margin:10px;
+}
 </style>
 </head>
 <body class="header">
@@ -126,7 +139,8 @@ input {
 					method="post">
 					<fieldset style="border: 1px solid: #e8e8e8;">
 						<legend>회원로그인</legend>
-						<div style="float: left;">
+						<div class =idPass>
+						<div class = "a" style="float: left;">
 							<label class="id">ID</label> 
 							<input type="text" name="id" id="member_id" />
 						</div>
@@ -134,33 +148,31 @@ input {
 							<label class="password">PW</label> 
 							<input type="password" name="password" id="member_passwd" />
 						</div>
-						<br />
-						<br />
-						<div class="security">
-							<input name="check_save_id" id="member_check_save_id0" type="checkbox" fw-label="아이디저장" /> 
-							<label for="member_check_save_id0">아이디 저장</label> <img alt="보안접속" src="http://img.echosting.cafe24.com/design/skin/default/member/ico_acccess.gif" />
 						</div>
-
-						<div class="btnArea Login center">
+						<p><br><br><br>
+						
+						
 							<%-- <a class="loginButton" href="<%=request.getContextPath()%>/index2">로그인</a> --%>
-							<input type="submit" value="로그인">
+						<div class= "b">							
+							<input type="submit" value="  로그인  " class="button button-style1">
 						</div>
 
 						<div class="find">
 							<ul>
-								<li><a href="findId"> <input type="button" value="아이디 찾기" /></a></li>
-								<li><a href="findPass"> <input type="button" value="비밀번호 찾기" /></a> </li>
-
+								<li><a href="findId"> <input type="button"  value="아이디 찾기" /></a></li>
+								<li><a href="findPass"> <input type="button"  value="비밀번호 찾기" /></a> </li>
 							</ul>
 						</div>
+						<p><br><br>
 
 						<div class="link">
 							<hr class="layout">
 							<p>회원가입을 하시면 다양한 혜택을 받으실 수 있습니다.</p>
-							<div class="btnArea Login center" style="margin-top: 10px;">
+							
 								<%-- <a class="joinButton" href="<%=request.getContextPath()%>/join">회원가입</a> --%>
-								<a href="terms"><input type="button" value="회원가입"/></a>
-							</div>
+							<div class= "b">
+								<a href="terms"><input type="button" class="button button-style1" value="회원가입"/></a>
+							</div>	
 						</div>
 					</fieldset>
 				</form>
