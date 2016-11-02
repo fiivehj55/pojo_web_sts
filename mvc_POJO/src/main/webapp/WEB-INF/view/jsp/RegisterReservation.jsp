@@ -86,10 +86,10 @@ body {
       <div class="2u">
        	번호
       </div>
-      <div class="4u">
+      <div class="2u">
      	  사진
       </div>
-      <div class="2u">
+      <div class="3u">
         	제목/주소
       </div>
       <div class="2u">
@@ -139,7 +139,24 @@ body {
 				<c:otherwise>
 							조회된 결과가 없습니다.
 					</c:otherwise>
-			</c:choose>
+			</c:choose><!-- 
+=======
+      <div class="2u" style="width: 15%; height: 300px;">
+       1
+      </div>
+      <div class="2u" style="width: 15%; height: 300px;">
+        사진
+      </div>
+      <div class="3u" style="width:30%; height: 300px;">
+       충청남도 서북구 두정동
+      </div>
+      <div class="2u" style="width: 15%; height: 300px;">
+       프로필사진
+      </div>
+      <div class="2u" style="width: 25%; height: 300px;">
+       2016.11.10~2016.12.10
+      </div>
+>>>>>>> branch 'master' of https://github.com/fiivehj55/pojo_web_sts.git -->
     </div>
     
     <div class="row">
