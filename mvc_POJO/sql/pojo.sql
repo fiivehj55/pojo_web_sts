@@ -263,11 +263,11 @@ insert into HOUSE values (96, '두정빌라', '천안시 서북구 두정동', '
 insert into HOUSE values (95, '천안빌라', '천안시 서북구 두정동', '1642번지', 350000, 8.5, 'hello', 'hong', 2, '1개', '2개', '3명', 'tv', 'aircon', 'wifi', 'elebe', 'washing', null, '일', '2016/09/23', '2016/10/23');
 insert into HOUSE values (94, '서울빌라', '천안시 서북구 두정동', '1642번지', 350000, 8.5, 'hello', 'hong', 2, '1개', '2개', '3명', 'tv', 'aircon', 'wifi', 'elebe', 'washing', null, '일', '2016/09/23', '2016/10/23');
 insert into HOUSE values (93, '서울빌라', '대전광역시 유성구 장대동', '1642번지', 350000, 8.5, 'hello', 'hong', 2, '1개', '2개', '3명', 'tv', 'aircon', 'wifi', 'elebe', 'washing', null, '일', '2016/09/23', '2016/10/23');
-insert into REGIST_HOUSE values (91, '2016/09/25', '2016/10/7', 1, 'hong');
-insert into REGIST_HOUSE values (92, '2016/09/25', '2016/10/7', 1, 'jang');
-insert into REGIST_HOUSE values (93, '2016/09/25', '2016/10/7', 1, 'hong');
-insert into REGIST_HOUSE values (94, '2016/09/25', '2016/10/7', 1, 'jang');
-insert into REGIST_HOUSE values (95, '2016/09/25', '2016/10/7', 1, 'hong');
+insert into REGIST_HOUSE values (91, '2016/09/25', '2016/10/7', 99, 'jang');
+insert into REGIST_HOUSE values (92, '2016/09/25', '2016/10/7', 98, 'jang');
+insert into REGIST_HOUSE values (93, '2016/09/25', '2016/10/7', 97, 'jang');
+insert into REGIST_HOUSE values (94, '2016/09/25', '2016/10/7', 96, 'jang');
+insert into REGIST_HOUSE values (95, '2016/09/25', '2016/10/7', 96, 'jang');
 insert into QUESTION values (89, '사기당했어요.', '하우스 등록자가 계속 전화를 받지 않습니다.', sysdate, 'jang', 2, null);
 insert into QUESTION values (90, '사기당했어요.', '하우스 등록자가 계속 전화를 받지 않습니다.', sysdate, 'hong', 2, null);
 insert into QUESTION values (91, '사기당했어요.', '하우스 등록자가 계속 전화를 받지 않습니다.', sysdate, 'jang', 2, null);

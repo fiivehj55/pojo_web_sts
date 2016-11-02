@@ -72,7 +72,6 @@ body
 }
 .wrap
 {
-  position: relative;
   margin:50px auto 0 auto;
   width:100%;
   display:flex;
@@ -335,25 +334,27 @@ body{
    <!-- Main -->
 	<div class="container">
 	<div class="wrap">
-	<div class="tile">
 	<c:choose>
 		<c:when test="${fn:length(house) > 0}">
 			<c:forEach items="${house }" var="row">
+			
+				<div class="tile">
 				<a href="houseView?houseNo=${row.houseNo}">
 					<img src="<%=request.getContextPath()%>/upload/${row.memberId}/${row.houseNo}/main/${row.houseImg}"/>
-						<div class="text">
-							<h1>Lorem ipsum.</h1>
-							<h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
-							<p class="animate-text">
-								Bacon ipsum dolor amet pork belly
-								tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank
-								sirloin strip steak prosciutto kevin turducken.
-							</p>
-							<div class="dots">
-								<span><a href="houseView?houseNo=${row.houseNo }">${row.houseName}</a></span> <span></span> <span></span>
-							</div>
-   						</div>
-					</a>
+					<div class="text">
+						<h1>Lorem ipsum.</h1>
+						<h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
+						<p class="animate-text">
+							Bacon ipsum dolor amet pork belly
+							tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank
+							sirloin strip steak prosciutto kevin turducken.
+						</p>
+						<div class="dots">
+							<span><a href="houseView?houseNo=${row.houseNo }">${row.houseName}</a></span> <span></span> <span></span>
+						</div>
+   					</div>
+				</a>
+				</div>
 			</c:forEach>
 		</c:when>
 		<c:otherwise>
@@ -361,7 +362,6 @@ body{
 		</c:otherwise>
 	</c:choose>
 	</div>	
-	</div>
 	</div>
 								
 <!-- <div class="container">
