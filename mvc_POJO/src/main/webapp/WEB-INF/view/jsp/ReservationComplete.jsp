@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE>
@@ -95,29 +96,37 @@ body {
 		</div>
 
 		<div class="row">
-		<c:choose>
-					<c:when test="${fn:length(userInfo.registHouse) > 0}">
-						<c:forEach items="${userInfo.registHouse }" var="row">
-							<div class="2u">${row.houseNo }</div>
-							<div class="2u">
-				<img class="" src="<%=request.getContextPath() %>/upload/${userInfo.memId}/${row.houseNo}/main/${row.house.houseImg}"
-					data-src="<%=request.getContextPath() %>/upload/${userInfo.memId}/${row.houseNo}/main/${row.house.houseImg}"
-					data-retina="<%=request.getContextPath() %>/upload/src/css/images/aaa.jpg" style="width:100px; height:100px;"/></div>
-			<div class="3u">${row.house.houseName} <br/>${row.house.houseAddress } ${row.house.houseAddressDetail}</div>
-			<div class="2u">
-				<img src="<%=request.getContextPath()%>/upload/${userInfo.memId}/intro/${userInfo.memImg}" width="100" height="100" onclick="goPopup()"/></div>
-			<div class="2u">
-				<!-- 2016.11.10~2016.12.10 <br/> -->
-				${row.checkIn } ~ ${row.checkOut }
-			</div>
-						</c:forEach>
-					</c:when>
-					<c:otherwise>
+			<c:choose>
+				<c:when test="${fn:length(userInfo.registHouse) > 0}">
+					<c:forEach items="${userInfo.registHouse }" var="row">
+						<div class="2u" style="width: 200px; height: 200px;">${row.houseNo }</div>
+						<div class="2u" style="width: 200px; height: 200px;">
+							<img class=""
+								src="<%=request.getContextPath() %>/upload/${userInfo.memId}/${row.houseNo}/main/${row.house.houseImg}"
+								data-src="<%=request.getContextPath() %>/upload/${userInfo.memId}/${row.houseNo}/main/${row.house.houseImg}"
+								data-retina="<%=request.getContextPath() %>/upload/src/css/images/aaa.jpg"
+								style="width: 100px; height: 100px;" />
+						</div>
+						<div class="3u" style="width: 300px; height: 200px;">${row.house.houseName}
+							<br />${row.house.houseAddress } ${row.house.houseAddressDetail}
+						</div>
+						<div class="2u" style="width: 200px; height: 200px;">
+							<img
+								src="<%=request.getContextPath()%>/upload/${userInfo.memId}/intro/${userInfo.memImg}"
+								width="100" height="100" onclick="goPopup()" />
+						</div>
+						<div class="2u" style="width: 300px; height: 200px;">
+							<!-- 2016.11.10~2016.12.10 <br/> -->
+							${row.checkIn } ~ ${row.checkOut }
+						</div>
+					</c:forEach>
+				</c:when>
+				<c:otherwise>
 							조회된 결과가 없습니다.
 					</c:otherwise>
-				</c:choose>
-	</div>
-	<div class="table"></div>
-	<jsp:include page="./Footer.jsp"></jsp:include>
+			</c:choose>
+		</div>
+		<div class="table"></div>
+		<jsp:include page="./Footer.jsp"></jsp:include>
 </body>
 </html>
