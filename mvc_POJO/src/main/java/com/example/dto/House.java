@@ -1,6 +1,7 @@
 package com.example.dto;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -78,7 +79,7 @@ public class House implements Serializable {
 	private String possCheckOut;
 	
 	/** REGIST_HOUSE */
-	private Set<RegistHouse> registHouse;
+	private List<RegistHouse> registHouse;
 	
 	/**
 	 * 생성자.
@@ -385,11 +386,11 @@ public class House implements Serializable {
 		this.possCheckOut = possCheckOut;
 	}
 	
-	public Set<RegistHouse> getRegistHouse() {
+	public List<RegistHouse> getRegistHouse() {
 		return registHouse;
 	}
 
-	public void setRegistHouse(Set<RegistHouse> registHouse) {
+	public void setRegistHouse(List<RegistHouse> registHouse) {
 		this.registHouse = registHouse;
 	}
 

@@ -72,15 +72,16 @@ body
 }
 .wrap
 {
-  margin:50px auto 0 auto;
-  width:100%;
+  margin:50px auto 0  auto ; 
   display:flex;
   align-items:space-around;
-  max-width:1200px;
+  max-width: 1200px;
+  min-width: 380px;
+  display: inline-block;
 }
 .tile
 {
-  width:380px;
+  width:350px;
   height:380px;
   margin:10px;
   background-color:#99aeff;
@@ -333,11 +334,11 @@ body{
 
    <!-- Main -->
 	<div class="container">
-	<div class="wrap">
+	
 	<c:choose>
 		<c:when test="${fn:length(house) > 0}">
 			<c:forEach items="${house }" var="row">
-			
+			<div class="wrap">
 				<div class="tile">
 				<a href="houseView?houseNo=${row.houseNo}">
 					<img src="<%=request.getContextPath()%>/upload/${row.memberId}/${row.houseNo}/main/${row.houseImg}"/>
@@ -355,6 +356,7 @@ body{
    					</div>
 				</a>
 				</div>
+				</div>
 			</c:forEach>
 		</c:when>
 		<c:otherwise>
@@ -362,7 +364,7 @@ body{
 		</c:otherwise>
 	</c:choose>
 	</div>	
-	</div>
+	
 								
 <!-- <div class="container">
 		<div class="wrap">

@@ -15,5 +15,5 @@ public interface MemberDao {
 	int updateMemberNp(SqlSessionTemplate template, Member member);
 	int deleteMember(SqlSessionTemplate template, String memId, String memPassword);
 	Member selectByIdMemberJoinRegistHouse(SqlSessionTemplate template, String memId);
-	
+	Member selectByIdMemberJoinHouse(SqlSessionTemplate template, String memId);
 }

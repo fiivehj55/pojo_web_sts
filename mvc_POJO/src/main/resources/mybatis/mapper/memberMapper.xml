@@ -46,6 +46,14 @@
     join HOUSE h on rh.HOUSE_NO = h.HOUSE_NO
      where m.MEM_ID = #{id}
     </select>
+     
+<!--     <select id="hostInfo" parameterType="String" resultMap="memberJRH">
+    select *
+    from MEMBER m
+     join HOUSE h on m.MEM_ID = h.MEM_ID
+    join REGIST_HOUSE rh on h. = rh.MEMBER_ID
+     where m.MEM_ID = #{id}
+    </select> -->
     
     <resultMap type="member" id="memBase">
 		<id column="MEM_ID" property="memId" />
@@ -63,5 +71,9 @@
 		<id column="MEM_ID" property="memberId"/>
 		</collection>
 	</resultMap>
-	
+		<resultMap type="member" id="memberJH" extends="memBase">
+		<collection property="House" resultMap="pojo.web.dao.HouseMapper.houseJRH">
+		<id column="MEM_ID" property="memberId"/>
+		</collection>
+	</resultMap>
 </mapper>
