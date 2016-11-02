@@ -103,8 +103,7 @@
 
 </head>
 <body class="header">
-	<a
-		href="/<%=request.getContextPath()%>/slidepro/examples/example3.html"
+	<a href="/<%=request.getContextPath()%>/slidepro/examples/example3.html"
 		style="color: #fff">샘플3</a>
 	<jsp:include page="./Header.jsp"></jsp:include>
 	<!-- 맨위 -->
@@ -486,6 +485,7 @@
 		   var pop = 
 			   window.open("<%=request.getContextPath()%>/profile?memberName=${memberName}","pop", "width=570,height=800, scrollbars=yes");
 	}
+	
 </script>
 
 </html>
