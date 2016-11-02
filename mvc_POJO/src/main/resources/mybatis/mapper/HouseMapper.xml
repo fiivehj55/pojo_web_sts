@@ -72,7 +72,7 @@
 			) sub
 		) where rnum &gt;= #{low,jdbcType=NUMERIC} and rnum &lt;= #{high,jdbcType=NUMERIC}
 	</select>
-
+ 
 	<resultMap type="house" id="houseBase">
 		<id column="HOUSE_NO" property="houseNo" />
 		<result column="HOUSE_NAME" property="houseName" />

@@ -20,7 +20,7 @@
         CHECK_IN=#{checkIn}, CHECK_OUT=#{checkOut}
         where RH_ID = #{rhId}
     </update>
-    
+     
     <delete id="deleteRegistHouse" parameterType="int">
         delete REGIST_HOUSE where RH_ID = #{rhId}
     </delete>
