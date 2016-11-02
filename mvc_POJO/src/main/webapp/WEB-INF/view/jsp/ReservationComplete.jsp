@@ -99,23 +99,23 @@ body {
 			<c:choose>
 				<c:when test="${fn:length(userInfo.registHouse) > 0}">
 					<c:forEach items="${userInfo.registHouse }" var="row">
-						<div class="2u" style="width: 200px; height: 200px;">${row.houseNo }</div>
-						<div class="2u" style="width: 200px; height: 200px;">
+						<div class="2u" style="width: 15%; height: 300px;">${row.houseNo }</div>
+						<div class="2u" style="width:  15%; height: 300px;">
 							<img class=""
 								src="<%=request.getContextPath() %>/upload/${userInfo.memId}/${row.houseNo}/main/${row.house.houseImg}"
 								data-src="<%=request.getContextPath() %>/upload/${userInfo.memId}/${row.houseNo}/main/${row.house.houseImg}"
 								data-retina="<%=request.getContextPath() %>/upload/src/css/images/aaa.jpg"
 								style="width: 100px; height: 100px;" />
 						</div>
-						<div class="3u" style="width: 300px; height: 200px;">${row.house.houseName}
+						<div class="3u" style="width:  30%; height: 300px;">${row.house.houseName}
 							<br />${row.house.houseAddress } ${row.house.houseAddressDetail}
 						</div>
-						<div class="2u" style="width: 200px; height: 200px;">
+						<div class="2u" style="width: 15%; height: 300px;">
 							<img
 								src="<%=request.getContextPath()%>/upload/${userInfo.memId}/intro/${userInfo.memImg}"
 								width="100" height="100" onclick="goPopup()" />
 						</div>
-						<div class="2u" style="width: 300px; height: 200px;">
+						<div class="2u" style="width:25%; height: 300px;">
 							<!-- 2016.11.10~2016.12.10 <br/> -->
 							${row.checkIn } ~ ${row.checkOut }
 						</div>

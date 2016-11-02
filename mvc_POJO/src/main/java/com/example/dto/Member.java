@@ -49,7 +49,8 @@ public class Member implements Serializable {
 	private String detailGrade;
 
 	private List<RegistHouse> registHouse;
-	
+
+	private List<House> House;
 	/**
 	 * 생성자.
 	 */
@@ -90,6 +91,18 @@ public class Member implements Serializable {
 	
 	
 	
+	public List<House> getHouse() {
+		return House;
+	}
+
+
+
+	public void setHouse(List<House> house) {
+		House = house;
+	}
+
+
+
 	public List<RegistHouse> getRegistHouse() {
 		return registHouse;
 	}

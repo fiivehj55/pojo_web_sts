@@ -72,15 +72,16 @@ body
 }
 .wrap
 {
-  margin:50px auto 0 auto;
-  width:100%;
+  margin:50px auto 0  auto ; 
   display:flex;
   align-items:space-around;
-  max-width:1200px;
+  max-width: 1200px;
+  min-width: 380px;
+  display: inline-block;
 }
 .tile
 {
-  width:380px;
+  width:350px;
   height:380px;
   margin:10px;
   background-color:#99aeff;
@@ -361,9 +362,7 @@ body{
 			조회된 결과가 없습니다.
 		</c:otherwise>
 	</c:choose>
-	</div>
-	
-	
+	</div>	
 <!-- <div class="container">
 		<div class="wrap">
 			<div class="tile">
