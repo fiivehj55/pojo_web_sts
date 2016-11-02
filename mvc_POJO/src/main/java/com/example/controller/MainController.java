@@ -49,6 +49,8 @@ public class MainController {
 	
 	@RequestMapping(value = "/index",method=RequestMethod.GET)
 	public String index(Model model){
+		List<House> house = hService.selectByScore();
+		model.addAttribute("house", house);
 		return "index2";
 	}
 	

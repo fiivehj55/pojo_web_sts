@@ -56,7 +56,7 @@
 		HOUSE_TV=#{houseTv}, HOUSE_AIRCON=#{houseAircon}, HOUSE_WIFI=#{houseWifi}, 
 		HOUSE_ELEBE=#{houseElebe}, HOUSE_WASHING=#{houseWashing}, HOUSE_IMG=#{houseImg,jdbcType=VARCHAR}, 
 		HOUSE_DAY=#{houseDay}, POSS_CHECK_IN=#{possCheckIn}, POSS_CHECK_OUT=#{possCheckOut}
-		where HOSUE_NO=#{houseNo}
+		where HOUSE_NO=#{houseNo}
 	</update>
 	
 	<delete id="deleteHouse" parameterType="int">
@@ -74,7 +74,7 @@
 	</select>
 
 	<resultMap type="house" id="houseBase">
-		<id column="HOSUE_NO" property="houseNo" />
+		<id column="HOUSE_NO" property="houseNo" />
 		<result column="HOUSE_NAME" property="houseName" />
 		<result column="HOUSE_ADDRESS" property="houseAddress" />
 		<result column="HOUSE_ADDRESS_DETAIL" property="houseAddressDetail" />

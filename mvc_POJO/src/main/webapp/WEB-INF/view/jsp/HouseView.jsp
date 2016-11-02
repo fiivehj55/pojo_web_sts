@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="sform" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
@@ -7,9 +8,14 @@
 <head>
 <title>Linear by TEMPLATED</title>
 
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/slidepro/dist/css/slider-pro.min.css" media="screen"/>
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/slidepro/examples/css/examples.css" media="screen"/>
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css"
+	href="<%=request.getContextPath()%>/slidepro/dist/css/slider-pro.min.css"
+	media="screen" />
+<link rel="stylesheet" type="text/css"
+	href="<%=request.getContextPath()%>/slidepro/examples/css/examples.css"
+	media="screen" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600'
+	rel='stylesheet' type='text/css'>
 
 
 
@@ -64,7 +70,6 @@
 	/* border: 1px solid #999999; */
 	display: table-cell;
 	padding: 3px 10px;
-	
 }
 
 .divTableHeading {
@@ -94,281 +99,289 @@
 #right-box {
 	float: right;
 }
-
 </style>
 
 </head>
 <body class="header">
-<a href="/<%=request.getContextPath() %>/slidepro/examples/example3.html" style="color:#fff">샘플3</a>
+	<a
+		href="/<%=request.getContextPath()%>/slidepro/examples/example3.html"
+		style="color: #fff">샘플3</a>
 	<jsp:include page="./Header.jsp"></jsp:include>
 	<!-- 맨위 -->
 	<div id="main">
- 		<div class="divTable">
+		<div class="divTable">
 			<div class="divTableBody">
 				<div class="divTableRow">
-					<div class="divTableCell" >
-		<div id="example1" class="slider-pro">
-		<div class="sp-slides">
-				
-					<c:set value="${0}" var="num"></c:set>
-				<c:choose>
-					<c:when test="${fn:length(imgList) > 0}">
-						<c:forEach items="${imgList }" var="row">
-						
-					<c:set value="${num+1}" var="num"></c:set>
-							<div class="sp-slide">
-				<img class="sp-image" src="<%=request.getContextPath() %>/slidepro/src/css/images/aaa.jpg"
-					data-src="<%=request.getContextPath() %>/upload/${memberName}/${ houseNo}/other/${row}"
-					data-retina="<%=request.getContextPath() %>/upload/src/css/images/aaa.jpg"/>
-				
-				<p class="sp-layer sp-white sp-padding"
-					data-horizontal="50" data-vertical="50"
-					data-show-transition="left" data-hide-transition="up" data-show-delay="400" data-hide-delay="200">
-					공주빌라내부사진${num}
-				</p>
+					<div class="divTableCell">
+						<div id="example1" class="slider-pro">
+							<div class="sp-slides">
+								<c:set value="${0}" var="num"></c:set>
+								<c:choose>
+									<c:when test="${fn:length(imgList) > 0}">
+										<c:forEach items="${imgList }" var="row">
 
-				<p class="sp-layer sp-black sp-padding hide-small-screen"
-					data-horizontal="180" data-vertical="50"
-					data-show-transition="left" data-hide-transition="up" data-show-delay="600" data-hide-delay="100">
-					깔끔합니다
-				</p>
+											<c:set value="${num+1}" var="num"></c:set>
+											<div class="sp-slide">
+												<img class="sp-image"
+													src="<%=request.getContextPath() %>/slidepro/src/css/images/aaa.jpg"
+													data-src="<%=request.getContextPath() %>/upload/${memberName}/${ houseNo}/other/${row}"
+													data-retina="<%=request.getContextPath() %>/upload/src/css/images/aaa.jpg" />
 
-				<p class="sp-layer sp-white sp-padding hide-medium-screen"
-					data-horizontal="315" data-vertical="50"
-					data-show-transition="left" data-hide-transition="up" data-show-delay="800">
-					안락합니다.
-				</p>
-			</div>
-						</c:forEach>
-					</c:when>
-					<c:otherwise>
-							조회된 사진 없습니다.
-					</c:otherwise>
-				</c:choose>
-			
-			 <div class="sp-slide">
-				<img class="sp-image" src="<%=request.getContextPath() %>/slidepro/src/css/images/aaa.jpg"
-					data-src="<%=request.getContextPath() %>/slidepro/src/css/images/aaa.jpg"
-					data-retina="<%=request.getContextPath() %>/slidepro/src/css/images/aaa.jpg"/>
-				
-				<p class="sp-layer sp-white sp-padding"
-					data-horizontal="50" data-vertical="50"
-					data-show-transition="left" data-hide-transition="up" data-show-delay="400" data-hide-delay="200">
-					${houseName}에
-				</p> 
+												<p class="sp-layer sp-white sp-padding" data-horizontal="50"
+													data-vertical="50" data-show-transition="left"
+													data-hide-transition="up" data-show-delay="400"
+													data-hide-delay="200">공주빌라내부사진${num}</p>
 
-				<p class="sp-layer sp-black sp-padding hide-small-screen"
-					data-horizontal="180" data-vertical="50"
-					data-show-transition="left" data-hide-transition="up" data-show-delay="600" data-hide-delay="100">
-					오신 것을
-				</p>
+												<p class="sp-layer sp-black sp-padding hide-small-screen"
+													data-horizontal="180" data-vertical="50"
+													data-show-transition="left" data-hide-transition="up"
+													data-show-delay="600" data-hide-delay="100">깔끔합니다</p>
 
-				<p class="sp-layer sp-white sp-padding hide-medium-screen"
-					data-horizontal="315" data-vertical="50"
-					data-show-transition="left" data-hide-transition="up" data-show-delay="800">
-					환영합니다.
-				</p> 
-			</div> 
+												<p class="sp-layer sp-white sp-padding hide-medium-screen"
+													data-horizontal="315" data-vertical="50"
+													data-show-transition="left" data-hide-transition="up"
+													data-show-delay="800">안락합니다.</p>
+											</div>
+										</c:forEach>
+									</c:when>
+									<c:otherwise>
+										조회된 사진 없습니다.
+									</c:otherwise>
+								</c:choose>
+								<div class="sp-slide">
+									<img class="sp-image"
+										src="<%=request.getContextPath()%>/slidepro/src/css/images/aaa.jpg"
+										data-src="<%=request.getContextPath()%>/slidepro/src/css/images/aaa.jpg"
+										data-retina="<%=request.getContextPath()%>/slidepro/src/css/images/aaa.jpg" />
 
-	        <div class="sp-slide">
-	        	<img class="sp-image" src="<%=request.getContextPath() %>/slidepro/src/css/images/aaa.jpg"
-	        		data-src="<%=request.getContextPath() %>/slidepro/src/css/images/aaa4.jpg"
-	        		data-retina="<%=request.getContextPath() %>/slidepro/image/image2_large.jpg"/>
+									<p class="sp-layer sp-white sp-padding" data-horizontal="50"
+										data-vertical="50" data-show-transition="left"
+										data-hide-transition="up" data-show-delay="400"
+										data-hide-delay="200">${houseName}에</p>
 
-				<h3 class="sp-layer sp-black sp-padding" 
-					data-horizontal="40" data-vertical="10%" 
-					data-show-transition="left" data-hide-transition="left">
-					이 숙소는 최대
-				</h3>
+									<p class="sp-layer sp-black sp-padding hide-small-screen"
+										data-horizontal="180" data-vertical="50"
+										data-show-transition="left" data-hide-transition="up"
+										data-show-delay="600" data-hide-delay="100">오신 것을</p>
 
-				<p class="sp-layer sp-white sp-padding hide-medium-screen" 
-					data-horizontal="40" data-vertical="22%" 
-					data-show-transition="left" data-show-delay="200" data-hide-transition="left" data-hide-delay="200">
-					${houseHosting}까지
-				</p>
+									<p class="sp-layer sp-white sp-padding hide-medium-screen"
+										data-horizontal="315" data-vertical="50"
+										data-show-transition="left" data-hide-transition="up"
+										data-show-delay="800">환영합니다.</p>
+								</div>
 
-				<p class="sp-layer sp-black sp-padding hide-small-screen" 
-					data-horizontal="40" data-vertical="34%" data-width="350" 
-					data-show-transition="left" data-show-delay="400" data-hide-transition="left" data-hide-delay="500">
-					이용이 가능합니다.
-				</p>
-			</div>
+								<div class="sp-slide">
+									<img class="sp-image"
+										src="<%=request.getContextPath()%>/slidepro/src/css/images/aaa.jpg"
+										data-src="<%=request.getContextPath()%>/slidepro/src/css/images/aaa4.jpg"
+										data-retina="<%=request.getContextPath()%>/slidepro/image/image2_large.jpg" />
 
-			<div class="sp-slide">
-				<img class="sp-image" src="<%=request.getContextPath() %>/slidepro/src/css/images/blank.gif"
-					data-src="<%=request.getContextPath() %>/slidepro/src/css/images/aaa3.jpg"
-					data-retina="<%=request.getContextPath() %>/slidepro/image/image3_large.jpg"/>
+									<h3 class="sp-layer sp-black sp-padding" data-horizontal="40"
+										data-vertical="10%" data-show-transition="left"
+										data-hide-transition="left">이 숙소는 최대</h3>
 
-				<p class="sp-layer sp-white sp-padding" 
-					data-position="centerCenter" data-vertical="-50" 
-					data-show-transition="right" data-hide-transition="left" data-show-delay="500" >
-					지금 바로 ${houseName }에서 
-				</p>
+									<p class="sp-layer sp-white sp-padding hide-medium-screen"
+										data-horizontal="40" data-vertical="22%"
+										data-show-transition="left" data-show-delay="200"
+										data-hide-transition="left" data-hide-delay="200">
+										${houseHosting}까지</p>
 
-				<p class="sp-layer sp-black sp-padding hide-small-screen" 
-					data-position="centerCenter" data-vertical="50" 
-					data-show-transition="left" data-show-delay="700" data-hide-transition="right" data-hide-delay="200">
-					안락한 생활을 누려보세요!
-				</p>
-			</div>
+									<p class="sp-layer sp-black sp-padding hide-small-screen"
+										data-horizontal="40" data-vertical="34%" data-width="350"
+										data-show-transition="left" data-show-delay="400"
+										data-hide-transition="left" data-hide-delay="500">이용이
+										가능합니다.</p>
+								</div>
 
-			<div class="sp-slide">
-				<img class="sp-image" src="<%=request.getContextPath() %>/slidepro/src/css/images/blank.gif"
-					data-src="<%=request.getContextPath() %>/slidepro/src/css/images/aaa5.jpg"
-					data-retina="<%=request.getContextPath() %>/slidepro/image/image4_large.jpg"/>
+								<div class="sp-slide">
+									<img class="sp-image"
+										src="<%=request.getContextPath()%>/slidepro/src/css/images/blank.gif"
+										data-src="<%=request.getContextPath()%>/slidepro/src/css/images/aaa3.jpg"
+										data-retina="<%=request.getContextPath()%>/slidepro/image/image3_large.jpg" />
 
-				<p class="sp-layer sp-black sp-padding" 
-					data-position="Left"
-					data-show-transition="up" data-hide-transition="down">
-					단기로 사실 분들에게 최적화 된 곳입니다.<span class="hide-small-screen"></span><span class="hide-medium-screen"></span>
-				</p>
-			</div>
+									<p class="sp-layer sp-white sp-padding"
+										data-position="centerCenter" data-vertical="-50"
+										data-show-transition="right" data-hide-transition="left"
+										data-show-delay="500">지금 바로 ${houseName }에서</p>
 
-			<div class="sp-slide">
-				<img class="sp-image" src="<%=request.getContextPath() %>/slidepro/src/css/images/blank.gif"
-					data-src="<%=request.getContextPath() %>/slidepro/image/image5_medium.jpg"
-					data-retina="<%=request.getContextPath() %>/slidepro/image/image5_large.jpg"/>
+									<p class="sp-layer sp-black sp-padding hide-small-screen"
+										data-position="centerCenter" data-vertical="50"
+										data-show-transition="left" data-show-delay="700"
+										data-hide-transition="right" data-hide-delay="200">안락한 생활을
+										누려보세요!</p>
+								</div>
 
-				<p class="sp-layer sp-white sp-padding" 
-					data-vertical="10" data-horizontal="2%" data-width="96%" 
-					data-show-transition="down" data-show-delay="400" data-hide-transition="up">
-					추가 문의 사항은 <span class="hide-small-screen"> 하단의 메세지보내기를 이용해 주세요.</span> <span class="hide-medium-screen"></span>
-				</p>
-			</div>
+								<div class="sp-slide">
+									<img class="sp-image"
+										src="<%=request.getContextPath()%>/slidepro/src/css/images/blank.gif"
+										data-src="<%=request.getContextPath()%>/slidepro/src/css/images/aaa5.jpg"
+										data-retina="<%=request.getContextPath()%>/slidepro/image/image4_large.jpg" />
 
-			<div class="sp-slide">
-				<img class="sp-image" src="<%=request.getContextPath() %>/slidepro/src/css/images/blank.gif"
-					data-src="<%=request.getContextPath() %>/slidepro/image/image6_medium.jpg"
-					data-retina="<%=request.getContextPath() %>/slidepro/image/image6_large.jpg"/>
+									<p class="sp-layer sp-black sp-padding" data-position="Left"
+										data-show-transition="up" data-hide-transition="down">
+										단기로 사실 분들에게 최적화 된 곳입니다.<span class="hide-small-screen"></span><span
+											class="hide-medium-screen"></span>
+									</p>
+								</div>
 
-				<p class="sp-layer sp-white sp-padding" 
-					data-horizontal="10" data-vertical="10" data-width="35%">
-					${houseName }에<span class="hide-small-screen">오신것을 환영합니다.</span> <span class="hide-medium-screen"></span>
-				</p>
-			</div>
+								<div class="sp-slide">
+									<img class="sp-image"
+										src="<%=request.getContextPath()%>/slidepro/src/css/images/blank.gif"
+										data-src="<%=request.getContextPath()%>/slidepro/image/image5_medium.jpg"
+										data-retina="<%=request.getContextPath()%>/slidepro/image/image5_large.jpg" />
 
-			<div class="sp-slide">
-				<img class="sp-image" src="<%=request.getContextPath() %>/slidepro/src/css/images/blank.gif"
-					data-src="<%=request.getContextPath() %>/slidepro/image/image7_medium.jpg"
-					data-retina="<%=request.getContextPath() %>/slidepro/image/image7_large.jpg"/>
+									<p class="sp-layer sp-white sp-padding" data-vertical="10"
+										data-horizontal="2%" data-width="96%"
+										data-show-transition="down" data-show-delay="400"
+										data-hide-transition="up">
+										추가 문의 사항은 <span class="hide-small-screen"> 하단의 메세지보내기를
+											이용해 주세요.</span> <span class="hide-medium-screen"></span>
+									</p>
+								</div>
 
-				<p class="sp-layer sp-black sp-padding" 
-					data-position="Left" data-vertical="10" data-horizontal="2%" data-width="96%" 
-					data-show-transition="up" data-show-delay="400" data-hide-transition="down">
-					이 숙소는 최대 <span class="hide-small-screen">${houseHosting } 까지</span> <span class="hide-medium-screen">이용이 가능합니다.</span>
-				</p>
-			</div>
+								<div class="sp-slide">
+									<img class="sp-image"
+										src="<%=request.getContextPath()%>/slidepro/src/css/images/blank.gif"
+										data-src="<%=request.getContextPath()%>/slidepro/image/image6_medium.jpg"
+										data-retina="<%=request.getContextPath()%>/slidepro/image/image6_large.jpg" />
 
-			<div class="sp-slide">
-				<img class="sp-image" src="<%=request.getContextPath() %>/slidepro/src/css/images/blank.gif"
-					data-src="<%=request.getContextPath() %>/slidepro/image/image8_medium.jpg"
-					data-retina="<%=request.getContextPath() %>/slidepro/image/image8_large.jpg"/>
-					
-				<p class="sp-layer sp-black sp-padding" 
-					data-position="bottomLeft" data-horizontal="50" data-vertical="100"
-					data-show-transition="down" data-show-delay="500" data-hide-transition="up">
-					지금 바로 ${houseName}에서 안락한 생활을 누려보세요!
-				</p>		
-					
-			</div>
+									<p class="sp-layer sp-white sp-padding" data-horizontal="10"
+										data-vertical="10" data-width="35%">
+										${houseName }에<span class="hide-small-screen">오신것을
+											환영합니다.</span> <span class="hide-medium-screen"></span>
+									</p>
+								</div>
 
-			<div class="sp-slide">
-				<img class="sp-image" src="<%=request.getContextPath() %>/slidepro/src/css/images/blank.gif"
-					data-src="<%=request.getContextPath() %>/slidepro/image/image9_medium.jpg"
-					data-retina="<%=request.getContextPath() %>/slidepro/image/image9_large.jpg"/>
+								<div class="sp-slide">
+									<img class="sp-image"
+										src="<%=request.getContextPath()%>/slidepro/src/css/images/blank.gif"
+										data-src="<%=request.getContextPath()%>/slidepro/image/image7_medium.jpg"
+										data-retina="<%=request.getContextPath()%>/slidepro/image/image7_large.jpg" />
+
+									<p class="sp-layer sp-black sp-padding" data-position="Left"
+										data-vertical="10" data-horizontal="2%" data-width="96%"
+										data-show-transition="up" data-show-delay="400"
+										data-hide-transition="down">
+										이 숙소는 최대 <span class="hide-small-screen">${houseHosting }
+											까지</span> <span class="hide-medium-screen">이용이 가능합니다.</span>
+									</p>
+								</div>
+
+								<div class="sp-slide">
+									<img class="sp-image"
+										src="<%=request.getContextPath()%>/slidepro/src/css/images/blank.gif"
+										data-src="<%=request.getContextPath()%>/slidepro/image/image8_medium.jpg"
+										data-retina="<%=request.getContextPath()%>/slidepro/image/image8_large.jpg" />
+
+									<p class="sp-layer sp-black sp-padding"
+										data-position="bottomLeft" data-horizontal="50"
+										data-vertical="100" data-show-transition="down"
+										data-show-delay="500" data-hide-transition="up">지금 바로
+										${houseName}에서 안락한 생활을 누려보세요!</p>
+
+								</div>
+
+								<div class="sp-slide">
+									<img class="sp-image"
+										src="<%=request.getContextPath()%>/slidepro/src/css/images/blank.gif"
+										data-src="<%=request.getContextPath()%>/slidepro/image/image9_medium.jpg"
+										data-retina="<%=request.getContextPath()%>/slidepro/image/image9_large.jpg" />
 
 
 
-				<p class="sp-layer sp-white sp-padding hide-small-screen" 
-					data-position="bottomLeft" data-horizontal="50" data-vertical="50"
-					data-show-transition="up" data-show-delay="500" data-hide-transition="down">
-					단기로 사실 분들에게  <span class="hide-medium-screen">최적화 된 곳입니다.</span>
-				</p>
-			</div>
+									<p class="sp-layer sp-white sp-padding hide-small-screen"
+										data-position="bottomLeft" data-horizontal="50"
+										data-vertical="50" data-show-transition="up"
+										data-show-delay="500" data-hide-transition="down">
+										단기로 사실 분들에게 <span class="hide-medium-screen">최적화 된
+											곳입니다.</span>
+									</p>
+								</div>
 
-			<div class="sp-slide">
-				<img class="sp-image" src="<%=request.getContextPath()%>/slidepro/src/css/images/blank.gif"
-					data-src="<%=request.getContextPath() %>/slidepro/image/image10_medium.jpg"
-					data-retina="<%=request.getContextPath() %>/slidepro/image/image10_large.jpg"/>
-				<p class="sp-layer sp-black sp-padding" 
-					data-position="bottomLeft" data-horizontal="50" data-vertical="100"
-					data-show-transition="down" data-show-delay="500" data-hide-transition="up">
-					추가 문의사항은
-				</p>
+								<div class="sp-slide">
+									<img class="sp-image"
+										src="<%=request.getContextPath()%>/slidepro/src/css/images/blank.gif"
+										data-src="<%=request.getContextPath()%>/slidepro/image/image10_medium.jpg"
+										data-retina="<%=request.getContextPath()%>/slidepro/image/image10_large.jpg" />
+									<p class="sp-layer sp-black sp-padding"
+										data-position="bottomLeft" data-horizontal="50"
+										data-vertical="100" data-show-transition="down"
+										data-show-delay="500" data-hide-transition="up">추가 문의사항은</p>
 
-				<p class="sp-layer sp-white sp-padding hide-small-screen" 
-					data-position="bottomLeft" data-horizontal="50" data-vertical="50"
-					data-show-transition="up" data-show-delay="500" data-hide-transition="down">
-					하단의 메세지 보내기를 <span class="hide-medium-screen">이용해 주세요.</span>
-				</p>
-			</div> 
-		</div>
+									<p class="sp-layer sp-white sp-padding hide-small-screen"
+										data-position="bottomLeft" data-horizontal="50"
+										data-vertical="50" data-show-transition="up"
+										data-show-delay="500" data-hide-transition="down">
+										하단의 메세지 보내기를 <span class="hide-medium-screen">이용해 주세요.</span>
+									</p>
+								</div>
+							</div>
 
-		<div class="sp-thumbnails">
-		<c:choose>
-					<c:when test="${fn:length(imgList) > 0}">
-						<c:forEach items="${imgList }" var="row">
-						
-<%-- 			<div class="sp-thumbnail">
+							<div class="sp-thumbnails">
+								<c:choose>
+									<c:when test="${fn:length(imgList) > 0}">
+										<c:forEach items="${imgList }" var="row">
+
+											<%-- 			<div class="sp-thumbnail">
 				<div class="sp-thumbnail-title">${houseName } 사진1</div>
 				
 			</div> --%>
-			
-				</c:forEach>
-				</c:when>
-				</c:choose>
-			<div class="sp-thumbnail">
-				<div class="sp-thumbnail-title">${houseName } 사진1</div>
-			</div>
 
-			<div class="sp-thumbnail">
-				<div class="sp-thumbnail-title">${houseName } 사진2</div>
-				
-			</div>
+										</c:forEach>
+									</c:when>
+								</c:choose>
+								<div class="sp-thumbnail">
+									<div class="sp-thumbnail-title">${houseName }사진1</div>
+								</div>
 
-			<div class="sp-thumbnail">
-				<div class="sp-thumbnail-title">${houseName } 사진3</div>
-				
-			</div>
+								<div class="sp-thumbnail">
+									<div class="sp-thumbnail-title">${houseName }사진2</div>
 
-			<div class="sp-thumbnail">
-				<div class="sp-thumbnail-title">${houseName } 사진4</div>
-				
-			</div>
+								</div>
 
-			<div class="sp-thumbnail">
-				<div class="sp-thumbnail-title">${houseName } 사진5</div>
-				
-			</div>
+								<div class="sp-thumbnail">
+									<div class="sp-thumbnail-title">${houseName }사진3</div>
 
-			<div class="sp-thumbnail">
-				<div class="sp-thumbnail-title">${houseName } 사진6</div>
-			
-			</div>
+								</div>
 
-			<div class="sp-thumbnail">
-				<div class="sp-thumbnail-title">${houseName } 사진7</div>
-			
-			</div>
+								<div class="sp-thumbnail">
+									<div class="sp-thumbnail-title">${houseName }사진4</div>
 
-			<div class="sp-thumbnail">
-				<div class="sp-thumbnail-title">${houseName } 사진8</div>
-			
-			</div>
+								</div>
 
-			<div class="sp-thumbnail">
-				<div class="sp-thumbnail-title">${houseName } 사진9</div>
-				
-			</div>
+								<div class="sp-thumbnail">
+									<div class="sp-thumbnail-title">${houseName }사진5</div>
 
-			<div class="sp-thumbnail">
-				<div class="sp-thumbnail-title">${houseName } 사진10</div>
-			</div> 
-		</div>
-    </div>				
-					
-					
-					<%-- 	<img src="<%=request.getContextPath()%>/upload/${houseUser}/${houseNo}/${houseImg }" width="100%" height="300"/> --%>
+								</div>
+
+								<div class="sp-thumbnail">
+									<div class="sp-thumbnail-title">${houseName }사진6</div>
+
+								</div>
+
+								<div class="sp-thumbnail">
+									<div class="sp-thumbnail-title">${houseName }사진7</div>
+
+								</div>
+
+								<div class="sp-thumbnail">
+									<div class="sp-thumbnail-title">${houseName }사진8</div>
+
+								</div>
+
+								<div class="sp-thumbnail">
+									<div class="sp-thumbnail-title">${houseName }사진9</div>
+
+								</div>
+
+								<div class="sp-thumbnail">
+									<div class="sp-thumbnail-title">${houseName }사진10</div>
+								</div>
+							</div>
+						</div>
+
+
+						<%-- 	<img src="<%=request.getContextPath()%>/upload/${houseUser}/${houseNo}/${houseImg }" width="100%" height="300"/> --%>
 					</div>
 				</div>
 
@@ -378,26 +391,36 @@
 						&nbsp;
 						<!-- <div id='container'> -->
 						<div id='left-box'>
-							<img src="<%=request.getContextPath()%>/upload/${memberName}/intro/${memImg}" width="250" height="150" onclick="goPopup()"/>
+							<img
+								src="<%=request.getContextPath()%>/upload/${memberName}/intro/${memImg}"
+								width="250" height="150" onclick="goPopup()" />
 						</div>
 
 						<div id='right-box'>
 							<c:if test="${user!=null}">
-											<c:if test="${user. memId != houseUser}">
-								<a href="CustomerReservation?No=${houseNo }" class="button button-style1">예약하기</a>
-										</c:if>
+								<c:if test="${user. memId != houseUser}">
+									<a href="CustomerReservation?No=${houseNo }"
+										class="button button-style1">예약하기</a>
+								</c:if>
 								<p>
 									<c:if test="${user. memId == houseUser}">
-										<p><a href="updateHouse?houseNo=${houseNo}" class="button button-style1"> 수정하기</a>
-										<p><a href="deleteHouse?houseNo=${houseNo}" class="button button-style1"> 취소하기</a>
+										<p>
+											<a href="updateHouse?houseNo=${houseNo}"
+												class="button button-style1"> 수정하기</a>
+										<p>
+											<a href="deleteHouse?houseNo=${houseNo}"
+												class="button button-style1"> 취소하기</a>
 									</c:if>
 									<c:if test="${user. memId != houseUser}">
-								<p>
-									<a href="chatstart?guest=${memberName}" class="button button-style1">메세지보내기</a>
-								</p>
-								</c:if>
+										<p>
+											<a href="chatstart?guest=${memberName}"
+												class="button button-style1">메세지보내기</a>
+										</p>
+									</c:if>
 							</c:if>
-							<p><a href="searchbar?key=${key}&page=${page}" class="button button-style1">목록보기</a>
+							<p>
+								<a href="searchbar?key=${key}&page=${page}"
+									class="button button-style1">목록보기</a>
 						</div>
 
 						<div id='center-box'>
@@ -416,10 +439,13 @@
 					<p>${houseInfo }
 					<p>
 					<h5 class="h5">
-						<img src="css/images/icon1.png" width="50" height="50" />방의 개수: ${houseRoom } 
-						<img src="css/images/icon2.JPG" width="50" height="60" />화장실 개수: ${houseBath } 
-						<img src="css/images/icon3.JPG" width="80" height="50" />예약 가능 인원: ${houseHosting }
-						<img src="css/images/icon4.JPG" width="50" height="50" />사용가능한 편의시설: ${houseAircon }&nbsp; ${houseWifi } &nbsp;${houseElebe }&nbsp; ${houseWashing }
+						<img src="css/images/icon1.png" width="50" height="50" />방의 개수:
+						${houseRoom } <img src="css/images/icon2.JPG" width="50"
+							height="60" />화장실 개수: ${houseBath } <img
+							src="css/images/icon3.JPG" width="80" height="50" />예약 가능 인원:
+						${houseHosting } <img src="css/images/icon4.JPG" width="50"
+							height="50" />사용가능한 편의시설: ${houseAircon }&nbsp; ${houseWifi }
+						&nbsp;${houseElebe }&nbsp; ${houseWashing }
 					</h5>
 				</div>
 			</div>
@@ -429,8 +455,10 @@
 	<jsp:include page="./Footer.jsp"></jsp:include>
 </body>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath() %>/slidepro/libs/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath() %>/slidepro/dist/js/jquery.sliderPro.min.js"></script>
+<script type="text/javascript"
+	src="<%=request.getContextPath()%>/slidepro/libs/jquery-1.11.0.min.js"></script>
+<script type="text/javascript"
+	src="<%=request.getContextPath()%>/slidepro/dist/js/jquery.sliderPro.min.js"></script>
 
 <script type="text/javascript">
 	$( document ).ready(function( $ ) {
@@ -456,7 +484,9 @@
 	
 	function goPopup(){
 		   var pop = 
-			   window.open("<%=request.getContextPath()%>/profile?memberName=${memberName}", "pop", "width=570,height=800, scrollbars=yes");	
+			   window.open("<%=request.getContextPath()%>
+	/profile?memberName=${memberName}",
+						"pop", "width=570,height=800, scrollbars=yes");
 	}
 </script>
 
