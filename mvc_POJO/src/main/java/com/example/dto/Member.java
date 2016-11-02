@@ -353,7 +353,7 @@ public class Member implements Serializable {
 	public String toString() {
 		return "Member [memId=" + memId + ", memName=" + memName + ", memPassword=" + memPassword + ", memPhone="
 				+ memPhone + ", memEmail=" + memEmail + ", memGender=" + memGender + ", memImg=" + memImg
-				+ ", memIntro=" + memIntro + ", detailId=" + detailId + ", detailGrade=" + detailGrade +"registHouse"+registHouse+ "]";
+				+ ", memIntro=" + memIntro + ", detailId=" + detailId + ", detailGrade=" + detailGrade +" registHouse "+registHouse+" house: "+House+ "]";
 	}
 
 }

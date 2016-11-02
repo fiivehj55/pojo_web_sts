@@ -98,7 +98,7 @@
 	</resultMap>
 	
 	<resultMap type="house" id="houseJRH" extends="houseBase">
-		<collection property="registHouse" resultMap="pojo.web.dao.RegistHouseMapper.regHouseBase">
+		<collection property="registHouse" resultMap="pojo.web.dao.RegistHouseMapper.registHouseJM">
 			<id column="HOUSE_NO" property="houseNo"></id>
 		</collection>
 	</resultMap>

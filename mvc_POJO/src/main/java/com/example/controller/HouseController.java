@@ -514,7 +514,9 @@ public class HouseController {
 	
 	@RequestMapping(value = "/RegisterReservation", method=RequestMethod.GET)
 	public String RegisterReservation(Model model, HttpSession session) {
-		
-		return "jsp/RegisterReservation";
+/*		Member user =  (Member) session.getAttribute("user");
+		Member userInfo = mservice.selectByIdMemberJoinHouse(user.getMemId());
+		model.addAttribute("userInfo",userInfo );
+*/		return "jsp/RegisterReservation";
 	}
 }

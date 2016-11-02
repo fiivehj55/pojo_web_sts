@@ -38,7 +38,7 @@
         where mem_name = #{name} and
         mem_email = #{email}
     </select>
-    
+    <!-- 예약목록 -->
     <select id="RegistInfo" parameterType="String" resultMap="memberJRH">
     select *
     from MEMBER m
@@ -46,16 +46,19 @@
     join HOUSE h on rh.HOUSE_NO = h.HOUSE_NO
      where m.MEM_ID = #{id}
     </select>
-     
-<!--     <select id="hostInfo" parameterType="String" resultMap="memberJRH">
-    select *
+     <!-- 호스팅예약목록 -->
+    <select id="hostInfo" parameterType="String" resultMap="memberJH">
+    select m.*,h.*,rh.RH_ID,rh.CHECK_IN,rh.CHECK_OUT,rh.HOUSE_NO,
+     rh.MEMBER_ID as m2id,rh.MEMBER_ID as m2id,
+       m2.MEM_NAME as m2NAME,  m2.MEM_IMG as m2IMG
     from MEMBER m
-     join HOUSE h on m.MEM_ID = h.MEM_ID
-    join REGIST_HOUSE rh on h. = rh.MEMBER_ID
-     where m.MEM_ID = #{id}
-    </select> -->
+    join HOUSE h on m.MEM_ID = h.MEMber_id
+    join REGIST_HOUSE rh on rh.HOUSE_NO = h.HOUSE_NO
+    join MEMBER m2 on rh.MEMBER_ID =  m2.MEM_ID
+      where m.MEM_ID = #{id}
+    </select> 
     
-    <resultMap type="member" id="memBase">
+    <resultMap type="member" id="memBase"> 
 		<id column="MEM_ID" property="memId" />
 		<result column="MEM_NAME" property="memName" />
 		<result column="MEM_PASSWORD" property="memPassword" />
@@ -64,6 +67,17 @@
 		<result column="MEM_EMAIL" property="memEmail" />
 		<result column="MEM_GENDER" property="memGender" />
 		<result column="MEM_IMG" property="memImg" />
+		<result column="MEM_INTRO" property="memIntro"/>
+	</resultMap>
+	 <resultMap type="member" id="memBase2">
+		<id column="m2id" property="memId" />
+		<result column="m2NAME" property="memName" />
+		<result column="MEM_PASSWORD" property="memPassword" />
+		<result column="MEM_NA" property="memNa" />
+		<result column="MEM_PHONE" property="memPhone" />
+		<result column="MEM_EMAIL" property="memEmail" />
+		<result column="MEM_GENDER" property="memGender" />
+		<result column="m2IMG" property="memImg" />
 		<result column="MEM_INTRO" property="memIntro"/>
 	</resultMap>
 	<resultMap type="member" id="memberJRH" extends="memBase">

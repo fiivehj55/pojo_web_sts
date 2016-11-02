@@ -32,9 +32,23 @@
         <result column="HOUSE_NO" property="houseNo" />
         <result column="MEMBER_ID" property="memberId" />
     </resultMap>
+        <resultMap type="registHouse" id="regHouseBase2">
+        <id column="RH_ID" property="rhId" />
+        <result column="CHECK_IN" property="checkIn" />
+        <result column="CHECK_OUT" property="checkOut" />
+        <result column="HOUSE_NO" property="houseNo" />
+        <result column="m2id" property="memberId" />
+    </resultMap>
+    <!--  -->
     <resultMap type="registHouse" id="regHouseJH" extends="regHouseBase">
     <association property="house" resultMap="pojo.web.dao.HouseMapper.houseBase">
     	<id column="HOUSE_NO" property="houseNo"/>
+    </association>
+    </resultMap>
+    
+    
+    <resultMap type="registHouse" id="registHouseJM" extends="regHouseBase2">
+     <association property="member" resultMap="pojo.web.dao.memberMapper.memBase2">
     </association>
     </resultMap>
 </mapper>

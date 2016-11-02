@@ -32,7 +32,8 @@ public class RegistHouse implements Serializable {
 	
 	/** HOUSE */
 	private House house;
-
+	private Member member;
+	
 	/**
 	 * 생성자.
 	 */
@@ -53,6 +54,14 @@ public class RegistHouse implements Serializable {
 		this.checkOut = checkOut;
 		this.houseNo = houseNo;
 		this.memberId = memberId;
+	}
+
+	public Member getMember() {
+		return member;
+	}
+
+	public void setMember(Member member) {
+		this.member = member;
 	}
 
 	/**
@@ -175,7 +184,7 @@ public class RegistHouse implements Serializable {
 	@Override
 	public String toString() {
 		return "RegistHouse [rhId=" + rhId + ", checkIn=" + checkIn + ", checkOut=" + checkOut + ", houseNo=" + houseNo
-				+ ", memberId=" + memberId + ", house=" + house + "]";
+				+ ", memberId=" + memberId + ", house=" + house +" member: " +member+"]";
 	}
 
 }
