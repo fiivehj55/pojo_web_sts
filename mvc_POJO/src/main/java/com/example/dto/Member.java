@@ -1,6 +1,7 @@
 package com.example.dto;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * MEMBER 모델 클래스.
@@ -47,6 +48,8 @@ public class Member implements Serializable {
 	/** DETAIL_GRADE. */
 	private String detailGrade;
 
+	private List<RegistHouse> registHouse;
+	
 	/**
 	 * 생성자.
 	 */
@@ -83,6 +86,21 @@ public class Member implements Serializable {
 		this.detailId = detailId;
 		this.detailGrade = detailGrade;
 	}
+
+	
+	
+	
+	public List<RegistHouse> getRegistHouse() {
+		return registHouse;
+	}
+
+
+
+	public void setRegistHouse(List<RegistHouse> registHouse) {
+		this.registHouse = registHouse;
+	}
+
+
 
 	/**
 	 * MEM_ID을 설정합니다..
