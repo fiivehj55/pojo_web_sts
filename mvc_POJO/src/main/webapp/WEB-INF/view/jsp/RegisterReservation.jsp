@@ -83,13 +83,13 @@ body {
       <div class="2u">
        	번호
       </div>
-      <div class="4u">
+      <div class="2u">
      	  사진
       </div>
       <div class="2u">
         	제목/주소
       </div>
-      <div class="2u">
+      <div class="3u">
      	   프로필
       </div>
       <div class="2u">
@@ -98,19 +98,19 @@ body {
     </div>
     
     <div class="row">
-      <div class="2u">
+      <div class="2u" style="width: 15%; height: 300px;">
        1
       </div>
-      <div class="4u">
+      <div class="2u" style="width: 15%; height: 300px;">
         사진
       </div>
-      <div class="2u">
+      <div class="3u" style="width:30%; height: 300px;">
        충청남도 서북구 두정동
       </div>
-      <div class="2u">
+      <div class="2u" style="width: 15%; height: 300px;">
        프로필사진
       </div>
-      <div class="2u">
+      <div class="2u" style="width: 25%; height: 300px;">
        2016.11.10~2016.12.10
       </div>
     </div>
