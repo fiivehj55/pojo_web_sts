@@ -86,10 +86,10 @@ body {
       <div class="2u">
      	  사진
       </div>
-      <div class="2u">
+      <div class="3u">
         	제목/주소
       </div>
-      <div class="3u">
+      <div class="2u">
      	   프로필
       </div>
       <div class="2u">
