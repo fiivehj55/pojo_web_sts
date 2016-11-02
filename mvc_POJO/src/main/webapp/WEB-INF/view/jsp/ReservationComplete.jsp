@@ -85,7 +85,7 @@ body {
 	<br />
 	<div class="table" style="height: 600px;">
 		<div class="row header green">
-			<div class="2u">번호</div>
+			<div class="2u">매물번호</div>
 			<div class="2u">사진</div>
 			<div class="3u">제목/주소</div>
 			<div class="2u">프로필</div>

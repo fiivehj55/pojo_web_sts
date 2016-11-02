@@ -268,8 +268,8 @@ body{
                   <li><a href="inputPass">마이페이지</a>
                      <ul class="sub">
                         <li class="active"><a href="logout">로그아웃</a></li>
-                        <li class="active"><a href="#">&nbsp</a></li>
-                        <li class="active"><a href="#">&nbsp</a></li>
+                        <li class="active"><a href="ReservationComplete1">예약목록</a></li>
+                        <li class="active"><a href="RegisterReservation">호스팅예약</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
                      </ul>
                   </li>
