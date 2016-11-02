@@ -491,8 +491,8 @@ public class HouseController {
 		House house = hservice.selectByNoHouse(houseNo);
 		
 		model.addAttribute("house", house);
-		model.addAttribute("checkIn", possCheckIn);
-		model.addAttribute("checkOut", possCheckOut);
+		session.setAttribute("checkIn", possCheckIn);
+		session.setAttribute("checkOut", possCheckOut);
 		model.addAttribute("user", user);
 		
 		RegistHouse rh = new RegistHouse();

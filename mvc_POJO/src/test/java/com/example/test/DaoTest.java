@@ -179,6 +179,13 @@ public class DaoTest {
 
 	}
 	
+	@Test
+	public void testSelectByScore() {
+		List<House> house = hdao.houseScore(template);
+		logger.trace("List: {}", house);
+
+	}
+	
 	/** HOUSE_AVAIL_DATE */
 	@Test
 	public void testSelectAllHouseAvailDate() {

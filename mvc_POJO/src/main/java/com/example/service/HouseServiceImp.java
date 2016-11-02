@@ -83,5 +83,12 @@ public class HouseServiceImp implements HouseService{
 		List<House> result = hdao.housePaging(template, page);
 		return result;
 	}
+
+	@Override
+	public List<House> selectByScore() {
+		List<House> list =  null;
+		list = hdao.houseScore(template);
+		return list;
+	}
 	
 }

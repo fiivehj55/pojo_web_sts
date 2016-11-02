@@ -24,4 +24,6 @@ public interface HouseDao {
 	
 	List<House> housePaging(SqlSessionTemplate template, int page);
 	
+	List<House> houseScore(SqlSessionTemplate template);
+	
 }

@@ -25,4 +25,6 @@ public interface HouseService {
 	List<House> searchHouses(String key, int page);
 	
 	List<House> searchHousesPaging(Integer page);
+	
+	List<House> selectByScore();
 }
