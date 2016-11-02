@@ -82,6 +82,8 @@ legend {
 	color: #999;
 }
 
+
+
 .link p {
 	margin: 0;
 	padding: 0;
@@ -156,19 +158,18 @@ input {
 						<div class= "b">							
 							<input type="submit" value="  로그인  " class="button button-style1">
 						</div>
-
+						<br>
+						
 						<div class="find">
-							<ul>
-								<li><a href="findId"> <input type="button"  value="아이디 찾기" /></a></li>
-								<li><a href="findPass"> <input type="button"  value="비밀번호 찾기" /></a> </li>
-							</ul>
+								<a href="findId"> <input type="button"  value="아이디 찾기" /></a></li>
+								<a href="findPass"> <input type="button"  value="비밀번호 찾기" /></a> </li>
 						</div>
-						<p><br><br>
-
+						
+						
 						<div class="link">
 							<hr class="layout">
 							<p>회원가입을 하시면 다양한 혜택을 받으실 수 있습니다.</p>
-							
+							<br>
 								<%-- <a class="joinButton" href="<%=request.getContextPath()%>/join">회원가입</a> --%>
 							<div class= "b">
 								<a href="terms"><input type="button" class="button button-style1" value="회원가입"/></a>
