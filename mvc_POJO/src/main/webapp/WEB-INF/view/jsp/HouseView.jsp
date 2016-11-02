@@ -484,9 +484,7 @@
 	
 	function goPopup(){
 		   var pop = 
-			   window.open("<%=request.getContextPath()%>
-	/profile?memberName=${memberName}",
-						"pop", "width=570,height=800, scrollbars=yes");
+			   window.open("<%=request.getContextPath()%>/profile?memberName=${memberName}","pop", "width=570,height=800, scrollbars=yes");
 	}
 </script>
 
