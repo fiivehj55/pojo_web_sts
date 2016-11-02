@@ -16,6 +16,7 @@ drop sequence SEQ_REPORT;
 drop sequence SEQ_QUESTION_REPLY;
 drop sequence SEQ_REPORT_REPLY;
 drop sequence SEQ_HOUSE_AVAIL_DATE;
+drop sequence SEQ_REGIST_RH_ID;
 
 CREATE SEQUENCE  "POJO"."SEQ_HOUSE"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE ;
 CREATE SEQUENCE  "POJO"."SEQ_QUESTION"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE ;
@@ -24,7 +25,7 @@ CREATE SEQUENCE  "POJO"."SEQ_REPORT"  MINVALUE 1 MAXVALUE 9999999999999999999999
 CREATE SEQUENCE  "POJO"."SEQ_QUESTION_REPLY"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE ;
 CREATE SEQUENCE  "POJO"."SEQ_REPORT_REPLY"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE ;
 CREATE SEQUENCE  "POJO"."SEQ_HOUSE_AVAIL_DATE"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE ;
-
+CREATE SEQUENCE  "POJO"."SEQ_REGIST_RH_ID"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE ;
 
 select SEQ_HOUSE.nextval from dual;
 select SEQ_QUESTION.nextval from dual;
@@ -33,6 +34,7 @@ select SEQ_REPORT.nextval from dual;
 select SEQ_QUESTION_REPLY.nextval from dual;
 select SEQ_REPORT_REPLY.nextval from dual;
 select SEQ_HOUSE_AVAIL_DATE.nextval from dual;
+select SEQ_REGIST_RH_ID.nextval from dual;
 
 select SEQ_HOUSE.currval from dual;
 select SEQ_QUESTION.currval from dual;
@@ -41,6 +43,7 @@ select SEQ_REPORT.currval from dual;
 select SEQ_QUESTION_REPLY.currval from dual;
 select SEQ_REPORT_REPLY.currval from dual;
 select SEQ_HOUSE_AVAIL_DATE.currval from dual;
+select SEQ_REGIST_RH_ID.currval from dual;
 
   CREATE TABLE "POJO"."MEMBER" 
    (	"MEM_ID" VARCHAR2(20 BYTE) NOT NULL ENABLE, 
@@ -83,8 +86,8 @@ select SEQ_HOUSE_AVAIL_DATE.currval from dual;
  
   CREATE TABLE "POJO"."REGIST_HOUSE" 
    (	"RH_ID" NUMBER(20,0) NOT NULL ENABLE, 
-	"CHECK_IN" DATE,
-	"CHECK_OUT" DATE,
+	"CHECK_IN" VARCHAR2(40 BYTE), 
+	"CHECK_OUT" VARCHAR2(40 BYTE), 
 	"HOUSE_NO" NUMBER(30,0), 
 	"MEMBER_ID" VARCHAR2(30 BYTE), 
 	 CONSTRAINT "REGIST_HOUSE_PK" PRIMARY KEY ("RH_ID")
@@ -260,11 +263,11 @@ insert into HOUSE values (96, '두정빌라', '천안시 서북구 두정동', '
 insert into HOUSE values (95, '천안빌라', '천안시 서북구 두정동', '1642번지', 350000, 8.5, 'hello', 'hong', 2, '1개', '2개', '3명', 'tv', 'aircon', 'wifi', 'elebe', 'washing', null, '일', '2016/09/23', '2016/10/23');
 insert into HOUSE values (94, '서울빌라', '천안시 서북구 두정동', '1642번지', 350000, 8.5, 'hello', 'hong', 2, '1개', '2개', '3명', 'tv', 'aircon', 'wifi', 'elebe', 'washing', null, '일', '2016/09/23', '2016/10/23');
 insert into HOUSE values (93, '서울빌라', '대전광역시 유성구 장대동', '1642번지', 350000, 8.5, 'hello', 'hong', 2, '1개', '2개', '3명', 'tv', 'aircon', 'wifi', 'elebe', 'washing', null, '일', '2016/09/23', '2016/10/23');
-insert into REGIST_HOUSE values (1, '2016/09/25', '2016/10/7', 1, 'hong');
-insert into REGIST_HOUSE values (2, '2016/09/25', '2016/10/7', 1, 'jang');
-insert into REGIST_HOUSE values (3, '2016/09/25', '2016/10/7', 1, 'hong');
-insert into REGIST_HOUSE values (4, '2016/09/25', '2016/10/7', 1, 'jang');
-insert into REGIST_HOUSE values (5, '2016/09/25', '2016/10/7', 1, 'hong');
+insert into REGIST_HOUSE values (91, '2016/09/25', '2016/10/7', 1, 'hong');
+insert into REGIST_HOUSE values (92, '2016/09/25', '2016/10/7', 1, 'jang');
+insert into REGIST_HOUSE values (93, '2016/09/25', '2016/10/7', 1, 'hong');
+insert into REGIST_HOUSE values (94, '2016/09/25', '2016/10/7', 1, 'jang');
+insert into REGIST_HOUSE values (95, '2016/09/25', '2016/10/7', 1, 'hong');
 insert into QUESTION values (89, '사기당했어요.', '하우스 등록자가 계속 전화를 받지 않습니다.', sysdate, 'jang', 2, null);
 insert into QUESTION values (90, '사기당했어요.', '하우스 등록자가 계속 전화를 받지 않습니다.', sysdate, 'hong', 2, null);
 insert into QUESTION values (91, '사기당했어요.', '하우스 등록자가 계속 전화를 받지 않습니다.', sysdate, 'jang', 2, null);
