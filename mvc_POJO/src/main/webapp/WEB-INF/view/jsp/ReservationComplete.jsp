@@ -100,7 +100,7 @@ body {
 						<c:forEach items="${userInfo.registHouse }" var="row">
 							<div class="2u">${row.houseNo }</div>
 							<div class="2u">
-				<img class="" src="<%=request.getContextPath() %>/slidepro/src/css/images/aaa.jpg"
+				<img class="" src="<%=request.getContextPath() %>/upload/${userInfo.memId}/${row.houseNo}/main/${row.house.houseImg}"
 					data-src="<%=request.getContextPath() %>/upload/${userInfo.memId}/${row.houseNo}/main/${row.house.houseImg}"
 					data-retina="<%=request.getContextPath() %>/upload/src/css/images/aaa.jpg" style="width:100px; height:100px;"/></div>
 			<div class="3u">${row.house.houseName} <br/>${row.house.houseAddress } ${row.house.houseAddressDetail}</div>
