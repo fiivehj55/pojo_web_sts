@@ -28,9 +28,15 @@
 	height: 100%;
 }
  */
+.houseinfo1{
+	float:left;
+	width: 600px;
+	
+}
+
 #map {
-	/* float: right; */
-	width: 400px;
+	
+	width: 500px;
 	height: 400px;
 	
 }
@@ -44,6 +50,21 @@
 	color: #4C4C4C;
 	font-weight: bold;
 	font-size: 18pt;
+}
+
+.houseinfo1 th{
+	text-align:left;
+	width:200px;
+}
+
+.entry{
+	margin: 20px;
+}
+.click{
+	margin: 20px;
+}
+.date{
+	margin: 20px;
 }
 </style>
 
@@ -67,17 +88,21 @@
 			"예약 가능 인원: 3개" <img src="css/images/icon4.JPG" width="50" height="50">
 			"사용가능한 편의시설: 에어컨, WI-FI, 엘리베이터, 세탁기"
 		</h5>
+		<p>
+<div class = "entry">
+	<hr><p>
 	<div class="houseinfo1">
 		<table>
 			<tr>
 				<th>숙소</th>
+				
 				<th>숙박가능인원 : ${house.houseHosting}<br>
 					방의 개수: ${house.houseRoom}<br>
 					화장실 개수: ${house.houseBath}<br>
 				</th>
 				
-				
-				<th>체크인: 15:00 이후<br>
+				<th>
+					체크인: 15:00 이후<br>
 					체크아웃: 12:00<br>
 					집 유형:아파트<br>
 					숙소 유형:집전체
@@ -85,6 +110,7 @@
 			</tr>
 			
 			<tr>
+				
 				<th>시설</th>
 				<th>${houseTv}<br>
 					${houseAircon }<br>
@@ -99,13 +125,13 @@
 				<th>${house.housePrice }원<br>
 			</tr>
 			
-			<!-- <tr>
+			<tr>
 				<th>숙소 이용규칙</th>
 				<th>흡연 금지<br>
 					반려동물 동반에 적합하지 않음<br>
 					체크인은 15:00 이후입니다.
 				</th>
-			</tr> -->
+			</tr> 
 			
 			<tr>
 				<th>예약 가능 여부</th>
@@ -119,23 +145,30 @@
 		</table>
 	</div>
 	<div id="map"></div>
-	<!-- 주소 -->
-	<br/>
-	가능한 날짜
-	<p >
+	
+<p>
+<p><hr>
+</div>
+
+	<p>
+	<div class = "date">
+		가능한 날짜<br/>
 		<input type="hidden" name="houseNo" value="${house.houseNo }"/>
 		시작일 <input type="date" onchange="checkDate(this)" name="possCheckIn">
 		 ~ 종료일 	<input type="date" onchange="lastDate(this)" name="possCheckOut"> 
 		 <!-- <input type="button" onclick="nextDate(this)" value="+"> -->
+	</div>
 	</p>
 	
+	
+	<div class = "click">
 	<input type="submit" class="button button-style-1" value="예약 완료"/>
 	<a href="<%=request.getContextPath()%>/index"><input type="button" class="button button-style-1" value="취소"/></a>
 	<a href="<%=request.getContextPath()%>/ReservationComplete1"><input type="button" class="button button-style-1" value="테스트 예약목록"/></a>
 	<a href="<%=request.getContextPath()%>/RegisterReservation"><input type="button" class="button button-style-1" value="테스트 예약목록2"/></a>
+	</div>
 	</form>
-<p>
-
+<p><p><p>
 <jsp:include page="./Footer.jsp"></jsp:include>
 </body>
 <script src="http://code.jquery.com/jquery.js"></script>
@@ -150,7 +183,7 @@ function checkDate(dateTag){
 	}
 }
 function lastDate(dateTag){
-	var dateVal =  new Date(dateTag.value);
+	var dateVal = new Date(dateTag.value);
 	var firstDate = $(dateTag).prev();
 	var date = new Date($(firstDate).val());
 	if($(firstDate).val() == ""){
