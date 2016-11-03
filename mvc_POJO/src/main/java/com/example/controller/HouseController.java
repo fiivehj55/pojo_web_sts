@@ -238,7 +238,6 @@ public class HouseController {
 			File listImg = new File(uploadDir+house.getMemberId()+ "/"+house.getHouseNo()+"/other");
 			File[] listFile = listImg.listFiles();
 			List<String> imgList = new ArrayList<>();
-			
 			if(listFile!=null){
 				for(File file:listFile){
 					imgList.add(file.getName());
