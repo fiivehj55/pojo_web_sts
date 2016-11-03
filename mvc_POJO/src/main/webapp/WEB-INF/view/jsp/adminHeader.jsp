@@ -53,34 +53,26 @@
 
 					<li><a href="bbs?page=1">게시판관리</a>
 						<ul class="sub">
-							<li class="active"><a href="#">문의게시판 관리</a></li>
-							<li class="active"><a href="#">신고게시판 관리</a></li>
-							
-							
+							<li class="active"><a href="adminQuestion?page=1">문의게시판 관리</a></li>
+							<li class="active"><a href="adminReport?page=1">신고게시판 관리</a></li>
 						</ul></li>
 						
 							<li><a href="bbs?page=1">댓글 관리</a>
 						<ul class="sub">
-							<li class="active"><a href="#">문의게시판 댓글 관리</a></li>
+							<li class="active"><a href="adminReply?page=1">문의게시판 댓글 관리</a></li>
 							<li class="active"><a href="#">신고게시판 댓글 관리</a></li>
-							
-							
 						</ul></li>			
 						
 					<li><a href="bbs?page=1">하우스관리</a>
 						<ul class="sub">
-							<li class="active"><a href="#">하우스관리</a></li>
+							<li class="active"><a href="adminHouse?page=1">하우스관리</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
-							
-							
 						</ul></li>		
 						
-					<li><a href="admin">관리자님 환영합니다</a>
+					<li><a href="adminPage">관리자님 환영합니다</a>
 						<ul class="sub">
-							<li class="active"><a href="adminReport?page=1">&nbsp</a></li>
-							<li class="active"><a href="adminQuestion?page=1">&nbsp</a></li>
-							
-	
+							<li class="active"><a href="#">&nbsp</a></li>
+							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li>
 				</ul>
 			</nav>

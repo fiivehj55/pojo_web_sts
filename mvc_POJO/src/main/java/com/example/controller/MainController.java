@@ -85,6 +85,11 @@ public class MainController {
 		return "jsp/kakao";
 	}
 	
+	@RequestMapping(value = "/adminPage", method = RequestMethod.GET)
+	public String adminPage(Model model) {
+		return "jsp/adminPage";
+	}
+	
 
 	@RequestMapping(value = "/chatprivate", method = RequestMethod.GET)
 	public String chat(Model model, HttpSession session) {
