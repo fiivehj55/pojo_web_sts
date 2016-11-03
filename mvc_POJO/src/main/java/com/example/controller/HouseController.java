@@ -489,23 +489,13 @@ public class HouseController {
 		int result = 0;
 		Member user = (Member) session.getAttribute("user");
 		String id = user.getMemId();
-		Member userInfo = mservice.selectByIdMemberJoinRegistHouse(id);
-		House house = hservice.selectByNoHouse(houseNo);
-		
-		model.addAttribute("house", house);
-		session.setAttribute("checkIn", possCheckIn);
-		session.setAttribute("checkOut", possCheckOut);
-		model.addAttribute("user", user);
-		
 		RegistHouse rh = new RegistHouse();
 		rh.setCheckIn(possCheckIn);
 		rh.setCheckOut(possCheckOut);
 		rh.setHouseNo(houseNo);
 		rh.setMemberId(id);
-		
-		model.addAttribute("userInfo",userInfo);	
 		result = rhservice.add(rh);
-		return "jsp/ReservationComplete";
+		return "redirect:/ReservationComplete1";
 	}
 	
 	@RequestMapping(value = "/ReservationComplete1", method=RequestMethod.GET)

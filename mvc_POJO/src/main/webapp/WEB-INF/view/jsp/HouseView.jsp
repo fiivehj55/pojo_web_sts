@@ -449,7 +449,7 @@
 <script type="text/javascript">
 	$( document ).ready(function( $ ) {
 		$( '#example1' ).sliderPro({
-			width: 960,
+			width: 1230,
 			height: 500,
 			arrows: true,
 			buttons: false,
