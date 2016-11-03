@@ -276,13 +276,26 @@ body{
                   </li>
                </c:otherwise>   
                </c:choose>
-				<li><a href="adminPage">관리자 페이지</a>
-					<ul class="sub">
-						<li class="active"><a href="adminReport?page=1">신고게시판 관리</a></li>
-							<li class="active"><a href="adminQuestion?page=1">문의게시판 관리</a></li>
-							<li class="active"><a href="adminHouse?page=1">하우스 관리</a></li>
-							<li class="active"><a href="adminReply?page=1">댓글 관리</a></li>
+				<c:choose>
+					<c:when test="${user.memId=='admin'}">
+					<li><a href="adminLogin">관리자 페이지</a>
+						<ul class="sub">
+							<li class="active"><a href="#">&nbsp</a></li>
+							<li class="active"><a href="#">&nbsp</a></li>
+							<li class="active"><a href="#">&nbsp</a></li>
+							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li>
+					</c:when>
+					<c:otherwise>
+						<li><a href="#"></a>
+							<ul class="sub">
+								<li class="active"><a href="#">&nbsp</a></li>
+								<li class="active"><a href="#">&nbsp</a></li>
+								<li class="active"><a href="#">&nbsp</a></li>
+								<li class="active"><a href="#">&nbsp</a></li>
+							</ul></li>
+						</c:otherwise>
+					</c:choose>
             </ul>
          </nav>
       </div>

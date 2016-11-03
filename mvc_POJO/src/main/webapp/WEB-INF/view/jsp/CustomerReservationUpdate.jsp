@@ -162,7 +162,7 @@
 	
 	
 	<div class = "click">
-	<input type="submit" class="button button-style-1" value="예약 완료"/>
+	<input type="submit" class="button button-style-1" value="변경 완료"/>
 	<a href="<%=request.getContextPath()%>/index"><input type="button" class="button button-style-1" value="취소"/></a>
 	<a href="<%=request.getContextPath()%>/ReservationComplete1"><input type="button" class="button button-style-1" value="테스트 예약목록"/></a>
 	<a href="<%=request.getContextPath()%>/RegisterReservation"><input type="button" class="button button-style-1" value="테스트 예약목록2"/></a>

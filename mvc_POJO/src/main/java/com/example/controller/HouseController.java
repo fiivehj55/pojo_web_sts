@@ -519,4 +519,9 @@ public class HouseController {
 		 rhservice.delete(No);
 		return null;
 	}
+	@RequestMapping(value = "/CustomerReservationUpdate",method=RequestMethod.GET)
+	   public String CustomerReservationUpdate(Model model,
+			   @RequestParam Integer No){
+	      return "jsp/CustomerReservationUpdate";
+	}
 }

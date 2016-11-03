@@ -117,6 +117,8 @@ body {
 							<!-- 2016.11.10~2016.12.10 <br/> -->
 							${row.checkIn } ~ ${row.checkOut }
 							<input type="button" value="예약취소" class="cancel" onclick="deleteRH(${row.rhId},this)">
+							<a href="CustomerReservationUpdate?No=${row.rhId}">Update</a>
+
 						</div>
 					</c:forEach>
 				</c:when>
