@@ -8,26 +8,15 @@
 <head>
 <title>Linear by TEMPLATED</title>
 
-<link rel="stylesheet" type="text/css"
-	href="<%=request.getContextPath()%>/slidepro/dist/css/slider-pro.min.css"
-	media="screen" />
-<link rel="stylesheet" type="text/css"
-	href="<%=request.getContextPath()%>/slidepro/examples/css/examples.css"
-	media="screen" />
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600'
-	rel='stylesheet' type='text/css'>
-
-
-
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/slidepro/dist/css/slider-pro.min.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/slidepro/examples/css/examples.css" media="screen" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
 
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
-<link
-	href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900'
-	rel='stylesheet' type='/text/css'>
-<script
-	src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='/text/css'>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="js/skel.min.js"></script>
 <script src="js/skel-panels.min.js"></script>
 <script src="js/init.js"></script>
@@ -103,8 +92,7 @@
 
 </head>
 <body class="header">
-	<a href="/<%=request.getContextPath()%>/slidepro/examples/example3.html"
-		style="color: #fff">샘플3</a>
+	<a href="/<%=request.getContextPath()%>/slidepro/examples/example3.html" style="color: #fff">샘플3</a>
 	<jsp:include page="./Header.jsp"></jsp:include>
 	<!-- 맨위 -->
 	<div id="main">
@@ -454,8 +442,7 @@
 	<jsp:include page="./Footer.jsp"></jsp:include>
 </body>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
-<script type="text/javascript"
-	src="<%=request.getContextPath()%>/slidepro/libs/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/slidepro/libs/jquery-1.11.0.min.js"></script>
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/slidepro/dist/js/jquery.sliderPro.min.js"></script>
 
