@@ -152,7 +152,7 @@
 
 	<p>
 	<div class = "date">
-		가능한 날짜<br/>
+		예약 날짜<br/>
 		<input type="hidden" name="houseNo" value="${house.houseNo }"/>
 		시작일 <input type="date" onchange="checkDate(this)" name="possCheckIn">
 		 ~ 종료일 	<input type="date" onchange="lastDate(this)" name="possCheckOut"> 
