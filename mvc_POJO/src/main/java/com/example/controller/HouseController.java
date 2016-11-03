@@ -488,12 +488,6 @@ public class HouseController {
 			HttpSession session) {
 		Member user = (Member) session.getAttribute("user");
 		String id = user.getMemId();
-		House house = hservice.selectByNoHouse(houseNo);
-		
-		model.addAttribute("house", house);
-		session.setAttribute("checkIn", possCheckIn);
-		session.setAttribute("checkOut", possCheckOut);
-		model.addAttribute("user", user);
 		
 		RegistHouse rh = new RegistHouse();
 		rh.setCheckIn(possCheckIn);
