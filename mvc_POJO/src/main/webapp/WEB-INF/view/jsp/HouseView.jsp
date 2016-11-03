@@ -450,7 +450,7 @@
 	$( document ).ready(function( $ ) {
 		$( '#example1' ).sliderPro({
 			width: 1230,
-			height: 500,
+			height: 600,
 			arrows: true,
 			buttons: false,
 			waitForLayers: true,
