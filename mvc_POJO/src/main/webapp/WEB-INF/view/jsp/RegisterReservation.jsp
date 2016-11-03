@@ -95,8 +95,8 @@ body {
 
 			<div class="row">
 				<c:choose>
-				<c:when test="${fn:length(houses) > 0}">
-					 	<c:forEach items="${houses}" var="row">
+				<c:when test="${fn:length(userInfo.house) > 0}">
+					 	<c:forEach items="${userInfo.house}" var="row">
 					 		 <c:forEach items="${row.registHouse }" var="row2">
 							 <div class="2u" style="width: 15%; height: 300px;">${row.houseNo }</div>
 							<div class="2u" style="width: 15%; height: 300px;">

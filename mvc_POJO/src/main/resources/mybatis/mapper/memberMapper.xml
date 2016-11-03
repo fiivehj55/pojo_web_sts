@@ -86,7 +86,7 @@
 		</collection>
 	</resultMap>
 		<resultMap type="member" id="memberJH" extends="memBase">
-		<collection property="House" resultMap="pojo.web.dao.HouseMapper.houseJRH">
+		<collection property="house" resultMap="pojo.web.dao.HouseMapper.houseJRH">
 		<id column="MEM_ID" property="memberId"/>
 		</collection>
 	</resultMap>

@@ -510,9 +510,7 @@ public class HouseController {
 	public String RegisterReservation(Model model, HttpSession session) {
 		Member user =  (Member) session.getAttribute("user");
 		Member userInfo = mservice.selectByIdMemberJoinHouse(user.getMemId());
-		System.out.println("userinfo house: "+userInfo.getHouse());
 		model.addAttribute("userInfo",userInfo );
-		model.addAttribute("houses",userInfo.getHouse() );
 		return "jsp/RegisterReservation";
 	}
 }

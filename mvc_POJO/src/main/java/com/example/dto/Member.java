@@ -50,7 +50,7 @@ public class Member implements Serializable {
 
 	private List<RegistHouse> registHouse;
 
-	private List<House> House;
+	private List<House> house;
 	/**
 	 * 생성자.
 	 */
@@ -285,11 +285,11 @@ public class Member implements Serializable {
 	}
 	
 	public List<House> getHouse() {
-		return House;
+		return house;
 	}
 
 	public void setHouse(List<House> house) {
-		House = house;
+		this.house = house;
 	}
 
 	public List<RegistHouse> getRegistHouse() {
@@ -340,7 +340,7 @@ public class Member implements Serializable {
 	public String toString() {
 		return "Member [memId=" + memId + ", memName=" + memName + ", memPassword=" + memPassword + ", memPhone="
 				+ memPhone + ", memEmail=" + memEmail + ", memGender=" + memGender + ", memImg=" + memImg
-				+ ", memIntro=" + memIntro + ", detailId=" + detailId + ", detailGrade=" + detailGrade +" registHouse "+registHouse+" house: "+House+ "]\n";
+				+ ", memIntro=" + memIntro + ", detailId=" + detailId + ", detailGrade=" + detailGrade +" registHouse "+registHouse+" house: "+house+ "]\n";
 	}
 
 }
