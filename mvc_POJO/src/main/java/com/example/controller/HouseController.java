@@ -486,31 +486,35 @@ public class HouseController {
 			@RequestParam String possCheckOut,
 			@RequestParam Integer houseNo,
 			HttpSession session) {
+		int result = 0;
 		Member user = (Member) session.getAttribute("user");
 		String id = user.getMemId();
-		
 		RegistHouse rh = new RegistHouse();
 		rh.setCheckIn(possCheckIn);
 		rh.setCheckOut(possCheckOut);
 		rh.setHouseNo(houseNo);
 		rh.setMemberId(id);
-		
-		return "jsp/ReservationComplete";
+		result = rhservice.add(rh);
+		return "redirect:/ReservationComplete1";
 	}
 	
 	@RequestMapping(value = "/ReservationComplete1", method=RequestMethod.GET)
 	public String ReservationComplete1(Model model, HttpSession session) {
 		Member user =  (Member) session.getAttribute("user");
 		Member userInfo = mservice.selectByIdMemberJoinRegistHouse(user.getMemId());
-		model.addAttribute("userInfo",userInfo );
+		model.addAttribute("userInfo",userInfo);
 		return "jsp/ReservationComplete";
 	}
 	
 	@RequestMapping(value = "/RegisterReservation", method=RequestMethod.GET)
 	public String RegisterReservation(Model model, HttpSession session) {
-/*		Member user =  (Member) session.getAttribute("user");
-		Member userInfo = mservice.selectByIdMemberJoinHouse(user.getMemId());
+		Member user =  (Member) session.getAttribute("user");
+		List<House> userInfo = mservice.selectByIdMemberJoinHouse(user.getMemId());
+		
+		/*Member userInfo = (Member) mservice.selectByIdMemberJoinHouse(user.getMemId());*/
+		/*List<House> house = hservice.selectById(user.getMemId());
+		model.addAttribute("house", house);*/
 		model.addAttribute("userInfo",userInfo );
-*/		return "jsp/RegisterReservation";
+		return "jsp/RegisterReservation";
 	}
 }

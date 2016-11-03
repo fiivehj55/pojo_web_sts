@@ -1,8 +1,6 @@
 package com.example.dto;
 
 import java.io.Serializable;
-import java.util.Date;
-import java.util.Set;
 
 /**
  * REGIST_HOUSE 모델 클래스.

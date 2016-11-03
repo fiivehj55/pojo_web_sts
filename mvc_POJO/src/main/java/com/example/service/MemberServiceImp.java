@@ -11,7 +11,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.example.dao.MemberDao;
 import com.example.dao.MemberDetailDao;
+import com.example.dto.House;
 import com.example.dto.Member;
+import com.example.dto.RegistHouse;
 
 
 @Component
@@ -107,13 +109,13 @@ public class MemberServiceImp implements MemberService{
 	}
 	@Override
 	public Member selectByIdMemberJoinRegistHouse(String memId) {
-		 Member list = null;
+		Member list = null;
 		 list = dao.selectByIdMemberJoinRegistHouse(template, memId);
 		return list;
 	}
 	@Override
-	public List<Member> selectByIdMemberJoinHouse(String memId) {
-		List<Member> list = null;
+	public List<House> selectByIdMemberJoinHouse(String memId) {
+		List<House> list = null;
 		 list = dao.selectByIdMemberJoinHouse(template, memId);
 		return list;
 	}
