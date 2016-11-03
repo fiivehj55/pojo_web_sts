@@ -3,12 +3,15 @@ package com.example.dao;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+import com.example.dto.House;
 import com.example.dto.Member;
+import com.example.dto.RegistHouse;
 
 
 @Component
@@ -74,7 +77,7 @@ public class MemberDaoImpl implements MemberDao {
 	}
 	
 	@Override
-	public List<Member> selectByIdMemberJoinHouse(SqlSessionTemplate template, String memId) {
+	public List<House> selectByIdMemberJoinHouse(SqlSessionTemplate template, String memId) {
 		// TODO Auto-generated method stub
 		String stmt = MEMBER_MAP + "hostInfo";
 		return template.selectList(stmt, memId);

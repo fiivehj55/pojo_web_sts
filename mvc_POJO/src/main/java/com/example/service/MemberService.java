@@ -2,8 +2,7 @@ package com.example.service;
 
 import java.util.List;
 
-import org.mybatis.spring.SqlSessionTemplate;
-
+import com.example.dto.House;
 import com.example.dto.Member;
 
 
@@ -18,5 +17,6 @@ public interface MemberService {
 	public String find(String name,String email);
 	public Member Search(String id);
 	Member selectByIdMemberJoinRegistHouse(String memId);
-	List<Member> selectByIdMemberJoinHouse( String memId);
+	/*List<Member> selectByIdMemberJoinHouse( String memId);*/
+	List<House> selectByIdMemberJoinHouse( String memId);
 }

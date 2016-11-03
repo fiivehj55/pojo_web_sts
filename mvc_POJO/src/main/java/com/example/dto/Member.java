@@ -57,8 +57,6 @@ public class Member implements Serializable {
 	public Member() {
 	}
 	
-	
-
 	public Member(String memId, String memName, String memPassword, String memPhone, String memEmail, String memGender,
 			String memImg, String memIntro) {
 		super();
@@ -87,34 +85,7 @@ public class Member implements Serializable {
 		this.detailId = detailId;
 		this.detailGrade = detailGrade;
 	}
-
 	
-	
-	
-	public List<House> getHouse() {
-		return House;
-	}
-
-
-
-	public void setHouse(List<House> house) {
-		House = house;
-	}
-
-
-
-	public List<RegistHouse> getRegistHouse() {
-		return registHouse;
-	}
-
-
-
-	public void setRegistHouse(List<RegistHouse> registHouse) {
-		this.registHouse = registHouse;
-	}
-
-
-
 	/**
 	 * MEM_ID을 설정합니다..
 	 * 
@@ -311,6 +282,22 @@ public class Member implements Serializable {
 	 */
 	public String getDetailGrade() {
 		return this.detailGrade;
+	}
+	
+	public List<House> getHouse() {
+		return House;
+	}
+
+	public void setHouse(List<House> house) {
+		House = house;
+	}
+
+	public List<RegistHouse> getRegistHouse() {
+		return registHouse;
+	}
+
+	public void setRegistHouse(List<RegistHouse> registHouse) {
+		this.registHouse = registHouse;
 	}
 
 	/**

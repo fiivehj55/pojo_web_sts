@@ -78,13 +78,11 @@ body {
 
 </head>
 <body>
-
 	<jsp:include page="./Header.jsp"></jsp:include>
-
-	<!-- <div class="wrapper"> -->
 	<div id="tableHeader1">
 		<img src='css/images/c2.jpg' width="100%" height="300px;" />
 	</div>
+	<div class="wrapper">
 	<br />
 	<div class="table" style="height: 600px;">
 		<div class="row header green">
@@ -107,12 +105,11 @@ body {
 								data-retina="<%=request.getContextPath() %>/upload/src/css/images/aaa.jpg"
 								style="width: 100px; height: 100px;" />
 						</div>
-						<div class="3u" style="width:  30%; height: 300px;">${row.house.houseName}
-							<br />${row.house.houseAddress } ${row.house.houseAddressDetail}
+						<div class="3u" style="width:  30%; height: 300px;">
+							${row.house.houseName} <br />${row.house.houseAddress } ${row.house.houseAddressDetail}
 						</div>
 						<div class="2u" style="width: 15%; height: 300px;">
-							<img
-								src="<%=request.getContextPath()%>/upload/${userInfo.memId}/intro/${userInfo.memImg}"
+							<img src="<%=request.getContextPath()%>/upload/${userInfo.memId}/intro/${userInfo.memImg}"
 								width="100" height="100" onclick="goPopup()" />
 						</div>
 						<div class="2u" style="width:25%; height: 300px;">
@@ -125,6 +122,8 @@ body {
 							조회된 결과가 없습니다.
 					</c:otherwise>
 			</c:choose>
+		</div>
+		</div>
 		</div>
 		<div class="table"></div>
 		<jsp:include page="./Footer.jsp"></jsp:include>

@@ -486,8 +486,10 @@ public class HouseController {
 			@RequestParam String possCheckOut,
 			@RequestParam Integer houseNo,
 			HttpSession session) {
+		int result = 0;
 		Member user = (Member) session.getAttribute("user");
 		String id = user.getMemId();
+		Member userInfo = mservice.selectByIdMemberJoinRegistHouse(id);
 		House house = hservice.selectByNoHouse(houseNo);
 		
 		model.addAttribute("house", house);
@@ -501,6 +503,8 @@ public class HouseController {
 		rh.setHouseNo(houseNo);
 		rh.setMemberId(id);
 		
+		model.addAttribute("userInfo",userInfo);	
+		result = rhservice.add(rh);
 		return "jsp/ReservationComplete";
 	}
 	
@@ -508,15 +512,19 @@ public class HouseController {
 	public String ReservationComplete1(Model model, HttpSession session) {
 		Member user =  (Member) session.getAttribute("user");
 		Member userInfo = mservice.selectByIdMemberJoinRegistHouse(user.getMemId());
-		model.addAttribute("userInfo",userInfo );
+		model.addAttribute("userInfo",userInfo);
 		return "jsp/ReservationComplete";
 	}
 	
 	@RequestMapping(value = "/RegisterReservation", method=RequestMethod.GET)
 	public String RegisterReservation(Model model, HttpSession session) {
-/*		Member user =  (Member) session.getAttribute("user");
-		Member userInfo = mservice.selectByIdMemberJoinHouse(user.getMemId());
+		Member user =  (Member) session.getAttribute("user");
+		List<House> userInfo = mservice.selectByIdMemberJoinHouse(user.getMemId());
+		
+		/*Member userInfo = (Member) mservice.selectByIdMemberJoinHouse(user.getMemId());*/
+		/*List<House> house = hservice.selectById(user.getMemId());
+		model.addAttribute("house", house);*/
 		model.addAttribute("userInfo",userInfo );
-*/		return "jsp/RegisterReservation";
+		return "jsp/RegisterReservation";
 	}
 }
