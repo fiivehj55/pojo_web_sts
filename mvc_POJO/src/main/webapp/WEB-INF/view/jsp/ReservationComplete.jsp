@@ -115,6 +115,7 @@ body {
 						<div class="2u" style="width:25%; height: 300px;">
 							<!-- 2016.11.10~2016.12.10 <br/> -->
 							${row.checkIn } ~ ${row.checkOut }
+							<a href="<%=request.getContextPath()%>/CustomerReservationUpdate">Update</a>
 						</div>
 					</c:forEach>
 				</c:when>

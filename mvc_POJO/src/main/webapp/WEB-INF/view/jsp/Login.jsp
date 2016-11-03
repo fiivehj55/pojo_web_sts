@@ -161,8 +161,8 @@ input {
 						<br>
 						
 						<div class="find">
-								<a href="findId"> <input type="button"  value="아이디 찾기" /></a></li>
-								<a href="findPass"> <input type="button"  value="비밀번호 찾기" /></a> </li>
+							<a href="findId"> <input type="button"  value="아이디 찾기" /></a></li>
+							<a href="findPass"> <input type="button"  value="비밀번호 찾기" /></a> </li>
 						</div>
 						
 						

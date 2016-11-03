@@ -1,8 +1,9 @@
 package com.example.controller;
 
-import javax.servlet.http.HttpSession;
 import java.util.Calendar;
 import java.util.List;
+
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,17 +13,17 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.dto.House;
 import com.example.dto.Member;
 import com.example.dto.Question;
 import com.example.dto.Report;
 import com.example.service.HouseService;
+import com.example.service.MemberService;
 import com.example.service.QuestionService;
 import com.example.service.ReplyService;
 import com.example.service.ReportService;
-
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class MainController {
@@ -40,6 +41,9 @@ public class MainController {
 	
 	@Autowired
 	HouseService hService;
+	
+	@Autowired
+	MemberService mservice;
 	
 	@RequestMapping(value = "/hello",method=RequestMethod.GET)
 	public String sayHello(Model model){
@@ -85,12 +89,6 @@ public class MainController {
 		return "jsp/kakao";
 	}
 	
-	@RequestMapping(value = "/adminPage", method = RequestMethod.GET)
-	public String adminPage(Model model) {
-		return "jsp/adminPage";
-	}
-	
-
 	@RequestMapping(value = "/chatprivate", method = RequestMethod.GET)
 	public String chat(Model model, HttpSession session) {
 		Member member = (Member) session.getAttribute("user");
@@ -113,6 +111,29 @@ public class MainController {
 	@RequestMapping(value = "/dateView", method = RequestMethod.GET)
 	public String dateView(Model model) {
 		return "jsp/dateView";
+	}
+	
+	@RequestMapping(value = "/adminLogin",method=RequestMethod.GET)
+	   public String loginGet(Model model){
+	      return "jsp/adminPage";
+	}
+	@RequestMapping(value = "/adminPage", method = RequestMethod.POST)
+	public String adminPage(Model model,
+			@RequestParam String password,
+			HttpSession session) {
+		String id = "admin";
+		Member member =  mservice.login(id, password);
+	    System.out.println("test id:"+id+" pass:"+password);
+	    System.out.println("member :"+member);
+	      
+	    if(member == null && !password.equals("admin")){
+	    	return "jsp/Login";
+	    }
+	    else{
+	    	member.setMemPassword("");
+	    	session.setAttribute("user", member);
+	    	return "redirect:/adminQuestion?page=1";
+	    }
 	}
 	
 	@RequestMapping(value = "/adminBoard", method = RequestMethod.GET)
@@ -222,5 +243,9 @@ public class MainController {
 		}
 		return str;
 	}
-
+	@RequestMapping(value = "/adminCustomer",method=RequestMethod.GET)
+	   public String adminCustomer(Model model){
+	      return "jsp/adminCustomer";
+	}
+	
 }

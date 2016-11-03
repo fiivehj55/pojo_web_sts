@@ -513,4 +513,9 @@ public class HouseController {
 		model.addAttribute("userInfo",userInfo );
 		return "jsp/RegisterReservation";
 	}
+	
+	@RequestMapping(value = "/CustomerReservationUpdate",method=RequestMethod.GET)
+	   public String CustomerReservationUpdate(Model model){
+	      return "jsp/CustomerReservationUpdate";
+	}
 }
