@@ -201,24 +201,18 @@
 	cursor: pointer;
 	font-weight: bold;
 }
+
+.font{
+	font-weight: bold;
+	font-size: 25px;
+
+}
 </style>
 </head>
 
 <body>
 	<jsp:include page="./adminHeader.jsp"></jsp:include>
-	<a href="#">신고게시판 관리</a>
-	<ul>
-		<li>게시판관리</li>
-		<li>댓글관리</li>
-	</ul>
-	<a href="#">문의게시판 관리</a>
-	<ul>
-		<li>게시판관리</li>
-		<li>댓글관리</li>
-	</ul>
-
-
-	<h1>관리자님 환영합니다!</h1>
+	<span class="font">문의게시판 관리페이지</span>
 	<br />
 	<div class="boardcss_list_table">
 		<table class="list_table">

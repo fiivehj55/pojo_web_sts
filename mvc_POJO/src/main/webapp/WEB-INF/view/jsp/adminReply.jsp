@@ -70,23 +70,18 @@
 /* 상세검색 닫기 */
 .closeButton_table { width: 100%; text-align: right; }
 .closeButton { width: 85px; text-align: center; display: inline-block; border: 1px solid #bebebe; padding: 6px 0 6px; cursor: pointer; font-weight: bold; }
+
+.font{
+	font-weight: bold;
+	font-size: 25px;
+
+}
 </style></head>
 
 <body>
 <jsp:include page="./adminHeader.jsp"></jsp:include>	
-<a href="#">신고게시판 관리</a> 
-<ul>
-<li>게시판관리</li>
-<li>댓글관리</li>
-</ul>
-<a href="#">문의게시판 관리</a>
-<ul>
-<li>게시판관리</li>
-<li>댓글관리</li>
-</ul>
-
-
-<h1>관리자님 환영합니다!</h1><br/>
+	<span class="font">문의게시판 댓글 관리페이지</span>
+	<br />
 <div class="boardcss_list_table">
 	<table class="list_table">
 	<!-- 	<colgroup>
