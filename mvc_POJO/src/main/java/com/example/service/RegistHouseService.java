@@ -9,5 +9,5 @@ public interface RegistHouseService {
 	public RegistHouse selectByHouseNo(int houseNo);
 	public int add(RegistHouse rH);
 	public int update(RegistHouse rH);
-	public int delete(RegistHouse rH,int rhNo);
+	public int delete(int rhNo);
 }

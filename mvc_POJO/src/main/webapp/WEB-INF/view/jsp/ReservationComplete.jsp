@@ -99,22 +99,24 @@ body {
 					<c:forEach items="${userInfo.registHouse }" var="row">
 						<div class="2u" style="width: 15%; height: 300px;">${row.houseNo }</div>
 						<div class="2u" style="width:  15%; height: 300px;">
-							<img class=""
+							<a href="houseView?houseNo=${row.houseNo}"><img class=""
 								src="<%=request.getContextPath() %>/upload/${userInfo.memId}/${row.houseNo}/main/${row.house.houseImg}"
 								data-src="<%=request.getContextPath() %>/upload/${userInfo.memId}/${row.houseNo}/main/${row.house.houseImg}"
 								data-retina="<%=request.getContextPath() %>/upload/src/css/images/aaa.jpg"
 								style="width: 100px; height: 100px;" />
+								</a>
 						</div>
 						<div class="3u" style="width:  30%; height: 300px;">
 							${row.house.houseName} <br />${row.house.houseAddress } ${row.house.houseAddressDetail}
 						</div>
 						<div class="2u" style="width: 15%; height: 300px;">
 							<img src="<%=request.getContextPath()%>/upload/${userInfo.memId}/intro/${userInfo.memImg}"
-								width="100" height="100" onclick="goPopup()" />
+								width="100" height="100" onclick="goPopup('${userInfo.memId}')" />
 						</div>
 						<div class="2u" style="width:25%; height: 300px;">
 							<!-- 2016.11.10~2016.12.10 <br/> -->
 							${row.checkIn } ~ ${row.checkOut }
+							<input type="button" value="예약취소" class="cancel" onclick="deleteRH(${row.rhId},this)">
 						</div>
 					</c:forEach>
 				</c:when>
@@ -127,5 +129,43 @@ body {
 		</div>
 		<div class="table"></div>
 		<jsp:include page="./Footer.jsp"></jsp:include>
+		
+		<c:set var='del' value='DelrHouse'></c:set>
 </body>
+<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+<script type="text/javascript">
+function goPopup(str){
+	   var pop = 
+		   window.open("<%=request.getContextPath()%>/profile?memberName="+str,"pop", "width=570,height=800, scrollbars=yes");
+}
+
+function deleteRH(num,btn){
+	var last = $(btn).parent();
+	var one = $(last).prev();
+	var two = $(one).prev();
+	var three = $(two).prev();
+	var four = $(three).prev();
+	last.remove();
+	one.remove();
+	two.remove();
+	three.remove();
+	four.remove();
+	
+	//체크된 번호 글 삭제
+	$.ajax({
+		type : "post",
+		url : "${del}",
+		data : {
+			No : num
+		},   
+		async: false,
+		success : function(data,staus) {
+			console.log("delete success");
+		},
+		error : function(xhr, status, error) {
+			alert(error);
+		}
+	});
+}
+</script>
 </html>

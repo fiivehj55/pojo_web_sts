@@ -45,7 +45,7 @@ public class RegistHouseServiceImp implements RegistHouseService{
 	}
 	
 	@Transactional
-	public int delete(RegistHouse rH,int rhNo) {
+	public int delete(int rhNo) {
 		int result =0;
 		result = dao.deleteRegistHouse(template, rhNo);
 		

@@ -513,4 +513,10 @@ public class HouseController {
 		model.addAttribute("userInfo",userInfo );
 		return "jsp/RegisterReservation";
 	}
+	@RequestMapping(value="/DelrHouse",method=RequestMethod.POST)
+	public @ResponseBody String delrh(Model model,
+			@RequestParam Integer No){
+		 rhservice.delete(No);
+		return null;
+	}
 }

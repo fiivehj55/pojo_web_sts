@@ -100,11 +100,12 @@ body {
 					 		 <c:forEach items="${row.registHouse }" var="row2">
 							 <div class="2u" style="width: 15%; height: 300px;">${row.houseNo }</div>
 							<div class="2u" style="width: 15%; height: 300px;">
-								<img class=""
+								<a href="houseView?houseNo=${row.houseNo}"><img class=""
 									src="<%=request.getContextPath() %>/upload/${userInfo.memId}/${row.houseNo}/main/${row.houseImg}"
 									data-src="<%=request.getContextPath() %>/upload/${userInfo.memId}/${row.houseNo}/main/${row.houseImg}"
 									data-retina="<%=request.getContextPath() %>/upload/src/css/images/aaa.jpg"
 									style="width: 100px; height: 100px;" />
+									</a>
 							</div>
 							<div class="3u" style="width: 30%; height: 300px;">
 								${row.houseName} <br /> ${row.houseAddress } ${row.houseAddressDetail}
@@ -112,7 +113,7 @@ body {
 							<div class="2u" style="width: 15%; height: 300px;">
 										<img
 											src="<%=request.getContextPath()%>/upload/${row2.memberId}/intro/${row2.member.memImg}"
-											width="100" height="100" onclick="goPopup()" />		
+											width="100" height="100" onclick="goPopup('${row2.memberId}')" />		
 							</div>
 
 							<div class="2u" style="width: 25%; height: 300px;">
@@ -132,5 +133,9 @@ body {
 			<jsp:include page="./Footer.jsp"></jsp:include>
 </body>
 <script type="text/javascript">
+function goPopup(str){
+	   var pop = 
+		   window.open("<%=request.getContextPath()%>/profile?memberName="+str,"pop", "width=570,height=800, scrollbars=yes");
+}
 </script>
 </html>
