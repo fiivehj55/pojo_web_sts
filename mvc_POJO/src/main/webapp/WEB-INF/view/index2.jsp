@@ -276,7 +276,7 @@ body{
                   </li>
                </c:otherwise>   
                </c:choose>
-				<li><a href="admin">관리자 페이지</a>
+				<li><a href="adminPage">관리자 페이지</a>
 					<ul class="sub">
 						<li class="active"><a href="adminReport?page=1">신고게시판 관리</a></li>
 							<li class="active"><a href="adminQuestion?page=1">문의게시판 관리</a></li>

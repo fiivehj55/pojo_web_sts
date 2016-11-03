@@ -274,7 +274,7 @@ body {
 									<li class="active"><a href="join">회원가입</a></li>
 									<li class="active"><a href="idAndPass">ID/PASS 찾기</a></li>
 									<li class="active"><a href="#">&nbsp</a></li>
-							<li class="active"><a href="#">&nbsp</a></li>
+									<li class="active"><a href="#">&nbsp</a></li>
 								</ul></li>
 						</c:when>
 						<c:otherwise>
@@ -301,7 +301,7 @@ body {
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 						</ul></li> -->
-					<li><a href="admin">관리자 페이지</a>
+					<li><a href="adminPage">관리자 페이지</a>
 						<ul class="sub">
 							<li class="active"><a href="adminReport?page=1">신고게시판 관리</a></li>
 							<li class="active"><a href="adminQuestion?page=1">문의게시판 관리</a></li>
