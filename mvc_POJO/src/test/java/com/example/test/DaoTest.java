@@ -117,7 +117,7 @@ public class DaoTest {
 	}
 	@Test
 	public void testMeberJoinHouse() {
-		List<House> list = mdao.selectByIdMemberJoinHouse(template, "hong");
+		Member list = mdao.selectByIdMemberJoinHouse(template, "hong");
 		/* mdao.deleteMember(template, "hong", "1234"); */
 		logger.trace("List: {}", list);
 	}

@@ -509,12 +509,10 @@ public class HouseController {
 	@RequestMapping(value = "/RegisterReservation", method=RequestMethod.GET)
 	public String RegisterReservation(Model model, HttpSession session) {
 		Member user =  (Member) session.getAttribute("user");
-		List<House> userInfo = mservice.selectByIdMemberJoinHouse(user.getMemId());
-		
-		/*Member userInfo = (Member) mservice.selectByIdMemberJoinHouse(user.getMemId());*/
-		/*List<House> house = hservice.selectById(user.getMemId());
-		model.addAttribute("house", house);*/
+		Member userInfo = mservice.selectByIdMemberJoinHouse(user.getMemId());
+		System.out.println("userinfo house: "+userInfo.getHouse());
 		model.addAttribute("userInfo",userInfo );
+		model.addAttribute("houses",userInfo.getHouse() );
 		return "jsp/RegisterReservation";
 	}
 }

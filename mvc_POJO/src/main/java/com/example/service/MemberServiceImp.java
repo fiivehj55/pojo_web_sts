@@ -114,8 +114,8 @@ public class MemberServiceImp implements MemberService{
 		return list;
 	}
 	@Override
-	public List<House> selectByIdMemberJoinHouse(String memId) {
-		List<House> list = null;
+	public Member selectByIdMemberJoinHouse(String memId) {
+		Member list = null;
 		 list = dao.selectByIdMemberJoinHouse(template, memId);
 		return list;
 	}

@@ -17,6 +17,6 @@ public interface MemberService {
 	public String find(String name,String email);
 	public Member Search(String id);
 	Member selectByIdMemberJoinRegistHouse(String memId);
-	/*List<Member> selectByIdMemberJoinHouse( String memId);*/
-	List<House> selectByIdMemberJoinHouse( String memId);
+	Member selectByIdMemberJoinHouse( String memId);/*
+	List<House> selectByIdMemberJoinHouse( String memId);*/
 }

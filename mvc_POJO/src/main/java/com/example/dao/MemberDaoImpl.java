@@ -77,9 +77,9 @@ public class MemberDaoImpl implements MemberDao {
 	}
 	
 	@Override
-	public List<House> selectByIdMemberJoinHouse(SqlSessionTemplate template, String memId) {
+	public Member selectByIdMemberJoinHouse(SqlSessionTemplate template, String memId) {
 		// TODO Auto-generated method stub
 		String stmt = MEMBER_MAP + "hostInfo";
-		return template.selectList(stmt, memId);
+		return template.selectOne(stmt, memId);
 	}
 }

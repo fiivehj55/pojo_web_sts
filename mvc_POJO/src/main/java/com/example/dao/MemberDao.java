@@ -20,6 +20,6 @@ public interface MemberDao {
 	
 	Member selectByIdMemberJoinRegistHouse(SqlSessionTemplate template, String memId);
 	
-	/*List<Member> selectByIdMemberJoinHouse(SqlSessionTemplate template, String memId);*/
-	List<House> selectByIdMemberJoinHouse(SqlSessionTemplate template, String memId);
+	Member selectByIdMemberJoinHouse(SqlSessionTemplate template, String memId);
+/*	List<House> selectByIdMemberJoinHouse(SqlSessionTemplate template, String memId);*/
 }

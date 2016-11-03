@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE>
@@ -96,9 +95,10 @@ body {
 
 			<div class="row">
 				<c:choose>
-					<c:when test="${fn:length(userInfo.House) > 0}">
-						<c:forEach items="${userInfo.House }" var="row">
-							<div class="2u" style="width: 15%; height: 300px;">${row.houseNo }</div>
+				<c:when test="${fn:length(houses) > 0}">
+					 	<c:forEach items="${houses}" var="row">
+					 		 <c:forEach items="${row.registHouse }" var="row2">
+							 <div class="2u" style="width: 15%; height: 300px;">${row.houseNo }</div>
 							<div class="2u" style="width: 15%; height: 300px;">
 								<img class=""
 									src="<%=request.getContextPath() %>/upload/${userInfo.memId}/${row.houseNo}/main/${row.houseImg}"
@@ -110,107 +110,27 @@ body {
 								${row.houseName} <br /> ${row.houseAddress } ${row.houseAddressDetail}
 							</div>
 							<div class="2u" style="width: 15%; height: 300px;">
-								<c:when test="${fn:length(row.registHouse) > 0}">
-									<c:forEach items="${row.registHouse }" var="row">
 										<img
-											src="<%=request.getContextPath()%>/upload/${row.memberId}/intro/${row.memberId.memImg}"
-											width="100" height="100" onclick="goPopup()" />
-									</c:forEach>
-								</c:when>
+											src="<%=request.getContextPath()%>/upload/${row2.memberId}/intro/${row2.member.memImg}"
+											width="100" height="100" onclick="goPopup()" />		
 							</div>
 
 							<div class="2u" style="width: 25%; height: 300px;">
-								<c:when test="${fn:length(row.registHouse) > 0}">
-									<c:forEach items="${row.registHouse }" var="row">
 										<!-- 2016.11.10~2016.12.10 <br/> -->
-										${row.checkIn } ~ ${row.checkOut }
-									</c:forEach>
-								</c:when>
+										${row2.checkIn } ~ ${row2.checkOut }
 							</div>
-						</c:forEach>
+						 </c:forEach>
+						</c:forEach> 
 					</c:when>
 					<c:otherwise>
 						조회된 결과가 없습니다.
 					</c:otherwise>
 				</c:choose>
 			</div>
-<!-- 
-=======
-      <div class="2u" style="width: 15%; height: 300px;">
-       1
-      </div>
-      <div class="2u" style="width: 15%; height: 300px;">
-        사진
-      </div>
-      <div class="3u" style="width:30%; height: 300px;">
-       충청남도 서북구 두정동
-      </div>
-      <div class="2u" style="width: 15%; height: 300px;">
-       프로필사진
-      </div>
-      <div class="2u" style="width: 25%; height: 300px;">
-       2016.11.10~2016.12.10
-      </div>
->>>>>>> branch 'master' of https://github.com/fiivehj55/pojo_web_sts.git 
-    </div>
-    
-    <div class="row">
-      <div class="2u">
-      2
-      </div>
-      <div class="4u">
-       
-      </div>
-      <div class="2u">
-       
-      </div>
-      <div class="2u">
-       
-      </div>
-      <div class="2u">
-        
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="2u">
-        3
-      </div>
-      <div class="4u">
-       
-      </div>
-      <div class="2u">
-       
-      </div>
-      <div class="2u">
-       
-      </div>
-      <div class="2u">
-        
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="2u">
-       4
-      </div>
-      <div class="4u">
-      
-      </div>
-      <div class="2u">
-       
-      </div>
-      <div class="2u">
-       
-      </div>
-      <div class="2u">
-        
-      </div>
-    </div>
-    -->
-  </div>
   </div>
 			<div class="table"></div>
 			<jsp:include page="./Footer.jsp"></jsp:include>
 </body>
+<script type="text/javascript">
+</script>
 </html>
