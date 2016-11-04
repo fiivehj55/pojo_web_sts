@@ -327,7 +327,7 @@
 			</a>
 		</c:if>
 	</div>
-	<c:set var='del' value='DelReply'></c:set>
+	<c:set var='del' value='DelMember'></c:set>
 </body>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 <script>
@@ -343,7 +343,7 @@
 				type : "post",
 				url : "${del}",
 				data : {
-					No : $(num[1]).html()
+					memId : $(num[1]).html()
 				},
 				async : false,
 				success : function(data, staus) {

@@ -13,6 +13,7 @@ public interface MemberService {
 	public int update(Member member);
 	public int updateNp(Member member);
 	public int delete(String id,String password);
+	public int delelteById(String memId);
 	public List<Member> allMember();
 	public String find(String name,String email);
 	public Member Search(String id);

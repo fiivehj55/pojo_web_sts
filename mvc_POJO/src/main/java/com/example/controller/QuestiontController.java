@@ -213,6 +213,12 @@ public class QuestiontController {
 		qservice.delete(No);
 		return null;
 	}
+	
+	@RequestMapping(value = "/DelReply1", method = RequestMethod.POST)
+	public @ResponseBody String deleteAdminDelReply(Model model, @RequestParam Integer No) {
+		qtservice.deleteQtr(No);
+		return null;
+	}
 
 	// 문의게시판 댓글 추가
 	@RequestMapping(value = "/insertqtr", method = RequestMethod.POST)

@@ -326,7 +326,7 @@
 			</a>
 		</c:if>
 	</div>
-	<c:set var='del' value='DelReply'></c:set>
+	<c:set var='del' value='DelReportReply'></c:set>
 </body>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 <script>

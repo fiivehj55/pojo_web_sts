@@ -108,6 +108,13 @@ public class DaoTest {
 		logger.trace("List: {}", result);
 
 	}
+	@Test
+	public void testDeleteMeberById() {
+		int result = mdao.deleteMemberById(template, "test");
+		/* mdao.deleteMember(template, "hong", "1234"); */
+		logger.trace("List: {}", result);
+
+	}
 
 	@Test
 	public void testMeberJoinRegist() {

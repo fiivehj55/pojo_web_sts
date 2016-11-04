@@ -149,4 +149,10 @@ public class ReportController {
 		repservice.deleteReport(No);
 		return null;
 	}
+	
+	@RequestMapping(value = "/DelReportReply",method=RequestMethod.POST)
+	public @ResponseBody String deleteAdminDelReportReply(Model model,@RequestParam Integer No){
+		rtservice.deleteRtr(No);
+		return null;
+	}
 }

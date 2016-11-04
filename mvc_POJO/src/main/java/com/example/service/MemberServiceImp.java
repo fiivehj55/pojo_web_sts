@@ -126,4 +126,11 @@ public class MemberServiceImp implements MemberService{
 		list = dao.memberPaging(template, page);
 		return list;
 	}
+
+	@Override
+	public int delelteById(String memId) {
+		int result = 0;
+		result = dao.deleteMemberById(template, memId);
+		return result;
+	}
 }
