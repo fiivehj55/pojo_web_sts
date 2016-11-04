@@ -127,6 +127,13 @@ public class DaoTest {
 		logger.trace("id: {}", result);
 
 	}
+	
+	@Test
+	public void testMemberPaging() {
+		List<Member> member = mdao.memberPaging(template, 1);
+		logger.trace("List: {}", member);
+
+	}
 
 	/** HOUSE TEST */
 	@Test
@@ -253,7 +260,7 @@ public class DaoTest {
 
 	@Test
 	public void testSelectByIdRegistHouse() {
-		RegistHouse rhouse = rhdao.selectByIdRegistHouse(template, 1);
+		RegistHouse rhouse = rhdao.selectById(template, 1);
 		logger.trace("List: {}", rhouse);
 
 	}

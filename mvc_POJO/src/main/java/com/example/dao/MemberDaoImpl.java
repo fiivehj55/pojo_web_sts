@@ -82,4 +82,13 @@ public class MemberDaoImpl implements MemberDao {
 		String stmt = MEMBER_MAP + "hostInfo";
 		return template.selectOne(stmt, memId);
 	}
+
+	@Override
+	public List<Member> memberPaging(SqlSessionTemplate template, int page) {
+		String stmt = MEMBER_MAP + "memberPaging";
+		Map<String, Object> map = new HashMap<>();
+		map.put("low",(page-1)*5+1);
+		map.put("high",page*5);
+		return template.selectList(stmt,map);
+	}
 }

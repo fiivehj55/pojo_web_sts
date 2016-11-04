@@ -18,13 +18,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.example.dto.House;
 import com.example.dto.Member;
 import com.example.dto.Question;
+import com.example.dto.QuestionToReply;
 import com.example.dto.Reply;
 import com.example.dto.Report;
+import com.example.dto.ReportToReply;
 import com.example.service.HouseService;
 import com.example.service.MemberService;
 import com.example.service.QuestionService;
+import com.example.service.QuestionToReplyService;
 import com.example.service.ReplyService;
 import com.example.service.ReportService;
+import com.example.service.ReportToReplyService;
 
 @Controller
 public class MainController {
@@ -45,6 +49,12 @@ public class MainController {
 	
 	@Autowired
 	MemberService mservice;
+	
+	@Autowired
+	QuestionToReplyService qtrservice;
+	
+	@Autowired
+	ReportToReplyService rtrservice;
 	
 	@RequestMapping(value = "/hello",method=RequestMethod.GET)
 	public String sayHello(Model model){
@@ -207,6 +217,60 @@ public class MainController {
 		return "jsp/adminReport";
 	}
 	
+	@RequestMapping(value = "/adminQuestionReply", method = RequestMethod.GET)
+	public String adminQuestionReply(Model model,
+			@RequestParam Integer page, HttpSession session) {
+		List<QuestionToReply> list = null;
+		list = qtrservice.searchQtrPaging(page);
+
+		session.setAttribute("qtr", list);
+		list = qtrservice.selectAllQtr();
+
+		int size = list.size()/6;
+		if(size*5 < list.size())
+			model.addAttribute("max", size+1);
+		else
+			model.addAttribute("max", size);
+		model.addAttribute("page", page);
+		return "jsp/adminQuestionReply";
+	}
+	
+	@RequestMapping(value = "/adminReportReply", method = RequestMethod.GET)
+	public String adminReportReply(Model model,
+			@RequestParam Integer page, HttpSession session) {
+		List<ReportToReply> list = null;
+		list = rtrservice.searchRtrPaging(page);
+
+		session.setAttribute("rtr", list);
+		list = rtrservice.selectAllRtr();
+
+		int size = list.size()/6;
+		if(size*5 < list.size())
+			model.addAttribute("max", size+1);
+		else
+			model.addAttribute("max", size);
+		model.addAttribute("page", page);
+		return "jsp/adminReportReply";
+	}
+	
+	@RequestMapping(value = "/adminCustomer", method = RequestMethod.GET)
+	public String adminCustomer(Model model,
+			@RequestParam Integer page, HttpSession session) {
+		List<Member> list = null;
+		list = mservice.memberPaging(page);
+
+		session.setAttribute("member", list);
+		list = mservice.allMember();
+
+		int size = list.size()/6;
+		if(size*5 < list.size())
+			model.addAttribute("max", size+1);
+		else
+			model.addAttribute("max", size);
+		model.addAttribute("page", page);
+		return "jsp/adminCustomer";
+	}
+	
 	@RequestMapping(value = "/dateView", method = RequestMethod.POST)
 	public @ResponseBody String dateViewPost(Model model,
 			@RequestParam Integer month,
@@ -243,10 +307,6 @@ public class MainController {
 			}
 		}
 		return str;
-	}
-	@RequestMapping(value = "/adminCustomer",method=RequestMethod.GET)
-	   public String adminCustomer(Model model){
-	      return "jsp/adminCustomer";
 	}
 	
 }

@@ -46,17 +46,17 @@
 						
 					<li><a href="bbs?page=1">댓글 관리</a>
 						<ul class="sub">
-							<li class="active"><a href="adminReply?page=1">문의게시판 댓글 관리</a></li>
-							<li class="active"><a href="#">신고게시판 댓글 관리</a></li>
+							<li class="active"><a href="adminQuestionReply?page=1">문의게시판 댓글 관리</a></li>
+							<li class="active"><a href="adminReportReply?page=1">신고게시판 댓글 관리</a></li>
 						</ul></li>
 
 					<li><a href="bbs?page=1">하우스관리</a>
 						<ul class="sub">
 							<li class="active"><a href="adminHouse?page=1">하우스관리</a></li>
-							<li class="active"><a href="#">&nbsp</a></li>
+							<li class="active"><a href="adminReply?page=1">하우스 댓글 관리</a></li>
 						</ul></li> 
 						
-					<li><a href="adminCustomer">회원관리</a>
+					<li><a href="adminCustomer?page=1">회원관리</a>
 						<ul class="sub">
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
