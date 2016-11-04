@@ -479,6 +479,7 @@ public class HouseController {
 		return "jsp/CustomerReservation";
 	}
 	
+	//예약하기의 예약완료
 	@RequestMapping(value = "/ReservationComplete", method=RequestMethod.GET)
 	public String ReservationComplete(Model model,
 			@RequestParam String possCheckIn,
@@ -496,7 +497,7 @@ public class HouseController {
 		result = rhservice.add(rh);
 		return "redirect:/ReservationComplete1";
 	}
-	
+	//예약목록보
 	@RequestMapping(value = "/ReservationComplete1", method=RequestMethod.GET)
 	public String ReservationComplete1(Model model, HttpSession session) {
 		Member user =  (Member) session.getAttribute("user");
@@ -520,7 +521,64 @@ public class HouseController {
 	}
 	@RequestMapping(value = "/CustomerReservationUpdate",method=RequestMethod.GET)
 	   public String CustomerReservationUpdate(Model model,
-			   @RequestParam Integer No){
-	      return "jsp/CustomerReservationUpdate";
+			   @RequestParam Integer No,
+			   @RequestParam Integer rhid){
+		model.addAttribute("rhid",rhid);
+		House house = hservice.selectByNoHouse(No);
+		System.out.println(house.getHouseAddress());
+		model.addAttribute("address",house.getHouseAddress());
+		model.addAttribute("house",house);
+
+		String houseTv = house.getHouseTv();
+		String houseAircon = house.getHouseAircon();
+		String houseWifi = house.getHouseWifi();
+		String houseElebe = house.getHouseElebe();
+		String houseWashing = house.getHouseWashing();
+		if (!houseTv.equals("null") ) {
+			model.addAttribute("houseTv", "TV");
+		}
+		if ( !houseAircon.equals("null")) {
+			model.addAttribute("houseAircon", "에어컨");
+		}
+		if ( !houseWifi.equals("null")) {
+			model.addAttribute("houseWifi", "WI-FI");
+		}
+		if ( !houseElebe.equals("null")) {
+			model.addAttribute("houseElebe", "엘리베이터");
+		}
+		if ( !houseWashing.equals("null")) {
+			model.addAttribute("houseWashing", "세탁기");
+		}
+		RegistHouse rh = rhservice.selectById(rhid);
+		
+		String chi = rh.getCheckIn();
+		chi.replaceAll("/", "-");
+		String cho =  rh.getCheckOut();
+		cho.replaceAll("/", "-");
+		
+		rh.setCheckIn(chi);
+		rh.setCheckOut(cho);
+		model.addAttribute("rh", rh);
+		return "jsp/CustomerReservationUpdate";
+	}
+	
+	@RequestMapping(value="/ReservationUpdate",method=RequestMethod.POST)
+	public String ReservationUpdate(Model model,
+			@RequestParam String checkIn,
+			@RequestParam String checkOut,
+			@RequestParam Integer houseNo,
+			@RequestParam Integer rhid,	
+			HttpSession session){
+		int result = 0;
+		Member user = (Member) session.getAttribute("user");
+		String id = user.getMemId();
+		RegistHouse rh = new RegistHouse();
+		rh.setRhId(rhid);
+		rh.setCheckIn(checkIn);
+		rh.setCheckOut(checkOut);
+		rh.setHouseNo(houseNo);
+		rh.setMemberId(id);
+		result = rhservice.update(rh);
+		return "redirect:/ReservationComplete1";
 	}
 }

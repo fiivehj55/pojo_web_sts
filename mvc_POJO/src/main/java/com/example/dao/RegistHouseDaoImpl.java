@@ -25,7 +25,7 @@ public class RegistHouseDaoImpl implements RegistHouseDao {
 	}
 
 	@Override
-	public RegistHouse selectByIdRegistHouse(SqlSessionTemplate template, int rhId) {
+	public RegistHouse selectById(SqlSessionTemplate template, int rhId) {
 		String stmt = REGIST_HOUSE_MAP + "selectByIdRh";
 		return template.selectOne(stmt, rhId);
 	}

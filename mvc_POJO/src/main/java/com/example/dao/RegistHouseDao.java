@@ -8,7 +8,7 @@ import com.example.dto.RegistHouse;
 public interface RegistHouseDao {
 	List<RegistHouse> selectAllRegistHouse(SqlSessionTemplate template);
 	
-	RegistHouse selectByIdRegistHouse(SqlSessionTemplate template, int rhId);
+	RegistHouse selectById(SqlSessionTemplate template, int rhId);
 	
 	int insertRegistHouse(SqlSessionTemplate template, RegistHouse rHouse);
 	

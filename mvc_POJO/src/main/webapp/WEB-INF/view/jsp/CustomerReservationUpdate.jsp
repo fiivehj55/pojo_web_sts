@@ -4,6 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="sform" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -71,7 +72,7 @@
 </head>
 <body class="header">
 	<jsp:include page="./Header.jsp"></jsp:include>
-	<form method="get" action="ReservationComplete">
+	<form action="ReservationUpdate" method="post">
 	<!-- 맨위 -->
 	<div class="houseinfo">
 		<!-- 하우스이름 -->
@@ -154,8 +155,10 @@
 	<div class = "date">
 		예약 날짜<br/>
 		<input type="hidden" name="houseNo" value="${house.houseNo }"/>
-		시작일 <input type="date" onchange="checkDate(this)" name="possCheckIn">
-		 ~ 종료일 	<input type="date" onchange="lastDate(this)" name="possCheckOut"> 
+		<input type="hidden" name="rhid" value="${rhid }"/>
+
+		시작일 <input type="date" onchange="checkDate(this)" name="checkIn" value='${rh.checkIn }'/>
+		 ~ 종료일 	<input type="date" onchange="lastDate(this)" name="checkOut" value='${rh.checkOut }'/> 
 		 <!-- <input type="button" onclick="nextDate(this)" value="+"> -->
 	</div>
 	</p>
@@ -164,8 +167,6 @@
 	<div class = "click">
 	<input type="submit" class="button button-style-1" value="변경 완료"/>
 	<a href="<%=request.getContextPath()%>/index"><input type="button" class="button button-style-1" value="취소"/></a>
-	<a href="<%=request.getContextPath()%>/ReservationComplete1"><input type="button" class="button button-style-1" value="테스트 예약목록"/></a>
-	<a href="<%=request.getContextPath()%>/RegisterReservation"><input type="button" class="button button-style-1" value="테스트 예약목록2"/></a>
 	</div>
 	</form>
 <p><p><p>
@@ -248,7 +249,7 @@ function initMap() {
 				      '<div id="siteNotice">'+
 				      '</div>'+
 				      '<div id="left-box">'+
-				      '<h1 id="firstHeading" class="firstHeading">'+${house.houseNo}+'</h1>'+
+				      '<h1 id="firstHeading" class="firstHeading">'+${house.`}+'</h1>'+
 				      '<div id="bodyContent">'+
 				      '<span style="font-size:25px">'+${house.houseName}+'</span>'+
 				      '<p><b>주소:&nbsp</b>${house.houseAddress}</p>'+

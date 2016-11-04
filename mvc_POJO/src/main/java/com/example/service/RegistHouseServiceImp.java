@@ -19,9 +19,9 @@ public class RegistHouseServiceImp implements RegistHouseService{
 	
 	@Transactional
 	@Override
-	public RegistHouse selectByHouseNo(int houseNo) {
+	public RegistHouse selectById(int rhId) {
 		RegistHouse list = null;
-		list = dao.selectByIdRegistHouse(template, houseNo);
+		list = dao.selectById(template, rhId);
 		
 		return list;
 	}
