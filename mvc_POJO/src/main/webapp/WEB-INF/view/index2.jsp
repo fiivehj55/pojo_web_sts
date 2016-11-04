@@ -476,7 +476,7 @@ body{
 		</div>	 -->
 
   <!-- Tweet -->
-	<div id="tweet">
+	<!-- <div id="tweet">
 		<div class="container1">
 			<section>
 				<blockquote>
@@ -485,7 +485,7 @@ body{
 				</blockquote>
 			</section>
 		</div>
-	</div>
+	</div> -->
    <jsp:include page="jsp/Footer.jsp"></jsp:include>
 </body>
 <script src="http://code.jquery.com/jquery.js" /></script>
