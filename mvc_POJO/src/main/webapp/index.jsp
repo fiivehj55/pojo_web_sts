@@ -240,6 +240,9 @@ body {
 
 </head>
 <body class="homepage">
+
+
+	<c:redirect url="/index"></c:redirect>
 	<!-- Header -->
 	<div id="header">
 		<div id="nav-wrapper">

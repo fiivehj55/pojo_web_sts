@@ -119,6 +119,8 @@ body {
 							<div class="2u" style="width: 25%; height: 300px;">
 										<!-- 2016.11.10~2016.12.10 <br/> -->
 										${row2.checkIn } ~ ${row2.checkOut }
+										<input type="button" value="예약삭제" class="cancel" onclick="deleteRH(${row2.rhId},this)">
+							
 							</div>
 						 </c:forEach>
 						</c:forEach> 
@@ -131,11 +133,48 @@ body {
   </div>
 			<div class="table"></div>
 			<jsp:include page="./Footer.jsp"></jsp:include>
+			
+			
+		<c:set var='del' value='DelrHouse'></c:set>
 </body>
 <script type="text/javascript">
 function goPopup(str){
 	   var pop = 
 		   window.open("<%=request.getContextPath()%>/profile?memberName="+str,"pop", "width=570,height=800, scrollbars=yes");
+}
+
+
+function deleteRH(num,btn){
+	
+	var result = confirm("예약을 취소시키겠습니까?");
+	if(!result)
+		return ;
+	var last = $(btn).parent();
+	var one = $(last).prev();
+	var two = $(one).prev();
+	var three = $(two).prev();
+	var four = $(three).prev();
+	last.remove();
+	one.remove();
+	two.remove();
+	three.remove();
+	four.remove();
+	
+	//체크된 번호 글 삭제
+	$.ajax({
+		type : "post",
+		url : "${del}",
+		data : {
+			No : num
+		},   
+		async: false,
+		success : function(data,staus) {
+			console.log("delete success");
+		},
+		error : function(xhr, status, error) {
+			alert(error);
+		}
+	});
 }
 </script>
 </html>

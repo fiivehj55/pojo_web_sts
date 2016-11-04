@@ -253,7 +253,7 @@ public class DaoTest {
 
 	@Test
 	public void testSelectByIdRegistHouse() {
-		RegistHouse rhouse = rhdao.selectByIdRegistHouse(template, 1);
+		RegistHouse rhouse = rhdao.selectById(template, 1);
 		logger.trace("List: {}", rhouse);
 
 	}
