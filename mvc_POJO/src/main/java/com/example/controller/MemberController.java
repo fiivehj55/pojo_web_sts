@@ -392,4 +392,10 @@ public class MemberController {
       return "jsp/profile";
    }
    
+   @RequestMapping(value = "/DelMember",method=RequestMethod.POST)
+	public @ResponseBody String deleteAdminDelMember(Model model, @RequestParam String memId){
+		mservice.delelteById(memId);
+		return null;
+	}
+   
 }

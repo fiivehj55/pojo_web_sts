@@ -91,4 +91,12 @@ public class MemberDaoImpl implements MemberDao {
 		map.put("high",page*5);
 		return template.selectList(stmt,map);
 	}
+
+	@Override
+	public int deleteMemberById(SqlSessionTemplate template, String memId) {
+		String stmt = MEMBER_MAP + "deleteMemberById";
+		Map<String, String> member = new HashMap<String, String>();
+		member.put("memId", memId);
+		return template.delete(stmt, member);
+	}
 }

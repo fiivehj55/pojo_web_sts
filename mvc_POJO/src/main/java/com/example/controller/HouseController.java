@@ -440,6 +440,12 @@ public class HouseController {
 		hservice.deleteHouse(No);
 		return null;
 	}
+	
+	@RequestMapping(value = "/DelHouseReply",method=RequestMethod.POST)
+	public @ResponseBody String deleteAdminDelHouseReply(Model model,@RequestParam Integer No){
+		Rpservice.deleteReply(No);
+		return null;
+	}
 	/*
 	 * @RequestMapping(value = "/update",method=RequestMethod.GET) public String
 	 * updateHouse(Model model, @RequestParam Integer houseNo, HttpSession
