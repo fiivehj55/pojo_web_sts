@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.example.dto.House;
 import com.example.dto.Member;
 import com.example.dto.Question;
+import com.example.dto.Reply;
 import com.example.dto.Report;
 import com.example.service.HouseService;
 import com.example.service.MemberService;
@@ -151,7 +152,7 @@ public class MainController {
 			model.addAttribute("max", size+1);
 		else
 			model.addAttribute("max", size);
-		model.addAttribute("page", page);
+			model.addAttribute("page", page);
 		return "jsp/adminHouse";
 	}
 	@RequestMapping(value = "/adminQuestion", method = RequestMethod.GET)
@@ -160,33 +161,34 @@ public class MainController {
 			HttpSession session) {
 		
 		List<Question> list =  qService.selectByPage(page);
-		session.setAttribute("Question", list);
+		model.addAttribute("Question", list);
 		list =  qService.selectAll();
 		int size = list.size()/6;
 		if(size*6 < list.size())
 			model.addAttribute("max", size+1);
 		else
 			model.addAttribute("max", size);
-		model.addAttribute("page", page);
+			model.addAttribute("page", page);
 		return "jsp/adminQuestion";
 	}
+	
 	@RequestMapping(value = "/adminReply", method = RequestMethod.GET)
 	public String adminReply(Model model,
-			@RequestParam Integer page) {
+			@RequestParam Integer page,
+			HttpSession session) {
 		
-		//하우스 댓글 페이징 작업!!
-		
-		/*
-		List<House> list =  replyService.selectAllReply(page);
-		model.addAttribute("house", list);
+		List<Reply> list = replyService.htrPaging(page);
+		model.addAttribute("reply", list);
 		int size = list.size()/6;
 		if(size*6 < list.size())
 			model.addAttribute("max", size+1);
 		else
 			model.addAttribute("max", size);
-		model.addAttribute("page", page);*/
+			model.addAttribute("page", page);
 		return "jsp/adminReply";
-	}@RequestMapping(value = "/adminReport", method = RequestMethod.GET)
+	}
+	
+	@RequestMapping(value = "/adminReport", method = RequestMethod.GET)
 	public String adminReport(Model model,
 			@RequestParam Integer page, HttpSession session) {
 		List<Report> list = null;
@@ -200,8 +202,7 @@ public class MainController {
 			model.addAttribute("max", size+1);
 		else
 			model.addAttribute("max", size);
-			
-		session.setAttribute("page", page);
+			session.setAttribute("page", page);
 		return "jsp/adminReport";
 	}
 	
@@ -233,7 +234,6 @@ public class MainController {
 					str+="<div class='next'>"+
 							(i - end - start + 1)+
 							"</div>";
-					
 				}
 			} else {
 				str+="<div class='pre'>"+

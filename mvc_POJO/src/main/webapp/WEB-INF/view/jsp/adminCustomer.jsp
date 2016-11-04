@@ -206,7 +206,7 @@
 </head>
 <body>
 	<div class="boardcss_list_table">
-		<jsp:include page="./Header.jsp"></jsp:include>
+		<jsp:include page="./adminHeader.jsp"></jsp:include>
 		<span class="font">
 		회원관리페이지
 		</span><br/>
