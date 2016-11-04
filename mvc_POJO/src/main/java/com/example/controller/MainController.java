@@ -152,7 +152,7 @@ public class MainController {
 			model.addAttribute("max", size+1);
 		else
 			model.addAttribute("max", size);
-			model.addAttribute("page", page);
+		model.addAttribute("page", page);
 		return "jsp/adminHouse";
 	}
 	@RequestMapping(value = "/adminQuestion", method = RequestMethod.GET)
@@ -168,7 +168,7 @@ public class MainController {
 			model.addAttribute("max", size+1);
 		else
 			model.addAttribute("max", size);
-			model.addAttribute("page", page);
+		model.addAttribute("page", page);
 		return "jsp/adminQuestion";
 	}
 	
@@ -179,12 +179,13 @@ public class MainController {
 		
 		List<Reply> list = replyService.htrPaging(page);
 		model.addAttribute("reply", list);
+		list = replyService.selectAllReply();
 		int size = list.size()/6;
 		if(size*6 < list.size())
 			model.addAttribute("max", size+1);
 		else
 			model.addAttribute("max", size);
-			model.addAttribute("page", page);
+		model.addAttribute("page", page);
 		return "jsp/adminReply";
 	}
 	

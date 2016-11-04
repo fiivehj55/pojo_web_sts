@@ -307,7 +307,6 @@
 			<a href="adminReport?page=${page-5}"> 
 				<input type="button" value="이전"></a>
 		</c:if>
-		<a href="adminReport?page=${num}">${num}</a>
 		<c:set var="down" value="-3" />
 		<c:forEach var="num" begin="1" end="2">
 			<c:set var="down" value="${down+1}" />
