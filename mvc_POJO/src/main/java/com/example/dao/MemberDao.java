@@ -22,4 +22,6 @@ public interface MemberDao {
 	
 	Member selectByIdMemberJoinHouse(SqlSessionTemplate template, String memId);
 /*	List<House> selectByIdMemberJoinHouse(SqlSessionTemplate template, String memId);*/
+	
+	List<Member> memberPaging(SqlSessionTemplate template, int page);
 }

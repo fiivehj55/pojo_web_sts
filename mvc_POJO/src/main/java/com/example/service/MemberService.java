@@ -19,4 +19,6 @@ public interface MemberService {
 	Member selectByIdMemberJoinRegistHouse(String memId);
 	Member selectByIdMemberJoinHouse( String memId);/*
 	List<House> selectByIdMemberJoinHouse( String memId);*/
+	
+	public List<Member> memberPaging(int page);
 }

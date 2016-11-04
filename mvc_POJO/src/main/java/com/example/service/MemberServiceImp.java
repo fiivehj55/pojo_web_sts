@@ -119,4 +119,11 @@ public class MemberServiceImp implements MemberService{
 		 list = dao.selectByIdMemberJoinHouse(template, memId);
 		return list;
 	}
+
+	@Override
+	public List<Member> memberPaging(int page) {
+		List<Member> list = null;
+		list = dao.memberPaging(template, page);
+		return list;
+	}
 }

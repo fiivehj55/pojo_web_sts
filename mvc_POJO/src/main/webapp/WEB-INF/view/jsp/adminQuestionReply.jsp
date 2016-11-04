@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -211,7 +210,7 @@
 
 <body>
 	<jsp:include page="./adminHeader.jsp"></jsp:include>
-	<span class="font">하우스 댓글 관리페이지</span>
+	<span class="font">문의게시판 댓글 관리페이지</span>
 	<br />
 	<div class="boardcss_list_table">
 		<table class="list_table">
@@ -232,15 +231,15 @@
 			</thead>
 			<tbody>
 				<c:choose>
-					<c:when test="${fn:length(reply) > 0}">
-						<c:forEach items="${reply }" var="row">
+					<c:when test="${fn:length(qtr) > 0}">
+						<c:forEach items="${qtr }" var="row">
 							<tr>
 								<td class="check"><input type="checkbox"></td>
-								<td>${row.replyNo}</td>
-								<td>${row.replyContent }</td>
+								<td>${row.questReplyNo}</td>
+								<td>${row.questReplyContent }</td>
 								<td>${row.memberId}</td>
 								<td><fmt:formatDate pattern="yyyy/MM/dd"
-										value="${row.replyDate }" /></td>
+										value="${row.questReplyDate }" /></td>
 							</tr>
 						</c:forEach>
 					</c:when>
@@ -303,7 +302,7 @@
 
 	<div style="margin-left:30px;">
 		<c:if test="${page > 5}">
-			<a href="adminReply?page=${page-5}"> 
+			<a href="adminQuestionReply?page=${page-5}"> 
 				<input type="button" value="이전">
 			</a>
 		</c:if>
@@ -311,17 +310,17 @@
 		<c:forEach var="num" begin="1" end="2">
 			<c:set var="down" value="${down+1}" />
 			<c:if test="${0 <page+ down}">
-				<a href="adminReply?page=${page+down}">${page+down}</a>
+				<a href="adminQuestionReply?page=${page+down}">${page+down}</a>
 			</c:if>
 		</c:forEach>
 		<span>${page}</span>
 		<c:forEach var="num" begin="1" end="2">
 			<c:if test="${page+num <= max}">
-				<a href="adminReply?page=${page+num}">${page+num}</a>
+				<a href="adminQuestionReply?page=${page+num}">${page+num}</a>
 			</c:if>
 		</c:forEach>
 		<c:if test="${page < max-5}">
-			<a href="adminReply?page=${page+5}"> 
+			<a href="adminQuestionReply?page=${page+5}"> 
 				<input type="button" value="다음">
 			</a>
 		</c:if>

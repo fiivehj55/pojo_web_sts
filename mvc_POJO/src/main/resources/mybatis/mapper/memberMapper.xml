@@ -58,6 +58,15 @@
       where m.MEM_ID = #{id}
     </select> 
     
+    <select id="memberPaging" parameterType="map" resultMap="memBase">
+		select * from (
+			select sub.*, rownum as rnum from(
+				select * from MEMBER
+				order by MEM_ID asc
+			) sub
+		) where rnum &gt;= #{low,jdbcType=NUMERIC} and rnum &lt;= #{high,jdbcType=NUMERIC}
+	</select>
+    
     <resultMap type="member" id="memBase"> 
 		<id column="MEM_ID" property="memId" />
 		<result column="MEM_NAME" property="memName" />

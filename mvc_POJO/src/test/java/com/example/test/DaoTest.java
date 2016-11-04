@@ -127,6 +127,13 @@ public class DaoTest {
 		logger.trace("id: {}", result);
 
 	}
+	
+	@Test
+	public void testMemberPaging() {
+		List<Member> member = mdao.memberPaging(template, 1);
+		logger.trace("List: {}", member);
+
+	}
 
 	/** HOUSE TEST */
 	@Test
