@@ -532,9 +532,8 @@ function initMap() {
 	google.maps.event.addListener(marker, 'click', (function(marker, i) {
 	return function() {				        	
 		var centerMaker = 			        		  
-			'<div  style="width:400px; heigth:150px;" id="content">'+
-			'<div id="siteNotice">'+
-			'</div>'+
+			'<div style="width:280px; heigth:150px; float:left;" id="content">'+
+			'<div id="siteNotice"></div>'+
 			'<div id="left-box">'+
 			'<h1 id="firstHeading" class="firstHeading">'+houseList[i][0]+'</h1>'+
 			'<div id="bodyContent">'+
