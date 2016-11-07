@@ -104,7 +104,7 @@ body {
 								data-src="<%=request.getContextPath() %>/upload/${userInfo.memId}/${row.houseNo}/main/${row.house.houseImg}"
 								data-retina="<%=request.getContextPath() %>/upload/src/css/images/aaa.jpg"
 								style="width: 100px; height: 100px;" />
-								</a>
+							</a>
 						</div>
 						<div class="3u" style="width:  30%; height: 300px;">
 							${row.house.houseName} <br />${row.house.houseAddress } ${row.house.houseAddressDetail}

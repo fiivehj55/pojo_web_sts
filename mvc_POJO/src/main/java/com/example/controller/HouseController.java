@@ -67,13 +67,14 @@ public class HouseController {
 			HttpSession session) {
 		List<House> houses = hservice.searchHouses(key, page);
 		int size = houses.size()/6;
-		if(size*6 < houses.size())
+		if(size*6 < houses.size()){
 			model.addAttribute("max", size+1);
-		else
+		}else{
 			model.addAttribute("max", size);
 			model.addAttribute("key", key);
 			session.setAttribute("page", page);
 			session.setAttribute("key", key);
+		}
 	/*	for(House house:houses){
 			File file = new File(uploadDir + "/" + house.getMemberId() + "/"+house.getHouseNo()+"/main");
 			File[] files = file.listFiles();	

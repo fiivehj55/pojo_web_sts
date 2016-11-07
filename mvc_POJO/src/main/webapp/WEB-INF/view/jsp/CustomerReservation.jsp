@@ -1,6 +1,5 @@
 <!-- 게시판 페이지 -->
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -145,11 +144,8 @@
 		</table>
 	</div>
 	<div id="map"></div>
-	
-<p>
-<p><hr>
+<p><p><hr>
 </div>
-
 	<p>
 	<div class = "date">
 		예약 날짜<br/>
@@ -159,7 +155,6 @@
 		 <!-- <input type="button" onclick="nextDate(this)" value="+"> -->
 	</div>
 	</p>
-	
 	
 	<div class = "click">
 	<input type="submit" class="button button-style-1" value="예약 완료"/>
@@ -201,70 +196,66 @@ function lastDate(dateTag){
 var centerKN;
 //센터 좌표
 var centerLocation;
-<c:url value="https://maps.googleapis.com/maps/api/geocode/json?" var="getmap"/>
-	 function getlocationMain(pos){	
+<c:url value="https://maps.googleapis.com/maps/api/geocode/json?" var="getmap"></c:url>
+function getlocationMain(pos){	
 	$.ajax({
-				type : "get",
-				url : "${getmap}",
-				data : {
-					address : pos
-				},   
-				async: false,
-				success : function(data,staus) {
-				//한글명
-					centerKN = data.results[0].formatted_address;
-				//좌표
-				centerLocation = data.results[0].geometry.location;
-				},
-				error : function(xhr, status, error) {
-					alert(error);
-				}
-			});
-	};  
+		type : "get",
+		url : "${getmap}",
+		data : {
+			address : pos
+		},   
+		async: false,
+		success : function(data,staus) {
+			//한글명
+			centerKN = data.results[0].formatted_address;
+			//좌표
+			centerLocation = data.results[0].geometry.location;
+		},
+		error : function(xhr, status, error) {
+			alert(error);
+		}
+	});
+};  
 function initMap() { 
 	getlocationMain("${address}");
 
-	 var map;
-	  map = new google.maps.Map(document.getElementById('map'), {
-	   	 center: centerLocation,
-	   	 zoom: 15,
-	     mapTypeId: google.maps.MapTypeId.ROADMAP
-	  });
-	  var infowindow = new google.maps.InfoWindow();
+	var map;
+	map = new google.maps.Map(document.getElementById('map'), {
+		center: centerLocation,
+		zoom: 15,
+		mapTypeId: google.maps.MapTypeId.ROADMAP
+	});
+	var infowindow = new google.maps.InfoWindow();
 	  
-	  var marker, k;
-	     	 marker = new google.maps.Marker({
-	        position: new google.maps.LatLng(centerLocation.lat, centerLocation.lng),
-	        map: map
-	     	});
+	var marker, k;
+	marker = new google.maps.Marker({
+		position: new google.maps.LatLng(centerLocation.lat, centerLocation.lng),
+		map: map
+	});
 
-	 		 var infowindow = new google.maps.InfoWindow();
-	  
-	  		  google.maps.event.addListener(marker, 'click', (function(marker, i) {
-	  			
-	        return function() {				        	
-	        	   var centerMaker = 			        		  
-	        		  '<div  style="width:400px; heigth:150px;" id="content">'+
-				      '<div id="siteNotice">'+
-				      '</div>'+
-				      '<div id="left-box">'+
-				      '<h1 id="firstHeading" class="firstHeading">'+${house.houseNo}+'</h1>'+
-				      '<div id="bodyContent">'+
-				      '<span style="font-size:25px">'+${house.houseName}+'</span>'+
-				      '<p><b>주소:&nbsp</b>${house.houseAddress}</p>'+
-				      '<p><b>가격:&nbsp</b>${house.housePrice}원</p>'+
-				     	'</div>'+
-				      '</div>'+
-				      '</div>'+
-				      '<div id="right-box">'+
-				      '<img src="<%=request.getContextPath()%>/upload/${house.memberId}/${house.houseNo}/main/${house.houseImg}" width="200px" height="280px"></div>';
+	var infowindow = new google.maps.InfoWindow();
+	google.maps.event.addListener(marker, 'click', (function(marker, i) {
+	return function() {				        	
+		var centerMaker = 			        		  
+			'<div  style="width:400px; heigth:150px;" id="content">'+
+			'<div id="siteNotice">'+
+			'</div>'+
+			'<div id="left-box">'+
+			'<h1 id="firstHeading" class="firstHeading">'+${house.houseNo}+'</h1>'+
+			'<div id="bodyContent">'+
+			'<span style="font-size:25px">'+${house.houseName}+'</span>'+
+			'<p><b>주소:&nbsp</b>${house.houseAddress}</p>'+
+			'<p><b>가격:&nbsp</b>${house.housePrice}원</p>'+
+			'</div>'+
+			'</div>'+
+			'</div>'+
+			'<div id="right-box">'+
+			'<img src="<%=request.getContextPath()%>/upload/${house.memberId}/${house.houseNo}/main/${house.houseImg}" width="200px" height="280px"></div>';
 				      
-	        		  infowindow.setContent(centerMaker );
-	         		 infowindow.open(map, marker);
-	       		 }
-	        
-	    	  })(marker, k)); 
-	    
+		infowindow.setContent(centerMaker );
+		infowindow.open(map, marker);
+	}
+	})(marker, k)); 
 }; 
 </script>
 <script async defer
