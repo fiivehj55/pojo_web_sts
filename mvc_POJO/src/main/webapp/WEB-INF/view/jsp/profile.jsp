@@ -57,8 +57,8 @@
 <body>
     <div class="container3">
   <div class="avatar-flip">
-    <img src="<%=request.getContextPath()%>/upload/${memberName}/intro/${memImg}" height="150" width="150"><!-- 사용자사진 -->
-    <img src="<%=request.getContextPath()%>/upload/${memberName}/intro/${memImg}" height="150" width="150">
+    <img src="<%=request.getContextPath()%>/upload/${memberName}/intro/${memImg}" height="150" width="150"/><!-- 사용자사진 -->
+    <img src="<%=request.getContextPath()%>/upload/${memberName}/intro/${memImg}" height="150" width="150"/>
   </div>
   <div id="font">${memberName}</div> <!-- 사용자아이디 -->
   <div id="font2">${userInfo.memName}</div><!-- 사용자이름 -->

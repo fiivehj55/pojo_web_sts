@@ -110,14 +110,13 @@ body {
 								${row.houseName} <br /> ${row.houseAddress } ${row.houseAddressDetail}
 							</div>
 							<div class="2u" style="width: 15%; height: 250px;">
-								<img src="<%=request.getContextPath()%>/upload/${row2.memberId}/intro/${row2.member.memImg}" 
-								width="100" height="100" onclick="goPopup('${row2.memberId}')" />		
+								<img src="<%=request.getContextPath()%>/upload/${row2.memberId}/intro/${row2.member.memImg}" width="100" height="100" onclick="goPopup('${row2.memberId}')" />		
 							</div>
 
 							<div class="2u" style="width: 25%; height: 250px;">
-										<!-- 2016.11.10~2016.12.10 <br/> -->
-										${row2.checkIn } ~ ${row2.checkOut }
-										<input type="button" value="예약삭제" class="cancel" onclick="deleteRH(${row2.rhId},this)">
+								<!-- 2016.11.10~2016.12.10 <br/> -->
+								${row2.checkIn } ~ ${row2.checkOut }
+								<input type="button" value="예약삭제" class="cancel" onclick="deleteRH(${row2.rhId},this)" />
 							</div>
 						 </c:forEach>
 						</c:forEach> 
