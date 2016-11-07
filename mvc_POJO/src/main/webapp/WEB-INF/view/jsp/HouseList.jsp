@@ -424,10 +424,10 @@ label {
 			<div style="margin-left:30px;">
 				<c:if test="${page > 5}">
 					<a href="searchbar?key=${key}&page=${page-5}"> 
-						<input type="button" value="이전">
+						<input type="button" value="이전"/>
 					</a>
 				</c:if>
-				<a href="searchbar?key=${key}&page=${num}">${num}</a>
+				<%-- <a href="searchbar?key=${key}&page=${num}">${num}</a> --%>
 				<c:set var="down" value="-3" />
 				<c:forEach var="num" begin="1" end="2">
 					<c:set var="down" value="${down+1}" />
@@ -447,7 +447,7 @@ label {
 					</a>
 				</c:if>
 			</div>
-
+			
 			<h1>${result}</h1>
 			<a href="insertHouse" class="button button-style1" style="margin-left:30px;">하우스 등록</a>
 		</div>
