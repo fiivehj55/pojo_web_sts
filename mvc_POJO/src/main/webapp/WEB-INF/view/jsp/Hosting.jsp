@@ -49,8 +49,8 @@
 <br/>호스팅 기준을 바탕으로 훌륭하고 믿을 수 있는 호스팅을 제공하고 좋은 후기를 받을 수 있습니다. 
 <p>게스트의 평점과 후기를 보고 얼마나 잘 하고 있는지 확인해 보세요. 
 <p>알림판으로 가면 커뮤니케이션, 체크인, 정확성, 청결도, 전체적 만족도에 대한 점수를 확인할 수 있습니다. 
-    <div id='right-box2'><img src='css/images/hosting1.JPG' /></div>  
-</div>
+   </div> <div id='right-box2'><img src='css/images/hosting1.JPG' /></div>  
+
 </div>
 <hr width=100%>
 

@@ -128,7 +128,7 @@ body {
 			</c:choose>
 		</div>
 		</div>
-		</div>
+		
 		<div class="table"></div>
 		<jsp:include page="./Footer.jsp"></jsp:include>
 		
