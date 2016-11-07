@@ -354,12 +354,10 @@ body{
 				<a href="houseView?houseNo=${row.houseNo}">
 					<img src="<%=request.getContextPath()%>/upload/${row.memberId}/${row.houseNo}/main/${row.houseImg}"/>
 					<div class="text">
-						<h1>Lorem ipsum.</h1>
-						<h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
+						<h1>${row.houseName}</h1>
+						<h2 class="animate-text">${row.houseAddress}</h2>
 						<p class="animate-text">
-							Bacon ipsum dolor amet pork belly
-							tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank
-							sirloin strip steak prosciutto kevin turducken.
+							${row.houseInfo}
 						</p>
 						<div class="dots">
 							<span><a href="houseView?houseNo=${row.houseNo }">${row.houseName}</a></span> <span></span> <span></span>
