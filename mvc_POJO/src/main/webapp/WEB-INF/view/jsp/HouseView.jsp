@@ -204,6 +204,7 @@
          </div>
 
          <!-- 마지막 -->
+         <hr width=100%><br/>
          <div class="divTableRow">
             <div class="divTableCell" style="width: 300px; height: 250px;">
                <h3 class="h3">상세설명</h3>
