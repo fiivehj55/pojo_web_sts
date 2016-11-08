@@ -138,7 +138,7 @@ background: yellow;
 				}
 			%>
 		</div>
-			<c:url value="" var="getList"/>
+			<c:set value="Impossible?houseNo=${houseNo }" var="getlist"/>
 </body>
 <script src="http://code.jquery.com/jquery.js"></script>
 <script>
@@ -146,22 +146,101 @@ background: yellow;
 var startDay = "${house.possCheckIn}";
 var endDay = "${house.possCheckOut}";
 var dayArray = new Array();
+
+var start = new Date(startDay);
+var end = new Date(endDay);
 $(document).ready(function(){
 
 
 	console.log("start:"+ startDay);
 	console.log("end:"+ endDay);
 	
-	 var start = new Date(startDay);
-	 var end = new Date(endDay);
 	 setpossible();
+	 setImpossible();
+	 setcolor();
 });
+function setDate(date){
 
+	date.setYear(thisYear);
+	date.setMonth(thisMonth);
+	date.setHours(9);
+	 date.setMinutes(0);
+	 date.setSeconds(0);
+	 date.setMilliseconds(0);
+}
+function setcolor(){
+
+	$(".date").each(function(index){
+		//index +1 은 날짜
+		  var day  = index+1;
+
+			 var currentDate = new Date();
+			 setDate(currentDate);		 
+			 currentDate.setDate(day);
+		 for(i=0;i <ImpossibleDate.length;i++ ){
+				var inDate = new Date(ImpossibleDate[i].checkIn);
+				var outDate = new Date(ImpossibleDate[i].checkOut);
+				 if(inDate <= currentDate && outDate >= currentDate ){
+				
+			 		 $(this).css("background","red");
+			 		dayArray.push(this);
+			 	 }
+		 }
+		});
+		$(".next").each(function(index){
+			//index +1 은 날짜
+			  var day  = index+1;
+
+				 var currentDate = new Date();
+				 setDate(currentDate);	
+				if(thisMonth!= 11){
+					 currentDate.setMonth(thisMonth+1);
+				}else{
+					currentDate.setYear(currentDate.getYear()+1);
+					 currentDate.setMonth(0);
+				}
+			 currentDate.setDate(day);
+			 for(i=0;i <ImpossibleDate.length;i++ ){
+					var inDate = new Date(ImpossibleDate[i].checkIn);
+					var outDate = new Date(ImpossibleDate[i].checkOut);
+					
+					 if(inDate < currentDate && outDate > currentDate ){
+				 		 $(this).css("background","red");
+				 		dayArray.push(this);
+				 	 }
+			 }
+			});
+		$(".pre").each(function(index){
+			//index +1 은 날짜
+			
+	 var currentDate = new Date();
+	 setDate(currentDate);	
+			 if(thisMonth!= 0){
+				 currentDate.setMonth(thisMonth-1);
+				}else{
+					thisYear--;
+					thisMonth = 11;
+					currentDate.setYear(currentDate.getYear()-1);
+					 currentDate.setMonth(11);
+				}
+			 currentDate.setDate($(this).html());
+			 for(i=0;i <ImpossibleDate.length;i++ ){
+					var inDate = new Date(ImpossibleDate[i].checkIn);
+					var outDate = new Date(ImpossibleDate[i].checkOut);
+					
+					 if(inDate < currentDate && outDate > currentDate ){
+				 		 $(this).css("background","red");
+				 		dayArray.push(this);
+				 	 }
+			 }
+			});
+}
 function setpossible(){
 	$(".date").each(function(index){
 		//index +1 은 날짜
 		  var day  = index+1;
 		 var currentDate = new Date();
+		 setDate(currentDate);	
 		 currentDate.setDate(day);
 		 	 if(start < currentDate && end > currentDate ){
 		 		 $(this).css("background","blue");
@@ -172,6 +251,7 @@ function setpossible(){
 			//index +1 은 날짜
 			  var day  = index+1;
 			 var currentDate = new Date();
+			 setDate(currentDate);	
 				if(thisMonth!= 11){
 					 currentDate.setMonth(thisMonth+1);
 				}else{
@@ -186,6 +266,7 @@ function setpossible(){
 		$(".pre").each(function(index){
 			//index +1 은 날짜
 			 var currentDate = new Date();
+			 setDate(currentDate);	
 			 if(thisMonth!= 0){
 				 currentDate.setMonth(thisMonth-1);
 				}else{
@@ -200,20 +281,18 @@ function setpossible(){
 			 	 }
 			});
 }
-
+var ImpossibleDate;
 function setImpossible(){
 	$.ajax({
 		type : "get",
-		url : "${getmap}",
+		url : "${getlist}",
 		data : {
 			houseNo : ${houseNo}
 		},   
 		async: false,
 		success : function(data,staus) {
-			//한글명
-			centerKN = data.results[0].formatted_address;
-			//좌표
-			centerLocation = data.results[0].geometry.location;
+			ImpossibleDate = data;
+			console.log(ImpossibleDate);
 		},
 		error : function(xhr, status, error) {
 			alert(error);
@@ -237,10 +316,14 @@ function setImpossible(){
 	      document.getElementById("box").innerHTML = this.responseText;
 	      console.log((thisMonth+1)+"월");
 	      console.log(this.responseText);
+
+	 	 setpossible();
+	 	 setcolor();
 	    }
 	  };
 	  xhttp.open("POST", "dateView?month="+thisMonth+"&year="+thisYear, true);
 	  xhttp.send();
+	  
 	}
 	function after(){
 		if(thisMonth!= 11){
@@ -256,6 +339,9 @@ function setImpossible(){
 	      document.getElementById("box").innerHTML = this.responseText;
 	      console.log((thisMonth+1)+"월");
 	      console.log(this.responseText);
+
+	 	 setpossible();
+	 	 setcolor();
 	    }
 	  };
 	  xhttp.open("POST", "dateView?month="+thisMonth+"&year="+thisYear, true);

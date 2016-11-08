@@ -596,10 +596,9 @@ public class HouseController {
 	}
 	
 	@RequestMapping(value="/Impossible",method=RequestMethod.GET)
-	public @ResponseBody List<String> ReservationUpdate(Model model,
+	public @ResponseBody List<RegistHouse> ReservationUpdate(Model model,
 			@RequestParam Integer houseNo){
-		
-		return "";
-		
+		List<RegistHouse> list =  rhservice.selectByHouseNo(houseNo);
+		return list;
 	}
 }
