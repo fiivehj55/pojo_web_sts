@@ -81,7 +81,7 @@
 		<result column="HOUSE_PRICE" property="housePrice" />
 		<result column="HOUSE_SCORE" property="houseScore" />
 		<result column="HOUSE_INFO" property="houseInfo" />
-		<result column="MEM_ID" property="memberId" />
+		<result column="MEMBER_ID" property="memberId" />
 		<result column="DETAIL_ID" property="detailId" />
 		<result column="HOUSE_ROOM" property="houseRoom"/>
 		<result column="HOUSE_BATH" property="houseBath"/>
@@ -97,6 +97,29 @@
 		<result column="POSS_CHECK_OUT" property="possCheckOut"/>
 	</resultMap>
 	
+		<resultMap type="house" id="houseBase2">
+		<id column="HOUSE_NO" property="houseNo" />
+		<result column="HOUSE_NAME" property="houseName" />
+		<result column="HOUSE_ADDRESS" property="houseAddress" />
+		<result column="HOUSE_ADDRESS_DETAIL" property="houseAddressDetail" />
+		<result column="HOUSE_PRICE" property="housePrice" />
+		<result column="HOUSE_SCORE" property="houseScore" />
+		<result column="HOUSE_INFO" property="houseInfo" />
+		<result column="host_id" property="memberId" />
+		<result column="DETAIL_ID" property="detailId" />
+		<result column="HOUSE_ROOM" property="houseRoom"/>
+		<result column="HOUSE_BATH" property="houseBath"/>
+		<result column="HOUSE_HOSTING" property="houseHosting"/>
+		<result column="HOUSE_TV" property="houseTv"/>
+		<result column="HOUSE_AIRCON" property="houseAircon"/>
+		<result column="HOUSE_WIFI" property="houseWifi"/>
+		<result column="HOUSE_ELEBE" property="houseElebe"/>
+		<result column="HOUSE_WASHING" property="houseWashing"/>
+		<result column="HOUSE_IMG" property="houseImg"/>
+		<result column="HOUSE_DAY" property="houseDay"/>
+		<result column="POSS_CHECK_IN" property="possCheckIn"/>
+		<result column="POSS_CHECK_OUT" property="possCheckOut"/>
+	</resultMap>
 	<resultMap type="house" id="houseJRH" extends="houseBase">
 		<collection property="registHouse" resultMap="pojo.web.dao.RegistHouseMapper.registHouseJM">
 			<id column="HOUSE_NO" property="houseNo"></id>

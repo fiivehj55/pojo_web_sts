@@ -77,22 +77,9 @@ public class HouseController {
 			model.addAttribute("max", size+1);
 		}else{
 			model.addAttribute("max", size);
-			model.addAttribute("key", key);
-			session.setAttribute("page", page);
-			session.setAttribute("key", key);
 		}
-		/*for(House house:houses){
-			File file = new File(uploadDir + "/" + house.getMemberId() + "/"+house.getHouseNo()+"/main");
-			File[] files = file.listFiles();	
-			if(files!=null){
-				try{
-					//파일 이름
-				String fileName = files[0].getName();
-				house.setHouseImg(fileName);
-				}catch(ArrayIndexOutOfBoundsException e){}
-			}
-		}*/
-		
+		session.setAttribute("page", page);
+		session.setAttribute("key", key);
 		return "jsp/HouseList";
 	}
 	
@@ -517,6 +504,18 @@ public class HouseController {
 		Member user =  (Member) session.getAttribute("user");
 		Member userInfo = mservice.selectByIdMemberJoinRegistHouse(user.getMemId());
 		model.addAttribute("userInfo",userInfo);
+		List<String> imgList = new ArrayList<>();
+		
+		for(int i =0;  i < userInfo.getRegistHouse().size();i++){
+			
+		    String pathid = userInfo.getRegistHouse().get(i).getHouse().getMemberId();
+		    String path = uploadDir + "/" + pathid + "/intro";
+		    File file = new File(path);
+		    File[] introfile = file.listFiles();
+		    imgList.add(introfile[0].getName());
+		}
+		model.addAttribute("imgList", imgList);
+		System.out.println(userInfo);
 		return "jsp/ReservationComplete";
 	}
 	

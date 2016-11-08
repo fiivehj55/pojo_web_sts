@@ -100,9 +100,9 @@ body {
 							<div class="1u" style="height: 250px;">${row.houseNo }</div>
 							<div class="3u" style="height: 250px;">
 								<a href="houseView?houseNo=${row.houseNo}">
-									<img class="" src="<%=request.getContextPath() %>/upload/${userInfo.memId}/${row.houseNo}/main/${row.houseImg}"
-									data-src="<%=request.getContextPath() %>/upload/${userInfo.memId}/${row.houseNo}/main/${row.houseImg}"
-									data-retina="<%=request.getContextPath() %>/upload/src/css/images/aaa.jpg"
+									<img class="" src="<%=request.getContextPath()%>/upload/${userInfo.memId}/${row.houseNo}/main/${row.houseImg}"
+									data-src="<%=request.getContextPath()%>/upload/${userInfo.memId}/${row.houseNo}/main/${row.houseImg}"
+									data-retina="<%=request.getContextPath()%>/upload/src/css/images/aaa.jpg"
 									style="width: 200px; height: 200px;" />
 								</a>
 							</div>
