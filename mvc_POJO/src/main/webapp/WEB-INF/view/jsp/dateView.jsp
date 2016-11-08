@@ -2,6 +2,7 @@
 <%@page import="java.util.Calendar"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -137,7 +138,7 @@ background: yellow;
 				}
 			%>
 		</div>
-	
+			<c:url value="" var="getList"/>
 </body>
 <script src="http://code.jquery.com/jquery.js"></script>
 <script>
@@ -153,48 +154,72 @@ $(document).ready(function(){
 	
 	 var start = new Date(startDay);
 	 var end = new Date(endDay);
+	 setpossible();
+});
+
+function setpossible(){
 	$(".date").each(function(index){
-	//index +1 은 날짜
-	  var day  = index+1;
-	 var currentDate = new Date();
-	 currentDate.setDate(day);
-	 	 if(start < currentDate && end > currentDate ){
-	 		 $(this).css("background","blue");
-	 		dayArray.push(this);
-	 	 }
-	});
-	$(".next").each(function(index){
 		//index +1 은 날짜
 		  var day  = index+1;
 		 var currentDate = new Date();
-			if(thisMonth!= 11){
-				 currentDate.setMonth(thisMonth+1);
-			}else{
-				currentDate.setYear(currentDate.getYear()+1);
-				 currentDate.setMonth(0);
-			}
 		 currentDate.setDate(day);
 		 	 if(start < currentDate && end > currentDate ){
 		 		 $(this).css("background","blue");
+		 		dayArray.push(this);
 		 	 }
 		});
-	$(".pre").each(function(index){
-		//index +1 은 날짜
-		 var currentDate = new Date();
-		 if(thisMonth!= 0){
-			 currentDate.setMonth(thisMonth-1);
-			}else{
-				thisYear--;
-				thisMonth = 11;
-				currentDate.setYear(currentDate.getYear()-1);
-				 currentDate.setMonth(11);
-			}
-		 currentDate.setDate($(this).html());
-		 	 if(start < currentDate && end > currentDate ){
-		 		 $(this).css("background","blue");
-		 	 }
-		});
-});
+		$(".next").each(function(index){
+			//index +1 은 날짜
+			  var day  = index+1;
+			 var currentDate = new Date();
+				if(thisMonth!= 11){
+					 currentDate.setMonth(thisMonth+1);
+				}else{
+					currentDate.setYear(currentDate.getYear()+1);
+					 currentDate.setMonth(0);
+				}
+			 currentDate.setDate(day);
+			 	 if(start < currentDate && end > currentDate ){
+			 		 $(this).css("background","blue");
+			 	 }
+			});
+		$(".pre").each(function(index){
+			//index +1 은 날짜
+			 var currentDate = new Date();
+			 if(thisMonth!= 0){
+				 currentDate.setMonth(thisMonth-1);
+				}else{
+					thisYear--;
+					thisMonth = 11;
+					currentDate.setYear(currentDate.getYear()-1);
+					 currentDate.setMonth(11);
+				}
+			 currentDate.setDate($(this).html());
+			 	 if(start < currentDate && end > currentDate ){
+			 		 $(this).css("background","blue");
+			 	 }
+			});
+}
+
+function setImpossible(){
+	$.ajax({
+		type : "get",
+		url : "${getmap}",
+		data : {
+			houseNo : ${houseNo}
+		},   
+		async: false,
+		success : function(data,staus) {
+			//한글명
+			centerKN = data.results[0].formatted_address;
+			//좌표
+			centerLocation = data.results[0].geometry.location;
+		},
+		error : function(xhr, status, error) {
+			alert(error);
+		}
+	});
+}
 
 	var thisMonth = <%=today.get(Calendar.MONTH)%>;
 	var thisYear = <%=today.get(Calendar.YEAR)%>;
