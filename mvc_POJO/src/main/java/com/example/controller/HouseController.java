@@ -71,7 +71,7 @@ public class HouseController {
 			HttpSession session) {
 		List<House> houses = hservice.searchHouses(key, page);
 		model.addAttribute("house", houses);
-		houses = hservice.selectAllHouse();
+		houses = hservice.selectAllKey(key);
 		int size = houses.size()/6;
 		if(size*6 < houses.size()){
 			model.addAttribute("max", size+1);

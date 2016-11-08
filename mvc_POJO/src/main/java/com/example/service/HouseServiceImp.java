@@ -72,23 +72,33 @@ public class HouseServiceImp implements HouseService{
 		return result;
 	}
 
+	@Transactional
 	@Override
 	public List<House> searchHouses(String key, int page) {
 		List<House> result = hdao.searchHouses(template, key, page);
 		return result;
 	}
 
+	@Transactional
 	@Override
 	public List<House> searchHousesPaging(Integer page) {
 		List<House> result = hdao.housePaging(template, page);
 		return result;
 	}
 
+	@Transactional
 	@Override
 	public List<House> selectByScore() {
 		List<House> list =  null;
 		list = hdao.houseScore(template);
 		return list;
+	}
+
+	@Transactional
+	@Override
+	public List<House> selectAllKey(String key) {
+		List<House> result = hdao.selectAllKey(template, key);
+		return result;
 	}
 	
 }

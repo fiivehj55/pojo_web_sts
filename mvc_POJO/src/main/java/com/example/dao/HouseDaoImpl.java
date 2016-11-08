@@ -58,6 +58,12 @@ public class HouseDaoImpl implements HouseDao {
 		map.put("high",page*6);
 		return template.selectList(stmt, map);
 	}
+	
+	@Override
+	public List<House> selectAllKey(SqlSessionTemplate template, String key) {
+		String stmt = HOUSE_MAP + "selectAllKey";
+		return template.selectList(stmt, key);
+	}
 
 	@Override
 	public List<House> housePaging(SqlSessionTemplate template, int page) {
@@ -73,4 +79,5 @@ public class HouseDaoImpl implements HouseDao {
 		String stmt = HOUSE_MAP + "selectByScore";
 		return template.selectList(stmt);
 	}
+
 }
