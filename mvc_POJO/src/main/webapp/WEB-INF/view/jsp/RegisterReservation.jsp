@@ -109,11 +109,11 @@ body {
 							<div class="4u" style="height: 250px;">
 								${row.houseName} <br /> ${row.houseAddress } ${row.houseAddressDetail}
 							</div>
-							<div class="3u" style="height: 250px;">
-								<img src="<%=request.getContextPath()%>/upload/${row2.memberId}/intro/${row2.member.memImg}" width="150" height="100" onclick="goPopup('${row2.memberId}')" />		
+							<div class="2u" style="height: 250px;">
+								<img src="<%=request.getContextPath()%>/upload/${row2.memberId}/intro/${row2.member.memImg}" width="80%" height="100" onclick="goPopup('${row2.memberId}')" />		
 							</div>
 
-							<div class="cal" style="width:8%; height: 250px;">
+							<div class="cal" style="width:15%; height: 250px;">
 								<!-- 2016.11.10~2016.12.10 <br/> -->
 								${row2.checkIn } ~ ${row2.checkOut }
 								<input type="button" value="예약삭제" class="cancel" onclick="deleteRH(${row2.rhId},this)" />
