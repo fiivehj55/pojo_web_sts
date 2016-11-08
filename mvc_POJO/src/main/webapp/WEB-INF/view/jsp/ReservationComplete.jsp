@@ -87,7 +87,7 @@ body {
 	<div class="table" style="height: 30px;">
 		<div class="row header green">
 			<div class="2u">매물번호</div>
-			<div class="2u">사진</div>
+			<div class="3u">사진</div>
 			<div class="3u">제목/주소</div>
 			<div class="2u">프로필</div>
 			<div class="2u">체크인/체크아웃</div>
@@ -99,23 +99,23 @@ body {
 					<c:set value="-1" var="num"></c:set>
 					<c:forEach items="${userInfo.registHouse }" var="row">
 					<c:set value="${num+1}" var="num"></c:set>
-						<div class="2u" style="width: 15%; height: 300px;">${row.houseNo }</div>
-						<div class="2u" style="width:  15%; height: 300px;">
+						<div class="1u" style="height:250px;">${row.houseNo }</div>
+						<div class="3u" style="height:250px;">
 							<a href="houseView?houseNo=${row.houseNo}"><img class=""
 								src="<%=request.getContextPath() %>/upload/${row.house.memberId}/${row.houseNo}/main/${row.house.houseImg}"
 								data-src="<%=request.getContextPath() %>/upload/${row.house.memberId}/${row.houseNo}/main/${row.house.houseImg}"
 								data-retina="<%=request.getContextPath() %>/upload/src/css/images/aaa.jpg"
-								style="width: 100px; height: 100px;" />
+								style="width:200px; height:200px;" />
 							</a>
 						</div>
-						<div class="3u" style="width:  30%; height: 300px;">
+						<div class="4u" style=" height:250px;">
 							${row.house.houseName} <br />${row.house.houseAddress } ${row.house.houseAddressDetail}
 						</div>
-						<div class="2u" style="width: 15%; height: 300px;">
+						<div class="2u" style="height: 250px;">
 							<img src="<%=request.getContextPath()%>/upload/${row.house.memberId}/intro/${imgList.get(num)}"
-								width="100" height="100" onclick="goPopup('${row.house.memberId}')" />
+								width="80%" height="100" onclick="goPopup('${row.house.memberId}')" />
 						</div>
-						<div class="2u" style="width:25%; height: 300px;">
+						<div class="cal" style=" width:15%; height: 250px;">
 							<!-- 2016.11.10~2016.12.10 <br/> -->
 							${row.checkIn } ~ ${row.checkOut }
 							<input type="button" value="예약취소" class="cancel" onclick="deleteRH(${row.rhId},this)">
