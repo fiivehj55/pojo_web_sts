@@ -37,21 +37,21 @@
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
-							<li class="active"><a href="#">&nbsp</a></li>
+							
 						</ul></li>
 					<li class="active"><a href="insertHouse">호스팅하기</a>
 						<ul class="sub">
 							<li class="active"><a href="hosting">호스팅이란?</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
-							<li class="active"><a href="#">&nbsp</a></li>
+							
 						</ul></li>
 					<li><a href="faq">고객센터</a>
 						<ul class="sub">
 							<li class="active"><a href="faq">FAQ</a></li>
 							<li class="active"><a href="report?page=1">신고 게시판</a></li>
 							<li class="active"><a href="bbs?page=1">문의 게시판</a>
-							<li class="active"><a href="#">&nbsp</a></li>
+							
 						</ul></li>
 					
 					<c:choose>	
@@ -59,9 +59,9 @@
 						<li><a href="login">로그인</a>
 							<ul class="sub">
 								<li class="active"><a href="join">회원가입</a></li>
-								<li class="active"><a href="idAndPass">ID/PASS 찾기</a></li>
 								<li class="active"><a href="#">&nbsp</a></li>
 								<li class="active"><a href="#">&nbsp</a></li>
+								
 							</ul>
 						</li>
 					</c:when>
@@ -71,7 +71,7 @@
 								<li class="active"><a href="logout">로그아웃</a></li>
 								<li class="active"><a href="ReservationComplete1">예약목록</a></li>
 								<li class="active"><a href="RegisterReservation">호스팅예약</a></li>
-								<li class="active"><a href="#">&nbsp</a></li>
+							
 							</ul>
 						</li>
 					</c:otherwise>	
@@ -97,7 +97,7 @@
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
-							<li class="active"><a href="#">&nbsp</a></li>
+							
 						</ul></li>
 					</c:when>
 					<c:otherwise>
@@ -106,7 +106,7 @@
 								<li class="active"><a href="#">&nbsp</a></li>
 								<li class="active"><a href="#">&nbsp</a></li>
 								<li class="active"><a href="#">&nbsp</a></li>
-								<li class="active"><a href="#">&nbsp</a></li>
+							
 							</ul></li>
 						</c:otherwise>
 					</c:choose>

@@ -33,6 +33,10 @@
 #right-box {
 	float: right;
 }
+#bln{
+width: 100%;
+height: 10%;
+}
 </style>
 
 </head>
@@ -40,6 +44,20 @@
 	<!-- Footer -->
 	<div id="footer">
 		<div id="container">
+		
+		  <!-- Tweet -->
+	<div id="tweet" >
+		<div class="container1">
+			<section>
+				<blockquote>
+					&ldquo; 2016 공주대학교 프로젝트 POJO &rdquo;
+					<p>양희준 홍석진 박준영 황민정</p>
+				</blockquote>
+			</section>
+		</div>
+	</div>
+	<br>
+	<br>
 			<div id='left-box'>
 				NOTIFICATION
 				<p>상호:(주)사랑방손님

@@ -407,7 +407,7 @@ label {
 								<div>
 									<figure>
 										<a href="houseView?houseNo=${row.houseNo}">
-											<img src="<%=request.getContextPath()%>/upload/${row.memberId}/${row.houseNo}/main/${row.houseImg}" width="300" height="300"/>
+											<img src="<%=request.getContextPath()%>/upload/${row.memberId}/${row.houseNo}/main/${row.houseImg}" width="500" height="500"/>
 										</a>
 									</figure>
 								<span><a href="houseView?houseNo=${row.houseNo }">${row.houseName }</a></span>
@@ -421,13 +421,13 @@ label {
 				</c:choose>
 			</div>
 			<div id="map"></div>
-			<div>
+			<div style="margin-left:30px;">
 				<c:if test="${page > 5}">
-					<a href="searchbar?key=${key}&page=${page-5}"> <input
-						type="button" value="이전">
+					<a href="searchbar?key=${key}&page=${page-5}"> 
+						<input type="button" value="이전"/>
 					</a>
 				</c:if>
-				<a href="searchbar?key=${key}&page=${num}">${num}</a>
+				<%-- <a href="searchbar?key=${key}&page=${num}">${num}</a> --%>
 				<c:set var="down" value="-3" />
 				<c:forEach var="num" begin="1" end="2">
 					<c:set var="down" value="${down+1}" />
@@ -442,17 +442,16 @@ label {
 					</c:if>
 				</c:forEach>
 				<c:if test="${page < max-5}">
-					<a href="searchbar?key=${key}&page=${page+5}"> <input
-						type="button" value="다음">
+					<a href="searchbar?key=${key}&page=${page+5}"> 
+						<input type="button" value="다음">
 					</a>
 				</c:if>
 			</div>
-
+			
 			<h1>${result}</h1>
-			<a href="insertHouse" class="button button-style1">하우스 등록</a>
+			<a href="insertHouse" class="button button-style1" style="margin-left:30px;">하우스 등록</a>
 		</div>
 	</div>
-
 	<jsp:include page="./Footer.jsp"></jsp:include>
 </body>
 <script src="http://code.jquery.com/jquery.js"></script>
@@ -463,103 +462,98 @@ var centerKN;
 //센터 좌표
 var centerLocation;
 var locat = new Array();
- var houseList = new Array();
+var houseList = new Array();
 	<c:forEach var="j" begin="0" end="${fn:length(house)-1}">		 
-		 houseList[${j}] = new Array();
-		  houseList[${j}][0] = ${house[j].houseNo};
-		  houseList[${j}][1] = "${house[j].houseAddress}";
-		  houseList[${j}][2] = "${house[j].houseName}";
-		  houseList[${j}][3] = ${house[j].housePrice};
-		  houseList[${j}][4] = "${house[j].houseImg}";
-		  houseList[${j}][5] = "${house[j].memberId}";
-	</c:forEach> 
-	<c:url value="https://maps.googleapis.com/maps/api/geocode/json?" var="getmap"/>
- 	 function getlocationMain(pos){	
+		houseList[${j}] = new Array();
+		houseList[${j}][0] = ${house[j].houseNo};
+		houseList[${j}][1] = "${house[j].houseAddress}";
+		houseList[${j}][2] = "${house[j].houseName}";
+		houseList[${j}][3] = ${house[j].housePrice};
+		houseList[${j}][4] = "${house[j].houseImg}";
+		houseList[${j}][5] = "${house[j].memberId}";
+	</c:forEach>
+	<c:url value="https://maps.googleapis.com/maps/api/geocode/json?" var="getmap"></c:url>
+function getlocationMain(pos){	
 	$.ajax({
-				type : "get",
-				url : "${getmap}",
-				data : {
-					address : pos
-				},   
-				async: false,
-				success : function(data,staus) {
-				//한글명
-					centerKN = data.results[0].formatted_address;
-				//좌표
-				centerLocation = data.results[0].geometry.location;
-				},
-				error : function(xhr, status, error) {
-					alert(error);
-				}
-			});
-	};  
-	 function getlocation(pos,i){	
-		$.ajax({
-					type : "get",
-					url : "${getmap}",
-					data : {
-						address : pos
-					},   
-					async: false,
-					success : function(data,staus) {
-						//경도,위도 리턴
-						locat[i] = data.results[0].geometry.location;
-					},
-					error : function(xhr, status, error) {
-						alert(error);
-					}
-				});
-		}; 
- 	 var map;
-			function initMap() { 
-				getlocationMain("${key}");
-				  map = new google.maps.Map(document.getElementById('map'), {
-				   	 center: centerLocation,
-				   	 zoom: 15,
-				     mapTypeId: google.maps.MapTypeId.ROADMAP
-				  });
-				  var infowindow = new google.maps.InfoWindow();
-				  
-				  var marker, k;
-				for (k = 0; k < ${fn:length(house)}; k++) {
-						 getlocation(houseList[k][1],k);
-				     	 marker = new google.maps.Marker({
-				        position: new google.maps.LatLng(locat[k].lat, locat[k].lng),
-				        map: map
-				     	});
-		
-				 		 var infowindow = new google.maps.InfoWindow();
-				  
-				  		 google.maps.event.addListener(marker, 'click', (function(marker, i) {
-				  			
-				        return function() {				        	
-				        	   var centerMaker = 			        		  
-				        		  '<div  style="width:400px; heigth:150px;" id="content">'+
-							      '<div id="siteNotice">'+
-							      '</div>'+
-							      '<div id="left-box">'+
-							      '<h1 id="firstHeading" class="firstHeading">'+houseList[i][0]+'</h1>'+
-							      '<div id="bodyContent">'+
-							      '<span style="font-size:25px">'+houseList[i][2]+'</span>'+
-							      '<p><b>주소:&nbsp</b>'+houseList[i][1]+'</p>'+
-							      '<p><b>가격:&nbsp</b>'+houseList[i][3]+'원</p>'+
-							     	'</div>'+
-							      '</div>'+
-							      '</div>'+
-							      '<div id="right-box">'+
-							      '<img src="<%=request.getContextPath()%>/upload/'+houseList[i][5]+'/'+houseList[i][0]+'/main/'+houseList[i][4]+'" width="200px" height="280px"></div>';
-							      
-				        		  infowindow.setContent(centerMaker );
-				         		 infowindow.open(map, marker);
-				       		 }
-				        
-				    	  })(marker, k));
-				    }
-			}; 
+		type : "get",
+		url : "${getmap}",
+		data : {
+			address : pos
+		},   
+		async: false,
+		success : function(data,staus) {
+			//한글명
+			centerKN = data.results[0].formatted_address;
+			//좌표
+			centerLocation = data.results[0].geometry.location;
+		},
+		error : function(xhr, status, error) {
+			alert(error);
+		}
+	});
+};  
+function getlocation(pos,i){	
+	$.ajax({
+		type : "get",
+		url : "${getmap}",
+		data : {
+			address : pos
+		},   
+		async: false,
+		success : function(data,staus) {
+			//경도,위도 리턴
+			locat[i] = data.results[0].geometry.location;
+		},
+		error : function(xhr, status, error) {
+			alert(error);
+		}
+	});
+}; 
 
+var map;
+function initMap() { 
+	getlocationMain("${key}");
+	map = new google.maps.Map(document.getElementById('map'), {
+		center: centerLocation,
+		zoom: 15,
+		mapTypeId: google.maps.MapTypeId.ROADMAP
+	});
+
+	var infowindow = new google.maps.InfoWindow();
+	var marker, k;
+	for (k = 0; k < ${fn:length(house)}; k++) {
+		getlocation(houseList[k][1],k);
+		marker = new google.maps.Marker({
+			position: new google.maps.LatLng(locat[k].lat, locat[k].lng),
+			map: map
+		});
+
+	var infowindow = new google.maps.InfoWindow();
+	google.maps.event.addListener(marker, 'click', (function(marker, i) {
+	return function() {				        	
+		var centerMaker = 			        		  
+			'<div style="width:280px; heigth:150px; float:left;" id="content">'+
+			'<div id="siteNotice"></div>'+
+			'<div id="left-box">'+
+			'<h1 id="firstHeading" class="firstHeading">'+houseList[i][0]+'</h1>'+
+			'<div id="bodyContent">'+
+			'<span style="font-size:25px">'+houseList[i][2]+'</span>'+
+			'<p><b>주소:&nbsp</b>'+houseList[i][1]+'</p>'+
+			'<p><b>가격:&nbsp</b>'+houseList[i][3]+'원</p>'+
+			'</div>'+
+			'</div>'+
+			'</div>'+
+			'<div id="right-box">'+
+			'<img src="<%=request.getContextPath()%>/upload/'+houseList[i][5]+'/'+houseList[i][0]+'/main/'+houseList[i][4]+'" width="200px" height="280px"></div>';
+							      
+		infowindow.setContent(centerMaker );
+		infowindow.open(map, marker);
+	}
+	})(marker, k));
+}
+};
 </script>
 <script async defer
 	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRgGbfPF9xbceQJLP0o1qKFlJpK7UdjQ8&callback=initMap">
     </script>
 </html>
-?

@@ -2,6 +2,7 @@ package com.example.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import java.util.Properties;
 
 import javax.mail.Authenticator;
@@ -25,7 +26,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.example.dto.House;
 import com.example.dto.Member;
+import com.example.service.HouseService;
 import com.example.service.MemberService;
 import com.example.util.SendMail;
 
@@ -36,6 +39,9 @@ public class MemberController {
 
    @Autowired
    MemberService mservice;
+   
+   @Autowired
+   HouseService hService;
 
    @RequestMapping(value = "/login",method=RequestMethod.GET)
    public String loginGet(Model model){
@@ -50,6 +56,9 @@ public class MemberController {
       System.out.println("test id:"+id+" pass:"+password);
       System.out.println("member :"+member);
       
+      List<House> house = hService.selectByScore();
+      model.addAttribute("house", house);
+      
       if(member == null){
          return "jsp/Login";
       }
@@ -62,6 +71,10 @@ public class MemberController {
    @RequestMapping(value = "/logout",method=RequestMethod.GET)
    public String loginout(Model model, HttpSession session){
       session.removeAttribute("user");
+      
+      List<House> house = hService.selectByScore();
+      model.addAttribute("house", house);
+      
       return "index2";
    }
    
@@ -134,6 +147,8 @@ public class MemberController {
          @RequestParam String memIntro,
          HttpSession session)throws IOException{
       Member member = (Member) session.getAttribute("user");
+      List<House> house = hService.selectByScore();
+      model.addAttribute("house", house);
       member.setMemPassword(memPassword);
       member.setMemName(memName);
       member.setMemPhone(memPhone);

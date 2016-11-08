@@ -237,21 +237,21 @@ body{
 					<li class="active"><a href="#">&nbsp</a></li>
 					<li class="active"><a href="#">&nbsp</a></li>
 					<li class="active"><a href="#">&nbsp</a></li>
-					<li class="active"><a href="#">&nbsp</a></li>
+					
                   </ul></li>
                <li class="active"><a href="insertHouse">호스팅하기</a>
                   <ul class="sub">
                      <li class="active"><a href="hosting">호스팅이란?</a></li>
                      <li class="active"><a href="#">&nbsp</a></li>
                      <li class="active"><a href="#">&nbsp</a></li>
-							<li class="active"><a href="#">&nbsp</a></li>
+					
                   </ul></li>
                <li><a href="faq">고객센터</a>
                   <ul class="sub">
                      <li class="active"><a href="faq">FAQ</a></li>
                      <li class="active"><a href="report?page=1">신고 게시판</a></li>
                     <li class="active"><a href="bbs?page=1">문의 게시판</a>
-							<li class="active"><a href="#">&nbsp</a></li>
+				
                   </ul></li> 
                
                <c:choose>   
@@ -259,9 +259,9 @@ body{
                   <li><a href="login">로그인</a>
                      <ul class="sub">
                         <li class="active"><a href="join">회원가입</a></li>
-                        <li class="active"><a href="idAndPass">ID/PASS 찾기</a></li>
                         <li class="active"><a href="#">&nbsp</a></li>
-							<li class="active"><a href="#">&nbsp</a></li>
+                        <li class="active"><a href="#">&nbsp</a></li>
+				
                      </ul>
                   </li>
                </c:when>
@@ -271,7 +271,7 @@ body{
                         <li class="active"><a href="logout">로그아웃</a></li>
                         <li class="active"><a href="ReservationComplete1">예약목록</a></li>
                         <li class="active"><a href="RegisterReservation">호스팅예약</a></li>
-							<li class="active"><a href="#">&nbsp</a></li>
+					
                      </ul>
                   </li>
                </c:otherwise>   
@@ -283,7 +283,7 @@ body{
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
 							<li class="active"><a href="#">&nbsp</a></li>
-							<li class="active"><a href="#">&nbsp</a></li>
+						
 						</ul></li>
 					</c:when>
 					<c:otherwise>
@@ -292,7 +292,7 @@ body{
 								<li class="active"><a href="#">&nbsp</a></li>
 								<li class="active"><a href="#">&nbsp</a></li>
 								<li class="active"><a href="#">&nbsp</a></li>
-								<li class="active"><a href="#">&nbsp</a></li>
+								
 							</ul></li>
 						</c:otherwise>
 					</c:choose>
@@ -354,12 +354,10 @@ body{
 				<a href="houseView?houseNo=${row.houseNo}">
 					<img src="<%=request.getContextPath()%>/upload/${row.memberId}/${row.houseNo}/main/${row.houseImg}"/>
 					<div class="text">
-						<h1>Lorem ipsum.</h1>
-						<h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
+						<h1>${row.houseName}</h1>
+						<h2 class="animate-text">${row.houseAddress}</h2>
 						<p class="animate-text">
-							Bacon ipsum dolor amet pork belly
-							tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank
-							sirloin strip steak prosciutto kevin turducken.
+							${row.houseInfo}
 						</p>
 						<div class="dots">
 							<span><a href="houseView?houseNo=${row.houseNo }">${row.houseName}</a></span> <span></span> <span></span>
@@ -476,7 +474,7 @@ body{
 		</div>	 -->
 
   <!-- Tweet -->
-	<div id="tweet">
+	<!-- <div id="tweet">
 		<div class="container1">
 			<section>
 				<blockquote>
@@ -485,7 +483,7 @@ body{
 				</blockquote>
 			</section>
 		</div>
-	</div>
+	</div> -->
    <jsp:include page="jsp/Footer.jsp"></jsp:include>
 </body>
 <script src="http://code.jquery.com/jquery.js" /></script>

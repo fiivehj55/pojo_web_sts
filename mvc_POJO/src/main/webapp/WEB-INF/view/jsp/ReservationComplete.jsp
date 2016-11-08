@@ -84,7 +84,7 @@ body {
 	</div>
 	<div class="wrapper">
 	<br />
-	<div class="table" style="height: 600px;">
+	<div class="table" style="height: 30px;">
 		<div class="row header green">
 			<div class="2u">매물번호</div>
 			<div class="2u">사진</div>
@@ -92,7 +92,7 @@ body {
 			<div class="2u">프로필</div>
 			<div class="2u">체크인/체크아웃</div>
 		</div>
-
+	</div>
 		<div class="row">
 			<c:choose>
 				<c:when test="${fn:length(userInfo.registHouse) > 0}">
@@ -104,7 +104,7 @@ body {
 								data-src="<%=request.getContextPath() %>/upload/${userInfo.memId}/${row.houseNo}/main/${row.house.houseImg}"
 								data-retina="<%=request.getContextPath() %>/upload/src/css/images/aaa.jpg"
 								style="width: 100px; height: 100px;" />
-								</a>
+							</a>
 						</div>
 						<div class="3u" style="width:  30%; height: 300px;">
 							${row.house.houseName} <br />${row.house.houseAddress } ${row.house.houseAddressDetail}
@@ -128,7 +128,7 @@ body {
 			</c:choose>
 		</div>
 		</div>
-		</div>
+		
 		<div class="table"></div>
 		<jsp:include page="./Footer.jsp"></jsp:include>
 		

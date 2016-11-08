@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE>
@@ -84,7 +83,7 @@ body {
 	</div>
 	<div class="wrapper">
 		<br />
-		<div class="table" style="height: 600px;">
+		<div class="table" style="height: 30px;">
 			<div class="row header green">
 				<div class="2u">번호</div>
 				<div class="2u">사진</div>
@@ -92,35 +91,32 @@ body {
 				<div class="2u">프로필</div>
 				<div class="2u">체크인/체크아웃</div>
 			</div>
-
+		</div>
 			<div class="row">
 				<c:choose>
 				<c:when test="${fn:length(userInfo.house) > 0}">
 					 	<c:forEach items="${userInfo.house}" var="row">
 					 		 <c:forEach items="${row.registHouse }" var="row2">
-							 <div class="2u" style="width: 15%; height: 300px;">${row.houseNo }</div>
-							<div class="2u" style="width: 15%; height: 300px;">
-								<a href="houseView?houseNo=${row.houseNo}"><img class=""
-									src="<%=request.getContextPath() %>/upload/${userInfo.memId}/${row.houseNo}/main/${row.houseImg}"
+							<div class="2u" style="width: 15%; height: 250px;">${row.houseNo }</div>
+							<div class="2u" style="width: 15%; height: 250px;">
+								<a href="houseView?houseNo=${row.houseNo}">
+									<img class="" src="<%=request.getContextPath() %>/upload/${userInfo.memId}/${row.houseNo}/main/${row.houseImg}"
 									data-src="<%=request.getContextPath() %>/upload/${userInfo.memId}/${row.houseNo}/main/${row.houseImg}"
 									data-retina="<%=request.getContextPath() %>/upload/src/css/images/aaa.jpg"
-									style="width: 100px; height: 100px;" />
-									</a>
+									style="width: 200px; height: 200px;" />
+								</a>
 							</div>
-							<div class="3u" style="width: 30%; height: 300px;">
+							<div class="3u" style="width: 28%; height: 250px;">
 								${row.houseName} <br /> ${row.houseAddress } ${row.houseAddressDetail}
 							</div>
-							<div class="2u" style="width: 15%; height: 300px;">
-										<img
-											src="<%=request.getContextPath()%>/upload/${row2.memberId}/intro/${row2.member.memImg}"
-											width="100" height="100" onclick="goPopup('${row2.memberId}')" />		
+							<div class="2u" style="width: 15%; height: 250px;">
+								<img src="<%=request.getContextPath()%>/upload/${row2.memberId}/intro/${row2.member.memImg}" width="100" height="100" onclick="goPopup('${row2.memberId}')" />		
 							</div>
 
-							<div class="2u" style="width: 25%; height: 300px;">
-										<!-- 2016.11.10~2016.12.10 <br/> -->
-										${row2.checkIn } ~ ${row2.checkOut }
-										<input type="button" value="예약삭제" class="cancel" onclick="deleteRH(${row2.rhId},this)">
-							
+							<div class="2u" style="width: 25%; height: 250px;">
+								<!-- 2016.11.10~2016.12.10 <br/> -->
+								${row2.checkIn } ~ ${row2.checkOut }
+								<input type="button" value="예약삭제" class="cancel" onclick="deleteRH(${row2.rhId},this)" />
 							</div>
 						 </c:forEach>
 						</c:forEach> 
@@ -129,7 +125,7 @@ body {
 						조회된 결과가 없습니다.
 					</c:otherwise>
 				</c:choose>
-			</div>
+			</div><br/>
   </div>
 			<div class="table"></div>
 			<jsp:include page="./Footer.jsp"></jsp:include>

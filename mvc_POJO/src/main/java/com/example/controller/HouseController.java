@@ -3,7 +3,6 @@ package com.example.controller;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -46,8 +45,11 @@ public class HouseController {
 	@Autowired
 	RegistHouseService rhservice;
 	
+	@Autowired
+	HouseService hService;
+	
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
-	public String search(Model model, @RequestParam Integer page,
+	public String search(Model model,@RequestParam String key, @RequestParam Integer page,
 			HttpSession session) {
 		List<House> house = hservice.searchHousesPaging(page);
 		model.addAttribute("house", house);
@@ -56,6 +58,8 @@ public class HouseController {
 			model.addAttribute("max", size+1);
 		else
 			model.addAttribute("max", size);
+			model.addAttribute("key", key);
+			
 		model.addAttribute("page", page);
 		//session.setAttribute("house", house);
 		return "jsp/HouseList";
@@ -66,15 +70,18 @@ public class HouseController {
 			@RequestParam String key, @RequestParam Integer page,
 			HttpSession session) {
 		List<House> houses = hservice.searchHouses(key, page);
+		model.addAttribute("house", houses);
+		houses = hservice.selectAllHouse();
 		int size = houses.size()/6;
-		if(size*6 < houses.size())
+		if(size*6 < houses.size()){
 			model.addAttribute("max", size+1);
-		else
+		}else{
 			model.addAttribute("max", size);
 			model.addAttribute("key", key);
 			session.setAttribute("page", page);
 			session.setAttribute("key", key);
-	/*	for(House house:houses){
+		}
+		/*for(House house:houses){
 			File file = new File(uploadDir + "/" + house.getMemberId() + "/"+house.getHouseNo()+"/main");
 			File[] files = file.listFiles();	
 			if(files!=null){
@@ -85,7 +92,6 @@ public class HouseController {
 				}catch(ArrayIndexOutOfBoundsException e){}
 			}
 		}*/
-		model.addAttribute("house", houses);
 		
 		return "jsp/HouseList";
 	}
@@ -198,6 +204,8 @@ public class HouseController {
 		if (result != 1) {
 			return "jsp/HouseJoin";
 		} else {
+			List<House> houses = hService.selectByScore();
+			model.addAttribute("house", houses);
 			return "index2";
 		}
 	}
