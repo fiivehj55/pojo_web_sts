@@ -1,5 +1,7 @@
 package com.example.service;
 
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -50,5 +52,11 @@ public class RegistHouseServiceImp implements RegistHouseService{
 		result = dao.deleteRegistHouse(template, rhNo);
 		
 	return result;
+	}
+
+	@Override
+	public List<RegistHouse> selectByHouseNo(int houseNo) {
+		List<RegistHouse> result = dao.selectByHouseNo(template, houseNo);
+		return result;
 	}
 }

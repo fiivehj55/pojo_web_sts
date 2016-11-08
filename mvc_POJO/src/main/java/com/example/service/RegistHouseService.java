@@ -1,5 +1,7 @@
 package com.example.service;
 
+import java.util.List;
+
 import com.example.dto.RegistHouse;
 
 
@@ -10,4 +12,6 @@ public interface RegistHouseService {
 	public int add(RegistHouse rH);
 	public int update(RegistHouse rH);
 	public int delete(int rhNo);
+	
+	List<RegistHouse> selectByHouseNo(int houseNo);
 }

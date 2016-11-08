@@ -278,6 +278,13 @@ public class DaoTest {
 		logger.trace("List: {}", rhouse);
 
 	}
+	
+	@Test
+	public void testSelectByHouseNo12() {
+		List<RegistHouse> rhouse = rhdao.selectByHouseNo(template, 99);
+		logger.trace("List: {}", rhouse);
+
+	}
 
 	// date type 넣는 Query 생각하기
 	@Test
