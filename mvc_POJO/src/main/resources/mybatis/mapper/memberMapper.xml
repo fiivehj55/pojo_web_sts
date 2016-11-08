@@ -58,7 +58,7 @@
        rh.MEMBER_ID as m2id,
         m2.MEM_NAME as m2NAME,  m2.MEM_IMG as m2IMG
     from MEMBER m
-    join HOUSE h on m.MEM_ID = h.MEMber_id
+    join HOUSE h on m.MEM_ID = h.MEMBER_ID
     join REGIST_HOUSE rh on rh.HOUSE_NO = h.HOUSE_NO
     join MEMBER m2 on rh.MEMBER_ID =  m2.MEM_ID
       where m.MEM_ID = #{id}
