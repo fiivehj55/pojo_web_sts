@@ -83,7 +83,7 @@ body
   width:350px;
   height:380px;
   margin:10px;
-  background-color:#99aeff;
+ background-color:rgb(255,255,255);  
   display:inline-block;
   background-size:cover;
   position:relative;
@@ -116,20 +116,21 @@ body
 .tile h1
 {
  
-  font-weight:300;
+  font-weight:bold;
+  font-size:20px;
   margin:0;
   text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
 }
 .tile h2
 {
-  font-weight:100;
+  font-weight:bold;
   margin:20px 0 0 0;
   font-style:italic;
    transform: translateX(200px);
 }
 .tile p
 {
-  font-weight:300;
+  font-weight:bold;
   margin:20px 0 0 0;
   line-height: 25px;
 /*   opacity:0; */
@@ -143,7 +144,7 @@ body
 }
 .tile:hover
 {
-/*   background-color:#99aeff; */
+background-color:rgb(255,255,255);
 box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.64);
   transform:scale(1.05);
 }
@@ -360,7 +361,7 @@ body{
 							${row.houseInfo}
 						</p>
 						<div class="dots">
-							<span><a href="houseView?houseNo=${row.houseNo }">${row.houseName}</a></span> <span></span> <span></span>
+							<span><a href="houseView?houseNo=${row.houseNo }"></a></span> <span></span> <span></span>
 						</div>
    					</div>
 				</a>
