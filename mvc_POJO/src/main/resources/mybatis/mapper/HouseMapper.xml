@@ -81,7 +81,7 @@
 		<result column="HOUSE_PRICE" property="housePrice" />
 		<result column="HOUSE_SCORE" property="houseScore" />
 		<result column="HOUSE_INFO" property="houseInfo" />
-		<result column="MEM_ID" property="memberId" />
+		<result column="MEMBER_ID" property="memberId" />
 		<result column="DETAIL_ID" property="detailId" />
 		<result column="HOUSE_ROOM" property="houseRoom"/>
 		<result column="HOUSE_BATH" property="houseBath"/>

@@ -99,11 +99,12 @@ body {
 					<c:forEach items="${userInfo.registHouse }" var="row">
 						<div class="2u" style="width: 15%; height: 300px;">${row.houseNo }</div>
 						<div class="2u" style="width:  15%; height: 300px;">
-							<a href="houseView?houseNo=${row.houseNo}"><img class=""
-								src="<%=request.getContextPath() %>/upload/${userInfo.memId}/${row.houseNo}/main/${row.house.houseImg}"
-								data-src="<%=request.getContextPath() %>/upload/${userInfo.memId}/${row.houseNo}/main/${row.house.houseImg}"
-								data-retina="<%=request.getContextPath() %>/upload/src/css/images/aaa.jpg"
-								style="width: 100px; height: 100px;" />
+						${row.memberId}
+							<a href="houseView?houseNo=${row.houseNo}">
+								<img class="" src="<%=request.getContextPath()%>/upload/${userInfo.memId}/${row.houseNo}/main/${row.house.houseImg}"
+								data-src="<%=request.getContextPath()%>/upload/${userInfo.memId}/${row.houseNo}/main/${row.house.houseImg}"
+								data-retina="<%=request.getContextPath()%>/upload/src/css/images/aaa.jpg"
+								style="width: 200px; height: 200px;" />
 							</a>
 						</div>
 						<div class="3u" style="width:  30%; height: 300px;">
@@ -118,7 +119,6 @@ body {
 							${row.checkIn } ~ ${row.checkOut }
 							<input type="button" value="예약취소" class="cancel" onclick="deleteRH(${row.rhId},this)">
 							<a href="CustomerReservationUpdate?No=${row.houseNo}&rhid=${row.rhId}">Update</a>
-
 						</div>
 					</c:forEach>
 				</c:when>
