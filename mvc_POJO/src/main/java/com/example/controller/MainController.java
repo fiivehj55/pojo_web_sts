@@ -120,7 +120,12 @@ public class MainController {
 	}*/
 
 	@RequestMapping(value = "/dateView", method = RequestMethod.GET)
-	public String dateView(Model model) {
+	public String dateView(Model model,
+			@RequestParam Integer houseNo) {
+		model.addAttribute("houseNo", houseNo);
+		
+		House house = hService.selectByNoHouse(houseNo);
+	 	model.addAttribute("house", house);
 		return "jsp/dateView";
 	}
 	
