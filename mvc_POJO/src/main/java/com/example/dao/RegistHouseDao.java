@@ -15,5 +15,7 @@ public interface RegistHouseDao {
 	int updateRegistHouse(SqlSessionTemplate template, RegistHouse rHouse);
 	
 	int deleteRegistHouse(SqlSessionTemplate template, int rhNo);
+	
+	List<RegistHouse> selectByHouseNo(SqlSessionTemplate template, int houseNo);
 
 }

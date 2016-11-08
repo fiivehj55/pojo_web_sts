@@ -10,6 +10,10 @@
         where RH_ID = #{rhId}
     </select>
     
+    <select id="selectByHouseNo" parameterType="int" resultMap="regHouseBase">
+    	select * from REGIST_HOUSE where HOUSE_NO = #{houseNo}
+    </select>
+    
     <insert id="insertRegistHouse" parameterType="registHouse">
         insert into REGIST_HOUSE
        	values (SEQ_REGIST_RH_ID.nextval, #{checkIn}, #{checkOut}, #{houseNo}, #{memberId})
