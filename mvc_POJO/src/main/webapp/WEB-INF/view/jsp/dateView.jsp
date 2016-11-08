@@ -14,6 +14,10 @@
 	width: 100%;
 }
 
+#box div{
+background: yellow;
+}
+
 .day {
 	float: left;
 	width: 14%;
@@ -137,6 +141,61 @@
 </body>
 <script src="http://code.jquery.com/jquery.js"></script>
 <script>
+
+var startDay = "${house.possCheckIn}";
+var endDay = "${house.possCheckOut}";
+var dayArray = new Array();
+$(document).ready(function(){
+
+
+	console.log("start:"+ startDay);
+	console.log("end:"+ endDay);
+	
+	 var start = new Date(startDay);
+	 var end = new Date(endDay);
+	$(".date").each(function(index){
+	//index +1 은 날짜
+	  var day  = index+1;
+	 var currentDate = new Date();
+	 currentDate.setDate(day);
+	 	 if(start < currentDate && end > currentDate ){
+	 		 $(this).css("background","blue");
+	 		dayArray.push(this);
+	 	 }
+	});
+	$(".next").each(function(index){
+		//index +1 은 날짜
+		  var day  = index+1;
+		 var currentDate = new Date();
+			if(thisMonth!= 11){
+				 currentDate.setMonth(thisMonth+1);
+			}else{
+				currentDate.setYear(currentDate.getYear()+1);
+				 currentDate.setMonth(0);
+			}
+		 currentDate.setDate(day);
+		 	 if(start < currentDate && end > currentDate ){
+		 		 $(this).css("background","blue");
+		 	 }
+		});
+	$(".pre").each(function(index){
+		//index +1 은 날짜
+		 var currentDate = new Date();
+		 if(thisMonth!= 0){
+			 currentDate.setMonth(thisMonth-1);
+			}else{
+				thisYear--;
+				thisMonth = 11;
+				currentDate.setYear(currentDate.getYear()-1);
+				 currentDate.setMonth(11);
+			}
+		 currentDate.setDate($(this).html());
+		 	 if(start < currentDate && end > currentDate ){
+		 		 $(this).css("background","blue");
+		 	 }
+		});
+});
+
 	var thisMonth = <%=today.get(Calendar.MONTH)%>;
 	var thisYear = <%=today.get(Calendar.YEAR)%>;
 	function before(){

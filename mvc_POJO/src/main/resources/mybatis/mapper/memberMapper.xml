@@ -45,7 +45,7 @@
     </select>
     <!-- 예약목록 -->
     <select id="RegistInfo" parameterType="String" resultMap="memberJRH">
-    select *
+    select m.*,rh.*,h.*,h.member_id as host_id
     from MEMBER m
     join REGIST_HOUSE rh on m.MEM_ID = rh.MEMBER_ID
     join HOUSE h on rh.HOUSE_NO = h.HOUSE_NO
@@ -54,8 +54,9 @@
      <!-- 호스팅예약목록 -->
     <select id="hostInfo" parameterType="String" resultMap="memberJH">
     select m.*,h.*,rh.RH_ID,rh.CHECK_IN,rh.CHECK_OUT,rh.HOUSE_NO,
-     rh.MEMBER_ID as m2id,rh.MEMBER_ID as m2id,
-       m2.MEM_NAME as m2NAME,  m2.MEM_IMG as m2IMG
+     rh.MEMBER_ID as m2id,
+       rh.MEMBER_ID as m2id,
+        m2.MEM_NAME as m2NAME,  m2.MEM_IMG as m2IMG
     from MEMBER m
     join HOUSE h on m.MEM_ID = h.MEMBER_ID
     join REGIST_HOUSE rh on rh.HOUSE_NO = h.HOUSE_NO
@@ -101,7 +102,7 @@
 	</resultMap>
 		<resultMap type="member" id="memberJH" extends="memBase">
 		<collection property="house" resultMap="pojo.web.dao.HouseMapper.houseJRH">
-		<id column="MEM_ID" property="memberId"/>
+		<id column="m2id" property="memberId"/>
 		</collection>
 	</resultMap>
 </mapper>

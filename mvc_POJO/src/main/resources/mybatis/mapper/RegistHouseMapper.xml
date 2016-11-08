@@ -41,7 +41,10 @@
     </resultMap>
     <!--  -->
     <resultMap type="registHouse" id="regHouseJH" extends="regHouseBase">
-    <association property="house" resultMap="pojo.web.dao.HouseMapper.houseBase">
+    <association property="house" resultMap="pojo.web.dao.HouseMapper.houseBase2">
+    	<id column="HOUSE_NO" property="houseNo"/>
+    </association>
+     <association property="member" resultMap="pojo.web.dao.memberMapper.memBase">
     	<id column="HOUSE_NO" property="houseNo"/>
     </association>
     </resultMap>
