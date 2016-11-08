@@ -80,19 +80,6 @@ public class HouseController {
 		}
 		session.setAttribute("page", page);
 		session.setAttribute("key", key);
-		
-		/*for(House house:houses){
-			File file = new File(uploadDir + "/" + house.getMemberId() + "/"+house.getHouseNo()+"/main");
-			File[] files = file.listFiles();	
-			if(files!=null){
-				try{
-					//파일 이름
-				String fileName = files[0].getName();
-				house.setHouseImg(fileName);
-				}catch(ArrayIndexOutOfBoundsException e){}
-			}
-		}*/
-		
 		return "jsp/HouseList";
 	}
 	
