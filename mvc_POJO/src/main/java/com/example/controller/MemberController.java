@@ -147,6 +147,8 @@ public class MemberController {
          @RequestParam String memIntro,
          HttpSession session)throws IOException{
       Member member = (Member) session.getAttribute("user");
+      List<House> house = hService.selectByScore();
+      model.addAttribute("house", house);
       member.setMemPassword(memPassword);
       member.setMemName(memName);
       member.setMemPhone(memPhone);
