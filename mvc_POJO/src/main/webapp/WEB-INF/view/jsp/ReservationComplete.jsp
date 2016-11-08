@@ -96,12 +96,14 @@ body {
 		<div class="row">
 			<c:choose>
 				<c:when test="${fn:length(userInfo.registHouse) > 0}">
+					<c:set value="-1" var="num"></c:set>
 					<c:forEach items="${userInfo.registHouse }" var="row">
+					<c:set value="${num+1}" var="num"></c:set>
 						<div class="2u" style="width: 15%; height: 300px;">${row.houseNo }</div>
 						<div class="2u" style="width:  15%; height: 300px;">
 							<a href="houseView?houseNo=${row.houseNo}"><img class=""
-								src="<%=request.getContextPath() %>/upload/${userInfo.memId}/${row.houseNo}/main/${row.house.houseImg}"
-								data-src="<%=request.getContextPath() %>/upload/${userInfo.memId}/${row.houseNo}/main/${row.house.houseImg}"
+								src="<%=request.getContextPath() %>/upload/${row.house.memberId}/${row.houseNo}/main/${row.house.houseImg}"
+								data-src="<%=request.getContextPath() %>/upload/${row.house.memberId}/${row.houseNo}/main/${row.house.houseImg}"
 								data-retina="<%=request.getContextPath() %>/upload/src/css/images/aaa.jpg"
 								style="width: 100px; height: 100px;" />
 							</a>
@@ -110,15 +112,14 @@ body {
 							${row.house.houseName} <br />${row.house.houseAddress } ${row.house.houseAddressDetail}
 						</div>
 						<div class="2u" style="width: 15%; height: 300px;">
-							<img src="<%=request.getContextPath()%>/upload/${userInfo.memId}/intro/${userInfo.memImg}"
-								width="100" height="100" onclick="goPopup('${userInfo.memId}')" />
+							<img src="<%=request.getContextPath()%>/upload/${row.house.memberId}/intro/${imgList.get(num)}"
+								width="100" height="100" onclick="goPopup('${row.house.memberId}')" />
 						</div>
 						<div class="2u" style="width:25%; height: 300px;">
 							<!-- 2016.11.10~2016.12.10 <br/> -->
 							${row.checkIn } ~ ${row.checkOut }
 							<input type="button" value="예약취소" class="cancel" onclick="deleteRH(${row.rhId},this)">
 							<a href="CustomerReservationUpdate?No=${row.houseNo}&rhid=${row.rhId}">Update</a>
-
 						</div>
 					</c:forEach>
 				</c:when>

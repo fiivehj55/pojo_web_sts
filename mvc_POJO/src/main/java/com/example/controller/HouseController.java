@@ -517,6 +517,18 @@ public class HouseController {
 		Member user =  (Member) session.getAttribute("user");
 		Member userInfo = mservice.selectByIdMemberJoinRegistHouse(user.getMemId());
 		model.addAttribute("userInfo",userInfo);
+		List<String> imgList = new ArrayList<>();
+		
+		for(int i =0;  i < userInfo.getRegistHouse().size();i++){
+			
+		    String pathid = userInfo.getRegistHouse().get(i).getHouse().getMemberId();
+		    String path = uploadDir + "/" + pathid + "/intro";
+		    File file = new File(path);
+		    File[] introfile = file.listFiles();
+		    imgList.add(introfile[0].getName());
+		}
+		model.addAttribute("imgList", imgList);
+		System.out.println(userInfo);
 		return "jsp/ReservationComplete";
 	}
 	
