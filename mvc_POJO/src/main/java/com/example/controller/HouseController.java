@@ -594,4 +594,12 @@ public class HouseController {
 		result = rhservice.update(rh);
 		return "redirect:/ReservationComplete1";
 	}
+	
+	@RequestMapping(value="/Impossible",method=RequestMethod.GET)
+	public @ResponseBody List<String> ReservationUpdate(Model model,
+			@RequestParam Integer houseNo){
+		
+		return "";
+		
+	}
 }
