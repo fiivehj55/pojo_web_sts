@@ -37,6 +37,10 @@
 		<!-- select * from HOUSE where HOUSE_ADDRESS LIKE '%'||#{houseAddress}||'%'
 		ORDER BY HOUSE_NO DESC -->
 	</select>
+	
+	<select id="selectAllKey" parameterType="String" resultMap="houseBase">
+		select * from HOUSE where HOUSE_ADDRESS LIKE '%'||#{key}||'%'
+	</select>
 
 	<insert id="insertHouse" parameterType="house">
 	<selectKey keyProperty="houseNo" resultType="int" order="AFTER">

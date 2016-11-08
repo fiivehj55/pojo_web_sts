@@ -170,6 +170,13 @@ public class DaoTest {
 		logger.trace("List: {}", house);
 
 	}
+	
+	@Test
+	public void testSelectAllKey() {
+		List<House> house = hdao.selectAllKey(template, "두정동");
+		logger.trace("List: {}", house);
+
+	}
 
 	@Test
 	public void testInsertHouse() {
