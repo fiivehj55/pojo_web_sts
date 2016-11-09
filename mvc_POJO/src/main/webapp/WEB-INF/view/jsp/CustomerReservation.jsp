@@ -323,7 +323,7 @@
 		<p>
 		<div class="main">
 			예약 날짜<br /> 
-			<input type="button" onclick="goPopup()" value="예약 달력보기">
+			<input type="button" onclick="goPopup()" value="예약 달력보기" />
 			<input type="hidden" name="houseNo" value="${house.houseNo }" /> 
 			시작일	<input type="date" onchange="checkDate(this)" name="possCheckIn" />
 			~ 종료일 	<input type="date" onchange="lastDate(this)" name="possCheckOut" />
