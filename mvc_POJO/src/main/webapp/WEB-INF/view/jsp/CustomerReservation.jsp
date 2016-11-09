@@ -192,11 +192,10 @@
 	
 }
 
+
 #map {
-	
 	width: 500px;
 	height: 400px;
-	
 }
 
 .h1 {
