@@ -631,7 +631,7 @@ function setpossible(){
 		 setDate(currentDate);	
 		 currentDate.setDate(day);
 		 	 if(start < currentDate && end >= currentDate ){
-		 		 $(this).parent().css("background","rgb(227,241,231,1)");
+		 		 $(this).parent().css("background","rgba(227,241,231,1)");
 		 		dayArray.push(this);
 		 	 }
 		});
