@@ -680,7 +680,7 @@ function setImpossible(){
 	 var xhttp = new XMLHttpRequest();
 	  xhttp.onreadystatechange = function() {
 	    if (this.readyState == 4 && this.status == 200) {
-		document.getElementById("dateBar").innerHTML = "<h1>"+thisYear+"년 "+(thisMonth+1)+"월</h1>";		
+		document.getElementById("dateBar").innerHTML = "<h1><span style='font-size:30px;font-weight:bold;''>"+thisYear+"년 "+(thisMonth+1)+"월</span></h1>";		
 	      document.getElementById("box").innerHTML = this.responseText;
 	      console.log((thisMonth+1)+"월");
 	      console.log(this.responseText);
@@ -703,7 +703,7 @@ function setImpossible(){
 	 var xhttp = new XMLHttpRequest();
 	  xhttp.onreadystatechange = function() {
 	    if (this.readyState == 4 && this.status == 200) {
-		document.getElementById("dateBar").innerHTML = "<h1>"+thisYear+"년 "+(thisMonth+1)+"월</h1>";
+		document.getElementById("dateBar").innerHTML = "<h1><span style='font-size:30px;font-weight:bold;''>"+thisYear+"년 "+(thisMonth+1)+"월</span></h1>";
 	      document.getElementById("box").innerHTML = this.responseText;
 	      console.log((thisMonth+1)+"월");
 	      console.log(this.responseText);
