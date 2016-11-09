@@ -134,6 +134,18 @@ header {
 </head>
 <body>
 <div id="calendar-wrap">
+
+	<%
+		Calendar today = Calendar.getInstance();
+		int toMonth = today.get(Calendar.MONTH);
+		today.set(Calendar.MONTH, toMonth - 1);
+		int pre = today.getActualMaximum(Calendar.DATE);
+		today.set(Calendar.MONTH, toMonth);
+		int hr = today.get(Calendar.DATE);
+		today.set(Calendar.DATE, 1);
+		int start = today.get(Calendar.DAY_OF_WEEK);
+		int end = today.getActualMaximum(Calendar.DATE);
+	%>
             <header>
             		<h1><%=today.get(Calendar.YEAR)%>년
 					<%=today.get(Calendar.MONTH) + 1%>월
@@ -296,7 +308,7 @@ header {
                     </li>
                 </ul>
 
-                        <!-- Row #5 -->
+                        <!-- Row #5 -->          
 
                 <ul class="days">
                     <li class="day">
