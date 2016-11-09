@@ -121,16 +121,16 @@
 
 .left {
 	float: left;
-	width: 30%;
+	width: 18%;
 }
 
 .right {
 	float: right;
-	width: 30%;
+	width: 60%;
 }
 
 .center {
-	width: 30%;
+	width: 20%;
 	display: inline-block;
 	margin: 0 auto;
 }
@@ -347,21 +347,29 @@
 		int end = today.getActualMaximum(Calendar.DATE);
 	%>
 	<br/>
-		<div id="bar">
+		<div id="bar" style="margin-left:25%;">
 			<div class="left">
 				<input type="button" class="buttonstyle" value="◀ LAST" onclick="before()">
 			</div>
+		
 			<div class="center" id="dateBar">
 				<span style="font-size:30px;font-weight:bold;"><%=today.get(Calendar.YEAR)%>년
 					<%=today.get(Calendar.MONTH) + 1%>월
 				</span>
 			</div>
+			
 			<div class="right">
 			 <input type="button" class="buttonstyle" value="NEXT▶" onclick="after()">
 				<!-- <a href="#" class="buttonstyle" onclick="after()">▶</a>  -->
 			</div>
+			
 		</div>
-		<br/>
+	<br/>
+	<div class="possible" style="float:right;">
+		<img src='css/images/possible.jpg' width="300px" height="50" />
+	</div>					
+	<br/>
+	<br/>
 		   <div id="calendar">
                 <ul class="weekdays">
                     <li>Sunday</li>
