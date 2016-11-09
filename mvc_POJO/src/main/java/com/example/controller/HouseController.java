@@ -265,13 +265,15 @@ public class HouseController {
 	@RequestMapping(value = "/updateHouse", method = RequestMethod.GET)
 	public String HouseUpdate(Model model, @RequestParam Integer houseNo, HttpSession session) {
 		House house = hservice.selectByNoHouse(houseNo);
+		String key = (String) session.getAttribute("key");
 		if (house != null) {
 			model.addAttribute("house", house);
 			model.addAttribute("PossCheckIn", house.getPossCheckIn());
 			model.addAttribute("PossCheckOut", house.getPossCheckOut());
+			
 			return "jsp/HouseUpdate";
 		}
-		return "redirect:/search?page=1";
+		return "redirect:/searchbar?key="+ key +"&page=1";
 	}
 
 	@RequestMapping(value = "/updateHouse", method = RequestMethod.POST)

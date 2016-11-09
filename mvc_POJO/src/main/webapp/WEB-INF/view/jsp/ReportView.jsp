@@ -98,8 +98,8 @@ background-image:url
 			<tr style="border-bottom: 1px solid;">
 				<th scope="row">작성일</th>
 				<td>
-					<%-- <fmt:formatDate pattern="yyyy/MM/dd" value="${reportDate }" /> --%>
-					<span class="date">${reportDate }</span> 
+					<span class="date"><fmt:formatDate pattern="yyyy/MM/dd" value="${reportDate }" /></span>
+					<%-- <span class="date">${reportDate }</span> --%> 
 					<!-- <span class="hit">조회수 : 1000</span> -->
 				</td>
 			</tr>

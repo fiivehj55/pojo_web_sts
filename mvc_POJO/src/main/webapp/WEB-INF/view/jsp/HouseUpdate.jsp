@@ -236,7 +236,10 @@
 				<label><input type="file" name="photo" multiple="multiple"/> </label> <br />
 				
 				<sform:label path="houseInfo">숙소 안내말</sform:label> <br/>
-				<sform:textarea style="margin:0px;width:400px;height:265px;" path="houseInfo"></sform:textarea> <br/>
+				<%-- <sform:textarea style="margin:0px;width:400px;height:265px;" path="houseInfo"></sform:textarea> --%>
+				
+				<sform:textarea path="houseInfo" id="ir1" rows="10" cols="100" style="width:70%; height: 412px; display: none;" 
+				placeholder="에디터에 기본으로 삽입할 글(수정 모드)이 없다면 이 value 값을 지정하지 않으시면 됩니다."></sform:textarea> <br/>
 			</div>
 			
 			<div id="side">
@@ -252,8 +255,8 @@
 				<sform:label path="housePrice">가격 : </sform:label>
 				<sform:input type="number" path="housePrice"/> <br/> 
 			</div>
-			<input type="submit" class="button button-style-1" id="complete" name="complete" value="수정완료"/>
-			<a href="search?page=1"><input type="button" class="button button-style-1" value="나가기"/></a>
+			<input type="submit" class="button button-style-1" id="complete" name="complete" value="수정완료" onclick="submitContents(this)"/>
+			<a href="searchbar?key=${key}&page=1"><input type="button" class="button button-style-1" value="나가기"/></a>
 			<!-- <a href="search"><input type="button" value="다음 단계"/></a> -->
 		</sform:form>
 	</div>
@@ -273,6 +276,7 @@ function goPopup(){
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
 <script src="<%=request.getContextPath()%>/js/validate/dist/jquery.validate.min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/NaverEditor/js/HuskyEZCreator.js" charset="utf-8"></script>
 <script type="text/javascript">
 function goPopup(){
 	var pop = window.open("<%=request.getContextPath()%>/jusoPopup","pop", "width=570,height=420, scrollbars=yes");
@@ -425,6 +429,26 @@ function goPopup(){
 			}
 
 		})(jQuery);
+</script>
+<script type="text/javascript">
+	var oEditors = [];
+	nhn.husky.EZCreator.createInIFrame({
+		oAppRef : oEditors,
+		elPlaceHolder : "ir1",
+		sSkinURI : "<%=request.getContextPath()%>/NaverEditor/SmartEditor2Skin.html",
+		fCreator : "createSEditor2"
+	});
+	
+ 	function submitContents(elClickedObj) {
+		// 에디터의 내용이 textarea에 적용된다.
+		oEditors.getById["ir1"].exec("UPDATE_CONTENTS_FIELD", []);
+		// 에디터의 내용에 대한 값 검증은 이곳에서
+		// document.getElementById("ir1").value를 이용해서 처리한다.
+		try {
+		elClickedObj.form.submit();
+		} catch(e) {}	 }
+	
+	
 </script>
 
 
