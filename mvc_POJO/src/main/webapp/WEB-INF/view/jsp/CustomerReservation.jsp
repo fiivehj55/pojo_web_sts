@@ -490,7 +490,7 @@ function initMap() {
 			'<div id="left-box">'+
 			'<h1 id="firstHeading" class="firstHeading">'+${house.houseNo}+'</h1>'+
 			'<div id="bodyContent">'+
-			'<span style="font-size:25px">'+${house.houseName}+'</span>'+
+			'<span style="font-size:25px">'+'${house.houseName}'+'</span>'+
 			'<p><b>주소:&nbsp</b>${house.houseAddress}</p>'+
 			'<p><b>가격:&nbsp</b>${house.housePrice}원</p>'+
 			'</div>'+
