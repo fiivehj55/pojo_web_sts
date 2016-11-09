@@ -148,6 +148,7 @@
 	<p>
 	<div class = "date">
 		예약 날짜<br/>
+		<input type="button" onclick="goPopup()" value="예약 달력보기">
 		<input type="hidden" name="houseNo" value="${house.houseNo }"/>
 		시작일 <input type="date" onchange="checkDate(this)" name="possCheckIn">
 		 ~ 종료일 	<input type="date" onchange="lastDate(this)" name="possCheckOut"> 
@@ -158,8 +159,8 @@
 	<div class = "click">
 	<input type="submit" class="button button-style-1" value="예약 완료"/>
 	<a href="<%=request.getContextPath()%>/index"><input type="button" class="button button-style-1" value="취소"/></a>
-	<a href="<%=request.getContextPath()%>/ReservationComplete1"><input type="button" class="button button-style-1" value="테스트 예약목록"/></a>
-	<a href="<%=request.getContextPath()%>/RegisterReservation"><input type="button" class="button button-style-1" value="테스트 예약목록2"/></a>
+	<%-- <a href="<%=request.getContextPath()%>/ReservationComplete1"><input type="button" class="button button-style-1" value="테스트 예약목록"/></a>
+	<a href="<%=request.getContextPath()%>/RegisterReservation"><input type="button" class="button button-style-1" value="테스트 예약목록2"/></a> --%>
 	</div>
 	</form>
 <p><p><p>
@@ -167,6 +168,11 @@
 </body>
 <script src="http://code.jquery.com/jquery.js"></script>
 <script>
+function goPopup(){
+    var pop = 
+       window.open("<%=request.getContextPath()%>/dateView?houseNo=${house.houseNo}","pop", "width=770,height=800, scrollbars=yes");
+}
+
 // 날짜 스크립트
 function checkDate(dateTag){
 	var dateVal =  new Date(dateTag.value);

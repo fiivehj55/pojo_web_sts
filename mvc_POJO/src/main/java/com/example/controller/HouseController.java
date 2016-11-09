@@ -71,28 +71,15 @@ public class HouseController {
 			HttpSession session) {
 		List<House> houses = hservice.searchHouses(key, page);
 		model.addAttribute("house", houses);
-		houses = hservice.selectAllHouse();
+		houses = hservice.selectAllKey(key);
 		int size = houses.size()/6;
 		if(size*6 < houses.size()){
 			model.addAttribute("max", size+1);
 		}else{
 			model.addAttribute("max", size);
-			model.addAttribute("key", key);
-			session.setAttribute("page", page);
-			session.setAttribute("key", key);
 		}
-		/*for(House house:houses){
-			File file = new File(uploadDir + "/" + house.getMemberId() + "/"+house.getHouseNo()+"/main");
-			File[] files = file.listFiles();	
-			if(files!=null){
-				try{
-					//파일 이름
-				String fileName = files[0].getName();
-				house.setHouseImg(fileName);
-				}catch(ArrayIndexOutOfBoundsException e){}
-			}
-		}*/
-		
+		session.setAttribute("page", page);
+		session.setAttribute("key", key);
 		return "jsp/HouseList";
 	}
 	
@@ -278,13 +265,15 @@ public class HouseController {
 	@RequestMapping(value = "/updateHouse", method = RequestMethod.GET)
 	public String HouseUpdate(Model model, @RequestParam Integer houseNo, HttpSession session) {
 		House house = hservice.selectByNoHouse(houseNo);
+		String key = (String) session.getAttribute("key");
 		if (house != null) {
 			model.addAttribute("house", house);
 			model.addAttribute("PossCheckIn", house.getPossCheckIn());
 			model.addAttribute("PossCheckOut", house.getPossCheckOut());
+			
 			return "jsp/HouseUpdate";
 		}
-		return "redirect:/search?page=1";
+		return "redirect:/searchbar?key="+ key +"&page=1";
 	}
 
 	@RequestMapping(value = "/updateHouse", method = RequestMethod.POST)
@@ -517,6 +506,18 @@ public class HouseController {
 		Member user =  (Member) session.getAttribute("user");
 		Member userInfo = mservice.selectByIdMemberJoinRegistHouse(user.getMemId());
 		model.addAttribute("userInfo",userInfo);
+		List<String> imgList = new ArrayList<>();
+		
+		for(int i =0;  i < userInfo.getRegistHouse().size();i++){
+			
+		    String pathid = userInfo.getRegistHouse().get(i).getHouse().getMemberId();
+		    String path = uploadDir + "/" + pathid + "/intro";
+		    File file = new File(path);
+		    File[] introfile = file.listFiles();
+		    imgList.add(introfile[0].getName());
+		}
+		model.addAttribute("imgList", imgList);
+		System.out.println(userInfo);
 		return "jsp/ReservationComplete";
 	}
 	
@@ -594,5 +595,12 @@ public class HouseController {
 		rh.setMemberId(id);
 		result = rhservice.update(rh);
 		return "redirect:/ReservationComplete1";
+	}
+	
+	@RequestMapping(value="/Impossible",method=RequestMethod.GET)
+	public @ResponseBody List<RegistHouse> ReservationUpdate(Model model,
+			@RequestParam Integer houseNo){
+		List<RegistHouse> list =  rhservice.selectByHouseNo(houseNo);
+		return list;
 	}
 }

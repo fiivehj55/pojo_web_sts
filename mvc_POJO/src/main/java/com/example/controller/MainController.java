@@ -120,8 +120,13 @@ public class MainController {
 	}*/
 
 	@RequestMapping(value = "/dateView", method = RequestMethod.GET)
-	public String dateView(Model model) {
-		return "jsp/dateView";
+	public String dateView(Model model,
+			@RequestParam Integer houseNo) {
+		model.addAttribute("houseNo", houseNo);
+		
+		House house = hService.selectByNoHouse(houseNo);
+	 	model.addAttribute("house", house);
+		return "jsp/dateView2";
 	}
 	
 	@RequestMapping(value = "/adminLogin",method=RequestMethod.GET)
@@ -289,22 +294,27 @@ public class MainController {
 		int end = today.getActualMaximum(Calendar.DATE);
 		
 		String str = "";
-		for (int i = 1; i <= 42; i++) {
-			if (i >= start) {
-				if (i - start + 1 <= end) {
-					str+="<div class='date'>"+
-							(i - start + 1)+
-							"</div>";
+		for(int i = 0; i <=5;i++){
+			str+="<ul class='days'>";
+			for(int j = 1; j<=7;j++){
+				int value = i*7+j;
+				if (value >= start) {
+					if (value - start + 1 <= end) {
+						str+="<li class='day'> <div class='date'>"+
+								(value - start + 1)+
+								"</div></div>";
+					} else {
+						str+="<li class='day other-month'> <div class='next'>"+
+								(value - end - start + 1)+
+								"</div></div>";
+					}
 				} else {
-					str+="<div class='next'>"+
-							(i - end - start + 1)+
-							"</div>";
+					str+="<li class='day other-month'><div class='pre'>"+
+							(pre - start + value + 1)+
+							"</div></div>";			
 				}
-			} else {
-				str+="<div class='pre'>"+
-						(pre - start + i + 1)+
-						"</div>";			
 			}
+			str+="</ul>";
 		}
 		return str;
 	}

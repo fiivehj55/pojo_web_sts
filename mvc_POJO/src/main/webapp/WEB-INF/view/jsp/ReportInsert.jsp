@@ -90,9 +90,7 @@ font-family:tahoma;
 }
 </style>
 
-<script type="text/javascript"
-	src="<%=request.getContextPath()%>/NaverEditor/js/HuskyEZCreator.js"
-	charset="utf-8"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/NaverEditor/js/HuskyEZCreator.js" charset="utf-8"></script>
 </head>
 <body>
 <jsp:include page="./Header.jsp"></jsp:include>

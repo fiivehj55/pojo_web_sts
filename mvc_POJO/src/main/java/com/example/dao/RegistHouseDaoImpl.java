@@ -47,4 +47,10 @@ public class RegistHouseDaoImpl implements RegistHouseDao {
 		String stmt = REGIST_HOUSE_MAP + "deleteRegistHouse";
 		return template.update(stmt, rhNo);
 	}
+
+	@Override
+	public List<RegistHouse> selectByHouseNo(SqlSessionTemplate template, int houseNo) {
+		String stmt = REGIST_HOUSE_MAP + "selectByHouseNo";
+		return template.selectList(stmt, houseNo);
+	}
 }
