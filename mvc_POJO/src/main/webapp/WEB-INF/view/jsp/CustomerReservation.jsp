@@ -79,7 +79,7 @@
 #calendar li {
     display: block;
     float: left;
-    width:14.342%;
+    width:14.1%;
     padding: 5px;
     box-sizing:border-box;
     border: 1px solid #ccc;
@@ -156,7 +156,7 @@
     text-align: center;
     margin-bottom: 5px;
     padding: 4px;
-    background: #333;
+    background: #9ca29d;
     color: #fff;
     width: 30px;
     border-radius: 50%;
@@ -226,6 +226,24 @@
 .date{
 	margin: 10px; 
 }
+.buttonstyle {
+    background: #f9dfdd;
+    color: #cab4b4;
+    font-family: Sans-serif;
+    font-size: 18px;
+    height: 40px;
+    width: 100px;
+    text-align: center;
+    border: 0;
+    transition: all 0.3s ease 0s;
+}
+
+.buttonstyle:hover {
+  background: #fbceca;
+}
+
+
+
 </style>
 
 </head>
@@ -331,7 +349,7 @@
 	<br/>
 		<div id="bar">
 			<div class="left">
-				<input type="button" value="◀" onclick="before()">
+				<input type="button" class="buttonstyle" value="◀ LAST" onclick="before()">
 			</div>
 			<div class="center" id="dateBar">
 				<span style="font-size:30px;font-weight:bold;"><%=today.get(Calendar.YEAR)%>년
@@ -339,7 +357,8 @@
 				</span>
 			</div>
 			<div class="right">
-				<input type="button" value="▶" onclick="after()">
+			 <input type="button" class="buttonstyle" value="NEXT▶" onclick="after()">
+				<!-- <a href="#" class="buttonstyle" onclick="after()">▶</a>  -->
 			</div>
 		</div>
 		<br/>
@@ -401,7 +420,8 @@
 			<c:set value="Impossible?houseNo=${houseNo }" var="getlist"/>
 		 </div>
 	</div>
-	</p>
+
+	<br/>
 	
 	<div class = "click">
 	<input type="submit" class="button button-style-1" value="예약 완료"/>
@@ -550,7 +570,7 @@ function setcolor(){
 				var outDate = new Date(ImpossibleDate[i].checkOut);
 				 if(inDate <= currentDate && outDate >= currentDate ){
 				
-					 $(this).parent().css("background","red");
+					 $(this).parent().css("background","#FFD8D8");
 			 		dayArray.push(this);
 			 	 }
 		 }
@@ -573,7 +593,7 @@ function setcolor(){
 					var outDate = new Date(ImpossibleDate[i].checkOut);
 					
 					 if(inDate < currentDate && outDate >= currentDate ){
-						 $(this).parent().css("background","red");
+						 $(this).parent().css("background","#FFD8D8");
 				 		dayArray.push(this);
 				 	 }
 			 }
@@ -597,7 +617,7 @@ function setcolor(){
 					var outDate = new Date(ImpossibleDate[i].checkOut);
 					
 					 if(inDate < currentDate && outDate >= currentDate ){
-						 $(this).parent().css("background","red");
+						 $(this).parent().css("background","#FFD8D8");
 				 		dayArray.push(this);
 				 	 }
 			 }
@@ -611,7 +631,7 @@ function setpossible(){
 		 setDate(currentDate);	
 		 currentDate.setDate(day);
 		 	 if(start < currentDate && end >= currentDate ){
-		 		 $(this).parent().css("background","#cee8d5");
+		 		 $(this).parent().css("background","rgb(227,241,231,1)");
 		 		dayArray.push(this);
 		 	 }
 		});
@@ -628,7 +648,7 @@ function setpossible(){
 				}
 			 currentDate.setDate(day);
 			 	 if(start < currentDate && end >= currentDate ){
-			 		 $(this).parent().css("background","#cee8d5");
+			 		 $(this).parent().css("background","rgba(227,241,231,1)");
 			 	 }
 			});
 		$(".pre").each(function(index){
