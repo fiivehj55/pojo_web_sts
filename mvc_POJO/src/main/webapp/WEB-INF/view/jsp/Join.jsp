@@ -177,7 +177,7 @@ p, h1, form, button {
 	/ico_required.gif"></img>
 	필수입력사항</p>
 	<hr><p>
-	<form method="post" action="join" enctype="multipart/form-data" id="myform">
+	<form method="post" action="join" enctype="multipart/form-data" id="myform" onsubmit="return checkCheckBoxes(this);">
 	<div class="boardWrite">
 		<table border="1" summary="">
 			<tbody>
@@ -514,7 +514,7 @@ p, h1, form, button {
 ③해외에 주소나 거소가 있는 '회원' 의 경우 '회사'와 '회원'간 발생한 분쟁에 관한 소송은 전항에도 불구하고 대한민국 서울중앙지방법원을 관할 법원으로 합니다.
 					</textarea>
 	<br/><span>이용약관에 동의하십니까?</span>
-	<input name="agree_service_check[]" id="agree_service_check0" type="checkbox"></input>
+	<input name="used1" id="agree_service_check0" type="checkbox"></input>
 	<label for ="agree_service_check0">동의함</label>
 	</p>
 	
@@ -651,7 +651,7 @@ p, h1, form, button {
 ③해외에 주소나 거소가 있는 '회원' 의 경우 '회사'와 '회원'간 발생한 분쟁에 관한 소송은 전항에도 불구하고 대한민국 서울중앙지방법원을 관할 법원으로 합니다.
 					</textarea>
 	<br/><span>개인정보에 수집 및 이용에 동의하십니까?</span>
-	<input name="agree_privacy_check[]"	id="agree_privacy_check0" type="checkbox"></input>
+	<input name="used2"	id="agree_privacy_check0" type="checkbox"></input>
 	<label for ="agree_privacy_check0">동의함</label>
 	</p>
 	
@@ -733,8 +733,8 @@ p, h1, form, button {
 이메일 주소 : fivehj55@naver.com
 					</textarea>
 	<br/><span>위치정보에 수집 및 이용에 동의하십니까?</span>
-	<input name="agree_privacy_check[]"	id="agree_privacy_check0" type="checkbox"></input>
-	<label for ="agree_privacy_check0">동의함</label>
+	<input name="used3"	id="agree_privacy_check1" type="checkbox"></input>
+	<label for ="agree_privacy_check1">동의함</label>
 	</p>
 </div>
 	
@@ -849,7 +849,9 @@ p, h1, form, button {
 				memEmail : {
 					required : "Please specify your Email"
 				},
-				memGender : "Please specify your Gender"
+				memGender : {
+					required : "Please specify your Gender"
+				}
 			}
 		});
 		$("#memPassword").bind({
@@ -891,6 +893,18 @@ p, h1, form, button {
 			});
 		});
 	});
-
+	
+	function checkCheckBoxes(theForm) {
+		if (
+		theForm.used1.checked == false ||
+		theForm.used2.checked == false ||
+		theForm.used3.checked == false) 
+		{
+			alert ('이용약관에 동의해 주세요.');
+			return false;
+		} else { 	
+			return true;
+		}
+	}
 </script>
 </html>
