@@ -37,24 +37,26 @@
 	float: left;
 	width: 14%;
 	border: 1px solid;
-	width: 14%;
+	border-color:#f3f1f1;
+
 }
 
 .date {
 	float: left;
 	width: 14%;
-	border: 1px solid;
+	/* border: 1px solid; */
 }
 
 .next {
-	    text-align: center;
+	text-align: center;
     margin-bottom: 5px;
     padding: 4px;
     background: #d3d3d3;
     color: #fff;
-    width: 20px;
+    width: 30px;
     border-radius: 50%;
     float: right;
+    margin:10px;
 }
 
 #calendar {
@@ -105,9 +107,10 @@
     padding: 4px;
     background: #d3d3d3;
     color: #fff;
-    width: 20px;
+    width: 30px;
     border-radius: 50%;
     float: right;
+    margin:10px;
 }
 
 #bar {
@@ -135,14 +138,14 @@
 .center h1 {
 	display: inline-block;
 }
-.other-month {/* 
-    background: #f5f5f5; */
+.other-month {
+    background: #f5f5f5; 
     color: #666;
 }
 
 
 #box .days li {
-    height: 100px;
+    height: 130px;
 }
 
 #box .days li:hover {
@@ -155,7 +158,7 @@
     padding: 4px;
     background: #333;
     color: #fff;
-    width: 20px;
+    width: 30px;
     border-radius: 50%;
     float: right;
 }
@@ -182,7 +185,7 @@
 }
 
 #box .other-month {
-    background: #f5f5f5;
+    background: #FFF;
     color: #666;
 }
  
@@ -221,7 +224,7 @@
 	margin: 20px;
 }
 .date{
-	margin: 20px;
+	margin: 10px; 
 }
 </style>
 
@@ -325,19 +328,21 @@
 		int start = today.get(Calendar.DAY_OF_WEEK);
 		int end = today.getActualMaximum(Calendar.DATE);
 	%>
+	<br/>
 		<div id="bar">
 			<div class="left">
 				<input type="button" value="◀" onclick="before()">
 			</div>
 			<div class="center" id="dateBar">
-				<h1><%=today.get(Calendar.YEAR)%>년
+				<span style="font-size:30px;font-weight:bold;"><%=today.get(Calendar.YEAR)%>년
 					<%=today.get(Calendar.MONTH) + 1%>월
-				</h1>
+				</span>
 			</div>
 			<div class="right">
 				<input type="button" value="▶" onclick="after()">
 			</div>
 		</div>
+		<br/>
 		   <div id="calendar">
                 <ul class="weekdays">
                     <li>Sunday</li>
@@ -606,7 +611,7 @@ function setpossible(){
 		 setDate(currentDate);	
 		 currentDate.setDate(day);
 		 	 if(start < currentDate && end >= currentDate ){
-		 		 $(this).parent().css("background","#B2CCFF");
+		 		 $(this).parent().css("background","#cee8d5");
 		 		dayArray.push(this);
 		 	 }
 		});
@@ -623,7 +628,7 @@ function setpossible(){
 				}
 			 currentDate.setDate(day);
 			 	 if(start < currentDate && end >= currentDate ){
-			 		 $(this).parent().css("background","#B2CCFF");
+			 		 $(this).parent().css("background","#cee8d5");
 			 	 }
 			});
 		$(".pre").each(function(index){
@@ -640,7 +645,7 @@ function setpossible(){
 				}
 			 currentDate.setDate($(this).html());
 			 	 if(start < currentDate && end >= currentDate ){
-			 		 $(this).parent().css("background","#B2CCFF");
+			 		 $(this).parent().css("background","#cee8d5");
 			 	 }
 			});
 }
