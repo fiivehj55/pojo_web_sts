@@ -457,7 +457,8 @@ public class HouseController {
 		House house = hservice.selectByNoHouse(No);
 		model.addAttribute("address",house.getHouseAddress());
 		model.addAttribute("house",house);
-
+		model.addAttribute("houseNo",No);
+		
 		String houseTv = house.getHouseTv();
 		String houseAircon = house.getHouseAircon();
 		String houseWifi = house.getHouseWifi();

@@ -160,6 +160,12 @@
 	width: 33%;
 }
 
+#side2{
+	height:50%;
+	float: left;
+	width: 33%;
+}
+
 #main{
 	position: relative;
 }
@@ -235,13 +241,13 @@
 				<label for="photo">사진:</label> 
 				<label><input type="file" name="photo" multiple="multiple"/> </label> <br />
 				
+				
 				<sform:label path="houseInfo">숙소 안내말</sform:label> <br/>
 				<%-- <sform:textarea style="margin:0px;width:400px;height:265px;" path="houseInfo"></sform:textarea> --%>
-				
-				<sform:textarea path="houseInfo" id="ir1" rows="10" cols="100" style="width:70%; height: 412px; display: none;" 
+				</div>
+				<sform:textarea path="houseInfo" id="ir1" rows="10" cols="50" style="width:70%; height: 412px; display: none;" 
 				placeholder="에디터에 기본으로 삽입할 글(수정 모드)이 없다면 이 value 값을 지정하지 않으시면 됩니다."></sform:textarea> <br/>
 			</div>
-			
 			<div id="side">
 				<div class="font">하우스 정보 3단계</div>
 				<label for="possCheckIn">시작일</label>

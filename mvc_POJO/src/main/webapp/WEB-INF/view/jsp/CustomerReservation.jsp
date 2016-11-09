@@ -3,6 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
+<%@page import="java.util.Calendar"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,6 +29,166 @@
 	height: 100%;
 }
  */
+ 
+#main {
+	width: 100%;
+}
+.day {
+	float: left;
+	width: 14%;
+	border: 1px solid;
+	border-color:#f3f1f1;
+
+}
+
+.date {
+	float: left;
+	width: 14%;
+	/* border: 1px solid; */
+}
+
+.next {
+	text-align: center;
+    margin-bottom: 5px;
+    padding: 4px;
+    background: #d3d3d3;
+    color: #fff;
+    width: 30px;
+    border-radius: 50%;
+    float: right;
+    margin:10px;
+}
+
+#calendar {
+    width: 100%;    
+}
+#calendar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+#box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+#calendar li {
+    display: block;
+    float: left;
+    width:14.342%;
+    padding: 5px;
+    box-sizing:border-box;
+    border: 1px solid #ccc;
+    margin-right: -1px;
+    margin-bottom: -1px;
+}
+#calendar ul.weekdays {
+    height: 40px;
+    background: #8e352e;
+}
+
+#calendar ul.weekdays li {
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 20px;
+    border: none !important;
+    padding: 10px 6px;
+    color: #fff;
+    font-size: 13px;
+}
+
+.pre {
+    text-align: center;
+    margin-bottom: 5px;
+    padding: 4px;
+    background: #d3d3d3;
+    color: #fff;
+    width: 30px;
+    border-radius: 50%;
+    float: right;
+    margin:10px;
+}
+
+#bar {
+	width: 100%;
+	float: none;
+	clear: both;
+}
+
+.left {
+	float: left;
+	width: 30%;
+}
+
+.right {
+	float: right;
+	width: 30%;
+}
+
+.center {
+	width: 30%;
+	display: inline-block;
+	margin: 0 auto;
+}
+
+.center h1 {
+	display: inline-block;
+}
+.other-month {
+    background: #f5f5f5; 
+    color: #666;
+}
+
+
+#box .days li {
+    height: 130px;
+}
+
+#box .days li:hover {
+    background: #d3d3d3;
+}
+
+#box .date {
+    text-align: center;
+    margin-bottom: 5px;
+    padding: 4px;
+    background: #333;
+    color: #fff;
+    width: 30px;
+    border-radius: 50%;
+    float: right;
+}
+
+#box .event {
+    clear: both;
+    display: block;
+    font-size: 13px;
+    border-radius: 4px;
+    padding: 5px;
+    margin-top: 40px;
+    margin-bottom: 5px;
+    line-height: 14px;
+    background: #e4f2f2;
+    border: 1px solid #b5dbdc;
+    color: #009aaf;
+    text-decoration: none;
+}
+
+#box .event-desc {
+    color: #666;
+    margin: 3px 0 7px 0;
+    text-decoration: none;  
+}
+
+#box .other-month {
+    background: #FFF;
+    color: #666;
+}
+ 
 .houseinfo1{
 	float:left;
 	width: 600px;
@@ -62,7 +224,7 @@
 	margin: 20px;
 }
 .date{
-	margin: 20px;
+	margin: 10px; 
 }
 </style>
 
@@ -146,13 +308,98 @@
 <p><p><hr>
 </div>
 	<p>
-	<div class = "date">
+	<div class = "main">
 		예약 날짜<br/>
 		<input type="button" onclick="goPopup()" value="예약 달력보기">
 		<input type="hidden" name="houseNo" value="${house.houseNo }"/>
 		시작일 <input type="date" onchange="checkDate(this)" name="possCheckIn">
 		 ~ 종료일 	<input type="date" onchange="lastDate(this)" name="possCheckOut"> 
 		 <!-- <input type="button" onclick="nextDate(this)" value="+"> -->
+		 
+		 <div id ="calenderBox">
+		 <%
+		Calendar today = Calendar.getInstance();
+		int toMonth = today.get(Calendar.MONTH);
+		today.set(Calendar.MONTH, toMonth - 1);
+		int pre = today.getActualMaximum(Calendar.DATE);
+		today.set(Calendar.MONTH, toMonth);
+		int hr = today.get(Calendar.DATE);
+		today.set(Calendar.DATE, 1);
+		int start = today.get(Calendar.DAY_OF_WEEK);
+		int end = today.getActualMaximum(Calendar.DATE);
+	%>
+	<br/>
+		<div id="bar">
+			<div class="left">
+				<input type="button" value="◀" onclick="before()">
+			</div>
+			<div class="center" id="dateBar">
+				<span style="font-size:30px;font-weight:bold;"><%=today.get(Calendar.YEAR)%>년
+					<%=today.get(Calendar.MONTH) + 1%>월
+				</span>
+			</div>
+			<div class="right">
+				<input type="button" value="▶" onclick="after()">
+			</div>
+		</div>
+		<br/>
+		   <div id="calendar">
+                <ul class="weekdays">
+                    <li>Sunday</li>
+                    <li>Monday</li>
+                    <li>Tuesday</li>
+                    <li>Wednesday</li>
+                    <li>Thursday</li>
+                    <li>Friday</li>
+                    <li>Saturday</li>
+                </ul>
+            </div>
+		<div id="box">
+		
+		<% 
+		for(int i = 0; i <= 5;i++){
+			%>
+			<ul class="days">
+					<%
+				for (int j = 1; j <= 7; j++) {
+					int val = i*7+j;		
+			%>
+			<%
+				if (val >= start) {
+						if (val - start + 1 <= end) {
+			%>
+			   <li class="day">
+                        <div class="date"><%=val - start + 1%></div>                       
+                    </li>
+			<%
+				} else {
+			%>
+			<!-- next--> 
+			        <li class="day other-month">
+                        <div class="next"><%=val - end - start + 1%></div>                      
+                    </li>
+			<%
+				}
+					} else {
+			%>
+			  <li class="day other-month">
+                        <div class="pre"><%=pre - start + val + 1%></div>                      
+                    </li>
+			<%
+				}
+			%>
+			<%
+				}
+			%>
+			
+			</ul>
+			<% 
+		}
+		
+		%>
+		</div>
+			<c:set value="Impossible?houseNo=${houseNo }" var="getlist"/>
+		 </div>
 	</div>
 	</p>
 	
@@ -248,7 +495,7 @@ function initMap() {
 			'<div id="left-box">'+
 			'<h1 id="firstHeading" class="firstHeading">'+${house.houseNo}+'</h1>'+
 			'<div id="bodyContent">'+
-			'<span style="font-size:25px">'+${house.houseName}+'</span>'+
+			'<span style="font-size:25px">'+'${house.houseName}'+'</span>'+
 			'<p><b>주소:&nbsp</b>${house.houseAddress}</p>'+
 			'<p><b>가격:&nbsp</b>${house.housePrice}원</p>'+
 			'</div>'+
@@ -262,6 +509,213 @@ function initMap() {
 	}
 	})(marker, k)); 
 }; 
+
+var startDay = "${house.possCheckIn}";
+var endDay = "${house.possCheckOut}";
+var dayArray = new Array();
+
+var start = new Date(startDay);
+var end = new Date(endDay);
+$(document).ready(function(){
+
+
+	console.log("start:"+ startDay);
+	console.log("end:"+ endDay);
+	
+	 setpossible();
+	 setImpossible();
+	 setcolor();
+});
+function setDate(date){
+
+	date.setYear(thisYear);
+	date.setMonth(thisMonth);
+	date.setHours(9);
+	 date.setMinutes(0);
+	 date.setSeconds(0);
+	 date.setMilliseconds(0);
+}
+
+function setcolor(){
+
+	$(".date").each(function(index){
+		//index +1 은 날짜
+		  var day  = index+1;
+
+			 var currentDate = new Date();
+			 setDate(currentDate);		 
+			 currentDate.setDate(day);
+		 for(i=0;i <ImpossibleDate.length;i++ ){
+				var inDate = new Date(ImpossibleDate[i].checkIn);
+				var outDate = new Date(ImpossibleDate[i].checkOut);
+				 if(inDate <= currentDate && outDate >= currentDate ){
+				
+					 $(this).parent().css("background","red");
+			 		dayArray.push(this);
+			 	 }
+		 }
+		});
+		$(".next").each(function(index){
+			//index +1 은 날짜
+			  var day  = index+1;
+
+				 var currentDate = new Date();
+				 setDate(currentDate);	
+				if(thisMonth!= 11){
+					 currentDate.setMonth(thisMonth+1);
+				}else{
+					currentDate.setYear(currentDate.getYear()+1);
+					 currentDate.setMonth(0);
+				}
+			 currentDate.setDate(day);
+			 for(i=0;i <ImpossibleDate.length;i++ ){
+					var inDate = new Date(ImpossibleDate[i].checkIn);
+					var outDate = new Date(ImpossibleDate[i].checkOut);
+					
+					 if(inDate < currentDate && outDate >= currentDate ){
+						 $(this).parent().css("background","red");
+				 		dayArray.push(this);
+				 	 }
+			 }
+			});
+		$(".pre").each(function(index){
+			//index +1 은 날짜
+			
+	 var currentDate = new Date();
+	 setDate(currentDate);	
+			 if(thisMonth!= 0){
+				 currentDate.setMonth(thisMonth-1);
+				}else{
+					thisYear--;
+					thisMonth = 11;
+					currentDate.setYear(currentDate.getYear()-1);
+					 currentDate.setMonth(11);
+				}
+			 currentDate.setDate($(this).html());
+			 for(i=0;i <ImpossibleDate.length;i++ ){
+					var inDate = new Date(ImpossibleDate[i].checkIn);
+					var outDate = new Date(ImpossibleDate[i].checkOut);
+					
+					 if(inDate < currentDate && outDate >= currentDate ){
+						 $(this).parent().css("background","red");
+				 		dayArray.push(this);
+				 	 }
+			 }
+			});
+}
+function setpossible(){
+	$(".date").each(function(index){
+		//index +1 은 날짜
+		  var day  = index+1;
+		 var currentDate = new Date();
+		 setDate(currentDate);	
+		 currentDate.setDate(day);
+		 	 if(start < currentDate && end >= currentDate ){
+		 		 $(this).parent().css("background","#cee8d5");
+		 		dayArray.push(this);
+		 	 }
+		});
+		$(".next").each(function(index){
+			//index +1 은 날짜
+			  var day  = index+1;
+			 var currentDate = new Date();
+			 setDate(currentDate);	
+				if(thisMonth!= 11){
+					 currentDate.setMonth(thisMonth+1);
+				}else{
+					currentDate.setYear(currentDate.getYear()+1);
+					 currentDate.setMonth(0);
+				}
+			 currentDate.setDate(day);
+			 	 if(start < currentDate && end >= currentDate ){
+			 		 $(this).parent().css("background","#cee8d5");
+			 	 }
+			});
+		$(".pre").each(function(index){
+			//index +1 은 날짜
+			 var currentDate = new Date();
+			 setDate(currentDate);	
+			 if(thisMonth!= 0){
+				 currentDate.setMonth(thisMonth-1);
+				}else{
+					thisYear--;
+					thisMonth = 11;
+					currentDate.setYear(currentDate.getYear()-1);
+					 currentDate.setMonth(11);
+				}
+			 currentDate.setDate($(this).html());
+			 	 if(start < currentDate && end >= currentDate ){
+			 		 $(this).parent().css("background","#cee8d5");
+			 	 }
+			});
+}
+var ImpossibleDate;
+function setImpossible(){
+	$.ajax({
+		type : "get",
+		url : "${getlist}",
+		data : {
+			houseNo : ${houseNo}
+		},   
+		async: false,
+		success : function(data,staus) {
+			ImpossibleDate = data;
+			console.log(ImpossibleDate);
+		},
+		error : function(xhr, status, error) {
+			alert(error);
+		}
+	});
+}
+
+	var thisMonth = <%=today.get(Calendar.MONTH)%>;
+	var thisYear = <%=today.get(Calendar.YEAR)%>;
+	function before(){
+		if(thisMonth!= 0){
+			thisMonth--;
+		}else{
+			thisYear--;
+			thisMonth = 11;
+		}
+	 var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+		document.getElementById("dateBar").innerHTML = "<h1><span style='font-size:30px;font-weight:bold;''>"+thisYear+"년 "+(thisMonth+1)+"월</span></h1>";		
+	      document.getElementById("box").innerHTML = this.responseText;
+	      console.log((thisMonth+1)+"월");
+	      console.log(this.responseText);
+
+	 	 setpossible();
+	 	 setcolor();
+	    }
+	  };
+	  xhttp.open("POST", "dateView?month="+thisMonth+"&year="+thisYear, true);
+	  xhttp.send();
+	  
+	}
+	function after(){
+		if(thisMonth!= 11){
+			thisMonth++;
+		}else{
+			thisYear++;
+			thisMonth = 0;
+		}
+	 var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+		document.getElementById("dateBar").innerHTML = "<h1><span style='font-size:30px;font-weight:bold;''>"+thisYear+"년 "+(thisMonth+1)+"월</span></h1>";
+	      document.getElementById("box").innerHTML = this.responseText;
+	      console.log((thisMonth+1)+"월");
+	      console.log(this.responseText);
+
+	 	 setpossible();
+	 	 setcolor();
+	    }
+	  };
+	  xhttp.open("POST", "dateView?month="+thisMonth+"&year="+thisYear, true);
+	  xhttp.send();
+	}
+
 </script>
 <script async defer
 	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRgGbfPF9xbceQJLP0o1qKFlJpK7UdjQ8&callback=initMap">
