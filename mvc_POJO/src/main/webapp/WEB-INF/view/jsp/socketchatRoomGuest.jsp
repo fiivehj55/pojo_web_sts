@@ -78,7 +78,7 @@ input#chat {
  
 .chat-box .even {
     background-color: #C1E4EC;
-    max-width: 60%;
+    max-width: 100%;
     height: auto;
     clear: both;
     float: right;
@@ -143,7 +143,7 @@ input#chat {
 			<ul id="msglist"></ul>
 		</div> -->
 
-		<div id="box" style=" overflow: scroll;width: 100%; height: 600px; overflow-x:hidden;">
+		<div id="box" style=" overflow: scroll;width: 100%; height: 600px; overflow-x:hidden; background: #38ADC1">
 			<ul class="chat-box" id="chat-box"> 
 			</ul>
 		</div>
