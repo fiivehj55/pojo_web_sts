@@ -142,7 +142,7 @@ input#chat {
 		 <!-- <div id="console-container">
 			<ul id="msglist"></ul>
 		</div> -->
-		<div>
+		<div style="overflow:auto; width:100%; height:800px;">
 			<ul class="chat-box"></ul>
 		</div>
 		<p>
