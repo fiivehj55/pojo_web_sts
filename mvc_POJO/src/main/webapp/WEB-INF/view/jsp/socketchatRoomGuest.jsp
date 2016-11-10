@@ -107,7 +107,7 @@ input#chat {
  
 /* 짝수 row의 색 */
 .chat-box .even {
-    background-color: #e1e5e5;
+    background-color: #C1E4EC;
 }
 
 /* 첫번째 row의 끝을 둥글게 한다 */
@@ -142,8 +142,10 @@ input#chat {
 		 <!-- <div id="console-container">
 			<ul id="msglist"></ul>
 		</div> -->
-		<div style="overflow:auto; width:100%; height:800px;">
-			<ul class="chat-box"></ul>
+
+		<div id="box" style=" overflow: scroll;width: 100%; height: 600px; overflow-x:hidden;">
+			<ul class="chat-box" id="chat-box"> 
+			</ul>
 		</div>
 		<p>
 			<input type="text" placeholder="메시지를 입력하고 엔터를 누르세요." id="chat" />
@@ -177,16 +179,16 @@ input#chat {
 				for(var i=1; i<str.length; i++){
 					rmsg += str[i];
 				}
-				console.log("str : " + str);
-				console.log("rid : " + rid);
-				console.log("rmsg : " + rmsg);
-				console.log("users: " + users);
 				
 				if(users==rid){ 
 					$(".chat-box").append($("<li class='even'><span>"+e.originalEvent.data+"</span></li>"));
 				}else{
 					$(".chat-box").append($("<li class='odd'><span>"+e.originalEvent.data+"</span></li>"));
 				}
+				$('#box').scrollTop = $('#box').scrollHeight;
+
+				var intElemScrollHeight = document.getElementById('box').scrollHeight;
+				$('#box').scrollTop(intElemScrollHeight);
 			}).on("error", function(){e}).on("close", function(e){
 				console.log("소켓을 닫습니다.");
 			});
