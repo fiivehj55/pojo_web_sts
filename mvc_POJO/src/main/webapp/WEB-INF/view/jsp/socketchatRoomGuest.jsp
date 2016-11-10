@@ -107,7 +107,7 @@ input#chat {
  
 /* 짝수 row의 색 */
 .chat-box .even {
-    background-color: #e1e5e5;
+    background-color: #C1E4EC;
 }
 
 /* 첫번째 row의 끝을 둥글게 한다 */
