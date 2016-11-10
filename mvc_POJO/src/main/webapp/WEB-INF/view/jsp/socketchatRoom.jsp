@@ -141,7 +141,7 @@ input#chat {
 		<!-- <div id="console-container">
 			<ul id="msglist"></ul>
 		</div> -->
-		<div>
+		<div id="box" style="overflow: auto; width: 100%; height: 600px; overflow-x:hidden;" >
 			<ul class="chat-box"></ul>
 		</div>
 		<p>
@@ -152,8 +152,11 @@ input#chat {
 <script src="http://code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript" src="http://jsgetip.appspot.com"></script>
 <script>
+
+$("#box").animate({scrollTop: $('#chat-box:last-child').scrollHeight},2000);
 	$(function(){
 		var ws;
+		
 		
 		$("#btnRoom").on("click", function(){
 			var roomName = $("#room").val();
@@ -165,7 +168,10 @@ input#chat {
 			var users = "${user.memId}";
 			console.log(window.location.pathname.substr(0,window.location.pathname.indexOf("/", 1)));
 			if (window.location.protocol == 'http:') {
-				url = 'ws://210.125.213.51:9090/mvc_POJO/chatprivate';
+			/* 	url = 'ws://210.125.213.51:9090/mvc_POJO/chatprivate';
+			 */
+			 url = 'ws:localhost:9090/mvc_POJO/chatprivate';
+				
 			} else {
 				url = 'wss://210.125.213.51:9090/mvc_POJO/chatprivate';
 			}
