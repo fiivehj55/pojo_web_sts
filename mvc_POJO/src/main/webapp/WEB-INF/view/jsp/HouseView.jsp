@@ -169,12 +169,12 @@
 
                   <div id='right-box'>
                      <c:if test="${user!=null}">
-                        <c:if test="${user. memId != houseUser}">
+                        <c:if test="${user.memId != houseUser}">
                            <a href="CustomerReservation?No=${houseNo }"
                               class="button button-style1">예약하기</a>
                         </c:if>
                         <p>
-                           <c:if test="${user. memId == houseUser}">
+                           <c:if test="${user.memId == houseUser}">
                               <p>
                                  <a href="updateHouse?houseNo=${houseNo}"
                                     class="button button-style1"> 수정하기</a>
@@ -182,7 +182,7 @@
                                  <a href="deleteHouse?houseNo=${houseNo}"
                                     class="button button-style1"> 취소하기</a>
                            </c:if>
-                           <c:if test="${user. memId != houseUser}">
+                           <c:if test="${user.memId != houseUser}">
                               <p>
                                  <a href="chatstart?guest=${memberName}"
                                     class="button button-style1">메세지보내기</a>

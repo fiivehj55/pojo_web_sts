@@ -366,13 +366,11 @@ public class MemberController {
    @RequestMapping(value = "/chatstart",method=RequestMethod.GET)
    public String chatstart(Model model,
 		   @RequestParam String guest,HttpSession session){
-	   
-	   
 	   Member user = (Member) session.getAttribute("user");
 	   if(user == null)
 		   return "jsp/Login";
 	   String url = "당신과 대화를 하고 싶어합니다.<br/>"
-	   		+ "<a href='210.125.213.51:9090/mvc_POJO/chatGuest?room="+user.getMemId()+" target='_blank''>채팅방 입장</a>";
+	   		+ "<a href='210.125.213.51:9090/mvc_POJO/chatGuest?room="+user.getMemId()+"' target='_new'>채팅방 입장</a>";
 	   Member guestid = mservice.Search(guest);
 	   sendMail(url,guestid.getMemEmail());
 	   
