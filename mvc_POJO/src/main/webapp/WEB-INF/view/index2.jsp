@@ -351,21 +351,16 @@ body{
 		<c:when test="${fn:length(house) > 0}">
 			<c:forEach items="${house }" var="row">
 			<div class="wrap">
-				<div class="tile">			
-				<a href="houseView?houseNo=${row.houseNo}">
+				<div class="tile">
+				<a href="houseView?houseNo=${row.houseNo}">			
 					<img src="<%=request.getContextPath()%>/upload/${row.memberId}/${row.houseNo}/main/${row.houseImg}"/>
-					<div class="text">
-						<h1>${row.houseName}</h1>
-						<h2 class="animate-text">${row.houseAddress}</h2>
-						<p class="animate-text">
-							${row.houseInfo}
-						</p>
-						<div class="dots">
-							<span><a href="houseView?houseNo=${row.houseNo }"></a></span> <span></span> <span></span>
-						</div>
-   					</div>
 				</a>
-				</div>
+				<div class="text">
+					<h1>${row.houseName}</h1>
+					<h2 class="animate-text">${row.houseAddress}</h2>
+					<p class="animate-text">${row.houseInfo}</p>
+   				</div>
+   				</div>
 			</div>
 			</c:forEach>
 		</c:when>

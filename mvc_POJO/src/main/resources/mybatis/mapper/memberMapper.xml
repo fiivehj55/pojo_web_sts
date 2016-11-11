@@ -25,7 +25,7 @@
      
     <update id="updateMemberNp" parameterType="member">
         update MEMBER set
-        MEM_NA=#{memNa}, MEM_PHONE=#{memPhone}, MEM_EMAIL=#{memEmail}, MEM_IMG=#{memImg}, MEM_INTRO=#{memIntro}
+        MEM_PASSWORD=#{memPassword}, MEM_NA=#{memNa}, MEM_PHONE=#{memPhone}, MEM_EMAIL=#{memEmail}, MEM_IMG=#{memImg}, MEM_INTRO=#{memIntro}
         where MEM_ID = #{memId}
     </update>
     
