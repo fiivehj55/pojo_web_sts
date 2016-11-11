@@ -105,7 +105,7 @@ body
   z-index:0;
   transition: all 0.4s ease-out;
 }
-.tile .text
+.tile .textBox
 {
 /*   z-index:99; */
   position:absolute;
@@ -350,17 +350,17 @@ body{
 	<c:choose>
 		<c:when test="${fn:length(house) > 0}">
 			<c:forEach items="${house }" var="row">
-			<div class="wrap">
-				<div class="tile">
-				<a href="houseView?houseNo=${row.houseNo}">			
-					<img src="<%=request.getContextPath()%>/upload/${row.memberId}/${row.houseNo}/main/${row.houseImg}"/>
-				</a>
-				<div class="text">
-					<h1>${row.houseName}</h1>
-					<h2 class="animate-text">${row.houseAddress}</h2>
-					<p class="animate-text">${row.houseInfo}</p>
-   				</div>
-   				</div>
+				<div class="wrap" onclick="move('houseView?houseNo=${row.houseNo}')">
+				<div class="tile">			
+				<img src="<%=request.getContextPath()%>/upload/${row.memberId}/${row.houseNo}/main/${row.houseImg}"/>
+					<div class="textBox">
+						<h1>${row.houseName}</h1>
+						<h2 class="animate-text">${row.houseAddress}</h2>
+						<p class="animate-text">
+							${row.houseInfo}
+						</p>
+   					</div>
+				</div>
 			</div>
 			</c:forEach>
 		</c:when>
@@ -369,123 +369,17 @@ body{
 		</c:otherwise>
 	</c:choose>
 	</div>	
-<!-- <div class="container">
-		<div class="wrap">
-			<div class="tile">
-				<a href="#"><img src='css/images/image2.jpg' />
-				<div class="text">
-					<h1>Lorem ipsum.</h1>
-					<h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
-					<p class="animate-text">Bacon ipsum dolor amet pork belly
-						tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank
-						sirloin strip steak prosciutto kevin turducken.</p>
-					<div class="dots">
-						<span></span> <span></span> <span></span>
-					</div>
-				</div>
-				</a>
-			</div>
-
-			<div class="tile">
-				<a href="#"><img src='css/images/image2.jpg' />
-				<div class="text">
-					<h1>Lorem ipsum.</h1>
-					<h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
-					<p class="animate-text">Bacon ipsum dolor amet pork belly
-						tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank
-						sirloin strip steak prosciutto kevin turducken.</p>
-					<div class="dots">
-						<span></span> <span></span> <span></span>
-					</div>
-				</div>
-				</a>
-			</div>
-
-			<div class="tile">
-				<a href="#"><img src='css/images/image2.jpg' />
-				<div class="text">
-					<h1>Lorem ipsum.</h1>
-					<h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
-					<p class="animate-text">Bacon ipsum dolor amet pork belly
-						tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank
-						sirloin strip steak prosciutto kevin turducken.</p>
-					<div class="dots">
-						<span></span> <span></span> <span></span>
-					</div>
-				</div>
-				</a>
-			</div>
-		</div>
-
-		<div class="wrap">
-			<div class="tile">
-				<a href="#">
-				<img src='http://www.blueb.co.kr/SRC2/_image/s_01.jpg' />
-				<div class="text">
-					<h1>Lorem ipsum.</h1>
-					<h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
-					<p class="animate-text">Bacon ipsum dolor amet pork belly
-						tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank
-						sirloin strip steak prosciutto kevin turducken.</p>
-					<div class="dots">
-						<span></span> <span></span> <span></span>
-					</div>
-				</a>
-				</div>
-			</div>
-
-
-			<div class="tile">
-				<img src='http://www.blueb.co.kr/SRC2/_image/s_02.jpg' />
-				<a href="#">
-				<div class="text">
-					<h1>Lorem ipsum.</h1>
-					<h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
-					<p class="animate-text">Bacon ipsum dolor amet pork belly
-						tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank
-						sirloin strip steak prosciutto kevin turducken.</p>
-					<div class="dots">
-						<span></span> <span></span> <span></span>
-					</div>
-				</div>
-				</a>
-			</div>
-
-			
-			<div class="tile">
-				<a href="#">
-				<img src='http://www.blueb.co.kr/SRC2/_image/s_03.jpg' />
-				<div class="text">
-					<h1>Lorem ipsum.</h1>
-					<h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
-					<p class="animate-text">Bacon ipsum dolor amet pork belly
-						tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank
-						sirloin strip steak prosciutto kevin turducken.</p>
-					<div class="dots">
-						<span></span> <span></span> <span></span>
-					</div>
-				</div>
-				</a>
-			</div>
-		</div>	 -->
-
-  <!-- Tweet -->
-	<!-- <div id="tweet">
-		<div class="container1">
-			<section>
-				<blockquote>
-					&ldquo; 2016 공주대학교 프로젝트 POJO &rdquo;
-					<p>양희준 홍석진 박준영 황민정</p>
-				</blockquote>
-			</section>
-		</div>
-	</div> -->
    <jsp:include page="jsp/Footer.jsp"></jsp:include>
 </body>
 <script src="http://code.jquery.com/jquery.js" /></script>
 <script src="js/jquery.bxslider/jquery.bxslider.min.js"></script>
  <script src="<%=request.getContextPath()%>/videoback/dist/vidbg.js"></script>
  <script type="text/javascript">
+
+ function move(val){
+	 window.location.assign(val);
+ }
+ 
  function submitCheck(){
 	 var key = document.getElementById('text_box').value;
 	 if(key != "")

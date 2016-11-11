@@ -325,8 +325,8 @@
 			예약 날짜<br /> 
 			<input type="button" onclick="goPopup()" value="예약 달력보기" />
 			<input type="hidden" name="houseNo" value="${house.houseNo }" /> 
-			시작일	<input type="date" onchange="checkDate(this)" name="possCheckIn" />
-			~ 종료일 	<input type="date" onchange="lastDate(this)" name="possCheckOut" />
+			시작일	<input type="date" onchange="checkDate(this)" name="possCheckIn" id="possCheckIn"/>
+			~ 종료일 	<input type="date" onchange="lastDate(this)" name="possCheckOut" id="possCheckOut"/>
 			<!-- <input type="button" onclick="nextDate(this)" value="+"> -->
 
 			<div id="calenderBox">
@@ -445,12 +445,17 @@ function checkDate(dateTag){
 		alert("설정 불가능한 날짜입니다.");
 		dateTag.value = "";
 	}
+
 }
 
 function lastDate(dateTag){
 	var dateVal = new Date(dateTag.value);
 	var firstDate = $(dateTag).prev();
 	var date = new Date($(firstDate).val());
+	
+	var stDate = document.getElementById("possCheckIn");
+	var endDate = document.getElementById("possCheckOut");
+	
 	if($(firstDate).val() == ""){
 		alert("시작일을 먼저 설정해주세요");
 		$(dateTag).val("");
@@ -459,6 +464,23 @@ function lastDate(dateTag){
 		alert("설정 불가능한 날짜입니다.");
 		dateTag.value = "";
 	}
+	 dayArray.forEach(function e(item,index){
+			console.log("예약검사일"+item);
+
+			var stDateVal = new Date(stDate.value);
+			var endDateVal = new Date(endDate.value);
+		for(;stDateVal <= endDateVal;stDateVal.setTime(stDateVal.getTime()+1*1000*60*60*24)){
+			console.log("예약시작일"+ stDateVal);
+			console.log("예약종료일"+endDateVal); 
+			if(item.getTime() == stDateVal.getTime())
+			{
+				alert("설정 불가능한 날짜입니다.");
+				stDate.value = "";
+				endDate.value = "";
+				return ;
+			}
+		}
+ 	}); 
 }
 
 //센터 한글명
@@ -538,8 +560,6 @@ var start = new Date(startDay);
 var end = new Date(endDay);
 
 $(document).ready(function(){
-	console.log("start:"+ startDay);
-	console.log("end:"+ endDay);
 
 	setpossible();
 	setImpossible();
@@ -568,7 +588,7 @@ function setcolor(){
 			
 			if(inDate <= currentDate && outDate >= currentDate ){
 				$(this).parent().css("background","#FFD8D8");
-				dayArray.push(this);
+				dayArray.push(currentDate);
 			}
 		}
 	});
@@ -593,7 +613,7 @@ function setcolor(){
 					
 			if(inDate < currentDate && outDate >= currentDate ){
 				$(this).parent().css("background","#FFD8D8");
-				dayArray.push(this);
+				dayArray.push(currentDate);
 			}
 		}
 	});
@@ -619,7 +639,7 @@ function setcolor(){
 					
 			if(inDate < currentDate && outDate >= currentDate ){
 				$(this).parent().css("background","#FFD8D8");
-				dayArray.push(this);
+				dayArray.push(currentDate);
 			}
 		}
 	});
@@ -635,7 +655,6 @@ function setpossible(){
 		
 		if(start < currentDate && end >= currentDate ){
 			$(this).parent().css("background","rgba(227,241,231,1)");
-			dayArray.push(this);
 		}
 	});
 		
@@ -691,7 +710,6 @@ function setImpossible(){
 		async: false,
 		success : function(data,staus) {
 			ImpossibleDate = data;
-			console.log(ImpossibleDate);
 		},
 		error : function(xhr, status, error) {
 			alert(error);
@@ -714,8 +732,6 @@ function before(){
 		if (this.readyState == 4 && this.status == 200) {
 			document.getElementById("dateBar").innerHTML = "<h1><span style='font-size:30px;font-weight:bold;''>"+thisYear+"년 "+(thisMonth+1)+"월</span></h1>";		
 			document.getElementById("box").innerHTML = this.responseText;
-			console.log((thisMonth+1)+"월");
-			console.log(this.responseText);
 
 			setpossible();
 			setcolor();
@@ -739,8 +755,6 @@ function after(){
 	    if (this.readyState == 4 && this.status == 200) {
 			document.getElementById("dateBar").innerHTML = "<h1><span style='font-size:30px;font-weight:bold;''>"+thisYear+"년 "+(thisMonth+1)+"월</span></h1>";
 	      	document.getElementById("box").innerHTML = this.responseText;
-	      	console.log((thisMonth+1)+"월");
-	      	console.log(this.responseText);
 
 	 	 	setpossible();
 	 	 	setcolor();
