@@ -29,4 +29,7 @@ public interface HouseService {
 	List<House> selectByScore();
 	
 	List<House> selectAllKey(String key);
+	
+	int updateCountPlus(int houseNo);
+	int updateCountMinus(int houseNo);
 }

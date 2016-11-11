@@ -100,5 +100,19 @@ public class HouseServiceImp implements HouseService{
 		List<House> result = hdao.selectAllKey(template, key);
 		return result;
 	}
+
+	@Override
+	public int updateCountPlus(int houseNo) {
+		int result = 0;
+		result = hdao.updateCounterPlus(template, houseNo);
+		return result;
+	}
+
+	@Override
+	public int updateCountMinus(int houseNo) {
+		int result = 0;
+		result = hdao.updateCounterMinus(template, houseNo);
+		return result;
+	}
 	
 }

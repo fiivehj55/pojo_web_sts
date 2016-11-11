@@ -19,7 +19,6 @@
 		select * from (
   			select sub.*, rownum as rnum from(
     			select * from HOUSE
-    			where HOUSE_SCORE >= (select AVG(HOUSE_SCORE) from HOUSE)
     			order by HOUSE_SCORE desc
   			) sub
 		) where rnum between 1 and 6
@@ -61,6 +60,18 @@
 		HOUSE_ELEBE=#{houseElebe}, HOUSE_WASHING=#{houseWashing}, HOUSE_IMG=#{houseImg,jdbcType=VARCHAR}, 
 		HOUSE_DAY=#{houseDay}, POSS_CHECK_IN=#{possCheckIn}, POSS_CHECK_OUT=#{possCheckOut}
 		where HOUSE_NO=#{houseNo}
+	</update>
+	
+	<update id="updateCountPlus" parameterType="int">
+		update HOUSE set
+		HOUSE_SCORE = HOUSE_SCORE +1
+		where HOUSE_NO = #{houseNo}
+	</update>
+	
+	<update id="updateCountMinus" parameterType="int">
+		update HOUSE set
+		HOUSE_SCORE = HOUSE_SCORE -1
+		where HOUSE_NO = #{houseNo}
 	</update>
 	
 	<delete id="deleteHouse" parameterType="int">

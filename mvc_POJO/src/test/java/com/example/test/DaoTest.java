@@ -219,6 +219,18 @@ public class DaoTest {
 
 	}
 	
+	@Test
+	public void testUpdateCountPlus() {
+		int result = hdao.updateCounterPlus(template, 99);
+		logger.trace("List: {}", result);
+	}
+	
+	@Test
+	public void testUpdateCountMinus() {
+		int result = hdao.updateCounterMinus(template, 99);
+		logger.trace("List: {}", result);
+	}
+	
 	/** HOUSE_AVAIL_DATE */
 	@Test
 	public void testSelectAllHouseAvailDate() {

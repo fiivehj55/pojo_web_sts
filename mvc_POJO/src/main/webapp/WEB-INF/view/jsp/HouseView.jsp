@@ -132,7 +132,7 @@
                               </c:forEach>
                            </c:when>
                            <c:otherwise>
-                              조회된 사진 없습니다.
+                              	조회된 사진 없습니다.
                            </c:otherwise>
                         </c:choose>
                      </div>
@@ -170,28 +170,25 @@
                   <div id='right-box'>
                      <c:if test="${user!=null}">
                         <c:if test="${user.memId != houseUser}">
-                           <a href="CustomerReservation?No=${houseNo }"
-                              class="button button-style1">예약하기</a>
+							<a href="CustomerReservation?No=${houseNo }" class="button button-style1">예약하기</a>
+							<p><p>
+							<a href="updateCountPlus?houseNo=${houseNo}" class="button button-style1">좋아요</a>
                         </c:if>
                         <p>
                            <c:if test="${user.memId == houseUser}">
                               <p>
-                                 <a href="updateHouse?houseNo=${houseNo}"
-                                    class="button button-style1"> 수정하기</a>
+                                 <a href="updateHouse?houseNo=${houseNo}" class="button button-style1"> 수정하기</a>
                               <p>
-                                 <a href="deleteHouse?houseNo=${houseNo}"
-                                    class="button button-style1"> 취소하기</a>
+                                 <a href="deleteHouse?houseNo=${houseNo}" class="button button-style1"> 취소하기</a>
                            </c:if>
                            <c:if test="${user.memId != houseUser}">
                               <p>
-                                 <a href="chatstart?guest=${memberName}"
-                                    class="button button-style1">메세지보내기</a>
+                                 <a href="chatstart?guest=${memberName}" class="button button-style1">메세지보내기</a>
                               </p>
                            </c:if>
                      </c:if>
                      <p>
-                        <a href="searchbar?key=${key}&page=${page}"
-                           class="button button-style1">목록보기</a>
+                        <a href="searchbar?key=${key}&page=${page}" class="button button-style1">목록보기</a>
                   </div>
 
                   <div id='center-box'>

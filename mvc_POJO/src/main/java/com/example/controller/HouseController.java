@@ -201,7 +201,7 @@ public class HouseController {
 	public String selectByHouseNo(Model model, @RequestParam Integer houseNo, HttpSession session) {
 		House house = hservice.selectByNoHouse(houseNo);
 		List<Reply> reply = Rpservice.selectByHouseNo(houseNo);
-
+		
 		String houseTv = house.getHouseTv();
 		String houseAircon = house.getHouseAircon();
 		String houseWifi = house.getHouseWifi();
@@ -260,6 +260,21 @@ public class HouseController {
 			return "jsp/HouseView";
 		}
 			return "jps/index2";
+	}
+	
+	@RequestMapping(value = "/updateCountPlus", method = RequestMethod.GET)
+	public String updateCountPlus(Model model, @RequestParam Integer houseNo, HttpSession session) {
+		House house = hservice.selectByNoHouse(houseNo);
+		int plus = hservice.updateCountPlus(houseNo);
+		String key = (String) session.getAttribute("key");
+		if (house != null) {
+			model.addAttribute("house", house);
+			model.addAttribute("PossCheckIn", house.getPossCheckIn());
+			model.addAttribute("PossCheckOut", house.getPossCheckOut());
+			
+			return "redirect:/houseView?houseNo="+houseNo;
+		}
+		return "redirect:/searchbar?key="+ key +"&page=1";
 	}
 
 	@RequestMapping(value = "/updateHouse", method = RequestMethod.GET)

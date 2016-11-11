@@ -28,4 +28,8 @@ public interface HouseDao {
 	
 	List<House> houseScore(SqlSessionTemplate template);
 	
+	int updateCounterPlus(SqlSessionTemplate template, int houseNo);
+	
+	int updateCounterMinus(SqlSessionTemplate template, int houseNo);
+	
 }

@@ -80,4 +80,16 @@ public class HouseDaoImpl implements HouseDao {
 		return template.selectList(stmt);
 	}
 
+	@Override
+	public int updateCounterPlus(SqlSessionTemplate template, int houseNo) {
+		String stmt = HOUSE_MAP + "updateCountPlus";
+		return template.update(stmt, houseNo);
+	}
+
+	@Override
+	public int updateCounterMinus(SqlSessionTemplate template, int houseNo) {
+		String stmt = HOUSE_MAP + "updateCountMinus";
+		return template.update(stmt, houseNo);
+	}
+
 }
