@@ -226,8 +226,8 @@ public class HouseController {
 			File userImg = new File(uploadDir+house.getMemberId()+ "/intro");
 			File[] imgs = userImg.listFiles();
 			if(imgs != null){
-			String imgName = imgs[0].getName();
-			model.addAttribute("memImg", imgName);
+				String imgName = imgs[0].getName();
+				model.addAttribute("memImg", imgName);
 			}
 			//하우스 이미지 등록
 			File listImg = new File(uploadDir+house.getMemberId()+ "/"+house.getHouseNo()+"/other");

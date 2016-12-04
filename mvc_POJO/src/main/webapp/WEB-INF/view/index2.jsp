@@ -356,9 +356,9 @@ body{
 					<div class="textBox">
 						<h1>${row.houseName}</h1>
 						<h2 class="animate-text">${row.houseAddress}</h2>
-						<p class="animate-text">
+						<%-- <p class="animate-text">
 							${row.houseInfo}
-						</p>
+						</p> --%>
    					</div>
 				</div>
 			</div>
