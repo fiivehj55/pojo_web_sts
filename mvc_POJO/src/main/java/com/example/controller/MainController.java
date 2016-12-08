@@ -56,12 +56,6 @@ public class MainController {
 	@Autowired
 	ReportToReplyService rtrservice;
 	
-	@RequestMapping(value = "/hello",method=RequestMethod.GET)
-	public String sayHello(Model model){
-		//view의 이름을 리턴.
-		return "showMessage";
-	}
-	
 	@RequestMapping(value = "/index",method=RequestMethod.GET)
 	public String index(Model model){
 		List<House> house = hService.selectByScore();
